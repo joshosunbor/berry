@@ -1,0 +1,101 @@
+{
+  "id": "kite",
+  "mode": "fintech",
+  "name": "Kite",
+  "version": 1,
+  "effectiveFrom": "2026-10-01",
+  "changeNote": "Initial policy",
+  "products": [
+    {
+      "product": "personal_loan",
+      "offered": true,
+      "aprBps": 1399,
+      "minCents": 100000,
+      "maxCents": 2000000,
+      "termMonths": [
+        12,
+        24,
+        36
+      ]
+    },
+    {
+      "product": "line_of_credit",
+      "offered": true,
+      "aprBps": 1499,
+      "minCents": 50000,
+      "maxCents": 1500000,
+      "termMonths": []
+    },
+    {
+      "product": "credit_card",
+      "offered": true,
+      "aprBps": 1999,
+      "minCents": 30000,
+      "maxCents": 500000,
+      "termMonths": []
+    },
+    {
+      "product": "starter_credit",
+      "offered": true,
+      "aprBps": 1799,
+      "minCents": 30000,
+      "maxCents": 150000,
+      "termMonths": []
+    },
+    {
+      "product": "business_term_loan",
+      "offered": true,
+      "aprBps": 1299,
+      "minCents": 500000,
+      "maxCents": 10000000,
+      "termMonths": [
+        12,
+        24,
+        36
+      ]
+    },
+    {
+      "product": "business_line_of_credit",
+      "offered": true,
+      "aprBps": 1399,
+      "minCents": 200000,
+      "maxCents": 5000000,
+      "termMonths": []
+    },
+    {
+      "product": "equipment_financing",
+      "offered": true,
+      "aprBps": 1199,
+      "minCents": 500000,
+      "maxCents": 15000000,
+      "termMonths": [
+        24,
+        36,
+        48
+      ]
+    },
+    {
+      "product": "seasonal_operating_line",
+      "offered": true,
+      "aprBps": 1399,
+      "minCents": 200000,
+      "maxCents": 2500000,
+      "termMonths": []
+    }
+  ],
+  "thresholds": {
+    "minHistoryMonths": 3,
+    "maxNsf90": 1,
+    "limitToMonthlyNet": 1.5,
+    "maxIncomeCv": 0.9
+  },
+  "recovery": {
+    "maxRetries": 1,
+    "alignRetryToNextDeposit": true,
+    "minBusinessDaysBetweenAttempts": 2,
+    "notifyOnFirstFailure": true,
+    "outreachAfterFailures": 2,
+    "hardshipSignalThreshold": 3
+  },
+  "illustrative": true
+}

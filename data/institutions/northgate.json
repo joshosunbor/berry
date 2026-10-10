@@ -1,0 +1,133 @@
+{
+  "id": "northgate",
+  "mode": "credit_union",
+  "name": "Northgate Credit Union",
+  "version": 1,
+  "effectiveFrom": "2026-10-01",
+  "changeNote": "Initial policy",
+  "products": [
+    {
+      "product": "personal_loan",
+      "offered": true,
+      "aprBps": 899,
+      "minCents": 100000,
+      "maxCents": 5000000,
+      "termMonths": [
+        12,
+        24,
+        36,
+        48,
+        60
+      ]
+    },
+    {
+      "product": "line_of_credit",
+      "offered": true,
+      "aprBps": 949,
+      "minCents": 100000,
+      "maxCents": 5000000,
+      "termMonths": []
+    },
+    {
+      "product": "credit_card",
+      "offered": true,
+      "aprBps": 1299,
+      "minCents": 50000,
+      "maxCents": 1500000,
+      "termMonths": []
+    },
+    {
+      "product": "starter_credit",
+      "offered": true,
+      "aprBps": 1199,
+      "minCents": 30000,
+      "maxCents": 300000,
+      "termMonths": []
+    },
+    {
+      "product": "business_term_loan",
+      "offered": true,
+      "aprBps": 825,
+      "minCents": 1000000,
+      "maxCents": 50000000,
+      "termMonths": [
+        24,
+        36,
+        48,
+        60,
+        84
+      ]
+    },
+    {
+      "product": "business_line_of_credit",
+      "offered": true,
+      "aprBps": 875,
+      "minCents": 500000,
+      "maxCents": 25000000,
+      "termMonths": []
+    },
+    {
+      "product": "equipment_financing",
+      "offered": true,
+      "aprBps": 775,
+      "minCents": 1000000,
+      "maxCents": 75000000,
+      "termMonths": [
+        36,
+        48,
+        60,
+        84
+      ]
+    },
+    {
+      "product": "seasonal_operating_line",
+      "offered": true,
+      "aprBps": 795,
+      "minCents": 1000000,
+      "maxCents": 25000000,
+      "termMonths": []
+    }
+  ],
+  "thresholds": {
+    "minDscr": 1.2,
+    "seasonalAnnualDscr": 1.25,
+    "maxNsf90": 2,
+    "tenureYearsForFullRelationshipCredit": 5,
+    "maxLimitToAnnualNetInflow": 0.35
+  },
+  "authorityTiers": [
+    {
+      "id": "msr",
+      "title": "Member Service Representative",
+      "order": 0,
+      "maxExposureCents": 1000000
+    },
+    {
+      "id": "lender",
+      "title": "Lender",
+      "order": 1,
+      "maxExposureCents": 5000000
+    },
+    {
+      "id": "branch_manager",
+      "title": "Branch Manager",
+      "order": 2,
+      "maxExposureCents": 25000000
+    },
+    {
+      "id": "credit_committee",
+      "title": "Credit Committee",
+      "order": 3,
+      "maxExposureCents": null
+    }
+  ],
+  "recovery": {
+    "maxRetries": 1,
+    "alignRetryToNextDeposit": true,
+    "minBusinessDaysBetweenAttempts": 2,
+    "notifyOnFirstFailure": true,
+    "outreachAfterFailures": 2,
+    "hardshipSignalThreshold": 3
+  },
+  "illustrative": true
+}

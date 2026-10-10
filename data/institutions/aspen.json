@@ -1,0 +1,114 @@
+{
+  "id": "aspen",
+  "mode": "bank",
+  "name": "Aspen Bank",
+  "version": 1,
+  "effectiveFrom": "2026-10-01",
+  "changeNote": "Initial policy",
+  "products": [
+    {
+      "product": "personal_loan",
+      "offered": true,
+      "aprBps": 999,
+      "minCents": 200000,
+      "maxCents": 5000000,
+      "termMonths": [
+        12,
+        24,
+        36,
+        48,
+        60
+      ]
+    },
+    {
+      "product": "line_of_credit",
+      "offered": true,
+      "aprBps": 1049,
+      "minCents": 200000,
+      "maxCents": 5000000,
+      "termMonths": []
+    },
+    {
+      "product": "credit_card",
+      "offered": true,
+      "aprBps": 2099,
+      "minCents": 50000,
+      "maxCents": 1500000,
+      "termMonths": []
+    },
+    {
+      "product": "starter_credit",
+      "offered": true,
+      "aprBps": 1999,
+      "minCents": 50000,
+      "maxCents": 200000,
+      "termMonths": []
+    },
+    {
+      "product": "business_term_loan",
+      "offered": true,
+      "aprBps": 895,
+      "minCents": 1000000,
+      "maxCents": 100000000,
+      "termMonths": [
+        24,
+        36,
+        48,
+        60,
+        84
+      ]
+    },
+    {
+      "product": "business_line_of_credit",
+      "offered": true,
+      "aprBps": 945,
+      "minCents": 1000000,
+      "maxCents": 50000000,
+      "termMonths": []
+    },
+    {
+      "product": "equipment_financing",
+      "offered": true,
+      "aprBps": 845,
+      "minCents": 2500000,
+      "maxCents": 100000000,
+      "termMonths": [
+        36,
+        48,
+        60,
+        84
+      ]
+    },
+    {
+      "product": "seasonal_operating_line",
+      "offered": true,
+      "aprBps": 945,
+      "minCents": 2500000,
+      "maxCents": 50000000,
+      "termMonths": []
+    }
+  ],
+  "thresholds": {
+    "minHistoryMonths": 12,
+    "minCreditHistoryMonths": 24,
+    "maxIncomeCv": 0.35,
+    "minDscr": 1.25,
+    "maxNsf12m": 1
+  },
+  "documentChecklist": [
+    "Government-issued photo ID",
+    "Two most recent pay stubs or Notice of Assessment",
+    "12 months of bank statements",
+    "Business: two years of financial statements",
+    "Business: articles of incorporation or registration"
+  ],
+  "recovery": {
+    "maxRetries": 1,
+    "alignRetryToNextDeposit": true,
+    "minBusinessDaysBetweenAttempts": 2,
+    "notifyOnFirstFailure": true,
+    "outreachAfterFailures": 2,
+    "hardshipSignalThreshold": 3
+  },
+  "illustrative": true
+}
