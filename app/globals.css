@@ -1,0 +1,270 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/*
+ * Theme: light by default, dark when the OS prefers it, and an explicit
+ * override via <html data-theme="light|dark">.
+ */
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+}
+
+@theme inline {
+  /* shadcn semantic colours, mapped onto Berry tokens below */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Berry neutrals */
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted-ink: var(--muted-ink);
+  --color-rule: var(--rule);
+  --color-grid: var(--grid);
+
+  /* Mode accents: Northgate (credit union), Kite (fintech), Aspen (bank) */
+  --color-cu: var(--cu-solid);
+  --color-cu-fg: var(--cu-fg);
+  --color-cu-soft: var(--cu-soft);
+  --color-cu-on: var(--cu-on);
+  --color-fintech: var(--fintech-solid);
+  --color-fintech-fg: var(--fintech-fg);
+  --color-fintech-soft: var(--fintech-soft);
+  --color-fintech-on: var(--fintech-on);
+  --color-bank: var(--bank-solid);
+  --color-bank-fg: var(--bank-fg);
+  --color-bank-soft: var(--bank-soft);
+  --color-bank-on: var(--bank-on);
+
+  /* Outcomes and SLA status: never the same hues as the modes */
+  --color-approve: var(--approve);
+  --color-approve-soft: var(--approve-soft);
+  --color-conditions: var(--conditions);
+  --color-conditions-soft: var(--conditions-soft);
+  --color-refer: var(--refer);
+  --color-refer-soft: var(--refer-soft);
+  --color-decline: var(--decline);
+  --color-decline-soft: var(--decline-soft);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+
+  /* Type scale: Tailwind's xs–4xl defaults, plus a hero display size */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.02em;
+
+  /* Radius: sm 6px, md 10px, lg 14px */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.125rem;
+
+  --shadow-soft: 0 1px 2px rgb(20 24 31 / 0.04), 0 4px 16px rgb(20 24 31 / 0.06);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+}
+
+:root {
+  --surface: #ffffff;
+  --ink: #14181f;
+  --muted-ink: #5b6472;
+  --rule: #e6e4de;
+  --grid: #efede7;
+
+  --cu-solid: #0f766e;
+  --cu-fg: #0f766e;
+  --cu-soft: #e6f4f2;
+  --cu-on: #ffffff;
+  --fintech-solid: #6d28d9;
+  --fintech-fg: #6d28d9;
+  --fintech-soft: #f1ebfd;
+  --fintech-on: #ffffff;
+  --bank-solid: #3b5b92;
+  --bank-fg: #34507f;
+  --bank-soft: #e9eef6;
+  --bank-on: #ffffff;
+
+  --approve: #15803d;
+  --approve-soft: #eef8f1;
+  --conditions: #b45309;
+  --conditions-soft: #fdf4ea;
+  --refer: #475569;
+  --refer-soft: #eef0f3;
+  --decline: #b91c1c;
+  --decline-soft: #fbeaea;
+
+  --background: #fafaf7;
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: #fafaf7;
+  --secondary: #f1f0eb;
+  --secondary-foreground: var(--ink);
+  --muted: #f1f0eb;
+  --muted-foreground: var(--muted-ink);
+  --accent: #f1f0eb;
+  --accent-foreground: var(--ink);
+  --destructive: var(--decline);
+  --border: var(--rule);
+  --input: #d9d6ce;
+  --ring: #3b5b92;
+  --chart-1: var(--cu-solid);
+  --chart-2: var(--fintech-solid);
+  --chart-3: var(--bank-solid);
+  --chart-4: var(--approve);
+  --chart-5: var(--decline);
+  --radius: 0.875rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface: #161a21;
+    --ink: #e8eaed;
+    --muted-ink: #9aa3af;
+    --rule: #262b34;
+    --grid: #1c2028;
+
+    --cu-solid: #2dd4bf;
+    --cu-fg: #5eead4;
+    --cu-soft: #12302d;
+    --cu-on: #0e1116;
+    --fintech-solid: #a78bfa;
+    --fintech-fg: #c4b5fd;
+    --fintech-soft: #241c3b;
+    --fintech-on: #0e1116;
+    --bank-solid: #8fa8d6;
+    --bank-fg: #b3c5e6;
+    --bank-soft: #1b2436;
+    --bank-on: #0e1116;
+
+    --approve: #4ade80;
+    --approve-soft: #12291b;
+    --conditions: #fbbf24;
+    --conditions-soft: #2e2410;
+    --refer: #a7b2c2;
+    --refer-soft: #20252e;
+    --decline: #f87171;
+    --decline-soft: #301717;
+
+    --background: #0e1116;
+    --primary-foreground: #0e1116;
+    --secondary: #1f242c;
+    --muted: #1f242c;
+    --accent: #1f242c;
+    --input: #333a45;
+    --ring: #8fa8d6;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #161a21;
+  --ink: #e8eaed;
+  --muted-ink: #9aa3af;
+  --rule: #262b34;
+  --grid: #1c2028;
+
+  --cu-solid: #2dd4bf;
+  --cu-fg: #5eead4;
+  --cu-soft: #12302d;
+  --cu-on: #0e1116;
+  --fintech-solid: #a78bfa;
+  --fintech-fg: #c4b5fd;
+  --fintech-soft: #241c3b;
+  --fintech-on: #0e1116;
+  --bank-solid: #8fa8d6;
+  --bank-fg: #b3c5e6;
+  --bank-soft: #1b2436;
+  --bank-on: #0e1116;
+
+  --approve: #4ade80;
+  --approve-soft: #12291b;
+  --conditions: #fbbf24;
+  --conditions-soft: #2e2410;
+  --refer: #a7b2c2;
+  --refer-soft: #20252e;
+  --decline: #f87171;
+  --decline-soft: #301717;
+
+  --background: #0e1116;
+  --primary-foreground: #0e1116;
+  --secondary: #1f242c;
+  --muted: #1f242c;
+  --accent: #1f242c;
+  --input: #333a45;
+  --ring: #8fa8d6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  table {
+    font-variant-numeric: tabular-nums;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Ledger-line background motif */
+@utility bg-ledger {
+  background-image: linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 100% 2rem;
+}
