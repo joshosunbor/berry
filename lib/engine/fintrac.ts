@@ -76,3 +76,87 @@ export function toComplianceFlag(event: LargeCashEvent): ComplianceFlag {
     source: LCTR_SOURCE,
   }
 }
+
+// ---------------------------------------------------------------------------
+// Review view: how a file came to be flagged, and an illustrative report summary
+// ---------------------------------------------------------------------------
+
+/** FINTRAC: reports are due within 15 calendar days after the day the cash is received. */
+export const LCTR_DEADLINE_DAYS = 15
+
+export interface LctrReviewDeposit {
+  transactionId: string
+  timestamp: string
+  amountCents: number
+  /** Running total within the 24-hour window, after this deposit. */
+  runningTotalCents: number
+  hoursFromFirst: number
+}
+
+export interface LctrReview {
+  rule: "single" | "24_hour"
+  thresholdCents: number
+  windowHours: 24
+  deposits: LctrReviewDeposit[]
+  totalCents: number
+  /** Why the file went to the FINTRAC review queue, in plain language. */
+  reason: string
+  creditFactor: false
+  reportSummary: {
+    label: "Illustrative — not a filing"
+    reportType: "Large Cash Transaction Report"
+    reportingEntity: string
+    onBehalfOf: string
+    method: string
+    dateOfFirstDeposit: string
+    totalCents: number
+    numberOfDeposits: number
+    reportDueBy: string
+    source: string
+  }
+}
+
+export function reviewLargeCash(event: LargeCashEvent, ctx: { reportingEntity: string; customerName: string }): LctrReview {
+  const first = Date.parse(event.windowStart)
+  let running = 0
+  const deposits = event.transactions.map((t) => {
+    running += t.amountCents
+    return {
+      transactionId: t.transactionId,
+      timestamp: t.transactionTimestamp,
+      amountCents: t.amountCents,
+      runningTotalCents: running,
+      hoursFromFirst: Math.round(((Date.parse(t.transactionTimestamp) - first) / 3_600_000) * 10) / 10,
+    }
+  })
+  const firstDay = event.windowStart.slice(0, 10)
+  // Due 15 calendar days after the day the cash that met the threshold was received.
+  const due = new Date(`${event.windowEnd.slice(0, 10)}T00:00:00Z`)
+  due.setUTCDate(due.getUTCDate() + LCTR_DEADLINE_DAYS)
+  const money = (c: number) => fmt(c)
+  const reason =
+    event.rule === "single"
+      ? `A single cash deposit of ${money(event.totalCents)} meets the ${money(LCTR_THRESHOLD_CENTS)} threshold.`
+      : `${event.transactions.length} cash deposits within ${deposits[deposits.length - 1].hoursFromFirst} hours total ${money(event.totalCents)}, meeting the ${money(LCTR_THRESHOLD_CENTS)} threshold under the 24-hour rule. Each deposit alone is below the threshold.`
+  return {
+    rule: event.rule,
+    thresholdCents: LCTR_THRESHOLD_CENTS,
+    windowHours: 24,
+    deposits,
+    totalCents: event.totalCents,
+    reason: `${reason} Sent to FINTRAC review so a person can confirm the deposits were made by or for the same customer and file the report. This does not affect the credit decision.`,
+    creditFactor: false,
+    reportSummary: {
+      label: "Illustrative — not a filing",
+      reportType: "Large Cash Transaction Report",
+      reportingEntity: ctx.reportingEntity,
+      onBehalfOf: ctx.customerName,
+      method: "In-branch cash deposit",
+      dateOfFirstDeposit: firstDay,
+      totalCents: event.totalCents,
+      numberOfDeposits: event.transactions.length,
+      reportDueBy: due.toISOString().slice(0, 10),
+      source: LCTR_SOURCE,
+    },
+  }
+}
