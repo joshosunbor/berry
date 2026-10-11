@@ -327,3 +327,36 @@ test("accuracy: what the score means, and two debatable cases described in plain
   for (const t of ["The engine's answer", "The strongest argument for a different answer", "What a lender would need to see to change it"]) await expect(debatable.getByText(t, { exact: true })).toHaveCount(2)
   await expect(debatable).toContainText("Planted case P19")
 })
+
+test("landing: lifecycle strip, operations glimpse, Built for Canada, responsible by design; no status badges", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/")
+  const main = page.getByRole("main")
+  // No status badges on the landing page: caveats live on /methodology.
+  for (const badge of ["Illustrative", "Simulated", "In draft", "Launching", "Live"]) await expect(main.getByText(badge, { exact: true })).toHaveCount(0)
+
+  const strip = page.getByRole("region", { name: "The whole loan, end to end" })
+  const steps = strip.getByRole("button")
+  await expect(steps).toHaveText(["1Consent", "2Verify", "3Decide", "4Fund (AFT or instant)", "5Collect (PAD)", "6Recover", "7Reconcile"])
+  await steps.nth(5).click()
+  await expect(steps.nth(5)).toHaveAttribute("aria-expanded", "true")
+  await expect(strip).toContainText("outside the borrower's NSF fee window")
+
+  const ops = page.getByRole("region", { name: "Run it like an operation" })
+  await expect(ops.getByText("Breached").first()).toBeVisible()
+  await expect(ops.getByText("Cost per loan")).toBeVisible()
+
+  const canada = page.getByRole("region", { name: "Built for Canada" })
+  await expect(canada.getByRole("listitem")).toHaveCount(6)
+  await expect(canada.getByRole("link", { name: /Regulatory status, as of October 2026/ })).toBeVisible()
+  await expect(page.getByRole("region", { name: "Responsible by design" })).toContainText("111 of 111")
+
+  await expect(page.getByRole("link", { name: /LinkedIn/ })).toHaveAttribute("href", "https://www.linkedin.com/in/joshuaosunbor")
+  await expect(page.getByRole("link", { name: /GitHub/ })).toHaveAttribute("href", "https://github.com/joshosunbor/berry")
+
+  // Every Built for Canada tile lands on a real section of /methodology.
+  const hrefs = await canada.getByRole("listitem").getByRole("link").evaluateAll((as) => as.map((a) => a.getAttribute("href")!))
+  await page.goto("/methodology")
+  for (const h of hrefs) await expect(page.locator(`#${h.split("#")[1]}`)).toHaveCount(1)
+  expect(errors).toEqual([])
+})

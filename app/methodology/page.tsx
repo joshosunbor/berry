@@ -236,7 +236,7 @@ export default function MethodologyPage() {
           </p>
           <ul className="space-y-3">
             {status.rows.map((r) => (
-              <li key={r.id} className="rounded-lg border border-rule bg-surface p-4">
+              <li key={r.id} id={`status-${r.id}`} className="scroll-mt-20 rounded-lg border border-rule bg-surface p-4">
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <h3 className="font-semibold">{r.name}</h3>
                   <StatusBadge status={r.status} />
