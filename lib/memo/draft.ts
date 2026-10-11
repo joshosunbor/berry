@@ -25,13 +25,11 @@ export interface MemoDraft {
 
 /** The slice of the Anthropic client this module uses, so tests can pass a fake. */
 export interface MemoClient {
-  beta: {
-    messages: {
-      create(
-        body: Anthropic.Beta.MessageCreateParamsNonStreaming,
-        options?: { timeout?: number; maxRetries?: number },
-      ): PromiseLike<Pick<Anthropic.Beta.BetaMessage, "content" | "stop_reason">>
-    }
+  messages: {
+    create(
+      body: Anthropic.MessageCreateParamsNonStreaming,
+      options?: { timeout?: number; maxRetries?: number },
+    ): PromiseLike<Pick<Anthropic.Message, "content" | "stop_reason">>
   }
 }
 
@@ -71,17 +69,15 @@ export async function draftMemo(input: MemoInput, opts: DraftOptions = {}): Prom
   const fallback = (problems: string[]): MemoDraft => ({ source: "template", text: template, problems })
   const client: MemoClient = opts.client ?? new Anthropic({ apiKey: opts.apiKey })
 
-  let reply: Pick<Anthropic.Beta.BetaMessage, "content" | "stop_reason">
+  // Stable Messages API, no beta features. If Claude declines, the template is used.
+  let reply: Pick<Anthropic.Message, "content" | "stop_reason">
   try {
-    reply = await client.beta.messages.create(
+    reply = await client.messages.create(
       {
         model: MEMO_MODEL,
         max_tokens: 16000,
         // Thinking is adaptive by default on this model; effort set explicitly.
         output_config: { effort: "medium" },
-        // Server-side fallback if the request is declined by a safeguard.
-        betas: ["server-side-fallback-2026-07-01"],
-        fallbacks: "default",
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: `Facts (JSON):\n${JSON.stringify(facts, null, 2)}` }],
       },

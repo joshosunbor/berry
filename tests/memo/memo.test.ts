@@ -130,13 +130,11 @@ function fakeClient(reply: string | Error): MemoClient & { calls: unknown[] } {
   const calls: unknown[] = []
   return {
     calls,
-    beta: {
-      messages: {
-        create: async (body) => {
-          calls.push(body)
-          if (reply instanceof Error) throw reply
-          return { content: [{ type: "text", text: reply, citations: null }], stop_reason: "end_turn" }
-        },
+    messages: {
+      create: async (body) => {
+        calls.push(body)
+        if (reply instanceof Error) throw reply
+        return { content: [{ type: "text", text: reply, citations: null }], stop_reason: "end_turn" }
       },
     },
   } as MemoClient & { calls: unknown[] }
@@ -163,6 +161,8 @@ describe("draftMemo", () => {
     expect(body.messages).toHaveLength(1)
     expect(body.messages[0].content).toContain(JSON.stringify(factsOf(hollisCu), null, 2))
     expect(body.messages[0].content).not.toContain("Hollis")
+    expect(body).not.toHaveProperty("betas")
+    expect(body).not.toHaveProperty("fallbacks")
   })
 
   it("falls back to the template and lists the problem when a number changed", async () => {

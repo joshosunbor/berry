@@ -1,6 +1,7 @@
 import { z } from "zod"
 import { getApplicant } from "@/lib/data"
 import { draftMemo } from "@/lib/memo/draft"
+import { clientIp, limitsFromEnv, MemoRateLimiter } from "@/lib/memo/limits"
 import { MODES, type Mode } from "@/lib/modes"
 
 /*
@@ -16,6 +17,8 @@ const Body = z.object({
   slug: z.string().min(1).max(100),
   mode: z.string().min(1).max(40),
 })
+
+const limiter = new MemoRateLimiter(limitsFromEnv())
 
 export async function POST(req: Request) {
   let json: unknown
@@ -33,13 +36,17 @@ export async function POST(req: Request) {
   if (!(MODES as readonly string[]).includes(mode)) return Response.json({ error: "Unknown lender" }, { status: 404 })
 
   const a = view.applicant
+  // Limits only apply when a key is set: without one, nothing is sent to Claude.
+  const apiKey = process.env.ANTHROPIC_API_KEY || undefined
+  const allowed = apiKey ? limiter.take(clientIp(req.headers)) : ({ ok: true } as const)
   const draft = await draftMemo(
     {
       decision: view.decisions[mode as Mode],
       features: view.features,
       request: { kind: a.kind, product: a.request.product, amountCents: a.request.amountCents, termMonths: a.request.termMonths ?? null },
     },
-    { apiKey: process.env.ANTHROPIC_API_KEY || undefined },
+    { apiKey: allowed.ok ? apiKey : undefined },
   )
+  if (!allowed.ok) draft.problems = [allowed.reason]
   return Response.json({ ...draft, mode, slug })
 }
