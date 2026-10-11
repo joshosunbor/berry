@@ -9,7 +9,9 @@ import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import { summarize, verifyApplicant, type VerificationSummary } from "@/lib/onboarding/kyc"
 import { Rng, hashSeed } from "@/lib/rng"
 import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
-import { buildBooks } from "@/lib/servicing/portfolio"
+import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
+import type { AuditEvent } from "@/lib/schemas"
+import { FUNDING_INITIATED_AT, buildBooks, loanIdFor } from "@/lib/servicing/portfolio"
 import type { BookResult } from "@/lib/servicing/simulate"
 import { breaksByLoan, summarize as summarizeLoan, toLoanView, type LoanSummary, type LoanView } from "@/lib/servicing/views"
 import { toEngineInput, type Applicant, type Decision, type EngineInput, type VerificationCheck } from "@/lib/schemas"
@@ -215,4 +217,33 @@ const foreignDemo = {
 
 export function getForeignReportDemo() {
   return foreignDemo
+}
+
+/**
+ * Operations: queue items built only from the open items above, worked by
+ * the simulated team in business hours. The audit trail is the hash-chained
+ * log of every step.
+ */
+const opsRun = runTeam(
+  buildItems({
+    verification: cast.map((c) => ({ slug: c.applicant.slug, name: c.applicant.displayName, checks: c.verification.checks })),
+    largeCash: cast.flatMap((c) => c.largeCash.map((review) => ({ slug: c.applicant.slug, name: c.applicant.displayName, review }))),
+    decisions: cast.flatMap((c) => MODES.map((mode) => ({ slug: c.applicant.slug, name: c.applicant.displayName, mode, decision: c.decisions[mode], features: c.features }))),
+    loans: loanViews,
+    payee: cast.flatMap((c) =>
+      MODES.flatMap((mode) => {
+        const loan = loanViews.find((l) => l.id === loanIdFor(c.applicant.slug, mode))
+        if (!loan || c.accountVerification.result !== "close_match" || loan.funding.rail === "aft") return []
+        return [{ slug: c.applicant.slug, name: c.applicant.displayName, mode, loanId: loan.id, amountCents: loan.principalCents, verification: c.accountVerification, at: FUNDING_INITIATED_AT }]
+      }),
+    ),
+  }),
+)
+
+export function getOpsItems(): OpsItem[] {
+  return opsRun.items
+}
+
+export function getAuditEvents(): readonly AuditEvent[] {
+  return opsRun.log.all
 }

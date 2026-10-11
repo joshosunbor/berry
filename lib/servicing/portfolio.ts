@@ -15,6 +15,8 @@ import { simulateBook, type BookResult, type LoanSetup, type Script } from "./si
  */
 
 export const FUNDING_INITIATED_AT = "2026-10-06T10:00"
+/** A close match on an instant rail waits for a person to confirm the payee (see the Payee confirmation queue). */
+export const FUNDING_AFTER_PAYEE_CONFIRMATION = "2026-10-06T11:30"
 /** Twelve months of servicing after funding. */
 export const HORIZON = "2027-10-06"
 
@@ -79,7 +81,14 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
     const id = loanIdFor(a.slug, mode)
     const rail = railFor(mode, d.limitCents, config)
     const funding = fund(
-      { loanId: id, amountCents: d.limitCents, rail, initiatedAt: FUNDING_INITIATED_AT, verification: a.accountVerification, confirmedWithBorrower: true },
+      {
+        loanId: id,
+        amountCents: d.limitCents,
+        rail,
+        initiatedAt: rail !== "aft" && a.accountVerification.canFund === "after_confirming" ? FUNDING_AFTER_PAYEE_CONFIRMATION : FUNDING_INITIATED_AT,
+        verification: a.accountVerification,
+        confirmedWithBorrower: true,
+      },
       config,
     )
     const deposit = a.accounts.find((x) => x.accountType === "CHECKING" || x.accountType === "BUSINESS_CHECKING") ?? a.accounts[0]

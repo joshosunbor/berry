@@ -1,6 +1,12 @@
 import { z } from "zod"
 import { InstitutionId, IsoDateTime, SubjectRef, prefixedId } from "./common"
 
+/**
+ * Operations times are the lender's local business time, "YYYY-MM-DDTHH:MM",
+ * deliberately without a zone (the fictional lenders aren't placed anywhere).
+ */
+const LocalTime = z.union([IsoDateTime, z.iso.datetime({ local: true })])
+
 /* Operations: work queues, team, maker-checker, audit trail, policy versions. */
 
 export const QueueName = z.enum([
@@ -10,6 +16,7 @@ export const QueueName = z.enum([
   "collections",
   "reconciliation",
   "hardship",
+  "payee_confirmation",
 ])
 
 export const Priority = z.enum(["low", "normal", "high", "urgent"])
@@ -21,22 +28,22 @@ export const QueueItem = z.object({
   title: z.string().min(1),
   priority: Priority,
   status: z.enum(["open", "in_progress", "waiting", "done"]),
-  createdAt: IsoDateTime,
+  createdAt: LocalTime,
   /** SLA due time; the UI derives green / amber / breached from it. */
-  slaDueAt: IsoDateTime,
+  slaDueAt: LocalTime,
   ownerId: prefixedId("usr").optional(),
   nextAction: z.string().min(1),
   playbookId: z.string(),
   /** For credit referrals: which authority tier must approve. */
   authorityTierId: z.string().optional(),
-  closedAt: IsoDateTime.optional(),
+  closedAt: LocalTime.optional(),
 })
 
 export const Analyst = z.object({
   id: prefixedId("usr"),
   /** Fictional team member. */
   name: z.string().min(1),
-  role: z.enum(["analyst", "lead"]),
+  role: z.enum(["analyst", "lead", "branch_manager", "credit_committee"]),
   skills: z.array(QueueName),
   /** Work points per day. */
   capacity: z.number().int().positive(),
@@ -54,7 +61,7 @@ export const Actor = z.object({
 export const AuditEvent = z.object({
   id: prefixedId("aud"),
   seq: z.number().int().nonnegative(),
-  at: IsoDateTime,
+  at: LocalTime,
   actor: Actor,
   action: z.string().regex(/^[a-z_]+\.[a-z_]+$/, "use noun.verb, e.g. decision.created"),
   subject: SubjectRef,
@@ -72,9 +79,9 @@ export const Approval = z
     kind: z.enum(["limit_override", "hardship", "policy_change", "write_off"]),
     subject: SubjectRef,
     makerId: prefixedId("usr"),
-    madeAt: IsoDateTime,
+    madeAt: LocalTime,
     checkerId: prefixedId("usr").optional(),
-    checkedAt: IsoDateTime.optional(),
+    checkedAt: LocalTime.optional(),
     status: z.enum(["pending", "approved", "rejected"]),
     reason: z.string().min(1),
   })
@@ -92,7 +99,7 @@ export const PolicyVersion = z.object({
   institutionId: InstitutionId,
   version: z.number().int().positive(),
   changedBy: prefixedId("usr"),
-  changedAt: IsoDateTime,
+  changedAt: LocalTime,
   why: z.string().min(1),
   diff: z.array(z.object({ path: z.string(), from: z.unknown(), to: z.unknown() })),
   approvalId: prefixedId("apv").optional(),

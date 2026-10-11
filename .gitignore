@@ -48,3 +48,6 @@ next-env.d.ts
 
 # local scratch (screenshots, research downloads)
 /.tmp/
+
+# Claude Code agent worktrees
+.claude/worktrees/

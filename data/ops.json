@@ -1,0 +1,34 @@
+{
+  "_about": "Illustrative operations settings for Berry's fictional lenders: service levels, a fictional team, delegated authority and cost inputs. Not taken from any real institution.",
+  "version": 1,
+  "businessHours": { "start": 9, "end": 17 },
+  "queues": {
+    "verification": { "label": "Verification review", "slaBusinessHours": 8, "minutesPerItem": 25, "skill": "verification" },
+    "credit_referral": { "label": "Credit referrals and sign-offs", "slaBusinessHours": 16, "minutesPerItem": 30, "skill": "credit_referral" },
+    "fintrac_review": { "label": "FINTRAC review", "slaBusinessHours": 40, "minutesPerItem": 45, "skill": "fintrac_review" },
+    "collections": { "label": "Collections outreach", "slaBusinessHours": 16, "minutesPerItem": 20, "skill": "collections" },
+    "reconciliation": { "label": "Reconciliation breaks", "slaBusinessHours": 8, "minutesPerItem": 35, "skill": "reconciliation" },
+    "hardship": { "label": "Hardship approvals", "slaBusinessHours": 24, "minutesPerItem": 40, "skill": "hardship" },
+    "payee_confirmation": { "label": "Payee confirmation", "slaBusinessHours": 2, "minutesPerItem": 15, "skill": "payee_confirmation" }
+  },
+  "team": [
+    { "id": "usr_rivera", "name": "A. Rivera", "role": "analyst", "skills": ["verification", "fintrac_review", "payee_confirmation"], "capacity": 360 },
+    { "id": "usr_okafor", "name": "J. Okafor", "role": "analyst", "skills": ["collections", "hardship", "payee_confirmation"], "capacity": 360 },
+    { "id": "usr_tran", "name": "M. Tran", "role": "analyst", "skills": ["reconciliation", "collections", "verification"], "capacity": 360 },
+    { "id": "usr_bisset", "name": "R. Bisset", "role": "analyst", "skills": ["credit_referral", "verification", "hardship"], "capacity": 360 },
+    { "id": "usr_moreau", "name": "K. Moreau", "role": "lead", "skills": ["credit_referral", "hardship", "fintrac_review", "reconciliation", "payee_confirmation"], "capacity": 240 },
+    { "id": "usr_lindqvist", "name": "S. Lindqvist", "role": "branch_manager", "skills": ["credit_referral"], "capacity": 120 },
+    { "id": "usr_committee", "name": "Credit Committee", "role": "credit_committee", "skills": ["credit_referral"], "capacity": 120 }
+  ],
+  "authority": {
+    "_note": "Each role's delegated authority limit, mapped to Northgate's illustrative tiers. Approvals above a role's limit escalate to the next role.",
+    "analyst": { "tierId": "msr", "limitCents": 1000000 },
+    "lead": { "tierId": "lender", "limitCents": 5000000 },
+    "branch_manager": { "tierId": "branch_manager", "limitCents": 25000000 },
+    "credit_committee": { "tierId": "credit_committee", "limitCents": null }
+  },
+  "cost": {
+    "_note": "Illustrative cost model: minutes of manual work per item x loaded hourly cost.",
+    "loadedHourlyCostCents": 6500
+  }
+}
