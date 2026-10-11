@@ -1,0 +1,23 @@
+# Dependencies and build output are recreated inside the image
+node_modules
+.next
+out
+build
+
+# Version control and local tooling
+.git
+.github
+.vercel
+.DS_Store
+*.log
+npm-debug.log*
+
+# Secrets
+.env*
+
+# Test output
+test-results
+playwright-report
+blob-report
+playwright/.cache
+coverage
