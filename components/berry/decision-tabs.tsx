@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { EyeOff } from "lucide-react"
 import { ReasonList, RegisterToggle, type Register } from "@/components/berry/decision-panel"
+import { MemoTab } from "@/components/berry/memo-tab"
 import { DisbursementTab, LargeCashTab, ProtectionTab, RepaymentTab, ServicingTab, VerificationTab } from "@/components/berry/file-tabs"
 import type { LoanSummary } from "@/lib/servicing/views"
 import type { AftView } from "@/lib/data"
@@ -26,6 +27,7 @@ export interface FileTabsData {
   largeCash: LctrReview[]
   accountVerification: AccountVerificationOutcome
   loans: LoanSummary[]
+  slug: string
 }
 
 export function DecisionTabs({ decisions, features, data }: { decisions: Record<Mode, Decision>; features: Features; data: FileTabsData }) {
@@ -46,6 +48,7 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
           <TabsTrigger value="servicing">Servicing</TabsTrigger>
           <TabsTrigger value="protection">Deposit protection</TabsTrigger>
           {data.largeCash.length > 0 && <TabsTrigger value="fintrac">FINTRAC review</TabsTrigger>}
+          <TabsTrigger value="memo">Credit memo</TabsTrigger>
           <TabsTrigger value="inputs">Inputs used</TabsTrigger>
         </TabsList>
       </div>
@@ -108,6 +111,10 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
           <LargeCashTab reviews={data.largeCash} />
         </TabsContent>
       )}
+
+      <TabsContent value="memo" className="min-w-0 mt-4">
+        <MemoTab slug={data.slug} />
+      </TabsContent>
 
       <TabsContent value="inputs" className="min-w-0 mt-4 grid gap-4 md:grid-cols-2">
         <div className="rounded-lg border border-rule bg-surface p-5">
