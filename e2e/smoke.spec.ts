@@ -219,7 +219,8 @@ test("ops console: the maker can't approve, a second person can, and the audit t
   await page.getByLabel("Acting as").selectOption("usr_rivera")
   await panel.getByRole("button", { name: "Prepare as A. Rivera" }).click()
   await panel.getByRole("button", { name: "Approve as A. Rivera" }).click()
-  await expect(page.getByRole("alert").filter({ hasText: "prepared this" })).toContainText("prepared this can't approve it")
+  // The block is shown inline, inside the item's panel.
+  await expect(panel.getByRole("alert")).toContainText("prepared this can't approve it")
   await expect(panel.getByText("Waiting for approval")).toBeVisible()
 
   await page.getByLabel("Acting as").selectOption("usr_moreau")
@@ -240,5 +241,54 @@ test("ops console: the maker can't approve, a second person can, and the audit t
   // Reset clears the browser's actions.
   await page.getByRole("button", { name: /Reset my/ }).click()
   await expect(page.getByRole("button", { name: /Reset my/ })).toHaveCount(0)
+  expect(errors).toEqual([])
+})
+
+test("policy change: impact preview, maker-checker, escalation, versions and rollback", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/ops")
+  await page.getByRole("tab", { name: "Policy" }).click()
+  await page.getByLabel("Acting as").selectOption("usr_rivera")
+  const form = page.getByRole("region", { name: "Propose a change" })
+  await form.getByLabel("Most income variation allowed (CV)").fill("1.5")
+  // The impact is shown before anything can be prepared, per lender, with the decisions that change.
+  const changes = form.getByRole("list", { name: "Decisions that would change" })
+  await expect(changes).toContainText("Hollis Family Farm")
+  await expect(form.getByRole("row", { name: /Northgate Credit Union/ })).toContainText("not affected")
+  await form.getByLabel(/^Why/).fill("Accept steadier seasonal income at Aspen.")
+  await form.getByRole("button", { name: "Prepare v2 as A. Rivera" }).click()
+
+  const card = page.getByRole("article", { name: "Aspen Bank policy v2" })
+  const approve = card.getByRole("button", { name: /^Approve as/ })
+  await expect(approve).toBeDisabled()
+  await card.getByLabel(/I've reviewed the impact/).check()
+  await approve.click()
+  await expect(card.getByRole("alert")).toContainText("prepared this can't approve it")
+
+  await page.getByLabel("Acting as").selectOption("usr_moreau")
+  await approve.click()
+  await expect(card).toContainText("to Branch manager")
+  await page.getByLabel("Acting as").selectOption("usr_lindqvist")
+  await approve.click()
+  await expect(page.getByText(/Current: v2/)).toBeVisible()
+
+  // Roll back to v1: a new version, prepared and approved by different people.
+  const history = page.getByRole("region", { name: "Version history" })
+  await history.getByRole("button", { name: "Roll back to v1…" }).click()
+  await history.getByLabel("Why roll back?").fill("Too many irregular-income approvals in review.")
+  await history.getByRole("button", { name: "Prepare rollback" }).click()
+  const rb = page.getByRole("article", { name: "Aspen Bank policy v3" })
+  await rb.getByLabel(/I've reviewed the impact/).check()
+  await rb.getByRole("button", { name: /^Approve as/ }).click()
+  await expect(rb.getByRole("alert")).toContainText("prepared this can't approve it")
+  await page.getByLabel("Acting as").selectOption("usr_committee")
+  await rb.getByRole("button", { name: /^Approve as/ }).click()
+  await expect(page.getByText(/Current: v3/)).toBeVisible()
+  await expect(history).toContainText("Rollback to v1")
+
+  await page.getByRole("tab", { name: "Audit trail" }).click()
+  await page.getByLabel("Action").selectOption("policy.rolled_back")
+  await expect(page.getByRole("row")).toHaveCount(2)
+  await page.getByRole("button", { name: /Reset my/ }).click()
   expect(errors).toEqual([])
 })

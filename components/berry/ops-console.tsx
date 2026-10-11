@@ -4,6 +4,7 @@ import { useMemo, useState } from "react"
 import Link from "next/link"
 import { AlertTriangle, CheckCircle2, ChevronLeft, ChevronRight, CircleDashed, Clock, Download, RotateCcw, ShieldCheck, ShieldAlert, XCircle } from "lucide-react"
 import { Illustrative } from "@/components/berry/illustrative"
+import { InlineError, PolicyPanel } from "@/components/berry/policy-panel"
 import { ModeChip } from "@/components/berry/mode-chip"
 import { addOpsAction, resetOpsActions, setActor, setOpsMoment, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -13,6 +14,7 @@ import { requiredRoleFor } from "@/lib/ops/approvals"
 import { OPS, member, type Role } from "@/lib/ops/config"
 import { OPS_MOMENTS } from "@/lib/ops/moments"
 import { PLAYBOOKS } from "@/lib/ops/playbooks"
+import type { PolicyCase } from "@/lib/ops/policy"
 import type { OpsItem, SlaState } from "@/lib/ops/queues"
 import { assign, auditAt, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState } from "@/lib/ops/view"
 import type { AuditEvent, QueueName } from "@/lib/schemas"
@@ -67,9 +69,10 @@ export interface OpsConsoleProps {
   items: OpsItem[]
   events: readonly AuditEvent[]
   eventItems: readonly (string | null)[]
+  policyCases: PolicyCase[]
 }
 
-export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
+export function OpsConsole({ items, events, eventItems, policyCases }: OpsConsoleProps) {
   const now = useOpsMoment()
   const actions = useOpsActions()
   const actor = useActor(TEAM_IDS)
@@ -88,7 +91,7 @@ export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
   const breachedIn = (q: QueueName) => openIn(q).filter((i) => states.get(i.id)!.sla === "breached").length
 
   function run(result: ActionResult) {
-    addOpsAction(result.action)
+    if (result.action.events.length > 0) addOpsAction(result.action)
     setError(result.error)
   }
 
@@ -160,13 +163,6 @@ export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
         {moment?.note}. Fictional team, simulated work; your actions are saved in this browser only.
       </p>
 
-      {error && (
-        <p role="alert" className="mt-4 flex items-start gap-2 rounded-md bg-decline-soft px-3 py-2 text-sm text-decline">
-          <ShieldAlert aria-hidden className="mt-0.5 size-4 shrink-0" />
-          {error}
-        </p>
-      )}
-
       <Tabs value={tab} onValueChange={(v) => (setTab(String(v)), setSelected(null), setError(null))} className="mt-6">
         <div className="-mx-4 overflow-x-auto px-4">
           <TabsList className="w-max">
@@ -184,6 +180,7 @@ export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
               )
             })}
             <TabsTrigger value="team">Team</TabsTrigger>
+            <TabsTrigger value="policy">Policy</TabsTrigger>
             <TabsTrigger value="audit">Audit trail</TabsTrigger>
           </TabsList>
         </div>
@@ -234,7 +231,7 @@ export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
                 </ul>
                 <div className="min-w-0">
                   {current ? (
-                    <ItemPanel item={current.i} state={current.s} actor={actor} now={now} run={run} />
+                    <ItemPanel item={current.i} state={current.s} actor={actor} now={now} run={run} error={error} />
                   ) : (
                     <p className="rounded-lg border border-dashed border-rule p-6 text-sm text-muted-ink">Choose an item to see its playbook, history and actions.</p>
                   )}
@@ -274,6 +271,10 @@ export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
           </ul>
         </TabsContent>
 
+        <TabsContent value="policy" className="mt-4 min-w-0">
+          <PolicyPanel cases={policyCases} actions={actions} actor={actor} now={now} record={(r) => addOpsAction(r.action)} />
+        </TabsContent>
+
         <TabsContent value="audit" className="mt-4 min-w-0">
           <AuditView log={log.all} verified={log.verify() === null} csv={() => log.toCSV()} json={() => log.toJSON()} now={now} />
         </TabsContent>
@@ -282,7 +283,7 @@ export function OpsConsole({ items, events, eventItems }: OpsConsoleProps) {
   )
 }
 
-function ItemPanel({ item, state, actor, now, run }: { item: OpsItem; state: ItemState; actor: string; now: string; run: (r: ActionResult) => void }) {
+function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; state: ItemState; actor: string; now: string; run: (r: ActionResult) => void; error: string | null }) {
   const [assignee, setAssignee] = useState<string>("")
   const [rejecting, setRejecting] = useState(false)
   const [reason, setReason] = useState("")
@@ -388,6 +389,7 @@ function ItemPanel({ item, state, actor, now, run }: { item: OpsItem; state: Ite
               ))}
             </ul>
           )}
+          {error && <InlineError text={error} />}
           {open && (
             <div className="mt-3 flex flex-wrap items-center gap-2">
               {!req && (

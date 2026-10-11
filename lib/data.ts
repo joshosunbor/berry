@@ -9,6 +9,7 @@ import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import { summarize, verifyApplicant, type VerificationSummary } from "@/lib/onboarding/kyc"
 import { Rng, hashSeed } from "@/lib/rng"
 import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
+import type { PolicyCase } from "@/lib/ops/policy"
 import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
 import type { AuditEvent } from "@/lib/schemas"
 import { FUNDING_INITIATED_AT, buildBooks, loanIdFor } from "@/lib/servicing/portfolio"
@@ -251,4 +252,21 @@ export function getAuditEvents(): readonly AuditEvent[] {
 /** The queue item each audit event belongs to, by sequence number (null for none). */
 export function getOpsEventItems(): readonly (string | null)[] {
   return opsRun.eventItems
+}
+
+/**
+ * Cases for the policy impact preview: the cast and the planted cases, with
+ * features precomputed and transactions left out (decisions read only the
+ * request, kind and features; a test checks the results are identical).
+ */
+const policyCases: PolicyCase[] = [
+  ...raw.map((a) => ({ a, group: "cast" as const })),
+  ...loadApplicants(path.join(process.cwd(), "data/planted")).map((a) => ({ a, group: "planted" as const })),
+].map(({ a, group }) => {
+  const input = toEngineInput(a)
+  return { slug: a.slug, name: a.displayName, group, input: { ...input, transactions: [] }, features: computeFeatures(input) }
+})
+
+export function getPolicyCases(): PolicyCase[] {
+  return policyCases
 }

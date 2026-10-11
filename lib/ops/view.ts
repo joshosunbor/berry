@@ -1,6 +1,7 @@
 import type { AuditEvent } from "@/lib/schemas"
 import { approve, prepare, reject, requiredRoleFor, type ApprovalRequest } from "./approvals"
 import { AuditLog, type AuditInput } from "./audit"
+import type { PolicyProposal } from "./policy"
 import { OPS, ROLE_ORDER, member } from "./config"
 import { slaState, type OpsItem, type SlaState } from "./queues"
 
@@ -13,7 +14,18 @@ import { slaState, type OpsItem, type SlaState } from "./queues"
  * order and re-chained, so it always verifies.
  */
 
-export type UserActionKind = "assigned" | "prepared" | "approved" | "escalated" | "rejected" | "blocked" | "completed" | "message_sent" | "memo_approved"
+export type UserActionKind =
+  | "assigned"
+  | "prepared"
+  | "approved"
+  | "escalated"
+  | "rejected"
+  | "blocked"
+  | "completed"
+  | "message_sent"
+  | "memo_approved"
+  | "policy_proposed"
+  | "policy_decided"
 
 export interface UserAction {
   itemId: string | null
@@ -23,6 +35,8 @@ export interface UserAction {
   ownerId?: string
   /** The approval request after this action. */
   request?: ApprovalRequest
+  /** Policy actions: the proposal after this action. */
+  policy?: PolicyProposal
   events: AuditInput[]
 }
 
@@ -189,4 +203,22 @@ export function suggestOwner(item: OpsItem, load: ReturnType<typeof workload>): 
   const skilled = OPS.team.filter((m) => m.skills.includes(OPS.queues[item.queue].skill) && (m.role === "analyst" || m.role === "lead"))
   const ranked = skilled.map((m) => ({ m, l: load.find((x) => x.id === m.id)!.minutes })).sort((a, b) => a.l - b.l || a.m.id.localeCompare(b.m.id))
   return ranked[0]?.m.id ?? null
+}
+
+/** Every policy proposal's latest state, in the order they were prepared. */
+export function proposalsFrom(actions: UserAction[], now: string): PolicyProposal[] {
+  const byId = new Map<string, PolicyProposal>()
+  for (const a of actions) if (a.policy && a.at <= now) byId.set(a.policy.id, a.policy)
+  return [...byId.values()]
+}
+
+/** Runs a policy step against a scratch log and returns the action to record (with any error). */
+export function policyAction(by: string, at: string, kind: "policy_proposed" | "policy_decided", fn: (log: AuditLog) => PolicyProposal): ActionResult {
+  const log = new AuditLog()
+  try {
+    const policy = fn(log)
+    return { action: { itemId: null, at, kind, by, policy, events: log.all.map(toInput) }, error: null }
+  } catch (e) {
+    return { action: { itemId: null, at, kind: "blocked", by, events: log.all.map(toInput) }, error: e instanceof Error ? e.message : "Not allowed." }
+  }
 }
