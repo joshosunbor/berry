@@ -53,6 +53,8 @@ export interface ReconciliationReport {
   breaks: Break[]
   /** Share of ledger and bank lines that matched. */
   matchRate: number
+  /** Ledger plus bank lines in the period (the match rate's denominator). */
+  linesCompared: number
   ledgerTotalCents: number
   bankTotalCents: number
 }
@@ -165,6 +167,7 @@ export function reconcile(book: BookResult, cutoff: string, statement: Statement
     matched,
     breaks,
     matchRate: total ? Math.round(((matched.length * 2) / total) * 1000) / 1000 : 1,
+    linesCompared: total,
     ledgerTotalCents: inPeriodLedger.reduce((t, l) => t + l.amountCents, 0),
     bankTotalCents: inPeriodBank.reduce((t, l) => t + l.amountCents, 0),
   }

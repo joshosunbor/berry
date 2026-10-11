@@ -28,6 +28,9 @@ export default function LoansPage() {
         <Link href="/ops" className="text-muted-ink underline-offset-4 hover:underline">
           Console
         </Link>
+        <Link href="/ops/dashboard" className="text-muted-ink underline-offset-4 hover:underline">
+          Dashboard
+        </Link>
         <span aria-current="page" className="font-medium">
           Loan book
         </span>

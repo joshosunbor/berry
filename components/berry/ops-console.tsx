@@ -2,11 +2,12 @@
 
 import { useMemo, useState } from "react"
 import Link from "next/link"
-import { AlertTriangle, CheckCircle2, ChevronLeft, ChevronRight, CircleDashed, Clock, Download, RotateCcw, ShieldCheck, ShieldAlert, XCircle } from "lucide-react"
+import { AlertTriangle, CheckCircle2, CircleDashed, Clock, Download, RotateCcw, ShieldCheck, ShieldAlert, XCircle } from "lucide-react"
 import { Illustrative } from "@/components/berry/illustrative"
+import { MomentPicker } from "@/components/berry/ops-moment"
 import { InlineError, PolicyPanel } from "@/components/berry/policy-panel"
 import { ModeChip } from "@/components/berry/mode-chip"
-import { addOpsAction, resetOpsActions, setActor, setOpsMoment, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
+import { addOpsAction, resetOpsActions, setActor, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { formatCents } from "@/lib/money"
 import { messageFor } from "@/lib/ops/communications"
@@ -112,32 +113,7 @@ export function OpsConsole({ items, events, eventItems, policyCases }: OpsConsol
   return (
     <div>
       <div className="flex flex-col gap-4 rounded-lg border border-rule bg-surface p-4 lg:flex-row lg:items-end lg:justify-between">
-        <div className="min-w-0">
-          <label htmlFor="ops-moment" className="text-xs font-medium text-muted-ink">
-            Simulated time
-          </label>
-          <div className="mt-1 flex items-center gap-2">
-            <button type="button" aria-label="Previous moment" disabled={momentIndex <= 0} onClick={() => setOpsMoment(OPS_MOMENTS[momentIndex - 1].at)} className={cn(button, "border border-rule px-2")}>
-              <ChevronLeft aria-hidden className="size-4" />
-            </button>
-            <select id="ops-moment" value={now} onChange={(e) => setOpsMoment(e.target.value)} className="min-w-0 flex-1 rounded-md border border-rule bg-surface px-2 py-1.5 text-sm">
-              {OPS_MOMENTS.map((m) => (
-                <option key={m.at} value={m.at}>
-                  {m.label} · {m.note}
-                </option>
-              ))}
-            </select>
-            <button
-              type="button"
-              aria-label="Next moment"
-              disabled={momentIndex >= OPS_MOMENTS.length - 1}
-              onClick={() => setOpsMoment(OPS_MOMENTS[momentIndex + 1].at)}
-              className={cn(button, "border border-rule px-2")}
-            >
-              <ChevronRight aria-hidden className="size-4" />
-            </button>
-          </div>
-        </div>
+        <MomentPicker />
         <div className="flex flex-wrap items-end gap-3">
           <div>
             <label htmlFor="ops-actor" className="text-xs font-medium text-muted-ink">

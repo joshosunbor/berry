@@ -9,6 +9,7 @@ import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import { summarize, verifyApplicant, type VerificationSummary } from "@/lib/onboarding/kyc"
 import { Rng, hashSeed } from "@/lib/rng"
 import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
+import type { MetricSources } from "@/lib/ops/metrics"
 import type { PolicyCase } from "@/lib/ops/policy"
 import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
 import type { AuditEvent } from "@/lib/schemas"
@@ -269,4 +270,14 @@ const policyCases: PolicyCase[] = [
 
 export function getPolicyCases(): PolicyCase[] {
   return policyCases
+}
+
+/** Everything the operations dashboard computes its KPIs from. */
+export function getMetricSources(): MetricSources {
+  return {
+    items: opsRun.items,
+    loans: loanViews,
+    books,
+    cast: cast.map((c) => ({ slug: c.applicant.slug, decisions: c.decisions, checks: c.verification.checks })),
+  }
 }

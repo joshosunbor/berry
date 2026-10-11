@@ -21,6 +21,9 @@ export default function OpsPage() {
         <span aria-current="page" className="font-medium">
           Console
         </span>
+        <Link href="/ops/dashboard" className="text-muted-ink underline-offset-4 hover:underline">
+          Dashboard
+        </Link>
         <Link href="/ops/loans" className="text-muted-ink underline-offset-4 hover:underline">
           Loan book
         </Link>

@@ -53,7 +53,7 @@ test("unknown applicant is a 404", async ({ page }) => {
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology", "/ops", "/ops/loans", "/ops/loans/loan_corner-grind-cafe-cu"]
+  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology", "/ops", "/ops/dashboard", "/ops/loans", "/ops/loans/loan_corner-grind-cafe-cu"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -290,5 +290,28 @@ test("policy change: impact preview, maker-checker, escalation, versions and rol
   await page.getByLabel("Action").selectOption("policy.rolled_back")
   await expect(page.getByRole("row")).toHaveCount(2)
   await page.getByRole("button", { name: /Reset my/ }).click()
+  expect(errors).toEqual([])
+})
+
+test("ops dashboard: KPIs follow the console's moment, filter by lender, explain themselves", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/ops")
+  await page.getByLabel("Simulated time").selectOption("2027-10-06T17:00")
+  await page.getByRole("link", { name: "Dashboard" }).click()
+  await expect(page).toHaveURL(/\/ops\/dashboard$/)
+  // The moment chosen in the console carries over.
+  await expect(page.getByLabel("Simulated time")).toHaveValue("2027-10-06T17:00")
+  const losses = page.getByRole("article", { name: "Credit losses" })
+  await expect(losses).toContainText("As of Oct 6, 2027, 17:00 (simulated)")
+  await expect(losses.getByText("Illustrative").first()).toBeVisible()
+  await losses.getByText("How it's computed").click()
+  await expect(losses).toContainText("charge-off entry")
+
+  await page.getByRole("radio", { name: "Kite" }).click()
+  await expect(losses).toContainText("$0")
+  await page.getByRole("radio", { name: "Northgate Credit Union" }).click()
+  await expect(losses).toContainText("$7,763")
+  await expect(page.getByRole("article", { name: "Cost per loan" }).getByText("Illustrative").first()).toBeVisible()
+  await expect(page.getByRole("region", { name: "What I'd improve next" })).toContainText("% of manual work")
   expect(errors).toEqual([])
 })

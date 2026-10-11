@@ -45,3 +45,21 @@ export function addBusinessMinutes(t: string, minutes: number, hours = OPS.busin
 }
 
 export const addBusinessHours = (t: string, h: number) => addBusinessMinutes(t, Math.round(h * 60))
+
+/** Working minutes between two times (0 if `to` is not after `from`). */
+export function businessMinutesBetween(from: string, to: string, hours = OPS.businessHours): number {
+  let at = nextBusinessMoment(from, hours)
+  let total = 0
+  while (at < to) {
+    const d = toDate(at)
+    const endOfDay = new Date(d)
+    endOfDay.setUTCHours(hours.end, 0, 0, 0)
+    const stop = Math.min(endOfDay.getTime(), toDate(to).getTime())
+    total += (stop - d.getTime()) / 60_000
+    const next = new Date(d)
+    next.setUTCDate(next.getUTCDate() + 1)
+    next.setUTCHours(hours.start, 0, 0, 0)
+    at = nextBusinessMoment(fmt(next), hours)
+  }
+  return Math.round(total)
+}
