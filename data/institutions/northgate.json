@@ -90,10 +90,17 @@
   ],
   "thresholds": {
     "minDscr": 1.2,
-    "seasonalAnnualDscr": 1.25,
+    "relationshipMinDscr": 1.1,
+    "strongRelationship": 0.6,
+    "fullTenureYears": 5,
+    "seasonalPeakCoverage": 1.25,
+    "relationshipSeasonalPeakCoverage": 1.15,
     "maxNsf90": 2,
-    "tenureYearsForFullRelationshipCredit": 5,
-    "maxLimitToAnnualNetInflow": 0.35
+    "recentNsfLimitMonthsOfNet": 4,
+    "maxCreditUtilization": 0.9,
+    "nonMemberRevolvingMaxCents": 200000,
+    "thinFileMemberMaxCents": 200000,
+    "thinFileHistoryMonths": 12
   },
   "authorityTiers": [
     {

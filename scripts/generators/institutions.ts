@@ -42,12 +42,27 @@ export const NORTHGATE: InstitutionConfig = {
     terms("seasonal_operating_line", 7.95, 10_000, 250_000),
   ],
   thresholds: {
+    /** Minimum debt service coverage at the proposed payment. */
     minDscr: 1.2,
-    /** Seasonal or irregular income is assessed on annual, not monthly, cash flow. */
-    seasonalAnnualDscr: 1.25,
+    /** Lower minimum for members with a strong relationship (score at or above strongRelationship). */
+    relationshipMinDscr: 1.1,
+    strongRelationship: 0.6,
+    /** Membership years that earn full tenure credit in the relationship score. */
+    fullTenureYears: 5,
+    /** Seasonal lines: peak-season surplus must cover the line this many times... */
+    seasonalPeakCoverage: 1.25,
+    /** ...or this many times for members with a strong relationship. */
+    relationshipSeasonalPeakCoverage: 1.15,
+    /** Decline above this many returned (NSF) payments in 90 days. */
     maxNsf90: 2,
-    tenureYearsForFullRelationshipCredit: 5,
-    maxLimitToAnnualNetInflow: 0.35,
+    /** With any recent NSF, cap the limit at this many months of average net cash flow. */
+    recentNsfLimitMonthsOfNet: 4,
+    maxCreditUtilization: 0.9,
+    /** Unsecured revolving credit for non-members. */
+    nonMemberRevolvingMaxCents: 200_000,
+    /** Starter credit for thin-file members with steady payroll. */
+    thinFileMemberMaxCents: 200_000,
+    thinFileHistoryMonths: 12,
   },
   authorityTiers: [
     { id: "msr", title: "Member Service Representative", order: 0, maxExposureCents: dollars(10_000) },
@@ -74,14 +89,24 @@ export const KITE: InstitutionConfig = {
     terms("business_term_loan", 12.99, 5_000, 100_000, [12, 24, 36]),
     terms("business_line_of_credit", 13.99, 2_000, 50_000),
     terms("equipment_financing", 11.99, 5_000, 150_000, [24, 36, 48]),
-    terms("seasonal_operating_line", 13.99, 2_000, 25_000),
+    // Kite can't structure repayment around a season; it offers a standard line instead.
+    { ...terms("seasonal_operating_line", 13.99, 2_000, 25_000), offered: false },
   ],
   thresholds: {
     minHistoryMonths: 3,
+    /** Decline above this many returned (NSF) payments in 90 days. */
     maxNsf90: 1,
-    /** Limit as a share of average monthly net cash flow. */
-    limitToMonthlyNet: 1.5,
-    maxIncomeCv: 0.9,
+    maxCreditUtilization: 0.9,
+    /** Coverage is measured on the median month, not the average. */
+    minDscrOnMedian: 1.3,
+    /** Revolving limits as multiples of the median month's net cash flow. */
+    personalRevolvingToMedianNet: 4.5,
+    businessRevolvingToMedianNet: 2,
+    /** Assessed revolving payment may use at most this share of the median month's net. */
+    maxRevolvingPaymentShareOfMedianNet: 0.5,
+    /** Starter cap for thin files without a foreign credit report. */
+    thinFileMaxCents: 100_000,
+    thinFileHistoryMonths: 12,
   },
   recovery: RECOVERY,
   illustrative: true,
@@ -110,6 +135,7 @@ export const ASPEN: InstitutionConfig = {
     maxIncomeCv: 0.35,
     minDscr: 1.25,
     maxNsf12m: 1,
+    maxCreditUtilization: 0.9,
   },
   documentChecklist: [
     "Government-issued photo ID",

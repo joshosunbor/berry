@@ -1,0 +1,155 @@
+import { describe, expect, it } from "vitest"
+import { decideBank } from "@/lib/engine/modes/bank"
+import { decideCreditUnion, relationshipScore } from "@/lib/engine/modes/creditUnion"
+import { decideFintech } from "@/lib/engine/modes/fintech"
+import { ctx, features } from "./fixtures"
+
+const codes = (r: { reasons: { code: string }[] }) => r.reasons.map((x) => x.code)
+const member = (tenureYears: number, productsHeld = 3) => ({ member: true, tenureYears, productsHeld, avgBalanceAtNorthgateCents: 300_000 })
+const seasonalMonths = (peak: number[], peakNet: number, otherNet: number) =>
+  Array.from({ length: 12 }, (_, i) => ({ month: `2026-${String(i + 1).padStart(2, "0")}`, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: peak.includes(i + 1) ? peakNet : otherNet }))
+
+describe("Aspen (bank): fixed thresholds", () => {
+  const bank = (over: Parameters<typeof features>[0] = {}, request = {}) => decideBank(ctx("bank", features(over), request))
+
+  it("approves a clean file with documents and standard conditions", () => {
+    const r = bank()
+    expect(r.outcome).toBe("approve")
+    expect(r.documents?.length).toBeGreaterThan(0)
+    expect(r.conditions?.length).toBeGreaterThan(0)
+  })
+  it.each([
+    [{ windowMonths: 11 }, "SHORT_ACCOUNT_HISTORY"],
+    [{ creditHistoryMonths: 23 }, "SHORT_CREDIT_HISTORY"],
+    [{ nsf12m: 2 }, "NSF_HISTORY"],
+    [{ incomeCv: 0.36 }, "INCOME_TOO_VARIABLE"],
+    [{ creditUtilization: 0.91 }, "HIGH_CARD_UTILIZATION"],
+  ])("declines just past the line: %o", (over, code) => {
+    const r = bank(over)
+    expect(r.outcome).toBe("decline")
+    expect(codes(r)).toContain(code)
+  })
+  it.each([[{ windowMonths: 12 }], [{ creditHistoryMonths: 24 }], [{ nsf12m: 1 }], [{ incomeCv: 0.35 }], [{ creditUtilization: 0.9 }]])("approves exactly at the line: %o", (over) => {
+    expect(bank(over).outcome).toBe("approve")
+  })
+  it("accepts an imported foreign credit report in place of Canadian history", () => {
+    expect(bank({ creditHistoryMonths: 6, foreignReportAvailable: true }).outcome).toBe("approve")
+  })
+  it("lists every failed check, not just the first", () => {
+    expect(codes(bank({ windowMonths: 7, creditHistoryMonths: 6 }))).toEqual(expect.arrayContaining(["SHORT_ACCOUNT_HISTORY", "SHORT_CREDIT_HISTORY"]))
+  })
+  it("refers gig income for tax documents", () => {
+    const r = bank({ income: { type: "gig" } })
+    expect(r.outcome).toBe("refer")
+    expect(r.documents?.[0].name).toMatch(/Notices of Assessment/)
+  })
+  it("reduces the amount to meet minimum coverage, or declines below the product minimum", () => {
+    const reduced = bank({ avgMonthlyNetCents: 30_000 })
+    expect(reduced.outcome).toBe("approve")
+    expect(reduced.limitCents).toBeLessThan(1_000_000)
+    expect(codes(reduced)).toContain("LIMIT_REDUCED")
+    expect(bank({ avgMonthlyNetCents: 1_000 }).outcome).toBe("decline")
+  })
+})
+
+describe("Kite (fintech): cash flow only, sized on the median month", () => {
+  const kite = (over: Parameters<typeof features>[0] = {}, request = {}, kind: "personal" | "business" = "personal") => decideFintech(ctx("fintech", features(over), request, kind))
+
+  it.each([
+    [{ nsf90: 2 }, "RECENT_NSF"],
+    [{ medianMonthlyNetCents: 0 }, "NEGATIVE_TYPICAL_MONTH"],
+    [{ windowMonths: 2 }, "SHORT_ACCOUNT_HISTORY"],
+  ])("declines: %o", (over, code) => {
+    expect(codes(kite(over))).toContain(code)
+  })
+  it("allows one recent NSF", () => {
+    expect(kite({ nsf90: 1 }).outcome).toBe("approve")
+  })
+  it("ignores relationship depth entirely", () => {
+    const a = kite({}, { product: "credit_card", amountCents: 500_000 })
+    const b = kite({ relationship: member(20, 6) }, { product: "credit_card", amountCents: 500_000 })
+    expect(b).toEqual(a)
+  })
+  it("sizes a personal card at 4.5x the median month, rounded down", () => {
+    // $741 x 4.5 = $3,334.50 → $3,000
+    expect(kite({ medianMonthlyNetCents: 74_100 }, { product: "credit_card", amountCents: 500_000 }).limitCents).toBe(300_000)
+  })
+  it("sizes a business line at 2x the median month", () => {
+    // $4,189 x 2 = $8,378 → $8,000
+    const r = kite({ medianMonthlyNetCents: 418_900 }, { product: "business_line_of_credit", amountCents: 4_000_000 }, "business")
+    expect(r.limitCents).toBe(800_000)
+    expect(codes(r)).toContain("LIMIT_REDUCED")
+  })
+  it("offers a standard line instead of a seasonal one", () => {
+    const r = kite({ medianMonthlyNetCents: 418_900 }, { product: "seasonal_operating_line", amountCents: 6_000_000 }, "business")
+    expect(r.product).toBe("business_line_of_credit")
+    expect(r.structure).toBe("revolving")
+    expect(codes(r)).toContain("NO_SEASONAL_STRUCTURE")
+  })
+  it("caps thin files, and lifts the cap with a foreign credit report", () => {
+    const req = { product: "starter_credit" as const, amountCents: 200_000 }
+    expect(kite({ creditHistoryMonths: 6 }, req).limitCents).toBe(100_000)
+    expect(kite({ creditHistoryMonths: 6, foreignReportAvailable: true }, req).limitCents).toBe(150_000)
+  })
+  it("partially approves at the product maximum and says so", () => {
+    const r = kite({ avgMonthlyNetCents: 3_000_000, medianMonthlyNetCents: 3_000_000 }, { product: "equipment_financing", amountCents: 35_000_000, termMonths: 84 }, "business")
+    expect(r.limitCents).toBe(15_000_000)
+    expect(codes(r)).toContain("PRODUCT_MAX")
+  })
+})
+
+describe("Northgate (credit union): relationship, structure and authority", () => {
+  const cu = (over: Parameters<typeof features>[0] = {}, request = {}, kind: "personal" | "business" = "personal") => decideCreditUnion(ctx("credit_union", features(over), request, kind))
+
+  it("scores relationship depth from tenure, products and deposits", () => {
+    expect(relationshipScore(features(), 5)).toBe(0)
+    expect(relationshipScore(features({ relationship: member(10, 4) }), 5)).toBe(1)
+    expect(relationshipScore(features({ relationship: { member: true, tenureYears: 2.5, productsHeld: 0, avgBalanceAtNorthgateCents: 0 } }), 5)).toBe(0.25)
+  })
+  it("declines above 2 NSFs in 90 days, allows 2 with conditions and a smaller limit", () => {
+    expect(cu({ nsf90: 3 }).outcome).toBe("decline")
+    const r = cu({ nsf90: 2, relationship: member(3) }, { product: "line_of_credit", amountCents: 2_500_000 })
+    expect(r.outcome).toBe("approve_with_conditions")
+    expect(r.limitCents).toBe(600_000) // 4 x $1,500 average net
+    expect(r.conditions?.length).toBe(2)
+  })
+  it("names an approver for every approval", () => {
+    expect(cu().approver?.id).toBe("msr")
+    expect(cu({}, { amountCents: 1_500_000 }).approver?.id).toBe("lender")
+  })
+  it("uses the lower relationship minimum for strong members, and routes one tier up", () => {
+    // $10k over 36 months at 8.99% ≈ $318/month; $340 net → 1.07x standard fails
+    const weak = cu({ avgMonthlyNetCents: 36_000 })
+    const strong = cu({ avgMonthlyNetCents: 36_000, relationship: member(10, 4) })
+    expect(weak.limitCents).toBeLessThan(1_000_000)
+    expect(strong.limitCents).toBe(1_000_000)
+    expect(strong.relationshipException).toBe(true)
+    expect(strong.approver?.id).toBe("lender")
+    expect(codes(strong)).toContain("RELATIONSHIP_SUPPORTS_APPROVAL")
+  })
+  it("caps unsecured revolving credit for non-members", () => {
+    const r = cu({}, { product: "credit_card", amountCents: 500_000 })
+    expect(r.limitCents).toBe(200_000)
+    expect(codes(r)).toContain("NON_MEMBER_CAP")
+    expect(cu({ relationship: member(3) }, { product: "credit_card", amountCents: 500_000 }).limitCents).toBe(500_000)
+  })
+  it("sizes a seasonal line to peak-season surplus over required coverage", () => {
+    const over = { income: { type: "seasonal" as const, peakMonths: [9, 10, 11], peakShare: 0.65 }, annualNetCents: 5_000_000, monthly: seasonalMonths([9, 10, 11], 3_000_000, -500_000) }
+    // Peak surplus $90,000 / 1.25 = $72,000 → $70,000
+    const r = cu(over, { product: "seasonal_operating_line", amountCents: 10_000_000 }, "business")
+    expect(r.structure).toBe("seasonal_operating")
+    expect(r.limitCents).toBe(7_000_000)
+    expect(codes(r)).toEqual(expect.arrayContaining(["SEASONAL_REPAYMENT_FITS", "PEAK_SURPLUS_LIMITS_LINE"]))
+    expect(r.conditions?.[0]).toMatch(/end of November/)
+    // Strong members need 1.15x: $90,000 / 1.15 = $78,260 → $75,000
+    expect(cu({ ...over, relationship: member(10, 4) }, { product: "seasonal_operating_line", amountCents: 10_000_000 }, "business").limitCents).toBe(7_500_000)
+  })
+  it("offers thin-file members with steady pay a starter limit, and declines non-members", () => {
+    const req = { product: "starter_credit" as const, amountCents: 300_000 }
+    const m = cu({ creditHistoryMonths: 6, relationship: member(0.5, 2) }, req)
+    expect(m.outcome).toBe("approve")
+    expect(m.limitCents).toBe(200_000)
+    expect(codes(m)).toContain("STARTER_PATH")
+    expect(cu({ creditHistoryMonths: 6 }, req).outcome).toBe("decline")
+  })
+})

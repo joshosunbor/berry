@@ -1,4 +1,9 @@
 import type { Account, EngineInput, Transaction } from "@/lib/schemas"
+import { CONFIGS } from "@/lib/engine/config"
+import { computeFeatures, type Features } from "@/lib/engine/features"
+import type { ModeContext } from "@/lib/engine/types"
+import type { Mode } from "@/lib/modes"
+import type { IncomePattern } from "@/lib/engine/patterns"
 
 /** Minimal engine input for unit tests: one chequing account unless more are given. */
 export function input(transactions: Partial<Transaction>[], opts: Partial<EngineInput> & { accounts?: Account[] } = {}): EngineInput {
@@ -58,3 +63,59 @@ export const spend = (postedDate: string, amountCents: number, category: Transac
 export function monthlyCredits(amounts: number[], day = 15, category: Transaction["category"] = "PAYROLL"): Partial<Transaction>[] {
   return amounts.map((a, i) => pay(`2026-${String(i + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`, a, category))
 }
+
+
+const BASE_PATTERN: IncomePattern = {
+  type: "salaried",
+  peakMonths: [1, 2, 3],
+  peakShare: 0.25,
+  quietMonths: [],
+  payroll: { cadenceDays: 14, lastPayDate: "2026-06-26", nextExpectedDate: "2026-07-10", typicalNetCents: 200_000 },
+  depositsPerMonth: 2.2,
+  avgDepositCents: 200_000,
+  sources: { PAYROLL: 1 },
+}
+
+/** Healthy baseline features (12 months, salaried, $1,500/month net), with overrides. */
+export function features(over: Omit<Partial<Features>, "income"> & { income?: Partial<IncomePattern> } = {}): Features {
+  const { income, ...rest } = over
+  return {
+    asOf: "2026-09-30",
+    windowMonths: 12,
+    avgMonthlyIncomeCents: 450_000,
+    avgMonthlyInflowCents: 450_000,
+    avgMonthlyOutflowCents: 300_000,
+    avgMonthlyNetCents: 150_000,
+    medianMonthlyNetCents: 150_000,
+    annualNetCents: 1_800_000,
+    incomeCv: 0.1,
+    incomeTrend: 0,
+    avgDailyBalanceCents: 300_000,
+    daysCashOnHand: 30,
+    nsf90: 0,
+    nsf12m: 0,
+    returns12m: 0,
+    recurringDebts: [],
+    existingDebtMonthlyCents: 0,
+    creditUtilization: null,
+    creditBalanceChangeCents: null,
+    creditHistoryMonths: 96,
+    foreignReportAvailable: false,
+    relationship: { member: false, tenureYears: 0, productsHeld: 0, avgBalanceAtNorthgateCents: 0 },
+    monthly: [],
+    ...rest,
+    income: { ...BASE_PATTERN, ...income },
+  }
+}
+
+/** A mode context: request overrides go on the input; features are given directly. */
+export function ctx(mode: Mode, f: Features, request: Partial<EngineInput["request"]> = {}, kind: EngineInput["kind"] = "personal"): ModeContext {
+  const base = input([])
+  return {
+    input: { ...base, kind, request: { ...base.request, ...request } },
+    features: f,
+    config: CONFIGS[mode],
+  }
+}
+
+export { computeFeatures }

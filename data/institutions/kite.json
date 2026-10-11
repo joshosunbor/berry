@@ -76,7 +76,7 @@
     },
     {
       "product": "seasonal_operating_line",
-      "offered": true,
+      "offered": false,
       "aprBps": 1399,
       "minCents": 200000,
       "maxCents": 2500000,
@@ -86,8 +86,13 @@
   "thresholds": {
     "minHistoryMonths": 3,
     "maxNsf90": 1,
-    "limitToMonthlyNet": 1.5,
-    "maxIncomeCv": 0.9
+    "maxCreditUtilization": 0.9,
+    "minDscrOnMedian": 1.3,
+    "personalRevolvingToMedianNet": 4.5,
+    "businessRevolvingToMedianNet": 2,
+    "maxRevolvingPaymentShareOfMedianNet": 0.5,
+    "thinFileMaxCents": 100000,
+    "thinFileHistoryMonths": 12
   },
   "recovery": {
     "maxRetries": 1,

@@ -93,7 +93,8 @@
     "minCreditHistoryMonths": 24,
     "maxIncomeCv": 0.35,
     "minDscr": 1.25,
-    "maxNsf12m": 1
+    "maxNsf12m": 1,
+    "maxCreditUtilization": 0.9
   },
   "documentChecklist": [
     "Government-issued photo ID",
