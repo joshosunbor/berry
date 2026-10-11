@@ -1,0 +1,240 @@
+{
+  "asOf": "2026-10-11",
+  "rows": [
+    {
+      "id": "nsf-fees",
+      "name": "NSF fee rules (personal deposit accounts)",
+      "status": "Live",
+      "summary": "NSF fees capped at $10; at most one NSF fee per account in a period of 2 business days; no NSF fee when the account would be overdrawn by less than $10.",
+      "effective": "In force March 12, 2026",
+      "source": {
+        "name": "Financial Consumer Agency of Canada, news release",
+        "url": "https://www.canada.ca/en/financial-consumer-agency/news/2026/03/new-nsf-fee-regulations-bring-down-cost-of-banking-for-canadians.html"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Applied",
+      "inBerry": "Applied to the borrower's own bank account in the payment simulator; the recovery playbook never retries inside the 2-business-day window. Business days are weekdays only (holidays not modelled)."
+    },
+    {
+      "id": "rule-h1",
+      "name": "Payments Canada Rule H1: pre-authorized debits",
+      "status": "Live",
+      "summary": "Rules for pre-authorized debit (PAD) agreements: mandatory agreement elements (Appendix II), confirmation at least 10 calendar days before the first debit, 10 days' pre-notification of changes and variable amounts, prominent waiver clauses, cancellation, and recourse of 90 calendar days (personal) or 10 business days (business).",
+      "effective": "Amendment 13 effective July 27, 2026",
+      "source": {
+        "name": "Payments Canada, Rule H1 (PDF)",
+        "url": "https://www.payments.ca/sites/default/files/h1eng.pdf"
+      },
+      "asOf": "2026-10-11",
+      "berryUse": "Applied",
+      "inBerry": "Repayment schedules follow the confirmation and pre-notification timing; the agreement checklist shows every Appendix II mandatory element and the verbatim recourse statement.",
+      "note": "Appendix IV (confirmation wording) was only skimmed; Berry does not reproduce it."
+    },
+    {
+      "id": "standard-005",
+      "name": "Payments Canada Standard 005: AFT file format",
+      "status": "Live",
+      "summary": "Fixed-width file format for automated funds transfer: header (A), credit (C), debit (D) and trailer (Z) records of 1,464 characters, encoded in EBCDIC.",
+      "effective": "Amendment 23 effective July 22, 2024",
+      "source": {
+        "name": "Payments Canada, Standard 005 (PDF)",
+        "url": "https://www.payments.ca/sites/default/files/standard005eng.pdf"
+      },
+      "asOf": "2026-10-11",
+      "berryUse": "Simulated",
+      "inBerry": "Berry generates a sample disbursement file in the A, C and Z layouts from the standard, in ASCII rather than EBCDIC. Illustrative: not for submission.",
+      "note": "Amounts in cents and the mandatory flag on some credit-record fields are inferred from the standard's sample and tables, not stated outright."
+    },
+    {
+      "id": "return-codes",
+      "name": "AFT and PAD return reason codes",
+      "status": "Live",
+      "summary": "Codes explaining why a debit was returned, e.g. 901 NSF, 903 payment stopped or recalled, 905 account closed, 907 no debit allowed.",
+      "source": {
+        "name": "Payments Canada, Standard 017 Part C (PDF)",
+        "url": "https://paiements.ca/sites/default/files/2022-08/part_c_of_5_payment_return.pdf"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Simulated",
+      "inBerry": "Simulated returned payments use these codes and drive the recovery playbook."
+    },
+    {
+      "id": "fintrac-lctr",
+      "name": "FINTRAC Large Cash Transaction Reports",
+      "status": "Live",
+      "summary": "Reporting entities report receiving $10,000 or more in cash in one transaction, or in two or more amounts within a consecutive 24-hour window by or for the same person or entity; reports are due within 15 calendar days.",
+      "source": {
+        "name": "FINTRAC, Large cash transaction reporting guidance",
+        "url": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Simulated",
+      "inBerry": "Cash deposits are checked for candidates and routed to a review queue. A compliance flag only, never a credit factor; Berry's report summary is illustrative, not a filing."
+    },
+    {
+      "id": "cdic",
+      "name": "CDIC deposit insurance",
+      "status": "Live",
+      "summary": "Eligible deposits at CDIC members are insured up to $100,000 per eligible category, per member institution. Members include banks and federally regulated credit unions; provincially regulated credit unions are not members.",
+      "source": {
+        "name": "CDIC, What's covered",
+        "url": "https://www.cdic.ca/your-coverage/whats-covered/"
+      },
+      "asOf": "2026-10-11",
+      "berryUse": "Context only",
+      "inBerry": "Shown as context for deposit protection at Aspen Bank."
+    },
+    {
+      "id": "cu-deposit-insurance",
+      "name": "Provincial credit union deposit insurance",
+      "status": "Live",
+      "summary": "Deposits at provincially regulated credit unions are protected by the deposit insurer of the credit union's province; coverage differs by province (confirmed limits range from $250,000 per category to unlimited).",
+      "source": {
+        "name": "CDIC, glossary: credit unions",
+        "url": "https://www.cdic.ca/glossary/"
+      },
+      "asOf": "2026-10-11",
+      "berryUse": "Context only",
+      "inBerry": "Northgate is described as a provincially regulated credit union whose coverage depends on its province; a per-province table shows only confirmed limits, with the rest marked Illustrative.",
+      "note": "BC, Ontario and Quebec limits could not be read from the official sites (access blocked) and are marked Illustrative in the table."
+    },
+    {
+      "id": "cdb-act",
+      "name": "Consumer-Driven Banking Act",
+      "status": "In draft",
+      "summary": "The legal framework for consumer-driven (open) banking. Most provisions, including consent, are not yet in force; regulations are required to bring the Act into force.",
+      "effective": "Royal assent March 26, 2026 (S.C. 2026, c. 3, s. 224); most provisions not yet in force",
+      "source": {
+        "name": "Justice Laws Website, Consumer-Driven Banking Act",
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-1.html"
+      },
+      "asOf": "2026-10-11",
+      "berryUse": "Simulated",
+      "inBerry": "Berry's consent screen and dashboard are built around the framework's consent principles. Berry is not accredited and connects to no real institution."
+    },
+    {
+      "id": "cdb-consent-duration",
+      "name": "Consent duration: at most 12 months",
+      "status": "In draft",
+      "summary": "Express consent may be valid for no more than 12 months after it is obtained (Act s. 86), with renewal within seven days (s. 87); draft regulations add triggers for earlier renewal (s. 44).",
+      "effective": "Act s. 86, not yet in force",
+      "source": {
+        "name": "Justice Laws Website, Consumer-Driven Banking Act s. 86",
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-5.html"
+      },
+      "asOf": "2026-10-11",
+      "berryUse": "Applied",
+      "inBerry": "Berry's simulated consents expire within 12 months and the consent screen says so."
+    },
+    {
+      "id": "cdb-regulations",
+      "name": "Consumer-Driven Banking Regulations",
+      "status": "In draft",
+      "summary": "Proposed regulations: accreditation first, then read-only data sharing starting with deposit and payment accounts, then lending accounts, then registered and non-registered accounts. Write access (payment initiation) is left for a later phase; the screen-scraping prohibition will not come into force until further consultation.",
+      "effective": "Published for comment June 27, 2026 (Canada Gazette, Part I); comments closed after 60 days",
+      "source": {
+        "name": "Canada Gazette, Part I, Vol. 160, No. 26",
+        "url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-06-27/html/reg3-eng.html"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Simulated",
+      "inBerry": "Data requests are limited to what a decision needs, and the screen shows what was not requested."
+    },
+    {
+      "id": "cdb-technical-standard",
+      "name": "Technical standard for data sharing",
+      "status": "In draft",
+      "summary": "The Minister of Finance will designate a technical standards body by order; the draft regulations do not name one.",
+      "source": {
+        "name": "Canada Gazette, Part I, Vol. 160, No. 26",
+        "url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-06-27/html/reg3-eng.html"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Context only",
+      "inBerry": "Berry's transaction format is FDX-inspired. Berry does not claim FDX is Canada's standard."
+    },
+    {
+      "id": "rtr",
+      "name": "Real-Time Rail",
+      "status": "Launching",
+      "summary": "Payments Canada's new real-time payment system, launching in Q4 2026 with the first direct participants; two sequential phases will then migrate Interac e-Transfer volumes.",
+      "effective": "Launching Q4 2026",
+      "source": {
+        "name": "Payments Canada, Real-Time Rail",
+        "url": "https://www.payments.ca/real-time-rail-payment-system"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Simulated",
+      "inBerry": "Funding by Real-Time Rail is simulated. Lenders cannot fund on it today."
+    },
+    {
+      "id": "rtr-milestones",
+      "name": "Real-Time Rail: 2027 milestones",
+      "status": "Illustrative",
+      "summary": "Reported targets for Interac e-Transfer migration in 2027 and full capacity in Q3 2027.",
+      "source": {
+        "name": "Payments Canada, Q3 2026 quarterly update",
+        "url": "https://www.payments.ca/canadas-real-time-rail-quarterly-update-jude-pinto-2026-q3"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Context only",
+      "inBerry": "Mentioned as reported targets only.",
+      "note": "Payments Canada's own update gives no dates for these phases; the 2027 targets come from press reports."
+    },
+    {
+      "id": "equifax-gccf",
+      "name": "Equifax Canada Global Consumer Credit File",
+      "status": "Live",
+      "summary": "Lets newcomers bring credit history from abroad; launched in October 2024 with India.",
+      "effective": "Launched October 2024",
+      "source": {
+        "name": "Equifax Canada, news release",
+        "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Simulated",
+      "inBerry": "The 'foreign credit report available' toggle shows how an imported report changes each decision."
+    },
+    {
+      "id": "equifax-coverage",
+      "name": "Foreign credit file coverage beyond India",
+      "status": "Illustrative",
+      "summary": "Additional countries were announced as planned.",
+      "source": {
+        "name": "Equifax Canada, news release",
+        "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Context only",
+      "inBerry": "Berry says 'for example, India' and does not list other countries.",
+      "note": "No official confirmation found of countries added after launch."
+    },
+    {
+      "id": "nova-scotiabank",
+      "name": "Foreign credit history at Scotiabank (with Nova Credit)",
+      "status": "Live",
+      "summary": "Scotiabank's newcomer program can use credit history from a listed set of countries, subject to change.",
+      "source": {
+        "name": "Scotiabank, StartRight",
+        "url": "https://startright.scotiabank.com/ca/en/higher-credit-limit-for-newcomers-to-canada.html"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Context only",
+      "inBerry": "Context for why Berry's credit-building path fills the gap foreign reports don't cover."
+    },
+    {
+      "id": "nova-transunion",
+      "name": "TransUnion and Nova Credit in Canada",
+      "status": "Illustrative",
+      "summary": "A 2018 partnership to bring foreign credit history to Canadian lenders.",
+      "source": {
+        "name": "BIIA, copy of the 2018 announcement",
+        "url": "https://www.biia.com/transunion-partners-with-nova-credit-to-improve-financial-access-for-new-canadians"
+      },
+      "asOf": "2026-10-10",
+      "berryUse": "Context only",
+      "inBerry": "Not relied on.",
+      "note": "Not reconfirmed as active; source is a third-party copy of the announcement."
+    }
+  ]
+}

@@ -104,7 +104,7 @@ export function DecisionPanel({ decisions, slug, requestedCents }: { decisions: 
         <p className="mt-4 flex items-start gap-2 rounded-md bg-muted px-3 py-2 text-sm">
           <UserCheck aria-hidden className="mt-0.5 size-4 shrink-0 text-muted-ink" />
           <span>
-            <span className="font-medium">Approved by: {d.approver.title}.</span>{" "}
+            <span className="font-medium">Sign-off: {d.approver.title}.</span>{" "}
             <span className="text-muted-ink">Delegated authority tiers are illustrative.</span>
           </span>
         </p>

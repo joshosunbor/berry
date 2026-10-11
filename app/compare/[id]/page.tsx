@@ -140,7 +140,7 @@ export default async function ComparePage({ params }: PageProps<"/compare/[id]">
                   <p className="flex items-start gap-2 rounded-md bg-muted px-3 py-2 text-sm">
                     <UserCheck aria-hidden className="mt-0.5 size-4 shrink-0 text-muted-ink" />
                     <span>
-                      Approved by <span className="font-medium">{d.approver.title}</span>
+                      Sign-off: <span className="font-medium">{d.approver.title}</span>
                     </span>
                   </p>
                 ) : (

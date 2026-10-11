@@ -24,7 +24,7 @@ test("landing → workbench → applicant → compare", async ({ page }) => {
   await page.getByRole("link", { name: /Hollis Family Farm/ }).click()
   await expect(page).toHaveURL(/\/workbench\/hollis-family-farm$/)
   const panel = page.getByRole("region", { name: /decision/ })
-  await expect(panel).toContainText("Approved by: Branch Manager")
+  await expect(panel).toContainText("Sign-off: Branch Manager")
 
   // Switching lender updates the decision panel.
   await page.getByRole("radio", { name: /^Kite$/ }).click()
@@ -50,4 +50,13 @@ test("accuracy page publishes results", async ({ page }) => {
 test("unknown applicant is a 404", async ({ page }) => {
   const res = await page.goto("/workbench/nobody")
   expect(res?.status()).toBe(404)
+})
+
+test("no page makes regulatory claims", async ({ page }) => {
+  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy"]
+  for (const p of pages) {
+    await page.goto(p)
+    const text = await page.locator("body").innerText()
+    expect(text, p).not.toMatch(/\b(compliant|certified|approved by)\b/i)
+  }
 })
