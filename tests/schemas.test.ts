@@ -4,7 +4,7 @@ import {
   ComplianceFlag,
   Consent,
   Decision,
-  LedgerEntry,
+  JournalEntry,
   Mode,
   Transaction,
 } from "@/lib/schemas"
@@ -32,19 +32,27 @@ describe("money is integer cents", () => {
     expect(Transaction.safeParse({ ...txn, amountCents: -100 }).success).toBe(false)
     expect(Transaction.safeParse({ ...txn, amountCents: 0 }).success).toBe(false)
   })
-  it("allows signed ledger amounts but not floats", () => {
+  it("requires balanced journal entries in whole cents", () => {
     const entry = {
-      id: "led_1",
-      loanId: "loan_1",
-      seq: 0,
-      type: "payment",
-      amountCents: -45_000,
-      effectiveDate: "2026-04-01",
-      postedAt: "2026-04-01T10:00:00-04:00",
-      memo: "PAD payment",
+      id: "jrn_northgate-1",
+      seq: 1,
+      institutionId: "northgate",
+      loanId: "loan_t",
+      type: "disbursement",
+      date: "2026-10-06",
+      memo: "Fund loan",
+      lines: [
+        { account: "principal:loan_t", debitCents: 45_000, creditCents: 0 },
+        { account: "settlement:northgate", debitCents: 0, creditCents: 45_000 },
+      ],
     }
-    expect(LedgerEntry.safeParse(entry).success).toBe(true)
-    expect(LedgerEntry.safeParse({ ...entry, amountCents: -450.25 }).success).toBe(false)
+    expect(JournalEntry.safeParse(entry).success).toBe(true)
+    const unbalanced = { ...entry, lines: [entry.lines[0], { ...entry.lines[1], creditCents: 44_999 }] }
+    expect(JournalEntry.safeParse(unbalanced).success).toBe(false)
+    const fractional = { ...entry, lines: [{ ...entry.lines[0], debitCents: 450.25 }, { ...entry.lines[1], creditCents: 450.25 }] }
+    expect(JournalEntry.safeParse(fractional).success).toBe(false)
+    const bothSides = { ...entry, lines: [{ ...entry.lines[0], creditCents: 1 }, entry.lines[1]] }
+    expect(JournalEntry.safeParse(bothSides).success).toBe(false)
   })
 })
 

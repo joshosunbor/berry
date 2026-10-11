@@ -27,7 +27,7 @@ export const ID_PREFIXES = {
   loan: "loan",
   padAgreement: "pad",
   disbursement: "dsb",
-  ledgerEntry: "led",
+  journalEntry: "jrn",
   scheduledPayment: "sch",
   collection: "col",
   paymentReturn: "ret",

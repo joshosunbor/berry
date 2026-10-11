@@ -92,35 +92,55 @@ export const Disbursement = z.object({
   aftFileId: prefixedId("aft").optional(),
 })
 
-export const LedgerEntryType = z.enum([
+/*
+ * Double-entry ledger. Every journal entry has two or more lines; each line
+ * is a debit or a credit in integer cents, never both; total debits equal
+ * total credits. Entries are append-only: a correction is a new entry that
+ * reverses the original.
+ *
+ * Accounts are named "<kind>:<owner>": per-loan receivables
+ * (principal:<loanId>, interest:<loanId>) and per-lender accounts
+ * (settlement, clearing, interest_income, credit_loss).
+ */
+export const LedgerAccountKind = z.enum(["principal", "interest", "settlement", "clearing", "interest_income", "credit_loss"])
+export const LedgerAccount = z.string().regex(/^(principal|interest|settlement|clearing|interest_income|credit_loss):[a-z0-9_-]+$/)
+
+export const JournalLine = z
+  .object({
+    account: LedgerAccount,
+    debitCents: PositiveCents,
+    creditCents: PositiveCents,
+  })
+  .refine((l) => (l.debitCents > 0) !== (l.creditCents > 0), "a line is either a debit or a credit, not both or neither")
+
+export const JournalEntryType = z.enum([
   "disbursement",
-  "draw",
   "interest_accrual",
-  "fee",
-  "payment",
-  "payment_return",
-  "adjustment",
-  "deferral",
-  "write_off",
+  "collection_sent",
+  "collection_settled",
+  "return_from_clearing",
+  "return_after_settlement",
+  "charge_off",
+  "reversal",
 ])
 
-/**
- * One immutable ledger line. Sign convention: positive increases what the
- * borrower owes, negative reduces it. Corrections are new entries
- * (`reversesEntryId`), never edits.
- */
-export const LedgerEntry = z.object({
-  id: prefixedId("led"),
-  loanId: prefixedId("loan"),
-  seq: z.number().int().nonnegative(),
-  type: LedgerEntryType,
-  amountCents: Cents,
-  effectiveDate: IsoDate,
-  postedAt: IsoDateTime,
-  memo: z.string(),
-  ref: SubjectRef.optional(),
-  reversesEntryId: prefixedId("led").optional(),
-})
+export const JournalEntry = z
+  .object({
+    id: prefixedId("jrn"),
+    seq: z.number().int().nonnegative(),
+    institutionId: InstitutionId,
+    loanId: prefixedId("loan").optional(),
+    type: JournalEntryType,
+    date: IsoDate,
+    memo: z.string().min(1),
+    ref: SubjectRef.optional(),
+    reversesEntryId: prefixedId("jrn").optional(),
+    lines: z.array(JournalLine).min(2),
+  })
+  .refine((e) => e.lines.reduce((s, l) => s + l.debitCents, 0) === e.lines.reduce((s, l) => s + l.creditCents, 0), {
+    message: "debits must equal credits",
+    path: ["lines"],
+  })
 
 export const ScheduledPayment = z.object({
   id: prefixedId("sch"),
@@ -201,7 +221,7 @@ export const ReconciliationMatch = z.object({
   id: prefixedId("rcn"),
   collectionId: prefixedId("col").optional(),
   paymentReturnId: prefixedId("ret").optional(),
-  ledgerEntryId: prefixedId("led").optional(),
+  journalEntryId: prefixedId("jrn").optional(),
   status: z.enum(["matched", "unmatched", "amount_mismatch"]),
   differenceCents: Cents,
   queueItemId: prefixedId("q").optional(),
@@ -212,8 +232,10 @@ export type FundingRail = z.infer<typeof FundingRail>
 export type Loan = z.infer<typeof Loan>
 export type PadAgreement = z.infer<typeof PadAgreement>
 export type Disbursement = z.infer<typeof Disbursement>
-export type LedgerEntryType = z.infer<typeof LedgerEntryType>
-export type LedgerEntry = z.infer<typeof LedgerEntry>
+export type LedgerAccountKind = z.infer<typeof LedgerAccountKind>
+export type JournalLine = z.infer<typeof JournalLine>
+export type JournalEntryType = z.infer<typeof JournalEntryType>
+export type JournalEntry = z.infer<typeof JournalEntry>
 export type ScheduledPayment = z.infer<typeof ScheduledPayment>
 export type Collection = z.infer<typeof Collection>
 export type ReturnCode = z.infer<typeof ReturnCode>
