@@ -315,3 +315,15 @@ test("ops dashboard: KPIs follow the console's moment, filter by lender, explain
   await expect(page.getByRole("region", { name: "What I'd improve next" })).toContainText("% of manual work")
   expect(errors).toEqual([])
 })
+
+test("accuracy: what the score means, and two debatable cases described in plain words", async ({ page }) => {
+  await page.goto("/accuracy")
+  await expect(page.getByText("The engine reproduces the outcomes its rules were designed for.")).toBeVisible()
+  const debatable = page.getByRole("region", { name: "Two cases where the answer is debatable" })
+  await expect(debatable.getByRole("heading", { level: 3 })).toHaveText([
+    "A small business paid by client invoices, with steady months",
+    "A long-standing member asking for a personal loan, with coverage just under the standard minimum",
+  ])
+  for (const t of ["The engine's answer", "The strongest argument for a different answer", "What a lender would need to see to change it"]) await expect(debatable.getByText(t, { exact: true })).toHaveCount(2)
+  await expect(debatable).toContainText("Planted case P19")
+})

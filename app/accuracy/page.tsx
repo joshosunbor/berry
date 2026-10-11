@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Check, X } from "lucide-react"
 import report from "@/public/accuracy.json"
+import { edgeCases } from "@/lib/evaluation/edge-cases"
 import type { AccuracyReport } from "@/lib/evaluation/accuracy"
 import { MODES, MODE_META } from "@/lib/modes"
 import { cn } from "@/lib/utils"
@@ -27,14 +28,53 @@ export default function AccuracyPage() {
       </p>
 
       <section aria-labelledby="what" className="mt-8 max-w-3xl rounded-lg border border-rule bg-surface p-6">
-        <h2 id="what" className="font-semibold">What this measures, and what it doesn&apos;t</h2>
-        <p className="mt-2 text-sm leading-6 text-muted-ink">
+        <h2 id="what" className="font-semibold">What the score means</h2>
+        <p className="mt-2 leading-7">
+          The engine reproduces the outcomes its rules were designed for. It does not mean the rules are the right ones, or that these loans would be repaid.
+        </p>
+        <p className="mt-3 text-sm leading-6 text-muted-ink">
           Each planted case is a synthetic applicant built to test one policy: clean approvals, clear declines, and edge cases just either side of
           each lender&apos;s thresholds. The expected outcome for every case was written from the case design and each lender&apos;s stated policy{" "}
           <em>before</em> the engine was run on it, and the engine never reads those expectations. A match shows the engine applies its stated
           policies correctly. It does not show the policies are good lending: the expectations and the engine were written by the same author, and
           real credit performance can only be measured on real outcomes.
         </p>
+      </section>
+
+      <section aria-labelledby="debatable" className="mt-12">
+        <h2 id="debatable" className="text-xl font-semibold">Two cases where the answer is debatable</h2>
+        <p className="mt-2 max-w-3xl text-muted-ink">
+          Both match their expected outcome, so they count as correct above. A reasonable lender could still decide differently. The engine&apos;s answers are
+          unchanged; here is the case for each side.
+        </p>
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
+          {edgeCases().map((c) => (
+            <article key={c.id} aria-labelledby={`edge-${c.id}`} className="min-w-0 rounded-lg border border-rule bg-surface p-5">
+              <h3 id={`edge-${c.id}`} className="font-semibold">
+                {c.description}
+              </h3>
+              <p className="mt-1 text-xs text-muted-ink">
+                Planted case {c.id.toUpperCase()} · {MODE_META[c.lender].institution}
+              </p>
+              <dl className="mt-4 space-y-3 text-sm leading-6">
+                <div>
+                  <dt className="font-medium">The engine&apos;s answer</dt>
+                  <dd className="text-muted-ink">
+                    {c.engineAnswer} {c.otherLenders}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-medium">The strongest argument for a different answer</dt>
+                  <dd className="text-muted-ink">{c.argumentAgainst}</dd>
+                </div>
+                <div>
+                  <dt className="font-medium">What a lender would need to see to change it</dt>
+                  <dd className="text-muted-ink">{c.wouldChange}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section aria-labelledby="by-mode" className="mt-12">
