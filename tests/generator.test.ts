@@ -62,6 +62,16 @@ describe("generator", () => {
     }
   })
 
+  it("places Hollis Family Farm in Saskatchewan or Alberta, never Manitoba", () => {
+    expect(["SK", "AB"]).toContain(bySlug("hollis-family-farm").province)
+  })
+
+  it("spreads the cast so no province has more than 3 applicants", () => {
+    const counts = new Map<string, number>()
+    for (const a of cast) counts.set(a.province, (counts.get(a.province) ?? 0) + 1)
+    for (const [province, n] of counts) expect(n, province).toBeLessThanOrEqual(3)
+  })
+
   it("never puts a location below province level outside the protected attributes", () => {
     for (const a of cast) {
       const visible = JSON.stringify({ ...a, protected: undefined })
