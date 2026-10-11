@@ -29,6 +29,12 @@ export const Account = z.object({
   accountId: prefixedId("acc"),
   accountType: AccountType,
   provider: AccountProvider,
+  /**
+   * What kind of institution holds the account. The NSF fee rules in force
+   * 2026-03-12 apply to federally regulated banks; provincially regulated
+   * credit unions set their own fees.
+   */
+  institutionType: z.enum(["bank", "credit_union"]),
   nickname: z.string(),
   openedDate: IsoDate,
   currency: z.literal("CAD"),

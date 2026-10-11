@@ -8,7 +8,7 @@ import type { IncomePattern } from "@/lib/engine/patterns"
 /** Minimal engine input for unit tests: one chequing account unless more are given. */
 export function input(transactions: Partial<Transaction>[], opts: Partial<EngineInput> & { accounts?: Account[] } = {}): EngineInput {
   const accounts: Account[] = opts.accounts ?? [
-    { accountId: "acc_t-chq", accountType: "CHECKING", provider: "other", nickname: "Chequing", openedDate: "2020-01-01", currency: "CAD", openingBalanceCents: 100_000 },
+    { accountId: "acc_t-chq", accountType: "CHECKING", provider: "other", institutionType: "bank", nickname: "Chequing", openedDate: "2020-01-01", currency: "CAD", openingBalanceCents: 100_000 },
   ]
   return {
     id: "apl_t",

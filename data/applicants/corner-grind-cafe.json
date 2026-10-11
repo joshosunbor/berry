@@ -39,6 +39,7 @@
       "accountId": "acc_corner-grind-cafe-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "other",
+      "institutionType": "bank",
       "nickname": "Business chequing",
       "openedDate": "2023-04-03",
       "currency": "CAD",

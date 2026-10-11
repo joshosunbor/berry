@@ -33,6 +33,7 @@
       "accountId": "acc_planted-p02-chq",
       "accountType": "CHECKING",
       "provider": "other",
+      "institutionType": "bank",
       "nickname": "Chequing",
       "openedDate": "2015-01-05",
       "currency": "CAD",

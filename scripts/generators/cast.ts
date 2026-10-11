@@ -43,7 +43,10 @@ const UTC_OFFSET: Record<Province, string> = {
   NL: "-03:30",
 }
 
-type AccountSpec = Omit<Account, "accountId" | "currency" | "openingBalanceCents"> & { key: string; opening: number }
+type AccountSpec = Omit<Account, "accountId" | "currency" | "openingBalanceCents" | "institutionType"> & { key: string; opening: number }
+
+/** Northgate is a provincially regulated credit union; every other provider in the data is a bank. */
+export const institutionTypeOf = (provider: Account["provider"]): Account["institutionType"] => (provider === "northgate" ? "credit_union" : "bank")
 
 export interface ApplicantSpec {
   slug: string
@@ -72,7 +75,7 @@ export function buildApplicant(spec: ApplicantSpec): Applicant {
   const transactions = b.build(w.start, w.end)
   const floor = dollars(spec.balanceFloor ?? 500)
   const accounts: Account[] = spec.accounts.map(({ key, opening, ...rest }) =>
-    settleOpeningBalance({ accountId: acc[key], currency: "CAD", openingBalanceCents: dollars(opening), ...rest }, transactions, floor),
+    settleOpeningBalance({ accountId: acc[key], currency: "CAD", openingBalanceCents: dollars(opening), institutionType: institutionTypeOf(rest.provider), ...rest }, transactions, floor),
   )
   return {
     id: `apl_${spec.slug}`,

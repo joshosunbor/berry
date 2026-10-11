@@ -46,6 +46,7 @@
       "accountId": "acc_main-street-hardware-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Store operating account",
       "openedDate": "2009-02-10",
       "currency": "CAD",

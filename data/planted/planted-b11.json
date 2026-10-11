@@ -48,6 +48,7 @@
       "accountId": "acc_planted-b11-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Operating",
       "openedDate": "2018-01-02",
       "currency": "CAD",

@@ -41,6 +41,7 @@
       "accountId": "acc_planted-p01-chq",
       "accountType": "CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Chequing",
       "openedDate": "2015-01-05",
       "currency": "CAD",

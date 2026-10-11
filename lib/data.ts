@@ -9,6 +9,8 @@ import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import { summarize, verifyApplicant, type VerificationSummary } from "@/lib/onboarding/kyc"
 import { Rng, hashSeed } from "@/lib/rng"
 import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
+import { buildBooks } from "@/lib/servicing/portfolio"
+import type { BookResult } from "@/lib/servicing/simulate"
 import { toEngineInput, type Applicant, type Decision, type EngineInput, type VerificationCheck } from "@/lib/schemas"
 
 /*
@@ -159,4 +161,16 @@ export function getApplyPayload(slug: string): ApplyPayload | undefined {
   const view = getApplicant(slug)
   if (!a || !view) return undefined
   return { input: toEngineInput(a), verification: view.verification }
+}
+
+/** The three lenders' loan books, simulated to the servicing horizon at build time. */
+const books: Record<Mode, BookResult> = buildBooks(
+  cast.map((c) => {
+    const a = raw.find((x) => x.slug === c.applicant.slug)!
+    return { slug: a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification }
+  }),
+)
+
+export function getBooks(): Record<Mode, BookResult> {
+  return books
 }

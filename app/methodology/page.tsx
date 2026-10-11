@@ -77,6 +77,7 @@ export default function MethodologyPage() {
           ["lenders", "How each lender decides"],
           ["fairness", "What it ignores"],
           ["verification", "Verification"],
+          ["money", "Money movement"],
           ["regulatory-status", "Regulatory status"],
           ["limits", "Limitations"],
         ].map(([id, label]) => (
@@ -175,6 +176,27 @@ export default function MethodologyPage() {
           </p>
         </Section>
 
+        <Section id="money" title="Money movement">
+          <p>
+            Every approved loan is serviced in a simulation that runs twelve months forward. Money is kept in a double-entry ledger in whole cents: every
+            entry&apos;s debits equal its credits, entries are never edited, and corrections are reversing entries. Funding goes by AFT (next business
+            day), Interac e-Transfer, or the Real-Time Rail, which is <span className="font-medium">simulated — RTR launching</span>; instant rails need a
+            simulated account check first.
+          </p>
+          <p>
+            Repayments are pre-authorized debits. When one is returned unpaid, Berry follows a playbook based on the Payments Canada return reason
+            (Standard 007): an NSF return is retried once, on the borrower&apos;s next payday where possible, and never inside the 2-business-day window
+            in which their bank could charge another NSF fee; an account problem means asking for new banking details instead. Repeated returns bring a
+            hardship offer, and a loan still unpaid 120 days after a missed payment is charged off (configurable) <Illustrative />.
+          </p>
+          <p>
+            Berry&apos;s lenders charge no fee of their own for a returned payment; the simulation shows what the borrower&apos;s bank charges. The NSF fee
+            rules in force since March 12, 2026 (a $10 cap, one fee per 2 business days, none when overdrawn by less than $10) apply to personal accounts at
+            federally regulated banks, so Berry applies them only there. Provincially regulated credit unions set their own fees: for borrowers who bank at
+            one, Berry uses an illustrative fee, labelled &ldquo;provincially regulated — fee illustrative&rdquo;.
+          </p>
+        </Section>
+
         <Section id="regulatory-status" title="Regulatory status">
           <p>
             Status as of <span className="font-medium">{longDate(status.asOf)}</span>. Each row links to its official source and shows when it was last
@@ -213,6 +235,7 @@ export default function MethodologyPage() {
             <li>The accuracy score shows the engine applies its stated policies; expectations and engine share an author, so it says nothing about real credit performance.</li>
             <li>The AFT file is ASCII, not EBCDIC, and isn&apos;t for submission; payment type codes from Standard 007 were not checked.</li>
             <li>Business days are weekdays; statutory holidays are not modelled.</li>
+            <li>Servicing is simulated: settlement and return timing, retry policy by return reason, interest accrual and the credit union NSF fee are illustrative.</li>
             <li>Three provinces&apos; credit union deposit insurance limits could not be read from the official sites and are shown as Illustrative.</li>
             <li>In production: real consented data under an accredited framework, bureau data alongside cash flow, model monitoring, adverse-action notices reviewed by compliance, and human review of referrals and exceptions.</li>
           </ul>

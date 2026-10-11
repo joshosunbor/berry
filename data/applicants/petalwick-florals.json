@@ -46,6 +46,7 @@
       "accountId": "acc_petalwick-florals-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Shop operating account",
       "openedDate": "2022-05-16",
       "currency": "CAD",

@@ -8,8 +8,8 @@ const sixMonths = (amount: number) => monthlyCredits(Array(6).fill(amount))
 describe("ledger view", () => {
   it("drops transfers between the applicant's own accounts, both legs", () => {
     const accounts = [
-      { accountId: "acc_t-chq", accountType: "CHECKING" as const, provider: "other" as const, nickname: "C", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 0 },
-      { accountId: "acc_t-sav", accountType: "SAVINGS" as const, provider: "other" as const, nickname: "S", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 0 },
+      { accountId: "acc_t-chq", accountType: "CHECKING" as const, provider: "other" as const, institutionType: "bank" as const, nickname: "C", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 0 },
+      { accountId: "acc_t-sav", accountType: "SAVINGS" as const, provider: "other" as const, institutionType: "bank" as const, nickname: "S", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 0 },
     ]
     const view = buildLedgerView(
       input(
@@ -104,8 +104,8 @@ describe("features", () => {
 
   it("measures shared card utilization and balance change", () => {
     const accounts = [
-      { accountId: "acc_t-chq", accountType: "CHECKING" as const, provider: "other" as const, nickname: "C", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 100_000 },
-      { accountId: "acc_t-card", accountType: "CREDIT_CARD" as const, provider: "other" as const, nickname: "Card", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 400_000, creditLimitCents: 1_000_000 },
+      { accountId: "acc_t-chq", accountType: "CHECKING" as const, provider: "other" as const, institutionType: "bank" as const, nickname: "C", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 100_000 },
+      { accountId: "acc_t-card", accountType: "CREDIT_CARD" as const, provider: "other" as const, institutionType: "bank" as const, nickname: "Card", openedDate: "2020-01-01", currency: "CAD" as const, openingBalanceCents: 400_000, creditLimitCents: 1_000_000 },
     ]
     const f = computeFeatures(input([{ ...spend("2026-02-01", 200_000, "SHOPPING"), accountId: "acc_t-card" }], { accounts }))
     expect(f.creditUtilization).toBe(0.6)

@@ -32,6 +32,7 @@
       "accountId": "acc_amara-chq",
       "accountType": "CHECKING",
       "provider": "other",
+      "institutionType": "bank",
       "nickname": "Chequing",
       "openedDate": "2017-09-01",
       "currency": "CAD",

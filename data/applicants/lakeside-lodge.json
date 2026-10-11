@@ -47,6 +47,7 @@
       "accountId": "acc_lakeside-lodge-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Lodge operating account",
       "openedDate": "2011-05-01",
       "currency": "CAD",

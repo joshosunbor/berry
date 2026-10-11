@@ -165,26 +165,37 @@ export const Collection = z.object({
 })
 
 /**
- * Payments Canada AFT/PAD return reason codes, from the Standard 017 Part C
- * mapping of Standard 005 return records.
- * https://paiements.ca/sites/default/files/2022-08/part_c_of_5_payment_return.pdf
+ * Payments Canada return reason codes, with the exact labels in Standard
+ * 007 ("List of Return Reason Codes", amendment effective July 3, 2026),
+ * which Standard 005 and the Standard 017 ISO 20022 guidelines both refer
+ * to. Every code listed was confirmed in Standard 007.
+ * https://www.payments.ca/sites/default/files/standard007eng.pdf
+ * There is no ISO 20022 reason-code mapping: returns carry the CPA code.
  */
 export const RETURN_CODES = {
-  "900": "Edit reject",
-  "901": "NSF (debit only)",
-  "902": "Account not found",
-  "903": "Payment stopped/recalled",
-  "905": "Account closed",
-  "907": "No debit allowed",
-  "908": "Funds not cleared",
-  "910": "Payor/payee deceased",
-  "911": "Account frozen",
-  "912": "Invalid/incorrect account number",
-  "914": "Incorrect payor/payee name",
-  "915": "No agreement existed",
-  "917": "Agreement revoked (personal)",
-  "920": "Agreement revoked (business)",
+  "900": { label: "Edit Reject", applies: "debits and credits" },
+  "901": { label: "NSF (Debit Only)", applies: "debits only" },
+  "902": { label: "Account not found", applies: "debits and credits" },
+  "903": { label: "Payment Stopped/Recalled", applies: "debits and credits" },
+  "905": { label: "Account Closed", applies: "debits and credits" },
+  "907": { label: "No Debit Allowed", applies: "debits and credits" },
+  "908": { label: "Funds Not Cleared (Debit Only)", applies: "debits only" },
+  "909": { label: "Currency/Account Mismatch", applies: "debits and credits" },
+  "910": { label: "Payor/Payee Deceased", applies: "debits and credits" },
+  "911": { label: "Account Frozen", applies: "debits and credits" },
+  "912": { label: "Invalid/Incorrect Account No.", applies: "debits and credits" },
+  "914": { label: "Incorrect Payor/Payee Name", applies: "debits and credits" },
+  "915": { label: "No Agreement Existed", applies: "debits only" },
+  "916": { label: "Not According to Agreement – Personal", applies: "debits only" },
+  "917": { label: "Agreement Revoked – Personal", applies: "debits only" },
+  "918": { label: "No Confirmation/Pre-Notification – Personal", applies: "debits only" },
+  "919": { label: "Not According to Agreement – Business", applies: "debits only" },
+  "920": { label: "Agreement Revoked – Business", applies: "debits only" },
+  "921": { label: "No Confirmation/Pre-Notification – Business", applies: "debits only" },
+  "922": { label: "Customer Initiated Return", applies: "credits only" },
 } as const
+
+export const RETURN_CODES_SOURCE = "https://www.payments.ca/sites/default/files/standard007eng.pdf"
 
 export const ReturnCode = z.enum(Object.keys(RETURN_CODES) as [keyof typeof RETURN_CODES, ...(keyof typeof RETURN_CODES)[]])
 

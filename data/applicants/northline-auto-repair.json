@@ -47,6 +47,7 @@
       "accountId": "acc_northline-auto-repair-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Operating account",
       "openedDate": "2018-01-15",
       "currency": "CAD",

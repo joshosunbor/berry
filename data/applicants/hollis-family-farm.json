@@ -48,6 +48,7 @@
       "accountId": "acc_hollis-family-farm-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Farm operating account",
       "openedDate": "2004-03-01",
       "currency": "CAD",

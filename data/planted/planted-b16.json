@@ -40,6 +40,7 @@
       "accountId": "acc_planted-b16-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "other",
+      "institutionType": "bank",
       "nickname": "Operating",
       "openedDate": "2018-01-02",
       "currency": "CAD",

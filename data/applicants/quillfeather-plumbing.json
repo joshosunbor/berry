@@ -46,6 +46,7 @@
       "accountId": "acc_quillfeather-plumbing-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
+      "institutionType": "credit_union",
       "nickname": "Business chequing",
       "openedDate": "2020-03-02",
       "currency": "CAD",

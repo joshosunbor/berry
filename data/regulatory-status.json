@@ -3,17 +3,17 @@
   "rows": [
     {
       "id": "nsf-fees",
-      "name": "NSF fee rules (personal deposit accounts)",
+      "name": "NSF fee rules (personal accounts at federally regulated banks)",
       "status": "Live",
-      "summary": "NSF fees capped at $10; at most one NSF fee per account in a period of 2 business days; no NSF fee when the account would be overdrawn by less than $10.",
+      "summary": "For personal deposit accounts at federally regulated banks: NSF fees capped at $10; at most one NSF fee per account in a period of 2 business days; no NSF fee when the account would be overdrawn by less than $10. Provincially regulated credit unions set their own fees.",
       "effective": "In force March 12, 2026",
       "source": {
         "name": "Financial Consumer Agency of Canada, news release",
         "url": "https://www.canada.ca/en/financial-consumer-agency/news/2026/03/new-nsf-fee-regulations-bring-down-cost-of-banking-for-canadians.html"
       },
-      "asOf": "2026-10-10",
+      "asOf": "2026-10-11",
       "berryUse": "Applied",
-      "inBerry": "The fee rules for the borrower's own bank account, and the earliest safe date to retry a returned debit, are implemented and tested. Berry's payment simulator, which applies them, is not built yet. Business days are weekdays only (holidays not modelled)."
+      "inBerry": "When a simulated debit is returned NSF, Berry shows the borrower's own bank fee: these rules for personal accounts at banks; for credit union accounts an illustrative fee, labelled 'provincially regulated — fee illustrative'. Retries are never scheduled inside the 2-business-day window. Business days are weekdays only (holidays not modelled)."
     },
     {
       "id": "rule-h1",
@@ -49,14 +49,16 @@
       "id": "return-codes",
       "name": "AFT and PAD return reason codes",
       "status": "Live",
-      "summary": "Codes explaining why a debit was returned, e.g. 901 NSF, 903 payment stopped or recalled, 905 account closed, 907 no debit allowed.",
+      "summary": "Three-digit codes on returned AFT and PAD items, e.g. 901 NSF (Debit Only), 903 Payment Stopped/Recalled, 905 Account Closed, 907 No Debit Allowed, 914 Incorrect Payor/Payee Name. ISO 20022 returns carry the same CPA code; there is no separate ISO reason-code mapping.",
       "source": {
-        "name": "Payments Canada, Standard 017 Part C (PDF)",
-        "url": "https://paiements.ca/sites/default/files/2022-08/part_c_of_5_payment_return.pdf"
+        "name": "Payments Canada, Standard 007 (PDF)",
+        "url": "https://www.payments.ca/sites/default/files/standard007eng.pdf"
       },
-      "asOf": "2026-10-10",
-      "berryUse": "Context only",
-      "inBerry": "The codes are defined in Berry's payment model; simulated returned payments that use them are not built yet."
+      "asOf": "2026-10-11",
+      "berryUse": "Simulated",
+      "inBerry": "Simulated returned debits use these codes with their official labels. Which returns Berry retries (only 901 and 908) and which come back before settlement is Berry's own illustrative policy.",
+      "effective": "Standard 007, amendment effective July 3, 2026",
+      "note": "The standards don't say which return reasons may be re-presented, so Berry's retry policy by reason is illustrative."
     },
     {
       "id": "fintrac-lctr",

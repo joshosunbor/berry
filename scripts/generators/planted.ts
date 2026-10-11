@@ -90,9 +90,11 @@ function personal(c: PersonalCase, i: number): ApplicantSpec {
         const bouncedMonths = (c.nsf ?? []).map(monthOf)
         monthly(b, acc.chq, w, { day: 15, amount: c.loan, category: "LOAN_PAYMENT", description: "Loan payment", channel: "PAD", merchant: "Carriway Auto Finance", months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].filter((m) => !bouncedMonths.includes(m)) })
       }
+      // NSF fees: Northgate members bank at a provincially regulated credit union
+      // (illustrative fee); everyone else at a bank, capped at $10 from 2026-03-12.
       for (const d of c.nsf ?? []) {
         const amount = dollars(c.loan ?? 250)
-        b.returnedDebit(acc.chq, d, amount, "LOAN_PAYMENT", "Loan payment", { reasonCode: "901", nsfFeeCents: dollars(d >= "2026-03-12" ? 10 : 48), merchant: "Carriway Auto Finance" })
+        b.returnedDebit(acc.chq, d, amount, "LOAN_PAYMENT", "Loan payment", { reasonCode: "901", nsfFeeCents: dollars(c.member ? 45 : d >= "2026-03-12" ? 10 : 48), merchant: "Carriway Auto Finance" })
         b.debit(acc.chq, addDays(d, 7), amount, "LOAN_PAYMENT", "Loan payment (re-presented)", "PAD", { merchant: "Carriway Auto Finance" })
       }
       if (c.card) {

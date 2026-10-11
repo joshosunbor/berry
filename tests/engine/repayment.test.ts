@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { buildPadPlan, PAD_RULES, RECOURSE_STATEMENT } from "@/lib/engine/repayment"
 import { features } from "./fixtures"
+import { Rng } from "@/lib/rng"
 import type { Decision } from "@/lib/schemas"
 
 const decision = (over: Partial<Decision>): Decision =>
@@ -132,5 +133,56 @@ describe("PAD repayment plans (Rule H1)", () => {
 
   it("refuses to build a plan for a decline", () => {
     expect(() => buildPadPlan({ decision: decision({ outcome: "decline", limitCents: 0, aprBps: null, structure: null }), features: features(), kind: "personal", agreementSignedOn: SIGNED })).toThrow()
+  })
+})
+
+describe("rounding: schedules sum exactly, in whole cents", () => {
+  it("every term schedule repays exactly the principal, and debits sum to principal plus interest", () => {
+    const rng = new Rng(6)
+    for (let i = 0; i < 300; i++) {
+      const principal = rng.int(50_000, 50_000_000)
+      const aprBps = rng.int(0, 2_499)
+      const termMonths = rng.pick([12, 24, 36, 48, 60, 84])
+      const biweekly = rng.chance(0.5)
+      const plan = buildPadPlan({
+        decision: decision({ limitCents: principal, aprBps, termMonths }),
+        features: features(biweekly ? {} : { income: { payroll: null } }),
+        kind: "personal",
+        agreementSignedOn: SIGNED,
+      })
+      const sumPrincipal = plan.debits.reduce((t, d) => t + d.principalCents, 0)
+      const sumInterest = plan.debits.reduce((t, d) => t + d.interestCents, 0)
+      const sumDebits = plan.debits.reduce((t, d) => t + d.amountCents, 0)
+      expect(sumPrincipal, `case ${i}`).toBe(principal)
+      expect(sumDebits, `case ${i}`).toBe(principal + sumInterest)
+      expect(plan.totalPrincipalCents).toBe(principal)
+      expect(plan.totalInterestCents).toBe(sumInterest)
+      expect(plan.debits.at(-1)!.balanceAfterCents).toBe(0)
+      for (const d of plan.debits) {
+        expect(Number.isInteger(d.amountCents) && Number.isInteger(d.interestCents) && Number.isInteger(d.principalCents)).toBe(true)
+        expect(d.amountCents).toBe(d.principalCents + d.interestCents)
+      }
+      // Level payments, with the rounding remainder in the final instalment only.
+      const regular = plan.debits.slice(0, -1).map((d) => d.amountCents)
+      expect(new Set(regular).size, `case ${i}`).toBe(1)
+    }
+  })
+
+  it("seasonal schedules also repay exactly the line, in whole cents", () => {
+    const rng = new Rng(7)
+    for (let i = 0; i < 100; i++) {
+      const principal = rng.int(100_000, 25_000_000)
+      const peakStart = rng.int(1, 10)
+      const plan = buildPadPlan({
+        decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: principal, aprBps: rng.int(0, 2_000) }),
+        features: features({ income: { type: "seasonal", peakMonths: [peakStart, peakStart + 1, peakStart + 2] } }),
+        kind: "business",
+        agreementSignedOn: SIGNED,
+      })
+      const sumInterest = plan.debits.reduce((t, d) => t + d.interestCents, 0)
+      expect(plan.debits.reduce((t, d) => t + d.principalCents, 0), `case ${i}`).toBe(principal)
+      expect(plan.debits.reduce((t, d) => t + d.amountCents, 0)).toBe(principal + sumInterest)
+      expect(plan.debits.at(-1)!.balanceAfterCents).toBe(0)
+    }
   })
 })

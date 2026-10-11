@@ -27,6 +27,8 @@ const USER_FACING = [
   "lib/feature-display.ts",
   "lib/rules",
   "lib/onboarding",
+  "lib/servicing",
+  "data/servicing.json",
   "data/institutions",
   "data/regulatory-status.json",
   "data/watchlist.json",
