@@ -12,6 +12,7 @@ export const INCOME_CATEGORIES = new Set<TransactionCategory>([
   "PAYROLL",
   "GIG_INCOME",
   "BUSINESS_REVENUE",
+  "CARD_SETTLEMENT",
   "CASH_DEPOSIT",
   "GOVERNMENT_BENEFIT",
   "PENSION",

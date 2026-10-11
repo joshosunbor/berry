@@ -45,7 +45,10 @@ export const TransactionCategory = z.enum([
   // inflows
   "PAYROLL",
   "GIG_INCOME",
+  /** Direct customer or client payments: invoices, contracts, platform payouts to a business. */
   "BUSINESS_REVENUE",
+  /** Batched card sales deposited by a payment processor. */
+  "CARD_SETTLEMENT",
   "CASH_DEPOSIT",
   "GOVERNMENT_BENEFIT",
   "PENSION",

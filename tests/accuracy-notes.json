@@ -1,0 +1,14 @@
+{
+  "open": {},
+  "resolved": [
+    {
+      "case": "b07",
+      "mode": "bank",
+      "found": "2026-10-11",
+      "expected": "refer",
+      "engineGave": "approve",
+      "cause": "The engine classified invoice-based income by how much it varied, so even invoice income looked like a steady business and skipped Aspen's tax-return referral. Invoice-based describes how income arrives (a few direct client payments a month), not how variable it is.",
+      "fix": "Income is now classed as invoice-based when most of it is direct client payments arriving a few times a month. Card-processor settlements got their own transaction category so weekly card batches are not mistaken for invoices. Expectation unchanged."
+    }
+  ]
+}

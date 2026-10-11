@@ -131,7 +131,7 @@ export function cardSettlements(
     const season = p.seasonality?.[monthOf(d)] ?? 1
     if (season <= 0) continue
     const amount = positive(b.rng.normal(p.perPeriod * growth * season, p.sd * season), 20)
-    b.credit(accountId, d, dollars(amount), "BUSINESS_REVENUE", `Card settlement ${p.processor}`, "EFT", { merchant: p.processor })
+    b.credit(accountId, d, dollars(amount), "CARD_SETTLEMENT", `Card settlement ${p.processor}`, "EFT", { merchant: p.processor })
   }
 }
 

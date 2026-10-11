@@ -54,7 +54,7 @@
       "amountCents": 126125,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -78,7 +78,7 @@
       "amountCents": 72325,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -90,7 +90,7 @@
       "amountCents": 113489,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -114,7 +114,7 @@
       "amountCents": 141180,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -126,7 +126,7 @@
       "amountCents": 156157,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -138,7 +138,7 @@
       "amountCents": 94314,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -161,7 +161,7 @@
       "amountCents": 146912,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -185,7 +185,7 @@
       "amountCents": 118425,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -197,7 +197,7 @@
       "amountCents": 94610,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -232,7 +232,7 @@
       "amountCents": 97252,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -244,7 +244,7 @@
       "amountCents": 115040,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -256,7 +256,7 @@
       "amountCents": 82514,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -268,7 +268,7 @@
       "amountCents": 90465,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -303,7 +303,7 @@
       "amountCents": 117359,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -315,7 +315,7 @@
       "amountCents": 88411,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -339,7 +339,7 @@
       "amountCents": 101926,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -351,7 +351,7 @@
       "amountCents": 123998,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -363,7 +363,7 @@
       "amountCents": 98011,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -375,7 +375,7 @@
       "amountCents": 85718,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -387,7 +387,7 @@
       "amountCents": 85317,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -434,7 +434,7 @@
       "amountCents": 121178,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -446,7 +446,7 @@
       "amountCents": 64493,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -458,7 +458,7 @@
       "amountCents": 125849,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -470,7 +470,7 @@
       "amountCents": 110510,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -493,7 +493,7 @@
       "amountCents": 63117,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -505,7 +505,7 @@
       "amountCents": 103832,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -517,7 +517,7 @@
       "amountCents": 112309,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -563,7 +563,7 @@
       "amountCents": 113328,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -575,7 +575,7 @@
       "amountCents": 114515,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -587,7 +587,7 @@
       "amountCents": 115885,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -599,7 +599,7 @@
       "amountCents": 96174,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -611,7 +611,7 @@
       "amountCents": 130880,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -623,7 +623,7 @@
       "amountCents": 89372,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -647,7 +647,7 @@
       "amountCents": 117232,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -694,7 +694,7 @@
       "amountCents": 96563,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -706,7 +706,7 @@
       "amountCents": 93221,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -718,7 +718,7 @@
       "amountCents": 94650,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -741,7 +741,7 @@
       "amountCents": 103304,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -753,7 +753,7 @@
       "amountCents": 117394,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -765,7 +765,7 @@
       "amountCents": 110870,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -789,7 +789,7 @@
       "amountCents": 142960,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -824,7 +824,7 @@
       "amountCents": 111697,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -836,7 +836,7 @@
       "amountCents": 104275,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -848,7 +848,7 @@
       "amountCents": 109911,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -860,7 +860,7 @@
       "amountCents": 104260,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -872,7 +872,7 @@
       "amountCents": 132650,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -884,7 +884,7 @@
       "amountCents": 89848,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -908,7 +908,7 @@
       "amountCents": 92064,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -943,7 +943,7 @@
       "amountCents": 153056,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -955,7 +955,7 @@
       "amountCents": 135604,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -967,7 +967,7 @@
       "amountCents": 105014,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -991,7 +991,7 @@
       "amountCents": 125706,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1014,7 +1014,7 @@
       "amountCents": 121960,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1026,7 +1026,7 @@
       "amountCents": 148510,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1038,7 +1038,7 @@
       "amountCents": 78744,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1073,7 +1073,7 @@
       "amountCents": 82898,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1085,7 +1085,7 @@
       "amountCents": 90207,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1108,7 +1108,7 @@
       "amountCents": 100398,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1120,7 +1120,7 @@
       "amountCents": 79127,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1132,7 +1132,7 @@
       "amountCents": 137591,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1144,7 +1144,7 @@
       "amountCents": 130322,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1168,7 +1168,7 @@
       "amountCents": 106254,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1203,7 +1203,7 @@
       "amountCents": 129300,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1215,7 +1215,7 @@
       "amountCents": 128415,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1239,7 +1239,7 @@
       "amountCents": 161501,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1251,7 +1251,7 @@
       "amountCents": 97999,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1274,7 +1274,7 @@
       "amountCents": 127295,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1286,7 +1286,7 @@
       "amountCents": 134337,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1298,7 +1298,7 @@
       "amountCents": 137844,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1345,7 +1345,7 @@
       "amountCents": 144161,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1357,7 +1357,7 @@
       "amountCents": 111997,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1369,7 +1369,7 @@
       "amountCents": 120231,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1381,7 +1381,7 @@
       "amountCents": 131246,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1393,7 +1393,7 @@
       "amountCents": 135210,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1405,7 +1405,7 @@
       "amountCents": 135993,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1417,7 +1417,7 @@
       "amountCents": 116202,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1464,7 +1464,7 @@
       "amountCents": 123712,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1476,7 +1476,7 @@
       "amountCents": 126779,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1488,7 +1488,7 @@
       "amountCents": 115943,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1511,7 +1511,7 @@
       "amountCents": 89747,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1523,7 +1523,7 @@
       "amountCents": 147249,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1535,7 +1535,7 @@
       "amountCents": 116438,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1559,7 +1559,7 @@
       "amountCents": 162382,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1594,7 +1594,7 @@
       "amountCents": 122903,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1606,7 +1606,7 @@
       "amountCents": 86057,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1618,7 +1618,7 @@
       "amountCents": 136467,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1630,7 +1630,7 @@
       "amountCents": 112343,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1642,7 +1642,7 @@
       "amountCents": 101984,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1654,7 +1654,7 @@
       "amountCents": 154560,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1666,7 +1666,7 @@
       "amountCents": 87884,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1712,7 +1712,7 @@
       "amountCents": 104889,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1724,7 +1724,7 @@
       "amountCents": 95964,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1748,7 +1748,7 @@
       "amountCents": 84318,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1771,7 +1771,7 @@
       "amountCents": 84828,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1783,7 +1783,7 @@
       "amountCents": 73803,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1807,7 +1807,7 @@
       "amountCents": 79419,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1819,7 +1819,7 @@
       "amountCents": 106817,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1854,7 +1854,7 @@
       "amountCents": 105009,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1866,7 +1866,7 @@
       "amountCents": 104840,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1878,7 +1878,7 @@
       "amountCents": 55532,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1902,7 +1902,7 @@
       "amountCents": 116316,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1914,7 +1914,7 @@
       "amountCents": 87891,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1926,7 +1926,7 @@
       "amountCents": 108516,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1938,7 +1938,7 @@
       "amountCents": 75081,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1973,7 +1973,7 @@
       "amountCents": 83745,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1985,7 +1985,7 @@
       "amountCents": 96426,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -1997,7 +1997,7 @@
       "amountCents": 89891,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2032,7 +2032,7 @@
       "amountCents": 104513,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2044,7 +2044,7 @@
       "amountCents": 79321,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2056,7 +2056,7 @@
       "amountCents": 96189,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2068,7 +2068,7 @@
       "amountCents": 102026,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2103,7 +2103,7 @@
       "amountCents": 90020,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2127,7 +2127,7 @@
       "amountCents": 88471,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2139,7 +2139,7 @@
       "amountCents": 82280,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2151,7 +2151,7 @@
       "amountCents": 121241,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2163,7 +2163,7 @@
       "amountCents": 106428,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2175,7 +2175,7 @@
       "amountCents": 80237,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2187,7 +2187,7 @@
       "amountCents": 92851,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2210,7 +2210,7 @@
       "amountCents": 82842,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2245,7 +2245,7 @@
       "amountCents": 110589,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2257,7 +2257,7 @@
       "amountCents": 101791,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2280,7 +2280,7 @@
       "amountCents": 89630,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2292,7 +2292,7 @@
       "amountCents": 108017,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2304,7 +2304,7 @@
       "amountCents": 86257,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2328,7 +2328,7 @@
       "amountCents": 100908,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2363,7 +2363,7 @@
       "amountCents": 84663,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2387,7 +2387,7 @@
       "amountCents": 74508,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2399,7 +2399,7 @@
       "amountCents": 89958,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2411,7 +2411,7 @@
       "amountCents": 92618,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2423,7 +2423,7 @@
       "amountCents": 112808,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2435,7 +2435,7 @@
       "amountCents": 95869,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2459,7 +2459,7 @@
       "amountCents": 82269,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2494,7 +2494,7 @@
       "amountCents": 63595,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2506,7 +2506,7 @@
       "amountCents": 84015,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2518,7 +2518,7 @@
       "amountCents": 46367,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2530,7 +2530,7 @@
       "amountCents": 103982,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2553,7 +2553,7 @@
       "amountCents": 105099,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2565,7 +2565,7 @@
       "amountCents": 86544,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2589,7 +2589,7 @@
       "amountCents": 75735,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2624,7 +2624,7 @@
       "amountCents": 87803,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2636,7 +2636,7 @@
       "amountCents": 107554,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2648,7 +2648,7 @@
       "amountCents": 87604,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2660,7 +2660,7 @@
       "amountCents": 90690,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2672,7 +2672,7 @@
       "amountCents": 87684,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2684,7 +2684,7 @@
       "amountCents": 68959,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2708,7 +2708,7 @@
       "amountCents": 104496,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2743,7 +2743,7 @@
       "amountCents": 113972,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2755,7 +2755,7 @@
       "amountCents": 113547,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2767,7 +2767,7 @@
       "amountCents": 98968,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2801,7 +2801,7 @@
       "amountCents": 94468,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2813,7 +2813,7 @@
       "amountCents": 99844,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2825,7 +2825,7 @@
       "amountCents": 109219,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2849,7 +2849,7 @@
       "amountCents": 104172,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2884,7 +2884,7 @@
       "amountCents": 109233,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2908,7 +2908,7 @@
       "amountCents": 86030,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2920,7 +2920,7 @@
       "amountCents": 93184,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2932,7 +2932,7 @@
       "amountCents": 99914,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2944,7 +2944,7 @@
       "amountCents": 109854,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2956,7 +2956,7 @@
       "amountCents": 101907,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -2980,7 +2980,7 @@
       "amountCents": 82540,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3015,7 +3015,7 @@
       "amountCents": 89113,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3027,7 +3027,7 @@
       "amountCents": 112354,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3039,7 +3039,7 @@
       "amountCents": 117978,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3051,7 +3051,7 @@
       "amountCents": 116571,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3074,7 +3074,7 @@
       "amountCents": 138328,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3086,7 +3086,7 @@
       "amountCents": 105422,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3110,7 +3110,7 @@
       "amountCents": 69655,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3145,7 +3145,7 @@
       "amountCents": 112905,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3157,7 +3157,7 @@
       "amountCents": 73852,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3169,7 +3169,7 @@
       "amountCents": 103366,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3181,7 +3181,7 @@
       "amountCents": 98287,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3193,7 +3193,7 @@
       "amountCents": 128736,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3205,7 +3205,7 @@
       "amountCents": 115593,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3229,7 +3229,7 @@
       "amountCents": 113675,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3264,7 +3264,7 @@
       "amountCents": 107830,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3276,7 +3276,7 @@
       "amountCents": 95073,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3288,7 +3288,7 @@
       "amountCents": 80603,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3322,7 +3322,7 @@
       "amountCents": 109069,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3334,7 +3334,7 @@
       "amountCents": 88603,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3346,7 +3346,7 @@
       "amountCents": 86195,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3358,7 +3358,7 @@
       "amountCents": 91702,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3393,7 +3393,7 @@
       "amountCents": 99134,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3417,7 +3417,7 @@
       "amountCents": 90050,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3429,7 +3429,7 @@
       "amountCents": 95794,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3441,7 +3441,7 @@
       "amountCents": 118485,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3465,7 +3465,7 @@
       "amountCents": 84067,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3477,7 +3477,7 @@
       "amountCents": 120883,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3489,7 +3489,7 @@
       "amountCents": 115079,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3524,7 +3524,7 @@
       "amountCents": 101945,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3536,7 +3536,7 @@
       "amountCents": 86603,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3560,7 +3560,7 @@
       "amountCents": 131876,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3572,7 +3572,7 @@
       "amountCents": 121296,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3595,7 +3595,7 @@
       "amountCents": 85830,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3607,7 +3607,7 @@
       "amountCents": 106976,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3619,7 +3619,7 @@
       "amountCents": 100626,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3654,7 +3654,7 @@
       "amountCents": 84635,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3666,7 +3666,7 @@
       "amountCents": 101768,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3690,7 +3690,7 @@
       "amountCents": 92061,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3702,7 +3702,7 @@
       "amountCents": 83833,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3714,7 +3714,7 @@
       "amountCents": 129612,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3726,7 +3726,7 @@
       "amountCents": 125060,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3738,7 +3738,7 @@
       "amountCents": 128141,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3785,7 +3785,7 @@
       "amountCents": 102354,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3797,7 +3797,7 @@
       "amountCents": 78171,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3809,7 +3809,7 @@
       "amountCents": 64365,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3821,7 +3821,7 @@
       "amountCents": 121721,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3844,7 +3844,7 @@
       "amountCents": 158441,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3856,7 +3856,7 @@
       "amountCents": 123563,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3868,7 +3868,7 @@
       "amountCents": 107642,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3914,7 +3914,7 @@
       "amountCents": 92228,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3926,7 +3926,7 @@
       "amountCents": 95710,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3938,7 +3938,7 @@
       "amountCents": 115236,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3962,7 +3962,7 @@
       "amountCents": 77009,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3974,7 +3974,7 @@
       "amountCents": 103225,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -3986,7 +3986,7 @@
       "amountCents": 125167,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4010,7 +4010,7 @@
       "amountCents": 84770,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4045,7 +4045,7 @@
       "amountCents": 108513,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4057,7 +4057,7 @@
       "amountCents": 146080,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4069,7 +4069,7 @@
       "amountCents": 134060,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4081,7 +4081,7 @@
       "amountCents": 60011,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4104,7 +4104,7 @@
       "amountCents": 99829,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4116,7 +4116,7 @@
       "amountCents": 87292,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4140,7 +4140,7 @@
       "amountCents": 89319,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4175,7 +4175,7 @@
       "amountCents": 100322,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4213,7 +4213,7 @@
       "amountCents": 103171,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4225,7 +4225,7 @@
       "amountCents": 100481,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4237,7 +4237,7 @@
       "amountCents": 109838,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4249,7 +4249,7 @@
       "amountCents": 115557,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4261,7 +4261,7 @@
       "amountCents": 92468,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4285,7 +4285,7 @@
       "amountCents": 51263,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4308,7 +4308,7 @@
       "amountCents": 88386,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4332,7 +4332,7 @@
       "amountCents": 111064,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4344,7 +4344,7 @@
       "amountCents": 91388,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4379,7 +4379,7 @@
       "amountCents": 98413,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4391,7 +4391,7 @@
       "amountCents": 98220,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4403,7 +4403,7 @@
       "amountCents": 120583,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4415,7 +4415,7 @@
       "amountCents": 125821,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4450,7 +4450,7 @@
       "amountCents": 80429,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4473,7 +4473,7 @@
       "amountCents": 76649,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4485,7 +4485,7 @@
       "amountCents": 125030,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4497,7 +4497,7 @@
       "amountCents": 112579,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4509,7 +4509,7 @@
       "amountCents": 111467,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4521,7 +4521,7 @@
       "amountCents": 122788,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4545,7 +4545,7 @@
       "amountCents": 119849,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4580,7 +4580,7 @@
       "amountCents": 95897,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4592,7 +4592,7 @@
       "amountCents": 98745,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4616,7 +4616,7 @@
       "amountCents": 114214,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4628,7 +4628,7 @@
       "amountCents": 122236,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4651,7 +4651,7 @@
       "amountCents": 96528,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4663,7 +4663,7 @@
       "amountCents": 83881,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4675,7 +4675,7 @@
       "amountCents": 111730,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4710,7 +4710,7 @@
       "amountCents": 59685,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4734,7 +4734,7 @@
       "amountCents": 105091,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4746,7 +4746,7 @@
       "amountCents": 129440,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4758,7 +4758,7 @@
       "amountCents": 89492,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4770,7 +4770,7 @@
       "amountCents": 99917,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4782,7 +4782,7 @@
       "amountCents": 85945,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4794,7 +4794,7 @@
       "amountCents": 116228,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4841,7 +4841,7 @@
       "amountCents": 117707,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4853,7 +4853,7 @@
       "amountCents": 78940,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4865,7 +4865,7 @@
       "amountCents": 95487,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4888,7 +4888,7 @@
       "amountCents": 116243,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4900,7 +4900,7 @@
       "amountCents": 105400,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4912,7 +4912,7 @@
       "amountCents": 80454,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4936,7 +4936,7 @@
       "amountCents": 85867,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4959,7 +4959,7 @@
       "amountCents": 119293,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4983,7 +4983,7 @@
       "amountCents": 73542,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -4995,7 +4995,7 @@
       "amountCents": 120272,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5007,7 +5007,7 @@
       "amountCents": 117396,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5019,7 +5019,7 @@
       "amountCents": 113126,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5031,7 +5031,7 @@
       "amountCents": 83377,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5054,7 +5054,7 @@
       "amountCents": 124946,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5089,7 +5089,7 @@
       "amountCents": 126593,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5113,7 +5113,7 @@
       "amountCents": 121589,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5125,7 +5125,7 @@
       "amountCents": 88562,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5148,7 +5148,7 @@
       "amountCents": 87125,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5172,7 +5172,7 @@
       "amountCents": 56862,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5184,7 +5184,7 @@
       "amountCents": 83837,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5196,7 +5196,7 @@
       "amountCents": 113463,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5231,7 +5231,7 @@
       "amountCents": 138792,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5243,7 +5243,7 @@
       "amountCents": 125068,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5267,7 +5267,7 @@
       "amountCents": 102465,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5279,7 +5279,7 @@
       "amountCents": 132485,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5291,7 +5291,7 @@
       "amountCents": 119745,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5303,7 +5303,7 @@
       "amountCents": 71676,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5315,7 +5315,7 @@
       "amountCents": 117432,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5350,7 +5350,7 @@
       "amountCents": 150482,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5362,7 +5362,7 @@
       "amountCents": 144115,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5386,7 +5386,7 @@
       "amountCents": 112443,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5398,7 +5398,7 @@
       "amountCents": 112119,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5421,7 +5421,7 @@
       "amountCents": 104724,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5433,7 +5433,7 @@
       "amountCents": 94839,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5445,7 +5445,7 @@
       "amountCents": 113677,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5492,7 +5492,7 @@
       "amountCents": 139003,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5504,7 +5504,7 @@
       "amountCents": 104588,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5516,7 +5516,7 @@
       "amountCents": 121805,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5528,7 +5528,7 @@
       "amountCents": 122119,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5540,7 +5540,7 @@
       "amountCents": 116597,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5552,7 +5552,7 @@
       "amountCents": 84453,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5564,7 +5564,7 @@
       "amountCents": 112405,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5610,7 +5610,7 @@
       "amountCents": 96583,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5622,7 +5622,7 @@
       "amountCents": 139033,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5634,7 +5634,7 @@
       "amountCents": 113051,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5646,7 +5646,7 @@
       "amountCents": 95204,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5669,7 +5669,7 @@
       "amountCents": 102917,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5681,7 +5681,7 @@
       "amountCents": 74506,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5705,7 +5705,7 @@
       "amountCents": 123255,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5752,7 +5752,7 @@
       "amountCents": 131560,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5790,7 +5790,7 @@
       "amountCents": 123536,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5802,7 +5802,7 @@
       "amountCents": 113098,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5814,7 +5814,7 @@
       "amountCents": 84753,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5826,7 +5826,7 @@
       "amountCents": 125299,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5838,7 +5838,7 @@
       "amountCents": 102262,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5850,7 +5850,7 @@
       "amountCents": 100868,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5897,7 +5897,7 @@
       "amountCents": 136743,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5909,7 +5909,7 @@
       "amountCents": 103828,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5921,7 +5921,7 @@
       "amountCents": 141955,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5933,7 +5933,7 @@
       "amountCents": 90766,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5956,7 +5956,7 @@
       "amountCents": 80815,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5968,7 +5968,7 @@
       "amountCents": 119678,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -5992,7 +5992,7 @@
       "amountCents": 92117,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6027,7 +6027,7 @@
       "amountCents": 102345,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6039,7 +6039,7 @@
       "amountCents": 111750,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6051,7 +6051,7 @@
       "amountCents": 101214,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6075,7 +6075,7 @@
       "amountCents": 155941,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6087,7 +6087,7 @@
       "amountCents": 128199,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6099,7 +6099,7 @@
       "amountCents": 119905,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6111,7 +6111,7 @@
       "amountCents": 126996,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6146,7 +6146,7 @@
       "amountCents": 94984,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6158,7 +6158,7 @@
       "amountCents": 111764,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6181,7 +6181,7 @@
       "amountCents": 105188,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6204,7 +6204,7 @@
       "amountCents": 130076,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6216,7 +6216,7 @@
       "amountCents": 96590,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6228,7 +6228,7 @@
       "amountCents": 115454,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6240,7 +6240,7 @@
       "amountCents": 103628,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6287,7 +6287,7 @@
       "amountCents": 141180,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6299,7 +6299,7 @@
       "amountCents": 101748,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6311,7 +6311,7 @@
       "amountCents": 111318,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6335,7 +6335,7 @@
       "amountCents": 87757,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6347,7 +6347,7 @@
       "amountCents": 80908,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6359,7 +6359,7 @@
       "amountCents": 110457,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6371,7 +6371,7 @@
       "amountCents": 97601,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6406,7 +6406,7 @@
       "amountCents": 94294,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6430,7 +6430,7 @@
       "amountCents": 126940,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6442,7 +6442,7 @@
       "amountCents": 108941,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6465,7 +6465,7 @@
       "amountCents": 129810,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6477,7 +6477,7 @@
       "amountCents": 125895,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6489,7 +6489,7 @@
       "amountCents": 99512,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6501,7 +6501,7 @@
       "amountCents": 115786,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6536,7 +6536,7 @@
       "amountCents": 128263,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6586,7 +6586,7 @@
       "amountCents": 143889,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6598,7 +6598,7 @@
       "amountCents": 119013,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6610,7 +6610,7 @@
       "amountCents": 89561,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6622,7 +6622,7 @@
       "amountCents": 93654,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6634,7 +6634,7 @@
       "amountCents": 95807,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6658,7 +6658,7 @@
       "amountCents": 110976,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6693,7 +6693,7 @@
       "amountCents": 95458,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6705,7 +6705,7 @@
       "amountCents": 118848,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6717,7 +6717,7 @@
       "amountCents": 93290,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6740,7 +6740,7 @@
       "amountCents": 64119,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6752,7 +6752,7 @@
       "amountCents": 104589,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6764,7 +6764,7 @@
       "amountCents": 136312,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6776,7 +6776,7 @@
       "amountCents": 70901,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6822,7 +6822,7 @@
       "amountCents": 80167,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
@@ -6834,7 +6834,7 @@
       "amountCents": 143533,
       "debitCreditMemo": "CREDIT",
       "description": "Card settlement Tallybrook Merchant Services",
-      "category": "BUSINESS_REVENUE",
+      "category": "CARD_SETTLEMENT",
       "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     }

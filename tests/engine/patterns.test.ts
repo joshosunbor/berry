@@ -43,9 +43,14 @@ describe("income patterns on fixtures", () => {
     expect(computeFeatures(year).income.type).not.toBe("seasonal")
   })
 
-  it("steady business: business deposits with low volatility", () => {
+  it("steady business: many business deposits a month with low volatility", () => {
+    const daily = Array.from({ length: 180 }, (_, i) => pay(new Date(Date.UTC(2026, 0, 1 + i)).toISOString().slice(0, 10), 50_000, "CARD_SETTLEMENT"))
+    expect(computeFeatures(input(daily)).income.type).toBe("steady_business")
+  })
+
+  it("invoice-based even when months are even: it's about how income arrives", () => {
     const p = computeFeatures(input(monthlyCredits([500_000, 520_000, 480_000, 510_000, 530_000, 495_000], 10, "BUSINESS_REVENUE"))).income
-    expect(p.type).toBe("steady_business")
+    expect(p.type).toBe("invoice")
   })
 
   it("invoice-based: a few large client payments a month that swing a lot", () => {

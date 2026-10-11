@@ -15,7 +15,7 @@ const bySlug = (slug: string) => {
 
 const credits = (txns: Transaction[]) => txns.filter((t) => t.debitCreditMemo === "CREDIT")
 const sum = (txns: Transaction[]) => txns.reduce((s, t) => s + t.amountCents, 0)
-const revenue = (txns: Transaction[]) => credits(txns).filter((t) => t.category === "BUSINESS_REVENUE")
+const revenue = (txns: Transaction[]) => credits(txns).filter((t) => t.category === "BUSINESS_REVENUE" || t.category === "CARD_SETTLEMENT")
 const returnsSince = (a: Applicant, days: number) =>
   a.transactions.filter((t) => t.returnOf && t.postedDate > addDays(a.generated.windowEnd, -days))
 

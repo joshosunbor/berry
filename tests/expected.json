@@ -1,0 +1,446 @@
+{
+  "_about": "Expected outcomes for planted cases, written from each case's design and each lender's stated policy BEFORE running the engine on them. The engine never reads this file. Outcome 'approve' includes reduced (counter-offer) amounts.",
+  "_writtenOn": "2026-10-11",
+  "cases": {
+    "p01": {
+      "credit_union": {
+        "outcome": "approve",
+        "approver": "msr"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Clean salaried file with ample coverage passes every policy."
+    },
+    "p02": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Clean file; membership isn't needed for a small installment loan."
+    },
+    "p03": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Three NSFs in 90 days exceeds every lender's limit (CU 2, Kite 1, Aspen 1 per 12 months)."
+    },
+    "p04": {
+      "credit_union": {
+        "outcome": "approve_with_conditions"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "One recent NSF: within Kite's limit of 1 and Aspen's 1 per 12 months; Northgate approves but adds NSF conditions."
+    },
+    "p05": {
+      "credit_union": {
+        "outcome": "approve_with_conditions"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Two NSFs in 90 days: over Kite's 1 and Aspen's 1 per year; within Northgate's 2, so approval with conditions."
+    },
+    "p06": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Two NSFs 7-9 months ago: outside Kite's and Northgate's 90-day windows, inside Aspen's 12-month window."
+    },
+    "p07": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Thin file: Northgate's member starter path and Kite's starter cap approve; Aspen needs 24 months of credit history."
+    },
+    "p08": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Thin file and not a member: Northgate's starter path needs membership; Kite's starter cap still approves; Aspen declines on history."
+    },
+    "p09": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "An imported foreign credit report substitutes for Canadian history at Aspen and lifts the thin-file caps."
+    },
+    "p10": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Seven months of account data: below Aspen's 12-month minimum, above Kite's 3; Northgate has no minimum."
+    },
+    "p11": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "refer"
+      },
+      "why": "Steady gig income: Kite and Northgate approve on cash flow; Aspen refers for two years of tax returns."
+    },
+    "p12": {
+      "credit_union": {
+        "outcome": "approve_with_conditions"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Gig income with two recent NSFs: Kite declines (max 1), Aspen declines (max 1 per year), Northgate approves with conditions."
+    },
+    "p13": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Stable pension income and a long membership: approvable everywhere."
+    },
+    "p14": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Card utilization above 90% breaches every lender's maximum."
+    },
+    "p15": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Utilization near 85% is high but under every lender's 90% maximum."
+    },
+    "p16": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Low surplus: each lender should counter-offer a smaller amount rather than decline outright."
+    },
+    "p17": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Negative monthly cash flow: no lender can support new payments."
+    },
+    "p18": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Existing debt consumes the surplus; even the product minimum isn't affordable."
+    },
+    "p19": {
+      "credit_union": {
+        "outcome": "approve",
+        "approver": "lender"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Coverage between Northgate's relationship (1.1x) and standard (1.2x) minimums: approve on relationship, one tier up. Others counter-offer smaller."
+    },
+    "p20": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Strong earner asking above product maximums: each lender approves at its own maximum."
+    },
+    "b01": {
+      "credit_union": {
+        "outcome": "approve",
+        "approver": "lender"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Clean steady business; $50,000 is exactly the Lender tier ceiling."
+    },
+    "b02": {
+      "credit_union": {
+        "outcome": "approve",
+        "approver": "branch_manager"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Clean steady business; $55,000 needs the Branch Manager."
+    },
+    "b03": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Seasonal (55% in peak), off-season roughly breaks even: Northgate structures a seasonal line, Kite offers a standard line, Aspen declines on variability."
+    },
+    "b04": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Strongly seasonal, most months negative: Northgate still structures around the peak; Kite's typical month is negative; Aspen declines on variability."
+    },
+    "b05": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Line requested exceeds what peak season can repay: Northgate approves a smaller seasonal line; Kite a small standard line; Aspen declines."
+    },
+    "b06": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Invoice income with very uneven months: Aspen declines on variability; the others approve on cash flow."
+    },
+    "b07": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "refer"
+      },
+      "why": "Invoice income with even months: Aspen's policy still requires tax returns for self-employed invoice income, so it refers."
+    },
+    "b08": {
+      "credit_union": {
+        "outcome": "approve_with_conditions"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Two NSFs in 90 days: Northgate approves with conditions; Kite and Aspen decline."
+    },
+    "b09": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Three NSFs in 90 days: declined everywhere."
+    },
+    "b10": {
+      "credit_union": {
+        "outcome": "decline"
+      },
+      "fintech": {
+        "outcome": "decline"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Business spends more than it earns: declined everywhere."
+    },
+    "b11": {
+      "credit_union": {
+        "outcome": "approve",
+        "approver": "credit_committee"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Strong practice: approved, $400,000 goes to Northgate's credit committee; Kite approves up to its maximum."
+    },
+    "b12": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Cash deposit of $12,000 is a FINTRAC LCTR candidate (single transaction), never a credit factor.",
+      "flags": 1
+    },
+    "b13": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Two cash deposits totalling $10,500 within 24 hours across midnight: LCTR candidate under the 24-hour rule.",
+      "flags": 1
+    },
+    "b14": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Largest cash deposit $9,900: just under the LCTR threshold, so no flag.",
+      "flags": 0
+    },
+    "b15": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "decline"
+      },
+      "why": "Nine months of history: under Aspen's 12-month minimum; fine for Kite and Northgate."
+    },
+    "b16": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Existing debt limits the new loan: each lender counter-offers a smaller amount."
+    }
+  }
+}

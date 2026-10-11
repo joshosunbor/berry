@@ -1,0 +1,1936 @@
+{
+  "engineVersion": "0.1.0",
+  "policyVersions": {
+    "credit_union": 1,
+    "fintech": 1,
+    "bank": 1
+  },
+  "dataAsOf": "2026-09-30",
+  "totals": {
+    "cases": 36,
+    "decisions": 108,
+    "matched": 108,
+    "rate": 1
+  },
+  "byMode": {
+    "credit_union": {
+      "matched": 36,
+      "total": 36,
+      "rate": 1
+    },
+    "fintech": {
+      "matched": 36,
+      "total": 36,
+      "rate": 1
+    },
+    "bank": {
+      "matched": 36,
+      "total": 36,
+      "rate": 1
+    }
+  },
+  "flagChecks": {
+    "matched": 3,
+    "total": 3
+  },
+  "cases": [
+    {
+      "id": "b01",
+      "kind": "business",
+      "story": "Steady business, clean, asking for exactly the Lender tier limit.",
+      "why": "Clean steady business; $50,000 is exactly the Lender tier ceiling.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve",
+            "approver": "lender"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5000000,
+            "approver": "lender",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b02",
+      "kind": "business",
+      "story": "Steady business, clean, just above the Lender tier limit.",
+      "why": "Clean steady business; $55,000 needs the Branch Manager.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve",
+            "approver": "branch_manager"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5500000,
+            "approver": "branch_manager",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b03",
+      "kind": "business",
+      "story": "Seasonal business; the off-season still breaks even.",
+      "why": "Seasonal (55% in peak), off-season roughly breaks even: Northgate structures a seasonal line, Kite offers a standard line, Aspen declines on variability.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 4000000,
+            "approver": "lender",
+            "topReasons": [
+              "SEASONAL_REPAYMENT_FITS",
+              "LONG_MEMBERSHIP",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "NO_SEASONAL_STRUCTURE",
+              "STRONG_COVERAGE"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "INCOME_TOO_VARIABLE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b04",
+      "kind": "business",
+      "story": "Strongly seasonal; most months lose money outside the peak.",
+      "why": "Strongly seasonal, most months negative: Northgate still structures around the peak; Kite's typical month is negative; Aspen declines on variability.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 4000000,
+            "approver": "lender",
+            "topReasons": [
+              "SEASONAL_REPAYMENT_FITS",
+              "LONG_MEMBERSHIP",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NEGATIVE_TYPICAL_MONTH"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "INCOME_TOO_VARIABLE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b05",
+      "kind": "business",
+      "story": "Seasonal business asking for a line larger than its peak season can repay.",
+      "why": "Line requested exceeds what peak season can repay: Northgate approves a smaller seasonal line; Kite a small standard line; Aspen declines.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 6500000,
+            "approver": "branch_manager",
+            "topReasons": [
+              "SEASONAL_REPAYMENT_FITS",
+              "PEAK_SURPLUS_LIMITS_LINE",
+              "LONG_MEMBERSHIP"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 650000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "NO_SEASONAL_STRUCTURE",
+              "STRONG_COVERAGE"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "INCOME_TOO_VARIABLE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b06",
+      "kind": "business",
+      "story": "Invoice-based business with very uneven months.",
+      "why": "Invoice income with very uneven months: Aspen declines on variability; the others approve on cash flow.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1500000,
+            "approver": "lender",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1200000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "INCOME_TOO_VARIABLE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b07",
+      "kind": "business",
+      "story": "Invoice-based business with fairly even months.",
+      "why": "Invoice income with even months: Aspen's policy still requires tax returns for self-employed invoice income, so it refers.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1500000,
+            "approver": "lender",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "refer"
+          },
+          "actual": {
+            "outcome": "refer",
+            "limitCents": 0,
+            "topReasons": [
+              "INCOME_NEEDS_DOCUMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b08",
+      "kind": "business",
+      "story": "Steady business with two bounced payments in the last 90 days.",
+      "why": "Two NSFs in 90 days: Northgate approves with conditions; Kite and Aspen decline.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve_with_conditions"
+          },
+          "actual": {
+            "outcome": "approve_with_conditions",
+            "limitCents": 1700000,
+            "approver": "lender",
+            "topReasons": [
+              "RECENT_NSF_CAUTION",
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NSF_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b09",
+      "kind": "business",
+      "story": "Steady business with three bounced payments in the last 90 days.",
+      "why": "Three NSFs in 90 days: declined everywhere.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NSF_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b10",
+      "kind": "business",
+      "story": "Business spending more than it brings in.",
+      "why": "Business spends more than it earns: declined everywhere.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "LOW_COVERAGE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NEGATIVE_TYPICAL_MONTH"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "LOW_COVERAGE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b11",
+      "kind": "business",
+      "story": "Large, strong practice financing $400,000 of equipment.",
+      "why": "Strong practice: approved, $400,000 goes to Northgate's credit committee; Kite approves up to its maximum.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve",
+            "approver": "credit_committee"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 40000000,
+            "approver": "credit_committee",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 15000000,
+            "topReasons": [
+              "PRODUCT_MAX",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 40000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b12",
+      "kind": "business",
+      "story": "Cash business with one single cash deposit of $12,000.",
+      "why": "Cash deposit of $12,000 is a FINTRAC LCTR candidate (single transaction), never a credit factor.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "approver": "lender",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      },
+      "flags": {
+        "expected": 1,
+        "actual": 1,
+        "match": true
+      }
+    },
+    {
+      "id": "b13",
+      "kind": "business",
+      "story": "Cash business with two deposits totalling $10,500 within 24 hours, across midnight.",
+      "why": "Two cash deposits totalling $10,500 within 24 hours across midnight: LCTR candidate under the 24-hour rule.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "approver": "lender",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      },
+      "flags": {
+        "expected": 1,
+        "actual": 1,
+        "match": true
+      }
+    },
+    {
+      "id": "b14",
+      "kind": "business",
+      "story": "Cash business whose largest day is a $9,900 deposit: just under the reporting threshold.",
+      "why": "Largest cash deposit $9,900: just under the LCTR threshold, so no flag.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "approver": "lender",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      },
+      "flags": {
+        "expected": 0,
+        "actual": 0,
+        "match": true
+      }
+    },
+    {
+      "id": "b15",
+      "kind": "business",
+      "story": "New business with nine months of history, otherwise healthy.",
+      "why": "Nine months of history: under Aspen's 12-month minimum; fine for Kite and Northgate.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2500000,
+            "approver": "lender",
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "SHORT_ACCOUNT_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "b16",
+      "kind": "business",
+      "story": "Growing business whose existing debt leaves little room for a new loan.",
+      "why": "Existing debt limits the new loan: each lender counter-offers a smaller amount.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 8500000,
+            "approver": "branch_manager",
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 4600000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 6500000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STEADY_REVENUE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p01",
+      "kind": "personal",
+      "story": "Clean salaried member with plenty left over each month.",
+      "why": "Clean salaried file with ample coverage passes every policy.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve",
+            "approver": "msr"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "approver": "msr",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p02",
+      "kind": "personal",
+      "story": "Clean salaried non-member, small loan.",
+      "why": "Clean file; membership isn't needed for a small installment loan.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "approver": "msr",
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p03",
+      "kind": "personal",
+      "story": "Three bounced payments in the last 90 days.",
+      "why": "Three NSFs in 90 days exceeds every lender's limit (CU 2, Kite 1, Aspen 1 per 12 months).",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NSF_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p04",
+      "kind": "personal",
+      "story": "One bounced payment in the last 90 days, otherwise clean.",
+      "why": "One recent NSF: within Kite's limit of 1 and Aspen's 1 per 12 months; Northgate approves but adds NSF conditions.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve_with_conditions"
+          },
+          "actual": {
+            "outcome": "approve_with_conditions",
+            "limitCents": 550000,
+            "approver": "msr",
+            "topReasons": [
+              "RECENT_NSF_CAUTION",
+              "LIMIT_REDUCED",
+              "LONG_MEMBERSHIP"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 600000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "HEALTHY_CASH_BUFFER"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 600000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "HEALTHY_CASH_BUFFER"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p05",
+      "kind": "personal",
+      "story": "Two bounced payments in the last 90 days.",
+      "why": "Two NSFs in 90 days: over Kite's 1 and Aspen's 1 per year; within Northgate's 2, so approval with conditions.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve_with_conditions"
+          },
+          "actual": {
+            "outcome": "approve_with_conditions",
+            "limitCents": 550000,
+            "approver": "msr",
+            "topReasons": [
+              "RECENT_NSF_CAUTION",
+              "LIMIT_REDUCED",
+              "LONG_MEMBERSHIP"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NSF_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p06",
+      "kind": "personal",
+      "story": "Two bounced payments seven to nine months ago, none since.",
+      "why": "Two NSFs 7-9 months ago: outside Kite's and Northgate's 90-day windows, inside Aspen's 12-month window.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 600000,
+            "approver": "msr",
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "HEALTHY_CASH_BUFFER"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 600000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "HEALTHY_CASH_BUFFER"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NSF_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p07",
+      "kind": "personal",
+      "story": "Thin credit file (5 months), steady pay, Northgate member.",
+      "why": "Thin file: Northgate's member starter path and Kite's starter cap approve; Aspen needs 24 months of credit history.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 200000,
+            "approver": "msr",
+            "topReasons": [
+              "STARTER_PATH",
+              "STABLE_PAYROLL",
+              "SAVINGS_HABIT"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 100000,
+            "topReasons": [
+              "THIN_FILE_LIMIT",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "SHORT_CREDIT_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p08",
+      "kind": "personal",
+      "story": "Thin credit file (5 months), steady pay, not a member.",
+      "why": "Thin file and not a member: Northgate's starter path needs membership; Kite's starter cap still approves; Aspen declines on history.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "SHORT_CREDIT_HISTORY"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 100000,
+            "topReasons": [
+              "THIN_FILE_LIMIT",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "SHORT_CREDIT_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p09",
+      "kind": "personal",
+      "story": "Thin Canadian file, but an imported foreign credit report is available.",
+      "why": "An imported foreign credit report substitutes for Canadian history at Aspen and lifts the thin-file caps.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 200000,
+            "approver": "msr",
+            "topReasons": [
+              "NON_MEMBER_CAP",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 300000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "GROWING_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 300000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "GROWING_REVENUE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p10",
+      "kind": "personal",
+      "story": "Only seven months of account history, long credit file.",
+      "why": "Seven months of account data: below Aspen's 12-month minimum, above Kite's 3; Northgate has no minimum.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "approver": "msr",
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "SHORT_ACCOUNT_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p11",
+      "kind": "personal",
+      "story": "Steady gig income from daily payouts.",
+      "why": "Steady gig income: Kite and Northgate approve on cash flow; Aspen refers for two years of tax returns.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 200000,
+            "approver": "msr",
+            "topReasons": [
+              "NON_MEMBER_CAP",
+              "STRONG_COVERAGE",
+              "CONSISTENT_GIG_INCOME"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 300000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "CONSISTENT_GIG_INCOME",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "refer"
+          },
+          "actual": {
+            "outcome": "refer",
+            "limitCents": 0,
+            "topReasons": [
+              "INCOME_NEEDS_DOCUMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p12",
+      "kind": "personal",
+      "story": "Gig income with two bounced payments in the last 90 days.",
+      "why": "Gig income with two recent NSFs: Kite declines (max 1), Aspen declines (max 1 per year), Northgate approves with conditions.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve_with_conditions"
+          },
+          "actual": {
+            "outcome": "approve_with_conditions",
+            "limitCents": 300000,
+            "approver": "msr",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "CONSISTENT_GIG_INCOME"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "RECENT_NSF"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NSF_HISTORY"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p13",
+      "kind": "personal",
+      "story": "Retiree on a workplace pension, long-time member.",
+      "why": "Stable pension income and a long membership: approvable everywhere.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "approver": "msr",
+            "topReasons": [
+              "LONG_MEMBERSHIP",
+              "STRONG_COVERAGE",
+              "STABLE_PENSION"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 700000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STABLE_PENSION"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PENSION",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p14",
+      "kind": "personal",
+      "story": "Credit cards at 95% of their limits and climbing.",
+      "why": "Card utilization above 90% breaches every lender's maximum.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "HIGH_CARD_UTILIZATION",
+              "RISING_CARD_BALANCES"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "HIGH_CARD_UTILIZATION",
+              "RISING_CARD_BALANCES"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "HIGH_CARD_UTILIZATION",
+              "RISING_CARD_BALANCES"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p15",
+      "kind": "personal",
+      "story": "Credit cards at about 85% of their limits, stable.",
+      "why": "Utilization near 85% is high but under every lender's 90% maximum.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "approver": "msr",
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 500000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "NO_RETURNED_PAYMENTS"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p16",
+      "kind": "personal",
+      "story": "Stable pay, but only about $250 a month left over.",
+      "why": "Low surplus: each lender should counter-offer a smaller amount rather than decline outright.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 700000,
+            "approver": "msr",
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 200000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 650000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p17",
+      "kind": "personal",
+      "story": "Spends more than they earn every month.",
+      "why": "Negative monthly cash flow: no lender can support new payments.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "LOW_COVERAGE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NEGATIVE_TYPICAL_MONTH"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "LOW_COVERAGE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p18",
+      "kind": "personal",
+      "story": "Existing loan payments take almost everything left over.",
+      "why": "Existing debt consumes the surplus; even the product minimum isn't affordable.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "LOW_COVERAGE"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "NEGATIVE_TYPICAL_MONTH"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "decline"
+          },
+          "actual": {
+            "outcome": "decline",
+            "limitCents": 0,
+            "topReasons": [
+              "LOW_COVERAGE"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p19",
+      "kind": "personal",
+      "story": "Long-time member whose coverage sits just under the standard minimum.",
+      "why": "Coverage between Northgate's relationship (1.1x) and standard (1.2x) minimums: approve on relationship, one tier up. Others counter-offer smaller.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve",
+            "approver": "lender"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 1000000,
+            "approver": "lender",
+            "topReasons": [
+              "RELATIONSHIP_SUPPORTS_APPROVAL",
+              "LONG_MEMBERSHIP",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 350000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 900000,
+            "topReasons": [
+              "LIMIT_REDUCED",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p20",
+      "kind": "personal",
+      "story": "High earner asking for more than any lender's personal loan maximum.",
+      "why": "Strong earner asking above product maximums: each lender approves at its own maximum.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5000000,
+            "approver": "lender",
+            "topReasons": [
+              "PRODUCT_MAX",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 2000000,
+            "topReasons": [
+              "PRODUCT_MAX",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 5000000,
+            "topReasons": [
+              "PRODUCT_MAX",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        }
+      }
+    }
+  ],
+  "misses": [],
+  "resolved": [
+    {
+      "case": "b07",
+      "mode": "bank",
+      "found": "2026-10-11",
+      "expected": "refer",
+      "engineGave": "approve",
+      "cause": "The engine classified invoice-based income by how much it varied, so even invoice income looked like a steady business and skipped Aspen's tax-return referral. Invoice-based describes how income arrives (a few direct client payments a month), not how variable it is.",
+      "fix": "Income is now classed as invoice-based when most of it is direct client payments arriving a few times a month. Card-processor settlements got their own transaction category so weekly card batches are not mistaken for invoices. Expectation unchanged."
+    }
+  ]
+}

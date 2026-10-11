@@ -24,7 +24,9 @@ export const PATTERN_RULES = {
   /** Steady business: business deposits are at least this share, with income CV at or below the max. */
   businessShare: 0.7,
   businessMaxCv: 0.35,
-  /** Invoice-based: business deposits arrive as a few larger client payments a month and vary more. */
+  /** Invoice-based: most income is direct client payments (not card or cash sales)... */
+  invoiceClientShare: 0.7,
+  /** ...arriving a few at a time each month. */
   invoiceMaxDepositsPerMonth: 10,
 } as const
 
@@ -71,7 +73,8 @@ export function detectIncomePattern(view: LedgerView, incomeTxns: Transaction[])
   const payroll = payrollCadence(payrollTxns)
   const incomeCv = cv(monthlyIncome)
   const depositsPerMonth = incomeTxns.length / Math.max(1, view.months.length)
-  const businessShare = share((t) => t.category === "BUSINESS_REVENUE" || t.category === "CASH_DEPOSIT")
+  const businessShare = share((t) => t.category === "BUSINESS_REVENUE" || t.category === "CARD_SETTLEMENT" || t.category === "CASH_DEPOSIT")
+  const clientPaymentShare = share((t) => t.category === "BUSINESS_REVENUE")
 
   let type: IncomeType = "irregular"
   if (view.months.length >= PATTERN_RULES.seasonalMinMonths && peakShare >= PATTERN_RULES.seasonalPeakShare) {
@@ -82,10 +85,12 @@ export function detectIncomePattern(view: LedgerView, incomeTxns: Transaction[])
     type = "pension"
   } else if (share((t) => t.category === "GIG_INCOME") >= PATTERN_RULES.gigShare) {
     type = "gig"
+  } else if (clientPaymentShare >= PATTERN_RULES.invoiceClientShare && depositsPerMonth <= PATTERN_RULES.invoiceMaxDepositsPerMonth) {
+    // Invoice-based describes how income arrives (a few client payments a
+    // month), whether or not the months happen to be even.
+    type = "invoice"
   } else if (businessShare >= PATTERN_RULES.businessShare && incomeCv <= PATTERN_RULES.businessMaxCv) {
     type = "steady_business"
-  } else if (businessShare >= PATTERN_RULES.businessShare && depositsPerMonth <= PATTERN_RULES.invoiceMaxDepositsPerMonth) {
-    type = "invoice"
   }
 
   return {
