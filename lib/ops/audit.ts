@@ -64,6 +64,10 @@ export class AuditLog {
     return event
   }
 
+  get size(): number {
+    return this.events.length
+  }
+
   /** A frozen copy: read-only. */
   get all(): readonly AuditEvent[] {
     return Object.freeze([...this.events])

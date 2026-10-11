@@ -247,3 +247,8 @@ export function getOpsItems(): OpsItem[] {
 export function getAuditEvents(): readonly AuditEvent[] {
   return opsRun.log.all
 }
+
+/** The queue item each audit event belongs to, by sequence number (null for none). */
+export function getOpsEventItems(): readonly (string | null)[] {
+  return opsRun.eventItems
+}

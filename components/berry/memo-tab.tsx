@@ -1,20 +1,25 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useSyncExternalStore } from "react"
 import { CheckCircle2, FileText, Loader2 } from "lucide-react"
 import { Illustrative } from "@/components/berry/illustrative"
 import { useMode } from "@/components/berry/mode-context"
+import { addOpsAction, useOpsMoment } from "@/components/berry/ops-store"
 import { MODE_META, type Mode } from "@/lib/modes"
+import { OPS, member } from "@/lib/ops/config"
 import { cn } from "@/lib/utils"
 
 /*
  * The credit memo tab (CLAUDE.md §6). The memo is drafted on demand by
  * /api/memo for the selected lender and shown as a draft. A person marks it
- * reviewed, then approves it under a fictional reviewer's name. Approvals
- * live only in this browser's localStorage (a demo convenience).
+ * reviewed, then approves it as a member of the fictional operations team.
+ * The approval is written to the operations audit trail at the console's
+ * simulated time. Approvals live only in this browser's localStorage (a
+ * demo convenience).
  */
 
-const REVIEWERS = ["Analyst A. Rivera", "Analyst J. Okafor", "Lead K. Moreau"] as const
+const REVIEWERS = OPS.team.filter((m) => m.role === "analyst" || m.role === "lead")
 const KEY = "berry.memoApprovals.v1"
 
 interface MemoResponse {
@@ -120,6 +125,7 @@ export function MemoTab({ slug }: { slug: string }) {
   const [reviewer, setReviewer] = useState<string>("")
   const raw = useSyncExternalStore(subscribe, readRaw, () => null)
   const id = `${slug}:${mode}`
+  const opsNow = useOpsMoment()
   const approval = parse(raw)[id]
   const slot = slots[mode]
 
@@ -142,8 +148,27 @@ export function MemoTab({ slug }: { slug: string }) {
   }
 
   function approve(memo: MemoResponse) {
-    if (!reviewer) return
-    saveApproval(id, { reviewer, at: new Date().toISOString(), source: memo.source })
+    if (!reviewer || approval) return
+    saveApproval(id, { reviewer: member(reviewer)?.name ?? reviewer, at: new Date().toISOString(), source: memo.source })
+    const subject = { kind: "applicant" as const, id: `apl_${slug}` }
+    addOpsAction({
+      itemId: null,
+      at: opsNow,
+      kind: "memo_approved",
+      by: reviewer,
+      events: [
+        { at: opsNow, actor: { kind: "user", id: reviewer }, action: "memo.reviewed", subject, after: { lender: institution, source: memo.source }, reason: `Credit memo for ${institution} reviewed.` },
+        {
+          at: opsNow,
+          actor: { kind: "user", id: reviewer },
+          action: "memo.approved",
+          subject,
+          before: { memo: "draft" },
+          after: { memo: "approved", source: memo.source },
+          reason: "Memo write-up approved. The decision, limit and rate are unchanged.",
+        },
+      ],
+    })
   }
 
   const button = "inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
@@ -187,13 +212,13 @@ export function MemoTab({ slug }: { slug: string }) {
           {slot.memo.source === "template" && (
             <p className="mt-3 text-sm text-muted-ink">
               {slot.memo.problems?.length
-                ? "Claude's draft didn't pass the checks against the engine's figures, so this is the template memo instead."
+                ? "This is the template memo, built directly from the engine's output. Claude's draft wasn't used; see why below."
                 : "No Claude API key is set on this server, so this is the template memo, built directly from the engine's output."}
             </p>
           )}
           {slot.memo.problems && slot.memo.problems.length > 0 && (
             <details className="mt-2 text-xs text-muted-ink">
-              <summary className="cursor-pointer">Why the draft was set aside</summary>
+              <summary className="cursor-pointer">Why Claude&apos;s draft wasn&apos;t used</summary>
               <ul className="mt-1 list-disc space-y-0.5 pl-5">
                 {slot.memo.problems.map((p) => (
                   <li key={p}>{p}</li>
@@ -222,17 +247,23 @@ export function MemoTab({ slug }: { slug: string }) {
               <select value={reviewer} onChange={(e) => setReviewer(e.target.value)} disabled={!reviewed[mode]} className="rounded-md border border-rule bg-surface px-2 py-1.5 disabled:opacity-50">
                 <option value="">Choose…</option>
                 {REVIEWERS.map((r) => (
-                  <option key={r} value={r}>
-                    {r}
+                  <option key={r.id} value={r.id}>
+                    {r.name} ({r.role === "lead" ? "Lead" : "Analyst"})
                   </option>
                 ))}
               </select>
             </label>
-            <button type="button" onClick={() => approve(slot.memo)} disabled={!reviewed[mode] || !reviewer} className={cn(button, "bg-ink text-background")}>
+            <button type="button" onClick={() => approve(slot.memo)} disabled={!reviewed[mode] || !reviewer || !!approval} className={cn(button, "bg-ink text-background")}>
               Approve memo
             </button>
           </div>
-          <p className="mt-2 text-xs text-muted-ink">Approving the memo signs off the write-up only. It does not change the decision, limit or rate.</p>
+          <p className="mt-2 text-xs text-muted-ink">
+            Approving the memo signs off the write-up only. It does not change the decision, limit or rate. The approval is added to the{" "}
+            <Link href="/ops" className="underline underline-offset-4">
+              operations audit trail
+            </Link>
+            .
+          </p>
         </div>
       )}
     </div>

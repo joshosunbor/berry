@@ -10,7 +10,7 @@ import { member, OPS, ROLE_ORDER, type Role, type TeamMember } from "./config"
  * every action writes one audit event.
  */
 
-export type ApprovalKind = "credit_signoff" | "hardship" | "payee_release" | "policy_change" | "limit_override"
+export type ApprovalKind = "credit_signoff" | "hardship" | "payee_release" | "ledger_correction" | "policy_change" | "limit_override"
 
 export interface ApprovalRequest {
   id: string

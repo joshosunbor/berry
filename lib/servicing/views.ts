@@ -19,6 +19,8 @@ export interface LoanBreak {
   kind: BreakKind
   reference: string
   action: string
+  /** Bank minus ledger, in cents. */
+  differenceCents: number
   firstSeen: string
   /** First month-end cut-off at which it no longer appears, if any. */
   resolvedBy: string | null
@@ -57,7 +59,7 @@ export function breaksByLoan(book: BookResult): Map<string, LoanBreak[]> {
       const k = `${b.kind}|${b.reference}`
       const existing = seen.get(k)
       if (existing) existing.lastSeen = cut
-      else seen.set(k, { kind: b.kind, reference: b.reference, action: b.action, firstSeen: cut, lastSeen: cut, resolvedBy: null, loanId: b.loanId ?? "" })
+      else seen.set(k, { kind: b.kind, reference: b.reference, action: b.action, differenceCents: b.differenceCents, firstSeen: cut, lastSeen: cut, resolvedBy: null, loanId: b.loanId ?? "" })
     }
   }
   const out = new Map<string, LoanBreak[]>()

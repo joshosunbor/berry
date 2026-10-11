@@ -41,7 +41,7 @@ describe("audit trail", () => {
   it("is append-only: no update or delete API, and what it hands out is frozen", () => {
     const log = sample()
     const proto = Object.getOwnPropertyNames(Object.getPrototypeOf(log))
-    expect(proto.sort()).toEqual(["all", "append", "constructor", "toCSV", "toJSON", "verify"])
+    expect(proto.sort()).toEqual(["all", "append", "constructor", "size", "toCSV", "toJSON", "verify"])
     const all = log.all as AuditEvent[]
     expect(() => all.pop()).toThrow()
     expect(() => ((all[0] as { reason?: string }).reason = "x")).toThrow()

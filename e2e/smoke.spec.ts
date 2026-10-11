@@ -53,7 +53,7 @@ test("unknown applicant is a 404", async ({ page }) => {
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology", "/ops/loans", "/ops/loans/loan_corner-grind-cafe-cu"]
+  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology", "/ops", "/ops/loans", "/ops/loans/loan_corner-grind-cafe-cu"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -205,5 +205,40 @@ test("Hollis's operating line shows limit, drawn and available", async ({ page }
   await expect(line).toContainText("Draws keep one month's average spending in the account")
   await expect(line).toContainText("headroom")
   await expect(page.getByRole("status").filter({ hasText: "Debits" })).toContainText("✓")
+  expect(errors).toEqual([])
+})
+
+test("ops console: the maker can't approve, a second person can, and the audit trail records both", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/ops")
+  await page.getByLabel("Simulated time").selectOption("2026-10-06T10:05")
+  await page.getByRole("tab", { name: /Payee confirmation/ }).click()
+  await page.getByRole("button", { name: /Grace: confirm the payee/ }).click()
+  const panel = page.getByRole("article", { name: /Grace: confirm the payee/ })
+  // Prepare it as an analyst; acting as that same analyst, approval is blocked.
+  await page.getByLabel("Acting as").selectOption("usr_rivera")
+  await panel.getByRole("button", { name: "Prepare as A. Rivera" }).click()
+  await panel.getByRole("button", { name: "Approve as A. Rivera" }).click()
+  await expect(page.getByRole("alert").filter({ hasText: "prepared this" })).toContainText("prepared this can't approve it")
+  await expect(panel.getByText("Waiting for approval")).toBeVisible()
+
+  await page.getByLabel("Acting as").selectOption("usr_moreau")
+  await panel.getByRole("button", { name: "Approve as K. Moreau" }).click()
+  await expect(panel.getByText(/Approved · checker: K. Moreau/)).toBeVisible()
+
+  await page.getByRole("tab", { name: "Audit trail" }).click()
+  await expect(page.getByText(/Hash chain verified/)).toBeVisible()
+  await page.getByLabel("Action").selectOption("approval.blocked")
+  await expect(page.getByRole("row")).toHaveCount(2)
+  await page.getByLabel("Action").selectOption("approval.approved")
+  await expect(page.getByRole("row").filter({ hasText: "K. Moreau" }).first()).toBeVisible()
+
+  const download = page.waitForEvent("download")
+  await page.getByRole("button", { name: "CSV" }).click()
+  expect((await download).suggestedFilename()).toMatch(/^berry-audit-.*\.csv$/)
+
+  // Reset clears the browser's actions.
+  await page.getByRole("button", { name: /Reset my/ }).click()
+  await expect(page.getByRole("button", { name: /Reset my/ })).toHaveCount(0)
   expect(errors).toEqual([])
 })

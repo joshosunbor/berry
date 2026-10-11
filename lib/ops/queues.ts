@@ -201,8 +201,12 @@ export function buildItems(src: Sources): OpsItem[] {
         createdAt: at9(nextDayIso(b.firstSeen)),
         priority: b.kind === "returned_pad_not_applied" ? "high" : "normal",
         nextAction: b.kind === "timing_difference" ? "Confirm it clears on the next statement." : "Prepare a ledger entry applying the return; start recovery.",
-        blockedReason:
-          b.kind !== "timing_difference" && !b.resolvedBy ? "The return still has to be posted to the loan: a ledger correction needs preparing and a second person's approval." : undefined,
+        ...(b.kind !== "timing_difference" && !b.resolvedBy
+          ? {
+              blockedReason: "The return still has to be posted to the loan: a ledger correction needs preparing and a second person's approval.",
+              approval: { kind: "ledger_correction" as const, amountCents: Math.abs(b.differenceCents), minimumRole: "lead" as const },
+            }
+          : {}),
       })
     }
   }
@@ -234,6 +238,7 @@ const REVIEW_MINUTES = 15
 const roleRank = (r: Role) => ROLE_ORDER.indexOf(r)
 
 interface Action {
+  itemId: string | null
   at: string
   order: number
   run: (log: AuditLog) => void
@@ -244,10 +249,10 @@ interface Action {
  * approval items has a different person approve, escalating above their
  * delegated authority. Returns the worked items and the audit log.
  */
-export function runTeam(input: OpsItem[], seedEvents: { at: string; run: (log: AuditLog) => void }[] = []): { items: OpsItem[]; log: AuditLog } {
+export function runTeam(input: OpsItem[], seedEvents: { at: string; run: (log: AuditLog) => void }[] = []): { items: OpsItem[]; log: AuditLog; eventItems: (string | null)[] } {
   const items = input.map((i) => ({ ...i, steps: [] as Step[] }))
   const freeAt = new Map(OPS.team.map((m) => [m.id, "2026-10-01T09:00"]))
-  const actions: Action[] = seedEvents.map((e, i) => ({ ...e, order: i }))
+  const actions: Action[] = seedEvents.map((e, i) => ({ ...e, itemId: null, order: i }))
   let order = seedEvents.length
   const later = (a: string, b: string) => (a > b ? a : b)
 
@@ -268,13 +273,17 @@ export function runTeam(input: OpsItem[], seedEvents: { at: string; run: (log: A
     const t = work(pick, it.createdAt, minutes)
     it.ownerId = pick.id
     it.steps.push({ who: pick.id, action: it.approval ? "prepared" : "worked", start: t.start, end: t.end })
-    actions.push({ at: it.createdAt, order: order++, run: (log) => log.append({ at: it.createdAt, actor: { kind: "system", id: "queues" }, action: "queue_item.created", subject: it.subject, after: { queue: it.queue, title: it.title, slaDueAt: it.slaDueAt }, reason: it.detail.slice(0, 200) }) })
-    actions.push({ at: t.start, order: order++, run: (log) => log.append({ at: t.start, actor: { kind: "system", id: "auto-assign" }, action: "queue_item.assigned", subject: it.subject, before: { owner: null }, after: { owner: pick.id }, reason: "Assigned by skill to whoever could finish soonest." }) })
+    actions.push({ itemId: it.id, at: it.createdAt, order: order++, run: (log) => log.append({ at: it.createdAt, actor: { kind: "system", id: "queues" }, action: "queue_item.created", subject: it.subject, after: { queue: it.queue, title: it.title, slaDueAt: it.slaDueAt }, reason: it.detail.slice(0, 200) }) })
+    actions.push({ itemId: it.id, at: t.start, order: order++, run: (log) => log.append({ at: t.start, actor: { kind: "system", id: "auto-assign" }, action: "queue_item.assigned", subject: it.subject, before: { owner: null }, after: { owner: pick.id }, reason: "Assigned by skill to whoever could finish soonest." }) })
 
+    // Blocked: investigated, but nobody prepares the correction, so it stays open (the planted break).
+    if (it.blockedReason) {
+      it.steps[0].action = "worked"
+      continue
+    }
     if (!it.approval) {
-      if (it.blockedReason) continue
       it.completedAt = t.end
-      actions.push({ at: t.end, order: order++, run: (log) => log.append({ at: t.end, actor: { kind: "user", id: pick.id }, action: "queue_item.completed", subject: it.subject, before: { status: "open" }, after: { status: "done" }, reason: it.nextAction }) })
+      actions.push({ itemId: it.id, at: t.end, order: order++, run: (log) => log.append({ at: t.end, actor: { kind: "user", id: pick.id }, action: "queue_item.completed", subject: it.subject, before: { status: "open" }, after: { status: "done" }, reason: it.nextAction }) })
       continue
     }
 
@@ -293,6 +302,7 @@ export function runTeam(input: OpsItem[], seedEvents: { at: string; run: (log: A
     const reqId = `apv_${it.id.replace(/^q_/, "")}`
     let req: ApprovalRequest | null = null
     actions.push({
+      itemId: it.id,
       at: t.end,
       order: order++,
       run: (log) => {
@@ -301,16 +311,21 @@ export function runTeam(input: OpsItem[], seedEvents: { at: string; run: (log: A
     })
     chain.forEach((c, i) => {
       it.steps.push({ who: c.member.id, action: i === chain.length - 1 ? "approved" : "escalated", start: c.start, end: c.end })
-      actions.push({ at: c.end, order: order++, run: (log) => (req = approve(log, req!, c.member.id, c.end)) })
+      actions.push({ itemId: it.id, at: c.end, order: order++, run: (log) => (req = approve(log, req!, c.member.id, c.end)) })
     })
     it.approverId = chain.at(-1)!.member.id
     it.completedAt = chain.at(-1)!.end
-    actions.push({ at: it.completedAt, order: order++, run: (log) => log.append({ at: it.completedAt!, actor: { kind: "user", id: it.approverId! }, action: "queue_item.completed", subject: it.subject, before: { status: "open" }, after: { status: "done" } }) })
+    actions.push({ itemId: it.id, at: it.completedAt, order: order++, run: (log) => log.append({ at: it.completedAt!, actor: { kind: "user", id: it.approverId! }, action: "queue_item.completed", subject: it.subject, before: { status: "open" }, after: { status: "done" } }) })
   }
 
   const log = new AuditLog()
-  actions.sort((a, b) => a.at.localeCompare(b.at) || a.order - b.order).forEach((a) => a.run(log))
-  return { items, log }
+  // Which queue item each audit event belongs to (by sequence number).
+  const eventItems: (string | null)[] = []
+  for (const a of actions.sort((x, y) => x.at.localeCompare(y.at) || x.order - y.order)) {
+    a.run(log)
+    while (eventItems.length < log.size) eventItems.push(a.itemId)
+  }
+  return { items, log, eventItems }
 }
 
 // ---------------------------------------------------------------------------

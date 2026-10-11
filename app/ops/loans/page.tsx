@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { ClockControl } from "@/components/berry/clock"
 import { LoanBook } from "@/components/berry/loan-book"
 import { ModeSwitcher } from "@/components/berry/mode-context"
@@ -23,6 +24,14 @@ export default function LoansPage() {
         </div>
         <ModeSwitcher />
       </div>
+      <nav aria-label="Operations" className="mt-4 flex gap-4 text-sm">
+        <Link href="/ops" className="text-muted-ink underline-offset-4 hover:underline">
+          Console
+        </Link>
+        <span aria-current="page" className="font-medium">
+          Loan book
+        </span>
+      </nav>
       <ClockControl className="mt-6" />
       <div className="mt-6">
         <LoanBook loans={getLoanSummaries()} />
