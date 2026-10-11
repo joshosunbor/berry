@@ -52,7 +52,7 @@ function screen(name: string, dob: string | null, list: "sanctions" | "pep"): Dr
     kind,
     result: "needs_review",
     reasons: [
-      `Possible match on the fictional ${label}: "${name}" is similar to entry ${best.entry.id} (similarity ${best.score}).`,
+      `Possible match on the fictional ${label}: the ${list === "sanctions" && !dob ? "business" : "applicant"}'s name is similar to entry ${best.entry.id} (similarity ${best.score}).`,
       dobMatches ? "Date of birth also matches." : "Date of birth does not match the entry; an analyst should confirm and clear.",
     ],
   }

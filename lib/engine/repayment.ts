@@ -136,19 +136,52 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
   } else if (decision.structure === "seasonal_operating") {
     frequency = "seasonal"
     amountType = "variable"
+    // Draw evenly through the quiet months, pay interest as the balance
+    // builds, and repay from peak-season sales. Months with nothing owed have
+    // no debit. Runs until the line is back to zero (at most 24 months).
     const peak = features.income.peakMonths
     let date = addMonths(earliest, 1, 1)
-    let balance = principal
-    const perPeak = Math.ceil(principal / peak.length)
-    for (let n = 1; n <= 12; n++) {
+    // Quiet months between the start and the first peak that follows them: all draws happen there.
+    let quiet = 0
+    for (let i = 0, probe = date; i < 24; i++, probe = addMonths(probe, 1, 1)) {
+      const inPeak = peak.includes(d(probe).getUTCMonth() + 1)
+      if (!inPeak) quiet++
+      else if (quiet > 0) break
+    }
+    const drawPerMonth = Math.ceil(principal / Math.max(1, quiet))
+    let balance = 0
+    let drawn = 0
+    let peakStartBalance = 0
+    let n = 0
+    let started = false
+    for (let i = 0; i < 24 && (drawn < principal || balance > 0); i++) {
       const month = d(date).getUTCMonth() + 1
+      const inPeak = peak.includes(month)
+      if (!inPeak && drawn < principal) {
+        const draw = Math.min(drawPerMonth, principal - drawn)
+        drawn += draw
+        balance += draw
+        started = true
+      }
       const interest = Math.round((balance * apr) / 10_000 / 12)
-      const principalPart = peak.includes(month) ? Math.min(balance, perPeak) : 0
+      let principalPart = 0
+      if (inPeak && started && balance > 0) {
+        if (peakStartBalance === 0) peakStartBalance = balance
+        const isLastPeak = !peak.includes((month % 12) + 1)
+        principalPart = isLastPeak ? balance : Math.min(balance, Math.ceil(peakStartBalance / peak.length))
+      } else if (!inPeak) {
+        peakStartBalance = 0
+      }
       balance -= principalPart
-      debits.push({ n, date: onBusinessDay(date), amountCents: principalPart + interest, interestCents: interest, principalCents: principalPart, balanceAfterCents: balance })
+      if (interest + principalPart > 0) {
+        n++
+        debits.push({ n, date: onBusinessDay(date), amountCents: principalPart + interest, interestCents: interest, principalCents: principalPart, balanceAfterCents: balance })
+      }
       date = addMonths(date, 1, 1)
     }
-    assumptions.push("Assumes the line is fully drawn on day one (illustrative). Interest only in quiet months; principal is repaid from peak-season sales.")
+    assumptions.push(
+      "Assumes the line is drawn in equal amounts through the quieter months (illustrative). Interest only while it builds; principal is repaid from peak-season sales, and the line is back to zero after the peak.",
+    )
   } else {
     frequency = "monthly"
     amountType = "variable"

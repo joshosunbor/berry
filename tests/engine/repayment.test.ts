@@ -73,6 +73,30 @@ describe("PAD repayment plans (Rule H1)", () => {
     expect(plan.totalPrincipalCents).toBe(6_000_000)
   })
 
+  it("seasonal line starting just after a peak: draws through the quiet months, repaid in one season", () => {
+    const plan = buildPadPlan({
+      decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: 8_000_000, aprBps: 795 }),
+      features: features({ income: { type: "seasonal", peakMonths: [6, 7, 8] } }),
+      kind: "business",
+      agreementSignedOn: SIGNED,
+    })
+    const withPrincipal = plan.debits.filter((d) => d.principalCents > 0).map((d) => d.date.slice(0, 7))
+    expect(withPrincipal).toEqual(["2027-06", "2027-07", "2027-08"])
+    expect(plan.debits.at(-1)!.balanceAfterCents).toBe(0)
+    expect(plan.totalPrincipalCents).toBe(8_000_000)
+  })
+
+  it("seasonal line signed during the peak doesn't start with a large repayment", () => {
+    const plan = buildPadPlan({
+      decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: 6_000_000, aprBps: 795 }),
+      features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] } }),
+      kind: "business",
+      agreementSignedOn: SIGNED,
+    })
+    expect(plan.debits[0].principalCents).toBe(0)
+    expect(plan.debits[0].amountCents).toBeLessThan(100_000)
+  })
+
   it("variable amounts get pre-notification at least 10 days before each debit after the first", () => {
     const plan = buildPadPlan({
       decision: decision({ product: "line_of_credit", structure: "revolving", termMonths: null, limitCents: 1_000_000 }),

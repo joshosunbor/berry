@@ -25,7 +25,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
   const { id } = await params
   const view = getApplicant(id)
   if (!view) notFound()
-  const { applicant: a, features: f, decisions } = view
+  const { applicant: a, features: f, decisions, verification, pad, aft, largeCash } = view
 
   return (
     <main className="mx-auto max-w-[1200px] px-4 py-8 sm:px-8 sm:py-10">
@@ -49,34 +49,33 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
         <ModeSwitcher />
       </div>
 
-      {/* Phones: decision first, then cash flow, then key facts. Desktop: facts | cash flow | decision. */}
-      <div className="mt-8 grid items-start gap-6 lg:grid-cols-[260px_minmax(0,1fr)_360px]">
-        <aside className="order-3 space-y-5 lg:order-1">
-          <p className="leading-7">{a.story}</p>
-          {a.business && (
-            <p className="text-sm text-muted-ink">
-              {a.business.industry} · {a.business.yearsOperating} years · {a.business.employees} employees
-            </p>
-          )}
-          <dl className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
-            {keyFacts(f).map((k) => (
-              <div key={k.label} className="flex justify-between gap-3 px-4 py-2.5">
-                <dt className="text-muted-ink">{k.label}</dt>
-                <dd className="num text-right font-medium">{k.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </aside>
-
-        <div className="order-2 min-w-0 space-y-6">
+      {/* Desktop: chart and tabs in a wide main column, decision and key facts beside it. Phones: decision first. */}
+      <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+        <div className="order-2 min-w-0 space-y-6 lg:order-1">
           <div className="rounded-lg border border-rule bg-surface p-5">
             <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
           </div>
-          <DecisionTabs decisions={decisions} features={f} />
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash }} />
         </div>
 
-        <div className="order-1 lg:sticky lg:top-6 lg:order-3">
+        <div className="order-1 min-w-0 space-y-6 lg:order-2">
           <DecisionPanel decisions={decisions} slug={a.slug} requestedCents={a.request.amountCents} />
+          <aside aria-label="Applicant summary" className="space-y-4">
+            <p className="leading-7">{a.story}</p>
+            {a.business && (
+              <p className="text-sm text-muted-ink">
+                {a.business.industry} · {a.business.yearsOperating} years · {a.business.employees} employees
+              </p>
+            )}
+            <dl className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+              {keyFacts(f).map((k) => (
+                <div key={k.label} className="flex justify-between gap-3 px-4 py-2.5">
+                  <dt className="text-muted-ink">{k.label}</dt>
+                  <dd className="num text-right font-medium">{k.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
         </div>
       </div>
     </main>

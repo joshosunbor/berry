@@ -46,6 +46,14 @@ describe("simulated identity and business checks", () => {
     expect(sanctions.automated).toBe(false)
   })
 
+  it("never puts a protected attribute (name, date of birth) in a reason shown to users", () => {
+    for (const a of cast) {
+      const text = JSON.stringify(verifyApplicant(a).map((c) => c.reasons))
+      expect(text).not.toContain(a.protected.fullName)
+      expect(text).not.toContain(a.protected.dateOfBirth)
+    }
+  })
+
   it("flags an overdue annual filing", () => {
     const reg = verifyApplicant(bySlug("lakeside-lodge")).find((c) => c.kind === "business_registration")!
     expect(reg.result).toBe("needs_review")

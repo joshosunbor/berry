@@ -60,3 +60,20 @@ test("no page makes regulatory claims", async ({ page }) => {
     expect(text, p).not.toMatch(/\b(compliant|certified|approved by)\b/i)
   }
 })
+
+test("Main Street Hardware's file shows the FINTRAC review and the AFT file", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/workbench/main-street-hardware")
+  await page.getByRole("tab", { name: "FINTRAC review" }).click()
+  const panel = page.getByRole("tabpanel", { name: "FINTRAC review" })
+  await expect(panel).toContainText("24-hour rule")
+  await expect(panel).toContainText("$10,500.00")
+  await expect(panel).toContainText("Illustrative — not a filing")
+  await expect(panel).toContainText("never a credit factor")
+
+  await page.getByRole("tab", { name: "Disbursement (AFT)" }).click()
+  await expect(page.getByRole("tabpanel", { name: "Disbursement (AFT)" })).toContainText("Illustrative — not for submission")
+  await page.getByRole("button", { name: "View raw file" }).click()
+  await expect(page.getByLabel("Raw file, one record per line")).toContainText("NORTHGATE CU")
+  expect(errors).toEqual([])
+})

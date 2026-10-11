@@ -3,6 +3,12 @@
 import { useState } from "react"
 import { EyeOff } from "lucide-react"
 import { ReasonList, RegisterToggle, type Register } from "@/components/berry/decision-panel"
+import { DisbursementTab, LargeCashTab, ProtectionTab, RepaymentTab, VerificationTab } from "@/components/berry/file-tabs"
+import type { AftView } from "@/lib/data"
+import type { LctrReview } from "@/lib/engine/fintrac"
+import type { PadPlan } from "@/lib/engine/repayment"
+import type { VerificationSummary } from "@/lib/onboarding/kyc"
+import type { VerificationCheck } from "@/lib/schemas"
 import { useMode } from "@/components/berry/mode-context"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import type { Features } from "@/lib/engine/features"
@@ -11,21 +17,35 @@ import { RECOMMENDATION_LABELS } from "@/lib/labels"
 import { MODE_META, type Mode } from "@/lib/modes"
 import type { Decision } from "@/lib/schemas"
 
-export function DecisionTabs({ decisions, features }: { decisions: Record<Mode, Decision>; features: Features }) {
+export interface FileTabsData {
+  verification: { checks: VerificationCheck[]; summary: VerificationSummary }
+  pad: Record<Mode, PadPlan | null>
+  aft: Record<Mode, AftView | null>
+  largeCash: LctrReview[]
+}
+
+export function DecisionTabs({ decisions, features, data }: { decisions: Record<Mode, Decision>; features: Features; data: FileTabsData }) {
   const { mode } = useMode()
   const [register, setRegister] = useState<Register>("customer")
   const d = decisions[mode]
   const institution = MODE_META[mode].institution
 
   return (
-    <Tabs defaultValue="decision">
-      <TabsList>
-        <TabsTrigger value="decision">Decision</TabsTrigger>
-        <TabsTrigger value="recommendations">Recommendations</TabsTrigger>
-        <TabsTrigger value="inputs">Inputs used</TabsTrigger>
-      </TabsList>
+    <Tabs defaultValue="decision" className="min-w-0">
+      <div className="-mx-1 overflow-x-auto px-1 pb-1">
+        <TabsList className="w-max">
+          <TabsTrigger value="decision">Decision</TabsTrigger>
+          <TabsTrigger value="recommendations">Recommendations</TabsTrigger>
+          <TabsTrigger value="verification">Verification</TabsTrigger>
+          <TabsTrigger value="repayment">Repayment (PAD)</TabsTrigger>
+          <TabsTrigger value="disbursement">Disbursement (AFT)</TabsTrigger>
+          <TabsTrigger value="protection">Deposit protection</TabsTrigger>
+          {data.largeCash.length > 0 && <TabsTrigger value="fintrac">FINTRAC review</TabsTrigger>}
+          <TabsTrigger value="inputs">Inputs used</TabsTrigger>
+        </TabsList>
+      </div>
 
-      <TabsContent value="decision" className="mt-4 rounded-lg border border-rule bg-surface p-5">
+      <TabsContent value="decision" className="min-w-0 mt-4 rounded-lg border border-rule bg-surface p-5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h3 className="font-semibold">Every reason {institution} gave</h3>
           <RegisterToggle value={register} onChange={setRegister} />
@@ -48,7 +68,7 @@ export function DecisionTabs({ decisions, features }: { decisions: Record<Mode, 
         </p>
       </TabsContent>
 
-      <TabsContent value="recommendations" className="mt-4 rounded-lg border border-rule bg-surface p-5">
+      <TabsContent value="recommendations" className="min-w-0 mt-4 rounded-lg border border-rule bg-surface p-5">
         <h3 className="font-semibold">Products that may fit</h3>
         {d.recommendations && d.recommendations.length > 0 ? (
           <ul className="mt-3 space-y-3">
@@ -63,7 +83,25 @@ export function DecisionTabs({ decisions, features }: { decisions: Record<Mode, 
         )}
       </TabsContent>
 
-      <TabsContent value="inputs" className="mt-4 grid gap-4 md:grid-cols-2">
+      <TabsContent value="verification" className="min-w-0 mt-4">
+        <VerificationTab checks={data.verification.checks} summary={data.verification.summary} />
+      </TabsContent>
+      <TabsContent value="repayment" className="min-w-0 mt-4">
+        <RepaymentTab plans={data.pad} />
+      </TabsContent>
+      <TabsContent value="disbursement" className="min-w-0 mt-4">
+        <DisbursementTab files={data.aft} />
+      </TabsContent>
+      <TabsContent value="protection" className="min-w-0 mt-4">
+        <ProtectionTab />
+      </TabsContent>
+      {data.largeCash.length > 0 && (
+        <TabsContent value="fintrac" className="min-w-0 mt-4">
+          <LargeCashTab reviews={data.largeCash} />
+        </TabsContent>
+      )}
+
+      <TabsContent value="inputs" className="min-w-0 mt-4 grid gap-4 md:grid-cols-2">
         <div className="rounded-lg border border-rule bg-surface p-5">
           <h3 className="font-semibold">What this decision used</h3>
           <dl className="mt-3 divide-y divide-rule text-sm">
