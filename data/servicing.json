@@ -2,9 +2,20 @@
   "_about": "Illustrative servicing settings for Berry's fictional lenders. Not taken from any real institution.",
   "version": 1,
   "rails": {
-    "aft": { "costCents": 25, "cutoffLocal": "16:00", "availableLocal": "09:00" },
-    "etransfer": { "costCents": 150, "limitCents": 1000000, "minutesToComplete": 20 },
-    "rtr_simulated": { "costCents": 50, "secondsToComplete": 10 }
+    "aft": {
+      "costCents": 25,
+      "cutoffLocal": "16:00",
+      "availableLocal": "09:00"
+    },
+    "etransfer": {
+      "costCents": 150,
+      "limitCents": 1000000,
+      "minutesToComplete": 20
+    },
+    "rtr_simulated": {
+      "costCents": 50,
+      "secondsToComplete": 10
+    }
   },
   "collections": {
     "settlementBusinessDays": 1,
@@ -15,5 +26,10 @@
   "borrowerBank": {
     "standardNsfFeeCents": 4800,
     "provincialCreditUnionNsfFeeCents": 4500
+  },
+  "creditBuilding": {
+    "onTimePaymentsForReview": 6,
+    "reviewLimitCents": 300000,
+    "monthsForUnsecuredLine": 12
   }
 }

@@ -7,25 +7,25 @@
   },
   "dataAsOf": "2026-09-30",
   "totals": {
-    "cases": 36,
-    "decisions": 108,
-    "matched": 108,
+    "cases": 37,
+    "decisions": 111,
+    "matched": 111,
     "rate": 1
   },
   "byMode": {
     "credit_union": {
-      "matched": 36,
-      "total": 36,
+      "matched": 37,
+      "total": 37,
       "rate": 1
     },
     "fintech": {
-      "matched": 36,
-      "total": 36,
+      "matched": 37,
+      "total": 37,
       "rate": 1
     },
     "bank": {
-      "matched": 36,
-      "total": 36,
+      "matched": 37,
+      "total": 37,
       "rate": 1
     }
   },
@@ -1914,6 +1914,60 @@
               "PRODUCT_MAX",
               "STRONG_COVERAGE",
               "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        }
+      }
+    },
+    {
+      "id": "p21",
+      "kind": "personal",
+      "story": "Newcomer with credit history from a country covered by foreign credit report programs, and a thin Canadian file.",
+      "why": "Newcomer with 14 months of Canadian banking and a thin Canadian file, but credit history from a country covered by a foreign credit report program: the imported report stands in for Canadian history at Aspen and lifts Kite's thin-file cap; Northgate approves within its non-member cap.",
+      "modes": {
+        "credit_union": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 200000,
+            "approver": "msr",
+            "topReasons": [
+              "NON_MEMBER_CAP",
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL"
+            ]
+          },
+          "match": true
+        },
+        "fintech": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 300000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "GROWING_REVENUE"
+            ]
+          },
+          "match": true
+        },
+        "bank": {
+          "expected": {
+            "outcome": "approve"
+          },
+          "actual": {
+            "outcome": "approve",
+            "limitCents": 300000,
+            "topReasons": [
+              "STRONG_COVERAGE",
+              "STABLE_PAYROLL",
+              "GROWING_REVENUE"
             ]
           },
           "match": true

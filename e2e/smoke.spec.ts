@@ -174,3 +174,21 @@ test("unknown loan is a 404", async ({ page }) => {
   const res = await page.goto("/ops/loans/loan_nobody-cu")
   expect(res?.status()).toBe(404)
 })
+
+test("foreign report toggle on /methodology; credit-building path on Daniel's file, with no toggle", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/methodology#foreign-reports")
+  const section = page.locator("#foreign-reports")
+  const toggle = section.getByRole("switch")
+  await expect(toggle).toHaveAttribute("aria-checked", "true")
+  await expect(section.getByText("No offer")).toHaveCount(0)
+  await toggle.click()
+  await expect(toggle).toHaveAttribute("aria-checked", "false")
+  await expect(section.getByText("No offer")).toHaveCount(2)
+
+  await page.goto("/workbench/daniel")
+  await expect(page.getByRole("heading", { name: "Credit-building path" })).toBeVisible()
+  await expect(page.getByText("fill the gap foreign credit reports don't cover")).toBeVisible()
+  await expect(page.getByRole("switch")).toHaveCount(0)
+  expect(errors).toEqual([])
+})

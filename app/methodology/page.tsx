@@ -5,7 +5,8 @@ import { Illustrative } from "@/components/berry/illustrative"
 import { CONFIGS } from "@/lib/engine/config"
 import { PATTERN_RULES } from "@/lib/engine/patterns"
 import { REVOLVING_ASSESSMENT_RATE } from "@/lib/engine/payment"
-import { getCast } from "@/lib/data"
+import { ForeignReportToggle } from "@/components/berry/foreign-report-toggle"
+import { getCast, getForeignReportDemo } from "@/lib/data"
 import { IGNORED } from "@/lib/feature-display"
 import { MODES, MODE_META } from "@/lib/modes"
 import { formatCents } from "@/lib/money"
@@ -62,6 +63,7 @@ export default function MethodologyPage() {
   const auto = cast.filter((c) => c.verification.summary.automated).length
   const manual = cast.length - auto
   const status = REGULATORY_STATUS
+  const foreign = getForeignReportDemo()
 
   return (
     <main className="mx-auto max-w-[960px] px-4 py-12 sm:px-8">
@@ -78,6 +80,7 @@ export default function MethodologyPage() {
           ["fairness", "What it ignores"],
           ["verification", "Verification"],
           ["money", "Money movement"],
+          ["foreign-reports", "Foreign credit reports"],
           ["regulatory-status", "Regulatory status"],
           ["limits", "Limitations"],
         ].map(([id, label]) => (
@@ -194,6 +197,25 @@ export default function MethodologyPage() {
             rules in force since March 12, 2026 (a $10 cap, one fee per 2 business days, none when overdrawn by less than $10) apply to personal accounts at
             federally regulated banks, so Berry applies them only there. Provincially regulated credit unions set their own fees: for borrowers who bank at
             one, Berry uses an illustrative fee, labelled &ldquo;provincially regulated — fee illustrative&rdquo;.
+          </p>
+        </Section>
+
+        <Section id="foreign-reports" title="Foreign credit reports and the credit-building path">
+          <p>
+            Some newcomers can bring credit history with them: foreign credit report programs import history from a limited set of countries (for
+            example, India was first in Equifax Canada&apos;s program). This planted applicant has a thin Canadian file but history from a covered
+            country. Switch the report off to see how much each lender&apos;s answer depends on it.
+          </p>
+          <p className="text-sm text-muted-ink">
+            {foreign.story} Asking for a credit card of {formatCents(foreign.request.amountCents, { whole: true })}, with {foreign.creditHistoryMonths} months of
+            Canadian credit history.
+          </p>
+          <ForeignReportToggle withReport={foreign.withReport} withoutReport={foreign.withoutReport} />
+          <p>
+            Many newcomers come from countries no program covers yet. For them, Berry&apos;s credit-building path fills the gap foreign credit reports
+            don&apos;t cover: a starter limit sized on steady cash flow, and milestones (six on-time payments for a limit review; twelve months for an
+            unsecured line) shown on the applicant&apos;s file. <Link href="/workbench/daniel" className="underline underline-offset-2">Daniel&apos;s file</Link>{" "}
+            shows it.
           </p>
         </Section>
 

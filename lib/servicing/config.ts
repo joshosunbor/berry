@@ -15,6 +15,12 @@ export const ServicingConfig = z.object({
     cureWindowDays: z.number().int().positive(),
   }),
   chargeOffDaysPastDue: z.number().int().positive(),
+  /** Thin-file credit-building milestones (illustrative). */
+  creditBuilding: z.object({
+    onTimePaymentsForReview: z.number().int().positive(),
+    reviewLimitCents: z.number().int().positive(),
+    monthsForUnsecuredLine: z.number().int().positive(),
+  }),
   borrowerBank: z.object({
     standardNsfFeeCents: z.number().int().nonnegative(),
     provincialCreditUnionNsfFeeCents: z.number().int().nonnegative(),

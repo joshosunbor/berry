@@ -441,6 +441,18 @@
         "outcome": "approve"
       },
       "why": "Existing debt limits the new loan: each lender counter-offers a smaller amount."
+    },
+    "p21": {
+      "credit_union": {
+        "outcome": "approve"
+      },
+      "fintech": {
+        "outcome": "approve"
+      },
+      "bank": {
+        "outcome": "approve"
+      },
+      "why": "Newcomer with 14 months of Canadian banking and a thin Canadian file, but credit history from a country covered by a foreign credit report program: the imported report stands in for Canadian history at Aspen and lifts Kite's thin-file cap; Northgate approves within its non-member cap."
     }
   }
 }

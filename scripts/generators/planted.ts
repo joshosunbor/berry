@@ -229,6 +229,7 @@ export const PERSONAL_CASES: PersonalCase[] = [
   { id: "p17", story: "Spends more than they earn every month.", income: { kind: "payroll", monthly: 4_000 }, spend: 4_350, credit: { history: 90, band: "fair" }, request: PL(10_000) },
   { id: "p18", story: "Existing loan payments take almost everything left over.", income: { kind: "payroll", monthly: 5_000 }, spend: 3_700, loan: 1_220, credit: { history: 90, band: "fair" }, request: PL(10_000) },
   { id: "p19", story: "Long-time member whose coverage sits just under the standard minimum.", income: { kind: "payroll", monthly: 4_500 }, spend: 4_135, credit: { history: 150, band: "good" }, member: member("2010-01-01", ["chequing", "savings", "tfsa", "rrsp"]), request: PL(10_000) },
+  { id: "p21", story: "Newcomer with credit history from a country covered by foreign credit report programs, and a thin Canadian file.", income: { kind: "payroll", monthly: 4_800 }, spend: 3_000, months: 14, credit: { history: 4, band: "thin", foreign: true }, request: req("credit_card", 3_000) },
   { id: "p20", story: "High earner asking for more than any lender's personal loan maximum.", income: { kind: "payroll", monthly: 14_000 }, spend: 6_000, credit: { history: 200, band: "excellent" }, request: PL(60_000, 60) },
 ]
 

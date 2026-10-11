@@ -133,6 +133,9 @@ export interface LoanSnapshot {
   daysPastDue: number
   returns: number
   debitsCollected: number
+  /** On-time payments in a row (first-attempt debits that settled), most recent first. */
+  onTimeStreak: number
+  monthsSinceFunding: number
 }
 
 export function snapshot(v: LoanView, date: string): LoanSnapshot {
@@ -142,7 +145,25 @@ export function snapshot(v: LoanView, date: string): LoanSnapshot {
     daysPastDue: daysPastDueAsOf(v, date),
     returns: v.attempts.filter((a) => a.returnedOn && a.returnedOn <= date).length,
     debitsCollected: v.attempts.filter((a) => a.settledOn && a.settledOn <= date && a.outcome === "settled").length,
+    onTimeStreak: onTimeStreak(v, date),
+    monthsSinceFunding: Math.max(0, monthsBetween(v.funding.fundedOn, date)),
   }
+}
+
+function monthsBetween(a: string, b: string): number {
+  const d = (Number(b.slice(0, 4)) - Number(a.slice(0, 4))) * 12 + (Number(b.slice(5, 7)) - Number(a.slice(5, 7)))
+  return Number(b.slice(8, 10)) >= Number(a.slice(8, 10)) ? d : d - 1
+}
+
+/** Consecutive on-time payments up to `date`: a returned debit resets the count. */
+function onTimeStreak(v: LoanView, date: string): number {
+  let streak = 0
+  for (const a of v.attempts) {
+    const resolvedOn = a.outcome === "returned" ? a.returnedOn : a.settledOn
+    if (!resolvedOn || resolvedOn > date) continue
+    streak = a.outcome === "returned" ? 0 : a.isRetry ? streak : streak + 1
+  }
+  return streak
 }
 
 export interface LoanSummary {

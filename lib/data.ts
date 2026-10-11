@@ -195,3 +195,24 @@ const loanSummaries: LoanSummary[] = loanViews.map((v) => summarizeLoan(v, cureM
 export function getLoanSummaries(): LoanSummary[] {
   return loanSummaries
 }
+
+/**
+ * The foreign credit report toggle (/methodology): a planted newcomer whose
+ * credit history comes from a country covered by a foreign credit report
+ * program, decided with and without the imported report.
+ */
+export const FOREIGN_REPORT_CASE = "planted-p21"
+
+const foreignCase = loadApplicants(path.join(process.cwd(), "data/planted")).find((a) => a.slug === FOREIGN_REPORT_CASE)!
+const foreignInput = toEngineInput(foreignCase)
+const foreignDemo = {
+  story: foreignCase.story,
+  request: foreignCase.request,
+  creditHistoryMonths: foreignCase.creditFile.historyMonths,
+  withReport: decideAll({ ...foreignInput, creditFile: { ...foreignInput.creditFile, foreignReport: { available: true, band: "good" } } }),
+  withoutReport: decideAll({ ...foreignInput, creditFile: { ...foreignInput.creditFile, foreignReport: { available: false } } }),
+}
+
+export function getForeignReportDemo() {
+  return foreignDemo
+}

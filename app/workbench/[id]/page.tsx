@@ -3,6 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import { CashFlowChart } from "@/components/berry/cash-flow-chart"
+import { CreditBuildingCard } from "@/components/berry/credit-building"
 import { DecisionPanel } from "@/components/berry/decision-panel"
 import { DecisionTabs } from "@/components/berry/decision-tabs"
 import { ModeSwitcher } from "@/components/berry/mode-context"
@@ -26,6 +27,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
   const view = getApplicant(id)
   if (!view) notFound()
   const { applicant: a, features: f, decisions, verification, pad, aft, largeCash, accountVerification } = view
+  const loans = getLoanSummaries().filter((l) => l.applicantSlug === a.slug)
 
   return (
     <main className="mx-auto max-w-[1200px] px-4 py-8 sm:px-8 sm:py-10">
@@ -55,11 +57,12 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
           <div className="rounded-lg border border-rule bg-surface p-5">
             <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
           </div>
-          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans: getLoanSummaries().filter((l) => l.applicantSlug === a.slug) }} />
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans }} />
         </div>
 
         <div className="order-1 min-w-0 space-y-6 lg:order-2">
           <DecisionPanel decisions={decisions} slug={a.slug} requestedCents={a.request.amountCents} />
+          {f.creditHistoryMonths < 12 && !f.foreignReportAvailable && <CreditBuildingCard loans={loans} />}
           <aside aria-label="Applicant summary" className="space-y-4">
             <p className="leading-7">{a.story}</p>
             {a.business && (
