@@ -34,6 +34,12 @@ describe("generator", () => {
     }
   })
 
+  it("writes the loan index that proxy.ts uses for 404s", async () => {
+    const { getLoanViews } = await import("@/lib/data")
+    const index = JSON.parse(readFileSync(path.resolve(__dirname, "../data/loan-index.json"), "utf8"))
+    expect(index).toEqual(getLoanViews().map((l) => l.id).sort())
+  })
+
   it("writes the applicant index that proxy.ts uses for 404s", () => {
     const index = JSON.parse(readFileSync(path.resolve(__dirname, "../data/cast-index.json"), "utf8"))
     expect(index).toEqual(cast.map((a) => a.slug))

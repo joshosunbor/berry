@@ -1,8 +1,12 @@
 "use client"
 
+import Link from "next/link"
 import { useState } from "react"
 import { AlertTriangle, CheckCircle2, Clock, Download, Eye, ShieldAlert, XCircle } from "lucide-react"
+import { ClockControl, useClock } from "@/components/berry/clock"
 import { Illustrative, Source } from "@/components/berry/illustrative"
+import { LoanStatusChip } from "@/components/berry/loan-status"
+import type { LoanSummary } from "@/lib/servicing/views"
 import { useMode } from "@/components/berry/mode-context"
 import type { AftView } from "@/lib/data"
 import type { LctrReview } from "@/lib/engine/fintrac"
@@ -447,6 +451,40 @@ export function LargeCashTab({ reviews }: { reviews: LctrReview[] }) {
           </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+
+export function ServicingTab({ loans }: { loans: LoanSummary[] }) {
+  const { mode } = useMode()
+  const date = useClock()
+  const loan = loans.find((l) => l.mode === mode)
+  if (!loan) {
+    return (
+      <div className={card}>
+        <p className="text-sm text-muted-ink">{MODE_META[mode].institution} made no offer, so there is no loan to service.</p>
+      </div>
+    )
+  }
+  const s = loan.snapshots[date]
+  return (
+    <div className={card}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h3 className="font-semibold">Servicing at {MODE_META[mode].institution}</h3>
+        <Illustrative label="Simulated" why="Collections, returns and recovery are simulated twelve months forward on synthetic data." />
+      </div>
+      <ClockControl className="mt-3" />
+      <dl className="num mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4">
+        <div><dt className="text-xs text-muted-ink">Status</dt><dd className="mt-1"><LoanStatusChip status={s.status} /></dd></div>
+        <div><dt className="text-xs text-muted-ink">Owed</dt><dd className="font-medium">{formatCents(s.outstandingCents)}</dd></div>
+        <div><dt className="text-xs text-muted-ink">Debits collected</dt><dd className="font-medium">{s.debitsCollected}</dd></div>
+        <div><dt className="text-xs text-muted-ink">Returned debits</dt><dd className="font-medium">{s.returns}</dd></div>
+      </dl>
+      <Link href={`/ops/loans/${loan.id}`} className="mt-5 inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-background">
+        Open the loan: ledger, timeline and recovery
+      </Link>
     </div>
   )
 }

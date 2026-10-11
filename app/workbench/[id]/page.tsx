@@ -6,7 +6,7 @@ import { CashFlowChart } from "@/components/berry/cash-flow-chart"
 import { DecisionPanel } from "@/components/berry/decision-panel"
 import { DecisionTabs } from "@/components/berry/decision-tabs"
 import { ModeSwitcher } from "@/components/berry/mode-context"
-import { getApplicant, getCast } from "@/lib/data"
+import { getApplicant, getCast, getLoanSummaries } from "@/lib/data"
 import { keyFacts } from "@/lib/feature-display"
 import { PRODUCT_LABELS } from "@/lib/labels"
 import { formatCents } from "@/lib/money"
@@ -55,7 +55,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
           <div className="rounded-lg border border-rule bg-surface p-5">
             <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
           </div>
-          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification }} />
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans: getLoanSummaries().filter((l) => l.applicantSlug === a.slug) }} />
         </div>
 
         <div className="order-1 min-w-0 space-y-6 lg:order-2">

@@ -10,7 +10,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "generate": "tsx scripts/generate.ts",
+    "generate": "tsx scripts/generate.ts && tsx scripts/loan-index.ts",
     "accuracy": "tsx scripts/accuracy.ts",
     "test:e2e": "playwright test"
   },

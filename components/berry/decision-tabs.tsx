@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { EyeOff } from "lucide-react"
 import { ReasonList, RegisterToggle, type Register } from "@/components/berry/decision-panel"
-import { DisbursementTab, LargeCashTab, ProtectionTab, RepaymentTab, VerificationTab } from "@/components/berry/file-tabs"
+import { DisbursementTab, LargeCashTab, ProtectionTab, RepaymentTab, ServicingTab, VerificationTab } from "@/components/berry/file-tabs"
+import type { LoanSummary } from "@/lib/servicing/views"
 import type { AftView } from "@/lib/data"
 import type { LctrReview } from "@/lib/engine/fintrac"
 import type { PadPlan } from "@/lib/engine/repayment"
@@ -24,6 +25,7 @@ export interface FileTabsData {
   aft: Record<Mode, AftView | null>
   largeCash: LctrReview[]
   accountVerification: AccountVerificationOutcome
+  loans: LoanSummary[]
 }
 
 export function DecisionTabs({ decisions, features, data }: { decisions: Record<Mode, Decision>; features: Features; data: FileTabsData }) {
@@ -41,6 +43,7 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
           <TabsTrigger value="verification">Verification</TabsTrigger>
           <TabsTrigger value="repayment">Repayment (PAD)</TabsTrigger>
           <TabsTrigger value="disbursement">Disbursement (AFT)</TabsTrigger>
+          <TabsTrigger value="servicing">Servicing</TabsTrigger>
           <TabsTrigger value="protection">Deposit protection</TabsTrigger>
           {data.largeCash.length > 0 && <TabsTrigger value="fintrac">FINTRAC review</TabsTrigger>}
           <TabsTrigger value="inputs">Inputs used</TabsTrigger>
@@ -93,6 +96,9 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
       </TabsContent>
       <TabsContent value="disbursement" className="min-w-0 mt-4">
         <DisbursementTab files={data.aft} verification={data.accountVerification} />
+      </TabsContent>
+      <TabsContent value="servicing" className="min-w-0 mt-4">
+        <ServicingTab loans={data.loans} />
       </TabsContent>
       <TabsContent value="protection" className="min-w-0 mt-4">
         <ProtectionTab />

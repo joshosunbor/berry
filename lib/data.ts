@@ -11,6 +11,7 @@ import { Rng, hashSeed } from "@/lib/rng"
 import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
 import { buildBooks } from "@/lib/servicing/portfolio"
 import type { BookResult } from "@/lib/servicing/simulate"
+import { breaksByLoan, summarize as summarizeLoan, toLoanView, type LoanSummary, type LoanView } from "@/lib/servicing/views"
 import { toEngineInput, type Applicant, type Decision, type EngineInput, type VerificationCheck } from "@/lib/schemas"
 
 /*
@@ -173,4 +174,24 @@ const books: Record<Mode, BookResult> = buildBooks(
 
 export function getBooks(): Record<Mode, BookResult> {
   return books
+}
+
+const loanViews: LoanView[] = (Object.values(books) as BookResult[]).flatMap((book) => {
+  const breaks = breaksByLoan(book)
+  return book.loans.map((l) => toLoanView(book, l, breaks.get(l.setup.id) ?? []))
+})
+
+export function getLoanViews(): LoanView[] {
+  return loanViews
+}
+
+export function getLoanView(id: string): LoanView | undefined {
+  return loanViews.find((l) => l.id === id)
+}
+
+const cureMap = new Map((Object.values(books) as BookResult[]).flatMap((b) => b.loans.map((l) => [l.setup.id, l.cures] as const)))
+const loanSummaries: LoanSummary[] = loanViews.map((v) => summarizeLoan(v, cureMap.get(v.id) ?? []))
+
+export function getLoanSummaries(): LoanSummary[] {
+  return loanSummaries
 }

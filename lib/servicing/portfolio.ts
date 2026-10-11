@@ -90,6 +90,7 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
       applicantSlug: a.slug,
       applicantName: a.name,
       kind: a.kind,
+      product: d.product,
       principalCents: d.limitCents,
       schedule: plan.debits,
       funding,

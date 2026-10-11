@@ -1,7 +1,7 @@
 import { addBusinessDays, businessDaysBetween, earliestSafeRetry, isBusinessDay } from "@/lib/rules/nsf"
 import { Rng, hashSeed } from "@/lib/rng"
 import type { InstitutionId, Mode } from "@/lib/modes"
-import type { ReturnCode, RecoveryRules } from "@/lib/schemas"
+import type { ProductType, ReturnCode, RecoveryRules } from "@/lib/schemas"
 import type { ScheduledDebit } from "@/lib/engine/repayment"
 import { borrowerNsfFee, type BorrowerAccount, type BorrowerFee } from "./borrower-bank"
 import { SERVICING, type ServicingConfig } from "./config"
@@ -41,6 +41,7 @@ export interface LoanSetup {
   applicantSlug: string
   applicantName: string
   kind: "personal" | "business"
+  product: ProductType
   principalCents: number
   schedule: ScheduledDebit[]
   funding: FundingResult

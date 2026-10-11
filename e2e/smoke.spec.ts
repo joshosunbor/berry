@@ -53,7 +53,7 @@ test("unknown applicant is a 404", async ({ page }) => {
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology"]
+  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology", "/ops/loans", "/ops/loans/loan_corner-grind-cafe-cu"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -151,4 +151,26 @@ test("funding: RTR is labelled simulated and a close match must be confirmed bef
   await panel.getByLabel("I've confirmed the account with the borrower").check()
   await expect(panel.getByRole("status")).toContainText("Seconds")
   expect(errors).toEqual([])
+})
+
+test("loan servicing: fast-forward to a charge-off, ledger in balance, return codes labelled", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/ops/loans")
+  await page.getByRole("radio", { name: /\+12 m/ }).click()
+  await page.getByRole("link", { name: "Corner Grind Café" }).click()
+  await expect(page).toHaveURL(/\/ops\/loans\/loan_corner-grind-cafe-cu$/)
+  await expect(page.getByText("Charged off").first()).toBeVisible()
+  await expect(page.getByText(/Charged off at 120 days past due/).first()).toBeVisible()
+  await expect(page.getByRole("status").filter({ hasText: "Debits" })).toContainText("✓")
+  await expect(page.getByText("905 Account Closed")).toBeVisible()
+
+  await page.goto("/ops/loans/loan_amara-kite")
+  await expect(page.getByText("907 No Debit Allowed")).toBeVisible()
+  await expect(page.getByText(/before settlement/).first()).toBeVisible()
+  expect(errors).toEqual([])
+})
+
+test("unknown loan is a 404", async ({ page }) => {
+  const res = await page.goto("/ops/loans/loan_nobody-cu")
+  expect(res?.status()).toBe(404)
 })
