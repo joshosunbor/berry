@@ -120,6 +120,8 @@ describe("story targets", () => {
     const cardTxns = a.transactions.filter((t) => t.accountId === card.accountId)
     const owedAtEnd = card.openingBalanceCents + sum(cardTxns.filter((t) => t.debitCreditMemo === "DEBIT")) - sum(credits(cardTxns))
     expect(owedAtEnd - card.openingBalanceCents).toBeGreaterThan(100_000)
+    // Near the limit, but not over it.
+    expect(owedAtEnd).toBeLessThanOrEqual(card.creditLimitCents!)
   })
 
   it("Northline Auto Repair: revenue growing, last 3 months above the prior 3", () => {

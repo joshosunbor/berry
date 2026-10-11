@@ -289,9 +289,9 @@ const sofia: ApplicantSpec = {
     }
 
     // Card balances climb: purchases outpace payments every month.
-    everyday(b, acc.visa, w, { perWeek: 3, avg: 44, sd: 18, category: "SHOPPING", merchants: SHOPS })
-    everyday(b, acc.visa, w, { perWeek: 1.5, avg: 32, sd: 10, category: "DINING", merchants: DINING })
-    everyday(b, acc.store, w, { perWeek: 1, avg: 36, sd: 14, category: "SHOPPING", merchants: ["Northway Department Store"] })
+    everyday(b, acc.visa, w, { perWeek: 2, avg: 40, sd: 16, category: "SHOPPING", merchants: SHOPS })
+    everyday(b, acc.visa, w, { perWeek: 1, avg: 30, sd: 10, category: "DINING", merchants: DINING })
+    everyday(b, acc.store, w, { perWeek: 0.8, avg: 36, sd: 14, category: "SHOPPING", merchants: ["Northway Department Store"] })
     for (const [card, amount] of [["visa", 365], ["store", 60]] as const) {
       monthly(b, acc.chq, w, { day: 26, amount, sd: 15, category: "CARD_PAYMENT", description: `Credit card payment (${card === "visa" ? "rewards card" : "store card"})`, channel: "EFT" })
       monthly(b, acc[card], w, { day: 26, amount, category: "CARD_PAYMENT", description: "Payment received, thank you", channel: "EFT", memo: "CREDIT" })
