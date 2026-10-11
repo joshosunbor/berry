@@ -53,7 +53,7 @@ test("unknown applicant is a 404", async ({ page }) => {
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents"]
+  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -114,5 +114,27 @@ test("apply: consent, verification, request and three decisions; consents can be
   await expect(page.getByText("Revoked by the customer: Kite")).toBeVisible()
   await page.reload()
   await expect(page.getByRole("button", { name: /Revoke consent for/ })).toHaveCount(2)
+  expect(errors).toEqual([])
+})
+
+test("methodology: regulatory status panel shows sources, dates and the right statuses", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/")
+  await page.getByRole("link", { name: "See how it decides" }).click()
+  await expect(page).toHaveURL(/\/methodology$/)
+  const panel = page.locator("#regulatory-status")
+  await expect(panel).toContainText("Status as of October 11, 2026")
+  const rows = panel.getByRole("listitem")
+  const count = await rows.count()
+  expect(count).toBeGreaterThanOrEqual(15)
+  for (let i = 0; i < count; i++) {
+    await expect(rows.nth(i).getByRole("link", { name: /^Source:/ })).toHaveAttribute("href", /^https:\/\//)
+    await expect(rows.nth(i)).toContainText("Checked")
+  }
+  for (const name of ["Consumer-Driven Banking Act", "Consumer-Driven Banking Regulations"]) {
+    await expect(rows.filter({ hasText: name }).first()).toContainText("In draft")
+  }
+  await expect(rows.filter({ hasText: "Real-Time Rail" }).first()).toContainText("Launching")
+  await expect(rows.filter({ hasText: "2027 milestones" })).toContainText("Illustrative")
   expect(errors).toEqual([])
 })

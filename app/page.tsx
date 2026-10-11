@@ -36,7 +36,7 @@ export default function Home() {
               Try the workbench
               <ArrowRight aria-hidden className="size-4" />
             </Link>
-            <Link href="/compare/hollis-family-farm" className="inline-flex items-center gap-2 rounded-md border border-rule bg-surface px-5 py-2.5 text-sm font-medium hover:border-ink/30">
+            <Link href="/methodology" className="inline-flex items-center gap-2 rounded-md border border-rule bg-surface px-5 py-2.5 text-sm font-medium hover:border-ink/30">
               See how it decides
             </Link>
           </div>

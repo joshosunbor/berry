@@ -13,7 +13,7 @@
       },
       "asOf": "2026-10-10",
       "berryUse": "Applied",
-      "inBerry": "Applied to the borrower's own bank account in the payment simulator; the recovery playbook never retries inside the 2-business-day window. Business days are weekdays only (holidays not modelled)."
+      "inBerry": "The fee rules for the borrower's own bank account, and the earliest safe date to retry a returned debit, are implemented and tested. Berry's payment simulator, which applies them, is not built yet. Business days are weekdays only (holidays not modelled)."
     },
     {
       "id": "rule-h1",
@@ -55,8 +55,8 @@
         "url": "https://paiements.ca/sites/default/files/2022-08/part_c_of_5_payment_return.pdf"
       },
       "asOf": "2026-10-10",
-      "berryUse": "Simulated",
-      "inBerry": "Simulated returned payments use these codes and drive the recovery playbook."
+      "berryUse": "Context only",
+      "inBerry": "The codes are defined in Berry's payment model; simulated returned payments that use them are not built yet."
     },
     {
       "id": "fintrac-lctr",
