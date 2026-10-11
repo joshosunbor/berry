@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { OpsConsole } from "@/components/berry/ops-console"
-import { getAuditEvents, getOpsEventItems, getOpsItems, getPolicyCases } from "@/lib/data"
+import { getAuditEvents, getOpsEventItems, getOpsItems } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Operations console · Berry",
@@ -29,7 +29,7 @@ export default function OpsPage() {
         </Link>
       </nav>
       <div className="mt-6">
-        <OpsConsole items={getOpsItems()} events={getAuditEvents()} eventItems={getOpsEventItems()} policyCases={getPolicyCases()} />
+        <OpsConsole items={getOpsItems()} events={getAuditEvents()} eventItems={getOpsEventItems()} />
       </div>
     </main>
   )

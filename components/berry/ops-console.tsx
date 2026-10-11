@@ -5,7 +5,8 @@ import Link from "next/link"
 import { AlertTriangle, CheckCircle2, CircleDashed, Clock, Download, RotateCcw, ShieldCheck, ShieldAlert, XCircle } from "lucide-react"
 import { Illustrative } from "@/components/berry/illustrative"
 import { MomentPicker } from "@/components/berry/ops-moment"
-import { InlineError, PolicyPanel } from "@/components/berry/policy-panel"
+import { InlineError } from "@/components/berry/inline-error"
+import { LazyPolicyPanel } from "@/components/berry/policy-panel-lazy"
 import { ModeChip } from "@/components/berry/mode-chip"
 import { addOpsAction, resetOpsActions, setActor, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -15,7 +16,6 @@ import { requiredRoleFor } from "@/lib/ops/approvals"
 import { OPS, member, type Role } from "@/lib/ops/config"
 import { OPS_MOMENTS } from "@/lib/ops/moments"
 import { PLAYBOOKS } from "@/lib/ops/playbooks"
-import type { PolicyCase } from "@/lib/ops/policy"
 import type { OpsItem, SlaState } from "@/lib/ops/queues"
 import { assign, auditAt, browserItems, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState } from "@/lib/ops/view"
 import type { AuditEvent, QueueName } from "@/lib/schemas"
@@ -70,10 +70,9 @@ export interface OpsConsoleProps {
   items: OpsItem[]
   events: readonly AuditEvent[]
   eventItems: readonly (string | null)[]
-  policyCases: PolicyCase[]
 }
 
-export function OpsConsole({ items: simulated, events, eventItems, policyCases }: OpsConsoleProps) {
+export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleProps) {
   const now = useOpsMoment()
   const actions = useOpsActions()
   // Items from the simulation plus any created in this browser (e.g. over-limit requests from a stress test).
@@ -250,7 +249,7 @@ export function OpsConsole({ items: simulated, events, eventItems, policyCases }
         </TabsContent>
 
         <TabsContent value="policy" className="mt-4 min-w-0">
-          <PolicyPanel cases={policyCases} actions={actions} actor={actor} now={now} record={(r) => addOpsAction(r.action)} />
+          <LazyPolicyPanel actions={actions} actor={actor} now={now} record={(r) => addOpsAction(r.action)} />
         </TabsContent>
 
         <TabsContent value="audit" className="mt-4 min-w-0">

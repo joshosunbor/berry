@@ -2,7 +2,7 @@ import { defineConfig, devices } from "@playwright/test"
 
 /*
  * End-to-end smoke test against a production build: npm run test:e2e.
- * Runs locally (CI runs lint, typecheck and unit tests only).
+ * Includes axe accessibility checks (e2e/a11y.spec.ts). Runs locally and in CI.
  */
 
 const PORT = 3200
@@ -11,6 +11,8 @@ export default defineConfig({
   testDir: "e2e",
   fullyParallel: true,
   reporter: "list",
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 1 : 0,
   use: { baseURL: `http://localhost:${PORT}`, trace: "retain-on-failure" },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },

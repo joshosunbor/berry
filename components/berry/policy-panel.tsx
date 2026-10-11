@@ -1,7 +1,8 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import { History, ShieldAlert, ShieldCheck } from "lucide-react"
+import { History, ShieldCheck } from "lucide-react"
+import { InlineError } from "@/components/berry/inline-error"
 import { Illustrative } from "@/components/berry/illustrative"
 import { OutcomeChip } from "@/components/berry/outcome-chip"
 import { CONFIGS } from "@/lib/engine/config"
@@ -352,15 +353,6 @@ function RollbackForm({ label, onSubmit, error }: { label: string; onSubmit: (wh
       </button>
       {error && <InlineError text={error} />}
     </form>
-  )
-}
-
-export function InlineError({ text }: { text: string }) {
-  return (
-    <p role="alert" className="mt-3 flex w-full items-start gap-2 rounded-md bg-decline-soft px-3 py-2 text-sm text-decline">
-      <ShieldAlert aria-hidden className="mt-0.5 size-4 shrink-0" />
-      {text}
-    </p>
   )
 }
 
