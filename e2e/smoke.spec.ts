@@ -192,3 +192,16 @@ test("foreign report toggle on /methodology; credit-building path on Daniel's fi
   await expect(page.getByRole("switch")).toHaveCount(0)
   expect(errors).toEqual([])
 })
+
+test("Hollis's operating line shows limit, drawn and available", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/ops/loans/loan_hollis-family-farm-cu")
+  await page.getByRole("radio", { name: /\+12 m/ }).click()
+  const line = page.getByRole("region", { name: "Operating line" })
+  await expect(line).toContainText("Limit")
+  await expect(line).toContainText("$60,000.00")
+  await expect(line).toContainText("Drawn (owed principal)")
+  await expect(line).toContainText("Available")
+  await expect(page.getByRole("status").filter({ hasText: "Debits" })).toContainText("✓")
+  expect(errors).toEqual([])
+})

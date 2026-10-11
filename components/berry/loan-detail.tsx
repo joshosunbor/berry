@@ -10,7 +10,7 @@ import { formatCents } from "@/lib/money"
 import { RETURN_CODES } from "@/lib/schemas"
 import { formatTimeToFund, RAILS } from "@/lib/servicing/funding"
 import type { LoanEventType } from "@/lib/servicing/simulate"
-import { daysPastDueAsOf, outstandingAsOf, statusAsOf, type LoanView } from "@/lib/servicing/views"
+import { daysPastDueAsOf, lineAsOf, outstandingAsOf, statusAsOf, type LoanView } from "@/lib/servicing/views"
 import { cn } from "@/lib/utils"
 
 const card = "min-w-0 rounded-lg border border-rule bg-surface p-5"
@@ -27,6 +27,8 @@ const accountLabel = (a: string) => ACCOUNT_LABEL[a.split(":")[0]] ?? a
 
 const EVENT_ICON: Partial<Record<LoanEventType, typeof Send>> = {
   funded: Landmark,
+  line_opened: Landmark,
+  drawn: Landmark,
   debit_sent: Send,
   debit_settled: CheckCircle2,
   debit_returned: Undo2,
@@ -51,6 +53,7 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
   const status = statusAsOf(loan, date)
   const owed = outstandingAsOf(loan, date)
   const dpd = daysPastDueAsOf(loan, date)
+  const line = lineAsOf(loan, date)
   const entries = loan.entries.filter((e) => e.date <= date)
   const routine = new Set<LoanEventType>(["interest_accrued", "debit_sent", "debit_settled", "status_changed"])
   const events = loan.events.filter((e) => e.date <= date && (showRoutine || !routine.has(e.type))).reverse()
@@ -79,9 +82,9 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
           <dd className="num mt-1 text-lg font-semibold">{dpd || "None"}</dd>
         </div>
         <div className="rounded-lg border border-rule bg-surface p-4">
-          <dt className="text-xs text-muted-ink">Funded</dt>
+          <dt className="text-xs text-muted-ink">{line ? "Line opened" : "Funded"}</dt>
           <dd className="mt-1 text-sm">
-            {formatCents(loan.principalCents, { whole: true })} by {RAILS[loan.funding.rail].name}
+            {line ? `${formatCents(loan.principalCents, { whole: true })} limit; draws by` : `${formatCents(loan.principalCents, { whole: true })} by`} {RAILS[loan.funding.rail].name}
             {loan.funding.label && <Illustrative className="ml-1.5" label={loan.funding.label} />}
             <span className="num block text-xs text-muted-ink">
               {loan.funding.fundedOn} · {formatTimeToFund(loan.funding.timeToFundMinutes).toLowerCase()} to fund
@@ -89,6 +92,23 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
           </dd>
         </div>
       </dl>
+      {line && (
+        <section aria-labelledby="line" className={card}>
+          <h2 id="line" className="font-semibold">Operating line</h2>
+          <dl className="num mt-3 grid grid-cols-3 gap-4 text-sm">
+            <div><dt className="text-xs text-muted-ink">Limit</dt><dd className="text-lg font-semibold">{formatCents(line.limitCents)}</dd></div>
+            <div><dt className="text-xs text-muted-ink">Drawn (owed principal)</dt><dd className="text-lg font-semibold">{formatCents(line.drawnCents)}</dd></div>
+            <div><dt className="text-xs text-muted-ink">Available</dt><dd className="text-lg font-semibold">{formatCents(line.availableCents)}</dd></div>
+          </dl>
+          <div className="mt-3 h-2 rounded-full bg-muted" aria-hidden>
+            <div className="h-full rounded-full bg-ink" style={{ width: `${(line.drawnCents / line.limitCents) * 100}%` }} />
+          </div>
+          <p className="mt-3 text-sm text-muted-ink">
+            Draws follow the borrower&apos;s cash flow: {loan.draws!.map((d) => `${formatCents(d.amountCents, { whole: true })} on ${d.date}`).join(", ")}. Interest is charged only on what&apos;s drawn.{" "}
+            <Illustrative />
+          </p>
+        </section>
+      )}
       <p className="text-sm text-muted-ink">
         The borrower&apos;s account is at a {loan.borrowerBank === "bank" ? "bank" : "provincially regulated credit union"}.{" "}
         <Link href={`/workbench/${loan.applicantSlug}`} className="underline underline-offset-2 hover:text-ink">Open {loan.applicantName}&apos;s application file</Link>

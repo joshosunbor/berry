@@ -120,6 +120,40 @@ describe("servicing simulator: the three loan books", () => {
   })
 })
 
+describe("seasonal operating lines are drawn, not disbursed", () => {
+  it.each(["loan_hollis-family-farm-cu", "loan_lakeside-lodge-cu"])("%s: one draw entry per draw, interest only on what's drawn, never over the limit", (id) => {
+    const l = loan(id)
+    const entries = books.credit_union.ledger.forLoan(id)
+    expect(entries.some((e) => e.type === "disbursement")).toBe(false)
+    const draws = entries.filter((e) => e.type === "draw")
+    expect(draws).toHaveLength(l.setup.draws!.length)
+    expect(draws.reduce((t, e) => t + e.lines[0].debitCents, 0)).toBe(l.setup.principalCents)
+    // Debit principal receivable, credit settlement.
+    for (const e of draws) {
+      expect(e.lines.find((x) => x.account === account.principal(id))!.debitCents).toBeGreaterThan(0)
+      expect(e.lines.find((x) => x.account === account.settlement("northgate"))!.creditCents).toBeGreaterThan(0)
+    }
+    // The principal balance never exceeds the limit, and before the first draw nothing is owed or charged.
+    let principal = 0
+    for (const e of entries) {
+      for (const x of e.lines) if (x.account === account.principal(id)) principal += x.debitCents - x.creditCents
+      expect(principal).toBeLessThanOrEqual(l.setup.principalCents)
+      if (e.date < draws[0].date) expect(e.type).not.toBe("interest_accrual")
+    }
+    // Interest posted equals the schedule's interest, which is charged on the drawn balance.
+    const accrued = entries.filter((e) => e.type === "interest_accrual" && e.date <= books.credit_union.horizon).reduce((t, e) => t + e.lines[0].debitCents, 0)
+    const scheduled = l.setup.schedule.filter((d) => d.date <= books.credit_union.horizon).reduce((t, d) => t + d.interestCents, 0)
+    expect(accrued).toBe(scheduled)
+    expectBalanced(books.credit_union.ledger)
+  })
+
+  it("Lakeside's line is repaid in full after its summer peak", () => {
+    expect(loan("loan_lakeside-lodge-cu").statusTimeline.at(-1)!.status).toBe("paid_off")
+    expect(books.credit_union.ledger.outstanding("loan_lakeside-lodge-cu")).toBe(0)
+    expectBalanced(books.credit_union.ledger)
+  })
+})
+
 describe("charge-off is configurable", () => {
   it("charges off earlier when the configured days past due is lower", () => {
     const setup = loan("loan_corner-grind-cafe-cu").setup

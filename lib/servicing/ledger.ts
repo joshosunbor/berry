@@ -141,6 +141,21 @@ export function postDisbursement(l: Ledger, loanId: string, amountCents: number,
   })
 }
 
+/** A draw on a line of credit: the borrower takes money up to the limit. */
+export function postDraw(l: Ledger, loanId: string, amountCents: number, date: string, drawNumber: number) {
+  return l.post({
+    type: "draw",
+    date,
+    loanId,
+    memo: `Draw ${drawNumber} on the line`,
+    ref: ref("loan", `draw-${loanId.replace(/^loan_/, "")}-${drawNumber}`),
+    lines: [
+      { account: account.principal(loanId), debitCents: amountCents },
+      { account: account.settlement(l.institutionId), creditCents: amountCents },
+    ],
+  })
+}
+
 /** Interest earned for a period (illustrative rates). */
 export function postInterestAccrual(l: Ledger, loanId: string, amountCents: number, date: string) {
   if (amountCents === 0) return null

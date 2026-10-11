@@ -3,7 +3,7 @@ import type { JournalEntry } from "@/lib/schemas"
 import type { FundingResult } from "./funding"
 import { monthEnds, reconcile, type BreakKind } from "./reconcile"
 import type { Attempt, BookResult, LoanEvent, LoanResult, LoanStatus } from "./simulate"
-import type { ScheduledDebit } from "@/lib/engine/repayment"
+import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
 import type { BorrowerFee } from "./borrower-bank"
 import type { ProductType } from "@/lib/schemas"
 
@@ -36,6 +36,8 @@ export interface LoanView {
   funding: FundingResult
   borrowerBank: "bank" | "credit_union"
   schedule: ScheduledDebit[]
+  /** Present for lines drawn over time: the limit is principalCents. */
+  draws: Draw[] | null
   events: LoanEvent[]
   attempts: Attempt[]
   statusTimeline: { date: string; status: LoanStatus }[]
@@ -82,6 +84,7 @@ export function toLoanView(book: BookResult, loan: LoanResult, breaks: LoanBreak
     funding: s.funding,
     borrowerBank: s.borrowerAccount.institutionType,
     schedule: s.schedule,
+    draws: s.draws ?? null,
     events: loan.events,
     attempts: loan.attempts,
     statusTimeline: loan.statusTimeline,
@@ -108,6 +111,18 @@ export function outstandingAsOf(v: Pick<LoanView, "entries" | "id">, date: strin
     for (const l of e.lines) if (l.account === `principal:${v.id}` || l.account === `interest:${v.id}`) owed += l.debitCents - l.creditCents
   }
   return owed
+}
+
+/** For a drawn line: limit, what's drawn and not yet repaid, and what's still available, as of a date. */
+export function lineAsOf(v: Pick<LoanView, "entries" | "id" | "principalCents" | "draws">, date: string): { limitCents: number; drawnCents: number; availableCents: number; drawnToDateCents: number } | null {
+  if (!v.draws) return null
+  let drawn = 0
+  for (const e of v.entries) {
+    if (e.date > date) break
+    for (const l of e.lines) if (l.account === `principal:${v.id}`) drawn += l.debitCents - l.creditCents
+  }
+  const drawnToDateCents = v.draws.filter((d) => d.date <= date).reduce((t, d) => t + d.amountCents, 0)
+  return { limitCents: v.principalCents, drawnCents: drawn, availableCents: v.principalCents - drawn, drawnToDateCents }
 }
 
 export function daysPastDueAsOf(v: Pick<LoanView, "statusTimeline">, date: string): number {

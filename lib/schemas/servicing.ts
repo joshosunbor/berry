@@ -115,6 +115,7 @@ export const JournalLine = z
 
 export const JournalEntryType = z.enum([
   "disbursement",
+  "draw",
   "interest_accrual",
   "collection_sent",
   "collection_settled",

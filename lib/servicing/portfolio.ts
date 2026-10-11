@@ -93,6 +93,7 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
       product: d.product,
       principalCents: d.limitCents,
       schedule: plan.debits,
+      draws: plan.draws,
       funding,
       borrowerAccount: { institutionType: deposit.institutionType, kind: a.kind },
       payroll: a.kind === "personal" && a.features.income.payroll ? { lastPayDate: a.features.income.payroll.lastPayDate, cadenceDays: a.features.income.payroll.cadenceDays } : null,

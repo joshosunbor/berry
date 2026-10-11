@@ -186,3 +186,55 @@ describe("rounding: schedules sum exactly, in whole cents", () => {
     }
   })
 })
+
+describe("seasonal operating line: draws, interest on the drawn balance only", () => {
+  // A farm whose spring months run short: March, April and May.
+  const monthly = [
+    ["2025-10", 9_000_000], ["2025-11", 3_600_000], ["2025-12", 1_000_000], ["2026-01", 1_500_000], ["2026-02", 700_000],
+    ["2026-03", -3_300_000], ["2026-04", -6_700_000], ["2026-05", -4_200_000], ["2026-06", 0], ["2026-07", 300_000],
+    ["2026-08", 1_500_000], ["2026-09", 7_400_000],
+  ].map(([month, netCents]) => ({ month: month as string, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: netCents as number }))
+  const LIMIT = 6_000_000
+  const APR = 795
+  const plan = buildPadPlan({
+    decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: LIMIT, aprBps: APR }),
+    features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] }, monthly }),
+    kind: "business",
+    agreementSignedOn: SIGNED,
+  })
+
+  it("draws the whole limit, only in the months that ran short, in proportion to the shortfall", () => {
+    const draws = plan.draws!
+    expect(draws.reduce((t, d) => t + d.amountCents, 0)).toBe(LIMIT)
+    expect(draws.map((d) => d.date.slice(5, 7))).toEqual(["03", "04", "05"])
+    const [mar, apr, may] = draws.map((d) => d.amountCents)
+    expect(apr).toBeGreaterThan(may)
+    expect(may).toBeGreaterThan(mar)
+    expect(Math.abs(mar / LIMIT - 33 / 142)).toBeLessThan(0.001)
+    for (const d of draws) expect(Number.isInteger(d.amountCents)).toBe(true)
+  })
+
+  it("charges interest only on the drawn balance, in arrears, and never draws past the limit", () => {
+    // Rebuild the balance month by month from the draws and the principal repaid.
+    const events = [
+      ...plan.draws!.map((d) => ({ date: d.date, delta: d.amountCents, debit: null as null | (typeof plan.debits)[number] })),
+      ...plan.debits.map((d) => ({ date: d.date, delta: -d.principalCents, debit: d })),
+    ].sort((a, b) => a.date.localeCompare(b.date) || (a.debit ? -1 : 1))
+    let balance = 0
+    for (const e of events) {
+      if (e.debit) expect(e.debit.interestCents, e.date).toBe(Math.round((balance * APR) / 10_000 / 12))
+      balance += e.delta
+      expect(balance).toBeLessThanOrEqual(LIMIT)
+      expect(balance).toBeGreaterThanOrEqual(0)
+    }
+    expect(balance).toBe(0)
+    // Nothing is charged before the first draw.
+    expect(plan.debits.every((d) => d.date > plan.draws![0].date)).toBe(true)
+  })
+
+  it("sweeps principal only in the peak months, and repays exactly the limit", () => {
+    for (const d of plan.debits) if (d.principalCents) expect([9, 10, 11]).toContain(Number(d.date.slice(5, 7)))
+    expect(plan.totalPrincipalCents).toBe(LIMIT)
+    expect(plan.debits.reduce((t, d) => t + d.amountCents, 0)).toBe(LIMIT + plan.totalInterestCents)
+  })
+})

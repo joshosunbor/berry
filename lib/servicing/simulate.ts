@@ -2,7 +2,7 @@ import { addBusinessDays, businessDaysBetween, earliestSafeRetry, isBusinessDay 
 import { Rng, hashSeed } from "@/lib/rng"
 import type { InstitutionId, Mode } from "@/lib/modes"
 import type { ProductType, ReturnCode, RecoveryRules } from "@/lib/schemas"
-import type { ScheduledDebit } from "@/lib/engine/repayment"
+import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
 import { borrowerNsfFee, type BorrowerAccount, type BorrowerFee } from "./borrower-bank"
 import { SERVICING, type ServicingConfig } from "./config"
 import type { FundingResult } from "./funding"
@@ -13,6 +13,7 @@ import {
   postCollectionSent,
   postCollectionSettled,
   postDisbursement,
+  postDraw,
   postInterestAccrual,
   postReturn,
   type CollectionPosting,
@@ -42,8 +43,11 @@ export interface LoanSetup {
   applicantName: string
   kind: "personal" | "business"
   product: ProductType
+  /** The amount lent, or for a line of credit with draws, its limit. */
   principalCents: number
   schedule: ScheduledDebit[]
+  /** Lines of credit drawn over time (seasonal operating lines). Absent: the full amount is disbursed at funding. */
+  draws?: Draw[]
   funding: FundingResult
   borrowerAccount: BorrowerAccount
   payroll: { lastPayDate: string; cadenceDays: number } | null
@@ -62,6 +66,8 @@ export interface Script {
 
 export type LoanEventType =
   | "funded"
+  | "line_opened"
+  | "drawn"
   | "interest_accrued"
   | "debit_sent"
   | "debit_settled"
@@ -171,12 +177,20 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
     events.push({ date, type: "status_changed", status: next, text: why })
   }
 
-  // Funding
+  // Funding: a lump sum, or for a drawn line, the limit is opened and money moves only on each draw.
   const fundedOn = s.funding.fundedOn
-  post(fundedOn, (l) => postDisbursement(l, s.id, s.principalCents, fundedOn, s.funding.rail === "rtr_simulated" ? "Real-Time Rail (simulated)" : s.funding.rail === "aft" ? "AFT" : "Interac e-Transfer"))
-  principal += s.principalCents
-  events.push({ date: fundedOn, type: "funded", amountCents: s.principalCents, text: `Funded ${s.funding.rail === "rtr_simulated" ? "by Real-Time Rail (simulated — RTR launching)" : s.funding.rail === "aft" ? "by AFT" : "by Interac e-Transfer"}.` })
-  setStatus(fundedOn, "active", "Loan funded.")
+  const railName = s.funding.rail === "rtr_simulated" ? "Real-Time Rail (simulated)" : s.funding.rail === "aft" ? "AFT" : "Interac e-Transfer"
+  if (s.draws) {
+    events.push({ date: fundedOn, type: "line_opened", amountCents: s.principalCents, text: "Operating line opened. Nothing is drawn yet; draws go by AFT." })
+  } else {
+    post(fundedOn, (l) => postDisbursement(l, s.id, s.principalCents, fundedOn, railName))
+    principal += s.principalCents
+    events.push({ date: fundedOn, type: "funded", amountCents: s.principalCents, text: `Funded ${s.funding.rail === "rtr_simulated" ? "by Real-Time Rail (simulated — RTR launching)" : s.funding.rail === "aft" ? "by AFT" : "by Interac e-Transfer"}.` })
+  }
+  setStatus(fundedOn, "active", s.draws ? "Line opened." : "Loan funded.")
+  const pendingDraws = [...(s.draws ?? [])]
+  let drawCount = 0
+  let drawnTotal = 0
 
   const items: Item[] = s.schedule.map((d) => ({
     id: `${s.id.replace(/^loan_/, "")}-${d.n}`,
@@ -380,6 +394,18 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       if (f.returnOn === day) handleReturn(f, day)
     }
 
+    // Draws on the line (after any debit that day), never beyond the limit.
+    while (pendingDraws.length && pendingDraws[0].date === day && !chargedOffOn) {
+      const dr = pendingDraws.shift()!
+      if (drawnTotal + dr.amountCents > s.principalCents) throw new Error(`${s.id}: draw would exceed the limit`)
+      drawCount++
+      drawnTotal += dr.amountCents
+      const k = drawCount
+      post(day, (l) => postDraw(l, s.id, dr.amountCents, day, k))
+      principal += dr.amountCents
+      events.push({ date: day, type: "drawn", amountCents: dr.amountCents, text: `Draw ${k} on the line, by AFT.` })
+    }
+
     // 5. Delinquency, charge-off and payoff.
     // A payment is past due from its scheduled date once it has failed, or once that date has passed unpaid.
     // A retry in flight is still past due until it settles.
@@ -401,7 +427,7 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       if (dpd > 0 && status === "active") setStatus(day, "delinquent", `${dpd} day(s) past due.`)
       if (dpd === 0 && (status === "delinquent" || status === "hardship")) setStatus(day, "active", "Back up to date.")
     }
-    if (items.every((it) => it.state === "paid") && principal + interest === 0) {
+    if (items.every((it) => it.state === "paid") && principal + interest === 0 && pendingDraws.length === 0) {
       events.push({ date: day, type: "paid_off", text: "Paid in full." })
       setStatus(day, "paid_off", "Paid in full.")
       break

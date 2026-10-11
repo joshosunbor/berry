@@ -35,6 +35,11 @@ export const RECOURSE_STATEMENT =
 
 export type Frequency = "monthly" | "biweekly" | "seasonal"
 
+export interface Draw {
+  date: string
+  amountCents: number
+}
+
 export interface ScheduledDebit {
   n: number
   date: string
@@ -60,6 +65,8 @@ export interface PadPlan {
   confirmationSentOn: string
   firstDebitOn: string
   debits: ScheduledDebit[]
+  /** Seasonal lines only: when money is drawn on the line, and how much. */
+  draws?: Draw[]
   totalPrincipalCents: number
   totalInterestCents: number
   assumptions: string[]
@@ -94,7 +101,7 @@ function amortized(principal: number, aprBps: number, periodsPerYear: number, n:
 
 export interface PadInput {
   decision: Decision
-  features: Pick<Features, "income">
+  features: Pick<Features, "income" | "monthly">
   kind: "personal" | "business"
   agreementSignedOn: string
 }
@@ -109,6 +116,7 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
   const earliest = addDays(confirmationSentOn, PAD_RULES.confirmationDays)
   const debits: ScheduledDebit[] = []
   const assumptions: string[] = []
+  let planDraws: Draw[] | undefined
   let frequency: Frequency
   let amountType: "fixed" | "variable"
 
@@ -134,38 +142,43 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
     }
     if (biweekly) assumptions.push("Debits fall on the borrower's payday, every 14 days, to match how they're paid.")
   } else if (decision.structure === "seasonal_operating") {
+    // An operating line is a limit, not a lump sum. Money is drawn through the
+    // quiet months before the peak, in proportion to how short each of those
+    // calendar months ran in the borrower's own cash-flow history (evenly if
+    // none ran short). Interest is charged monthly in arrears on the drawn
+    // balance only; principal is swept from peak-season sales.
     frequency = "seasonal"
     amountType = "variable"
-    // Draw evenly through the quiet months, pay interest as the balance
-    // builds, and repay from peak-season sales. Months with nothing owed have
-    // no debit. Runs until the line is back to zero (at most 24 months).
     const peak = features.income.peakMonths
-    let date = addMonths(earliest, 1, 1)
-    // Quiet months between the start and the first peak that follows them: all draws happen there.
-    let quiet = 0
-    for (let i = 0, probe = date; i < 24; i++, probe = addMonths(probe, 1, 1)) {
-      const inPeak = peak.includes(d(probe).getUTCMonth() + 1)
-      if (!inPeak) quiet++
-      else if (quiet > 0) break
+    const monthOf = (iso: string) => d(iso).getUTCMonth() + 1
+    const start = addMonths(earliest, 1, 1)
+    const quiet: string[] = []
+    for (let i = 0, probe = start; i < 24; i++, probe = addMonths(probe, 1, 1)) {
+      if (!peak.includes(monthOf(probe))) quiet.push(probe)
+      else if (quiet.length) break
     }
-    const drawPerMonth = Math.ceil(principal / Math.max(1, quiet))
+    const shortfall = (m: number) => Math.max(0, -features.monthly.filter((x) => Number(x.month.slice(5, 7)) === m).reduce((t, x) => t + x.netCents, 0))
+    let weights = quiet.map((q) => shortfall(monthOf(q)))
+    if (weights.every((w) => w === 0)) weights = quiet.map(() => 1)
+    const totalWeight = weights.reduce((t, w) => t + w, 0)
+    const amounts = weights.map((w) => Math.floor((principal * w) / totalWeight))
+    const lastDrawIndex = weights.reduce((last, w, i) => (w > 0 ? i : last), 0)
+    amounts[lastDrawIndex] += principal - amounts.reduce((t, a) => t + a, 0)
+    const draws: Draw[] = quiet.map((q, i) => ({ date: onBusinessDay(q), amountCents: amounts[i] })).filter((x) => x.amountCents > 0)
+    const drawByMonth = new Map(quiet.map((q, i) => [q, amounts[i]]))
+
+    let date = start
     let balance = 0
     let drawn = 0
     let peakStartBalance = 0
     let n = 0
-    let started = false
-    for (let i = 0; i < 24 && (drawn < principal || balance > 0); i++) {
-      const month = d(date).getUTCMonth() + 1
+    for (let i = 0; i < 36 && (drawn < principal || balance > 0); i++) {
+      const month = monthOf(date)
       const inPeak = peak.includes(month)
-      if (!inPeak && drawn < principal) {
-        const draw = Math.min(drawPerMonth, principal - drawn)
-        drawn += draw
-        balance += draw
-        started = true
-      }
+      // Interest in arrears on what was drawn over the past month.
       const interest = Math.round((balance * apr) / 10_000 / 12)
       let principalPart = 0
-      if (inPeak && started && balance > 0) {
+      if (inPeak && drawn === principal && balance > 0) {
         if (peakStartBalance === 0) peakStartBalance = balance
         const isLastPeak = !peak.includes((month % 12) + 1)
         principalPart = isLastPeak ? balance : Math.min(balance, Math.ceil(peakStartBalance / peak.length))
@@ -177,11 +190,16 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
         n++
         debits.push({ n, date: onBusinessDay(date), amountCents: principalPart + interest, interestCents: interest, principalCents: principalPart, balanceAfterCents: balance })
       }
+      // This month's draw, after the debit.
+      const draw = drawByMonth.get(date) ?? 0
+      drawn += draw
+      balance += draw
       date = addMonths(date, 1, 1)
     }
     assumptions.push(
-      "Assumes the line is drawn in equal amounts through the quieter months (illustrative). Interest only while it builds; principal is repaid from peak-season sales, and the line is back to zero after the peak.",
+      "Draws follow the borrower's own cash flow: money is drawn in the quiet months that ran short in the past year (illustrative). Interest is charged only on what has been drawn; principal is repaid from peak-season sales, and the line is back to zero after the peak.",
     )
+    planDraws = draws
   } else {
     frequency = "monthly"
     amountType = "variable"
@@ -213,6 +231,7 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
     confirmationSentOn,
     firstDebitOn: debits[0].date,
     debits,
+    draws: planDraws,
     totalPrincipalCents: debits.reduce((s, x) => s + x.principalCents, 0),
     totalInterestCents: debits.reduce((s, x) => s + x.interestCents, 0),
     assumptions,
