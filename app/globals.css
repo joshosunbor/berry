@@ -64,6 +64,10 @@
   --color-bank-soft: var(--bank-soft);
   --color-bank-on: var(--bank-on);
 
+  /* Chart series (validated categorical slots 1–2; independent of mode colours) */
+  --color-series-in: var(--series-in);
+  --color-series-out: var(--series-out);
+
   /* Outcomes and SLA status: never the same hues as the modes */
   --color-approve: var(--approve);
   --color-approve-soft: var(--approve-soft);
@@ -115,6 +119,9 @@
   --bank-fg: #34507f;
   --bank-soft: #e9eef6;
   --bank-on: #ffffff;
+
+  --series-in: #2a78d6;
+  --series-out: #eb6834;
 
   --approve: #15803d;
   --approve-soft: #eef8f1;
@@ -173,6 +180,9 @@
     --bank-soft: #1b2436;
     --bank-on: #0e1116;
 
+    --series-in: #3987e5;
+    --series-out: #d95926;
+
     --approve: #4ade80;
     --approve-soft: #12291b;
     --conditions: #fbbf24;
@@ -212,6 +222,9 @@
   --bank-fg: #b3c5e6;
   --bank-soft: #1b2436;
   --bank-on: #0e1116;
+
+  --series-in: #3987e5;
+  --series-out: #d95926;
 
   --approve: #4ade80;
   --approve-soft: #12291b;

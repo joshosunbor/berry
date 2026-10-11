@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SiteFooter } from "@/components/berry/site-footer";
 import { SiteHeader } from "@/components/berry/site-header";
+import { ModeProvider } from "@/components/berry/mode-context";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <ModeProvider>
         <TooltipProvider>
           <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-surface focus:px-3 focus:py-2">
             Skip to content
@@ -36,6 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div id="main" className="flex-1">{children}</div>
           <SiteFooter />
         </TooltipProvider>
+        </ModeProvider>
       </body>
     </html>
   );
