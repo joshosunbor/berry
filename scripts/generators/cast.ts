@@ -14,7 +14,7 @@ import {
   type Window,
 } from "./archetypes"
 import { TxnBuilder, settleOpeningBalance } from "./builder"
-import { addDays, eachDay, isWeekend, monthOf } from "./dates"
+import { addDays, dayInMonth, eachDay, eachMonth, isWeekend, monthOf, nextWeekday } from "./dates"
 
 /*
  * The required cast (CLAUDE.md §3). All people, businesses, employers,
@@ -92,10 +92,10 @@ export function buildApplicant(spec: ApplicantSpec): Applicant {
   }
 }
 
-const GROCERS = ["Fresh Basket Market", "Corner Fare Grocery", "Harvest Lane Foods"] as const
-const DINING = ["Little Fern Café", "Noodle Yard", "Saffron & Salt", "Pizza Atelier"] as const
-const SHOPS = ["Northway Department Store", "Pinecone Home", "Brightside Pharmacy", "Cedar Books"] as const
-const FUEL = ["Trailhead Fuel", "Prairie Gas Bar"] as const
+const GROCERS = ["Greenstall Market", "Corner Fare Grocery", "Harvest Lane Foods"] as const
+const DINING = ["Little Fern Café", "Noodle Yard", "Saffron Lantern", "Pizza Atelier"] as const
+const SHOPS = ["Marlowe & Finch Department Store", "Pinecone Home", "Wrenfield Pharmacy", "Cedar Books"] as const
+const FUEL = ["Trailhead Fuel", "Wheatline Gas Bar"] as const
 
 // ---------------------------------------------------------------------------
 // Personal
@@ -124,15 +124,15 @@ const priya: ApplicantSpec = {
     { key: "sav", accountType: "SAVINGS", provider: "northgate", nickname: "Savings", openedDate: "2019-05-14", opening: 6_800 },
   ],
   build(b, acc, w) {
-    biweeklyPayroll(b, acc.chq, w, { firstPayday: "2025-10-03", net: 2_480, sd: 70, employer: "Westmere General Hospital" })
-    monthly(b, acc.chq, w, { day: 1, amount: 1_650, category: "RENT_MORTGAGE", description: "Rent", channel: "PAD", merchant: "Elmstead Property Management" })
-    monthly(b, acc.chq, w, { day: 15, amount: 412.37, category: "LOAN_PAYMENT", description: "Car loan payment", channel: "PAD", merchant: "Autoline Finance" })
+    biweeklyPayroll(b, acc.chq, w, { firstPayday: "2025-10-03", net: 2_480, sd: 70, employer: "Halcyon General Hospital" })
+    monthly(b, acc.chq, w, { day: 1, amount: 1_650, category: "RENT_MORTGAGE", description: "Rent", channel: "PAD", merchant: "Bramblegate Property Management" })
+    monthly(b, acc.chq, w, { day: 15, amount: 412.37, category: "LOAN_PAYMENT", description: "Car loan payment", channel: "PAD", merchant: "Carriway Auto Finance" })
     monthly(b, acc.chq, w, { day: 8, amount: 85, category: "UTILITIES", description: "Mobile phone", channel: "PAD", merchant: "Ringwave Mobile" })
     monthly(b, acc.chq, w, { day: 12, amount: 72, category: "UTILITIES", description: "Home internet", channel: "PAD", merchant: "Ringwave Home" })
     monthly(b, acc.chq, w, { day: 20, amount: 95, sd: 18, category: "UTILITIES", description: "Hydro", channel: "PAD", merchant: "Local Hydro Utility" })
     monthly(b, acc.chq, w, { day: 3, amount: 27.99, category: "SUBSCRIPTIONS", description: "Streaming bundle", channel: "CARD", merchant: "Streamhouse" })
     monthly(b, acc.chq, w, { day: 24, amount: 360, sd: 70, category: "CARD_PAYMENT", description: "Credit card payment, paid in full", channel: "EFT", merchant: "Card account (other)" })
-    monthly(b, acc.chq, w, { day: 22, amount: 138, category: "INSURANCE", description: "Auto insurance", channel: "PAD", merchant: "Steadfast Insurance" })
+    monthly(b, acc.chq, w, { day: 22, amount: 138, category: "INSURANCE", description: "Auto insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
     everyday(b, acc.chq, w, { perWeek: 2, avg: 78, sd: 22, category: "GROCERIES", merchants: GROCERS })
     everyday(b, acc.chq, w, { perWeek: 1, avg: 58, sd: 10, category: "FUEL", merchants: FUEL })
     everyday(b, acc.chq, w, { perWeek: 1, avg: 34, sd: 12, category: "DINING", merchants: DINING })
@@ -172,7 +172,7 @@ const amara: ApplicantSpec = {
       seasonality: { 1: 0.82, 2: 0.86, 12: 1.15, 7: 1.08, 8: 1.08 },
     })
     monthly(b, acc.chq, w, { day: 1, amount: 1_250, category: "RENT_MORTGAGE", description: "Rent", channel: "ETRANSFER", merchant: "Landlord" })
-    monthly(b, acc.chq, w, { day: 10, amount: 214, category: "INSURANCE", description: "Auto insurance (commercial use)", channel: "PAD", merchant: "Steadfast Insurance" })
+    monthly(b, acc.chq, w, { day: 10, amount: 214, category: "INSURANCE", description: "Auto insurance (commercial use)", channel: "PAD", merchant: "Hearthguard Insurance" })
     monthly(b, acc.chq, w, { day: 6, amount: 75, category: "UTILITIES", description: "Mobile phone", channel: "PAD", merchant: "Ringwave Mobile" })
     monthly(b, acc.chq, w, { day: 18, amount: 120, sd: 35, category: "UTILITIES", description: "Utilities", channel: "PAD", merchant: "Local Utility" })
     monthly(b, acc.chq, w, { day: 25, amount: 160, sd: 40, category: "CARD_PAYMENT", description: "Store card payment", channel: "EFT", merchant: "Store card (other)" })
@@ -211,7 +211,7 @@ const daniel: ApplicantSpec = {
     { key: "sav", accountType: "SAVINGS", provider: "northgate", nickname: "Savings", openedDate: "2026-02-20", opening: 1_000 },
   ],
   build(b, acc, w) {
-    biweeklyPayroll(b, acc.chq, w, { firstPayday: "2026-03-13", net: 1_960, sd: 45, employer: "Keystone Freight Services" })
+    biweeklyPayroll(b, acc.chq, w, { firstPayday: "2026-03-13", net: 1_960, sd: 45, employer: "Brindlewood Freight Services" })
     monthly(b, acc.chq, w, { day: 1, amount: 1_100, category: "RENT_MORTGAGE", description: "Rent", channel: "ETRANSFER", merchant: "Landlord" })
     monthly(b, acc.chq, w, { day: 2, amount: 105, category: "TRANSPORT", description: "Monthly transit pass", channel: "CARD", merchant: "City Transit" })
     monthly(b, acc.chq, w, { day: 9, amount: 55, category: "UTILITIES", description: "Mobile phone", channel: "PAD", merchant: "Ringwave Mobile" })
@@ -219,7 +219,7 @@ const daniel: ApplicantSpec = {
     everyday(b, acc.chq, w, { perWeek: 2, avg: 48, sd: 14, category: "GROCERIES", merchants: GROCERS })
     everyday(b, acc.chq, w, { perWeek: 0.6, avg: 22, sd: 8, category: "DINING", merchants: DINING })
     everyday(b, acc.chq, w, { perWeek: 1, avg: 70, sd: 35, category: "SHOPPING", merchants: SHOPS })
-    monthly(b, acc.chq, w, { day: 11, amount: 24, category: "INSURANCE", description: "Tenant insurance", channel: "PAD", merchant: "Steadfast Insurance" })
+    monthly(b, acc.chq, w, { day: 11, amount: 24, category: "INSURANCE", description: "Tenant insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
     monthly(b, acc.chq, w, { day: 14, amount: 80, sd: 20, category: "UTILITIES", description: "Hydro", channel: "PAD", merchant: "Local Hydro Utility" })
     // Setting up a first apartment.
     for (const [d, amount] of [["2026-03-04", 640], ["2026-03-07", 410], ["2026-03-21", 285], ["2026-04-11", 360]] as const) {
@@ -268,8 +268,8 @@ const sofia: ApplicantSpec = {
     // took effect on 2026-03-12 (FCAC), and three in the last 90 days at the
     // capped $10 fee. Each is re-presented and paid a week later.
     const loans = [
-      { day: 15, amount: 380.15, label: "Car loan payment", merchant: "Autoline Finance", bounced: { "2026-02-16": 48, "2026-07-15": 10, "2026-09-15": 10 } },
-      { day: 22, amount: 290.4, label: "Loan payment", merchant: "Quickstep Lending", bounced: { "2026-08-24": 10 } },
+      { day: 15, amount: 380.15, label: "Car loan payment", merchant: "Carriway Auto Finance", bounced: { "2026-02-16": 48, "2026-07-15": 10, "2026-09-15": 10 } },
+      { day: 22, amount: 290.4, label: "Loan payment", merchant: "Steplight Lending", bounced: { "2026-08-24": 10 } },
     ]
     for (const loan of loans) {
       const bouncedMonths = Object.keys(loan.bounced).map(monthOf)
@@ -291,7 +291,7 @@ const sofia: ApplicantSpec = {
     // Card balances climb: purchases outpace payments every month.
     everyday(b, acc.visa, w, { perWeek: 2, avg: 40, sd: 16, category: "SHOPPING", merchants: SHOPS })
     everyday(b, acc.visa, w, { perWeek: 1, avg: 30, sd: 10, category: "DINING", merchants: DINING })
-    everyday(b, acc.store, w, { perWeek: 0.8, avg: 36, sd: 14, category: "SHOPPING", merchants: ["Northway Department Store"] })
+    everyday(b, acc.store, w, { perWeek: 0.8, avg: 36, sd: 14, category: "SHOPPING", merchants: ["Marlowe & Finch Department Store"] })
     for (const [card, amount] of [["visa", 365], ["store", 60]] as const) {
       monthly(b, acc.chq, w, { day: 26, amount, sd: 15, category: "CARD_PAYMENT", description: `Credit card payment (${card === "visa" ? "rewards card" : "store card"})`, channel: "EFT" })
       monthly(b, acc[card], w, { day: 26, amount, category: "CARD_PAYMENT", description: "Payment received, thank you", channel: "EFT", memo: "CREDIT" })
@@ -330,7 +330,7 @@ const hollis: ApplicantSpec = {
       weights: { 9: 0.22, 10: 0.26, 11: 0.17, 12: 0.04, 1: 0.05, 2: 0.03, 3: 0.03, 4: 0.03, 5: 0.03, 6: 0.03, 7: 0.04, 8: 0.07 },
       depositsPerMonth: [2, 4],
       description: "Grain sale settlement",
-      merchant: "Prairie Gateway Terminal",
+      merchant: "Coulee Ridge Grain Terminal",
       channel: "EFT",
       jitter: 0.35,
     })
@@ -342,7 +342,7 @@ const hollis: ApplicantSpec = {
     }
     const fuel = (m: number) => ([4, 5].includes(m) ? 6_000 : [9, 10].includes(m) ? 7_000 : 2_000)
     for (let m = 1; m <= 12; m++) {
-      monthly(b, acc.op, w, { day: 14, amount: fuel(m), sd: fuel(m) * 0.1, category: "FUEL", description: "Farm fuel delivery", channel: "PAD", merchant: "Prairie Gas Bar Bulk Fuel", months: [m] })
+      monthly(b, acc.op, w, { day: 14, amount: fuel(m), sd: fuel(m) * 0.1, category: "FUEL", description: "Farm fuel delivery", channel: "PAD", merchant: "Wheatline Bulk Fuel", months: [m] })
     }
     monthly(b, acc.op, w, { day: 5, amount: 3_800, category: "LOAN_PAYMENT", description: "Equipment loan payment", channel: "PAD", merchant: "Fieldline Equipment Credit" })
     monthly(b, acc.op, w, { day: 15, amount: 28_000, category: "RENT_COMMERCIAL", description: "Annual land rent", channel: "EFT", merchant: "Land rent (landowner)", months: [11] })
@@ -377,16 +377,16 @@ const northline: ApplicantSpec = {
   balanceFloor: 3_000,
   accounts: [{ key: "op", accountType: "BUSINESS_CHECKING", provider: "northgate", nickname: "Operating account", openedDate: "2018-01-15", opening: 18_000 }],
   build(b, acc, w) {
-    cardSettlements(b, acc.op, w, { cadence: "weekly", weekday: 1, perPeriod: 11_000, sd: 900, processor: "ClearSettle Merchant Services", monthlyGrowth: 0.018 })
+    cardSettlements(b, acc.op, w, { cadence: "weekly", weekday: 1, perPeriod: 11_000, sd: 900, processor: "Tallybrook Merchant Services", monthlyGrowth: 0.018 })
     monthly(b, acc.op, w, { day: 12, amount: 3_100, sd: 600, category: "BUSINESS_REVENUE", description: "Fleet customer invoice payment", channel: "EFT", merchant: "Fleet accounts" })
-    weekly(b, acc.op, w, { weekday: 3, amount: 3_800, sd: 450, category: "SUPPLIES_INVENTORY", description: "Parts supplier", channel: "PAD", merchant: "Partsworks Distribution" })
+    weekly(b, acc.op, w, { weekday: 3, amount: 3_800, sd: 450, category: "SUPPLIES_INVENTORY", description: "Parts supplier", channel: "PAD", merchant: "Gearloft Parts Distribution" })
     biweekly(b, acc.op, w, { first: "2025-10-09", amount: 9_200, sd: 150, category: "PAYROLL_EXPENSE", description: "Payroll run", channel: "EFT" })
-    monthly(b, acc.op, w, { day: 1, amount: 4_200, category: "RENT_COMMERCIAL", description: "Shop lease", channel: "PAD", merchant: "Kingsway Industrial Properties" })
+    monthly(b, acc.op, w, { day: 1, amount: 4_200, category: "RENT_COMMERCIAL", description: "Shop lease", channel: "PAD", merchant: "Foundry Row Properties" })
     monthly(b, acc.op, w, { day: 17, amount: 900, sd: 120, category: "UTILITIES", description: "Utilities", channel: "PAD", merchant: "Local Utility" })
-    monthly(b, acc.op, w, { day: 21, amount: 650, category: "INSURANCE", description: "Garage liability insurance", channel: "PAD", merchant: "Steadfast Insurance" })
+    monthly(b, acc.op, w, { day: 21, amount: 650, category: "INSURANCE", description: "Garage liability insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
     monthly(b, acc.op, w, { day: 8, amount: 850, category: "LOAN_PAYMENT", description: "Diagnostic equipment lease", channel: "PAD", merchant: "Fieldline Equipment Credit" })
     monthly(b, acc.op, w, { day: 3, amount: 185, category: "SUBSCRIPTIONS", description: "Shop management software", channel: "CARD", merchant: "Bayboard Software" })
-    monthly(b, acc.op, w, { day: 28, amount: 6_500, sd: 600, category: "TAXES", description: "HST remittance", channel: "EFT", merchant: "Receiver General", months: [1, 4, 7, 10] })
+    monthly(b, acc.op, w, { day: 28, amount: 6_500, sd: 600, category: "TAXES", description: "HST remittance", channel: "EFT", merchant: "Tax remittance", months: [1, 4, 7, 10] })
   },
 }
 
@@ -411,18 +411,18 @@ const brightSmile: ApplicantSpec = {
   balanceFloor: 20_000,
   accounts: [{ key: "op", accountType: "BUSINESS_CHECKING", provider: "northgate", nickname: "Practice operating account", openedDate: "2014-09-02", opening: 85_000 }],
   build(b, acc, w) {
-    cardSettlements(b, acc.op, w, { cadence: "daily", openDays: [1, 2, 3, 4, 5], perPeriod: 5_500, sd: 900, processor: "ClearSettle Merchant Services", seasonality: { 12: 0.85, 7: 0.9, 8: 0.9 } })
+    cardSettlements(b, acc.op, w, { cadence: "daily", openDays: [1, 2, 3, 4, 5], perPeriod: 5_500, sd: 900, processor: "Tallybrook Merchant Services", seasonality: { 12: 0.85, 7: 0.9, 8: 0.9 } })
     // Insurer claim payments arrive a few times a week.
     for (const d of eachDay(w.start, w.end).filter((d) => !isWeekend(d))) {
       if (b.rng.chance(0.48)) b.credit(acc.op, d, dollars(b.rng.normal(4_500, 900)), "BUSINESS_REVENUE", "Dental benefits claims payment", "EFT", { merchant: "Benefits claims clearing" })
     }
     biweekly(b, acc.op, w, { first: "2025-10-03", amount: 38_000, sd: 400, category: "PAYROLL_EXPENSE", description: "Payroll run", channel: "EFT" })
-    monthly(b, acc.op, w, { day: 1, amount: 12_500, category: "RENT_COMMERCIAL", description: "Clinic lease", channel: "PAD", merchant: "Meridian Medical Commons" })
-    monthly(b, acc.op, w, { day: 10, amount: 14_000, sd: 1_500, category: "SUPPLIES_INVENTORY", description: "Dental lab fees", channel: "EFT", merchant: "Precision Dental Lab" })
-    monthly(b, acc.op, w, { day: 18, amount: 9_000, sd: 1_200, category: "SUPPLIES_INVENTORY", description: "Clinical supplies", channel: "PAD", merchant: "Clinicor Supply" })
+    monthly(b, acc.op, w, { day: 1, amount: 12_500, category: "RENT_COMMERCIAL", description: "Clinic lease", channel: "PAD", merchant: "Larkspur Medical Commons" })
+    monthly(b, acc.op, w, { day: 10, amount: 14_000, sd: 1_500, category: "SUPPLIES_INVENTORY", description: "Dental lab fees", channel: "EFT", merchant: "Quillfield Dental Lab" })
+    monthly(b, acc.op, w, { day: 18, amount: 9_000, sd: 1_200, category: "SUPPLIES_INVENTORY", description: "Clinical supplies", channel: "PAD", merchant: "Ashgrove Clinical Supply" })
     monthly(b, acc.op, w, { day: 6, amount: 4_200, category: "LOAN_PAYMENT", description: "Existing equipment loan", channel: "PAD", merchant: "Fieldline Equipment Credit" })
     monthly(b, acc.op, w, { day: 20, amount: 1_500, sd: 200, category: "UTILITIES", description: "Utilities", channel: "PAD", merchant: "Local Utility" })
-    monthly(b, acc.op, w, { day: 22, amount: 1_800, category: "INSURANCE", description: "Professional liability insurance", channel: "PAD", merchant: "Steadfast Insurance" })
+    monthly(b, acc.op, w, { day: 22, amount: 1_800, category: "INSURANCE", description: "Professional liability insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
     monthly(b, acc.op, w, { day: 4, amount: 920, category: "SUBSCRIPTIONS", description: "Practice management software", channel: "CARD", merchant: "Chairside Cloud" })
     monthly(b, acc.op, w, { day: 28, amount: 12_000, category: "TRANSFER_OUT", description: "Owner compensation", channel: "EFT" })
   },
@@ -454,23 +454,23 @@ const cornerGrind: ApplicantSpec = {
       openDays: [0, 1, 2, 3, 4, 5, 6],
       perPeriod: 1_060,
       sd: 190,
-      processor: "ClearSettle Merchant Services",
+      processor: "Tallybrook Merchant Services",
       seasonality: { 1: 0.85, 2: 0.88, 12: 1.12, 7: 1.05, 8: 1.05 },
     })
     cashDeposits(b, acc.op, w, { avg: 640, sd: 120, openDays: [1], max: 1_200 })
     const returnedSupplierDebits = ["2026-05-12", "2026-08-04", "2026-09-15"]
-    weekly(b, acc.op, w, { weekday: 2, amount: 2_850, sd: 260, category: "SUPPLIES_INVENTORY", description: "Coffee and food supplier", channel: "PAD", merchant: "Tidewater Food Supply", skip: returnedSupplierDebits })
+    weekly(b, acc.op, w, { weekday: 2, amount: 2_850, sd: 260, category: "SUPPLIES_INVENTORY", description: "Coffee and food supplier", channel: "PAD", merchant: "Saltmarsh Food Supply", skip: returnedSupplierDebits })
     biweekly(b, acc.op, w, { first: "2025-10-10", amount: 5_650, sd: 220, category: "PAYROLL_EXPENSE", description: "Payroll run", channel: "EFT" })
     monthly(b, acc.op, w, { day: 1, amount: 4_800, category: "RENT_COMMERCIAL", description: "Café lease", channel: "PAD", merchant: "Harbour Street Holdings" })
     monthly(b, acc.op, w, { day: 16, amount: 1_100, sd: 140, category: "UTILITIES", description: "Power and water", channel: "PAD", merchant: "Local Utility" })
     monthly(b, acc.op, w, { day: 9, amount: 620, category: "LOAN_PAYMENT", description: "Espresso equipment lease", channel: "PAD", merchant: "Brewline Equipment Leasing" })
     monthly(b, acc.op, w, { day: 3, amount: 249, category: "SUBSCRIPTIONS", description: "Point-of-sale software", channel: "CARD", merchant: "Tillpoint POS" })
-    monthly(b, acc.op, w, { day: 21, amount: 320, category: "INSURANCE", description: "Business insurance", channel: "PAD", merchant: "Steadfast Insurance" })
+    monthly(b, acc.op, w, { day: 21, amount: 320, category: "INSURANCE", description: "Business insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
     monthly(b, acc.op, w, { day: 27, amount: 1_800, category: "TRANSFER_OUT", description: "Owner draw", channel: "EFT" })
     // Supplier debits returned NSF: one in May, two in the last 90 days.
     // Business account, so the personal-account NSF fee cap does not apply.
     for (const d of returnedSupplierDebits) {
-      b.returnedDebit(acc.op, d, dollars(2_860), "SUPPLIES_INVENTORY", "Coffee and food supplier", { reasonCode: "901", nsfFeeCents: dollars(45), merchant: "Tidewater Food Supply" })
+      b.returnedDebit(acc.op, d, dollars(2_860), "SUPPLIES_INVENTORY", "Coffee and food supplier", { reasonCode: "901", nsfFeeCents: dollars(45), merchant: "Saltmarsh Food Supply" })
     }
   },
 }
@@ -502,9 +502,9 @@ const lakeside: ApplicantSpec = {
     // 65% through daily card settlements, 35% through weekly booking platform payouts.
     for (const m of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]) {
       const cardMonthly = annual * weights[m] * 0.65
-      cardSettlements(b, acc.op, monthWindow(w, m), { cadence: "daily", openDays: [0, 1, 2, 3, 4, 5, 6], perPeriod: cardMonthly / 30.4, sd: (cardMonthly / 30.4) * 0.25, processor: "ClearSettle Merchant Services" })
+      cardSettlements(b, acc.op, monthWindow(w, m), { cadence: "daily", openDays: [0, 1, 2, 3, 4, 5, 6], perPeriod: cardMonthly / 30.4, sd: (cardMonthly / 30.4) * 0.25, processor: "Tallybrook Merchant Services" })
     }
-    seasonalRevenue(b, acc.op, w, { annual: annual * 0.35, weights, depositsPerMonth: [4, 5], description: "Booking platform payout", merchant: "Staywell Bookings", channel: "EFT", jitter: 0.25 })
+    seasonalRevenue(b, acc.op, w, { annual: annual * 0.35, weights, depositsPerMonth: [4, 5], description: "Booking platform payout", merchant: "Roomlark Bookings", channel: "EFT", jitter: 0.25 })
     monthly(b, acc.op, w, { day: 1, amount: 6_500, category: "LOAN_PAYMENT", description: "Property mortgage", channel: "PAD", merchant: "Northgate Credit Union mortgage" })
     const wages = (date: string) => ([6, 7, 8].includes(monthOf(date)) ? 18_000 : [5, 9].includes(monthOf(date)) ? 8_000 : 3_000)
     biweekly(b, acc.op, w, { first: "2025-10-10", amount: wages, sd: 300, category: "PAYROLL_EXPENSE", description: "Payroll run", channel: "EFT" })
@@ -512,11 +512,11 @@ const lakeside: ApplicantSpec = {
     monthly(b, acc.op, w, { day: 18, amount: 3_000, sd: 300, category: "UTILITIES", description: "Power and propane", channel: "PAD", merchant: "Local Utility", months: [11, 12, 1, 2, 3] })
     for (let m = 1; m <= 12; m++) {
       const supplies = annual * weights[m] * 0.18
-      monthly(b, acc.op, w, { day: 12, amount: supplies, sd: supplies * 0.08, category: "SUPPLIES_INVENTORY", description: "Food, beverage and housekeeping supplies", channel: "EFT", merchant: "Lakeview Hospitality Supply", months: [m] })
+      monthly(b, acc.op, w, { day: 12, amount: supplies, sd: supplies * 0.08, category: "SUPPLIES_INVENTORY", description: "Food, beverage and housekeeping supplies", channel: "EFT", merchant: "Lodgecraft Hospitality Supply", months: [m] })
     }
     monthly(b, acc.op, w, { day: 2, amount: 14_000, category: "TAXES", description: "Property tax", channel: "EFT", merchant: "Regional district", months: [7] })
-    monthly(b, acc.op, w, { day: 15, amount: 11_000, category: "INSURANCE", description: "Annual property insurance", channel: "PAD", merchant: "Steadfast Insurance", months: [4] })
-    monthly(b, acc.op, w, { day: 20, amount: 7_500, sd: 1_000, category: "EQUIPMENT", description: "Pre-season repairs and maintenance", channel: "EFT", merchant: "Timberline Contracting", months: [4, 5] })
+    monthly(b, acc.op, w, { day: 15, amount: 11_000, category: "INSURANCE", description: "Annual property insurance", channel: "PAD", merchant: "Hearthguard Insurance", months: [4] })
+    monthly(b, acc.op, w, { day: 20, amount: 7_500, sd: 1_000, category: "EQUIPMENT", description: "Pre-season repairs and maintenance", channel: "EFT", merchant: "Spruce Hollow Contracting", months: [4, 5] })
     monthly(b, acc.op, w, { day: 27, amount: 4_000, category: "TRANSFER_OUT", description: "Owner draw", channel: "EFT" })
   },
 }
@@ -549,19 +549,199 @@ const mainStreet: ApplicantSpec = {
     cashDeposits(b, acc.op, w, { avg: 1_000, sd: 220, openDays: [1, 2, 3, 4, 5, 6], skip: [MAIN_STREET_CASH_DAY], max: 1_600 })
     b.credit(acc.op, MAIN_STREET_CASH_DAY, dollars(6_200), "CASH_DEPOSIT", "Branch cash deposit", "CASH", { time: "10:05" })
     b.credit(acc.op, MAIN_STREET_CASH_DAY, dollars(4_300), "CASH_DEPOSIT", "Branch cash deposit", "CASH", { time: "16:40" })
-    cardSettlements(b, acc.op, w, { cadence: "daily", openDays: [1, 2, 3, 4, 5, 6], perPeriod: 1_800, sd: 350, processor: "ClearSettle Merchant Services", seasonality: spring })
-    weekly(b, acc.op, w, { weekday: 4, amount: (d) => 8_000 * ((spring as Record<number, number>)[monthOf(d)] ?? 1), sd: 900, category: "SUPPLIES_INVENTORY", description: "Hardware wholesaler", channel: "PAD", merchant: "Atlantic Hardware Wholesale" })
+    cardSettlements(b, acc.op, w, { cadence: "daily", openDays: [1, 2, 3, 4, 5, 6], perPeriod: 1_800, sd: 350, processor: "Tallybrook Merchant Services", seasonality: spring })
+    weekly(b, acc.op, w, { weekday: 4, amount: (d) => 8_000 * ((spring as Record<number, number>)[monthOf(d)] ?? 1), sd: 900, category: "SUPPLIES_INVENTORY", description: "Hardware wholesaler", channel: "PAD", merchant: "Quayside Hardware Wholesale" })
     biweekly(b, acc.op, w, { first: "2025-10-03", amount: 11_000, sd: 200, category: "PAYROLL_EXPENSE", description: "Payroll run", channel: "EFT" })
     monthly(b, acc.op, w, { day: 1, amount: 5_500, category: "RENT_COMMERCIAL", description: "Store lease", channel: "PAD", merchant: "Main Block Properties" })
     monthly(b, acc.op, w, { day: 15, amount: 1_300, sd: 250, category: "UTILITIES", description: "Utilities", channel: "PAD", merchant: "Local Utility" })
-    monthly(b, acc.op, w, { day: 21, amount: 540, category: "INSURANCE", description: "Business insurance", channel: "PAD", merchant: "Steadfast Insurance" })
-    monthly(b, acc.op, w, { day: 28, amount: 5_200, sd: 500, category: "TAXES", description: "HST remittance", channel: "EFT", merchant: "Receiver General", months: [1, 4, 7, 10] })
+    monthly(b, acc.op, w, { day: 21, amount: 540, category: "INSURANCE", description: "Business insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
+    monthly(b, acc.op, w, { day: 28, amount: 5_200, sd: 500, category: "TAXES", description: "HST remittance", channel: "EFT", merchant: "Tax remittance", months: [1, 4, 7, 10] })
     monthly(b, acc.op, w, { day: 27, amount: 3_500, category: "TRANSFER_OUT", description: "Owner draw", channel: "EFT" })
   },
 }
 
-/** The ten required applicants, in display order. */
-export const CAST: ApplicantSpec[] = [priya, hollis, amara, daniel, sofia, northline, brightSmile, cornerGrind, lakeside, mainStreet]
+
+// ---------------------------------------------------------------------------
+// Additional cast (the brief asks for at least 14)
+// ---------------------------------------------------------------------------
+
+const ellen: ApplicantSpec = {
+  slug: "ellen",
+  kind: "personal",
+  displayName: "Ellen",
+  story: "Retired. Lives on a workplace pension and government benefits, with a paid-off home and healthy savings.",
+  province: "PE",
+  request: { product: "line_of_credit", amountCents: dollars(15_000), purpose: "Roof replacement" },
+  creditFile: { historyMonths: 480, bureauBand: "excellent", foreignReport: { available: false } },
+  relationship: { institutionId: "northgate", memberSince: "1998-04-06", productsHeld: ["chequing", "savings", "tfsa", "term_deposit"] },
+  business: null,
+  protected: {
+    fullName: "Ellen Abernethy-Price",
+    dateOfBirth: "1955-02-17",
+    gender: "female",
+    nationality: "Canada",
+    immigrationStatus: "citizen",
+    postalCode: "C0X 4E2",
+  },
+  accounts: [
+    { key: "chq", accountType: "CHECKING", provider: "northgate", nickname: "Chequing", openedDate: "1998-04-06", opening: 4_500 },
+    { key: "sav", accountType: "SAVINGS", provider: "northgate", nickname: "Savings", openedDate: "1998-04-06", opening: 42_000 },
+  ],
+  build(b, acc, w) {
+    monthly(b, acc.chq, w, { day: 25, amount: 2_350, category: "PENSION", description: "Employer pension plan payment", channel: "EFT", merchant: "Employer pension plan", memo: "CREDIT" })
+    monthly(b, acc.chq, w, { day: 27, amount: 910, category: "GOVERNMENT_BENEFIT", description: "Federal pension benefit", channel: "EFT", merchant: "Federal pension benefit", memo: "CREDIT" })
+    monthly(b, acc.chq, w, { day: 27, amount: 735, category: "GOVERNMENT_BENEFIT", description: "Federal old age benefit", channel: "EFT", merchant: "Federal old age benefit", memo: "CREDIT" })
+    monthly(b, acc.chq, w, { day: 1, amount: 310, category: "TAXES", description: "Property tax instalment", channel: "PAD", merchant: "Municipal property tax" })
+    monthly(b, acc.chq, w, { day: 12, amount: 118, category: "INSURANCE", description: "Home insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
+    monthly(b, acc.chq, w, { day: 18, amount: 140, sd: 30, category: "UTILITIES", description: "Hydro", channel: "PAD", merchant: "Local Hydro Utility" })
+    monthly(b, acc.chq, w, { day: 9, amount: 380, sd: 40, category: "UTILITIES", description: "Heating oil delivery", channel: "PAD", merchant: "Islandwarm Heating Oil", months: [11, 12, 1, 2, 3] })
+    monthly(b, acc.chq, w, { day: 6, amount: 95, category: "UTILITIES", description: "Phone and internet", channel: "PAD", merchant: "Ringwave Home" })
+    everyday(b, acc.chq, w, { perWeek: 2, avg: 64, sd: 18, category: "GROCERIES", merchants: GROCERS })
+    everyday(b, acc.chq, w, { perWeek: 1, avg: 45, sd: 10, category: "FUEL", merchants: FUEL })
+    everyday(b, acc.chq, w, { perWeek: 0.8, avg: 42, sd: 15, category: "SHOPPING", merchants: ["Wrenfield Pharmacy", "Cedar Books"] })
+    everyday(b, acc.chq, w, { perWeek: 0.6, avg: 38, sd: 12, category: "DINING", merchants: DINING })
+    monthly(b, acc.chq, w, { day: 10, amount: 450, category: "SHOPPING", description: "Holiday gifts", channel: "CARD", merchant: "Marlowe & Finch Department Store", months: [12] })
+  },
+}
+
+const grace: ApplicantSpec = {
+  slug: "grace",
+  kind: "personal",
+  displayName: "Grace",
+  story: "Two payments bounced last winter. None since, and the card balance has come down every month.",
+  province: "QC",
+  request: { product: "personal_loan", amountCents: dollars(8_000), termMonths: 36, purpose: "Car repairs and moving costs" },
+  creditFile: { historyMonths: 70, bureauBand: "fair", foreignReport: { available: false } },
+  relationship: null,
+  business: null,
+  protected: {
+    fullName: "Grace Lavallée-Ng",
+    dateOfBirth: "1994-06-09",
+    gender: "female",
+    nationality: "Canada",
+    immigrationStatus: "citizen",
+    postalCode: "J0X 1R5",
+  },
+  balanceFloor: -300,
+  accounts: [
+    { key: "chq", accountType: "CHECKING", provider: "other", nickname: "Chequing", openedDate: "2014-08-20", opening: 600 },
+    { key: "card", accountType: "CREDIT_CARD", provider: "other", nickname: "Rewards card", openedDate: "2017-02-01", opening: 4_200, creditLimitCents: dollars(5_000) },
+  ],
+  build(b, acc, w) {
+    biweeklyPayroll(b, acc.chq, w, { firstPayday: "2025-10-09", net: 2_150, sd: 45, employer: "Lumencrest Logistics" })
+    monthly(b, acc.chq, w, { day: 1, amount: 1_350, category: "RENT_MORTGAGE", description: "Rent", channel: "PAD", merchant: "Bramblegate Property Management" })
+    monthly(b, acc.chq, w, { day: 7, amount: 70, category: "UTILITIES", description: "Mobile phone", channel: "PAD", merchant: "Ringwave Mobile" })
+    monthly(b, acc.chq, w, { day: 19, amount: 75, sd: 15, category: "UTILITIES", description: "Hydro", channel: "PAD", merchant: "Local Hydro Utility" })
+    everyday(b, acc.chq, w, { perWeek: 1.8, avg: 52, sd: 15, category: "GROCERIES", merchants: GROCERS })
+    everyday(b, acc.chq, w, { perWeek: 1, avg: 42, sd: 10, category: "TRANSPORT", merchants: ["City Transit", "Rideline"] })
+    // Car loan on the 15th. Two payments bounced last winter, both before the
+    // $10 NSF fee cap took effect on 2026-03-12; none since.
+    const bounced: Record<string, number> = { "2025-12-15": 48, "2026-01-15": 48 }
+    monthly(b, acc.chq, w, { day: 15, amount: 295.6, category: "LOAN_PAYMENT", description: "Car loan payment", channel: "PAD", merchant: "Carriway Auto Finance", months: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11] })
+    for (const [date, fee] of Object.entries(bounced)) {
+      b.returnedDebit(acc.chq, date, dollars(295.6), "LOAN_PAYMENT", "Car loan payment", { reasonCode: "901", nsfFeeCents: dollars(fee), merchant: "Carriway Auto Finance" })
+      b.debit(acc.chq, addDays(date, 7), dollars(295.6), "LOAN_PAYMENT", "Car loan payment (re-presented)", "PAD", { merchant: "Carriway Auto Finance" })
+    }
+    // Paying the card down: payments well above new purchases.
+    everyday(b, acc.card, w, { perWeek: 1, avg: 35, sd: 12, category: "SHOPPING", merchants: SHOPS })
+    monthly(b, acc.chq, w, { day: 26, amount: 420, category: "CARD_PAYMENT", description: "Credit card payment", channel: "EFT" })
+    monthly(b, acc.card, w, { day: 26, amount: 420, category: "CARD_PAYMENT", description: "Payment received, thank you", channel: "EFT", memo: "CREDIT" })
+  },
+}
+
+const quillfeather: ApplicantSpec = {
+  slug: "quillfeather-plumbing",
+  kind: "business",
+  displayName: "Quillfeather Plumbing & Heating",
+  story: "One-van plumbing business paid by invoice. Some months bring in twice as much as others, with no regular season.",
+  province: "NL",
+  request: { product: "business_line_of_credit", amountCents: dollars(20_000), purpose: "Buy materials before clients pay" },
+  creditFile: { historyMonths: 132, bureauBand: "good", foreignReport: { available: false } },
+  relationship: { institutionId: "northgate", memberSince: "2020-03-02", productsHeld: ["business_account", "chequing"] },
+  business: { legalName: "Quillfeather Plumbing & Heating", registrationNo: "NL-SP-7720143", structure: "sole_proprietorship", industry: "Plumbing and heating", yearsOperating: 6, employees: 1 },
+  protected: {
+    fullName: "Callum Pardy",
+    dateOfBirth: "1986-10-21",
+    gender: "male",
+    nationality: "Canada",
+    immigrationStatus: "citizen",
+    postalCode: "A0X 3J6",
+  },
+  balanceFloor: 1_500,
+  accounts: [{ key: "op", accountType: "BUSINESS_CHECKING", provider: "northgate", nickname: "Business chequing", openedDate: "2020-03-02", opening: 8_000 }],
+  build(b, acc, w) {
+    // Client invoices: a handful of payments a month, sizes and monthly totals vary widely.
+    for (const m of eachMonth(w.start, w.end)) {
+      const busy = b.rng.float(0.45, 1.65)
+      const count = b.rng.int(3, 7)
+      for (let i = 0; i < count; i++) {
+        const d = nextWeekday(dayInMonth(m, b.rng.int(1, 28)))
+        const amount = Math.max(350, b.rng.normal(3_100 * busy, 1_200))
+        const channel = b.rng.pick(["ETRANSFER", "CHEQUE", "EFT"] as const)
+        b.credit(acc.op, d, dollars(amount), "BUSINESS_REVENUE", "Client invoice payment", channel, { merchant: "Client payment" })
+      }
+    }
+    everyday(b, acc.op, w, { perWeek: 1.1, avg: 950, sd: 380, category: "SUPPLIES_INVENTORY", merchants: ["Harbourmark Plumbing Supply"], channel: "CARD" })
+    monthly(b, acc.op, w, { day: 11, amount: 640, category: "LOAN_PAYMENT", description: "Service van loan", channel: "PAD", merchant: "Carriway Auto Finance" })
+    everyday(b, acc.op, w, { perWeek: 1, avg: 120, sd: 25, category: "FUEL", merchants: FUEL })
+    monthly(b, acc.op, w, { day: 21, amount: 280, category: "INSURANCE", description: "Contractor liability insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
+    monthly(b, acc.op, w, { day: 6, amount: 90, category: "UTILITIES", description: "Business phone", channel: "PAD", merchant: "Ringwave Mobile" })
+    monthly(b, acc.op, w, { day: 28, amount: 7_000, category: "TRANSFER_OUT", description: "Owner draw", channel: "EFT" })
+    for (const d of ["2025-11-14", "2026-02-20", "2026-05-15", "2026-08-21"]) {
+      b.debit(acc.op, d, dollars(b.rng.normal(1_500, 300)), "PAYROLL_EXPENSE", "Subcontractor payment", "ETRANSFER", { merchant: "Subcontractor" })
+    }
+    monthly(b, acc.op, w, { day: 28, amount: 2_100, sd: 300, category: "TAXES", description: "HST remittance", channel: "EFT", merchant: "Tax remittance", months: [1, 4, 7, 10] })
+  },
+}
+
+const petalwick: ApplicantSpec = {
+  slug: "petalwick-florals",
+  kind: "business",
+  displayName: "Petalwick Florals",
+  story: "Growing flower shop already carrying an equipment loan, a van loan and a merchant cash advance.",
+  province: "MB",
+  request: { product: "business_term_loan", amountCents: dollars(60_000), termMonths: 48, purpose: "Fit out a second location" },
+  creditFile: { historyMonths: 98, bureauBand: "fair", foreignReport: { available: false } },
+  relationship: { institutionId: "northgate", memberSince: "2022-05-16", productsHeld: ["business_account"] },
+  business: { legalName: "Petalwick Florals Inc.", registrationNo: "MB-CORP-4418826", structure: "corporation", industry: "Florist", yearsOperating: 4, employees: 3 },
+  protected: {
+    fullName: "Ines Okonkwo-Hart",
+    dateOfBirth: "1984-03-29",
+    gender: "female",
+    nationality: "Canada",
+    immigrationStatus: "citizen",
+    postalCode: "R0X 8P3",
+  },
+  balanceFloor: 1_000,
+  accounts: [{ key: "op", accountType: "BUSINESS_CHECKING", provider: "northgate", nickname: "Shop operating account", openedDate: "2022-05-16", opening: 9_000 }],
+  build(b, acc, w) {
+    cardSettlements(b, acc.op, w, {
+      cadence: "daily",
+      openDays: [1, 2, 3, 4, 5, 6],
+      perPeriod: 1_330,
+      sd: 260,
+      processor: "Tallybrook Merchant Services",
+      monthlyGrowth: 0.02,
+      seasonality: { 2: 1.55, 5: 1.4, 12: 1.2, 1: 0.8, 7: 0.85 },
+    })
+    weekly(b, acc.op, w, { weekday: 1, amount: (d) => 2_650 * ({ 2: 1.5, 5: 1.35, 12: 1.2 } as Record<number, number>)[monthOf(d)] || 2_650, sd: 250, category: "SUPPLIES_INVENTORY", description: "Flower wholesaler", channel: "PAD", merchant: "Bloomgate Wholesale Flowers" })
+    biweekly(b, acc.op, w, { first: "2025-10-03", amount: 6_400, sd: 150, category: "PAYROLL_EXPENSE", description: "Payroll run", channel: "EFT" })
+    monthly(b, acc.op, w, { day: 1, amount: 3_400, category: "RENT_COMMERCIAL", description: "Shop lease", channel: "PAD", merchant: "Foundry Row Properties" })
+    monthly(b, acc.op, w, { day: 16, amount: 650, sd: 90, category: "UTILITIES", description: "Utilities and cooler power", channel: "PAD", merchant: "Local Utility" })
+    monthly(b, acc.op, w, { day: 21, amount: 210, category: "INSURANCE", description: "Business insurance", channel: "PAD", merchant: "Hearthguard Insurance" })
+    monthly(b, acc.op, w, { day: 27, amount: 3_800, category: "TRANSFER_OUT", description: "Owner draw", channel: "EFT" })
+    // Existing debt: walk-in cooler loan, delivery van and a merchant cash advance repaid daily.
+    monthly(b, acc.op, w, { day: 5, amount: 1_900, category: "LOAN_PAYMENT", description: "Walk-in cooler loan", channel: "PAD", merchant: "Fieldline Equipment Credit" })
+    monthly(b, acc.op, w, { day: 12, amount: 780, category: "LOAN_PAYMENT", description: "Delivery van loan", channel: "PAD", merchant: "Carriway Auto Finance" })
+    for (const d of eachDay(w.start, w.end)) {
+      if (!isWeekend(d)) b.debit(acc.op, d, dollars(95), "LOAN_PAYMENT", "Merchant cash advance repayment", "PAD", { merchant: "Ledgerleaf Capital" })
+    }
+  },
+}
+
+/** The cast, in display order: the ten required applicants, then four more. */
+export const CAST: ApplicantSpec[] = [priya, hollis, amara, daniel, sofia, northline, brightSmile, cornerGrind, lakeside, mainStreet, ellen, grace, quillfeather, petalwick]
+
 
 export function generateCast(): Applicant[] {
   return CAST.map(buildApplicant)

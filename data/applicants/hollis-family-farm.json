@@ -87,7 +87,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -99,7 +99,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -111,7 +111,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -181,7 +181,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -193,7 +193,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -205,7 +205,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -252,7 +252,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -276,7 +276,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -288,7 +288,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -312,7 +312,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -347,7 +347,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -359,7 +359,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -383,7 +383,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -395,7 +395,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -430,7 +430,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -442,7 +442,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -454,7 +454,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -478,7 +478,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -525,7 +525,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -537,7 +537,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -561,7 +561,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -573,7 +573,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -608,7 +608,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -656,7 +656,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -668,7 +668,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -704,7 +704,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -751,7 +751,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -775,7 +775,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -811,7 +811,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -823,7 +823,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -870,7 +870,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -882,7 +882,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -906,7 +906,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -941,7 +941,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -977,7 +977,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -989,7 +989,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -1013,7 +1013,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -1048,7 +1048,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -1072,7 +1072,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -1084,7 +1084,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -1154,7 +1154,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -1166,7 +1166,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -1178,7 +1178,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Farm fuel delivery",
       "category": "FUEL",
-      "merchant": "Prairie Gas Bar Bulk Fuel",
+      "merchant": "Wheatline Bulk Fuel",
       "channel": "PAD"
     },
     {
@@ -1190,7 +1190,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {
@@ -1214,7 +1214,7 @@
       "debitCreditMemo": "CREDIT",
       "description": "Grain sale settlement",
       "category": "BUSINESS_REVENUE",
-      "merchant": "Prairie Gateway Terminal",
+      "merchant": "Coulee Ridge Grain Terminal",
       "channel": "EFT"
     },
     {

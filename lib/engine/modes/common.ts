@@ -72,6 +72,10 @@ export function commonStrengths(f: Features): ModeResult["reasons"] {
   if (p.type === "salaried" && p.payroll) {
     out.push({ code: "STABLE_PAYROLL", weight: 0.6, evidence: { typicalPayCents: p.payroll.typicalNetCents, cadenceDays: p.payroll.cadenceDays, incomeCv: f.incomeCv } })
   }
+  if (p.type === "pension") out.push({ code: "STABLE_PENSION", weight: 0.6, evidence: { avgIncomeCents: f.avgMonthlyIncomeCents, incomeCv: f.incomeCv } })
+  if (f.creditBalanceChangeCents !== null && f.creditBalanceChangeCents < -100_000) {
+    out.push({ code: "PAYING_DOWN_CARDS", weight: 0.55, evidence: { changeCents: -f.creditBalanceChangeCents, utilization: f.creditUtilization ?? 0 } })
+  }
   if (p.type === "steady_business") out.push({ code: "STEADY_REVENUE", weight: 0.6, evidence: { avgIncomeCents: f.avgMonthlyIncomeCents, incomeCv: f.incomeCv } })
   if (p.type === "gig") {
     out.push({ code: "CONSISTENT_GIG_INCOME", weight: 0.6, evidence: { avgIncomeCents: f.avgMonthlyIncomeCents, depositsPerMonth: p.depositsPerMonth, incomeCv: f.incomeCv } })

@@ -60,9 +60,9 @@
       "transactionTimestamp": "2025-10-01T05:29:00-04:00",
       "amountCents": 117506,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -97,7 +97,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -107,9 +107,9 @@
       "transactionTimestamp": "2025-10-02T06:18:00-04:00",
       "amountCents": 178127,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -141,9 +141,9 @@
       "transactionTimestamp": "2025-10-03T06:50:00-04:00",
       "amountCents": 247701,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -164,9 +164,9 @@
       "transactionTimestamp": "2025-10-04T05:31:00-04:00",
       "amountCents": 224355,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -187,9 +187,9 @@
       "transactionTimestamp": "2025-10-06T05:15:00-04:00",
       "amountCents": 206900,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -210,9 +210,9 @@
       "transactionTimestamp": "2025-10-07T06:00:00-04:00",
       "amountCents": 200506,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -233,9 +233,9 @@
       "transactionTimestamp": "2025-10-08T06:55:00-04:00",
       "amountCents": 144294,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -258,7 +258,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -268,9 +268,9 @@
       "transactionTimestamp": "2025-10-09T05:19:00-04:00",
       "amountCents": 204385,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -291,9 +291,9 @@
       "transactionTimestamp": "2025-10-10T05:32:00-04:00",
       "amountCents": 186670,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -314,9 +314,9 @@
       "transactionTimestamp": "2025-10-11T06:30:00-04:00",
       "amountCents": 169292,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -337,9 +337,9 @@
       "transactionTimestamp": "2025-10-13T05:46:00-04:00",
       "amountCents": 160680,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -360,9 +360,9 @@
       "transactionTimestamp": "2025-10-14T05:28:00-04:00",
       "amountCents": 127562,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -383,9 +383,9 @@
       "transactionTimestamp": "2025-10-15T05:26:00-04:00",
       "amountCents": 128531,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -420,7 +420,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -430,9 +430,9 @@
       "transactionTimestamp": "2025-10-16T05:05:00-04:00",
       "amountCents": 207849,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -453,9 +453,9 @@
       "transactionTimestamp": "2025-10-17T05:25:00-04:00",
       "amountCents": 184593,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -487,9 +487,9 @@
       "transactionTimestamp": "2025-10-18T05:13:00-04:00",
       "amountCents": 109015,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -510,9 +510,9 @@
       "transactionTimestamp": "2025-10-20T06:19:00-04:00",
       "amountCents": 199019,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -535,7 +535,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -545,9 +545,9 @@
       "transactionTimestamp": "2025-10-21T05:39:00-04:00",
       "amountCents": 201914,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -568,9 +568,9 @@
       "transactionTimestamp": "2025-10-22T06:22:00-04:00",
       "amountCents": 158624,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -593,7 +593,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -603,9 +603,9 @@
       "transactionTimestamp": "2025-10-23T06:01:00-04:00",
       "amountCents": 160735,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -626,9 +626,9 @@
       "transactionTimestamp": "2025-10-24T06:28:00-04:00",
       "amountCents": 146025,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -649,9 +649,9 @@
       "transactionTimestamp": "2025-10-25T05:54:00-04:00",
       "amountCents": 157955,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -683,9 +683,9 @@
       "transactionTimestamp": "2025-10-27T06:42:00-04:00",
       "amountCents": 178513,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -706,9 +706,9 @@
       "transactionTimestamp": "2025-10-28T05:18:00-04:00",
       "amountCents": 142880,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -720,7 +720,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -741,9 +741,9 @@
       "transactionTimestamp": "2025-10-29T05:53:00-04:00",
       "amountCents": 225733,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -766,7 +766,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -776,9 +776,9 @@
       "transactionTimestamp": "2025-10-30T05:34:00-04:00",
       "amountCents": 200003,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -810,9 +810,9 @@
       "transactionTimestamp": "2025-10-31T06:23:00-04:00",
       "amountCents": 204486,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -833,9 +833,9 @@
       "transactionTimestamp": "2025-11-01T06:17:00-04:00",
       "amountCents": 169840,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -868,9 +868,9 @@
       "transactionTimestamp": "2025-11-03T05:31:00-04:00",
       "amountCents": 182346,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -891,9 +891,9 @@
       "transactionTimestamp": "2025-11-04T05:15:00-04:00",
       "amountCents": 188646,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -914,9 +914,9 @@
       "transactionTimestamp": "2025-11-05T05:02:00-04:00",
       "amountCents": 174489,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -939,7 +939,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -949,9 +949,9 @@
       "transactionTimestamp": "2025-11-06T06:02:00-04:00",
       "amountCents": 304137,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -972,9 +972,9 @@
       "transactionTimestamp": "2025-11-07T06:23:00-04:00",
       "amountCents": 185832,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -995,9 +995,9 @@
       "transactionTimestamp": "2025-11-08T06:34:00-04:00",
       "amountCents": 164931,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1018,9 +1018,9 @@
       "transactionTimestamp": "2025-11-10T05:30:00-04:00",
       "amountCents": 179427,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1041,9 +1041,9 @@
       "transactionTimestamp": "2025-11-11T06:52:00-04:00",
       "amountCents": 185940,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1064,9 +1064,9 @@
       "transactionTimestamp": "2025-11-12T06:12:00-04:00",
       "amountCents": 204657,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1089,7 +1089,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -1099,9 +1099,9 @@
       "transactionTimestamp": "2025-11-13T06:51:00-04:00",
       "amountCents": 169885,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1133,9 +1133,9 @@
       "transactionTimestamp": "2025-11-14T06:08:00-04:00",
       "amountCents": 126754,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1156,9 +1156,9 @@
       "transactionTimestamp": "2025-11-15T05:01:00-04:00",
       "amountCents": 142591,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1191,9 +1191,9 @@
       "transactionTimestamp": "2025-11-17T06:11:00-04:00",
       "amountCents": 235481,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1214,9 +1214,9 @@
       "transactionTimestamp": "2025-11-18T06:06:00-04:00",
       "amountCents": 172119,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1237,9 +1237,9 @@
       "transactionTimestamp": "2025-11-19T06:23:00-04:00",
       "amountCents": 171475,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1262,7 +1262,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -1272,9 +1272,9 @@
       "transactionTimestamp": "2025-11-20T06:48:00-04:00",
       "amountCents": 178132,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1295,9 +1295,9 @@
       "transactionTimestamp": "2025-11-21T05:49:00-04:00",
       "amountCents": 196108,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1309,7 +1309,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1330,9 +1330,9 @@
       "transactionTimestamp": "2025-11-22T06:09:00-04:00",
       "amountCents": 203882,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1353,9 +1353,9 @@
       "transactionTimestamp": "2025-11-24T05:04:00-04:00",
       "amountCents": 216518,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1376,9 +1376,9 @@
       "transactionTimestamp": "2025-11-25T05:58:00-04:00",
       "amountCents": 138143,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1399,9 +1399,9 @@
       "transactionTimestamp": "2025-11-26T06:26:00-04:00",
       "amountCents": 150460,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1424,7 +1424,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -1434,9 +1434,9 @@
       "transactionTimestamp": "2025-11-27T05:12:00-04:00",
       "amountCents": 112488,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1468,9 +1468,9 @@
       "transactionTimestamp": "2025-11-28T06:06:00-04:00",
       "amountCents": 149786,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1502,9 +1502,9 @@
       "transactionTimestamp": "2025-11-29T05:27:00-04:00",
       "amountCents": 157310,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1537,9 +1537,9 @@
       "transactionTimestamp": "2025-12-01T06:09:00-04:00",
       "amountCents": 243650,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1560,9 +1560,9 @@
       "transactionTimestamp": "2025-12-02T06:19:00-04:00",
       "amountCents": 199882,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1583,9 +1583,9 @@
       "transactionTimestamp": "2025-12-03T06:29:00-04:00",
       "amountCents": 181528,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1608,7 +1608,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -1618,9 +1618,9 @@
       "transactionTimestamp": "2025-12-04T06:02:00-04:00",
       "amountCents": 204242,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1641,9 +1641,9 @@
       "transactionTimestamp": "2025-12-05T05:21:00-04:00",
       "amountCents": 179230,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1664,9 +1664,9 @@
       "transactionTimestamp": "2025-12-06T06:57:00-04:00",
       "amountCents": 211384,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1687,9 +1687,9 @@
       "transactionTimestamp": "2025-12-08T05:59:00-04:00",
       "amountCents": 158597,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1710,9 +1710,9 @@
       "transactionTimestamp": "2025-12-09T06:07:00-04:00",
       "amountCents": 275590,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1733,9 +1733,9 @@
       "transactionTimestamp": "2025-12-10T06:42:00-04:00",
       "amountCents": 278271,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1758,7 +1758,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -1768,9 +1768,9 @@
       "transactionTimestamp": "2025-12-11T05:51:00-04:00",
       "amountCents": 166989,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1791,9 +1791,9 @@
       "transactionTimestamp": "2025-12-12T05:53:00-04:00",
       "amountCents": 219682,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1825,9 +1825,9 @@
       "transactionTimestamp": "2025-12-13T05:38:00-04:00",
       "amountCents": 189545,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1860,9 +1860,9 @@
       "transactionTimestamp": "2025-12-15T06:39:00-04:00",
       "amountCents": 162864,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1883,9 +1883,9 @@
       "transactionTimestamp": "2025-12-16T06:16:00-04:00",
       "amountCents": 178026,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1906,9 +1906,9 @@
       "transactionTimestamp": "2025-12-17T06:05:00-04:00",
       "amountCents": 259722,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1931,7 +1931,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -1941,9 +1941,9 @@
       "transactionTimestamp": "2025-12-18T05:21:00-04:00",
       "amountCents": 156748,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1964,9 +1964,9 @@
       "transactionTimestamp": "2025-12-19T05:34:00-04:00",
       "amountCents": 195647,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1987,9 +1987,9 @@
       "transactionTimestamp": "2025-12-20T06:33:00-04:00",
       "amountCents": 186268,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2012,7 +2012,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2022,9 +2022,9 @@
       "transactionTimestamp": "2025-12-22T05:02:00-04:00",
       "amountCents": 127816,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2045,9 +2045,9 @@
       "transactionTimestamp": "2025-12-23T06:28:00-04:00",
       "amountCents": 192613,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2068,9 +2068,9 @@
       "transactionTimestamp": "2025-12-24T06:29:00-04:00",
       "amountCents": 132789,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2093,7 +2093,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -2103,9 +2103,9 @@
       "transactionTimestamp": "2025-12-25T05:57:00-04:00",
       "amountCents": 152623,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2137,9 +2137,9 @@
       "transactionTimestamp": "2025-12-26T05:38:00-04:00",
       "amountCents": 97740,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2160,9 +2160,9 @@
       "transactionTimestamp": "2025-12-27T06:54:00-04:00",
       "amountCents": 208729,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2183,9 +2183,9 @@
       "transactionTimestamp": "2025-12-29T05:04:00-04:00",
       "amountCents": 195402,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2217,9 +2217,9 @@
       "transactionTimestamp": "2025-12-30T06:10:00-04:00",
       "amountCents": 187220,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2240,9 +2240,9 @@
       "transactionTimestamp": "2025-12-31T05:58:00-04:00",
       "amountCents": 172571,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2277,7 +2277,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -2287,9 +2287,9 @@
       "transactionTimestamp": "2026-01-01T05:12:00-04:00",
       "amountCents": 145487,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2310,9 +2310,9 @@
       "transactionTimestamp": "2026-01-02T06:11:00-04:00",
       "amountCents": 134220,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2333,9 +2333,9 @@
       "transactionTimestamp": "2026-01-03T05:10:00-04:00",
       "amountCents": 150337,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2356,9 +2356,9 @@
       "transactionTimestamp": "2026-01-05T05:58:00-04:00",
       "amountCents": 170980,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2379,9 +2379,9 @@
       "transactionTimestamp": "2026-01-06T05:16:00-04:00",
       "amountCents": 154646,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2402,9 +2402,9 @@
       "transactionTimestamp": "2026-01-07T05:35:00-04:00",
       "amountCents": 113770,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2427,7 +2427,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -2437,9 +2437,9 @@
       "transactionTimestamp": "2026-01-08T05:03:00-04:00",
       "amountCents": 137886,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2471,9 +2471,9 @@
       "transactionTimestamp": "2026-01-09T06:18:00-04:00",
       "amountCents": 179188,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2494,9 +2494,9 @@
       "transactionTimestamp": "2026-01-10T06:32:00-04:00",
       "amountCents": 140293,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2517,9 +2517,9 @@
       "transactionTimestamp": "2026-01-12T06:12:00-04:00",
       "amountCents": 115998,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2540,9 +2540,9 @@
       "transactionTimestamp": "2026-01-13T05:09:00-04:00",
       "amountCents": 156749,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2563,9 +2563,9 @@
       "transactionTimestamp": "2026-01-14T06:50:00-04:00",
       "amountCents": 102312,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2600,7 +2600,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -2610,9 +2610,9 @@
       "transactionTimestamp": "2026-01-15T05:23:00-04:00",
       "amountCents": 156239,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2633,9 +2633,9 @@
       "transactionTimestamp": "2026-01-16T06:03:00-04:00",
       "amountCents": 176224,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2656,9 +2656,9 @@
       "transactionTimestamp": "2026-01-17T05:26:00-04:00",
       "amountCents": 161791,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2679,9 +2679,9 @@
       "transactionTimestamp": "2026-01-19T05:28:00-04:00",
       "amountCents": 111610,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2702,9 +2702,9 @@
       "transactionTimestamp": "2026-01-20T06:40:00-04:00",
       "amountCents": 129671,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2727,7 +2727,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2737,9 +2737,9 @@
       "transactionTimestamp": "2026-01-21T05:24:00-04:00",
       "amountCents": 125611,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2762,7 +2762,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -2772,9 +2772,9 @@
       "transactionTimestamp": "2026-01-22T06:46:00-04:00",
       "amountCents": 141040,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2795,9 +2795,9 @@
       "transactionTimestamp": "2026-01-23T05:59:00-04:00",
       "amountCents": 166781,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2829,9 +2829,9 @@
       "transactionTimestamp": "2026-01-24T06:21:00-04:00",
       "amountCents": 130971,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2852,9 +2852,9 @@
       "transactionTimestamp": "2026-01-26T05:31:00-04:00",
       "amountCents": 143061,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2875,9 +2875,9 @@
       "transactionTimestamp": "2026-01-27T05:05:00-04:00",
       "amountCents": 150511,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2909,9 +2909,9 @@
       "transactionTimestamp": "2026-01-28T06:25:00-04:00",
       "amountCents": 96470,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2923,7 +2923,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -2946,7 +2946,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -2956,9 +2956,9 @@
       "transactionTimestamp": "2026-01-29T06:27:00-04:00",
       "amountCents": 128533,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2979,9 +2979,9 @@
       "transactionTimestamp": "2026-01-30T05:14:00-04:00",
       "amountCents": 113932,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3002,9 +3002,9 @@
       "transactionTimestamp": "2026-01-31T05:05:00-04:00",
       "amountCents": 142388,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3025,9 +3025,9 @@
       "transactionTimestamp": "2026-02-02T05:04:00-04:00",
       "amountCents": 111980,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3060,9 +3060,9 @@
       "transactionTimestamp": "2026-02-03T06:59:00-04:00",
       "amountCents": 115280,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3083,9 +3083,9 @@
       "transactionTimestamp": "2026-02-04T05:04:00-04:00",
       "amountCents": 136790,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3108,7 +3108,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -3118,9 +3118,9 @@
       "transactionTimestamp": "2026-02-05T06:06:00-04:00",
       "amountCents": 141377,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3141,9 +3141,9 @@
       "transactionTimestamp": "2026-02-06T05:10:00-04:00",
       "amountCents": 115214,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3175,9 +3175,9 @@
       "transactionTimestamp": "2026-02-07T05:18:00-04:00",
       "amountCents": 116567,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3198,9 +3198,9 @@
       "transactionTimestamp": "2026-02-09T06:01:00-04:00",
       "amountCents": 129847,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3221,9 +3221,9 @@
       "transactionTimestamp": "2026-02-10T06:31:00-04:00",
       "amountCents": 97823,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3244,9 +3244,9 @@
       "transactionTimestamp": "2026-02-11T05:45:00-04:00",
       "amountCents": 102449,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3269,7 +3269,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -3279,9 +3279,9 @@
       "transactionTimestamp": "2026-02-12T06:05:00-04:00",
       "amountCents": 156865,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3302,9 +3302,9 @@
       "transactionTimestamp": "2026-02-13T06:28:00-04:00",
       "amountCents": 210318,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3325,9 +3325,9 @@
       "transactionTimestamp": "2026-02-14T06:58:00-04:00",
       "amountCents": 202418,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3360,9 +3360,9 @@
       "transactionTimestamp": "2026-02-16T05:01:00-04:00",
       "amountCents": 189814,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3383,9 +3383,9 @@
       "transactionTimestamp": "2026-02-17T06:49:00-04:00",
       "amountCents": 145163,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3406,9 +3406,9 @@
       "transactionTimestamp": "2026-02-18T06:11:00-04:00",
       "amountCents": 202518,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3431,7 +3431,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -3441,9 +3441,9 @@
       "transactionTimestamp": "2026-02-19T06:44:00-04:00",
       "amountCents": 155018,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3464,9 +3464,9 @@
       "transactionTimestamp": "2026-02-20T05:29:00-04:00",
       "amountCents": 144930,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3498,9 +3498,9 @@
       "transactionTimestamp": "2026-02-21T05:30:00-04:00",
       "amountCents": 138507,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3523,7 +3523,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -3533,9 +3533,9 @@
       "transactionTimestamp": "2026-02-23T05:19:00-04:00",
       "amountCents": 117926,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3556,9 +3556,9 @@
       "transactionTimestamp": "2026-02-24T05:15:00-04:00",
       "amountCents": 137737,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3579,9 +3579,9 @@
       "transactionTimestamp": "2026-02-25T05:12:00-04:00",
       "amountCents": 154591,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3604,7 +3604,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -3614,9 +3614,9 @@
       "transactionTimestamp": "2026-02-26T05:05:00-04:00",
       "amountCents": 109687,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3648,9 +3648,9 @@
       "transactionTimestamp": "2026-02-27T06:41:00-04:00",
       "amountCents": 113698,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3671,9 +3671,9 @@
       "transactionTimestamp": "2026-02-28T05:05:00-04:00",
       "amountCents": 180624,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3706,9 +3706,9 @@
       "transactionTimestamp": "2026-03-02T06:40:00-04:00",
       "amountCents": 140925,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3729,9 +3729,9 @@
       "transactionTimestamp": "2026-03-03T05:54:00-04:00",
       "amountCents": 219692,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3752,9 +3752,9 @@
       "transactionTimestamp": "2026-03-04T05:50:00-04:00",
       "amountCents": 236572,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3777,7 +3777,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -3787,9 +3787,9 @@
       "transactionTimestamp": "2026-03-05T05:15:00-04:00",
       "amountCents": 170853,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3821,9 +3821,9 @@
       "transactionTimestamp": "2026-03-06T06:47:00-04:00",
       "amountCents": 213632,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3844,9 +3844,9 @@
       "transactionTimestamp": "2026-03-07T05:51:00-04:00",
       "amountCents": 254605,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3867,9 +3867,9 @@
       "transactionTimestamp": "2026-03-09T05:41:00-04:00",
       "amountCents": 125765,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3890,9 +3890,9 @@
       "transactionTimestamp": "2026-03-10T05:21:00-04:00",
       "amountCents": 186734,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3913,9 +3913,9 @@
       "transactionTimestamp": "2026-03-11T05:57:00-04:00",
       "amountCents": 173766,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3938,7 +3938,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -3948,9 +3948,9 @@
       "transactionTimestamp": "2026-03-12T06:18:00-04:00",
       "amountCents": 258085,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3971,9 +3971,9 @@
       "transactionTimestamp": "2026-03-13T06:47:00-04:00",
       "amountCents": 212499,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3994,9 +3994,9 @@
       "transactionTimestamp": "2026-03-14T06:44:00-04:00",
       "amountCents": 155356,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4029,9 +4029,9 @@
       "transactionTimestamp": "2026-03-16T05:35:00-04:00",
       "amountCents": 171853,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4052,9 +4052,9 @@
       "transactionTimestamp": "2026-03-17T06:52:00-04:00",
       "amountCents": 174175,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4075,9 +4075,9 @@
       "transactionTimestamp": "2026-03-18T05:44:00-04:00",
       "amountCents": 161047,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4100,7 +4100,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -4110,9 +4110,9 @@
       "transactionTimestamp": "2026-03-19T05:01:00-04:00",
       "amountCents": 194470,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4133,9 +4133,9 @@
       "transactionTimestamp": "2026-03-20T05:59:00-04:00",
       "amountCents": 191160,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4167,9 +4167,9 @@
       "transactionTimestamp": "2026-03-21T06:50:00-04:00",
       "amountCents": 169371,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4192,7 +4192,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -4202,9 +4202,9 @@
       "transactionTimestamp": "2026-03-23T05:26:00-04:00",
       "amountCents": 170397,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4225,9 +4225,9 @@
       "transactionTimestamp": "2026-03-24T06:47:00-04:00",
       "amountCents": 158723,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4248,9 +4248,9 @@
       "transactionTimestamp": "2026-03-25T05:01:00-04:00",
       "amountCents": 188145,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4273,7 +4273,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -4283,9 +4283,9 @@
       "transactionTimestamp": "2026-03-26T06:18:00-04:00",
       "amountCents": 173548,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4317,9 +4317,9 @@
       "transactionTimestamp": "2026-03-27T05:43:00-04:00",
       "amountCents": 216615,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4340,9 +4340,9 @@
       "transactionTimestamp": "2026-03-28T05:29:00-04:00",
       "amountCents": 166609,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4363,9 +4363,9 @@
       "transactionTimestamp": "2026-03-30T05:39:00-04:00",
       "amountCents": 231662,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4386,9 +4386,9 @@
       "transactionTimestamp": "2026-03-31T05:14:00-04:00",
       "amountCents": 152268,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4421,9 +4421,9 @@
       "transactionTimestamp": "2026-04-01T05:57:00-04:00",
       "amountCents": 201387,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4446,7 +4446,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -4456,9 +4456,9 @@
       "transactionTimestamp": "2026-04-02T06:46:00-04:00",
       "amountCents": 205336,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4490,9 +4490,9 @@
       "transactionTimestamp": "2026-04-03T06:57:00-04:00",
       "amountCents": 234594,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4513,9 +4513,9 @@
       "transactionTimestamp": "2026-04-04T06:23:00-04:00",
       "amountCents": 168558,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4536,9 +4536,9 @@
       "transactionTimestamp": "2026-04-06T06:37:00-04:00",
       "amountCents": 293289,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4559,9 +4559,9 @@
       "transactionTimestamp": "2026-04-07T06:47:00-04:00",
       "amountCents": 243963,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4582,9 +4582,9 @@
       "transactionTimestamp": "2026-04-08T05:57:00-04:00",
       "amountCents": 202519,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4607,7 +4607,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -4617,9 +4617,9 @@
       "transactionTimestamp": "2026-04-09T05:38:00-04:00",
       "amountCents": 272908,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4640,9 +4640,9 @@
       "transactionTimestamp": "2026-04-10T06:07:00-04:00",
       "amountCents": 246029,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4663,9 +4663,9 @@
       "transactionTimestamp": "2026-04-11T05:32:00-04:00",
       "amountCents": 133631,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4686,9 +4686,9 @@
       "transactionTimestamp": "2026-04-13T05:28:00-04:00",
       "amountCents": 255182,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4709,9 +4709,9 @@
       "transactionTimestamp": "2026-04-14T05:22:00-04:00",
       "amountCents": 171685,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4744,9 +4744,9 @@
       "transactionTimestamp": "2026-04-15T06:07:00-04:00",
       "amountCents": 266305,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4769,7 +4769,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -4779,9 +4779,9 @@
       "transactionTimestamp": "2026-04-16T05:33:00-04:00",
       "amountCents": 223640,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4813,9 +4813,9 @@
       "transactionTimestamp": "2026-04-17T05:41:00-04:00",
       "amountCents": 231901,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4836,9 +4836,9 @@
       "transactionTimestamp": "2026-04-18T06:29:00-04:00",
       "amountCents": 311093,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4859,9 +4859,9 @@
       "transactionTimestamp": "2026-04-20T05:42:00-04:00",
       "amountCents": 201347,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4884,7 +4884,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -4894,9 +4894,9 @@
       "transactionTimestamp": "2026-04-21T06:13:00-04:00",
       "amountCents": 204939,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4917,9 +4917,9 @@
       "transactionTimestamp": "2026-04-22T06:21:00-04:00",
       "amountCents": 220204,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4942,7 +4942,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -4952,9 +4952,9 @@
       "transactionTimestamp": "2026-04-23T06:19:00-04:00",
       "amountCents": 90125,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4975,9 +4975,9 @@
       "transactionTimestamp": "2026-04-24T05:05:00-04:00",
       "amountCents": 201503,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4998,9 +4998,9 @@
       "transactionTimestamp": "2026-04-25T06:32:00-04:00",
       "amountCents": 189195,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5032,9 +5032,9 @@
       "transactionTimestamp": "2026-04-27T05:59:00-04:00",
       "amountCents": 211655,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5055,9 +5055,9 @@
       "transactionTimestamp": "2026-04-28T06:11:00-04:00",
       "amountCents": 174327,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5069,7 +5069,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -5090,9 +5090,9 @@
       "transactionTimestamp": "2026-04-29T06:51:00-04:00",
       "amountCents": 223380,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5115,7 +5115,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -5125,9 +5125,9 @@
       "transactionTimestamp": "2026-04-30T06:38:00-04:00",
       "amountCents": 267414,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5160,9 +5160,9 @@
       "transactionTimestamp": "2026-05-01T06:11:00-04:00",
       "amountCents": 281873,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5194,9 +5194,9 @@
       "transactionTimestamp": "2026-05-02T06:43:00-04:00",
       "amountCents": 196604,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5217,9 +5217,9 @@
       "transactionTimestamp": "2026-05-04T06:08:00-04:00",
       "amountCents": 185964,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5240,9 +5240,9 @@
       "transactionTimestamp": "2026-05-05T06:00:00-04:00",
       "amountCents": 189677,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5263,9 +5263,9 @@
       "transactionTimestamp": "2026-05-06T05:46:00-04:00",
       "amountCents": 176940,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5288,7 +5288,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -5298,9 +5298,9 @@
       "transactionTimestamp": "2026-05-07T06:02:00-04:00",
       "amountCents": 246276,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5321,9 +5321,9 @@
       "transactionTimestamp": "2026-05-08T06:55:00-04:00",
       "amountCents": 187121,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5344,9 +5344,9 @@
       "transactionTimestamp": "2026-05-09T05:39:00-04:00",
       "amountCents": 284175,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5367,9 +5367,9 @@
       "transactionTimestamp": "2026-05-11T06:47:00-04:00",
       "amountCents": 328690,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5390,9 +5390,9 @@
       "transactionTimestamp": "2026-05-12T06:12:00-04:00",
       "amountCents": 261269,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5413,9 +5413,9 @@
       "transactionTimestamp": "2026-05-13T05:15:00-04:00",
       "amountCents": 228122,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5438,7 +5438,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -5448,9 +5448,9 @@
       "transactionTimestamp": "2026-05-14T05:33:00-04:00",
       "amountCents": 259751,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5483,9 +5483,9 @@
       "transactionTimestamp": "2026-05-15T05:43:00-04:00",
       "amountCents": 289330,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5517,9 +5517,9 @@
       "transactionTimestamp": "2026-05-16T05:30:00-04:00",
       "amountCents": 231741,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5540,9 +5540,9 @@
       "transactionTimestamp": "2026-05-18T06:02:00-04:00",
       "amountCents": 202359,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5563,9 +5563,9 @@
       "transactionTimestamp": "2026-05-19T06:49:00-04:00",
       "amountCents": 287591,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5586,9 +5586,9 @@
       "transactionTimestamp": "2026-05-20T05:06:00-04:00",
       "amountCents": 309425,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5611,7 +5611,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -5623,7 +5623,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -5633,9 +5633,9 @@
       "transactionTimestamp": "2026-05-21T05:28:00-04:00",
       "amountCents": 214740,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5656,9 +5656,9 @@
       "transactionTimestamp": "2026-05-22T05:29:00-04:00",
       "amountCents": 228125,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5679,9 +5679,9 @@
       "transactionTimestamp": "2026-05-23T05:48:00-04:00",
       "amountCents": 240164,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5702,9 +5702,9 @@
       "transactionTimestamp": "2026-05-25T06:06:00-04:00",
       "amountCents": 295061,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5725,9 +5725,9 @@
       "transactionTimestamp": "2026-05-26T05:20:00-04:00",
       "amountCents": 246150,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5759,9 +5759,9 @@
       "transactionTimestamp": "2026-05-27T05:15:00-04:00",
       "amountCents": 227486,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5784,7 +5784,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -5794,9 +5794,9 @@
       "transactionTimestamp": "2026-05-28T05:31:00-04:00",
       "amountCents": 302764,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5828,9 +5828,9 @@
       "transactionTimestamp": "2026-05-29T06:38:00-04:00",
       "amountCents": 240307,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5851,9 +5851,9 @@
       "transactionTimestamp": "2026-05-30T05:14:00-04:00",
       "amountCents": 144072,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5886,9 +5886,9 @@
       "transactionTimestamp": "2026-06-01T06:01:00-04:00",
       "amountCents": 243134,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5909,9 +5909,9 @@
       "transactionTimestamp": "2026-06-02T06:12:00-04:00",
       "amountCents": 150546,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5932,9 +5932,9 @@
       "transactionTimestamp": "2026-06-03T05:45:00-04:00",
       "amountCents": 239080,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5957,7 +5957,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -5967,9 +5967,9 @@
       "transactionTimestamp": "2026-06-04T05:18:00-04:00",
       "amountCents": 165900,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5990,9 +5990,9 @@
       "transactionTimestamp": "2026-06-05T06:15:00-04:00",
       "amountCents": 248765,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6013,9 +6013,9 @@
       "transactionTimestamp": "2026-06-06T05:32:00-04:00",
       "amountCents": 226752,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6036,9 +6036,9 @@
       "transactionTimestamp": "2026-06-08T05:08:00-04:00",
       "amountCents": 165288,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6059,9 +6059,9 @@
       "transactionTimestamp": "2026-06-09T05:28:00-04:00",
       "amountCents": 196923,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6082,9 +6082,9 @@
       "transactionTimestamp": "2026-06-10T06:37:00-04:00",
       "amountCents": 133088,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6107,7 +6107,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -6117,9 +6117,9 @@
       "transactionTimestamp": "2026-06-11T06:06:00-04:00",
       "amountCents": 276764,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6140,9 +6140,9 @@
       "transactionTimestamp": "2026-06-12T05:12:00-04:00",
       "amountCents": 195570,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6185,9 +6185,9 @@
       "transactionTimestamp": "2026-06-13T05:52:00-04:00",
       "amountCents": 167397,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6220,9 +6220,9 @@
       "transactionTimestamp": "2026-06-15T06:08:00-04:00",
       "amountCents": 204170,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6243,9 +6243,9 @@
       "transactionTimestamp": "2026-06-16T06:25:00-04:00",
       "amountCents": 199616,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6266,9 +6266,9 @@
       "transactionTimestamp": "2026-06-17T05:56:00-04:00",
       "amountCents": 215581,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6291,7 +6291,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -6301,9 +6301,9 @@
       "transactionTimestamp": "2026-06-18T05:54:00-04:00",
       "amountCents": 253596,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6324,9 +6324,9 @@
       "transactionTimestamp": "2026-06-19T06:39:00-04:00",
       "amountCents": 231767,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6347,9 +6347,9 @@
       "transactionTimestamp": "2026-06-20T06:42:00-04:00",
       "amountCents": 238798,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6372,7 +6372,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -6382,9 +6382,9 @@
       "transactionTimestamp": "2026-06-22T06:33:00-04:00",
       "amountCents": 178839,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6405,9 +6405,9 @@
       "transactionTimestamp": "2026-06-23T05:14:00-04:00",
       "amountCents": 228943,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6428,9 +6428,9 @@
       "transactionTimestamp": "2026-06-24T05:03:00-04:00",
       "amountCents": 184403,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6453,7 +6453,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -6463,9 +6463,9 @@
       "transactionTimestamp": "2026-06-25T06:46:00-04:00",
       "amountCents": 238811,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6497,9 +6497,9 @@
       "transactionTimestamp": "2026-06-26T06:01:00-04:00",
       "amountCents": 232679,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6520,9 +6520,9 @@
       "transactionTimestamp": "2026-06-27T06:25:00-04:00",
       "amountCents": 177663,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6543,9 +6543,9 @@
       "transactionTimestamp": "2026-06-29T05:20:00-04:00",
       "amountCents": 224965,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6577,9 +6577,9 @@
       "transactionTimestamp": "2026-06-30T06:26:00-04:00",
       "amountCents": 234420,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6612,9 +6612,9 @@
       "transactionTimestamp": "2026-07-01T06:23:00-04:00",
       "amountCents": 135635,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6637,7 +6637,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -6647,9 +6647,9 @@
       "transactionTimestamp": "2026-07-02T06:58:00-04:00",
       "amountCents": 93902,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6670,9 +6670,9 @@
       "transactionTimestamp": "2026-07-03T06:12:00-04:00",
       "amountCents": 232778,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6693,9 +6693,9 @@
       "transactionTimestamp": "2026-07-04T05:33:00-04:00",
       "amountCents": 182519,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6716,9 +6716,9 @@
       "transactionTimestamp": "2026-07-06T07:00:00-04:00",
       "amountCents": 200480,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6739,9 +6739,9 @@
       "transactionTimestamp": "2026-07-07T05:16:00-04:00",
       "amountCents": 221386,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6762,9 +6762,9 @@
       "transactionTimestamp": "2026-07-08T05:29:00-04:00",
       "amountCents": 183048,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6787,7 +6787,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -6797,9 +6797,9 @@
       "transactionTimestamp": "2026-07-09T05:40:00-04:00",
       "amountCents": 206587,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6820,9 +6820,9 @@
       "transactionTimestamp": "2026-07-10T05:42:00-04:00",
       "amountCents": 234637,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6854,9 +6854,9 @@
       "transactionTimestamp": "2026-07-11T05:54:00-04:00",
       "amountCents": 199159,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6877,9 +6877,9 @@
       "transactionTimestamp": "2026-07-13T06:43:00-04:00",
       "amountCents": 201333,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6900,9 +6900,9 @@
       "transactionTimestamp": "2026-07-14T05:13:00-04:00",
       "amountCents": 135328,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6935,9 +6935,9 @@
       "transactionTimestamp": "2026-07-15T06:36:00-04:00",
       "amountCents": 180430,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6960,7 +6960,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -6970,9 +6970,9 @@
       "transactionTimestamp": "2026-07-16T06:50:00-04:00",
       "amountCents": 145448,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -6993,9 +6993,9 @@
       "transactionTimestamp": "2026-07-17T05:34:00-04:00",
       "amountCents": 204301,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7016,9 +7016,9 @@
       "transactionTimestamp": "2026-07-18T07:00:00-04:00",
       "amountCents": 147608,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7039,9 +7039,9 @@
       "transactionTimestamp": "2026-07-20T06:59:00-04:00",
       "amountCents": 166683,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7064,7 +7064,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -7074,9 +7074,9 @@
       "transactionTimestamp": "2026-07-21T06:48:00-04:00",
       "amountCents": 178732,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7097,9 +7097,9 @@
       "transactionTimestamp": "2026-07-22T05:31:00-04:00",
       "amountCents": 108468,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7122,7 +7122,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -7132,9 +7132,9 @@
       "transactionTimestamp": "2026-07-23T06:24:00-04:00",
       "amountCents": 193095,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7166,9 +7166,9 @@
       "transactionTimestamp": "2026-07-24T07:00:00-04:00",
       "amountCents": 185442,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7189,9 +7189,9 @@
       "transactionTimestamp": "2026-07-25T05:46:00-04:00",
       "amountCents": 143957,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7223,9 +7223,9 @@
       "transactionTimestamp": "2026-07-27T06:55:00-04:00",
       "amountCents": 180547,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7248,7 +7248,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -7258,9 +7258,9 @@
       "transactionTimestamp": "2026-07-28T05:51:00-04:00",
       "amountCents": 119877,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7281,9 +7281,9 @@
       "transactionTimestamp": "2026-07-29T05:43:00-04:00",
       "amountCents": 130461,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7306,7 +7306,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -7316,9 +7316,9 @@
       "transactionTimestamp": "2026-07-30T05:39:00-04:00",
       "amountCents": 154452,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7339,9 +7339,9 @@
       "transactionTimestamp": "2026-07-31T05:19:00-04:00",
       "amountCents": 199043,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7362,9 +7362,9 @@
       "transactionTimestamp": "2026-08-01T06:44:00-04:00",
       "amountCents": 171483,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7397,9 +7397,9 @@
       "transactionTimestamp": "2026-08-03T05:22:00-04:00",
       "amountCents": 185934,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7420,9 +7420,9 @@
       "transactionTimestamp": "2026-08-04T06:03:00-04:00",
       "amountCents": 184343,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7443,9 +7443,9 @@
       "transactionTimestamp": "2026-08-05T06:47:00-04:00",
       "amountCents": 160066,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7468,7 +7468,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -7478,9 +7478,9 @@
       "transactionTimestamp": "2026-08-06T05:28:00-04:00",
       "amountCents": 190700,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7512,9 +7512,9 @@
       "transactionTimestamp": "2026-08-07T06:32:00-04:00",
       "amountCents": 157371,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7535,9 +7535,9 @@
       "transactionTimestamp": "2026-08-08T05:00:00-04:00",
       "amountCents": 227971,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7558,9 +7558,9 @@
       "transactionTimestamp": "2026-08-10T06:06:00-04:00",
       "amountCents": 139439,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7581,9 +7581,9 @@
       "transactionTimestamp": "2026-08-11T06:22:00-04:00",
       "amountCents": 184933,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7604,9 +7604,9 @@
       "transactionTimestamp": "2026-08-12T05:37:00-04:00",
       "amountCents": 219855,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7629,7 +7629,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -7639,9 +7639,9 @@
       "transactionTimestamp": "2026-08-13T06:09:00-04:00",
       "amountCents": 121237,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7662,9 +7662,9 @@
       "transactionTimestamp": "2026-08-14T06:46:00-04:00",
       "amountCents": 185874,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7685,9 +7685,9 @@
       "transactionTimestamp": "2026-08-15T05:07:00-04:00",
       "amountCents": 213316,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7720,9 +7720,9 @@
       "transactionTimestamp": "2026-08-17T06:26:00-04:00",
       "amountCents": 204852,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7743,9 +7743,9 @@
       "transactionTimestamp": "2026-08-18T06:16:00-04:00",
       "amountCents": 246607,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7766,9 +7766,9 @@
       "transactionTimestamp": "2026-08-19T06:01:00-04:00",
       "amountCents": 245808,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7791,7 +7791,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -7801,9 +7801,9 @@
       "transactionTimestamp": "2026-08-20T06:57:00-04:00",
       "amountCents": 171283,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7826,7 +7826,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -7836,9 +7836,9 @@
       "transactionTimestamp": "2026-08-21T05:55:00-04:00",
       "amountCents": 124450,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7870,9 +7870,9 @@
       "transactionTimestamp": "2026-08-22T06:30:00-04:00",
       "amountCents": 238531,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7893,9 +7893,9 @@
       "transactionTimestamp": "2026-08-24T05:33:00-04:00",
       "amountCents": 115484,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7916,9 +7916,9 @@
       "transactionTimestamp": "2026-08-25T07:00:00-04:00",
       "amountCents": 188074,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7939,9 +7939,9 @@
       "transactionTimestamp": "2026-08-26T06:06:00-04:00",
       "amountCents": 153323,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -7964,7 +7964,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -7985,9 +7985,9 @@
       "transactionTimestamp": "2026-08-27T06:43:00-04:00",
       "amountCents": 162022,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8008,9 +8008,9 @@
       "transactionTimestamp": "2026-08-28T05:14:00-04:00",
       "amountCents": 166933,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8031,9 +8031,9 @@
       "transactionTimestamp": "2026-08-29T06:22:00-04:00",
       "amountCents": 169952,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8054,9 +8054,9 @@
       "transactionTimestamp": "2026-08-31T05:05:00-04:00",
       "amountCents": 155821,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8089,9 +8089,9 @@
       "transactionTimestamp": "2026-09-01T06:19:00-04:00",
       "amountCents": 156440,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8112,9 +8112,9 @@
       "transactionTimestamp": "2026-09-02T05:51:00-04:00",
       "amountCents": 256705,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8135,9 +8135,9 @@
       "transactionTimestamp": "2026-09-03T05:05:00-04:00",
       "amountCents": 168697,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8149,7 +8149,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -8170,9 +8170,9 @@
       "transactionTimestamp": "2026-09-04T05:05:00-04:00",
       "amountCents": 177754,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8204,9 +8204,9 @@
       "transactionTimestamp": "2026-09-05T05:44:00-04:00",
       "amountCents": 157408,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8227,9 +8227,9 @@
       "transactionTimestamp": "2026-09-07T06:04:00-04:00",
       "amountCents": 187445,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8250,9 +8250,9 @@
       "transactionTimestamp": "2026-09-08T05:42:00-04:00",
       "amountCents": 162142,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8273,9 +8273,9 @@
       "transactionTimestamp": "2026-09-09T06:11:00-04:00",
       "amountCents": 203927,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8298,7 +8298,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -8308,9 +8308,9 @@
       "transactionTimestamp": "2026-09-10T06:44:00-04:00",
       "amountCents": 182064,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8331,9 +8331,9 @@
       "transactionTimestamp": "2026-09-11T05:02:00-04:00",
       "amountCents": 254398,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8354,9 +8354,9 @@
       "transactionTimestamp": "2026-09-12T05:06:00-04:00",
       "amountCents": 215659,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8377,9 +8377,9 @@
       "transactionTimestamp": "2026-09-14T06:25:00-04:00",
       "amountCents": 132487,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8412,9 +8412,9 @@
       "transactionTimestamp": "2026-09-15T05:47:00-04:00",
       "amountCents": 120153,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8435,9 +8435,9 @@
       "transactionTimestamp": "2026-09-16T06:15:00-04:00",
       "amountCents": 202761,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8460,7 +8460,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -8470,9 +8470,9 @@
       "transactionTimestamp": "2026-09-17T06:08:00-04:00",
       "amountCents": 192214,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8504,9 +8504,9 @@
       "transactionTimestamp": "2026-09-18T06:36:00-04:00",
       "amountCents": 116394,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8527,9 +8527,9 @@
       "transactionTimestamp": "2026-09-19T06:37:00-04:00",
       "amountCents": 221450,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8550,9 +8550,9 @@
       "transactionTimestamp": "2026-09-21T05:03:00-04:00",
       "amountCents": 186451,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8564,7 +8564,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Business insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -8585,9 +8585,9 @@
       "transactionTimestamp": "2026-09-22T06:24:00-04:00",
       "amountCents": 200855,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8608,9 +8608,9 @@
       "transactionTimestamp": "2026-09-23T05:31:00-04:00",
       "amountCents": 138854,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8633,7 +8633,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Hardware wholesaler",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Atlantic Hardware Wholesale",
+      "merchant": "Quayside Hardware Wholesale",
       "channel": "PAD"
     },
     {
@@ -8643,9 +8643,9 @@
       "transactionTimestamp": "2026-09-24T06:58:00-04:00",
       "amountCents": 202047,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8666,9 +8666,9 @@
       "transactionTimestamp": "2026-09-25T06:06:00-04:00",
       "amountCents": 175344,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8689,9 +8689,9 @@
       "transactionTimestamp": "2026-09-26T05:47:00-04:00",
       "amountCents": 204882,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8712,9 +8712,9 @@
       "transactionTimestamp": "2026-09-28T05:10:00-04:00",
       "amountCents": 171337,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8746,9 +8746,9 @@
       "transactionTimestamp": "2026-09-29T06:51:00-04:00",
       "amountCents": 169088,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -8769,9 +8769,9 @@
       "transactionTimestamp": "2026-09-30T05:52:00-04:00",
       "amountCents": 158842,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {

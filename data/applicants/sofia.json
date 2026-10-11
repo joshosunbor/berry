@@ -91,9 +91,9 @@
       "transactionTimestamp": "2025-10-02T16:08:00-08:00",
       "amountCents": 2215,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -127,9 +127,9 @@
       "transactionTimestamp": "2025-10-08T09:56:00-08:00",
       "amountCents": 4039,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -175,9 +175,9 @@
       "transactionTimestamp": "2025-10-10T17:32:00-08:00",
       "amountCents": 2949,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -187,9 +187,9 @@
       "transactionTimestamp": "2025-10-11T12:12:00-08:00",
       "amountCents": 1602,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -199,9 +199,9 @@
       "transactionTimestamp": "2025-10-11T20:05:00-08:00",
       "amountCents": 2977,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -223,9 +223,9 @@
       "transactionTimestamp": "2025-10-13T12:44:00-08:00",
       "amountCents": 4181,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -237,7 +237,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -247,9 +247,9 @@
       "transactionTimestamp": "2025-10-15T09:33:00-08:00",
       "amountCents": 4612,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -295,9 +295,9 @@
       "transactionTimestamp": "2025-10-19T10:53:00-08:00",
       "amountCents": 3776,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -307,9 +307,9 @@
       "transactionTimestamp": "2025-10-19T14:57:00-08:00",
       "amountCents": 3625,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -345,7 +345,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -391,9 +391,9 @@
       "transactionTimestamp": "2025-10-24T09:32:00-08:00",
       "amountCents": 2825,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -459,9 +459,9 @@
       "transactionTimestamp": "2025-10-27T14:14:00-08:00",
       "amountCents": 3550,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -471,9 +471,9 @@
       "transactionTimestamp": "2025-10-27T15:23:00-08:00",
       "amountCents": 2643,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -603,9 +603,9 @@
       "transactionTimestamp": "2025-11-06T16:45:00-08:00",
       "amountCents": 3472,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -615,9 +615,9 @@
       "transactionTimestamp": "2025-11-06T17:17:00-08:00",
       "amountCents": 4473,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -663,9 +663,9 @@
       "transactionTimestamp": "2025-11-12T10:42:00-08:00",
       "amountCents": 5706,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -713,7 +713,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -759,9 +759,9 @@
       "transactionTimestamp": "2025-11-19T13:53:00-08:00",
       "amountCents": 2593,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -771,9 +771,9 @@
       "transactionTimestamp": "2025-11-19T14:39:00-08:00",
       "amountCents": 5920,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -783,9 +783,9 @@
       "transactionTimestamp": "2025-11-19T18:58:00-08:00",
       "amountCents": 2063,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -807,9 +807,9 @@
       "transactionTimestamp": "2025-11-21T19:25:00-08:00",
       "amountCents": 4262,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -819,9 +819,9 @@
       "transactionTimestamp": "2025-11-22T11:37:00-08:00",
       "amountCents": 1851,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -843,9 +843,9 @@
       "transactionTimestamp": "2025-11-22T21:00:00-08:00",
       "amountCents": 5831,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -855,9 +855,9 @@
       "transactionTimestamp": "2025-11-23T11:52:00-08:00",
       "amountCents": 4773,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -869,7 +869,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -947,9 +947,9 @@
       "transactionTimestamp": "2025-12-03T15:53:00-08:00",
       "amountCents": 2210,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -983,9 +983,9 @@
       "transactionTimestamp": "2025-12-05T11:03:00-08:00",
       "amountCents": 2807,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -995,9 +995,9 @@
       "transactionTimestamp": "2025-12-05T20:41:00-08:00",
       "amountCents": 4991,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1115,9 +1115,9 @@
       "transactionTimestamp": "2025-12-14T08:05:00-08:00",
       "amountCents": 2900,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1129,7 +1129,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -1151,9 +1151,9 @@
       "transactionTimestamp": "2025-12-16T11:47:00-08:00",
       "amountCents": 5798,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1175,9 +1175,9 @@
       "transactionTimestamp": "2025-12-16T13:25:00-08:00",
       "amountCents": 2249,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1187,9 +1187,9 @@
       "transactionTimestamp": "2025-12-16T16:58:00-08:00",
       "amountCents": 4602,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1295,9 +1295,9 @@
       "transactionTimestamp": "2025-12-21T15:53:00-08:00",
       "amountCents": 300,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1309,7 +1309,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -1319,9 +1319,9 @@
       "transactionTimestamp": "2025-12-22T14:41:00-08:00",
       "amountCents": 5123,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1343,9 +1343,9 @@
       "transactionTimestamp": "2025-12-24T14:41:00-08:00",
       "amountCents": 3022,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1367,9 +1367,9 @@
       "transactionTimestamp": "2025-12-25T20:41:00-08:00",
       "amountCents": 1612,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1423,9 +1423,9 @@
       "transactionTimestamp": "2025-12-26T20:06:00-08:00",
       "amountCents": 5311,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1435,9 +1435,9 @@
       "transactionTimestamp": "2025-12-27T10:14:00-08:00",
       "amountCents": 3783,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1447,9 +1447,9 @@
       "transactionTimestamp": "2025-12-27T17:59:00-08:00",
       "amountCents": 2417,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -1459,9 +1459,9 @@
       "transactionTimestamp": "2025-12-28T13:19:00-08:00",
       "amountCents": 1954,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1519,9 +1519,9 @@
       "transactionTimestamp": "2026-01-03T12:49:00-08:00",
       "amountCents": 2605,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1531,9 +1531,9 @@
       "transactionTimestamp": "2026-01-04T08:57:00-08:00",
       "amountCents": 4368,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1543,9 +1543,9 @@
       "transactionTimestamp": "2026-01-04T10:41:00-08:00",
       "amountCents": 2230,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1591,9 +1591,9 @@
       "transactionTimestamp": "2026-01-07T14:08:00-08:00",
       "amountCents": 5530,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1639,9 +1639,9 @@
       "transactionTimestamp": "2026-01-14T17:51:00-08:00",
       "amountCents": 4477,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1653,7 +1653,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -1699,9 +1699,9 @@
       "transactionTimestamp": "2026-01-19T17:40:00-08:00",
       "amountCents": 2257,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1725,7 +1725,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -1815,9 +1815,9 @@
       "transactionTimestamp": "2026-01-26T11:29:00-08:00",
       "amountCents": 3209,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1875,9 +1875,9 @@
       "transactionTimestamp": "2026-02-02T13:23:00-08:00",
       "amountCents": 2703,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1899,9 +1899,9 @@
       "transactionTimestamp": "2026-02-04T18:58:00-08:00",
       "amountCents": 5821,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1911,9 +1911,9 @@
       "transactionTimestamp": "2026-02-05T11:58:00-08:00",
       "amountCents": 4348,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1947,9 +1947,9 @@
       "transactionTimestamp": "2026-02-06T10:01:00-08:00",
       "amountCents": 2308,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1959,9 +1959,9 @@
       "transactionTimestamp": "2026-02-07T18:17:00-08:00",
       "amountCents": 3503,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1983,9 +1983,9 @@
       "transactionTimestamp": "2026-02-08T12:28:00-08:00",
       "amountCents": 4045,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -2031,9 +2031,9 @@
       "transactionTimestamp": "2026-02-10T13:50:00-08:00",
       "amountCents": 3620,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -2091,9 +2091,9 @@
       "transactionTimestamp": "2026-02-15T09:11:00-08:00",
       "amountCents": 2428,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -2129,7 +2129,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -2213,9 +2213,9 @@
       "transactionTimestamp": "2026-02-18T19:59:00-08:00",
       "amountCents": 5981,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -2263,7 +2263,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment (re-presented)",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -2275,7 +2275,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -2377,9 +2377,9 @@
       "transactionTimestamp": "2026-02-28T08:33:00-08:00",
       "amountCents": 6587,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2389,9 +2389,9 @@
       "transactionTimestamp": "2026-03-01T17:38:00-08:00",
       "amountCents": 3377,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2461,9 +2461,9 @@
       "transactionTimestamp": "2026-03-04T09:54:00-08:00",
       "amountCents": 5792,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -2509,9 +2509,9 @@
       "transactionTimestamp": "2026-03-09T11:44:00-08:00",
       "amountCents": 4993,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2521,9 +2521,9 @@
       "transactionTimestamp": "2026-03-09T19:15:00-08:00",
       "amountCents": 4785,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -2533,9 +2533,9 @@
       "transactionTimestamp": "2026-03-11T14:59:00-08:00",
       "amountCents": 2280,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2581,9 +2581,9 @@
       "transactionTimestamp": "2026-03-14T15:09:00-08:00",
       "amountCents": 3513,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2607,7 +2607,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -2689,9 +2689,9 @@
       "transactionTimestamp": "2026-03-22T11:24:00-08:00",
       "amountCents": 5481,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -2703,7 +2703,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -2793,9 +2793,9 @@
       "transactionTimestamp": "2026-03-28T18:51:00-08:00",
       "amountCents": 4104,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -2817,9 +2817,9 @@
       "transactionTimestamp": "2026-03-30T12:26:00-08:00",
       "amountCents": 2512,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -2865,9 +2865,9 @@
       "transactionTimestamp": "2026-04-01T15:10:00-08:00",
       "amountCents": 4256,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -2877,9 +2877,9 @@
       "transactionTimestamp": "2026-04-02T14:18:00-08:00",
       "amountCents": 4557,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2901,9 +2901,9 @@
       "transactionTimestamp": "2026-04-03T20:42:00-08:00",
       "amountCents": 6262,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -2925,9 +2925,9 @@
       "transactionTimestamp": "2026-04-07T08:41:00-08:00",
       "amountCents": 4693,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -2997,9 +2997,9 @@
       "transactionTimestamp": "2026-04-10T14:59:00-08:00",
       "amountCents": 3607,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -3035,7 +3035,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -3057,9 +3057,9 @@
       "transactionTimestamp": "2026-04-15T13:15:00-08:00",
       "amountCents": 1402,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3105,9 +3105,9 @@
       "transactionTimestamp": "2026-04-20T11:05:00-08:00",
       "amountCents": 7069,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -3131,7 +3131,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -3189,9 +3189,9 @@
       "transactionTimestamp": "2026-04-24T16:17:00-08:00",
       "amountCents": 6393,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -3213,9 +3213,9 @@
       "transactionTimestamp": "2026-04-25T20:52:00-08:00",
       "amountCents": 4749,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3305,9 +3305,9 @@
       "transactionTimestamp": "2026-04-28T11:42:00-08:00",
       "amountCents": 6229,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -3317,9 +3317,9 @@
       "transactionTimestamp": "2026-04-29T10:59:00-08:00",
       "amountCents": 3617,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3341,9 +3341,9 @@
       "transactionTimestamp": "2026-05-05T09:55:00-08:00",
       "amountCents": 6293,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -3365,9 +3365,9 @@
       "transactionTimestamp": "2026-05-06T13:43:00-08:00",
       "amountCents": 5479,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -3377,9 +3377,9 @@
       "transactionTimestamp": "2026-05-06T19:51:00-08:00",
       "amountCents": 4774,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3485,9 +3485,9 @@
       "transactionTimestamp": "2026-05-13T14:34:00-08:00",
       "amountCents": 6102,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3497,9 +3497,9 @@
       "transactionTimestamp": "2026-05-14T09:53:00-08:00",
       "amountCents": 2394,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3511,7 +3511,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -3521,9 +3521,9 @@
       "transactionTimestamp": "2026-05-15T12:46:00-08:00",
       "amountCents": 4365,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -3569,9 +3569,9 @@
       "transactionTimestamp": "2026-05-21T11:30:00-08:00",
       "amountCents": 2844,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -3595,7 +3595,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -3629,9 +3629,9 @@
       "transactionTimestamp": "2026-05-24T13:56:00-08:00",
       "amountCents": 3816,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3641,9 +3641,9 @@
       "transactionTimestamp": "2026-05-24T19:49:00-08:00",
       "amountCents": 3781,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3721,9 +3721,9 @@
       "transactionTimestamp": "2026-05-28T08:07:00-08:00",
       "amountCents": 2838,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3757,9 +3757,9 @@
       "transactionTimestamp": "2026-05-31T08:04:00-08:00",
       "amountCents": 2572,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -3781,9 +3781,9 @@
       "transactionTimestamp": "2026-05-31T17:00:00-08:00",
       "amountCents": 2574,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3841,9 +3841,9 @@
       "transactionTimestamp": "2026-06-03T11:30:00-08:00",
       "amountCents": 3039,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -3853,9 +3853,9 @@
       "transactionTimestamp": "2026-06-03T18:11:00-08:00",
       "amountCents": 5161,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -3865,9 +3865,9 @@
       "transactionTimestamp": "2026-06-03T20:00:00-08:00",
       "amountCents": 3301,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -3997,9 +3997,9 @@
       "transactionTimestamp": "2026-06-11T16:01:00-08:00",
       "amountCents": 5364,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -4059,7 +4059,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -4069,9 +4069,9 @@
       "transactionTimestamp": "2026-06-15T18:37:00-08:00",
       "amountCents": 4351,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4141,9 +4141,9 @@
       "transactionTimestamp": "2026-06-20T16:32:00-08:00",
       "amountCents": 3276,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4153,9 +4153,9 @@
       "transactionTimestamp": "2026-06-21T17:05:00-08:00",
       "amountCents": 5277,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4179,7 +4179,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -4269,9 +4269,9 @@
       "transactionTimestamp": "2026-06-27T13:34:00-08:00",
       "amountCents": 6033,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4341,9 +4341,9 @@
       "transactionTimestamp": "2026-07-05T13:21:00-08:00",
       "amountCents": 4325,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4413,9 +4413,9 @@
       "transactionTimestamp": "2026-07-07T20:44:00-08:00",
       "amountCents": 4711,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4449,9 +4449,9 @@
       "transactionTimestamp": "2026-07-08T14:43:00-08:00",
       "amountCents": 4605,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -4499,7 +4499,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -4509,9 +4509,9 @@
       "transactionTimestamp": "2026-07-15T12:50:00-08:00",
       "amountCents": 2223,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -4595,9 +4595,9 @@
       "transactionTimestamp": "2026-07-18T15:44:00-08:00",
       "amountCents": 4186,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -4643,9 +4643,9 @@
       "transactionTimestamp": "2026-07-21T21:00:00-08:00",
       "amountCents": 3151,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4657,7 +4657,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -4669,7 +4669,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment (re-presented)",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -4691,9 +4691,9 @@
       "transactionTimestamp": "2026-07-24T14:23:00-08:00",
       "amountCents": 5479,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -4795,9 +4795,9 @@
       "transactionTimestamp": "2026-07-29T19:24:00-08:00",
       "amountCents": 4600,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4807,9 +4807,9 @@
       "transactionTimestamp": "2026-07-30T16:47:00-08:00",
       "amountCents": 1987,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -4831,9 +4831,9 @@
       "transactionTimestamp": "2026-07-31T15:28:00-08:00",
       "amountCents": 4159,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4843,9 +4843,9 @@
       "transactionTimestamp": "2026-08-01T16:58:00-08:00",
       "amountCents": 4408,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -4915,9 +4915,9 @@
       "transactionTimestamp": "2026-08-07T16:11:00-08:00",
       "amountCents": 7247,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -4927,9 +4927,9 @@
       "transactionTimestamp": "2026-08-07T16:34:00-08:00",
       "amountCents": 7358,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -4939,9 +4939,9 @@
       "transactionTimestamp": "2026-08-08T10:31:00-08:00",
       "amountCents": 4453,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4975,9 +4975,9 @@
       "transactionTimestamp": "2026-08-09T12:44:00-08:00",
       "amountCents": 5235,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -4999,9 +4999,9 @@
       "transactionTimestamp": "2026-08-11T09:57:00-08:00",
       "amountCents": 7159,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -5023,9 +5023,9 @@
       "transactionTimestamp": "2026-08-13T17:00:00-08:00",
       "amountCents": 5657,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -5061,7 +5061,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -5157,7 +5157,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -5299,7 +5299,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment (re-presented)",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -5357,9 +5357,9 @@
       "transactionTimestamp": "2026-09-03T20:12:00-08:00",
       "amountCents": 4308,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -5429,9 +5429,9 @@
       "transactionTimestamp": "2026-09-09T18:54:00-08:00",
       "amountCents": 6734,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -5489,9 +5489,9 @@
       "transactionTimestamp": "2026-09-14T11:00:00-08:00",
       "amountCents": 4272,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -5503,7 +5503,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -5539,9 +5539,9 @@
       "transactionTimestamp": "2026-09-16T16:14:00-08:00",
       "amountCents": 1780,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -5599,9 +5599,9 @@
       "transactionTimestamp": "2026-09-21T11:02:00-08:00",
       "amountCents": 4514,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -5611,9 +5611,9 @@
       "transactionTimestamp": "2026-09-21T17:50:00-08:00",
       "amountCents": 6195,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -5625,7 +5625,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Car loan payment (re-presented)",
       "category": "LOAN_PAYMENT",
-      "merchant": "Autoline Finance",
+      "merchant": "Carriway Auto Finance",
       "channel": "PAD"
     },
     {
@@ -5637,7 +5637,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Loan payment",
       "category": "LOAN_PAYMENT",
-      "merchant": "Quickstep Lending",
+      "merchant": "Steplight Lending",
       "channel": "PAD"
     },
     {
@@ -5647,9 +5647,9 @@
       "transactionTimestamp": "2026-09-23T10:07:00-08:00",
       "amountCents": 3871,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -5695,9 +5695,9 @@
       "transactionTimestamp": "2026-09-26T18:30:00-08:00",
       "amountCents": 4251,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -5775,9 +5775,9 @@
       "transactionTimestamp": "2026-09-29T20:18:00-08:00",
       "amountCents": 2827,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {

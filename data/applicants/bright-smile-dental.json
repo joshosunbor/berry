@@ -65,7 +65,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -87,9 +87,9 @@
       "transactionTimestamp": "2025-10-01T05:52:00-07:00",
       "amountCents": 541789,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -99,9 +99,9 @@
       "transactionTimestamp": "2025-10-02T05:56:00-07:00",
       "amountCents": 549039,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -146,9 +146,9 @@
       "transactionTimestamp": "2025-10-03T06:25:00-07:00",
       "amountCents": 453194,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -182,9 +182,9 @@
       "transactionTimestamp": "2025-10-06T06:34:00-07:00",
       "amountCents": 669485,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -194,9 +194,9 @@
       "transactionTimestamp": "2025-10-07T05:54:00-07:00",
       "amountCents": 583594,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -218,9 +218,9 @@
       "transactionTimestamp": "2025-10-08T06:32:00-07:00",
       "amountCents": 653974,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -230,9 +230,9 @@
       "transactionTimestamp": "2025-10-09T06:00:00-07:00",
       "amountCents": 512880,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -266,9 +266,9 @@
       "transactionTimestamp": "2025-10-10T05:48:00-07:00",
       "amountCents": 389397,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -280,7 +280,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -290,9 +290,9 @@
       "transactionTimestamp": "2025-10-13T05:21:00-07:00",
       "amountCents": 443146,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -314,9 +314,9 @@
       "transactionTimestamp": "2025-10-14T05:14:00-07:00",
       "amountCents": 481371,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -338,9 +338,9 @@
       "transactionTimestamp": "2025-10-15T05:16:00-07:00",
       "amountCents": 600404,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -350,9 +350,9 @@
       "transactionTimestamp": "2025-10-16T06:24:00-07:00",
       "amountCents": 448829,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -385,9 +385,9 @@
       "transactionTimestamp": "2025-10-17T06:53:00-07:00",
       "amountCents": 550291,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -411,7 +411,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -421,9 +421,9 @@
       "transactionTimestamp": "2025-10-20T06:27:00-07:00",
       "amountCents": 660275,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -433,9 +433,9 @@
       "transactionTimestamp": "2025-10-21T06:03:00-07:00",
       "amountCents": 495548,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -447,7 +447,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -457,9 +457,9 @@
       "transactionTimestamp": "2025-10-22T06:33:00-07:00",
       "amountCents": 465497,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -469,9 +469,9 @@
       "transactionTimestamp": "2025-10-23T06:50:00-07:00",
       "amountCents": 557754,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -493,9 +493,9 @@
       "transactionTimestamp": "2025-10-24T06:17:00-07:00",
       "amountCents": 434564,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -505,9 +505,9 @@
       "transactionTimestamp": "2025-10-27T06:41:00-07:00",
       "amountCents": 789020,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -540,9 +540,9 @@
       "transactionTimestamp": "2025-10-28T05:19:00-07:00",
       "amountCents": 441566,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -564,9 +564,9 @@
       "transactionTimestamp": "2025-10-29T05:33:00-07:00",
       "amountCents": 352779,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -576,9 +576,9 @@
       "transactionTimestamp": "2025-10-30T06:53:00-07:00",
       "amountCents": 570857,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -588,9 +588,9 @@
       "transactionTimestamp": "2025-10-31T05:08:00-07:00",
       "amountCents": 580646,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -613,7 +613,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -635,9 +635,9 @@
       "transactionTimestamp": "2025-11-03T06:41:00-07:00",
       "amountCents": 793857,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -647,9 +647,9 @@
       "transactionTimestamp": "2025-11-04T05:24:00-07:00",
       "amountCents": 609413,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -683,9 +683,9 @@
       "transactionTimestamp": "2025-11-05T05:53:00-07:00",
       "amountCents": 483435,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -719,9 +719,9 @@
       "transactionTimestamp": "2025-11-06T05:20:00-07:00",
       "amountCents": 609686,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -743,9 +743,9 @@
       "transactionTimestamp": "2025-11-07T06:49:00-07:00",
       "amountCents": 475942,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -757,7 +757,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -767,9 +767,9 @@
       "transactionTimestamp": "2025-11-10T05:59:00-07:00",
       "amountCents": 412656,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -779,9 +779,9 @@
       "transactionTimestamp": "2025-11-11T05:14:00-07:00",
       "amountCents": 482249,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -791,9 +791,9 @@
       "transactionTimestamp": "2025-11-12T06:00:00-07:00",
       "amountCents": 510446,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -815,9 +815,9 @@
       "transactionTimestamp": "2025-11-13T05:30:00-07:00",
       "amountCents": 590904,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -850,9 +850,9 @@
       "transactionTimestamp": "2025-11-14T06:35:00-07:00",
       "amountCents": 634417,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -862,9 +862,9 @@
       "transactionTimestamp": "2025-11-17T05:54:00-07:00",
       "amountCents": 411999,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -888,7 +888,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -898,9 +898,9 @@
       "transactionTimestamp": "2025-11-18T06:29:00-07:00",
       "amountCents": 495658,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -910,9 +910,9 @@
       "transactionTimestamp": "2025-11-19T05:49:00-07:00",
       "amountCents": 567284,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -958,9 +958,9 @@
       "transactionTimestamp": "2025-11-20T06:02:00-07:00",
       "amountCents": 562924,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -970,9 +970,9 @@
       "transactionTimestamp": "2025-11-21T06:39:00-07:00",
       "amountCents": 478812,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -984,7 +984,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -994,9 +994,9 @@
       "transactionTimestamp": "2025-11-24T05:04:00-07:00",
       "amountCents": 395336,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1018,9 +1018,9 @@
       "transactionTimestamp": "2025-11-25T06:24:00-07:00",
       "amountCents": 637149,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1030,9 +1030,9 @@
       "transactionTimestamp": "2025-11-26T05:15:00-07:00",
       "amountCents": 418629,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1042,9 +1042,9 @@
       "transactionTimestamp": "2025-11-27T05:41:00-07:00",
       "amountCents": 603493,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1065,9 +1065,9 @@
       "transactionTimestamp": "2025-11-28T06:16:00-07:00",
       "amountCents": 535977,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1090,7 +1090,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -1100,9 +1100,9 @@
       "transactionTimestamp": "2025-12-01T06:21:00-07:00",
       "amountCents": 551688,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1112,9 +1112,9 @@
       "transactionTimestamp": "2025-12-02T06:29:00-07:00",
       "amountCents": 400411,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1124,9 +1124,9 @@
       "transactionTimestamp": "2025-12-03T05:28:00-07:00",
       "amountCents": 547008,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1136,9 +1136,9 @@
       "transactionTimestamp": "2025-12-04T06:03:00-07:00",
       "amountCents": 602810,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1160,9 +1160,9 @@
       "transactionTimestamp": "2025-12-05T06:21:00-07:00",
       "amountCents": 472904,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1184,9 +1184,9 @@
       "transactionTimestamp": "2025-12-08T06:18:00-07:00",
       "amountCents": 496035,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1196,9 +1196,9 @@
       "transactionTimestamp": "2025-12-09T05:21:00-07:00",
       "amountCents": 341669,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1210,7 +1210,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -1220,9 +1220,9 @@
       "transactionTimestamp": "2025-12-10T06:11:00-07:00",
       "amountCents": 596391,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1232,9 +1232,9 @@
       "transactionTimestamp": "2025-12-11T05:22:00-07:00",
       "amountCents": 414664,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1267,9 +1267,9 @@
       "transactionTimestamp": "2025-12-12T06:04:00-07:00",
       "amountCents": 385005,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1291,9 +1291,9 @@
       "transactionTimestamp": "2025-12-15T06:23:00-07:00",
       "amountCents": 366090,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1303,9 +1303,9 @@
       "transactionTimestamp": "2025-12-16T06:31:00-07:00",
       "amountCents": 581998,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1315,9 +1315,9 @@
       "transactionTimestamp": "2025-12-17T06:47:00-07:00",
       "amountCents": 415364,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1329,7 +1329,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -1339,9 +1339,9 @@
       "transactionTimestamp": "2025-12-18T05:48:00-07:00",
       "amountCents": 448580,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1351,9 +1351,9 @@
       "transactionTimestamp": "2025-12-19T05:28:00-07:00",
       "amountCents": 414160,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1377,7 +1377,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1387,9 +1387,9 @@
       "transactionTimestamp": "2025-12-22T06:40:00-07:00",
       "amountCents": 408967,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1411,9 +1411,9 @@
       "transactionTimestamp": "2025-12-23T05:26:00-07:00",
       "amountCents": 528191,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1435,9 +1435,9 @@
       "transactionTimestamp": "2025-12-24T06:53:00-07:00",
       "amountCents": 406099,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1447,9 +1447,9 @@
       "transactionTimestamp": "2025-12-25T06:39:00-07:00",
       "amountCents": 417357,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1471,9 +1471,9 @@
       "transactionTimestamp": "2025-12-26T06:31:00-07:00",
       "amountCents": 497293,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1517,9 +1517,9 @@
       "transactionTimestamp": "2025-12-29T06:58:00-07:00",
       "amountCents": 442857,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1529,9 +1529,9 @@
       "transactionTimestamp": "2025-12-30T05:18:00-07:00",
       "amountCents": 389418,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1565,9 +1565,9 @@
       "transactionTimestamp": "2025-12-31T06:52:00-07:00",
       "amountCents": 528767,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1579,7 +1579,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -1589,9 +1589,9 @@
       "transactionTimestamp": "2026-01-01T07:00:00-07:00",
       "amountCents": 590628,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1601,9 +1601,9 @@
       "transactionTimestamp": "2026-01-02T06:41:00-07:00",
       "amountCents": 576180,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1637,9 +1637,9 @@
       "transactionTimestamp": "2026-01-05T05:57:00-07:00",
       "amountCents": 639662,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1661,9 +1661,9 @@
       "transactionTimestamp": "2026-01-06T05:11:00-07:00",
       "amountCents": 566826,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1673,9 +1673,9 @@
       "transactionTimestamp": "2026-01-07T06:19:00-07:00",
       "amountCents": 612142,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1685,9 +1685,9 @@
       "transactionTimestamp": "2026-01-08T05:48:00-07:00",
       "amountCents": 415778,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1709,9 +1709,9 @@
       "transactionTimestamp": "2026-01-09T06:14:00-07:00",
       "amountCents": 443785,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1734,7 +1734,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -1744,9 +1744,9 @@
       "transactionTimestamp": "2026-01-12T06:48:00-07:00",
       "amountCents": 438782,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1756,9 +1756,9 @@
       "transactionTimestamp": "2026-01-13T05:25:00-07:00",
       "amountCents": 555278,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1768,9 +1768,9 @@
       "transactionTimestamp": "2026-01-14T05:11:00-07:00",
       "amountCents": 519283,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1792,9 +1792,9 @@
       "transactionTimestamp": "2026-01-15T06:03:00-07:00",
       "amountCents": 500507,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1816,9 +1816,9 @@
       "transactionTimestamp": "2026-01-16T06:23:00-07:00",
       "amountCents": 658130,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1830,7 +1830,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -1840,9 +1840,9 @@
       "transactionTimestamp": "2026-01-19T05:13:00-07:00",
       "amountCents": 344637,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1852,9 +1852,9 @@
       "transactionTimestamp": "2026-01-20T05:19:00-07:00",
       "amountCents": 584682,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1888,9 +1888,9 @@
       "transactionTimestamp": "2026-01-21T06:11:00-07:00",
       "amountCents": 479456,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1902,7 +1902,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1912,9 +1912,9 @@
       "transactionTimestamp": "2026-01-22T05:11:00-07:00",
       "amountCents": 578323,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1935,9 +1935,9 @@
       "transactionTimestamp": "2026-01-23T06:27:00-07:00",
       "amountCents": 522671,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1947,9 +1947,9 @@
       "transactionTimestamp": "2026-01-26T05:51:00-07:00",
       "amountCents": 437449,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1959,9 +1959,9 @@
       "transactionTimestamp": "2026-01-27T06:33:00-07:00",
       "amountCents": 619201,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1982,9 +1982,9 @@
       "transactionTimestamp": "2026-01-28T06:26:00-07:00",
       "amountCents": 597267,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1994,9 +1994,9 @@
       "transactionTimestamp": "2026-01-29T06:38:00-07:00",
       "amountCents": 707651,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2018,9 +2018,9 @@
       "transactionTimestamp": "2026-01-30T06:48:00-07:00",
       "amountCents": 492051,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2032,7 +2032,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -2042,9 +2042,9 @@
       "transactionTimestamp": "2026-02-02T05:07:00-07:00",
       "amountCents": 606698,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2054,9 +2054,9 @@
       "transactionTimestamp": "2026-02-03T05:58:00-07:00",
       "amountCents": 493236,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2078,9 +2078,9 @@
       "transactionTimestamp": "2026-02-04T06:48:00-07:00",
       "amountCents": 651504,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2102,9 +2102,9 @@
       "transactionTimestamp": "2026-02-05T05:21:00-07:00",
       "amountCents": 475045,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2114,9 +2114,9 @@
       "transactionTimestamp": "2026-02-06T05:26:00-07:00",
       "amountCents": 666129,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2161,9 +2161,9 @@
       "transactionTimestamp": "2026-02-09T07:00:00-07:00",
       "amountCents": 519551,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2175,7 +2175,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -2185,9 +2185,9 @@
       "transactionTimestamp": "2026-02-10T05:59:00-07:00",
       "amountCents": 609287,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2197,9 +2197,9 @@
       "transactionTimestamp": "2026-02-11T05:29:00-07:00",
       "amountCents": 467632,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2209,9 +2209,9 @@
       "transactionTimestamp": "2026-02-12T05:17:00-07:00",
       "amountCents": 574634,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2221,9 +2221,9 @@
       "transactionTimestamp": "2026-02-13T05:57:00-07:00",
       "amountCents": 600323,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2245,9 +2245,9 @@
       "transactionTimestamp": "2026-02-16T05:31:00-07:00",
       "amountCents": 602009,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2257,9 +2257,9 @@
       "transactionTimestamp": "2026-02-17T05:13:00-07:00",
       "amountCents": 663343,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2271,7 +2271,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -2293,9 +2293,9 @@
       "transactionTimestamp": "2026-02-18T06:15:00-07:00",
       "amountCents": 526308,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2305,9 +2305,9 @@
       "transactionTimestamp": "2026-02-19T05:06:00-07:00",
       "amountCents": 466385,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2317,9 +2317,9 @@
       "transactionTimestamp": "2026-02-20T05:08:00-07:00",
       "amountCents": 489677,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2354,7 +2354,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2364,9 +2364,9 @@
       "transactionTimestamp": "2026-02-23T06:22:00-07:00",
       "amountCents": 503455,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2388,9 +2388,9 @@
       "transactionTimestamp": "2026-02-24T06:16:00-07:00",
       "amountCents": 533717,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2400,9 +2400,9 @@
       "transactionTimestamp": "2026-02-25T05:06:00-07:00",
       "amountCents": 586507,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2412,9 +2412,9 @@
       "transactionTimestamp": "2026-02-26T05:33:00-07:00",
       "amountCents": 503131,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2424,9 +2424,9 @@
       "transactionTimestamp": "2026-02-27T06:51:00-07:00",
       "amountCents": 813652,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2438,7 +2438,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -2459,9 +2459,9 @@
       "transactionTimestamp": "2026-03-02T06:13:00-07:00",
       "amountCents": 645379,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2483,9 +2483,9 @@
       "transactionTimestamp": "2026-03-03T06:37:00-07:00",
       "amountCents": 652558,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2495,9 +2495,9 @@
       "transactionTimestamp": "2026-03-04T05:11:00-07:00",
       "amountCents": 582190,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2519,9 +2519,9 @@
       "transactionTimestamp": "2026-03-05T06:29:00-07:00",
       "amountCents": 570039,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2543,9 +2543,9 @@
       "transactionTimestamp": "2026-03-06T05:56:00-07:00",
       "amountCents": 589612,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2566,9 +2566,9 @@
       "transactionTimestamp": "2026-03-09T05:25:00-07:00",
       "amountCents": 503961,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2592,7 +2592,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -2602,9 +2602,9 @@
       "transactionTimestamp": "2026-03-10T07:00:00-07:00",
       "amountCents": 481678,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2614,9 +2614,9 @@
       "transactionTimestamp": "2026-03-11T06:32:00-07:00",
       "amountCents": 452815,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2626,9 +2626,9 @@
       "transactionTimestamp": "2026-03-12T05:46:00-07:00",
       "amountCents": 553347,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2650,9 +2650,9 @@
       "transactionTimestamp": "2026-03-13T05:13:00-07:00",
       "amountCents": 616737,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2674,9 +2674,9 @@
       "transactionTimestamp": "2026-03-16T05:44:00-07:00",
       "amountCents": 492739,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2686,9 +2686,9 @@
       "transactionTimestamp": "2026-03-17T05:54:00-07:00",
       "amountCents": 735610,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2700,7 +2700,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -2710,9 +2710,9 @@
       "transactionTimestamp": "2026-03-18T05:51:00-07:00",
       "amountCents": 657193,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2734,9 +2734,9 @@
       "transactionTimestamp": "2026-03-19T06:37:00-07:00",
       "amountCents": 631304,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2781,9 +2781,9 @@
       "transactionTimestamp": "2026-03-20T07:00:00-07:00",
       "amountCents": 380872,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2793,9 +2793,9 @@
       "transactionTimestamp": "2026-03-23T05:48:00-07:00",
       "amountCents": 656572,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2807,7 +2807,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2817,9 +2817,9 @@
       "transactionTimestamp": "2026-03-24T06:08:00-07:00",
       "amountCents": 633888,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2841,9 +2841,9 @@
       "transactionTimestamp": "2026-03-25T06:57:00-07:00",
       "amountCents": 561999,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2865,9 +2865,9 @@
       "transactionTimestamp": "2026-03-26T05:50:00-07:00",
       "amountCents": 585775,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2877,9 +2877,9 @@
       "transactionTimestamp": "2026-03-27T05:17:00-07:00",
       "amountCents": 521253,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2889,9 +2889,9 @@
       "transactionTimestamp": "2026-03-30T06:32:00-07:00",
       "amountCents": 681015,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2924,9 +2924,9 @@
       "transactionTimestamp": "2026-03-31T05:12:00-07:00",
       "amountCents": 653788,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2962,7 +2962,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -2972,9 +2972,9 @@
       "transactionTimestamp": "2026-04-01T06:33:00-07:00",
       "amountCents": 562009,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2996,9 +2996,9 @@
       "transactionTimestamp": "2026-04-02T06:40:00-07:00",
       "amountCents": 617165,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3019,9 +3019,9 @@
       "transactionTimestamp": "2026-04-03T05:39:00-07:00",
       "amountCents": 662396,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3067,9 +3067,9 @@
       "transactionTimestamp": "2026-04-06T06:52:00-07:00",
       "amountCents": 585825,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3079,9 +3079,9 @@
       "transactionTimestamp": "2026-04-07T06:34:00-07:00",
       "amountCents": 582922,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3091,9 +3091,9 @@
       "transactionTimestamp": "2026-04-08T05:31:00-07:00",
       "amountCents": 588710,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3115,9 +3115,9 @@
       "transactionTimestamp": "2026-04-09T06:00:00-07:00",
       "amountCents": 677122,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3129,7 +3129,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -3139,9 +3139,9 @@
       "transactionTimestamp": "2026-04-10T06:35:00-07:00",
       "amountCents": 664821,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3151,9 +3151,9 @@
       "transactionTimestamp": "2026-04-13T05:08:00-07:00",
       "amountCents": 409995,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3175,9 +3175,9 @@
       "transactionTimestamp": "2026-04-14T05:40:00-07:00",
       "amountCents": 588303,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3199,9 +3199,9 @@
       "transactionTimestamp": "2026-04-15T05:25:00-07:00",
       "amountCents": 633009,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3211,9 +3211,9 @@
       "transactionTimestamp": "2026-04-16T07:00:00-07:00",
       "amountCents": 660273,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3234,9 +3234,9 @@
       "transactionTimestamp": "2026-04-17T06:51:00-07:00",
       "amountCents": 503704,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3260,7 +3260,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -3270,9 +3270,9 @@
       "transactionTimestamp": "2026-04-20T06:43:00-07:00",
       "amountCents": 423513,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3282,9 +3282,9 @@
       "transactionTimestamp": "2026-04-21T06:38:00-07:00",
       "amountCents": 559439,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3296,7 +3296,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -3306,9 +3306,9 @@
       "transactionTimestamp": "2026-04-22T05:55:00-07:00",
       "amountCents": 622579,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3342,9 +3342,9 @@
       "transactionTimestamp": "2026-04-23T06:53:00-07:00",
       "amountCents": 527111,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3354,9 +3354,9 @@
       "transactionTimestamp": "2026-04-24T05:07:00-07:00",
       "amountCents": 672115,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3366,9 +3366,9 @@
       "transactionTimestamp": "2026-04-27T05:49:00-07:00",
       "amountCents": 543631,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3390,9 +3390,9 @@
       "transactionTimestamp": "2026-04-28T05:03:00-07:00",
       "amountCents": 482170,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3413,9 +3413,9 @@
       "transactionTimestamp": "2026-04-29T06:00:00-07:00",
       "amountCents": 415505,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3425,9 +3425,9 @@
       "transactionTimestamp": "2026-04-30T06:10:00-07:00",
       "amountCents": 468441,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3451,7 +3451,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -3461,9 +3461,9 @@
       "transactionTimestamp": "2026-05-01T05:11:00-07:00",
       "amountCents": 579350,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3484,9 +3484,9 @@
       "transactionTimestamp": "2026-05-04T05:01:00-07:00",
       "amountCents": 428240,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3508,9 +3508,9 @@
       "transactionTimestamp": "2026-05-05T06:41:00-07:00",
       "amountCents": 583980,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3532,9 +3532,9 @@
       "transactionTimestamp": "2026-05-06T05:54:00-07:00",
       "amountCents": 361085,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3544,9 +3544,9 @@
       "transactionTimestamp": "2026-05-07T06:46:00-07:00",
       "amountCents": 483551,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3568,9 +3568,9 @@
       "transactionTimestamp": "2026-05-08T06:40:00-07:00",
       "amountCents": 470188,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3582,7 +3582,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -3592,9 +3592,9 @@
       "transactionTimestamp": "2026-05-11T06:43:00-07:00",
       "amountCents": 479445,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3604,9 +3604,9 @@
       "transactionTimestamp": "2026-05-12T06:33:00-07:00",
       "amountCents": 718780,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3616,9 +3616,9 @@
       "transactionTimestamp": "2026-05-13T05:35:00-07:00",
       "amountCents": 574412,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3628,9 +3628,9 @@
       "transactionTimestamp": "2026-05-14T05:52:00-07:00",
       "amountCents": 600960,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3675,9 +3675,9 @@
       "transactionTimestamp": "2026-05-15T06:28:00-07:00",
       "amountCents": 462999,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3689,7 +3689,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -3699,9 +3699,9 @@
       "transactionTimestamp": "2026-05-18T06:17:00-07:00",
       "amountCents": 660599,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3723,9 +3723,9 @@
       "transactionTimestamp": "2026-05-19T06:19:00-07:00",
       "amountCents": 627716,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3759,9 +3759,9 @@
       "transactionTimestamp": "2026-05-20T06:25:00-07:00",
       "amountCents": 362803,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3771,9 +3771,9 @@
       "transactionTimestamp": "2026-05-21T06:16:00-07:00",
       "amountCents": 657487,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3797,7 +3797,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -3819,9 +3819,9 @@
       "transactionTimestamp": "2026-05-22T06:53:00-07:00",
       "amountCents": 539273,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3831,9 +3831,9 @@
       "transactionTimestamp": "2026-05-25T06:01:00-07:00",
       "amountCents": 598702,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3843,9 +3843,9 @@
       "transactionTimestamp": "2026-05-26T06:34:00-07:00",
       "amountCents": 322438,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3855,9 +3855,9 @@
       "transactionTimestamp": "2026-05-27T05:27:00-07:00",
       "amountCents": 493001,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3890,9 +3890,9 @@
       "transactionTimestamp": "2026-05-28T06:06:00-07:00",
       "amountCents": 512176,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3914,9 +3914,9 @@
       "transactionTimestamp": "2026-05-29T05:37:00-07:00",
       "amountCents": 713236,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3939,7 +3939,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -3949,9 +3949,9 @@
       "transactionTimestamp": "2026-06-01T06:48:00-07:00",
       "amountCents": 538859,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3973,9 +3973,9 @@
       "transactionTimestamp": "2026-06-02T05:07:00-07:00",
       "amountCents": 508320,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -3985,9 +3985,9 @@
       "transactionTimestamp": "2026-06-03T06:25:00-07:00",
       "amountCents": 492721,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4009,9 +4009,9 @@
       "transactionTimestamp": "2026-06-04T05:24:00-07:00",
       "amountCents": 567642,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4033,9 +4033,9 @@
       "transactionTimestamp": "2026-06-05T06:29:00-07:00",
       "amountCents": 581159,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4069,9 +4069,9 @@
       "transactionTimestamp": "2026-06-08T06:42:00-07:00",
       "amountCents": 637463,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4081,9 +4081,9 @@
       "transactionTimestamp": "2026-06-09T05:32:00-07:00",
       "amountCents": 356638,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4093,9 +4093,9 @@
       "transactionTimestamp": "2026-06-10T05:14:00-07:00",
       "amountCents": 702416,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4107,7 +4107,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -4117,9 +4117,9 @@
       "transactionTimestamp": "2026-06-11T05:02:00-07:00",
       "amountCents": 740646,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4140,9 +4140,9 @@
       "transactionTimestamp": "2026-06-12T05:37:00-07:00",
       "amountCents": 433794,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4152,9 +4152,9 @@
       "transactionTimestamp": "2026-06-15T05:42:00-07:00",
       "amountCents": 574105,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4164,9 +4164,9 @@
       "transactionTimestamp": "2026-06-16T05:53:00-07:00",
       "amountCents": 577676,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4176,9 +4176,9 @@
       "transactionTimestamp": "2026-06-17T06:11:00-07:00",
       "amountCents": 570859,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4190,7 +4190,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -4200,9 +4200,9 @@
       "transactionTimestamp": "2026-06-18T06:25:00-07:00",
       "amountCents": 606136,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4212,9 +4212,9 @@
       "transactionTimestamp": "2026-06-19T05:02:00-07:00",
       "amountCents": 362710,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4238,7 +4238,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -4248,9 +4248,9 @@
       "transactionTimestamp": "2026-06-22T05:47:00-07:00",
       "amountCents": 577970,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4260,9 +4260,9 @@
       "transactionTimestamp": "2026-06-23T05:39:00-07:00",
       "amountCents": 414932,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4296,9 +4296,9 @@
       "transactionTimestamp": "2026-06-24T05:35:00-07:00",
       "amountCents": 526862,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4308,9 +4308,9 @@
       "transactionTimestamp": "2026-06-25T05:35:00-07:00",
       "amountCents": 605474,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4332,9 +4332,9 @@
       "transactionTimestamp": "2026-06-26T05:24:00-07:00",
       "amountCents": 576559,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4355,9 +4355,9 @@
       "transactionTimestamp": "2026-06-29T05:34:00-07:00",
       "amountCents": 598702,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4378,9 +4378,9 @@
       "transactionTimestamp": "2026-06-30T05:10:00-07:00",
       "amountCents": 700464,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4404,7 +4404,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -4426,9 +4426,9 @@
       "transactionTimestamp": "2026-07-01T06:12:00-07:00",
       "amountCents": 564387,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4438,9 +4438,9 @@
       "transactionTimestamp": "2026-07-02T06:52:00-07:00",
       "amountCents": 618897,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4450,9 +4450,9 @@
       "transactionTimestamp": "2026-07-03T05:42:00-07:00",
       "amountCents": 447767,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4486,9 +4486,9 @@
       "transactionTimestamp": "2026-07-06T06:56:00-07:00",
       "amountCents": 546490,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4510,9 +4510,9 @@
       "transactionTimestamp": "2026-07-07T06:58:00-07:00",
       "amountCents": 535064,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4522,9 +4522,9 @@
       "transactionTimestamp": "2026-07-08T05:58:00-07:00",
       "amountCents": 372854,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4534,9 +4534,9 @@
       "transactionTimestamp": "2026-07-09T05:34:00-07:00",
       "amountCents": 463310,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4571,7 +4571,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -4581,9 +4581,9 @@
       "transactionTimestamp": "2026-07-10T06:18:00-07:00",
       "amountCents": 509546,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4605,9 +4605,9 @@
       "transactionTimestamp": "2026-07-13T06:53:00-07:00",
       "amountCents": 515762,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4629,9 +4629,9 @@
       "transactionTimestamp": "2026-07-14T06:50:00-07:00",
       "amountCents": 494082,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4641,9 +4641,9 @@
       "transactionTimestamp": "2026-07-15T05:07:00-07:00",
       "amountCents": 576176,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4665,9 +4665,9 @@
       "transactionTimestamp": "2026-07-16T05:10:00-07:00",
       "amountCents": 377776,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4689,9 +4689,9 @@
       "transactionTimestamp": "2026-07-17T05:37:00-07:00",
       "amountCents": 605513,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4713,9 +4713,9 @@
       "transactionTimestamp": "2026-07-20T05:06:00-07:00",
       "amountCents": 616785,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4739,7 +4739,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -4749,9 +4749,9 @@
       "transactionTimestamp": "2026-07-21T05:39:00-07:00",
       "amountCents": 411192,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4775,7 +4775,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -4785,9 +4785,9 @@
       "transactionTimestamp": "2026-07-22T06:00:00-07:00",
       "amountCents": 537611,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4809,9 +4809,9 @@
       "transactionTimestamp": "2026-07-23T06:46:00-07:00",
       "amountCents": 582831,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4821,9 +4821,9 @@
       "transactionTimestamp": "2026-07-24T06:07:00-07:00",
       "amountCents": 462841,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4856,9 +4856,9 @@
       "transactionTimestamp": "2026-07-27T06:36:00-07:00",
       "amountCents": 517575,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4868,9 +4868,9 @@
       "transactionTimestamp": "2026-07-28T06:16:00-07:00",
       "amountCents": 393317,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4903,9 +4903,9 @@
       "transactionTimestamp": "2026-07-29T06:56:00-07:00",
       "amountCents": 602544,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4927,9 +4927,9 @@
       "transactionTimestamp": "2026-07-30T05:29:00-07:00",
       "amountCents": 438244,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4939,9 +4939,9 @@
       "transactionTimestamp": "2026-07-31T06:52:00-07:00",
       "amountCents": 551457,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4953,7 +4953,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -4963,9 +4963,9 @@
       "transactionTimestamp": "2026-08-03T05:19:00-07:00",
       "amountCents": 414808,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -4987,9 +4987,9 @@
       "transactionTimestamp": "2026-08-04T05:05:00-07:00",
       "amountCents": 634870,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5023,9 +5023,9 @@
       "transactionTimestamp": "2026-08-05T06:41:00-07:00",
       "amountCents": 436102,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5035,9 +5035,9 @@
       "transactionTimestamp": "2026-08-06T05:28:00-07:00",
       "amountCents": 469248,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5082,9 +5082,9 @@
       "transactionTimestamp": "2026-08-07T05:17:00-07:00",
       "amountCents": 499822,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5108,7 +5108,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -5118,9 +5118,9 @@
       "transactionTimestamp": "2026-08-10T06:22:00-07:00",
       "amountCents": 471514,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5142,9 +5142,9 @@
       "transactionTimestamp": "2026-08-11T05:31:00-07:00",
       "amountCents": 623184,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5166,9 +5166,9 @@
       "transactionTimestamp": "2026-08-12T06:33:00-07:00",
       "amountCents": 496196,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5190,9 +5190,9 @@
       "transactionTimestamp": "2026-08-13T06:53:00-07:00",
       "amountCents": 519125,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5202,9 +5202,9 @@
       "transactionTimestamp": "2026-08-14T06:29:00-07:00",
       "amountCents": 645087,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5214,9 +5214,9 @@
       "transactionTimestamp": "2026-08-17T06:10:00-07:00",
       "amountCents": 571906,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5228,7 +5228,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -5238,9 +5238,9 @@
       "transactionTimestamp": "2026-08-18T06:19:00-07:00",
       "amountCents": 569017,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5250,9 +5250,9 @@
       "transactionTimestamp": "2026-08-19T06:27:00-07:00",
       "amountCents": 446597,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5274,9 +5274,9 @@
       "transactionTimestamp": "2026-08-20T05:31:00-07:00",
       "amountCents": 565370,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5298,9 +5298,9 @@
       "transactionTimestamp": "2026-08-21T06:14:00-07:00",
       "amountCents": 502847,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5323,7 +5323,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -5345,9 +5345,9 @@
       "transactionTimestamp": "2026-08-24T05:50:00-07:00",
       "amountCents": 457831,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5357,9 +5357,9 @@
       "transactionTimestamp": "2026-08-25T05:56:00-07:00",
       "amountCents": 537416,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5369,9 +5369,9 @@
       "transactionTimestamp": "2026-08-26T06:47:00-07:00",
       "amountCents": 505446,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5381,9 +5381,9 @@
       "transactionTimestamp": "2026-08-27T06:58:00-07:00",
       "amountCents": 527552,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5404,9 +5404,9 @@
       "transactionTimestamp": "2026-08-28T06:15:00-07:00",
       "amountCents": 508203,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5416,9 +5416,9 @@
       "transactionTimestamp": "2026-08-31T05:58:00-07:00",
       "amountCents": 530836,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5430,7 +5430,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinic lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Meridian Medical Commons",
+      "merchant": "Larkspur Medical Commons",
       "channel": "PAD"
     },
     {
@@ -5440,9 +5440,9 @@
       "transactionTimestamp": "2026-09-01T05:38:00-07:00",
       "amountCents": 497413,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5452,9 +5452,9 @@
       "transactionTimestamp": "2026-09-02T05:01:00-07:00",
       "amountCents": 558680,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5476,9 +5476,9 @@
       "transactionTimestamp": "2026-09-03T05:03:00-07:00",
       "amountCents": 424782,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5500,9 +5500,9 @@
       "transactionTimestamp": "2026-09-04T05:23:00-07:00",
       "amountCents": 466077,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5547,9 +5547,9 @@
       "transactionTimestamp": "2026-09-07T06:56:00-07:00",
       "amountCents": 627356,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5559,9 +5559,9 @@
       "transactionTimestamp": "2026-09-08T05:24:00-07:00",
       "amountCents": 574070,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5571,9 +5571,9 @@
       "transactionTimestamp": "2026-09-09T06:54:00-07:00",
       "amountCents": 515906,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5583,9 +5583,9 @@
       "transactionTimestamp": "2026-09-10T05:08:00-07:00",
       "amountCents": 398438,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5597,7 +5597,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Dental lab fees",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Precision Dental Lab",
+      "merchant": "Quillfield Dental Lab",
       "channel": "EFT"
     },
     {
@@ -5607,9 +5607,9 @@
       "transactionTimestamp": "2026-09-11T05:02:00-07:00",
       "amountCents": 500562,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5643,9 +5643,9 @@
       "transactionTimestamp": "2026-09-14T06:47:00-07:00",
       "amountCents": 553202,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5655,9 +5655,9 @@
       "transactionTimestamp": "2026-09-15T05:42:00-07:00",
       "amountCents": 448358,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5667,9 +5667,9 @@
       "transactionTimestamp": "2026-09-16T05:30:00-07:00",
       "amountCents": 498661,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5679,9 +5679,9 @@
       "transactionTimestamp": "2026-09-17T05:06:00-07:00",
       "amountCents": 509058,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5693,7 +5693,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Clinical supplies",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Clinicor Supply",
+      "merchant": "Ashgrove Clinical Supply",
       "channel": "PAD"
     },
     {
@@ -5714,9 +5714,9 @@
       "transactionTimestamp": "2026-09-18T06:57:00-07:00",
       "amountCents": 575646,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5738,9 +5738,9 @@
       "transactionTimestamp": "2026-09-21T05:45:00-07:00",
       "amountCents": 571724,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5752,7 +5752,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Professional liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -5762,9 +5762,9 @@
       "transactionTimestamp": "2026-09-22T06:29:00-07:00",
       "amountCents": 544937,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5774,9 +5774,9 @@
       "transactionTimestamp": "2026-09-23T06:22:00-07:00",
       "amountCents": 464967,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5786,9 +5786,9 @@
       "transactionTimestamp": "2026-09-24T05:32:00-07:00",
       "amountCents": 517755,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5810,9 +5810,9 @@
       "transactionTimestamp": "2026-09-25T05:39:00-07:00",
       "amountCents": 429498,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5833,9 +5833,9 @@
       "transactionTimestamp": "2026-09-28T06:52:00-07:00",
       "amountCents": 630759,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5845,9 +5845,9 @@
       "transactionTimestamp": "2026-09-29T05:59:00-07:00",
       "amountCents": 509080,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -5857,9 +5857,9 @@
       "transactionTimestamp": "2026-09-30T06:12:00-07:00",
       "amountCents": 460877,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     }
   ],

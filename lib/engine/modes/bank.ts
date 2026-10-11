@@ -63,7 +63,7 @@ export function decideBank({ input, features: f, config }: ModeContext): ModeRes
   const termMonths = chooseTerm(terms, input.request.termMonths)
   const kind = input.kind
 
-  if (f.income.type === "gig" || f.income.type === "irregular") {
+  if (f.income.type === "gig" || f.income.type === "invoice" || f.income.type === "irregular") {
     return {
       outcome: "refer",
       product,

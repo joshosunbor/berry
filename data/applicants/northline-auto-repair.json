@@ -63,7 +63,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -75,7 +75,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -97,9 +97,9 @@
       "transactionTimestamp": "2025-10-06T05:12:00-05:00",
       "amountCents": 1007287,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -111,7 +111,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -156,9 +156,9 @@
       "transactionTimestamp": "2025-10-13T06:59:00-05:00",
       "amountCents": 1049415,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -170,7 +170,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -192,9 +192,9 @@
       "transactionTimestamp": "2025-10-20T05:04:00-05:00",
       "amountCents": 1169290,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -206,7 +206,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -218,7 +218,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -239,9 +239,9 @@
       "transactionTimestamp": "2025-10-27T06:14:00-05:00",
       "amountCents": 1140581,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -253,7 +253,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -265,7 +265,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -277,7 +277,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -287,9 +287,9 @@
       "transactionTimestamp": "2025-11-03T06:25:00-05:00",
       "amountCents": 1224599,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -313,7 +313,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -346,9 +346,9 @@
       "transactionTimestamp": "2025-11-10T05:46:00-05:00",
       "amountCents": 1287085,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -360,7 +360,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -382,9 +382,9 @@
       "transactionTimestamp": "2025-11-17T05:04:00-05:00",
       "amountCents": 1062300,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -408,7 +408,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -431,7 +431,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -441,9 +441,9 @@
       "transactionTimestamp": "2025-11-24T06:02:00-05:00",
       "amountCents": 1160292,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -455,7 +455,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -467,7 +467,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -477,9 +477,9 @@
       "transactionTimestamp": "2025-12-01T06:13:00-05:00",
       "amountCents": 1141754,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -491,7 +491,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -536,9 +536,9 @@
       "transactionTimestamp": "2025-12-08T06:15:00-05:00",
       "amountCents": 1081997,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -550,7 +550,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -572,9 +572,9 @@
       "transactionTimestamp": "2025-12-15T06:41:00-05:00",
       "amountCents": 1256938,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -598,7 +598,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -621,7 +621,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -631,9 +631,9 @@
       "transactionTimestamp": "2025-12-22T05:35:00-05:00",
       "amountCents": 1194406,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -645,7 +645,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -655,9 +655,9 @@
       "transactionTimestamp": "2025-12-29T06:53:00-05:00",
       "amountCents": 1223210,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -669,7 +669,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -681,7 +681,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -714,9 +714,9 @@
       "transactionTimestamp": "2026-01-05T05:01:00-05:00",
       "amountCents": 1083354,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -728,7 +728,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -762,9 +762,9 @@
       "transactionTimestamp": "2026-01-12T05:29:00-05:00",
       "amountCents": 1121946,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -776,7 +776,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -797,9 +797,9 @@
       "transactionTimestamp": "2026-01-19T05:14:00-05:00",
       "amountCents": 1235008,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -823,7 +823,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -835,7 +835,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -845,9 +845,9 @@
       "transactionTimestamp": "2026-01-26T06:27:00-05:00",
       "amountCents": 1061517,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -859,7 +859,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -871,7 +871,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -894,7 +894,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -904,9 +904,9 @@
       "transactionTimestamp": "2026-02-02T06:44:00-05:00",
       "amountCents": 1092899,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -930,7 +930,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -952,9 +952,9 @@
       "transactionTimestamp": "2026-02-09T06:07:00-05:00",
       "amountCents": 1082746,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -966,7 +966,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -999,9 +999,9 @@
       "transactionTimestamp": "2026-02-16T06:43:00-05:00",
       "amountCents": 1136011,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1025,7 +1025,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1037,7 +1037,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1047,9 +1047,9 @@
       "transactionTimestamp": "2026-02-23T05:47:00-05:00",
       "amountCents": 1135603,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1061,7 +1061,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1084,7 +1084,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -1094,9 +1094,9 @@
       "transactionTimestamp": "2026-03-02T05:20:00-05:00",
       "amountCents": 1258077,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1120,7 +1120,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1142,9 +1142,9 @@
       "transactionTimestamp": "2026-03-09T06:35:00-05:00",
       "amountCents": 1160076,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1156,7 +1156,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1189,9 +1189,9 @@
       "transactionTimestamp": "2026-03-16T05:29:00-05:00",
       "amountCents": 1106436,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1215,7 +1215,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1227,7 +1227,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1237,9 +1237,9 @@
       "transactionTimestamp": "2026-03-23T06:01:00-05:00",
       "amountCents": 1317689,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1251,7 +1251,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1272,9 +1272,9 @@
       "transactionTimestamp": "2026-03-30T05:36:00-05:00",
       "amountCents": 1092953,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1286,7 +1286,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -1298,7 +1298,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1320,9 +1320,9 @@
       "transactionTimestamp": "2026-04-06T06:13:00-05:00",
       "amountCents": 1018170,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1346,7 +1346,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1367,9 +1367,9 @@
       "transactionTimestamp": "2026-04-13T05:23:00-05:00",
       "amountCents": 1183975,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1393,7 +1393,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1415,9 +1415,9 @@
       "transactionTimestamp": "2026-04-20T06:50:00-05:00",
       "amountCents": 1175626,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1429,7 +1429,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1441,7 +1441,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1462,9 +1462,9 @@
       "transactionTimestamp": "2026-04-27T05:28:00-05:00",
       "amountCents": 1238987,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1476,7 +1476,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -1488,7 +1488,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1500,7 +1500,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -1522,9 +1522,9 @@
       "transactionTimestamp": "2026-05-04T05:51:00-05:00",
       "amountCents": 1241034,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1536,7 +1536,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1569,9 +1569,9 @@
       "transactionTimestamp": "2026-05-11T05:30:00-05:00",
       "amountCents": 1260191,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1595,7 +1595,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1617,9 +1617,9 @@
       "transactionTimestamp": "2026-05-18T06:57:00-05:00",
       "amountCents": 1348663,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1631,7 +1631,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1643,7 +1643,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1664,9 +1664,9 @@
       "transactionTimestamp": "2026-05-25T05:04:00-05:00",
       "amountCents": 1321319,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1678,7 +1678,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1690,7 +1690,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -1700,9 +1700,9 @@
       "transactionTimestamp": "2026-06-01T06:45:00-05:00",
       "amountCents": 1357013,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1714,7 +1714,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1759,9 +1759,9 @@
       "transactionTimestamp": "2026-06-08T05:11:00-05:00",
       "amountCents": 1381323,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1773,7 +1773,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1795,9 +1795,9 @@
       "transactionTimestamp": "2026-06-15T05:31:00-05:00",
       "amountCents": 1248410,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1809,7 +1809,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1844,7 +1844,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1854,9 +1854,9 @@
       "transactionTimestamp": "2026-06-22T06:40:00-05:00",
       "amountCents": 1286390,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1868,7 +1868,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1878,9 +1878,9 @@
       "transactionTimestamp": "2026-06-29T06:17:00-05:00",
       "amountCents": 1303800,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1892,7 +1892,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -1904,7 +1904,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1937,9 +1937,9 @@
       "transactionTimestamp": "2026-07-06T05:33:00-05:00",
       "amountCents": 1229951,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1951,7 +1951,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -1973,9 +1973,9 @@
       "transactionTimestamp": "2026-07-13T06:20:00-05:00",
       "amountCents": 1333179,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -1999,7 +1999,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2032,9 +2032,9 @@
       "transactionTimestamp": "2026-07-20T06:25:00-05:00",
       "amountCents": 1360950,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2046,7 +2046,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2058,7 +2058,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2068,9 +2068,9 @@
       "transactionTimestamp": "2026-07-27T05:57:00-05:00",
       "amountCents": 1431834,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2082,7 +2082,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "HST remittance",
       "category": "TAXES",
-      "merchant": "Receiver General",
+      "merchant": "Tax remittance",
       "channel": "EFT"
     },
     {
@@ -2094,7 +2094,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2117,7 +2117,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -2127,9 +2127,9 @@
       "transactionTimestamp": "2026-08-03T05:56:00-05:00",
       "amountCents": 1460911,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2153,7 +2153,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2175,9 +2175,9 @@
       "transactionTimestamp": "2026-08-10T05:31:00-05:00",
       "amountCents": 1444288,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2189,7 +2189,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2234,9 +2234,9 @@
       "transactionTimestamp": "2026-08-17T05:57:00-05:00",
       "amountCents": 1285953,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2248,7 +2248,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2260,7 +2260,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2270,9 +2270,9 @@
       "transactionTimestamp": "2026-08-24T06:48:00-05:00",
       "amountCents": 1297940,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2284,7 +2284,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2305,9 +2305,9 @@
       "transactionTimestamp": "2026-08-31T06:26:00-05:00",
       "amountCents": 1327548,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2319,7 +2319,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Shop lease",
       "category": "RENT_COMMERCIAL",
-      "merchant": "Kingsway Industrial Properties",
+      "merchant": "Foundry Row Properties",
       "channel": "PAD"
     },
     {
@@ -2331,7 +2331,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2353,9 +2353,9 @@
       "transactionTimestamp": "2026-09-07T05:01:00-05:00",
       "amountCents": 1308248,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2379,7 +2379,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2400,9 +2400,9 @@
       "transactionTimestamp": "2026-09-14T06:08:00-05:00",
       "amountCents": 1377346,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2426,7 +2426,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2450,7 +2450,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Garage liability insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2460,9 +2460,9 @@
       "transactionTimestamp": "2026-09-21T06:43:00-05:00",
       "amountCents": 1289587,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2474,7 +2474,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     },
     {
@@ -2495,9 +2495,9 @@
       "transactionTimestamp": "2026-09-28T06:52:00-05:00",
       "amountCents": 1444304,
       "debitCreditMemo": "CREDIT",
-      "description": "Card settlement ClearSettle Merchant Services",
+      "description": "Card settlement Tallybrook Merchant Services",
       "category": "BUSINESS_REVENUE",
-      "merchant": "ClearSettle Merchant Services",
+      "merchant": "Tallybrook Merchant Services",
       "channel": "EFT"
     },
     {
@@ -2509,7 +2509,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Parts supplier",
       "category": "SUPPLIES_INVENTORY",
-      "merchant": "Partsworks Distribution",
+      "merchant": "Gearloft Parts Distribution",
       "channel": "PAD"
     }
   ],

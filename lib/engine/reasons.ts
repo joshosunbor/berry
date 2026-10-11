@@ -37,6 +37,16 @@ export const REASONS = {
     customer: (e) => `Your income has grown recently, up ${pct(n(e, "trend"))} on the three months before.`,
     lender: (e) => `Income trend +${pct(n(e, "trend"))} (last 3 vs prior 3 months).`,
   },
+  STABLE_PENSION: {
+    direction: "positive",
+    customer: (e) => `Your pension and benefits arrive every month, about ${money(n(e, "avgIncomeCents"))} in total.`,
+    lender: (e) => `Pension and government benefit income ${money(n(e, "avgIncomeCents"))}/month; income CV ${n(e, "incomeCv")}.`,
+  },
+  PAYING_DOWN_CARDS: {
+    direction: "positive",
+    customer: (e) => `You've paid your card balances down by ${money(n(e, "changeCents"))} this year.`,
+    lender: (e) => `Revolving balances −${money(n(e, "changeCents"))} over the window; utilization now ${pct(n(e, "utilization"))}.`,
+  },
   CONSISTENT_GIG_INCOME: {
     direction: "positive",
     customer: (e) => `You earn on most days, and it adds up to a steady ${money(n(e, "avgIncomeCents"))} a month.`,

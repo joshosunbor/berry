@@ -24,7 +24,7 @@ export function recommend(f: Features, kind: "personal" | "business", result: Mo
   if (f.income.type === "seasonal" && result.product !== "seasonal_operating_line") {
     out.push({ product: "seasonal_operating_line", why: "A line you repay after your busy season fits income that arrives in a few months of the year." })
   }
-  if ((f.income.type === "irregular" || f.income.type === "gig") && result.structure === "term") {
+  if ((f.income.type === "irregular" || f.income.type === "gig" || f.income.type === "invoice") && result.structure === "term") {
     out.push({ product: kind === "business" ? "business_line_of_credit" : "line_of_credit", why: "A line of credit lets you borrow only what you need between uneven paydays, instead of a fixed payment." })
   }
   if (f.daysCashOnHand >= 90 && f.nsf90 === 0) {

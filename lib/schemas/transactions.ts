@@ -48,6 +48,7 @@ export const TransactionCategory = z.enum([
   "BUSINESS_REVENUE",
   "CASH_DEPOSIT",
   "GOVERNMENT_BENEFIT",
+  "PENSION",
   "TRANSFER_IN",
   "PAYMENT_REVERSAL",
   "OTHER_INCOME",

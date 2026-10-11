@@ -48,8 +48,18 @@ describe("income patterns on fixtures", () => {
     expect(p.type).toBe("steady_business")
   })
 
-  it("irregular: business deposits that swing a lot", () => {
+  it("invoice-based: a few large client payments a month that swing a lot", () => {
     const p = computeFeatures(input(monthlyCredits([100_000, 900_000, 50_000, 700_000, 20_000, 800_000], 10, "BUSINESS_REVENUE"))).income
+    expect(p.type).toBe("invoice")
+  })
+
+  it("pension: pension and government benefits", () => {
+    const p = computeFeatures(input([...monthlyCredits(Array(6).fill(235_000), 25, "PENSION"), ...monthlyCredits(Array(6).fill(155_000), 27, "GOVERNMENT_BENEFIT")])).income
+    expect(p.type).toBe("pension")
+  })
+
+  it("irregular: mixed, unpredictable sources", () => {
+    const p = computeFeatures(input(monthlyCredits([100_000, 900_000, 50_000, 700_000, 20_000, 800_000], 10, "OTHER_INCOME"))).income
     expect(p.type).toBe("irregular")
   })
 })
@@ -66,6 +76,10 @@ describe("income patterns on the cast", () => {
     ["bright-smile-dental", "steady_business"],
     ["corner-grind-cafe", "steady_business"],
     ["main-street-hardware", "steady_business"],
+    ["ellen", "pension"],
+    ["grace", "salaried"],
+    ["quillfeather-plumbing", "invoice"],
+    ["petalwick-florals", "steady_business"],
   ])("%s is %s", (slug, type) => {
     expect(castPattern(slug).type).toBe(type)
   })

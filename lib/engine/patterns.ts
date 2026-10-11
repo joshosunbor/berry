@@ -3,8 +3,8 @@ import type { LedgerView } from "./ledger-view"
 import { cv, mean, median, round2, stdev, sum } from "./stats"
 
 /*
- * Income regularity (CLAUDE.md §4.1): salaried, gig, seasonal, steady
- * business or irregular. Classification thresholds are part of the method,
+ * Income regularity (CLAUDE.md §4.1): salaried, pension, gig, seasonal,
+ * invoice-based, steady business or irregular. Classification thresholds are part of the method,
  * not lending policy, so they live here rather than in institution config.
  */
 
@@ -19,12 +19,16 @@ export const PATTERN_RULES = {
   salariedMaxGapStdevDays: 3,
   /** Gig: platform payouts are at least this share of income. */
   gigShare: 0.5,
+  /** Pension: pension and government benefits are at least this share of income. */
+  pensionShare: 0.7,
   /** Steady business: business deposits are at least this share, with income CV at or below the max. */
   businessShare: 0.7,
   businessMaxCv: 0.35,
+  /** Invoice-based: business deposits arrive as a few larger client payments a month and vary more. */
+  invoiceMaxDepositsPerMonth: 10,
 } as const
 
-export type IncomeType = "salaried" | "gig" | "seasonal" | "steady_business" | "irregular"
+export type IncomeType = "salaried" | "pension" | "gig" | "seasonal" | "invoice" | "steady_business" | "irregular"
 
 export interface PayrollCadence {
   /** Typical days between paydays, e.g. 14. */
@@ -66,19 +70,22 @@ export function detectIncomePattern(view: LedgerView, incomeTxns: Transaction[])
   const payrollTxns = incomeTxns.filter((t) => t.category === "PAYROLL")
   const payroll = payrollCadence(payrollTxns)
   const incomeCv = cv(monthlyIncome)
+  const depositsPerMonth = incomeTxns.length / Math.max(1, view.months.length)
+  const businessShare = share((t) => t.category === "BUSINESS_REVENUE" || t.category === "CASH_DEPOSIT")
 
   let type: IncomeType = "irregular"
   if (view.months.length >= PATTERN_RULES.seasonalMinMonths && peakShare >= PATTERN_RULES.seasonalPeakShare) {
     type = "seasonal"
   } else if (share((t) => t.category === "PAYROLL") >= PATTERN_RULES.salariedPayrollShare && payroll && payroll.gapStdevDays <= PATTERN_RULES.salariedMaxGapStdevDays) {
     type = "salaried"
+  } else if (share((t) => t.category === "PENSION" || t.category === "GOVERNMENT_BENEFIT") >= PATTERN_RULES.pensionShare) {
+    type = "pension"
   } else if (share((t) => t.category === "GIG_INCOME") >= PATTERN_RULES.gigShare) {
     type = "gig"
-  } else if (
-    share((t) => t.category === "BUSINESS_REVENUE" || t.category === "CASH_DEPOSIT") >= PATTERN_RULES.businessShare &&
-    incomeCv <= PATTERN_RULES.businessMaxCv
-  ) {
+  } else if (businessShare >= PATTERN_RULES.businessShare && incomeCv <= PATTERN_RULES.businessMaxCv) {
     type = "steady_business"
+  } else if (businessShare >= PATTERN_RULES.businessShare && depositsPerMonth <= PATTERN_RULES.invoiceMaxDepositsPerMonth) {
+    type = "invoice"
   }
 
   return {
@@ -87,7 +94,7 @@ export function detectIncomePattern(view: LedgerView, incomeTxns: Transaction[])
     peakShare: round2(peakShare),
     quietMonths: [...new Set(quietMonths)].sort((a, b) => a - b),
     payroll: payroll ? { cadenceDays: payroll.cadenceDays, lastPayDate: payroll.lastPayDate, nextExpectedDate: payroll.nextExpectedDate, typicalNetCents: payroll.typicalNetCents } : null,
-    depositsPerMonth: round2(incomeTxns.length / Math.max(1, view.months.length)),
+    depositsPerMonth: round2(depositsPerMonth),
     avgDepositCents: incomeTxns.length ? Math.round(total / incomeTxns.length) : 0,
     sources,
   }

@@ -146,9 +146,9 @@
       "transactionTimestamp": "2026-03-09T19:12:00-06:00",
       "amountCents": 300,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -158,9 +158,9 @@
       "transactionTimestamp": "2026-03-10T11:27:00-06:00",
       "amountCents": 3445,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -172,7 +172,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -218,9 +218,9 @@
       "transactionTimestamp": "2026-03-13T05:47:00-06:00",
       "amountCents": 190100,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -266,9 +266,9 @@
       "transactionTimestamp": "2026-03-17T13:47:00-06:00",
       "amountCents": 5003,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -290,9 +290,9 @@
       "transactionTimestamp": "2026-03-20T15:36:00-06:00",
       "amountCents": 6677,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -326,9 +326,9 @@
       "transactionTimestamp": "2026-03-23T19:12:00-06:00",
       "amountCents": 17009,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -350,9 +350,9 @@
       "transactionTimestamp": "2026-03-27T06:50:00-06:00",
       "amountCents": 199640,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -362,9 +362,9 @@
       "transactionTimestamp": "2026-03-29T18:49:00-06:00",
       "amountCents": 6150,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -480,9 +480,9 @@
       "transactionTimestamp": "2026-04-10T05:52:00-06:00",
       "amountCents": 198851,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -528,9 +528,9 @@
       "transactionTimestamp": "2026-04-12T14:19:00-06:00",
       "amountCents": 6874,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -542,7 +542,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -612,9 +612,9 @@
       "transactionTimestamp": "2026-04-19T08:48:00-06:00",
       "amountCents": 5439,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -636,9 +636,9 @@
       "transactionTimestamp": "2026-04-24T05:53:00-06:00",
       "amountCents": 194990,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -694,9 +694,9 @@
       "transactionTimestamp": "2026-05-01T08:10:00-06:00",
       "amountCents": 2491,
       "debitCreditMemo": "DEBIT",
-      "description": "Saffron & Salt",
+      "description": "Saffron Lantern",
       "category": "DINING",
-      "merchant": "Saffron & Salt",
+      "merchant": "Saffron Lantern",
       "channel": "CARD"
     },
     {
@@ -730,9 +730,9 @@
       "transactionTimestamp": "2026-05-08T06:45:00-06:00",
       "amountCents": 188825,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -742,9 +742,9 @@
       "transactionTimestamp": "2026-05-08T09:39:00-06:00",
       "amountCents": 4693,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -768,7 +768,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -778,9 +778,9 @@
       "transactionTimestamp": "2026-05-11T12:02:00-06:00",
       "amountCents": 6068,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -814,9 +814,9 @@
       "transactionTimestamp": "2026-05-15T12:17:00-06:00",
       "amountCents": 2036,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -862,9 +862,9 @@
       "transactionTimestamp": "2026-05-20T18:53:00-06:00",
       "amountCents": 3730,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -874,9 +874,9 @@
       "transactionTimestamp": "2026-05-22T05:58:00-06:00",
       "amountCents": 196759,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -968,9 +968,9 @@
       "transactionTimestamp": "2026-06-05T06:45:00-06:00",
       "amountCents": 196240,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1030,7 +1030,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1040,9 +1040,9 @@
       "transactionTimestamp": "2026-06-11T16:50:00-06:00",
       "amountCents": 300,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1148,9 +1148,9 @@
       "transactionTimestamp": "2026-06-19T06:08:00-06:00",
       "amountCents": 188973,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1194,9 +1194,9 @@
       "transactionTimestamp": "2026-06-29T19:00:00-06:00",
       "amountCents": 4342,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1218,9 +1218,9 @@
       "transactionTimestamp": "2026-07-02T08:36:00-06:00",
       "amountCents": 4818,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1242,9 +1242,9 @@
       "transactionTimestamp": "2026-07-03T05:22:00-06:00",
       "amountCents": 201858,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1280,7 +1280,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1314,9 +1314,9 @@
       "transactionTimestamp": "2026-07-16T10:31:00-06:00",
       "amountCents": 4223,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1326,9 +1326,9 @@
       "transactionTimestamp": "2026-07-17T05:01:00-06:00",
       "amountCents": 193681,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1362,9 +1362,9 @@
       "transactionTimestamp": "2026-07-20T08:24:00-06:00",
       "amountCents": 10741,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1374,9 +1374,9 @@
       "transactionTimestamp": "2026-07-20T08:25:00-06:00",
       "amountCents": 5250,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1410,9 +1410,9 @@
       "transactionTimestamp": "2026-07-24T15:36:00-06:00",
       "amountCents": 5804,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1434,9 +1434,9 @@
       "transactionTimestamp": "2026-07-26T20:36:00-06:00",
       "amountCents": 3323,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1480,9 +1480,9 @@
       "transactionTimestamp": "2026-07-28T08:35:00-06:00",
       "amountCents": 3713,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1504,9 +1504,9 @@
       "transactionTimestamp": "2026-07-29T11:27:00-06:00",
       "amountCents": 5537,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1540,9 +1540,9 @@
       "transactionTimestamp": "2026-07-31T05:31:00-06:00",
       "amountCents": 198650,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1564,9 +1564,9 @@
       "transactionTimestamp": "2026-08-01T10:38:00-06:00",
       "amountCents": 5772,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1588,9 +1588,9 @@
       "transactionTimestamp": "2026-08-03T14:37:00-06:00",
       "amountCents": 5474,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1600,9 +1600,9 @@
       "transactionTimestamp": "2026-08-07T10:36:00-06:00",
       "amountCents": 8273,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -1648,9 +1648,9 @@
       "transactionTimestamp": "2026-08-10T12:37:00-06:00",
       "amountCents": 3969,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1662,7 +1662,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -1672,9 +1672,9 @@
       "transactionTimestamp": "2026-08-11T18:43:00-06:00",
       "amountCents": 8670,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1684,9 +1684,9 @@
       "transactionTimestamp": "2026-08-11T19:14:00-06:00",
       "amountCents": 5974,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1708,9 +1708,9 @@
       "transactionTimestamp": "2026-08-14T05:38:00-06:00",
       "amountCents": 201225,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1732,9 +1732,9 @@
       "transactionTimestamp": "2026-08-14T20:09:00-06:00",
       "amountCents": 4157,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1804,9 +1804,9 @@
       "transactionTimestamp": "2026-08-24T17:41:00-06:00",
       "amountCents": 15920,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1828,9 +1828,9 @@
       "transactionTimestamp": "2026-08-26T10:55:00-06:00",
       "amountCents": 3597,
       "debitCreditMemo": "DEBIT",
-      "description": "Northway Department Store",
+      "description": "Marlowe & Finch Department Store",
       "category": "SHOPPING",
-      "merchant": "Northway Department Store",
+      "merchant": "Marlowe & Finch Department Store",
       "channel": "CARD"
     },
     {
@@ -1852,9 +1852,9 @@
       "transactionTimestamp": "2026-08-28T05:29:00-06:00",
       "amountCents": 201940,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -1922,9 +1922,9 @@
       "transactionTimestamp": "2026-09-04T08:01:00-06:00",
       "amountCents": 3543,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1946,9 +1946,9 @@
       "transactionTimestamp": "2026-09-07T14:20:00-06:00",
       "amountCents": 5034,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1958,9 +1958,9 @@
       "transactionTimestamp": "2026-09-08T18:33:00-06:00",
       "amountCents": 5644,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -1996,7 +1996,7 @@
       "debitCreditMemo": "DEBIT",
       "description": "Tenant insurance",
       "category": "INSURANCE",
-      "merchant": "Steadfast Insurance",
+      "merchant": "Hearthguard Insurance",
       "channel": "PAD"
     },
     {
@@ -2006,9 +2006,9 @@
       "transactionTimestamp": "2026-09-11T05:50:00-06:00",
       "amountCents": 197069,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -2054,9 +2054,9 @@
       "transactionTimestamp": "2026-09-22T08:04:00-06:00",
       "amountCents": 1953,
       "debitCreditMemo": "DEBIT",
-      "description": "Brightside Pharmacy",
+      "description": "Wrenfield Pharmacy",
       "category": "SHOPPING",
-      "merchant": "Brightside Pharmacy",
+      "merchant": "Wrenfield Pharmacy",
       "channel": "CARD"
     },
     {
@@ -2066,9 +2066,9 @@
       "transactionTimestamp": "2026-09-25T06:52:00-06:00",
       "amountCents": 193379,
       "debitCreditMemo": "CREDIT",
-      "description": "Payroll deposit Keystone Freight Services",
+      "description": "Payroll deposit Brindlewood Freight Services",
       "category": "PAYROLL",
-      "merchant": "Keystone Freight Services",
+      "merchant": "Brindlewood Freight Services",
       "channel": "EFT"
     },
     {
@@ -2078,9 +2078,9 @@
       "transactionTimestamp": "2026-09-25T14:13:00-06:00",
       "amountCents": 4791,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {
@@ -2102,9 +2102,9 @@
       "transactionTimestamp": "2026-09-27T16:03:00-06:00",
       "amountCents": 3553,
       "debitCreditMemo": "DEBIT",
-      "description": "Fresh Basket Market",
+      "description": "Greenstall Market",
       "category": "GROCERIES",
-      "merchant": "Fresh Basket Market",
+      "merchant": "Greenstall Market",
       "channel": "CARD"
     },
     {

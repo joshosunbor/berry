@@ -6,7 +6,7 @@ import type { Mode } from "@/lib/modes"
 import { Applicant, toEngineInput, type Outcome } from "@/lib/schemas"
 
 /*
- * Regression guard for the 10 required applicants across all three lenders.
+ * Regression guard for the 14-applicant cast across all three lenders.
  * These are the outcomes the brief's stories call for (CLAUDE.md §3). This
  * is not the accuracy evaluation: planted cases with hidden expectations
  * come on Day 2.
@@ -65,6 +65,26 @@ const TABLE: Record<string, Record<Mode, Expect>> = {
     credit_union: E("approve", 40_000, { approver: "lender" }),
     fintech: E("approve", 7_500),
     bank: E("approve", 40_000),
+  },
+  ellen: {
+    credit_union: E("approve", 15_000, { approver: "lender", reason: "STABLE_PENSION" }),
+    fintech: E("approve", 9_500, { reason: "LIMIT_REDUCED" }),
+    bank: E("approve", 15_000, { reason: "STABLE_PENSION" }),
+  },
+  grace: {
+    credit_union: E("approve", 8_000, { reason: "PAYING_DOWN_CARDS" }),
+    fintech: E("approve", 8_000),
+    bank: E("decline", 0, { reason: "NSF_HISTORY" }),
+  },
+  "quillfeather-plumbing": {
+    credit_union: E("approve", 20_000, { approver: "lender" }),
+    fintech: E("approve", 5_500, { reason: "LIMIT_REDUCED" }),
+    bank: E("decline", 0, { reason: "INCOME_TOO_VARIABLE" }),
+  },
+  "petalwick-florals": {
+    credit_union: E("approve", 60_000, { approver: "credit_committee", reason: "RELATIONSHIP_SUPPORTS_APPROVAL" }),
+    fintech: E("approve", 23_000, { reason: "LIMIT_REDUCED" }),
+    bank: E("approve", 42_000, { reason: "LIMIT_REDUCED" }),
   },
 }
 

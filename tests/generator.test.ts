@@ -34,11 +34,12 @@ describe("generator", () => {
     }
   })
 
-  it("produces the 10 required applicants (4 personal, 6 business, as in the brief)", () => {
-    expect(cast).toHaveLength(10)
-    expect(cast.filter((a) => a.kind === "personal")).toHaveLength(4)
-    expect(cast.filter((a) => a.kind === "business")).toHaveLength(6)
-    expect(CAST.map((s) => s.slug)).toContain("hollis-family-farm")
+  it("produces a cast of 14: the 10 required applicants plus four more", () => {
+    expect(cast).toHaveLength(14)
+    const required = ["priya", "hollis-family-farm", "amara", "daniel", "sofia", "northline-auto-repair", "bright-smile-dental", "corner-grind-cafe", "lakeside-lodge", "main-street-hardware"]
+    expect(CAST.slice(0, 10).map((s) => s.slug)).toEqual(required)
+    expect(cast.filter((a) => a.kind === "personal")).toHaveLength(6)
+    expect(cast.filter((a) => a.kind === "business")).toHaveLength(8)
   })
 
   it.each(cast.map((a) => [a.slug, a] as const))("%s passes schema validation", (_slug, a) => {
@@ -144,6 +145,36 @@ describe("story targets", () => {
     const margin = (inflow - outflow) / inflow
     expect(margin).toBeGreaterThan(0)
     expect(margin).toBeLessThan(0.07)
+  })
+
+  it("Ellen: pension and government benefits, every month", () => {
+    const a = bySlug("ellen")
+    expect(a.transactions.filter((t) => t.category === "PENSION" && t.debitCreditMemo === "CREDIT")).toHaveLength(12)
+    expect(a.transactions.filter((t) => t.category === "GOVERNMENT_BENEFIT" && t.debitCreditMemo === "CREDIT")).toHaveLength(24)
+  })
+
+  it("Grace: two NSFs last winter, none in the last 90 days, card balance falling", () => {
+    const a = bySlug("grace")
+    expect(returnsSince(a, 365)).toHaveLength(2)
+    expect(returnsSince(a, 90)).toHaveLength(0)
+    const card = a.accounts.find((x) => x.accountType === "CREDIT_CARD")!
+    const cardTxns = a.transactions.filter((t) => t.accountId === card.accountId)
+    const owedAtEnd = card.openingBalanceCents + sum(cardTxns.filter((t) => t.debitCreditMemo === "DEBIT")) - sum(credits(cardTxns))
+    expect(owedAtEnd).toBeLessThan(card.openingBalanceCents - 200_000)
+  })
+
+  it("Quillfeather Plumbing: a handful of invoice payments a month, uneven but not seasonal", () => {
+    const sales = revenue(bySlug("quillfeather-plumbing").transactions)
+    expect(sales.length / 12).toBeLessThanOrEqual(8)
+    const byMonth = new Map<string, number>()
+    for (const t of sales) byMonth.set(t.postedDate.slice(0, 7), (byMonth.get(t.postedDate.slice(0, 7)) ?? 0) + t.amountCents)
+    const totals = [...byMonth.values()]
+    expect(Math.max(...totals) / Math.min(...totals)).toBeGreaterThan(2)
+  })
+
+  it("Petalwick Florals: existing loan payments of at least $4,000 a month", () => {
+    const debt = bySlug("petalwick-florals").transactions.filter((t) => t.category === "LOAN_PAYMENT")
+    expect(sum(debt) / 12).toBeGreaterThan(400_000)
   })
 
   it("Main Street Hardware: exactly one day of cash deposits over $10,000, made of two deposits", () => {
