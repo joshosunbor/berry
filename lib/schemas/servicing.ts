@@ -167,9 +167,9 @@ export const Collection = z.object({
 
 /**
  * Payments Canada return reason codes, with the exact labels in Standard
- * 007 ("List of Return Reason Codes", amendment effective July 3, 2026),
- * which Standard 005 and the Standard 017 ISO 20022 guidelines both refer
- * to. Every code listed was confirmed in Standard 007.
+ * 007 ("List of Return Reason Codes", amendment effective July 3, 2026).
+ * Standard 007 is the source; other payment standards defer to it. Every
+ * code listed was confirmed in Standard 007.
  * https://www.payments.ca/sites/default/files/standard007eng.pdf
  * There is no ISO 20022 reason-code mapping: returns carry the CPA code.
  */

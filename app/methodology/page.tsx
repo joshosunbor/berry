@@ -12,6 +12,7 @@ import { MODES, MODE_META } from "@/lib/modes"
 import { formatCents } from "@/lib/money"
 import { REGULATORY_STATUS, type RegulatoryRow } from "@/lib/regulatory/status"
 import { thresholdLabel } from "@/lib/threshold-labels"
+import { RETURN_CODES_SOURCE } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
@@ -188,7 +189,8 @@ export default function MethodologyPage() {
           </p>
           <p>
             Repayments are pre-authorized debits. When one is returned unpaid, Berry follows a playbook based on the Payments Canada return reason
-            (Standard 007): an NSF return is retried once, on the borrower&apos;s next payday where possible, and never inside the 2-business-day window
+            (<a href={RETURN_CODES_SOURCE} target="_blank" rel="noreferrer" className="underline underline-offset-2">Standard 007</a>, checked{" "}
+            {longDate(status.rows.find((r) => r.id === "return-codes")!.asOf)}): an NSF return is retried once, on the borrower&apos;s next payday where possible, and never inside the 2-business-day window
             in which their bank could charge another NSF fee; an account problem means asking for new banking details instead. Repeated returns bring a
             hardship offer, and a loan still unpaid 120 days after a missed payment is charged off (configurable) <Illustrative />.
           </p>
