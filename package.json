@@ -11,7 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "generate": "tsx scripts/generate.ts",
-    "accuracy": "tsx scripts/accuracy.ts"
+    "accuracy": "tsx scripts/accuracy.ts",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

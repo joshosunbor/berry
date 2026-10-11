@@ -34,6 +34,11 @@ describe("generator", () => {
     }
   })
 
+  it("writes the applicant index that proxy.ts uses for 404s", () => {
+    const index = JSON.parse(readFileSync(path.resolve(__dirname, "../data/cast-index.json"), "utf8"))
+    expect(index).toEqual(cast.map((a) => a.slug))
+  })
+
   it("produces a cast of 14: the 10 required applicants plus four more", () => {
     expect(cast).toHaveLength(14)
     const required = ["priya", "hollis-family-farm", "amara", "daniel", "sofia", "northline-auto-repair", "bright-smile-dental", "corner-grind-cafe", "lakeside-lodge", "main-street-hardware"]

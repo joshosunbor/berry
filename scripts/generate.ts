@@ -32,12 +32,16 @@ resetDir(applicantsDir)
 resetDir(plantedDir)
 resetDir(institutionsDir)
 
+const castSlugs: string[] = []
 for (const raw of generateCast()) {
   // Write the parsed value: validated, with keys in schema order.
   const applicant = Applicant.parse(raw)
   writeJson(applicantsDir, applicant.slug, applicant)
+  castSlugs.push(applicant.slug)
   console.log(`  ${applicant.slug.padEnd(24)} ${String(applicant.transactions.length).padStart(5)} transactions`)
 }
+// The list of valid applicant ids, read by proxy.ts to return a true 404 for unknown ones.
+writeJson(path.join(root, "data"), "cast-index", castSlugs)
 const planted = generatePlanted().map((raw) => Applicant.parse(raw))
 for (const p of planted) writeJson(plantedDir, p.slug, p)
 console.log(`  ${planted.length} planted cases`)
