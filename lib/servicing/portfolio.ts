@@ -94,6 +94,7 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
       principalCents: d.limitCents,
       schedule: plan.debits,
       draws: plan.draws,
+      operatingReserveCents: plan.draws ? Math.round(a.features.avgMonthlyOutflowCents * config.operatingReserveMonthsOfSpending) : undefined,
       funding,
       borrowerAccount: { institutionType: deposit.institutionType, kind: a.kind },
       payroll: a.kind === "personal" && a.features.income.payroll ? { lastPayDate: a.features.income.payroll.lastPayDate, cadenceDays: a.features.income.payroll.cadenceDays } : null,

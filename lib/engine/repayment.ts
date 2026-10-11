@@ -1,4 +1,5 @@
 import type { Features } from "@/lib/engine/features"
+import { SERVICING } from "@/lib/servicing/config"
 import type { Decision } from "@/lib/schemas"
 
 /*
@@ -63,7 +64,8 @@ export interface PadPlan {
   amountType: "fixed" | "variable"
   agreementSignedOn: string
   confirmationSentOn: string
-  firstDebitOn: string
+  /** Null when nothing is due (an operating line that isn't drawn). */
+  firstDebitOn: string | null
   debits: ScheduledDebit[]
   /** Seasonal lines only: when money is drawn on the line, and how much. */
   draws?: Draw[]
@@ -101,12 +103,14 @@ function amortized(principal: number, aprBps: number, periodsPerYear: number, n:
 
 export interface PadInput {
   decision: Decision
-  features: Pick<Features, "income" | "monthly">
+  features: Pick<Features, "income" | "monthly" | "avgMonthlyOutflowCents">
   kind: "personal" | "business"
   agreementSignedOn: string
+  /** Months of average spending a seasonal line keeps in the account (illustrative config). */
+  operatingReserveMonths?: number
 }
 
-export function buildPadPlan({ decision, features, kind, agreementSignedOn }: PadInput): PadPlan {
+export function buildPadPlan({ decision, features, kind, agreementSignedOn, operatingReserveMonths = SERVICING.operatingReserveMonthsOfSpending }: PadInput): PadPlan {
   if (decision.outcome === "decline" || decision.outcome === "refer" || decision.aprBps === null || !decision.structure) {
     throw new Error("A PAD plan needs an approved decision")
   }
@@ -142,29 +146,46 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
     }
     if (biweekly) assumptions.push("Debits fall on the borrower's payday, every 14 days, to match how they're paid.")
   } else if (decision.structure === "seasonal_operating") {
-    // An operating line is a limit, not a lump sum. Money is drawn through the
-    // quiet months before the peak, in proportion to how short each of those
-    // calendar months ran in the borrower's own cash-flow history (evenly if
-    // none ran short). Interest is charged monthly in arrears on the drawn
-    // balance only; principal is swept from peak-season sales.
+    // An operating line is a limit, not a lump sum. The borrower spends its
+    // own cash first; the line is drawn only to keep the operating reserve
+    // (operatingReserveMonthsOfSpending of average spending, illustrative
+    // config; 1 month by default) in the account. Each quiet month's
+    // need comes from the lowest balance that calendar month reached in the
+    // borrower's own history; the first peak month's dip counts toward the
+    // last draw before the peak. Draws accumulate until the peak sweep and
+    // never exceed the limit. Interest is charged monthly in arrears on the
+    // drawn balance only. Whatever isn't drawn is headroom (e.g. for a poor
+    // harvest or a price drop).
     frequency = "seasonal"
     amountType = "variable"
     const peak = features.income.peakMonths
     const monthOf = (iso: string) => d(iso).getUTCMonth() + 1
     const start = addMonths(earliest, 1, 1)
     const quiet: string[] = []
+    let firstPeak: string | null = null
     for (let i = 0, probe = start; i < 24; i++, probe = addMonths(probe, 1, 1)) {
       if (!peak.includes(monthOf(probe))) quiet.push(probe)
-      else if (quiet.length) break
+      else if (quiet.length) {
+        firstPeak = probe
+        break
+      }
     }
-    const shortfall = (m: number) => Math.max(0, -features.monthly.filter((x) => Number(x.month.slice(5, 7)) === m).reduce((t, x) => t + x.netCents, 0))
-    let weights = quiet.map((q) => shortfall(monthOf(q)))
-    if (weights.every((w) => w === 0)) weights = quiet.map(() => 1)
-    const totalWeight = weights.reduce((t, w) => t + w, 0)
-    const amounts = weights.map((w) => Math.floor((principal * w) / totalWeight))
-    const lastDrawIndex = weights.reduce((last, w, i) => (w > 0 ? i : last), 0)
-    amounts[lastDrawIndex] += principal - amounts.reduce((t, a) => t + a, 0)
+    const reserve = Math.round(features.avgMonthlyOutflowCents * operatingReserveMonths)
+    const lowest = (m: number) => {
+      const lows = features.monthly.filter((x) => Number(x.month.slice(5, 7)) === m).map((x) => x.lowBalanceCents)
+      return lows.length ? Math.min(...lows) : Infinity
+    }
+    let target = 0
+    const amounts = quiet.map((q, i) => {
+      let need = Math.max(0, reserve - lowest(monthOf(q)))
+      if (i === quiet.length - 1 && firstPeak) need = Math.max(need, reserve - lowest(monthOf(firstPeak)))
+      const next = Math.min(principal, Math.max(target, need))
+      const draw = next - target
+      target = next
+      return draw
+    })
     const draws: Draw[] = quiet.map((q, i) => ({ date: onBusinessDay(q), amountCents: amounts[i] })).filter((x) => x.amountCents > 0)
+    const totalDrawn = target
     const drawByMonth = new Map(quiet.map((q, i) => [q, amounts[i]]))
 
     let date = start
@@ -172,13 +193,13 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
     let drawn = 0
     let peakStartBalance = 0
     let n = 0
-    for (let i = 0; i < 36 && (drawn < principal || balance > 0); i++) {
+    for (let i = 0; i < 36 && (drawn < totalDrawn || balance > 0); i++) {
       const month = monthOf(date)
       const inPeak = peak.includes(month)
       // Interest in arrears on what was drawn over the past month.
       const interest = Math.round((balance * apr) / 10_000 / 12)
       let principalPart = 0
-      if (inPeak && drawn === principal && balance > 0) {
+      if (inPeak && drawn === totalDrawn && balance > 0) {
         if (peakStartBalance === 0) peakStartBalance = balance
         const isLastPeak = !peak.includes((month % 12) + 1)
         principalPart = isLastPeak ? balance : Math.min(balance, Math.ceil(peakStartBalance / peak.length))
@@ -197,7 +218,7 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
       date = addMonths(date, 1, 1)
     }
     assumptions.push(
-      "Draws follow the borrower's own cash flow: money is drawn in the quiet months that ran short in the past year (illustrative). Interest is charged only on what has been drawn; principal is repaid from peak-season sales, and the line is back to zero after the peak.",
+      "Draws keep one month's average spending in the account: the borrower uses its own cash first, and the line covers only the gap, based on its past year (illustrative). Interest is charged only on what's drawn; principal is repaid from peak-season sales. The rest of the limit is headroom for a poor harvest or a price drop.",
     )
     planDraws = draws
   } else {
@@ -229,17 +250,17 @@ export function buildPadPlan({ decision, features, kind, agreementSignedOn }: Pa
     amountType,
     agreementSignedOn,
     confirmationSentOn,
-    firstDebitOn: debits[0].date,
+    firstDebitOn: debits[0]?.date ?? null,
     debits,
     draws: planDraws,
     totalPrincipalCents: debits.reduce((s, x) => s + x.principalCents, 0),
     totalInterestCents: debits.reduce((s, x) => s + x.interestCents, 0),
     assumptions,
-    checklist: checklist(kind, frequency, amountType, confirmationSentOn, debits[0].date),
+    checklist: checklist(kind, frequency, amountType, confirmationSentOn, debits[0]?.date ?? null),
   }
 }
 
-function checklist(kind: "personal" | "business", frequency: Frequency, amountType: "fixed" | "variable", confirmation: string, first: string): ChecklistItem[] {
+function checklist(kind: "personal" | "business", frequency: Frequency, amountType: "fixed" | "variable", confirmation: string, first: string | null): ChecklistItem[] {
   const timing = frequency === "biweekly" ? "every 14 days (bi-weekly)" : frequency === "seasonal" ? "monthly, larger in peak-season months" : "monthly"
   return [
     { element: "Date and signature", detail: "Execution date recorded; electronic signature captured.", reference: "H1 Appendix II" },
@@ -255,7 +276,9 @@ function checklist(kind: "personal" | "business", frequency: Frequency, amountTy
     { element: "Recourse statement (verbatim)", detail: RECOURSE_STATEMENT, reference: "H1 Appendix II" },
     {
       element: "Confirmation",
-      detail: `Sent ${confirmation}, at least ${PAD_RULES.confirmationDays} calendar days before the first debit on ${first}. Not waived.`,
+      detail: first
+        ? `Sent ${confirmation}, at least ${PAD_RULES.confirmationDays} calendar days before the first debit on ${first}. Not waived.`
+        : `Sent ${confirmation}. No debits are scheduled until the line is drawn; any first debit will be at least ${PAD_RULES.confirmationDays} calendar days after confirmation. Not waived.`,
       reference: "H1 s.16",
     },
     {

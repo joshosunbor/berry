@@ -202,6 +202,8 @@ test("Hollis's operating line shows limit, drawn and available", async ({ page }
   await expect(line).toContainText("$60,000.00")
   await expect(line).toContainText("Drawn (owed principal)")
   await expect(line).toContainText("Available")
+  await expect(line).toContainText("Draws keep one month's average spending in the account")
+  await expect(line).toContainText("headroom")
   await expect(page.getByRole("status").filter({ hasText: "Debits" })).toContainText("✓")
   expect(errors).toEqual([])
 })

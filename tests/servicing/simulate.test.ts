@@ -126,8 +126,10 @@ describe("seasonal operating lines are drawn, not disbursed", () => {
     const entries = books.credit_union.ledger.forLoan(id)
     expect(entries.some((e) => e.type === "disbursement")).toBe(false)
     const draws = entries.filter((e) => e.type === "draw")
+    expect(draws.length).toBeGreaterThan(0)
     expect(draws).toHaveLength(l.setup.draws!.length)
-    expect(draws.reduce((t, e) => t + e.lines[0].debitCents, 0)).toBe(l.setup.principalCents)
+    const drawn = draws.reduce((t, e) => t + e.lines[0].debitCents, 0)
+    expect(drawn).toBe(l.setup.draws!.reduce((t, d) => t + d.amountCents, 0))
     // Debit principal receivable, credit settlement.
     for (const e of draws) {
       expect(e.lines.find((x) => x.account === account.principal(id))!.debitCents).toBeGreaterThan(0)
@@ -135,15 +137,27 @@ describe("seasonal operating lines are drawn, not disbursed", () => {
     }
     // The principal balance never exceeds the limit, and before the first draw nothing is owed or charged.
     let principal = 0
+    let peak = 0
     for (const e of entries) {
       for (const x of e.lines) if (x.account === account.principal(id)) principal += x.debitCents - x.creditCents
+      peak = Math.max(peak, principal)
       expect(principal).toBeLessThanOrEqual(l.setup.principalCents)
       if (e.date < draws[0].date) expect(e.type).not.toBe("interest_accrual")
     }
+    // A healthy seasonal borrower never reaches 100% utilization in the base scenario.
+    expect(peak / l.setup.principalCents).toBeLessThan(1)
     // Interest posted equals the schedule's interest, which is charged on the drawn balance.
-    const accrued = entries.filter((e) => e.type === "interest_accrual" && e.date <= books.credit_union.horizon).reduce((t, e) => t + e.lines[0].debitCents, 0)
+    const accrued = entries.filter((e) => e.type === "interest_accrual").reduce((t, e) => t + e.lines[0].debitCents, 0)
     const scheduled = l.setup.schedule.filter((d) => d.date <= books.credit_union.horizon).reduce((t, d) => t + d.interestCents, 0)
     expect(accrued).toBe(scheduled)
+    expectBalanced(books.credit_union.ledger)
+  })
+
+  it("Hollis draws about half its limit at peak: own cash first, one month's spending kept as a reserve", () => {
+    const l = loan("loan_hollis-family-farm-cu")
+    const peak = l.setup.draws!.reduce((t, d) => t + d.amountCents, 0)
+    expect(peak / l.setup.principalCents).toBeGreaterThan(0.4)
+    expect(peak / l.setup.principalCents).toBeLessThan(0.6)
     expectBalanced(books.credit_union.ledger)
   })
 
@@ -151,6 +165,14 @@ describe("seasonal operating lines are drawn, not disbursed", () => {
     expect(loan("loan_lakeside-lodge-cu").statusTimeline.at(-1)!.status).toBe("paid_off")
     expect(books.credit_union.ledger.outstanding("loan_lakeside-lodge-cu")).toBe(0)
     expectBalanced(books.credit_union.ledger)
+  })
+
+  it("a line that's never drawn stays open, not 'paid off'", () => {
+    const setup = { ...loan("loan_hollis-family-farm-cu").setup, id: "loan_undrawn-cu", draws: [], schedule: [] }
+    const book = simulateBook("northgate", "credit_union", [setup], "2027-10-06")
+    expect(book.loans[0].statusTimeline.map((t) => t.status)).toEqual(["active"])
+    expect(book.ledger.all).toHaveLength(0)
+    expectBalanced(book.ledger)
   })
 })
 

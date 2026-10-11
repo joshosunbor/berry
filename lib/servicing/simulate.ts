@@ -48,6 +48,8 @@ export interface LoanSetup {
   schedule: ScheduledDebit[]
   /** Lines of credit drawn over time (seasonal operating lines). Absent: the full amount is disbursed at funding. */
   draws?: Draw[]
+  /** For drawn lines: the operating reserve the draws protect (illustrative). */
+  operatingReserveCents?: number
   funding: FundingResult
   borrowerAccount: BorrowerAccount
   payroll: { lastPayDate: string; cadenceDays: number } | null
@@ -427,7 +429,9 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       if (dpd > 0 && status === "active") setStatus(day, "delinquent", `${dpd} day(s) past due.`)
       if (dpd === 0 && (status === "delinquent" || status === "hardship")) setStatus(day, "active", "Back up to date.")
     }
-    if (items.every((it) => it.state === "paid") && principal + interest === 0 && pendingDraws.length === 0) {
+    // A line that was never drawn isn't "paid off": it's simply open and unused.
+    const everOwed = !s.draws || drawnTotal > 0
+    if (everOwed && items.every((it) => it.state === "paid") && principal + interest === 0 && pendingDraws.length === 0) {
       events.push({ date: day, type: "paid_off", text: "Paid in full." })
       setStatus(day, "paid_off", "Paid in full.")
       break

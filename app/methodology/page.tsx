@@ -195,6 +195,12 @@ export default function MethodologyPage() {
             hardship offer, and a loan still unpaid 120 days after a missed payment is charged off (configurable) <Illustrative />.
           </p>
           <p>
+            A seasonal operating line is a limit, not a lump sum. The borrower spends its own cash first, and the line is drawn only to keep one
+            month&apos;s average spending in the account <Illustrative />, sized from the borrower&apos;s own past year. Interest is charged only on what&apos;s
+            drawn, and the line is repaid from peak-season sales. In the base scenario Hollis Family Farm draws about half its limit at peak; the rest is
+            headroom for a poor harvest or a price drop.
+          </p>
+          <p>
             Berry&apos;s lenders charge no fee of their own for a returned payment; the simulation shows what the borrower&apos;s bank charges. The NSF fee
             rules in force since March 12, 2026 (a $10 cap, one fee per 2 business days, none when overdrawn by less than $10) apply to personal accounts at
             federally regulated banks, so Berry applies them only there. Provincially regulated credit unions set their own fees: for borrowers who bank at

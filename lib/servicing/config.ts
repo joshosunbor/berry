@@ -15,6 +15,8 @@ export const ServicingConfig = z.object({
     cureWindowDays: z.number().int().positive(),
   }),
   chargeOffDaysPastDue: z.number().int().positive(),
+  /** Illustrative: seasonal lines are drawn only to keep this many months of average spending in the borrower's account. */
+  operatingReserveMonthsOfSpending: z.number().positive(),
   /** Thin-file credit-building milestones (illustrative). */
   creditBuilding: z.object({
     onTimePaymentsForReview: z.number().int().positive(),

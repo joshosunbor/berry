@@ -23,6 +23,8 @@
     "cureWindowDays": 30
   },
   "chargeOffDaysPastDue": 120,
+  "operatingReserveMonthsOfSpending": 1,
+  "_operatingReserveNote": "Illustrative. A seasonal operating line is drawn only to keep this many months of the borrower's average spending in its account; the borrower's own cash is used first.",
   "borrowerBank": {
     "standardNsfFeeCents": 4800,
     "provincialCreditUnionNsfFeeCents": 4500

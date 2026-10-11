@@ -6,7 +6,7 @@ import { AlertTriangle, Ban, Bell, CheckCircle2, CircleDollarSign, Clock3, Heart
 import { useClock } from "@/components/berry/clock"
 import { Illustrative } from "@/components/berry/illustrative"
 import { LoanStatusChip } from "@/components/berry/loan-status"
-import { formatCents } from "@/lib/money"
+import { allocateWholeDollars, formatCents } from "@/lib/money"
 import { RETURN_CODES } from "@/lib/schemas"
 import { formatTimeToFund, RAILS } from "@/lib/servicing/funding"
 import type { LoanEventType } from "@/lib/servicing/simulate"
@@ -103,10 +103,32 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
           <div className="mt-3 h-2 rounded-full bg-muted" aria-hidden>
             <div className="h-full rounded-full bg-ink" style={{ width: `${(line.drawnCents / line.limitCents) * 100}%` }} />
           </div>
-          <p className="mt-3 text-sm text-muted-ink">
-            Draws follow the borrower&apos;s cash flow: {loan.draws!.map((d) => `${formatCents(d.amountCents, { whole: true })} on ${d.date}`).join(", ")}. Interest is charged only on what&apos;s drawn.{" "}
-            <Illustrative />
-          </p>
+          <div className="mt-4 space-y-2 text-sm leading-6">
+            <p>
+              <span className="font-medium">Draws keep one month&apos;s average spending in the account</span>
+              {loan.operatingReserveCents !== null && <span className="num"> ({formatCents(loan.operatingReserveCents, { whole: true })} for this borrower)</span>}. The borrower uses its
+              own cash first; the line covers only the gap, based on its past year. Interest is charged only on what&apos;s drawn.{" "}
+              <Illustrative why="The one-month reserve is an illustrative setting (operatingReserveMonthsOfSpending)." />
+            </p>
+            {loan.draws!.length > 0 ? (
+              <p className="text-muted-ink">
+                Draws:{" "}
+                {(() => {
+                  const shown = allocateWholeDollars(loan.draws!.map((d) => d.amountCents))
+                  return loan.draws!.map((d, i) => `$${shown[i].toLocaleString("en-CA")} on ${d.date}`).join(", ")
+                })()}
+                <span className="num">
+                  {" "}
+                  · total ${allocateWholeDollars(loan.draws!.map((d) => d.amountCents)).reduce((t, x) => t + x, 0).toLocaleString("en-CA")}
+                </span>
+              </p>
+            ) : (
+              <p className="text-muted-ink">Nothing is drawn: the borrower&apos;s own cash covers the season.</p>
+            )}
+            <p className="text-muted-ink">
+              The rest of the limit is headroom: room to draw more after a poor harvest or a drop in prices, without asking for a new loan.
+            </p>
+          </div>
         </section>
       )}
       <p className="text-sm text-muted-ink">

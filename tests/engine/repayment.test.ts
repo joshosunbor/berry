@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 import { buildPadPlan, PAD_RULES, RECOURSE_STATEMENT } from "@/lib/engine/repayment"
 import { features } from "./fixtures"
 import { Rng } from "@/lib/rng"
+import { SERVICING } from "@/lib/servicing/config"
 import type { Decision } from "@/lib/schemas"
 
 const decision = (over: Partial<Decision>): Decision =>
@@ -30,6 +31,16 @@ const decision = (over: Partial<Decision>): Decision =>
 const days = (a: string, b: string) => (Date.parse(b) - Date.parse(a)) / 86_400_000
 const SIGNED = "2026-10-05"
 
+/** Twelve calendar months of history with the given lowest balance per month (default: comfortably high). */
+function history(lows: Partial<Record<number, number>> = {}, fallback = 10_000_000) {
+  return Array.from({ length: 12 }, (_, i) => {
+    const m = i + 1
+    return { month: `2026-${String(m).padStart(2, "0")}`, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: 0, lowBalanceCents: lows[m] ?? fallback, closingBalanceCents: lows[m] ?? fallback }
+  })
+}
+/** A borrower whose cash runs out in every quiet month: the line is drawn to its limit (used to test the mechanics). */
+const cashShort = (peakMonths: number[]) => ({ income: { type: "seasonal" as const, peakMonths }, monthly: history({}, -1_000_000_000), avgMonthlyOutflowCents: 0 })
+
 describe("PAD repayment plans (Rule H1)", () => {
   it("monthly term loan: fixed amount, repays exactly the principal", () => {
     const plan = buildPadPlan({ decision: decision({}), features: features({ income: { payroll: null } }), kind: "personal", agreementSignedOn: SIGNED })
@@ -43,7 +54,7 @@ describe("PAD repayment plans (Rule H1)", () => {
 
   it("puts the first debit at least 10 calendar days after confirmation", () => {
     const plan = buildPadPlan({ decision: decision({}), features: features(), kind: "personal", agreementSignedOn: SIGNED })
-    expect(days(plan.confirmationSentOn, plan.firstDebitOn)).toBeGreaterThanOrEqual(PAD_RULES.confirmationDays)
+    expect(days(plan.confirmationSentOn, plan.firstDebitOn!)).toBeGreaterThanOrEqual(PAD_RULES.confirmationDays)
   })
 
   it("aligns to payday when the borrower is paid every two weeks", () => {
@@ -62,7 +73,7 @@ describe("PAD repayment plans (Rule H1)", () => {
   it("seasonal line: interest only in quiet months, principal in peak months, all repaid", () => {
     const plan = buildPadPlan({
       decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: 6_000_000, aprBps: 795 }),
-      features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] } }),
+      features: features(cashShort([9, 10, 11])),
       kind: "business",
       agreementSignedOn: SIGNED,
     })
@@ -77,7 +88,7 @@ describe("PAD repayment plans (Rule H1)", () => {
   it("seasonal line starting just after a peak: draws through the quiet months, repaid in one season", () => {
     const plan = buildPadPlan({
       decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: 8_000_000, aprBps: 795 }),
-      features: features({ income: { type: "seasonal", peakMonths: [6, 7, 8] } }),
+      features: features(cashShort([6, 7, 8])),
       kind: "business",
       agreementSignedOn: SIGNED,
     })
@@ -90,7 +101,7 @@ describe("PAD repayment plans (Rule H1)", () => {
   it("seasonal line signed during the peak doesn't start with a large repayment", () => {
     const plan = buildPadPlan({
       decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: 6_000_000, aprBps: 795 }),
-      features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] } }),
+      features: features(cashShort([9, 10, 11])),
       kind: "business",
       agreementSignedOn: SIGNED,
     })
@@ -175,7 +186,7 @@ describe("rounding: schedules sum exactly, in whole cents", () => {
       const peakStart = rng.int(1, 10)
       const plan = buildPadPlan({
         decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: principal, aprBps: rng.int(0, 2_000) }),
-        features: features({ income: { type: "seasonal", peakMonths: [peakStart, peakStart + 1, peakStart + 2] } }),
+        features: features(cashShort([peakStart, peakStart + 1, peakStart + 2])),
         kind: "business",
         agreementSignedOn: SIGNED,
       })
@@ -187,35 +198,69 @@ describe("rounding: schedules sum exactly, in whole cents", () => {
   })
 })
 
-describe("seasonal operating line: draws, interest on the drawn balance only", () => {
-  // A farm whose spring months run short: March, April and May.
-  const monthly = [
-    ["2025-10", 9_000_000], ["2025-11", 3_600_000], ["2025-12", 1_000_000], ["2026-01", 1_500_000], ["2026-02", 700_000],
-    ["2026-03", -3_300_000], ["2026-04", -6_700_000], ["2026-05", -4_200_000], ["2026-06", 0], ["2026-07", 300_000],
-    ["2026-08", 1_500_000], ["2026-09", 7_400_000],
-  ].map(([month, netCents]) => ({ month: month as string, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: netCents as number }))
+describe("seasonal operating line: the reserve rule", () => {
+  // Reserve: one month's average spending ($30,000). The borrower's own balance
+  // dips to $20,000 in March, $5,000 in April, $8,000 in May and $1,000 in June.
   const LIMIT = 6_000_000
   const APR = 795
   const plan = buildPadPlan({
     decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: LIMIT, aprBps: APR }),
-    features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] }, monthly }),
+    features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] }, avgMonthlyOutflowCents: 3_000_000, monthly: history({ 3: 2_000_000, 4: 500_000, 5: 800_000, 6: 100_000 }) }),
     kind: "business",
     agreementSignedOn: SIGNED,
   })
 
-  it("draws the whole limit, only in the months that ran short, in proportion to the shortfall", () => {
-    const draws = plan.draws!
-    expect(draws.reduce((t, d) => t + d.amountCents, 0)).toBe(LIMIT)
-    expect(draws.map((d) => d.date.slice(5, 7))).toEqual(["03", "04", "05"])
-    const [mar, apr, may] = draws.map((d) => d.amountCents)
-    expect(apr).toBeGreaterThan(may)
-    expect(may).toBeGreaterThan(mar)
-    expect(Math.abs(mar / LIMIT - 33 / 142)).toBeLessThan(0.001)
-    for (const d of draws) expect(Number.isInteger(d.amountCents)).toBe(true)
+  it("draws only what keeps one month's spending in the account, own cash first", () => {
+    // Need: Mar $10,000; Apr $25,000; May $22,000 (already covered); Jun $29,000.
+    expect(plan.draws!.map((d) => [d.date.slice(5, 7), d.amountCents])).toEqual([
+      ["03", 1_000_000],
+      ["04", 1_500_000],
+      ["06", 400_000],
+    ])
+  })
+
+  it("never reaches 100% of the limit for a healthy seasonal borrower", () => {
+    const peak = plan.draws!.reduce((t, d) => t + d.amountCents, 0)
+    expect(peak).toBe(2_900_000)
+    expect(peak / LIMIT).toBeLessThan(1)
+  })
+
+  it("draws nothing when the borrower's own cash always covers the reserve", () => {
+    const flush = buildPadPlan({
+      decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: LIMIT, aprBps: APR }),
+      features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] }, avgMonthlyOutflowCents: 3_000_000, monthly: history() }),
+      kind: "business",
+      agreementSignedOn: SIGNED,
+    })
+    expect(flush.draws).toEqual([])
+    expect(flush.debits).toEqual([])
+    expect(flush.firstDebitOn).toBeNull()
+  })
+
+  it("reads the reserve from config: two months of spending doubles the reserve", () => {
+    const twoMonths = buildPadPlan({
+      decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: LIMIT, aprBps: APR }),
+      features: features({ income: { type: "seasonal", peakMonths: [9, 10, 11] }, avgMonthlyOutflowCents: 3_000_000, monthly: history({ 3: 2_000_000, 4: 500_000, 5: 800_000, 6: 100_000 }) }),
+      kind: "business",
+      agreementSignedOn: SIGNED,
+      operatingReserveMonths: 2,
+    })
+    // Reserve $60,000: need peaks at $59,000 in June.
+    expect(twoMonths.draws!.reduce((t, d) => t + d.amountCents, 0)).toBe(5_900_000)
+    expect(SERVICING.operatingReserveMonthsOfSpending).toBe(1)
+  })
+
+  it("caps draws at the limit when the history needs more", () => {
+    const short = buildPadPlan({
+      decision: decision({ product: "seasonal_operating_line", structure: "seasonal_operating", termMonths: 12, limitCents: LIMIT, aprBps: APR }),
+      features: features(cashShort([9, 10, 11])),
+      kind: "business",
+      agreementSignedOn: SIGNED,
+    })
+    expect(short.draws!.reduce((t, d) => t + d.amountCents, 0)).toBe(LIMIT)
   })
 
   it("charges interest only on the drawn balance, in arrears, and never draws past the limit", () => {
-    // Rebuild the balance month by month from the draws and the principal repaid.
     const events = [
       ...plan.draws!.map((d) => ({ date: d.date, delta: d.amountCents, debit: null as null | (typeof plan.debits)[number] })),
       ...plan.debits.map((d) => ({ date: d.date, delta: -d.principalCents, debit: d })),
@@ -228,13 +273,12 @@ describe("seasonal operating line: draws, interest on the drawn balance only", (
       expect(balance).toBeGreaterThanOrEqual(0)
     }
     expect(balance).toBe(0)
-    // Nothing is charged before the first draw.
     expect(plan.debits.every((d) => d.date > plan.draws![0].date)).toBe(true)
   })
 
-  it("sweeps principal only in the peak months, and repays exactly the limit", () => {
+  it("sweeps principal only in the peak months, and repays exactly what was drawn", () => {
     for (const d of plan.debits) if (d.principalCents) expect([9, 10, 11]).toContain(Number(d.date.slice(5, 7)))
-    expect(plan.totalPrincipalCents).toBe(LIMIT)
-    expect(plan.debits.reduce((t, d) => t + d.amountCents, 0)).toBe(LIMIT + plan.totalInterestCents)
+    expect(plan.totalPrincipalCents).toBe(2_900_000)
+    expect(plan.debits.reduce((t, d) => t + d.amountCents, 0)).toBe(2_900_000 + plan.totalInterestCents)
   })
 })

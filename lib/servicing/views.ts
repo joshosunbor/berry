@@ -38,6 +38,7 @@ export interface LoanView {
   schedule: ScheduledDebit[]
   /** Present for lines drawn over time: the limit is principalCents. */
   draws: Draw[] | null
+  operatingReserveCents: number | null
   events: LoanEvent[]
   attempts: Attempt[]
   statusTimeline: { date: string; status: LoanStatus }[]
@@ -85,6 +86,7 @@ export function toLoanView(book: BookResult, loan: LoanResult, breaks: LoanBreak
     borrowerBank: s.borrowerAccount.institutionType,
     schedule: s.schedule,
     draws: s.draws ?? null,
+    operatingReserveCents: s.operatingReserveCents ?? null,
     events: loan.events,
     attempts: loan.attempts,
     statusTimeline: loan.statusTimeline,

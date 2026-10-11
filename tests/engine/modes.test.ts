@@ -7,7 +7,7 @@ import { ctx, features } from "./fixtures"
 const codes = (r: { reasons: { code: string }[] }) => r.reasons.map((x) => x.code)
 const member = (tenureYears: number, productsHeld = 3) => ({ member: true, tenureYears, productsHeld, avgBalanceAtNorthgateCents: 300_000 })
 const seasonalMonths = (peak: number[], peakNet: number, otherNet: number) =>
-  Array.from({ length: 12 }, (_, i) => ({ month: `2026-${String(i + 1).padStart(2, "0")}`, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: peak.includes(i + 1) ? peakNet : otherNet }))
+  Array.from({ length: 12 }, (_, i) => ({ month: `2026-${String(i + 1).padStart(2, "0")}`, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: peak.includes(i + 1) ? peakNet : otherNet, lowBalanceCents: 100_000, closingBalanceCents: 100_000 }))
 
 describe("Aspen (bank): fixed thresholds", () => {
   const bank = (over: Parameters<typeof features>[0] = {}, request = {}) => decideBank(ctx("bank", features(over), request))

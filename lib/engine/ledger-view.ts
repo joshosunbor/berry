@@ -29,6 +29,10 @@ export interface MonthTotals {
   inflowCents: number
   outflowCents: number
   netCents: number
+  /** Lowest end-of-day balance across deposit accounts during the month. */
+  lowBalanceCents: number
+  /** Balance at the end of the month. */
+  closingBalanceCents: number
 }
 
 export interface CreditAccountView {
@@ -66,13 +70,22 @@ export function buildLedgerView(input: EngineInput): LedgerView {
     (t) => depositIds.has(t.accountId) && !t.returnOf && !returnedIds.has(t.transactionId) && !ownTransfers.has(t.transactionId),
   )
 
+  const balances = dailyBalances(deposit, all, windowStart, windowEnd)
+  const months = monthTotals(cashFlow, windowStart, windowEnd).map((m) => {
+    const days = balances.filter((d) => d.date.startsWith(m.month))
+    return {
+      ...m,
+      lowBalanceCents: days.length ? Math.min(...days.map((d) => d.balanceCents)) : 0,
+      closingBalanceCents: days.at(-1)?.balanceCents ?? 0,
+    }
+  })
   return {
     windowStart,
     windowEnd,
     depositAccounts: deposit,
     cashFlow,
-    months: monthTotals(cashFlow, windowStart, windowEnd),
-    dailyBalances: dailyBalances(deposit, all, windowStart, windowEnd),
+    months,
+    dailyBalances: balances,
     creditAccounts: input.accounts
       .filter((a) => CREDIT_TYPES.has(a.accountType))
       .map((account) => {
@@ -124,7 +137,7 @@ function monthKeys(start: string, end: string): string[] {
   return keys
 }
 
-function monthTotals(cashFlow: Transaction[], start: string, end: string): MonthTotals[] {
+function monthTotals(cashFlow: Transaction[], start: string, end: string): Omit<MonthTotals, "lowBalanceCents" | "closingBalanceCents">[] {
   const byMonth = new Map(monthKeys(start, end).map((month) => [month, { month, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: 0 }]))
   for (const t of cashFlow) {
     const m = byMonth.get(t.postedDate.slice(0, 7))!
