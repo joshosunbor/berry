@@ -1,0 +1,13 @@
+{
+  "_about": "FICTIONAL business registry records for Berry's synthetic businesses. Not connected to any real provincial or federal registry.",
+  "records": [
+    { "registrationNo": "SK-PTN-104882", "status": "active", "lastAnnualFiling": "2026-03-31", "owners": [{ "name": "Margaret Hollis", "sharePct": 50 }, { "name": "Partner (synthetic)", "sharePct": 50 }] },
+    { "registrationNo": "ON-CORP-2219034", "status": "active", "lastAnnualFiling": "2026-05-12", "owners": [{ "name": "Tomasz Kowal", "sharePct": 100 }] },
+    { "registrationNo": "AB-PC-5530718", "status": "active", "lastAnnualFiling": "2026-02-27", "owners": [{ "name": "Dr. Helena Achterberg", "sharePct": 100 }] },
+    { "registrationNo": "NS-INC-3307741", "status": "active", "lastAnnualFiling": "2026-04-03", "owners": [{ "name": "Jules Thibodeau", "sharePct": 100 }] },
+    { "registrationNo": "BC-BC-0937215", "status": "active", "lastAnnualFiling": "2025-04-18", "owners": [{ "name": "Owen Ferreira", "sharePct": 60 }, { "name": "Co-owner (synthetic)", "sharePct": 40 }] },
+    { "registrationNo": "NB-CORP-0612280", "status": "active", "lastAnnualFiling": "2026-01-22", "owners": [{ "name": "Gordon MacAulay", "sharePct": 100 }] },
+    { "registrationNo": "NL-SP-7720143", "status": "active", "lastAnnualFiling": "2026-06-30", "owners": [{ "name": "Callum Pardy", "sharePct": 100 }] },
+    { "registrationNo": "MB-CORP-4418826", "status": "active", "lastAnnualFiling": "2026-07-08", "owners": [{ "name": "Ines Okonkwo-Hart", "sharePct": 75 }, { "name": "Investor (synthetic)", "sharePct": 25 }] }
+  ]
+}

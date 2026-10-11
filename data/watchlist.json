@@ -1,0 +1,11 @@
+{
+  "_about": "FICTIONAL watch list for demonstrating screening. Every entry is invented for Berry and refers to no real person, entity, sanctions regime or list. Names are deliberately unusual compounds.",
+  "entries": [
+    { "id": "WL-FIC-001", "list": "sanctions", "kind": "person", "name": "Jules Thibodeaux-Vance", "dateOfBirth": "1971-02-03" },
+    { "id": "WL-FIC-002", "list": "sanctions", "kind": "person", "name": "Corvin Aldenmarsh", "dateOfBirth": "1965-08-19" },
+    { "id": "WL-FIC-003", "list": "sanctions", "kind": "entity", "name": "Velkor Strand Shipping Holdings" },
+    { "id": "WL-FIC-004", "list": "sanctions", "kind": "entity", "name": "Oskaro Brightwell Trading" },
+    { "id": "WL-FIC-005", "list": "pep", "kind": "person", "name": "Marisol Quenneville-Strath", "dateOfBirth": "1958-11-30" },
+    { "id": "WL-FIC-006", "list": "pep", "kind": "person", "name": "Taddeus Wrenholme", "dateOfBirth": "1962-04-14" }
+  ]
+}
