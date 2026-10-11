@@ -11,7 +11,11 @@ import { formatCents } from "@/lib/money"
 import { MODE_META, type Mode } from "@/lib/modes"
 import type { VerificationSummary } from "@/lib/onboarding/kyc"
 import { CDIC, DEPOSIT_PROTECTION_AS_OF, LENDER_PROTECTION, PROVINCIAL_INSURERS } from "@/lib/rules/deposit-protection"
-import type { VerificationCheck } from "@/lib/schemas"
+import type { FundingRail, VerificationCheck } from "@/lib/schemas"
+import { formatTimeToFund, fund, FundingBlocked, RAILS, type AccountVerificationOutcome, type FundingResult, type RailInfo } from "@/lib/servicing/funding"
+
+/** Funding is shown as sent the morning after agreements are signed (fixed, so pages are reproducible). */
+const FUNDING_INITIATED_AT = "2026-10-06T10:00"
 import { cn } from "@/lib/utils"
 
 const money = (c: number) => formatCents(c)
@@ -161,13 +165,83 @@ export function RepaymentTab({ plans }: { plans: Record<Mode, PadPlan | null> })
 
 // ---------------------------------------------------------------------------
 
-export function DisbursementTab({ files }: { files: Record<Mode, AftView | null> }) {
+export function DisbursementTab({ files, verification }: { files: Record<Mode, AftView | null>; verification: AccountVerificationOutcome }) {
   const { mode } = useMode()
   const file = files[mode]
   const [raw, setRaw] = useState(false)
   const [record, setRecord] = useState(1)
+  const [rail, setRail] = useState<FundingRail>("aft")
+  const [confirmed, setConfirmed] = useState(false)
   if (!file) return <div className={card}><p className="text-sm text-muted-ink">{MODE_META[mode].institution} made no offer, so there is nothing to fund.</p></div>
+  let outcome: FundingResult | null = null
+  let blocked: string | null = null
+  try {
+    outcome = fund({ loanId: `loan_${mode}`, amountCents: file.totalCents, rail, initiatedAt: FUNDING_INITIATED_AT, verification, confirmedWithBorrower: confirmed })
+  } catch (e) {
+    if (e instanceof FundingBlocked) blocked = e.message
+    else throw e
+  }
+  const info = RAILS[rail]
   const r = file.records[record]
+  const railPicker = (
+    <div className={card}>
+      <h3 className="font-semibold">How to send the money</h3>
+      <div role="radiogroup" aria-label="Funding rail" className="mt-3 grid gap-2 sm:grid-cols-3">
+        {(Object.values(RAILS) as RailInfo[]).map((x) => (
+          <button
+            key={x.rail}
+            type="button"
+            role="radio"
+            aria-checked={rail === x.rail}
+            onClick={() => (setRail(x.rail), setConfirmed(false))}
+            className={cn("rounded-md border p-3 text-left text-sm", rail === x.rail ? "border-ink bg-muted" : "border-rule hover:border-ink/30")}
+          >
+            <span className="block font-medium">{x.name}</span>
+            {x.badge && <span className="mt-1 block"><Illustrative label={x.badge} /></span>}
+            <span className="mt-1 block text-xs text-muted-ink">{x.timing}</span>
+          </button>
+        ))}
+      </div>
+      {info.badge && (
+        <p className="mt-3 text-sm text-muted-ink">
+          Payments Canada&apos;s Real-Time Rail is launching in phases from Q4 2026; lenders cannot fund on it today, so this is a simulation.
+        </p>
+      )}
+      <dl className="mt-4 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+        <div><dt className="text-xs text-muted-ink">Can it be reversed?</dt><dd>{info.reversibility}</dd></div>
+        <div><dt className="text-xs text-muted-ink">Fraud considerations</dt><dd>{info.fraud}</dd></div>
+      </dl>
+
+      {info.instant && (
+        <div className={cn("mt-4 rounded-md border p-3 text-sm", verification.result === "match" ? "border-rule" : verification.result === "close_match" ? "border-conditions/50 bg-conditions-soft" : "border-decline/50 bg-decline-soft")}>
+          <p className="flex flex-wrap items-center gap-2 font-medium">
+            Account verification: {verification.result === "match" ? "match" : verification.result === "close_match" ? "close match" : "no match"}
+            <Illustrative label="Simulated" why="A simulated name-and-account check. No real verification service is used." />
+          </p>
+          <p className="mt-1">{verification.message}</p>
+          <p className="mt-2 text-muted-ink">{verification.scamWarning}</p>
+          {verification.canFund === "after_confirming" && (
+            <label className="mt-2 flex items-center gap-2">
+              <input type="checkbox" checked={confirmed} onChange={(e) => setConfirmed(e.target.checked)} className="size-4" />
+              I&apos;ve confirmed the account with the borrower
+            </label>
+          )}
+        </div>
+      )}
+
+      {blocked ? (
+        <p className="mt-4 rounded-md bg-muted px-3 py-2 text-sm" role="status">{blocked}</p>
+      ) : outcome && (
+        <dl className="num mt-4 grid grid-cols-2 gap-x-6 gap-y-2 rounded-md bg-muted px-3 py-3 text-sm sm:grid-cols-4" role="status">
+          <div><dt className="text-xs text-muted-ink">Sent</dt><dd>{outcome.initiatedAt.replace("T", " ")}</dd></div>
+          <div><dt className="text-xs text-muted-ink">Available</dt><dd>{outcome.completedAt.slice(0, 16).replace("T", " ")}</dd></div>
+          <div><dt className="text-xs text-muted-ink">Time to fund</dt><dd>{formatTimeToFund(outcome.timeToFundMinutes)}</dd></div>
+          <div><dt className="text-xs text-muted-ink">Cost (illustrative)</dt><dd>{formatCents(outcome.costCents)}</dd></div>
+        </dl>
+      )}
+    </div>
+  )
+  if (rail !== "aft") return railPicker
   const download = () => {
     const url = URL.createObjectURL(new Blob([file.text], { type: "text/plain" }))
     const a = document.createElement("a")
@@ -177,6 +251,8 @@ export function DisbursementTab({ files }: { files: Record<Mode, AftView | null>
     URL.revokeObjectURL(url)
   }
   return (
+    <div className="space-y-4">
+    {railPicker}
     <div className={card}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
@@ -247,6 +323,7 @@ export function DisbursementTab({ files }: { files: Record<Mode, AftView | null>
       <p className="mt-4 text-xs">
         <Source href="https://www.payments.ca/sites/default/files/standard005eng.pdf">Standard 005, Payments Canada</Source>
       </p>
+    </div>
     </div>
   )
 }

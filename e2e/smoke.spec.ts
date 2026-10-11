@@ -138,3 +138,17 @@ test("methodology: regulatory status panel shows sources, dates and the right st
   await expect(rows.filter({ hasText: "2027 milestones" })).toContainText("Illustrative")
   expect(errors).toEqual([])
 })
+
+test("funding: RTR is labelled simulated and a close match must be confirmed before sending", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/workbench/grace")
+  await page.getByRole("tab", { name: "Disbursement (AFT)" }).click()
+  const panel = page.getByRole("tabpanel", { name: "Disbursement (AFT)" })
+  await panel.getByRole("radio", { name: /Real-Time Rail/ }).click()
+  await expect(panel).toContainText("simulated — RTR launching")
+  await expect(panel).toContainText("Account verification: close match")
+  await expect(panel.getByRole("status")).toContainText("confirm the account with the borrower")
+  await panel.getByLabel("I've confirmed the account with the borrower").check()
+  await expect(panel.getByRole("status")).toContainText("Seconds")
+  expect(errors).toEqual([])
+})

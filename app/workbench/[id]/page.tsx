@@ -25,7 +25,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
   const { id } = await params
   const view = getApplicant(id)
   if (!view) notFound()
-  const { applicant: a, features: f, decisions, verification, pad, aft, largeCash } = view
+  const { applicant: a, features: f, decisions, verification, pad, aft, largeCash, accountVerification } = view
 
   return (
     <main className="mx-auto max-w-[1200px] px-4 py-8 sm:px-8 sm:py-10">
@@ -55,7 +55,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
           <div className="rounded-lg border border-rule bg-surface p-5">
             <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
           </div>
-          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash }} />
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification }} />
         </div>
 
         <div className="order-1 min-w-0 space-y-6 lg:order-2">

@@ -8,6 +8,7 @@ import { loadApplicants } from "@/lib/evaluation/load"
 import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import { summarize, verifyApplicant, type VerificationSummary } from "@/lib/onboarding/kyc"
 import { Rng, hashSeed } from "@/lib/rng"
+import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
 import { toEngineInput, type Applicant, type Decision, type EngineInput, type VerificationCheck } from "@/lib/schemas"
 
 /*
@@ -35,6 +36,19 @@ export interface ApplicantView {
   pad: Record<Mode, PadPlan | null>
   aft: Record<Mode, AftView | null>
   largeCash: LctrReview[]
+  /** Simulated name-and-account check for the borrower's account (no names leave the server). */
+  accountVerification: AccountVerificationOutcome
+}
+
+/**
+ * The name the receiving institution holds for each borrower's account.
+ * Normally the borrower's own name; one planted close match (a missing part
+ * of a surname) shows the confirm-before-sending path.
+ */
+function nameOnAccount(a: Applicant): string {
+  if (a.business) return a.business.legalName
+  if (a.slug === "grace") return "Grace Lavallee"
+  return a.protected.fullName
 }
 
 /** Agreements are signed a few days after the data window ends (fixed, so builds are reproducible). */
@@ -99,6 +113,7 @@ const cast: ApplicantView[] = raw.map((a) => {
     largeCash: findLargeCashEvents(a.transactions).map((e) =>
       reviewLargeCash(e, { reportingEntity, customerName: a.business?.legalName ?? "The applicant" }),
     ),
+    accountVerification: verifyAccount(nameOnAccount(a), a.business?.legalName ?? a.protected.fullName),
   }
 })
 

@@ -9,6 +9,7 @@ import type { LctrReview } from "@/lib/engine/fintrac"
 import type { PadPlan } from "@/lib/engine/repayment"
 import type { VerificationSummary } from "@/lib/onboarding/kyc"
 import type { VerificationCheck } from "@/lib/schemas"
+import type { AccountVerificationOutcome } from "@/lib/servicing/funding"
 import { useMode } from "@/components/berry/mode-context"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import type { Features } from "@/lib/engine/features"
@@ -22,6 +23,7 @@ export interface FileTabsData {
   pad: Record<Mode, PadPlan | null>
   aft: Record<Mode, AftView | null>
   largeCash: LctrReview[]
+  accountVerification: AccountVerificationOutcome
 }
 
 export function DecisionTabs({ decisions, features, data }: { decisions: Record<Mode, Decision>; features: Features; data: FileTabsData }) {
@@ -90,7 +92,7 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
         <RepaymentTab plans={data.pad} />
       </TabsContent>
       <TabsContent value="disbursement" className="min-w-0 mt-4">
-        <DisbursementTab files={data.aft} />
+        <DisbursementTab files={data.aft} verification={data.accountVerification} />
       </TabsContent>
       <TabsContent value="protection" className="min-w-0 mt-4">
         <ProtectionTab />
