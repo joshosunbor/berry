@@ -8,7 +8,7 @@ import { loadApplicants } from "@/lib/evaluation/load"
 import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import { summarize, verifyApplicant, type VerificationSummary } from "@/lib/onboarding/kyc"
 import { Rng, hashSeed } from "@/lib/rng"
-import { toEngineInput, type Applicant, type Decision, type VerificationCheck } from "@/lib/schemas"
+import { toEngineInput, type Applicant, type Decision, type EngineInput, type VerificationCheck } from "@/lib/schemas"
 
 /*
  * Server-side data for pages. The synthetic cast is read once at module
@@ -77,7 +77,9 @@ function aftFor(a: Applicant, d: Decision, mode: Mode): AftView {
   return { ...file, fileName: `berry-aft-${a.slug}-${mode.replace("_", "-")}.txt` }
 }
 
-const cast: ApplicantView[] = loadApplicants(path.join(process.cwd(), "data/applicants")).map((a) => {
+const raw = loadApplicants(path.join(process.cwd(), "data/applicants"))
+
+const cast: ApplicantView[] = raw.map((a) => {
   const input = toEngineInput(a)
   const features = computeFeatures(input)
   const decisions = decideAll(input)
@@ -125,4 +127,21 @@ export function getCast(): ApplicantView[] {
 
 export function getApplicant(slug: string): ApplicantView | undefined {
   return cast.find((c) => c.applicant.slug === slug)
+}
+
+/**
+ * What /apply needs to run the engine in the browser: the engine input
+ * (no protected attributes, name, story or location) plus the precomputed
+ * simulated checks.
+ */
+export interface ApplyPayload {
+  input: EngineInput
+  verification: { checks: VerificationCheck[]; summary: VerificationSummary }
+}
+
+export function getApplyPayload(slug: string): ApplyPayload | undefined {
+  const a = raw.find((x) => x.slug === slug)
+  const view = getApplicant(slug)
+  if (!a || !view) return undefined
+  return { input: toEngineInput(a), verification: view.verification }
 }

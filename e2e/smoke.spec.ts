@@ -53,7 +53,7 @@ test("unknown applicant is a 404", async ({ page }) => {
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy"]
+  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -75,5 +75,44 @@ test("Main Street Hardware's file shows the FINTRAC review and the AFT file", as
   await expect(page.getByRole("tabpanel", { name: "Disbursement (AFT)" })).toContainText("Illustrative — not for submission")
   await page.getByRole("button", { name: "View raw file" }).click()
   await expect(page.getByLabel("Raw file, one record per line")).toContainText("NORTHGATE CU")
+  expect(errors).toEqual([])
+})
+
+test("apply: consent, verification, request and three decisions; consents can be revoked", async ({ page }) => {
+  const errors = watchConsole(page)
+  await page.goto("/apply")
+  await page.getByRole("button", { name: /Hollis Family Farm/ }).click()
+  await expect(page.getByRole("heading", { name: "About you" })).toBeVisible()
+  await page.getByRole("button", { name: "Continue" }).click()
+
+  await expect(page.getByRole("heading", { name: "Share your banking data" })).toBeVisible()
+  await expect(page.getByText("What we won't ask for")).toBeVisible()
+  await expect(page.getByText(/s\. 86/).first()).toBeVisible()
+  await page.getByRole("button", { name: "I consent" }).click()
+
+  await expect(page.getByRole("heading", { name: "Verifying your identity" })).toBeVisible()
+  await expect(page.getByText("All checks cleared automatically.")).toBeVisible({ timeout: 10_000 })
+  await page.getByRole("button", { name: "Continue" }).click()
+
+  // Save and resume: reload mid-application.
+  await page.reload()
+  await page.getByRole("button", { name: "Resume" }).click()
+  await expect(page.getByRole("heading", { name: "What would you like to borrow?" })).toBeVisible()
+
+  await page.getByLabel("Amount (CAD)").fill("40000")
+  await page.getByRole("button", { name: "Continue" }).click()
+  await expect(page.getByText("$40,000")).toBeVisible()
+  await page.getByRole("button", { name: "Submit application" }).click()
+
+  await expect(page.getByRole("heading", { name: "Your decisions" })).toBeVisible()
+  await expect(page.getByRole("article")).toHaveCount(3)
+
+  await page.getByRole("link", { name: "Manage your consents" }).click()
+  await expect(page.getByRole("button", { name: /Revoke consent for/ })).toHaveCount(3)
+  await page.getByRole("button", { name: "Revoke consent for Kite" }).click()
+  await expect(page.getByRole("button", { name: /Revoke consent for/ })).toHaveCount(2)
+  await expect(page.getByText("Revoked by the customer: Kite")).toBeVisible()
+  await page.reload()
+  await expect(page.getByRole("button", { name: /Revoke consent for/ })).toHaveCount(2)
   expect(errors).toEqual([])
 })

@@ -97,5 +97,5 @@ export function consentState(c: Consent, now: string): ConsentState {
 
 /** Revoking is free and immediate; the event is logged. */
 export function revoke(c: Consent, at: string): { consent: Consent; event: ConsentEvent } {
-  return { consent: { ...c, revokedAt: at }, event: { consentId: c.id, type: "revoked", at, detail: "Revoked by the customer. Data sharing stops now." } }
+  return { consent: { ...c, revokedAt: at }, event: { consentId: c.id, type: "revoked", at, detail: `Revoked by the customer: ${c.recipient}. Data sharing stops now.` } }
 }
