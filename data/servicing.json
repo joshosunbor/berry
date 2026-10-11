@@ -33,5 +33,16 @@
     "onTimePaymentsForReview": 6,
     "reviewLimitCents": 300000,
     "monthsForUnsecuredLine": 12
+  },
+  "stress": {
+    "_note": "Illustrative: the poor-harvest stress test on seasonal operating lines cuts peak-season revenue by this percentage, with costs unchanged.",
+    "poorHarvestRevenueDropPct": 30,
+    "optionsPct": [
+      10,
+      20,
+      30,
+      40,
+      50
+    ]
   }
 }

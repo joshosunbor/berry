@@ -60,11 +60,12 @@ const Input = z.object({
 const Action = z.object({
   itemId: z.string().nullable(),
   at: z.string(),
-  kind: z.enum(["assigned", "prepared", "approved", "escalated", "rejected", "blocked", "completed", "message_sent", "memo_approved", "policy_proposed", "policy_decided"]),
+  kind: z.enum(["assigned", "prepared", "approved", "escalated", "rejected", "blocked", "completed", "message_sent", "memo_approved", "policy_proposed", "policy_decided", "item_created"]),
   by: z.string(),
   ownerId: z.string().optional(),
   request: z.any().optional(),
   policy: z.any().optional(),
+  item: z.any().optional(),
   events: z.array(Input),
 })
 

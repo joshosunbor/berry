@@ -23,6 +23,11 @@ export const ServicingConfig = z.object({
     reviewLimitCents: z.number().int().positive(),
     monthsForUnsecuredLine: z.number().int().positive(),
   }),
+  /** Illustrative poor-harvest stress test for seasonal operating lines. */
+  stress: z.object({
+    poorHarvestRevenueDropPct: z.number().int().min(1).max(90),
+    optionsPct: z.array(z.number().int().min(1).max(90)).min(1),
+  }),
   borrowerBank: z.object({
     standardNsfFeeCents: z.number().int().nonnegative(),
     provincialCreditUnionNsfFeeCents: z.number().int().nonnegative(),

@@ -17,7 +17,7 @@ import { OPS_MOMENTS } from "@/lib/ops/moments"
 import { PLAYBOOKS } from "@/lib/ops/playbooks"
 import type { PolicyCase } from "@/lib/ops/policy"
 import type { OpsItem, SlaState } from "@/lib/ops/queues"
-import { assign, auditAt, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState } from "@/lib/ops/view"
+import { assign, auditAt, browserItems, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState } from "@/lib/ops/view"
 import type { AuditEvent, QueueName } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
 
@@ -73,9 +73,11 @@ export interface OpsConsoleProps {
   policyCases: PolicyCase[]
 }
 
-export function OpsConsole({ items, events, eventItems, policyCases }: OpsConsoleProps) {
+export function OpsConsole({ items: simulated, events, eventItems, policyCases }: OpsConsoleProps) {
   const now = useOpsMoment()
   const actions = useOpsActions()
+  // Items from the simulation plus any created in this browser (e.g. over-limit requests from a stress test).
+  const items = useMemo(() => [...simulated, ...browserItems(actions, "9999-12-31T00:00")], [simulated, actions])
   const actor = useActor(TEAM_IDS)
   const [tab, setTab] = useState<string>("verification")
   const [selected, setSelected] = useState<string | null>(null)

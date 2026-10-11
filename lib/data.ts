@@ -13,7 +13,9 @@ import type { MetricSources } from "@/lib/ops/metrics"
 import type { PolicyCase } from "@/lib/ops/policy"
 import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
 import type { AuditEvent } from "@/lib/schemas"
+import { SERVICING } from "@/lib/servicing/config"
 import { FUNDING_INITIATED_AT, buildBooks, loanIdFor } from "@/lib/servicing/portfolio"
+import { stressSeason, type StressResult } from "@/lib/servicing/stress"
 import type { BookResult } from "@/lib/servicing/simulate"
 import { breaksByLoan, summarize as summarizeLoan, toLoanView, type LoanSummary, type LoanView } from "@/lib/servicing/views"
 import { toEngineInput, type Applicant, type Decision, type EngineInput, type VerificationCheck } from "@/lib/schemas"
@@ -280,4 +282,18 @@ export function getMetricSources(): MetricSources {
     books,
     cast: cast.map((c) => ({ slug: c.applicant.slug, decisions: c.decisions, checks: c.verification.checks })),
   }
+}
+
+/** Poor-harvest stress results for a seasonal operating line, for each configured percentage (illustrative). */
+export function getStress(loanId: string): Record<number, StressResult> | null {
+  const loan = getLoanView(loanId)
+  if (!loan?.draws) return null
+  const a = getApplicant(loan.applicantSlug)!
+  const plan = a.pad[loan.mode]!
+  return Object.fromEntries(
+    SERVICING.stress.optionsPct.map((dropPct) => [
+      dropPct,
+      stressSeason({ decision: a.decisions[loan.mode], features: a.features, kind: a.applicant.kind, agreementSignedOn: AGREEMENT_SIGNED_ON, plan, dropPct }),
+    ]),
+  )
 }

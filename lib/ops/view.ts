@@ -3,7 +3,10 @@ import { approve, prepare, reject, requiredRoleFor, type ApprovalRequest } from 
 import { AuditLog, type AuditInput } from "./audit"
 import type { PolicyProposal } from "./policy"
 import { OPS, ROLE_ORDER, member } from "./config"
+import { formatCents } from "@/lib/money"
+import { MODE_META, type Mode } from "@/lib/modes"
 import { slaState, type OpsItem, type SlaState } from "./queues"
+import { addBusinessHours, nextBusinessMoment } from "./time"
 
 /*
  * What the operations console shows at a point in simulated time: each
@@ -26,6 +29,7 @@ export type UserActionKind =
   | "memo_approved"
   | "policy_proposed"
   | "policy_decided"
+  | "item_created"
 
 export interface UserAction {
   itemId: string | null
@@ -35,6 +39,8 @@ export interface UserAction {
   ownerId?: string
   /** The approval request after this action. */
   request?: ApprovalRequest
+  /** A queue item created in the browser (e.g. an over-limit request from a stress test). */
+  item?: OpsItem
   /** Policy actions: the proposal after this action. */
   policy?: PolicyProposal
   events: AuditInput[]
@@ -50,7 +56,7 @@ export interface ItemState {
   history: { at: string; who: string; text: string; mine: boolean }[]
 }
 
-const TAKES_OVER: UserActionKind[] = ["assigned", "prepared", "approved", "escalated", "rejected", "blocked", "completed"]
+const TAKES_OVER: UserActionKind[] = ["assigned", "prepared", "approved", "escalated", "rejected", "blocked", "completed", "item_created"]
 
 const firstTakeover = (item: OpsItem, actions: UserAction[], now: string) =>
   actions.find((a) => a.itemId === item.id && a.at <= now && TAKES_OVER.includes(a.kind))?.at ?? null
@@ -220,5 +226,64 @@ export function policyAction(by: string, at: string, kind: "policy_proposed" | "
     return { action: { itemId: null, at, kind, by, policy, events: log.all.map(toInput) }, error: null }
   } catch (e) {
     return { action: { itemId: null, at, kind: "blocked", by, events: log.all.map(toInput) }, error: e instanceof Error ? e.message : "Not allowed." }
+  }
+}
+
+/** Queue items created in the browser, as of `now`. */
+export function browserItems(actions: UserAction[], now: string): OpsItem[] {
+  return actions.flatMap((a) => (a.item && a.at <= now ? [a.item] : []))
+}
+
+/**
+ * An over-limit request from the poor-harvest stress test: a Credit
+ * referrals and sign-offs item, prepared by the person who raises it, so a
+ * different person with enough authority must approve it.
+ */
+export function overLimitRequest(input: {
+  loanId: string
+  applicantName: string
+  mode: Mode
+  limitCents: number
+  needCents: number
+  requestedLimitCents: number
+  dropPct: number
+  by: string
+  at: string
+}): ActionResult {
+  const id = `q_overlimit-${input.loanId.replace(/^loan_/, "")}-${input.dropPct}`
+  const item: OpsItem = {
+    id,
+    queue: "credit_referral",
+    title: `${input.applicantName}: over-limit request to ${formatCents(input.requestedLimitCents, { whole: true })}`,
+    detail: `Stress test (illustrative): with peak-season revenue ${input.dropPct}% lower, next season would need ${formatCents(input.needCents, { whole: true })} against a ${formatCents(input.limitCents, { whole: true })} limit at ${MODE_META[input.mode].institution}.`,
+    mode: input.mode,
+    subject: { kind: "loan", id: input.loanId },
+    href: `/ops/loans/${input.loanId}`,
+    createdAt: input.at,
+    slaDueAt: addBusinessHours(nextBusinessMoment(input.at), OPS.queues.credit_referral.slaBusinessHours),
+    priority: "high",
+    nextAction: "Review the stress test and the borrower's plans; approve a limit increase, or agree another option.",
+    approval: { kind: "limit_override", amountCents: input.requestedLimitCents, minimumRole: "lead" },
+    steps: [],
+    ownerId: input.by,
+    approverId: null,
+    completedAt: null,
+  }
+  const log = new AuditLog()
+  log.append({ at: input.at, actor: { kind: "user", id: input.by }, action: "queue_item.created", subject: item.subject, after: { queue: item.queue, title: item.title, slaDueAt: item.slaDueAt }, reason: item.detail })
+  try {
+    const request = prepare(log, {
+      id: `apv_${id.replace(/^q_/, "")}`,
+      kind: "limit_override",
+      subject: item.subject,
+      amountCents: input.requestedLimitCents,
+      summary: item.title,
+      preparedBy: input.by,
+      at: input.at,
+      minimumRole: "lead",
+    })
+    return { action: { itemId: id, at: input.at, kind: "item_created", by: input.by, ownerId: input.by, request, item, events: log.all.map(toInput) }, error: null }
+  } catch (e) {
+    return { action: { itemId: id, at: input.at, kind: "blocked", by: input.by, events: [] }, error: e instanceof Error ? e.message : "Not allowed." }
   }
 }
