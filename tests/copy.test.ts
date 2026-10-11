@@ -24,6 +24,8 @@ const USER_FACING = [
   "lib/engine/repayment.ts",
   "lib/engine/aft.ts",
   "lib/labels.ts",
+  "lib/memo/facts.ts",
+  "lib/memo/template.ts",
   "lib/feature-display.ts",
   "lib/rules",
   "lib/onboarding",

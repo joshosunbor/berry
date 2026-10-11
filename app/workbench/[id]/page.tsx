@@ -57,7 +57,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
           <div className="rounded-lg border border-rule bg-surface p-5">
             <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
           </div>
-          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans }} />
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans, slug: a.slug }} />
         </div>
 
         <div className="order-1 min-w-0 space-y-6 lg:order-2">
