@@ -158,6 +158,15 @@ describe("landing copy follows the hybrid-concept brief", () => {
     expect(CONTENT.FAQ.items.map((f) => f.q)).toContain("Is Berry a real product?")
   })
 
+  it("never presents simulated rails or sample files as live", () => {
+    expect(text).not.toMatch(/\btoday\b/i)
+    const funding = [CONTENT.TOOLS.cards.find((c) => c.name === "Fund")!.copy, CONTENT.LIFECYCLE.steps.find((s) => s.name === "Fund")!.body, CONTENT.CANADA.tiles.find((t) => t.t.startsWith("AFT"))!.d]
+    for (const s of funding) {
+      if (/e-Transfer|Real-Time Rail/.test(s)) expect(s, s).toMatch(/simulat/i)
+      if (/\bAFT\b|CPA 005/.test(s)) expect(s, s).toMatch(/\bsample\b/i)
+    }
+  })
+
   it("speaks in product voice: no implied customers", () => {
     for (const phrase of [/\byour (team|lenders|policy|account|compliance)\b/i, /\bwe['’]re onboarding\b/i, /\blenders ask us\b/i]) expect(text).not.toMatch(phrase)
   })

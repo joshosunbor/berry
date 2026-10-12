@@ -52,7 +52,7 @@ export const TOOLS = {
   lead: "Use them together, or start with the one that fixes the biggest bottleneck.",
   cards: [
     { name: "Decide", icon: "Scale", tint: "green", href: "#tour", copy: "Cash-flow underwriting on the lender's policy, with reasons a borrower can read and an approver can sign.", link: "See a decision →" },
-    { name: "Fund", icon: "Banknote", tint: "cyan", href: "#loan", copy: "Pay out by AFT file or Interac e-Transfer, after a name-and-account check.", link: "How funding works →" },
+    { name: "Fund", icon: "Banknote", tint: "cyan", href: "#loan", copy: "Pay out with a sample AFT file or simulated Interac e-Transfer, after a name-and-account check.", link: "How funding works →" },
     { name: "Collect", icon: "CalendarCheck", tint: "green", href: "#loan", copy: "Pre-authorized debits timed to when money lands, with safe retries when a payment fails.", link: "See a loan ledger →" },
     { name: "Operate", icon: "ListChecks", tint: "cyan", href: "#ops", copy: "Work queues with deadlines, second-person sign-off and an audit trail nobody can edit.", link: "See the console →" },
   ],
@@ -66,7 +66,7 @@ export const LIFECYCLE = {
     { name: "Consent", rail: "Open banking", title: "The applicant decides what Berry can see.", body: "Before any data is read, the screen spells out what is shared, why, for how long and who receives it. Consent can be revoked later in one click.", href: "/apply" },
     { name: "Verify", rail: "KYC / KYB", title: "Identity and business checks, with reasons.", body: "ID, name and date of birth, sanctions screening and business registration. Clear cases pass on their own. The rest go to a reviewer with a note on why.", href: "/workbench/hollis-family-farm" },
     { name: "Decide", rail: "Three rulebooks", title: "Three lenders read the same cash flow.", body: "Each lender applies its own rules and explains the result in words a borrower can follow, along with what would change the answer.", href: "/compare/hollis-family-farm" },
-    { name: "Fund", rail: "AFT or instant", title: "Money out on the right rail.", body: "Pay out by AFT batch file or Interac e-Transfer, with Real-Time Rail support as it rolls out from Q4 2026. Instant payouts run a name-and-account check first.", href: "/workbench/hollis-family-farm" },
+    { name: "Fund", rail: "AFT or instant", title: "Money out on the right rail.", body: "Pay out with a sample AFT batch file or simulated Interac e-Transfer, plus a simulation of the Real-Time Rail, which launches in phases from Q4 2026. Instant payouts run a name-and-account check first.", href: "/workbench/hollis-family-farm" },
     { name: "Collect", rail: "PAD", title: "Payments that land after the money does.", body: "Pre-authorized debits scheduled around payday, or around harvest, with the Rule H1 agreement items checked off.", href: "/ops/loans" },
     { name: "Recover", rail: "Returns", title: "A missed payment is a conversation.", body: "One retry timed to the next deposit, a plain note to the borrower, then an outreach task. Hardship options go to a lender for approval.", href: "/ops" },
     { name: "Reconcile", rail: "Ledger", title: "Every cent accounted for.", body: "Each collection and return is matched to a double-entry loan ledger. Anything that doesn’t match lands in the reconciliation queue.", href: "/ops/dashboard" },
@@ -131,7 +131,7 @@ export const CANADA = {
   tiles: [
     { t: "Consent-first data sharing", d: "Built around the draft consumer-driven banking framework’s consent principles.", href: "/methodology#status-cdb-act" },
     { t: "PAD repayment", d: "Debit schedules and agreements modelled on Payments Canada Rule H1.", href: "/methodology#status-rule-h1" },
-    { t: "AFT and instant funding", d: "CPA 005 batch files and Interac e-Transfer today. Real-Time Rail as Payments Canada rolls it out.", href: "/methodology#money" },
+    { t: "AFT and instant funding", d: "Sample CPA 005 batch files, with simulated Interac e-Transfer and Real-Time Rail payouts.", href: "/methodology#money" },
     { t: "FINTRAC checks", d: "Cash of $10,000 or more within 24 hours goes to review. It never touches the credit decision.", href: "/methodology#status-fintrac-lctr" },
     { t: "March 2026 NSF rules", d: "Retries are timed so a borrower is never charged a second NSF fee inside two business days.", href: "/methodology#status-nsf-fees" },
     { t: "Newcomer credit path", d: "A starter limit and clear milestones that fill the gap foreign credit reports don’t cover.", href: "/methodology#foreign-reports" },
