@@ -37,6 +37,14 @@ describe("regulatory status panel", () => {
     for (const r of rows.filter((x) => x.status === "Illustrative")) expect(r.note, r.id).toBeTruthy()
   })
 
+  it("states only what its source says about Real-Time Rail dates after launch", () => {
+    const r = byId("rtr-milestones")
+    // Payments Canada publishes no dates past the Q4 2026 launch; the press source gives only "some time in 2027".
+    expect(r.summary).not.toMatch(/Q3 2027|full capacity|e-Transfer migration in 2027/i)
+    expect(r.source.url).not.toContain("payments.ca")
+    expect(r.source.name).toMatch(/press/i)
+  })
+
   it("cites the confirmed Consumer-Driven Banking Act facts", () => {
     expect(byId("cdb-act").effective).toMatch(/March 26, 2026/)
     expect(byId("cdb-consent-duration").summary).toMatch(/12 months/)

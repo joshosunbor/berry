@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-11",
+  "asOf": "2026-10-12",
   "rows": [
     {
       "id": "nsf-fees",
@@ -171,17 +171,17 @@
     },
     {
       "id": "rtr-milestones",
-      "name": "Real-Time Rail: 2027 milestones",
+      "name": "Real-Time Rail: after the launch",
       "status": "Illustrative",
-      "summary": "Reported targets for Interac e-Transfer migration in 2027 and full capacity in Q3 2027.",
+      "summary": "Press reports expect every participant to have access to the Real-Time Rail some time in 2027. Payments Canada has not published dates for the phases after the Q4 2026 launch.",
       "source": {
-        "name": "Payments Canada, Q3 2026 quarterly update",
-        "url": "https://www.payments.ca/canadas-real-time-rail-quarterly-update-jude-pinto-2026-q3"
+        "name": "Finder Canada (press report), updated August 10, 2026",
+        "url": "https://www.finder.com/ca/banking/real-time-rail-payments"
       },
-      "asOf": "2026-10-10",
+      "asOf": "2026-10-12",
       "berryUse": "Context only",
-      "inBerry": "Mentioned as reported targets only.",
-      "note": "Payments Canada's own update gives no dates for these phases; the 2027 targets come from press reports."
+      "inBerry": "Mentioned as a press report only; no Berry feature depends on it.",
+      "note": "Press-reported, not from Payments Canada. Earlier versions of this row cited a 2027 Interac e-Transfer migration and Q3 2027 full capacity; no source we could read confirms either, so they were removed."
     },
     {
       "id": "equifax-gccf",
