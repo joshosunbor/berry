@@ -5,6 +5,12 @@ import { edgeCases } from "@/lib/evaluation/edge-cases"
 import type { AccuracyReport } from "@/lib/evaluation/accuracy"
 import { MODES, MODE_META } from "@/lib/modes"
 import { cn } from "@/lib/utils"
+import { Card } from "@/components/ui/card"
+import { PageContainer, PageHeader } from "@/components/ui/page-header"
+import { LenderDot } from "@/components/ui/pill"
+import { Table, Td, Th, THead } from "@/components/ui/table"
+
+const h2 = "text-[clamp(24px,2.6vw,30px)] font-bold leading-[1.15] tracking-[-0.02em]"
 
 export const metadata: Metadata = {
   title: "Accuracy · Berry",
@@ -17,177 +23,187 @@ const label = (o: string) => o.replaceAll("_", " ")
 
 export default function AccuracyPage() {
   return (
-    <main className="mx-auto max-w-[1200px] px-4 py-12 sm:px-8 sm:py-16">
-      <p className="text-sm font-medium text-muted-ink">Published test results</p>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Accuracy</h1>
-      <p className="mt-4 max-w-2xl text-lg text-muted-ink">
-        <span className="num font-semibold text-ink">
+    <PageContainer>
+      <PageHeader
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Accuracy" }]}
+        eyebrow="Published test results"
+        title="Accuracy"
+        lead={
+          <>
+        <span className="num font-semibold text-fg">
           {r.totals.matched} of {r.totals.decisions}
         </span>{" "}
         planted decisions match the expected outcome ({pct(r.totals.rate)}), across {r.totals.cases} cases and three lenders.
-      </p>
+          </>
+        }
+      />
 
-      <section aria-labelledby="what" className="mt-8 max-w-3xl rounded-lg border border-rule bg-surface p-6">
-        <h2 id="what" className="font-semibold">What the score means</h2>
-        <p className="mt-2 leading-7">
+      <Card as="section" pad="lg" aria-labelledby="what" className="max-w-3xl">
+        <h2 id="what" className="text-lg font-semibold text-fg">What the score means</h2>
+        <p className="mt-2 leading-7 text-fg">
           The engine reproduces the outcomes its rules were designed for. It does not mean the rules are the right ones, or that these loans would be repaid.
         </p>
-        <p className="mt-3 text-sm leading-6 text-muted-ink">
+        <p className="mt-3 text-sm leading-6 text-fg-2">
           Each planted case is a synthetic applicant built to test one policy: clean approvals, clear declines, and edge cases just either side of
           each lender&apos;s thresholds. The expected outcome for every case was written from the case design and each lender&apos;s stated policy{" "}
           <em>before</em> the engine was run on it, and the engine never reads those expectations. A match shows the engine applies its stated
           policies correctly. It does not show the policies are good lending: the expectations and the engine were written by the same author, and
           real credit performance can only be measured on real outcomes.
         </p>
-      </section>
+      </Card>
 
-      <section aria-labelledby="debatable" className="mt-12">
-        <h2 id="debatable" className="text-xl font-semibold">Two cases where the answer is debatable</h2>
-        <p className="mt-2 max-w-3xl text-muted-ink">
+      <section aria-labelledby="debatable" className="mt-16">
+        <h2 id="debatable" className={h2}>Two cases where the answer is debatable</h2>
+        <p className="mt-3 max-w-3xl text-fg-2">
           Both match their expected outcome, so they count as correct above. A reasonable lender could still decide differently. The engine&apos;s answers are
           unchanged; here is the case for each side.
         </p>
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           {edgeCases().map((c) => (
-            <article key={c.id} aria-labelledby={`edge-${c.id}`} className="min-w-0 rounded-lg border border-rule bg-surface p-5">
-              <h3 id={`edge-${c.id}`} className="font-semibold">
+            <Card as="article" key={c.id} aria-labelledby={`edge-${c.id}`} className="min-w-0">
+              <h3 id={`edge-${c.id}`} className="font-semibold text-fg">
                 {c.description}
               </h3>
-              <p className="mt-1 text-xs text-muted-ink">
+              <p className="mt-1 font-mono text-xs text-fg-3">
                 Planted case {c.id.toUpperCase()} · {MODE_META[c.lender].institution}
               </p>
               <dl className="mt-4 space-y-3 text-sm leading-6">
                 <div>
-                  <dt className="font-medium">The engine&apos;s answer</dt>
-                  <dd className="text-muted-ink">
+                  <dt className="font-medium text-fg">The engine&apos;s answer</dt>
+                  <dd className="text-fg-2">
                     {c.engineAnswer} {c.otherLenders}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-medium">The strongest argument for a different answer</dt>
-                  <dd className="text-muted-ink">{c.argumentAgainst}</dd>
+                  <dt className="font-medium text-fg">The strongest argument for a different answer</dt>
+                  <dd className="text-fg-2">{c.argumentAgainst}</dd>
                 </div>
                 <div>
-                  <dt className="font-medium">What a lender would need to see to change it</dt>
-                  <dd className="text-muted-ink">{c.wouldChange}</dd>
+                  <dt className="font-medium text-fg">What a lender would need to see to change it</dt>
+                  <dd className="text-fg-2">{c.wouldChange}</dd>
                 </div>
               </dl>
-            </article>
+            </Card>
           ))}
         </div>
       </section>
 
-      <section aria-labelledby="by-mode" className="mt-12">
-        <h2 id="by-mode" className="text-xl font-semibold">By lender</h2>
+      <section aria-labelledby="by-mode" className="mt-16">
+        <h2 id="by-mode" className={h2}>By lender</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
           {MODES.map((m) => {
             const s = r.byMode[m]
             const meta = MODE_META[m]
             return (
-              <div key={m} className={cn("rounded-lg border-t-4 bg-surface p-5 shadow-soft", meta.classes.border)}>
-                <p className={cn("text-sm font-medium", meta.classes.fg)}>{meta.institution}</p>
-                <p className="num mt-2 text-3xl font-semibold">{pct(s.rate)}</p>
-                <p className="num text-sm text-muted-ink">
+              <Card key={m} className={cn("border-t-4", meta.classes.border)}>
+                <p className="flex items-center gap-2 text-sm font-semibold text-fg">
+                  <LenderDot mode={m} />
+                  {meta.institution}
+                </p>
+                <p className="num mt-2 text-4xl font-semibold tracking-[-0.025em] text-fg">{pct(s.rate)}</p>
+                <p className="num text-sm text-fg-3">
                   {s.matched} of {s.total} cases
                 </p>
-              </div>
+              </Card>
             )
           })}
         </div>
-        <p className="num mt-4 text-sm text-muted-ink">
+        <p className="num mt-4 text-sm text-fg-3">
           FINTRAC large cash checks: {r.flagChecks.matched} of {r.flagChecks.total} planted cash cases flagged as expected.
         </p>
       </section>
 
-      <section aria-labelledby="misses" className="mt-12">
-        <h2 id="misses" className="text-xl font-semibold">Misses</h2>
+      <section aria-labelledby="misses" className="mt-16">
+        <h2 id="misses" className={h2}>Misses</h2>
         {r.misses.length === 0 ? (
-          <p className="mt-2 text-muted-ink">No open misses. Every planted decision currently matches its expected outcome.</p>
+          <p className="mt-3 text-fg-2">No open misses. Every planted decision currently matches its expected outcome.</p>
         ) : (
           <ul className="mt-4 space-y-3">
             {r.misses.map((m) => (
-              <li key={`${m.id}-${m.mode}`} className="rounded-lg border border-rule bg-surface p-4">
-                <p className="font-medium">
+              <Card as="li" pad="sm" key={`${m.id}-${m.mode}`}>
+                <p className="font-medium text-fg">
                   {m.id.toUpperCase()} · {m.mode === "flags" ? "FINTRAC flags" : MODE_META[m.mode].institution}: expected {label(m.expected)}, got{" "}
                   {label(m.actual)}
                 </p>
-                <p className="mt-1 text-sm text-muted-ink">{m.note ?? "Not yet explained."}</p>
-              </li>
+                <p className="mt-1 text-sm text-fg-2">{m.note ?? "Not yet explained."}</p>
+              </Card>
             ))}
           </ul>
         )}
 
         {r.resolved.length > 0 && (
           <>
-            <h3 className="mt-8 font-semibold">Found and fixed during development</h3>
+            <h3 className="mt-8 text-lg font-semibold text-fg">Found and fixed during development</h3>
             <ul className="mt-3 space-y-3">
               {r.resolved.map((m) => (
-                <li key={`${m.case}-${m.mode}`} className="rounded-lg border border-rule bg-surface p-4 text-sm">
-                  <p className="font-medium text-ink">
+                <Card as="li" pad="sm" key={`${m.case}-${m.mode}`} className="text-sm">
+                  <p className="font-medium text-fg">
                     {m.case.toUpperCase()} · {MODE_META[m.mode as keyof typeof MODE_META]?.institution ?? m.mode}: expected {label(m.expected)}, engine
                     gave {label(m.engineGave)} ({m.found})
                   </p>
-                  <p className="mt-2 text-muted-ink">
-                    <span className="font-medium text-ink">Cause.</span> {m.cause}
+                  <p className="mt-2 text-fg-2">
+                    <span className="font-medium text-fg">Cause.</span> {m.cause}
                   </p>
-                  <p className="mt-1 text-muted-ink">
-                    <span className="font-medium text-ink">Fix.</span> {m.fix}
+                  <p className="mt-1 text-fg-2">
+                    <span className="font-medium text-fg">Fix.</span> {m.fix}
                   </p>
-                </li>
+                </Card>
               ))}
             </ul>
           </>
         )}
       </section>
 
-      <section aria-labelledby="cases" className="mt-12">
-        <h2 id="cases" className="text-xl font-semibold">Every case</h2>
-        <div className="mt-4 overflow-x-auto rounded-lg border border-rule bg-surface" tabIndex={0} role="region" aria-label="Every case (scrolls sideways)">
-          <table className="w-full min-w-[720px] text-left text-sm">
-            <caption className="sr-only">Expected and actual outcome for every planted case and lender</caption>
-            <thead className="border-b border-rule text-muted-ink">
+      <section aria-labelledby="cases" className="mt-16">
+        <h2 id="cases" className={h2}>Every case</h2>
+        <Card pad="none" className="mt-5 overflow-hidden">
+        <Table minWidth={720} label="Every case (scrolls sideways)" caption="Expected and actual outcome for every planted case and lender">
+            <THead>
               <tr>
-                <th scope="col" className="px-4 py-3 font-medium">Case</th>
+                <Th scope="col" className="px-4">Case</Th>
                 {MODES.map((m) => (
-                  <th key={m} scope="col" className="px-4 py-3 font-medium">
-                    {MODE_META[m].institution}
-                  </th>
+                  <Th key={m} scope="col" className="px-4">
+                    <span className="inline-flex items-center gap-2 font-semibold text-fg">
+                      <LenderDot mode={m} />
+                      {MODE_META[m].institution}
+                    </span>
+                  </Th>
                 ))}
               </tr>
-            </thead>
-            <tbody className="divide-y divide-rule">
+            </THead>
+            <tbody>
               {r.cases.map((c) => (
-                <tr key={c.id} className="align-top">
-                  <th scope="row" className="px-4 py-3 font-normal">
-                    <span className="font-medium text-ink">{c.id.toUpperCase()}</span>
-                    <span className="mt-0.5 block max-w-xs text-muted-ink">{c.story}</span>
-                  </th>
+                <tr key={c.id}>
+                  <Th scope="row" className="border-line-soft px-4 font-normal">
+                    <span className="font-mono text-[13px] font-medium text-fg">{c.id.toUpperCase()}</span>
+                    <span className="mt-0.5 block max-w-xs text-fg-3">{c.story}</span>
+                  </Th>
                   {MODES.map((m) => {
                     const res = c.modes[m]
                     return (
-                      <td key={m} className="px-4 py-3">
+                      <Td key={m} className="px-4 text-fg">
                         <span className="inline-flex items-center gap-1.5">
                           {res.match ? (
-                            <Check aria-label="Match" className="size-4 text-approve" />
+                            <Check aria-label="Match" className="size-4 text-green-ink" />
                           ) : (
-                            <X aria-label="Miss" className="size-4 text-decline" />
+                            <X aria-label="Miss" className="size-4 text-bad" />
                           )}
                           <span className="capitalize">{label(res.actual.outcome)}</span>
                         </span>
-                        {!res.match && <span className="block text-xs text-muted-ink">expected {label(res.expected.outcome)}</span>}
-                      </td>
+                        {!res.match && <span className="block text-xs text-fg-3">expected {label(res.expected.outcome)}</span>}
+                      </Td>
                     )
                   })}
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
-        <p className="mt-4 text-xs text-muted-ink">
+        </Table>
+        </Card>
+        <p className="mt-4 text-xs text-fg-3">
           Engine {r.engineVersion} · policy versions {MODES.map((m) => `${MODE_META[m].institution} v${r.policyVersions[m]}`).join(", ")} · synthetic
           data as of {r.dataAsOf}
         </p>
       </section>
-    </main>
+    </PageContainer>
   )
 }

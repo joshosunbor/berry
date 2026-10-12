@@ -14,38 +14,42 @@ import { REGULATORY_STATUS, type RegulatoryRow } from "@/lib/regulatory/status"
 import { thresholdLabel } from "@/lib/threshold-labels"
 import { RETURN_CODES_SOURCE } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
+import { Card } from "@/components/ui/card"
+import { PageContainer, PageHeader } from "@/components/ui/page-header"
+import { LenderDot, Pill } from "@/components/ui/pill"
+import { h3Class } from "@/components/ui/section-header"
 
 export const metadata: Metadata = {
   title: "Methodology · Berry",
   description: "How Berry reads cash flow, how each lender decides, what it ignores, the Canadian rules it uses and their status, and its limits.",
 }
 
-const STATUS_STYLE: Record<RegulatoryRow["status"], { icon: typeof CircleCheck; className: string }> = {
-  Live: { icon: CircleCheck, className: "bg-approve-soft text-approve" },
-  "In draft": { icon: FileClock, className: "bg-conditions-soft text-conditions" },
-  Launching: { icon: Rocket, className: "bg-bank-soft text-bank-fg" },
-  Illustrative: { icon: CircleDashed, className: "bg-muted text-muted-ink" },
+const STATUS_STYLE: Record<RegulatoryRow["status"], { icon: typeof CircleCheck; tone: "ok" | "warn" | "info" | "neutral" }> = {
+  Live: { icon: CircleCheck, tone: "ok" },
+  "In draft": { icon: FileClock, tone: "warn" },
+  Launching: { icon: Rocket, tone: "info" },
+  Illustrative: { icon: CircleDashed, tone: "neutral" },
 }
 
 const longDate = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
 
 function StatusBadge({ status }: { status: RegulatoryRow["status"] }) {
-  const { icon: Icon, className } = STATUS_STYLE[status]
+  const { icon: Icon, tone } = STATUS_STYLE[status]
   return (
-    <span className={cn("inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-xs font-medium", className)}>
+    <Pill tone={tone} className="gap-1">
       <Icon aria-hidden className="size-3.5" />
       {status}
-    </span>
+    </Pill>
   )
 }
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} aria-labelledby={`${id}-h`} className="scroll-mt-20 border-t border-rule pt-10">
-      <h2 id={`${id}-h`} className="text-2xl font-semibold tracking-tight">
+    <section id={id} aria-labelledby={`${id}-h`} className="scroll-mt-20 border-t border-line pt-10">
+      <h2 id={`${id}-h`} className="text-[clamp(26px,3vw,34px)] font-bold leading-[1.1] tracking-[-0.025em]">
         {title}
       </h2>
-      <div className="mt-4 space-y-4 leading-7">{children}</div>
+      <div className="mt-5 space-y-4 leading-7 text-fg-2">{children}</div>
     </section>
   )
 }
@@ -67,13 +71,13 @@ export default function MethodologyPage() {
   const foreign = getForeignReportDemo()
 
   return (
-    <main className="mx-auto max-w-[960px] px-4 py-12 sm:px-8">
-      <p className="text-sm font-medium text-muted-ink">Methodology</p>
-      <h1 className="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">How Berry decides</h1>
-      <p className="mt-3 max-w-2xl text-lg leading-8 text-muted-ink">
-        Every decision is made by deterministic rules that are unit tested. The same file always gets the same answer, and every answer is explained in
-        plain language. AI never sets a limit, a price or an approval.
-      </p>
+    <PageContainer className="max-w-[1000px]">
+      <PageHeader
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Methodology" }]}
+        eyebrow="Methodology"
+        title="How Berry decides"
+        lead="Every decision is made by deterministic rules that are unit tested. The same file always gets the same answer, and every answer is explained in plain language. AI never sets a limit, a price or an approval."
+      >
       <nav aria-label="On this page" className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
         {[
           ["reading", "Reading cash flow"],
@@ -85,13 +89,14 @@ export default function MethodologyPage() {
           ["regulatory-status", "Regulatory status"],
           ["limits", "Limitations"],
         ].map(([id, label]) => (
-          <a key={id} href={`#${id}`} className="text-muted-ink underline underline-offset-2 hover:text-ink">
+          <a key={id} href={`#${id}`} className="text-fg-2 underline underline-offset-2 hover:text-fg">
             {label}
           </a>
         ))}
       </nav>
+      </PageHeader>
 
-      <div className="mt-10 space-y-12">
+      <div className="mt-2 space-y-12">
         <Section id="reading" title="Reading cash flow">
           <p>
             Berry reads twelve months of synthetic transactions in an FDX-inspired format. Transfers between the applicant&apos;s own accounts are set aside,
@@ -122,24 +127,27 @@ export default function MethodologyPage() {
               const config = CONFIGS[m]
               const meta = MODE_META[m]
               return (
-                <article key={m} className={cn("rounded-lg border-t-4 bg-surface p-5 shadow-soft", meta.classes.border)}>
-                  <h3 className={cn("font-semibold", meta.classes.fg)}>{meta.institution}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-ink">{STYLES[m]}</p>
-                  <dl className="mt-4 divide-y divide-rule text-sm">
+                <Card as="article" key={m} className={cn("border-t-4", meta.classes.border)}>
+                  <h3 className="flex items-center gap-2 font-semibold text-fg">
+                    <LenderDot mode={m} />
+                    {meta.institution}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-fg-2">{STYLES[m]}</p>
+                  <dl className="mt-4 divide-y divide-line border-t border-line text-sm">
                     {Object.entries(config.thresholds).map(([k, v]) => {
                       const t = thresholdLabel(k, v)
                       return (
                         <div key={k} className="flex justify-between gap-3 py-1.5">
-                          <dt className="text-muted-ink">{t.label}</dt>
-                          <dd className="num shrink-0 font-medium">{t.value}</dd>
+                          <dt className="text-fg-3">{t.label}</dt>
+                          <dd className="num shrink-0 font-semibold text-fg">{t.value}</dd>
                         </div>
                       )
                     })}
                   </dl>
                   {config.authorityTiers && (
                     <>
-                      <h4 className="mt-4 text-sm font-semibold">Who signs off</h4>
-                      <ul className="mt-1 space-y-0.5 text-sm text-muted-ink">
+                      <h4 className="mt-4 text-sm font-semibold text-fg">Who signs off</h4>
+                      <ul className="mt-1 space-y-0.5 text-sm text-fg-2">
                         {config.authorityTiers.map((t) => (
                           <li key={t.id}>
                             {t.title}: {t.maxExposureCents === null ? "above that" : `up to ${formatCents(t.maxExposureCents, { whole: true })}`}
@@ -148,8 +156,8 @@ export default function MethodologyPage() {
                       </ul>
                     </>
                   )}
-                  <p className="mt-4 text-xs text-muted-ink">Policy version {config.version}, effective {config.effectiveFrom}</p>
-                </article>
+                  <p className="mt-4 text-xs text-fg-3">Policy version {config.version}, effective {config.effectiveFrom}</p>
+                </Card>
               )
             })}
           </div>
@@ -184,7 +192,7 @@ export default function MethodologyPage() {
           <p>
             Every approved loan is serviced in a simulation that runs from funding to the end of December 2027. Money is kept in a double-entry ledger in whole cents: every
             entry&apos;s debits equal its credits, entries are never edited, and corrections are reversing entries. Funding goes by AFT (next business
-            day), Interac e-Transfer, or the Real-Time Rail, which is <span className="font-medium">simulated — RTR launching</span>; instant rails need a
+            day), Interac e-Transfer, or the Real-Time Rail, which is <span className="font-medium text-fg">simulated — RTR launching</span>; instant rails need a
             simulated account check first.
           </p>
           <p>
@@ -214,7 +222,7 @@ export default function MethodologyPage() {
             example, India was first in Equifax Canada&apos;s program). This planted applicant has a thin Canadian file but history from a covered
             country. Switch the report off to see how much each lender&apos;s answer depends on it.
           </p>
-          <p className="text-sm text-muted-ink">
+          <p className="text-sm text-fg-3">
             {foreign.story} Asking for a credit card of {formatCents(foreign.request.amountCents, { whole: true })}, with {foreign.creditHistoryMonths} months of
             Canadian credit history.
           </p>
@@ -229,31 +237,31 @@ export default function MethodologyPage() {
 
         <Section id="regulatory-status" title="Regulatory status">
           <p>
-            Status as of <span className="font-medium">{longDate(status.asOf)}</span>. Each row links to its official source and shows when it was last
-            checked. <span className="font-medium">Live</span> means in force; <span className="font-medium">In draft</span> means proposed or passed but
-            not in force; <span className="font-medium">Launching</span> means announced and rolling out; <span className="font-medium">Illustrative</span>{" "}
+            Status as of <span className="font-semibold text-fg">{longDate(status.asOf)}</span>. Each row links to its official source and shows when it was last
+            checked. <span className="font-semibold text-fg">Live</span> means in force; <span className="font-semibold text-fg">In draft</span> means proposed or passed but
+            not in force; <span className="font-semibold text-fg">Launching</span> means announced and rolling out; <span className="font-semibold text-fg">Illustrative</span>{" "}
             means Berry could not confirm it from an official source.
           </p>
           <ul className="space-y-3">
             {status.rows.map((r) => (
-              <li key={r.id} id={`status-${r.id}`} className="scroll-mt-20 rounded-lg border border-rule bg-surface p-4">
+              <Card as="li" key={r.id} id={`status-${r.id}`} className="scroll-mt-20">
                 <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h3 className="font-semibold">{r.name}</h3>
+                  <h3 className={cn(h3Class, "text-lg text-fg")}>{r.name}</h3>
                   <StatusBadge status={r.status} />
                 </div>
                 <p className="mt-1.5 text-sm leading-6">{r.summary}</p>
-                {r.effective && <p className="mt-1 text-sm text-muted-ink">{r.effective}</p>}
+                {r.effective && <p className="mt-1 text-sm text-fg-3">{r.effective}</p>}
                 <p className="mt-2 text-sm leading-6">
-                  <span className="font-medium">In Berry ({r.berryUse.toLowerCase()}):</span> <span className="text-muted-ink">{r.inBerry}</span>
+                  <span className="font-semibold text-fg">In Berry ({r.berryUse.toLowerCase()}):</span> <span className="text-fg-2">{r.inBerry}</span>
                 </p>
-                {r.note && <p className="mt-1 text-sm text-muted-ink">Note: {r.note}</p>}
-                <p className="mt-2 flex flex-wrap gap-x-3 text-xs text-muted-ink">
-                  <a href={r.source.url} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-ink">
+                {r.note && <p className="mt-1 text-sm text-fg-3">Note: {r.note}</p>}
+                <p className="mt-2 flex flex-wrap gap-x-3 text-xs text-fg-3">
+                  <a href={r.source.url} target="_blank" rel="noreferrer" className="text-fg-2 underline underline-offset-2 hover:text-fg">
                     Source: {r.source.name}
                   </a>
                   <span>Checked {longDate(r.asOf)}</span>
                 </p>
-              </li>
+              </Card>
             ))}
           </ul>
         </Section>
@@ -271,6 +279,6 @@ export default function MethodologyPage() {
           </ul>
         </Section>
       </div>
-    </main>
+    </PageContainer>
   )
 }
