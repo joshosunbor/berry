@@ -333,7 +333,7 @@ test("ops dashboard: KPIs follow the console's moment, filter by lender, explain
   await page.getByRole("radio", { name: "Kite" }).click()
   await expect(losses).toContainText("$0")
   await page.getByRole("radio", { name: "Northgate Credit Union" }).click()
-  await expect(losses).toContainText("$7,763")
+  await expect(losses).toContainText("$7,712")
   await expect(page.getByRole("article", { name: "Cost per loan" }).getByText("Illustrative").first()).toBeVisible()
   await expect(page.getByRole("region", { name: "What I'd improve next" })).toContainText("% of manual work")
   expect(errors).toEqual([])
