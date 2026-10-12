@@ -111,7 +111,7 @@
     },
     {
       "id": "lender",
-      "title": "Lender",
+      "title": "Lending officer",
       "order": 1,
       "maxExposureCents": 5000000
     },

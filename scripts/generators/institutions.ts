@@ -66,7 +66,7 @@ export const NORTHGATE: InstitutionConfig = {
   },
   authorityTiers: [
     { id: "msr", title: "Member Service Representative", order: 0, maxExposureCents: dollars(10_000) },
-    { id: "lender", title: "Lender", order: 1, maxExposureCents: dollars(50_000) },
+    { id: "lender", title: "Lending officer", order: 1, maxExposureCents: dollars(50_000) },
     { id: "branch_manager", title: "Branch Manager", order: 2, maxExposureCents: dollars(250_000) },
     { id: "credit_committee", title: "Credit Committee", order: 3, maxExposureCents: null },
   ],

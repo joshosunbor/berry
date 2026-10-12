@@ -110,6 +110,7 @@
   --color-northgate: var(--ds-northgate);
   --color-kite: var(--ds-kite);
   --color-aspen: var(--ds-aspen);
+  --color-aspen-tint: var(--ds-aspen-tint);
   --color-chart-in: var(--ds-chart-in);
   --color-chart-out: var(--ds-chart-out);
   --color-selection: var(--ds-selection);
@@ -334,6 +335,7 @@
   --ds-northgate: #2e9e50;
   --ds-kite: #0891c2;
   --ds-aspen: #3a5a80;
+  --ds-aspen-tint: #e9eef6;
   /* Chart colours meet 3:1 against white and the page. */
   --ds-chart-in: #2e9e50;
   --ds-chart-out: #728599;
@@ -370,6 +372,7 @@
     --ds-northgate: #3bb75e;
     --ds-kite: #3bc4f0;
     --ds-aspen: #9db4de;
+    --ds-aspen-tint: #1a3352;
     --ds-chart-in: #3bb75e;
     --ds-chart-out: #8fa3b8;
     --ds-selection: #1c3a5a;
@@ -403,6 +406,7 @@
   --ds-northgate: #3bb75e;
   --ds-kite: #3bc4f0;
   --ds-aspen: #9db4de;
+  --ds-aspen-tint: #1a3352;
   --ds-chart-in: #3bb75e;
   --ds-chart-out: #8fa3b8;
   --ds-selection: #1c3a5a;

@@ -15,8 +15,8 @@ export interface ModeMeta {
   sector: string
   /** One-line description of how this mode decides. */
   style: string
-  /** Tailwind classes built from the mode's colour tokens. */
-  classes: { fg: string; solid: string; soft: string; on: string; border: string }
+  /** Tailwind classes from the lender tokens: Northgate green, Kite cyan, Aspen slate. */
+  classes: { fg: string; solid: string; soft: string; border: string }
 }
 
 export const MODE_META: Record<Mode, ModeMeta> = {
@@ -26,7 +26,7 @@ export const MODE_META: Record<Mode, ModeMeta> = {
     institution: "Northgate Credit Union",
     sector: "Credit union",
     style: "Relationship-based, with delegated authority",
-    classes: { fg: "text-cu-fg", solid: "bg-cu", soft: "bg-cu-soft", on: "text-cu-on", border: "border-cu" },
+    classes: { fg: "text-green-ink", solid: "bg-northgate", soft: "bg-green-tint", border: "border-northgate" },
   },
   fintech: {
     mode: "fintech",
@@ -34,7 +34,7 @@ export const MODE_META: Record<Mode, ModeMeta> = {
     institution: "Kite",
     sector: "Fintech",
     style: "Instant, automated, cash-flow only",
-    classes: { fg: "text-fintech-fg", solid: "bg-fintech", soft: "bg-fintech-soft", on: "text-fintech-on", border: "border-fintech" },
+    classes: { fg: "text-cyan-ink", solid: "bg-kite", soft: "bg-cyan-tint", border: "border-kite" },
   },
   bank: {
     mode: "bank",
@@ -42,6 +42,6 @@ export const MODE_META: Record<Mode, ModeMeta> = {
     institution: "Aspen Bank",
     sector: "Bank",
     style: "Policy-driven, fixed thresholds",
-    classes: { fg: "text-bank-fg", solid: "bg-bank", soft: "bg-bank-soft", on: "text-bank-on", border: "border-bank" },
+    classes: { fg: "text-aspen", solid: "bg-aspen", soft: "bg-aspen-tint", border: "border-aspen" },
   },
 }

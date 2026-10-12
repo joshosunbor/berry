@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react"
 import { Clock } from "lucide-react"
 import { CLOCK_OPTIONS, CLOCK_START } from "@/lib/servicing/views"
+import { SegmentedControl } from "@/components/ui/segmented-control"
 import { cn } from "@/lib/utils"
 
 /*
@@ -51,25 +52,26 @@ export function ClockControl({ className }: { className?: string }) {
   const date = useClock()
   return (
     <div className={cn("flex flex-wrap items-center gap-3", className)}>
-      <span className="flex items-center gap-1.5 text-sm text-muted-ink">
+      <span className="flex items-center gap-1.5 text-sm text-fg-3">
         <Clock aria-hidden className="size-4" />
-        Simulated date: <span className="num font-medium text-ink">{longDate(date)}</span>
+        Simulated date: <span className="num font-medium text-fg">{longDate(date)}</span>
       </span>
-      <div role="radiogroup" aria-label="Fast-forward the simulation" className="inline-flex rounded-lg border border-rule bg-surface p-1">
-        {CLOCK_OPTIONS.map((o) => (
-          <button
-            key={o.date}
-            type="button"
-            role="radio"
-            aria-checked={date === o.date}
-            onClick={() => setClock(o.date)}
-            className={cn("rounded-md px-2.5 py-1 text-sm", date === o.date ? "bg-ink text-background" : "text-muted-ink hover:text-ink")}
-          >
-            <span className="sm:hidden">{o.short}</span>
-            <span className="hidden sm:inline">{o.label}</span>
-          </button>
-        ))}
-      </div>
+      <SegmentedControl
+        kind="radio"
+        size="sm"
+        label="Fast-forward the simulation"
+        value={date}
+        onChange={setClock}
+        options={CLOCK_OPTIONS.map((o) => ({
+          value: o.date,
+          label: (
+            <>
+              <span className="sm:hidden">{o.short}</span>
+              <span className="hidden sm:inline">{o.label}</span>
+            </>
+          ),
+        }))}
+      />
     </div>
   )
 }

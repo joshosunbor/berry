@@ -19,7 +19,7 @@ test("landing → workbench → applicant → compare", async ({ page }) => {
 
   await page.getByRole("main").getByRole("link", { name: "Try the live demo" }).click()
   await expect(page).toHaveURL(/\/workbench$/)
-  await expect(page.getByRole("list").getByRole("link")).toHaveCount(14)
+  await expect(page.getByRole("list", { name: "Applicants" }).getByRole("link")).toHaveCount(14)
 
   await page.getByRole("link", { name: /Hollis Family Farm/ }).click()
   await expect(page).toHaveURL(/\/workbench\/hollis-family-farm$/)
@@ -424,7 +424,7 @@ test("landing: keyboard tabs (Home/End), one-open accordion, sign-off wording, s
   await expect(life.getByRole("tab", { name: /Verify/ })).toHaveAttribute("aria-selected", "true")
 
   await expect(page.getByText("Needs branch manager sign-off.")).toBeVisible()
-  await expect(page.getByText(/Above the lender's \$50,000 authority\./)).toBeVisible()
+  await expect(page.getByText(/Above the lending officer's \$50,000 authority\./)).toBeVisible()
   await expect(page.getByText(/Simulated medians across \d+ funded loans/)).toBeVisible()
 
   const q1 = page.getByRole("button", { name: "Is Berry a real product?" })
@@ -446,4 +446,15 @@ test("landing: keyboard tabs (Home/End), one-open accordion, sign-off wording, s
     await expect(page.getByRole("region", { name: "How a pilot would work" })).toBeInViewport()
   }
   expect(errors).toEqual([])
+})
+
+test("Northgate's $50,000 tier reads Lending officer, never Lender", async ({ page }) => {
+  const asLender = /\bLender(?:'s)? (?:sign-off|authority|approves|tier)\b|Sign-off: Lender\b|the lender's \$50,000|Lender: up to/i
+  for (const path of ["/", "/workbench/priya", "/compare/priya", "/ops", "/methodology"]) {
+    await page.goto(path)
+    await expect(page.locator("body"), path).not.toContainText(asLender)
+  }
+  await expect(page.getByText(/Lending officer: up to \$50,000/)).toBeVisible()
+  await page.goto("/workbench/priya")
+  await expect(page.getByText(/Sign-off: Lending officer/).first()).toBeVisible()
 })

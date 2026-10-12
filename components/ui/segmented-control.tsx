@@ -24,15 +24,31 @@ export function SegmentedControl<T extends string>({
   size?: "md" | "sm"
   className?: string
 }) {
+  // Radio groups: one tab stop, and the arrow keys move and select (ARIA radio group pattern).
+  const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (kind !== "radio" || !["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) return
+    e.preventDefault()
+    const i = options.findIndex((o) => o.value === value)
+    const step = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : -1
+    const next = options[(i + step + options.length) % options.length].value
+    onChange(next)
+    ;(e.currentTarget.querySelector(`[data-value="${CSS.escape(next)}"]`) as HTMLElement | null)?.focus()
+  }
   return (
-    <div role={kind === "radio" ? "radiogroup" : "group"} aria-label={label} className={cn("inline-flex flex-wrap rounded-[9px] bg-field p-[3px] shadow-inset-line", className)}>
+    <div
+      role={kind === "radio" ? "radiogroup" : "group"}
+      aria-label={label}
+      onKeyDown={onKey}
+      className={cn("inline-flex flex-wrap rounded-[9px] bg-field p-[3px] shadow-inset-line", className)}
+    >
       {options.map((o) => {
         const on = o.value === value
         return (
           <button
             key={o.value}
             type="button"
-            {...(kind === "radio" ? { role: "radio", "aria-checked": on } : { "aria-pressed": on })}
+            data-value={o.value}
+            {...(kind === "radio" ? { role: "radio", "aria-checked": on, tabIndex: on ? 0 : -1 } : { "aria-pressed": on })}
             onClick={() => onChange(o.value)}
             className={cn(
               "cursor-pointer rounded-[7px] font-medium",

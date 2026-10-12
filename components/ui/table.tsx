@@ -4,12 +4,33 @@ import { cn } from "@/lib/utils"
  * Tables (design handoff: a panel-alt header row, 1px line rules, mono
  * figures). Wrap wide tables in Table so they scroll sideways on phones.
  */
-export function Table({ className, minWidth, caption, label, children, ...props }: React.TableHTMLAttributes<HTMLTableElement> & { minWidth?: number; caption?: string; label?: string }) {
+export function Table({
+  className,
+  wrapperClassName,
+  minWidth,
+  caption,
+  label,
+  dense = false,
+  children,
+  ...props
+}: React.TableHTMLAttributes<HTMLTableElement> & { wrapperClassName?: string; minWidth?: number; caption?: string; label?: string; dense?: boolean }) {
   // A table wider than the screen scrolls sideways; the scroll area is focusable so keyboard users can reach it.
   const scrolls = Boolean(minWidth)
   return (
-    <div className="min-w-0 overflow-x-auto" {...(scrolls ? { tabIndex: 0, role: "region", "aria-label": label ?? caption ?? "Table (scrolls sideways)" } : {})}>
-      <table className={cn("w-full border-collapse text-left text-sm", className)} style={minWidth ? { minWidth } : undefined} {...props}>
+    <div
+      className={cn("min-w-0 overflow-x-auto", wrapperClassName)}
+      {...(scrolls ? { tabIndex: 0, role: "region", "aria-label": label ?? (caption ? `${caption} (scrolls sideways)` : "Table (scrolls sideways)") } : {})}
+    >
+      <table
+        className={cn(
+          "w-full border-collapse text-left text-sm",
+          // Dense: compact cells for tables inside a card.
+          dense && "[&_:is(th,td)]:px-3 [&_:is(th,td)]:py-2 [&_:is(th,td):first-child]:pl-0 [&_thead]:bg-transparent [&_thead_th]:text-xs",
+          className,
+        )}
+        style={minWidth ? { minWidth } : undefined}
+        {...props}
+      >
         {caption && <caption className="sr-only">{caption}</caption>}
         {children}
       </table>

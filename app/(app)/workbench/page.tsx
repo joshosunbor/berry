@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { ApplicantGrid, type ApplicantCard } from "@/components/berry/applicant-grid"
 import { ModeSwitcher } from "@/components/berry/mode-context"
+import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { getCast } from "@/lib/data"
 import { INCOME_LABELS, PRODUCT_LABELS } from "@/lib/labels"
 import { formatCents } from "@/lib/money"
@@ -29,20 +30,14 @@ export default function WorkbenchPage() {
   const incomeTypes = [...new Set(cast.map((c) => c.features.income.type))].map((t) => ({ value: t, label: INCOME_LABELS[t] }))
 
   return (
-    <main className="mx-auto max-w-[1200px] px-4 py-12 sm:px-8">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight">Workbench</h1>
-          <p className="mt-2 max-w-xl text-muted-ink">
-            {cast.length} synthetic applicants, each decided by three fictional lenders. Pick a lender to highlight its answers, or open a file to
-            see why.
-          </p>
-        </div>
-        <ModeSwitcher />
-      </div>
-      <div className="mt-8">
-        <ApplicantGrid cards={cards} incomeTypes={incomeTypes} />
-      </div>
-    </main>
+    <PageContainer>
+      <PageHeader
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Workbench" }]}
+        title="Workbench"
+        lead={`${cast.length} synthetic applicants, each decided by three fictional lenders. Pick a lender to highlight its answers, or open a file to see why.`}
+        actions={<ModeSwitcher />}
+      />
+      <ApplicantGrid cards={cards} incomeTypes={incomeTypes} />
+    </PageContainer>
   )
 }

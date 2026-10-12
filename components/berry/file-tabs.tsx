@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
 import { AlertTriangle, CheckCircle2, Clock, Download, Eye, ShieldAlert, XCircle } from "lucide-react"
 import { ClockControl, useClock } from "@/components/berry/clock"
@@ -21,9 +20,13 @@ import { formatTimeToFund, fund, FundingBlocked, RAILS, type AccountVerification
 /** Funding is shown as sent the morning after agreements are signed (fixed, so pages are reproducible). */
 const FUNDING_INITIATED_AT = "2026-10-06T10:00"
 import { cn } from "@/lib/utils"
+import { Button, ButtonLink } from "@/components/ui/button"
+import { Card, cardVariants } from "@/components/ui/card"
+import { SegmentedControl } from "@/components/ui/segmented-control"
+import { Table, Td, Th, THead } from "@/components/ui/table"
 
 const money = (c: number) => formatCents(c)
-const card = "min-w-0 rounded-lg border border-rule bg-surface p-5"
+const card = cn(cardVariants({ pad: "lg" }), "min-w-0")
 
 const KIND_LABELS: Record<VerificationCheck["kind"], string> = {
   id_document: "Identity document",
@@ -45,7 +48,7 @@ function duration(ms: number): string {
 
 export function VerificationTab({ checks, summary }: { checks: VerificationCheck[]; summary: VerificationSummary }) {
   const icon = { pass: CheckCircle2, needs_review: AlertTriangle, fail: XCircle }
-  const tone = { pass: "text-approve", needs_review: "text-conditions", fail: "text-decline" }
+  const tone = { pass: "text-green-ink", needs_review: "text-warn", fail: "text-bad" }
   const label = { pass: "Passed", needs_review: "Needs review", fail: "Failed" }
   return (
     <div className={card}>
@@ -53,11 +56,11 @@ export function VerificationTab({ checks, summary }: { checks: VerificationCheck
         <h3 className="font-semibold">Identity and business checks</h3>
         <Illustrative label="Simulated checks" why="Simulated on synthetic data against a fictional watch list and registry. No real identity service is used." />
       </div>
-      <p className="mt-2 text-sm text-muted-ink">
+      <p className="mt-2 text-sm text-fg-3">
         {summary.automated ? "Cleared automatically" : "Sent to the verification queue for a person to review"} · time to verify{" "}
-        <span className="num font-medium text-ink">{duration(summary.timeToVerifyMs)}</span>
+        <span className="num font-medium text-fg">{duration(summary.timeToVerifyMs)}</span>
       </p>
-      <ul className="mt-4 divide-y divide-rule">
+      <ul className="mt-4 divide-y divide-line">
         {checks.map((c) => {
           const Icon = icon[c.result]
           return (
@@ -68,8 +71,8 @@ export function VerificationTab({ checks, summary }: { checks: VerificationCheck
                   <span className="font-medium">{KIND_LABELS[c.kind]}</span>
                   <span className={cn("text-xs font-medium", tone[c.result])}>{label[c.result]}</span>
                 </p>
-                <p className="mt-0.5 text-muted-ink">{c.reasons.join(" ")}</p>
-                <p className="num mt-0.5 flex items-center gap-1 text-xs text-muted-ink">
+                <p className="mt-0.5 text-fg-3">{c.reasons.join(" ")}</p>
+                <p className="num mt-0.5 flex items-center gap-1 text-xs text-fg-3">
                   <Clock aria-hidden className="size-3" />
                   {c.automated ? "Automated" : "Manual review"} · {duration(c.durationMs ?? 0)}
                 </p>
@@ -88,53 +91,51 @@ export function RepaymentTab({ plans }: { plans: Record<Mode, PadPlan | null> })
   const { mode } = useMode()
   const plan = plans[mode]
   const [all, setAll] = useState(false)
-  if (!plan) return <div className={card}><p className="text-sm text-muted-ink">{MODE_META[mode].institution} made no offer, so there is no repayment plan.</p></div>
+  if (!plan) return <div className={card}><p className="text-sm text-fg-3">{MODE_META[mode].institution} made no offer, so there is no repayment plan.</p></div>
   const rows = all ? plan.debits : plan.debits.slice(0, 6)
   const freq = { monthly: "Monthly", biweekly: "Every 14 days, on payday", seasonal: "Monthly, larger after peak season" }[plan.frequency]
   return (
-    <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+    <div className="grid gap-4">
       <div className={card}>
         <h3 className="font-semibold">Pre-authorized debit schedule</h3>
         <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-          <div><dt className="text-xs text-muted-ink">Frequency</dt><dd className="font-medium">{freq}</dd></div>
-          <div><dt className="text-xs text-muted-ink">Amount</dt><dd className="font-medium">{plan.amountType === "fixed" ? "Fixed" : "Variable"}</dd></div>
-          <div><dt className="text-xs text-muted-ink">Confirmation sent</dt><dd className="num font-medium">{plan.confirmationSentOn}</dd></div>
-          <div><dt className="text-xs text-muted-ink">First debit</dt><dd className="num font-medium">{plan.firstDebitOn}</dd></div>
+          <div><dt className="text-xs text-fg-3">Frequency</dt><dd className="font-medium">{freq}</dd></div>
+          <div><dt className="text-xs text-fg-3">Amount</dt><dd className="font-medium">{plan.amountType === "fixed" ? "Fixed" : "Variable"}</dd></div>
+          <div><dt className="text-xs text-fg-3">Confirmation sent</dt><dd className="num font-medium">{plan.confirmationSentOn}</dd></div>
+          <div><dt className="text-xs text-fg-3">First debit</dt><dd className="num font-medium">{plan.firstDebitOn}</dd></div>
         </dl>
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[420px] text-left text-sm">
+        <Table dense minWidth={420} wrapperClassName="mt-4">
             <caption className="sr-only">Scheduled debits</caption>
-            <thead className="text-xs text-muted-ink">
+            <THead>
               <tr>
-                <th scope="col" className="py-1.5 pr-3 font-medium">#</th>
-                <th scope="col" className="py-1.5 pr-3 font-medium">Date</th>
-                <th scope="col" className="py-1.5 pr-3 text-right font-medium">Debit</th>
-                <th scope="col" className="py-1.5 pr-3 text-right font-medium">Interest</th>
-                <th scope="col" className="py-1.5 text-right font-medium">Balance after</th>
+                <Th scope="col">#</Th>
+                <Th scope="col">Date</Th>
+                <Th scope="col" className="text-right">Debit</Th>
+                <Th scope="col" className="text-right">Interest</Th>
+                <Th scope="col" className="text-right">Balance after</Th>
               </tr>
-            </thead>
-            <tbody className="divide-y divide-rule">
+            </THead>
+            <tbody>
               {rows.map((d) => (
                 <tr key={d.n}>
-                  <td className="py-1.5 pr-3 text-muted-ink">{d.n}</td>
-                  <td className="py-1.5 pr-3">
+                  <Td className="text-fg-3">{d.n}</Td>
+                  <Td>
                     {d.date}
-                    {d.preNotifyBy && <span className="block text-xs text-muted-ink">notice by {d.preNotifyBy}</span>}
-                  </td>
-                  <td className="py-1.5 pr-3 text-right">{money(d.amountCents)}</td>
-                  <td className="py-1.5 pr-3 text-right text-muted-ink">{money(d.interestCents)}</td>
-                  <td className="py-1.5 text-right">{money(d.balanceAfterCents)}</td>
+                    {d.preNotifyBy && <span className="block text-xs text-fg-3">notice by {d.preNotifyBy}</span>}
+                  </Td>
+                  <Td className="text-right">{money(d.amountCents)}</Td>
+                  <Td className="text-right text-fg-3">{money(d.interestCents)}</Td>
+                  <Td className="text-right">{money(d.balanceAfterCents)}</Td>
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </Table>
         {plan.debits.length > 6 && (
-          <button type="button" onClick={() => setAll(!all)} className="mt-2 text-sm text-muted-ink underline underline-offset-2 hover:text-ink">
+          <Button variant="link" size="xs" onClick={() => setAll(!all)} className="mt-2">
             {all ? "Show fewer" : `Show all ${plan.debits.length} debits`}
-          </button>
+          </Button>
         )}
-        <div className="mt-4 space-y-2 border-t border-rule pt-3 text-xs text-muted-ink">
+        <div className="mt-4 space-y-2 border-t border-line pt-3 text-xs text-fg-3">
           <p className="flex flex-wrap items-center gap-2">
             <Illustrative /> Rates and interest are illustrative.
           </p>
@@ -149,12 +150,12 @@ export function RepaymentTab({ plans }: { plans: Record<Mode, PadPlan | null> })
         <ul className="mt-3 space-y-3">
           {plan.checklist.map((c) => (
             <li key={c.element} className="flex gap-2.5 text-sm">
-              <CheckCircle2 aria-hidden className="mt-0.5 size-4 shrink-0 text-approve" />
+              <CheckCircle2 aria-hidden className="mt-0.5 size-4 shrink-0 text-green-ink" />
               <div>
                 <p className="font-medium">
-                  {c.element} <span className="text-xs font-normal text-muted-ink">· {c.reference}</span>
+                  {c.element} <span className="text-xs font-normal text-fg-3">· {c.reference}</span>
                 </p>
-                <p className={cn("mt-0.5 text-muted-ink", c.element.startsWith("Recourse statement") && "italic")}>{c.detail}</p>
+                <p className={cn("mt-0.5 text-fg-3", c.element.startsWith("Recourse statement") && "italic")}>{c.detail}</p>
               </div>
             </li>
           ))}
@@ -176,7 +177,7 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
   const [record, setRecord] = useState(1)
   const [rail, setRail] = useState<FundingRail>("aft")
   const [confirmed, setConfirmed] = useState(false)
-  if (!file) return <div className={card}><p className="text-sm text-muted-ink">{MODE_META[mode].institution} made no offer, so there is nothing to fund.</p></div>
+  if (!file) return <div className={card}><p className="text-sm text-fg-3">{MODE_META[mode].institution} made no offer, so there is nothing to fund.</p></div>
   let outcome: FundingResult | null = null
   let blocked: string | null = null
   try {
@@ -198,32 +199,32 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
             role="radio"
             aria-checked={rail === x.rail}
             onClick={() => (setRail(x.rail), setConfirmed(false))}
-            className={cn("rounded-md border p-3 text-left text-sm", rail === x.rail ? "border-ink bg-muted" : "border-rule hover:border-ink/30")}
+            className={cn("rounded-[10px] border p-3 text-left text-sm", rail === x.rail ? "border-fg bg-field" : "border-line hover:border-line-strong")}
           >
             <span className="block font-medium">{x.name}</span>
             {x.badge && <span className="mt-1 block"><Illustrative label={x.badge} /></span>}
-            <span className="mt-1 block text-xs text-muted-ink">{x.timing}</span>
+            <span className="mt-1 block text-xs text-fg-3">{x.timing}</span>
           </button>
         ))}
       </div>
       {info.badge && (
-        <p className="mt-3 text-sm text-muted-ink">
+        <p className="mt-3 text-sm text-fg-3">
           Payments Canada&apos;s Real-Time Rail is launching in phases from Q4 2026; lenders cannot fund on it today, so this is a simulation.
         </p>
       )}
       <dl className="mt-4 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
-        <div><dt className="text-xs text-muted-ink">Can it be reversed?</dt><dd>{info.reversibility}</dd></div>
-        <div><dt className="text-xs text-muted-ink">Fraud considerations</dt><dd>{info.fraud}</dd></div>
+        <div><dt className="text-xs text-fg-3">Can it be reversed?</dt><dd>{info.reversibility}</dd></div>
+        <div><dt className="text-xs text-fg-3">Fraud considerations</dt><dd>{info.fraud}</dd></div>
       </dl>
 
       {info.instant && (
-        <div className={cn("mt-4 rounded-md border p-3 text-sm", verification.result === "match" ? "border-rule" : verification.result === "close_match" ? "border-conditions/50 bg-conditions-soft" : "border-decline/50 bg-decline-soft")}>
+        <div className={cn("mt-4 rounded-[10px] border p-3 text-sm", verification.result === "match" ? "border-line" : verification.result === "close_match" ? "bg-warn-tint" : "bg-bad-tint")}>
           <p className="flex flex-wrap items-center gap-2 font-medium">
             Account verification: {verification.result === "match" ? "match" : verification.result === "close_match" ? "close match" : "no match"}
             <Illustrative label="Simulated" why="A simulated name-and-account check. No real verification service is used." />
           </p>
           <p className="mt-1">{verification.message}</p>
-          <p className="mt-2 text-muted-ink">{verification.scamWarning}</p>
+          <p className="mt-2 text-fg-3">{verification.scamWarning}</p>
           {verification.canFund === "after_confirming" && (
             <label className="mt-2 flex items-center gap-2">
               <input type="checkbox" checked={confirmed} onChange={(e) => setConfirmed(e.target.checked)} className="size-4" />
@@ -234,13 +235,13 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
       )}
 
       {blocked ? (
-        <p className="mt-4 rounded-md bg-muted px-3 py-2 text-sm" role="status">{blocked}</p>
+        <p className="mt-4 rounded-[10px] bg-field px-3 py-2 text-sm" role="status">{blocked}</p>
       ) : outcome && (
-        <dl className="num mt-4 grid grid-cols-2 gap-x-6 gap-y-2 rounded-md bg-muted px-3 py-3 text-sm sm:grid-cols-4" role="status">
-          <div><dt className="text-xs text-muted-ink">Sent</dt><dd>{outcome.initiatedAt.replace("T", " ")}</dd></div>
-          <div><dt className="text-xs text-muted-ink">Available</dt><dd>{outcome.completedAt.slice(0, 16).replace("T", " ")}</dd></div>
-          <div><dt className="text-xs text-muted-ink">Time to fund</dt><dd>{formatTimeToFund(outcome.timeToFundMinutes)}</dd></div>
-          <div><dt className="text-xs text-muted-ink">Cost (illustrative)</dt><dd>{formatCents(outcome.costCents)}</dd></div>
+        <dl className="num mt-4 grid grid-cols-2 gap-x-6 gap-y-2 rounded-[10px] bg-field px-3 py-3 text-sm sm:grid-cols-4" role="status">
+          <div><dt className="text-xs text-fg-3">Sent</dt><dd>{outcome.initiatedAt.replace("T", " ")}</dd></div>
+          <div><dt className="text-xs text-fg-3">Available</dt><dd>{outcome.completedAt.slice(0, 16).replace("T", " ")}</dd></div>
+          <div><dt className="text-xs text-fg-3">Time to fund</dt><dd>{formatTimeToFund(outcome.timeToFundMinutes)}</dd></div>
+          <div><dt className="text-xs text-fg-3">Cost (illustrative)</dt><dd>{formatCents(outcome.costCents)}</dd></div>
         </dl>
       )}
     </div>
@@ -261,56 +262,56 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h3 className="font-semibold">AFT disbursement file</h3>
-          <p className="mt-1 text-sm text-muted-ink">
-            Funds <span className="num font-medium text-ink">{formatCents(file.totalCents)}</span> to the borrower&apos;s account in a Payments Canada Standard 005 layout: a header, one credit record and a trailer, each 1,464 characters.
+          <p className="mt-1 text-sm text-fg-3">
+            Funds <span className="num font-medium text-fg">{formatCents(file.totalCents)}</span> to the borrower&apos;s account in a Payments Canada Standard 005 layout: a header, one credit record and a trailer, each 1,464 characters.
           </p>
         </div>
         <Illustrative label="Illustrative — not for submission" why="ASCII rather than the EBCDIC real files use; fictional institutions and accounts; amounts in cents and the transaction code are not confirmed from the standard." />
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <div role="radiogroup" aria-label="Record" className="inline-flex rounded-md border border-rule p-0.5 text-sm">
-          {file.records.map((rec, i) => (
-            <button key={i} type="button" role="radio" aria-checked={record === i} onClick={() => setRecord(i)} className={cn("rounded px-3 py-1", record === i ? "bg-ink text-background" : "text-muted-ink hover:text-ink")}>
-              {rec.type} {rec.type === "A" ? "header" : rec.type === "C" ? "credit" : "trailer"}
-            </button>
-          ))}
-        </div>
-        <button type="button" onClick={() => setRaw(!raw)} className="inline-flex items-center gap-1.5 rounded-md border border-rule px-3 py-1 text-sm hover:border-ink/30" aria-pressed={raw}>
+        <SegmentedControl
+          kind="radio"
+          size="sm"
+          label="Record"
+          value={String(record)}
+          onChange={(v) => setRecord(Number(v))}
+          options={file.records.map((rec, i) => ({ value: String(i), label: `${rec.type} ${rec.type === "A" ? "header" : rec.type === "C" ? "credit" : "trailer"}` }))}
+        />
+        <Button variant="secondary" size="xs" onClick={() => setRaw(!raw)} aria-pressed={raw}>
           <Eye aria-hidden className="size-4" />
           {raw ? "Hide raw file" : "View raw file"}
-        </button>
-        <button type="button" onClick={download} className="inline-flex items-center gap-1.5 rounded-md border border-rule px-3 py-1 text-sm hover:border-ink/30">
+        </Button>
+        <Button variant="secondary" size="xs" onClick={download}>
           <Download aria-hidden className="size-4" />
           Download
-        </button>
+        </Button>
       </div>
 
       {raw && (
-        <pre className="mt-4 max-h-56 overflow-auto rounded-md bg-muted p-3 font-mono text-[11px] leading-5" aria-label="Raw file, one record per line">
+        <pre className="mt-4 max-h-56 overflow-auto rounded-[10px] bg-field p-3 font-mono text-[11px] leading-5" aria-label="Raw file, one record per line">
           {file.records.map((rec) => rec.text.replace(/ +$/, (m) => `·×${m.length}`)).join("\n")}
         </pre>
       )}
-      {raw && <p className="mt-1 text-xs text-muted-ink">Trailing spaces are shortened to ·×count for display; the download has every character.</p>}
+      {raw && <p className="mt-1 text-xs text-fg-3">Trailing spaces are shortened to ·×count for display; the download has every character.</p>}
 
-      <div className="mt-4 overflow-x-auto">
-        <table className="w-full min-w-[560px] text-left text-sm">
+      <Table dense minWidth={560} wrapperClassName="mt-4">
           <caption className="sr-only">Fields in the {r.type} record</caption>
-          <thead className="text-xs text-muted-ink">
+          <THead>
             <tr>
-              <th scope="col" className="py-1.5 pr-3 font-medium">Field</th>
-              <th scope="col" className="py-1.5 pr-3 font-medium">Positions</th>
-              <th scope="col" className="py-1.5 pr-3 font-medium">Value</th>
-              <th scope="col" className="py-1.5 font-medium">What it means</th>
+              <Th scope="col">Field</Th>
+              <Th scope="col">Positions</Th>
+              <Th scope="col">Value</Th>
+              <Th scope="col">What it means</Th>
             </tr>
-          </thead>
-          <tbody className="divide-y divide-rule">
+          </THead>
+          <tbody>
             {r.fields.map((f) => (
               <tr key={f.name + f.start} className="align-top">
-                <th scope="row" className="py-1.5 pr-3 font-medium">{f.name}</th>
-                <td className="num py-1.5 pr-3 text-muted-ink">{f.start}–{f.start + f.length - 1}</td>
-                <td className="py-1.5 pr-3 font-mono text-xs">{f.value.trim() === "" ? <span className="text-muted-ink">spaces</span> : f.value.length > 24 ? `${f.value.slice(0, 24)}…` : f.value}</td>
-                <td className="py-1.5 text-muted-ink">
+                <Th scope="row">{f.name}</Th>
+                <Td className="num text-fg-3">{f.start}–{f.start + f.length - 1}</Td>
+                <Td className="font-mono text-xs">{f.value.trim() === "" ? <span className="text-fg-3">spaces</span> : f.value.length > 24 ? `${f.value.slice(0, 24)}…` : f.value}</Td>
+                <Td className="text-fg-3">
                   {f.description}
                   {f.illustrative && (
                     <span className="mt-1 flex items-center gap-1.5">
@@ -318,12 +319,11 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
                       <span className="text-xs">{f.illustrative}</span>
                     </span>
                   )}
-                </td>
+                </Td>
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
+        </Table>
       <p className="mt-4 text-xs">
         <Source href="https://www.payments.ca/sites/default/files/standard005eng.pdf">Standard 005, Payments Canada</Source>
       </p>
@@ -340,42 +340,40 @@ export function ProtectionTab() {
     <div className={card}>
       <h3 className="font-semibold">Who protects deposits</h3>
       <p className="mt-2 text-sm leading-6">{LENDER_PROTECTION[mode]}</p>
-      <p className="mt-2 text-sm text-muted-ink">
+      <p className="mt-2 text-sm text-fg-3">
         Banks and federally regulated credit unions are CDIC members: {CDIC.limit}. <Source href={CDIC.source}>CDIC</Source>
       </p>
       <h4 className="mt-5 text-sm font-semibold">Provincially regulated credit unions, by province</h4>
-      <div className="mt-2 overflow-x-auto">
-        <table className="w-full min-w-[560px] text-left text-sm">
+      <Table dense minWidth={560} wrapperClassName="mt-2">
           <caption className="sr-only">Credit union deposit insurer and coverage by province</caption>
-          <thead className="text-xs text-muted-ink">
+          <THead>
             <tr>
-              <th scope="col" className="py-1.5 pr-3 font-medium">Province</th>
-              <th scope="col" className="py-1.5 pr-3 font-medium">Insurer</th>
-              <th scope="col" className="py-1.5 font-medium">Coverage</th>
+              <Th scope="col">Province</Th>
+              <Th scope="col">Insurer</Th>
+              <Th scope="col">Coverage</Th>
             </tr>
-          </thead>
-          <tbody className="divide-y divide-rule">
+          </THead>
+          <tbody>
             {PROVINCIAL_INSURERS.map((p) => (
               <tr key={p.province} className="align-top">
-                <th scope="row" className="py-2 pr-3 font-medium">{p.province}</th>
-                <td className="py-2 pr-3 text-muted-ink">
-                  <a href={p.source} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-ink">{p.insurer}</a>
-                </td>
-                <td className="py-2">
+                <Th scope="row">{p.province}</Th>
+                <Td className="text-fg-3">
+                  <a href={p.source} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-fg">{p.insurer}</a>
+                </Td>
+                <Td>
                   {p.limit}
-                  {p.registered && <span className="block text-xs text-muted-ink">{p.registered}</span>}
+                  {p.registered && <span className="block text-xs text-fg-3">{p.registered}</span>}
                   {!p.confirmed && (
                     <span className="mt-1 flex items-center gap-1.5">
                       <Illustrative why={p.note} />
                     </span>
                   )}
-                </td>
+                </Td>
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
-      <p className="mt-3 text-xs text-muted-ink">Limits checked against each insurer&apos;s site on {DEPOSIT_PROTECTION_AS_OF}. Coverage rules have details (for example, registered plans); the insurer&apos;s site is the authority.</p>
+        </Table>
+      <p className="mt-3 text-xs text-fg-3">Limits checked against each insurer&apos;s site on {DEPOSIT_PROTECTION_AS_OF}. Coverage rules have details (for example, registered plans); the insurer&apos;s site is the authority.</p>
     </div>
   )
 }
@@ -388,67 +386,65 @@ export function LargeCashTab({ reviews }: { reviews: LctrReview[] }) {
       {reviews.map((r) => (
         <div key={r.deposits[0].transactionId} className={card}>
           <h3 className="flex items-center gap-2 font-semibold">
-            <ShieldAlert aria-hidden className="size-4 text-conditions" />
+            <ShieldAlert aria-hidden className="size-4 text-warn" />
             FINTRAC large cash review
           </h3>
           <p className="mt-2 text-sm leading-6">{r.reason}</p>
 
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[480px] text-left text-sm">
+          <Table dense minWidth={480} wrapperClassName="mt-4">
               <caption className="sr-only">Cash deposits in the 24-hour window</caption>
-              <thead className="text-xs text-muted-ink">
+              <THead>
                 <tr>
-                  <th scope="col" className="py-1.5 pr-3 font-medium">Deposit</th>
-                  <th scope="col" className="py-1.5 pr-3 font-medium">Time</th>
-                  <th scope="col" className="py-1.5 pr-3 text-right font-medium">Amount</th>
-                  <th scope="col" className="py-1.5 text-right font-medium">24-hour total</th>
+                  <Th scope="col">Deposit</Th>
+                  <Th scope="col">Time</Th>
+                  <Th scope="col" className="text-right">Amount</Th>
+                  <Th scope="col" className="text-right">24-hour total</Th>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-rule">
+              </THead>
+              <tbody>
                 {r.deposits.map((d, i) => (
                   <tr key={d.transactionId}>
-                    <td className="py-1.5 pr-3">Cash deposit {i + 1}</td>
-                    <td className="num py-1.5 pr-3 text-muted-ink">
+                    <Td>Cash deposit {i + 1}</Td>
+                    <Td className="num text-fg-3">
                       {d.timestamp.slice(0, 10)} {d.timestamp.slice(11, 16)} {i > 0 && <span className="text-xs">(+{d.hoursFromFirst} h)</span>}
-                    </td>
-                    <td className="num py-1.5 pr-3 text-right">{money(d.amountCents)}</td>
-                    <td className={cn("num py-1.5 text-right font-medium", d.runningTotalCents >= r.thresholdCents && "text-conditions")}>{money(d.runningTotalCents)}</td>
+                    </Td>
+                    <Td className="num text-right">{money(d.amountCents)}</Td>
+                    <Td className={cn("num text-right font-semibold", d.runningTotalCents >= r.thresholdCents && "text-warn")}>{money(d.runningTotalCents)}</Td>
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </Table>
 
           <div className="mt-3" aria-hidden>
-            <div className="relative h-2 rounded-full bg-muted">
-              <div className="absolute inset-y-0 left-0 rounded-full bg-conditions" style={{ width: `${Math.min(100, (r.totalCents / (r.thresholdCents * 1.25)) * 100)}%` }} />
-              <div className="absolute -top-1 h-4 w-0.5 bg-ink" style={{ left: `${100 / 1.25}%` }} />
+            <div className="relative h-2 rounded-full bg-field">
+              <div className="absolute inset-y-0 left-0 rounded-full bg-warn" style={{ width: `${Math.min(100, (r.totalCents / (r.thresholdCents * 1.25)) * 100)}%` }} />
+              <div className="absolute -top-1 h-4 w-0.5 bg-fg" style={{ left: `${100 / 1.25}%` }} />
             </div>
           </div>
-          <p className="num mt-1.5 text-xs text-muted-ink">
+          <p className="num mt-1.5 text-xs text-fg-3">
             Threshold {money(r.thresholdCents)} in one transaction or within 24 consecutive hours · total {money(r.totalCents)}
           </p>
           <p className="mt-3 text-sm">
-            <span className="font-medium">Credit decision:</span> <span className="text-muted-ink">unaffected. This is a compliance review, never a credit factor.</span>
+            <span className="font-medium">Credit decision:</span> <span className="text-fg-3">unaffected. This is a compliance review, never a credit factor.</span>
           </p>
 
-          <div className="mt-5 rounded-md border border-dashed border-rule p-4">
+          <Card tone="dashed" pad="sm" className="mt-5">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h4 className="text-sm font-semibold">Report summary</h4>
               <Illustrative label={r.reportSummary.label} why="A simulated summary of what a Large Cash Transaction Report would contain. Nothing is filed." />
             </div>
             <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
-              <div><dt className="text-xs text-muted-ink">Report type</dt><dd>{r.reportSummary.reportType}</dd></div>
-              <div><dt className="text-xs text-muted-ink">Reporting entity</dt><dd>{r.reportSummary.reportingEntity}</dd></div>
-              <div><dt className="text-xs text-muted-ink">Cash received from</dt><dd>{r.reportSummary.onBehalfOf}</dd></div>
-              <div><dt className="text-xs text-muted-ink">Method</dt><dd>{r.reportSummary.method}</dd></div>
-              <div><dt className="text-xs text-muted-ink">Deposits</dt><dd className="num">{r.reportSummary.numberOfDeposits} · {money(r.reportSummary.totalCents)}</dd></div>
-              <div><dt className="text-xs text-muted-ink">Report due by</dt><dd className="num">{r.reportSummary.reportDueBy} (15 calendar days)</dd></div>
+              <div><dt className="text-xs text-fg-3">Report type</dt><dd>{r.reportSummary.reportType}</dd></div>
+              <div><dt className="text-xs text-fg-3">Reporting entity</dt><dd>{r.reportSummary.reportingEntity}</dd></div>
+              <div><dt className="text-xs text-fg-3">Cash received from</dt><dd>{r.reportSummary.onBehalfOf}</dd></div>
+              <div><dt className="text-xs text-fg-3">Method</dt><dd>{r.reportSummary.method}</dd></div>
+              <div><dt className="text-xs text-fg-3">Deposits</dt><dd className="num">{r.reportSummary.numberOfDeposits} · {money(r.reportSummary.totalCents)}</dd></div>
+              <div><dt className="text-xs text-fg-3">Report due by</dt><dd className="num">{r.reportSummary.reportDueBy} (15 calendar days)</dd></div>
             </dl>
             <p className="mt-3 text-xs">
               <Source href={r.reportSummary.source}>FINTRAC large cash transaction reporting guidance</Source>
             </p>
-          </div>
+          </Card>
         </div>
       ))}
     </div>
@@ -464,7 +460,7 @@ export function ServicingTab({ loans }: { loans: LoanSummary[] }) {
   if (!loan) {
     return (
       <div className={card}>
-        <p className="text-sm text-muted-ink">{MODE_META[mode].institution} made no offer, so there is no loan to service.</p>
+        <p className="text-sm text-fg-3">{MODE_META[mode].institution} made no offer, so there is no loan to service.</p>
       </div>
     )
   }
@@ -477,14 +473,14 @@ export function ServicingTab({ loans }: { loans: LoanSummary[] }) {
       </div>
       <ClockControl className="mt-3" />
       <dl className="num mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4">
-        <div><dt className="text-xs text-muted-ink">Status</dt><dd className="mt-1"><LoanStatusChip status={s.status} /></dd></div>
-        <div><dt className="text-xs text-muted-ink">Owed</dt><dd className="font-medium">{formatCents(s.outstandingCents)}</dd></div>
-        <div><dt className="text-xs text-muted-ink">Debits collected</dt><dd className="font-medium">{s.debitsCollected}</dd></div>
-        <div><dt className="text-xs text-muted-ink">Returned debits</dt><dd className="font-medium">{s.returns}</dd></div>
+        <div><dt className="text-xs text-fg-3">Status</dt><dd className="mt-1"><LoanStatusChip status={s.status} /></dd></div>
+        <div><dt className="text-xs text-fg-3">Owed</dt><dd className="font-medium">{formatCents(s.outstandingCents)}</dd></div>
+        <div><dt className="text-xs text-fg-3">Debits collected</dt><dd className="font-medium">{s.debitsCollected}</dd></div>
+        <div><dt className="text-xs text-fg-3">Returned debits</dt><dd className="font-medium">{s.returns}</dd></div>
       </dl>
-      <Link href={`/ops/loans/${loan.id}`} className="mt-5 inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-background">
+      <ButtonLink href={`/ops/loans/${loan.id}`} size="sm" className="mt-5">
         Open the loan: ledger, timeline and recovery
-      </Link>
+      </ButtonLink>
     </div>
   )
 }

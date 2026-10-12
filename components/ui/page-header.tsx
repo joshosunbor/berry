@@ -2,6 +2,18 @@ import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+/** The page column: the landing page's 1160px width and side padding. */
+export const pageContainer = "mx-auto w-full max-w-[1160px] px-[clamp(20px,4vw,40px)]"
+
+/** A page body: the page colour edge to edge, the column, and room above the footer. */
+export function PageContainer({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
+  return (
+    <div className="h-full bg-page text-fg">
+      <main className={cn(pageContainer, "pb-24", className)} {...props} />
+    </div>
+  )
+}
+
 /*
  * Page header for product pages: a breadcrumb, an optional eyebrow, the H1
  * (smaller than the landing hero), a lead paragraph and actions on the right.

@@ -8,7 +8,10 @@ import { useMode } from "@/components/berry/mode-context"
 import { addOpsAction, useOpsMoment } from "@/components/berry/ops-store"
 import { MODE_META, type Mode } from "@/lib/modes"
 import { OPS, member } from "@/lib/ops/config"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Select } from "@/components/ui/field"
+import { Pill } from "@/components/ui/pill"
 
 /*
  * The credit memo tab (CLAUDE.md §6). The memo is drafted on demand by
@@ -171,21 +174,19 @@ export function MemoTab({ slug }: { slug: string }) {
     })
   }
 
-  const button = "inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
-
   return (
-    <div className="min-w-0 rounded-lg border border-rule bg-surface p-5">
+    <Card pad="lg" className="min-w-0">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="font-semibold">Credit memo for {institution}</h3>
-        <button type="button" onClick={draft} disabled={slot?.status === "loading"} className={cn(button, "bg-ink text-background")}>
+        <Button size="sm" onClick={draft} disabled={slot?.status === "loading"}>
           {slot?.status === "loading" ? <Loader2 aria-hidden className="size-4 animate-spin" /> : <FileText aria-hidden className="size-4" />}
           {slot?.status === "ready" ? "Draft again" : "Draft memo"}
-        </button>
+        </Button>
       </div>
-      <p className="mt-2 text-sm text-muted-ink">AI drafts the memo. The engine and a human make the decision.</p>
+      <p className="mt-2 text-sm text-fg-2">AI drafts the memo. The engine and a human make the decision.</p>
 
       {approval && (
-        <p className="mt-4 flex items-center gap-2 rounded-md bg-approve-soft px-3 py-2 text-sm text-approve">
+        <p className="mt-4 flex items-center gap-2 rounded-[10px] bg-green-tint px-3 py-2 text-sm text-green-ink">
           <CheckCircle2 aria-hidden className="size-4 shrink-0" />
           <span>
             Memo approved. Reviewer: <span className="font-medium">{approval.reviewer}</span> ·{" "}
@@ -195,9 +196,9 @@ export function MemoTab({ slug }: { slug: string }) {
         </p>
       )}
 
-      {!slot && <p className="mt-4 text-sm text-muted-ink">Draft a memo from this lender&apos;s decision. Only the engine&apos;s structured output is used: no transactions and no personal details.</p>}
+      {!slot && <p className="mt-4 text-sm text-fg-2">Draft a memo from this lender&apos;s decision. Only the engine&apos;s structured output is used: no transactions and no personal details.</p>}
       {slot?.status === "error" && (
-        <p role="alert" className="mt-4 text-sm text-decline">
+        <p role="alert" className="mt-4 text-sm text-bad">
           {slot.message}
         </p>
       )}
@@ -205,19 +206,19 @@ export function MemoTab({ slug }: { slug: string }) {
       {slot?.status === "ready" && (
         <div className="mt-4" aria-live="polite">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded border border-conditions px-1.5 py-0.5 text-[11px] font-semibold tracking-wide text-conditions">DRAFT</span>
-            <span className="text-xs text-muted-ink">{SOURCE_LABEL[slot.memo.source]}</span>
+            <Pill tone="warn" size="sm" className="tracking-wide">DRAFT</Pill>
+            <span className="text-xs text-fg-3">{SOURCE_LABEL[slot.memo.source]}</span>
             <Illustrative why="Synthetic applicant, fictional lender. Rates, limits and authority tiers are illustrative." />
           </div>
           {slot.memo.source === "template" && (
-            <p className="mt-3 text-sm text-muted-ink">
+            <p className="mt-3 text-sm text-fg-2">
               {slot.memo.problems?.length
                 ? "This is the template memo, built directly from the engine's output. Claude's draft wasn't used; see why below."
                 : "No Claude API key is set on this server, so this is the template memo, built directly from the engine's output."}
             </p>
           )}
           {slot.memo.problems && slot.memo.problems.length > 0 && (
-            <details className="mt-2 text-xs text-muted-ink">
+            <details className="mt-2 text-xs text-fg-3">
               <summary className="cursor-pointer">Why Claude&apos;s draft wasn&apos;t used</summary>
               <ul className="mt-1 list-disc space-y-0.5 pl-5">
                 {slot.memo.problems.map((p) => (
@@ -227,37 +228,37 @@ export function MemoTab({ slug }: { slug: string }) {
             </details>
           )}
 
-          <div className="mt-4 rounded-md border border-dashed border-rule p-4">
+          <div className="mt-4 rounded-[10px] border border-dashed border-line-strong p-4">
             <MemoText text={slot.memo.text} />
           </div>
 
           <div className="mt-4 flex flex-wrap items-center gap-3">
-            <button
-              type="button"
+            <Button
+              variant="secondary"
+              size="sm"
               onClick={() => setReviewed((r) => ({ ...r, [mode]: true }))}
               disabled={reviewed[mode]}
               aria-pressed={reviewed[mode] ?? false}
-              className={cn(button, "border border-rule")}
             >
               {reviewed[mode] && <CheckCircle2 aria-hidden className="size-4" />}
               Reviewed
-            </button>
+            </Button>
             <label className="flex items-center gap-2 text-sm">
-              <span className="text-muted-ink">Reviewer</span>
-              <select value={reviewer} onChange={(e) => setReviewer(e.target.value)} disabled={!reviewed[mode]} className="rounded-md border border-rule bg-surface px-2 py-1.5 disabled:opacity-50">
+              <span className="text-fg-3">Reviewer</span>
+              <Select value={reviewer} onChange={(e) => setReviewer(e.target.value)} disabled={!reviewed[mode]} className="disabled:opacity-50">
                 <option value="">Choose…</option>
                 {REVIEWERS.map((r) => (
                   <option key={r.id} value={r.id}>
                     {r.name} ({r.role === "lead" ? "Lead" : "Analyst"})
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
-            <button type="button" onClick={() => approve(slot.memo)} disabled={!reviewed[mode] || !reviewer || !!approval} className={cn(button, "bg-ink text-background")}>
+            <Button size="sm" onClick={() => approve(slot.memo)} disabled={!reviewed[mode] || !reviewer || !!approval}>
               Approve memo
-            </button>
+            </Button>
           </div>
-          <p className="mt-2 text-xs text-muted-ink">
+          <p className="mt-2 text-xs text-fg-3">
             Approving the memo signs off the write-up only. It does not change the decision, limit or rate. The approval is added to the{" "}
             <Link href="/ops" className="underline underline-offset-4">
               operations audit trail
@@ -266,6 +267,6 @@ export function MemoTab({ slug }: { slug: string }) {
           </p>
         </div>
       )}
-    </div>
+    </Card>
   )
 }
