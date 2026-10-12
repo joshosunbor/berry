@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { THEME_SCRIPT } from "@/components/site/theme-toggle";
 import { GeistMono, GeistSans } from "./fonts";
 import "./globals.css";
 
@@ -13,7 +14,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en-CA"
       className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="flex min-h-full flex-col">
           <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-md focus:bg-surface focus:px-3 focus:py-2">
             Skip to content

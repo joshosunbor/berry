@@ -1,115 +1,30 @@
-"use client"
+import { cn } from "@/lib/utils"
 
-import * as React from "react"
-import { cn } from "cn"
-
-function Table({ className, ...props }: React.ComponentProps<"table">) {
+/*
+ * Tables (design handoff: a panel-alt header row, 1px line rules, mono
+ * figures). Wrap wide tables in Table so they scroll sideways on phones.
+ */
+export function Table({ className, minWidth, caption, label, children, ...props }: React.TableHTMLAttributes<HTMLTableElement> & { minWidth?: number; caption?: string; label?: string }) {
+  // A table wider than the screen scrolls sideways; the scroll area is focusable so keyboard users can reach it.
+  const scrolls = Boolean(minWidth)
   return (
-    <div
-      data-slot="table-container"
-      className="relative w-full overflow-x-auto"
-    >
-      <table
-        data-slot="table"
-        className={cn("w-full caption-bottom text-sm", className)}
-        {...props}
-      />
+    <div className="min-w-0 overflow-x-auto" {...(scrolls ? { tabIndex: 0, role: "region", "aria-label": label ?? caption ?? "Table (scrolls sideways)" } : {})}>
+      <table className={cn("w-full border-collapse text-left text-sm", className)} style={minWidth ? { minWidth } : undefined} {...props}>
+        {caption && <caption className="sr-only">{caption}</caption>}
+        {children}
+      </table>
     </div>
   )
 }
 
-function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
-  return (
-    <thead
-      data-slot="table-header"
-      className={cn("[&_tr]:border-b", className)}
-      {...props}
-    />
-  )
+export function THead({ className, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) {
+  return <thead className={cn("bg-panel-alt text-fg-3", className)} {...props} />
 }
 
-function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {
-  return (
-    <tbody
-      data-slot="table-body"
-      className={cn("[&_tr:last-child]:border-0", className)}
-      {...props}
-    />
-  )
+export function Th({ className, numeric, ...props }: React.ThHTMLAttributes<HTMLTableCellElement> & { numeric?: boolean }) {
+  return <th className={cn("border-b border-line px-6 py-3.5 align-top font-medium", numeric && "text-right", className)} {...props} />
 }
 
-function TableFooter({ className, ...props }: React.ComponentProps<"tfoot">) {
-  return (
-    <tfoot
-      data-slot="table-footer"
-      className={cn(
-        "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-function TableRow({ className, ...props }: React.ComponentProps<"tr">) {
-  return (
-    <tr
-      data-slot="table-row"
-      className={cn(
-        "border-b transition-colors hover:bg-muted/50 has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-function TableHead({ className, ...props }: React.ComponentProps<"th">) {
-  return (
-    <th
-      data-slot="table-head"
-      className={cn(
-        "h-10 px-2 text-left align-middle font-medium whitespace-nowrap text-foreground [&:has([role=checkbox])]:pr-0",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-function TableCell({ className, ...props }: React.ComponentProps<"td">) {
-  return (
-    <td
-      data-slot="table-cell"
-      className={cn(
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-function TableCaption({
-  className,
-  ...props
-}: React.ComponentProps<"caption">) {
-  return (
-    <caption
-      data-slot="table-caption"
-      className={cn("mt-4 text-sm text-muted-foreground", className)}
-      {...props}
-    />
-  )
-}
-
-export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableFooter,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableCaption,
+export function Td({ className, numeric, mono, ...props }: React.TdHTMLAttributes<HTMLTableCellElement> & { numeric?: boolean; mono?: boolean }) {
+  return <td className={cn("border-b border-line-soft px-6 py-[11px] align-top", numeric && "text-right", (mono || numeric) && "font-mono text-[13px]", className)} {...props} />
 }

@@ -1,57 +1,60 @@
-import { Button as ButtonPrimitive } from "@base-ui/react/button"
+import Link from "next/link"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "cn"
+import { cn } from "@/lib/utils"
 
-const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+/*
+ * Buttons (design handoff: 8px radius, 600 weight, 48px tall; 44px in the
+ * header; 40px compact). Use ButtonLink for navigation and Button for
+ * actions; both share the same variants.
+ */
+export const buttonVariants = cva(
+  "inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-lg font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/80",
-        outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)] aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
-        ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
-        destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+        /** Green: the primary action. */
+        primary: "bg-green text-white hover:bg-green-hover hover:text-white",
+        /** Outlined, on the page or a card. */
+        secondary: "bg-transparent text-fg shadow-inset-line-strong hover:bg-field hover:text-fg",
+        /** Outlined, on a navy section. */
+        "navy-outline": "bg-transparent text-white shadow-inset-navy hover:bg-navy-raised hover:text-white",
+        /** White, on a navy section. */
+        white: "bg-white text-navy hover:bg-on-navy hover:text-navy",
+        /** Destructive confirmation (e.g. Reject). */
+        danger: "bg-bad text-white hover:opacity-90 hover:text-white",
+        /** Text-only link button. */
+        link: "h-auto bg-transparent p-0 text-cyan-ink hover:text-cyan-ink-hover",
       },
       size: {
-        default:
-          "h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        xs: "h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem] in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2",
-        icon: "size-8",
-        "icon-xs":
-          "size-6 rounded-[min(var(--radius-md),10px)] in-data-[slot=button-group]:rounded-lg [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm":
-          "size-7 rounded-[min(var(--radius-md),12px)] in-data-[slot=button-group]:rounded-lg",
-        "icon-lg": "size-9",
+        /** Inherits the surrounding font size (17px on the landing page). */
+        lg: "min-h-12 px-[22px]",
+        md: "min-h-11 px-4 text-[15px]",
+        sm: "min-h-10 px-3.5 text-sm",
+        xs: "min-h-8 px-2.5 text-[13px]",
       },
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
-  }
+    compoundVariants: [{ variant: "link", className: "min-h-0 px-0" }],
+    defaultVariants: { variant: "primary", size: "md" },
+  },
 )
 
-function Button({
-  className,
-  variant = "default",
-  size = "default",
-  ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
-  return (
-    <ButtonPrimitive
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  )
+type Variants = VariantProps<typeof buttonVariants>
+
+export function Button({ variant, size, className, type = "button", ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & Variants) {
+  return <button type={type} className={cn(buttonVariants({ variant, size }), className)} {...props} />
 }
 
-export { Button, buttonVariants }
+export function ButtonLink({ variant, size, className, external, children, ...props }: React.ComponentProps<typeof Link> & Variants & { external?: boolean }) {
+  if (external)
+    return (
+      <a href={String(props.href)} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant, size }), className)}>
+        {children}
+        <span className="sr-only"> (opens in a new tab)</span>
+      </a>
+    )
+  return (
+    <Link className={cn(buttonVariants({ variant, size }), className)} {...props}>
+      {children}
+    </Link>
+  )
+}

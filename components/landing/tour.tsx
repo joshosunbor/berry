@@ -3,7 +3,9 @@
 import { useState } from "react"
 import { TOUR } from "@/content/landing"
 import { cn } from "@/lib/utils"
-import { useTabs } from "./tabs"
+import { Card } from "@/components/ui/card"
+import { h2Class } from "@/components/ui/section-header"
+import { tabClass, tabListClass, useTabs } from "@/components/ui/tabs"
 
 /** The product tour: a tab strip over a window frame; the panels are rendered on the server and passed in. */
 export function Tour({ panels }: { panels: React.ReactNode[] }) {
@@ -13,31 +15,31 @@ export function Tour({ panels }: { panels: React.ReactNode[] }) {
     <div>
       <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-5">
         <div>
-          <h2 id="tour-h" className="max-w-[16ch] text-[clamp(32px,4vw,48px)] font-bold leading-[1.05] tracking-[-0.03em]">
+          <h2 id="tour-h" className={cn(h2Class, "max-w-[16ch]")}>
             {TOUR.title}
           </h2>
-          <p aria-live="polite" className="mt-3.5 max-w-[48ch] text-lp-text-2">
+          <p aria-live="polite" className="mt-3.5 max-w-[48ch] text-fg-2">
             {TOUR.tabs[tab].cap}
           </p>
         </div>
-        <div {...t.list} aria-label="Product tour" className="inline-flex flex-wrap rounded-[10px] bg-lp-surface p-1 shadow-[inset_0_0_0_1px_var(--color-lp-line)]">
+        <div {...t.list} aria-label="Product tour" className={tabListClass("segmented")}>
           {TOUR.tabs.map((x, i) => (
             <button
               key={x.label}
               {...t.tab(i)}
-              className={cn("min-h-10 cursor-pointer rounded-[7px] px-4 text-[15px] font-semibold", tab === i ? "bg-lp-navy text-white" : "bg-transparent text-lp-text-2")}
+              className={tabClass("segmented", tab === i)}
             >
               {x.label}
             </button>
           ))}
         </div>
       </div>
-      <div className="mt-7 overflow-hidden rounded-[14px] bg-lp-surface shadow-lp-tour">
-        <div className="flex items-center gap-3.5 border-b border-lp-line bg-lp-page px-[18px] py-3 text-[13px] text-lp-text-3">
+      <Card tone="frame" pad="none" className="mt-7 overflow-hidden">
+        <div className="flex items-center gap-3.5 border-b border-line bg-page px-[18px] py-3 text-[13px] text-fg-3">
           <span aria-hidden className="flex gap-1.5">
-            <span className="size-2.5 rounded-full bg-lp-line-strong" />
-            <span className="size-2.5 rounded-full bg-lp-line-strong" />
-            <span className="size-2.5 rounded-full bg-lp-line-strong" />
+            <span className="size-2.5 rounded-full bg-line-strong" />
+            <span className="size-2.5 rounded-full bg-line-strong" />
+            <span className="size-2.5 rounded-full bg-line-strong" />
           </span>
           <span className="font-mono">{TOUR.tabs[tab].path}</span>
         </div>
@@ -46,7 +48,7 @@ export function Tour({ panels }: { panels: React.ReactNode[] }) {
             {p}
           </div>
         ))}
-      </div>
+      </Card>
     </div>
   )
 }

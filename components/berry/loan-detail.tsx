@@ -228,7 +228,7 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
             Debits {formatCents(debits)} = credits {formatCents(credits)} {debits === credits ? "✓" : "✗"}
           </p>
         </div>
-        <div className="mt-3 overflow-x-auto">
+        <div className="mt-3 overflow-x-auto" tabIndex={0} role="region" aria-label="Ledger entries (scrolls sideways)">
           <table className="w-full min-w-[640px] text-left text-sm">
             <caption className="sr-only">Journal entries for this loan up to {date}</caption>
             <thead className="text-xs text-muted-ink">

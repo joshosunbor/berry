@@ -142,7 +142,7 @@ export default function AccuracyPage() {
 
       <section aria-labelledby="cases" className="mt-12">
         <h2 id="cases" className="text-xl font-semibold">Every case</h2>
-        <div className="mt-4 overflow-x-auto rounded-lg border border-rule bg-surface">
+        <div className="mt-4 overflow-x-auto rounded-lg border border-rule bg-surface" tabIndex={0} role="region" aria-label="Every case (scrolls sideways)">
           <table className="w-full min-w-[720px] text-left text-sm">
             <caption className="sr-only">Expected and actual outcome for every planted case and lender</caption>
             <thead className="border-b border-rule text-muted-ink">

@@ -9,9 +9,9 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(null)
   const base = useId()
   return (
-    <div className="min-w-0 flex-[2_1_480px] border-t border-lp-line-strong">
+    <div className="min-w-0 flex-[2_1_480px] border-t border-line-strong">
       {FAQ.items.map((f, i) => (
-        <div key={f.q} className="border-b border-lp-line-strong">
+        <div key={f.q} className="border-b border-line-strong">
           <h3 className="m-0">
             <button
               type="button"
@@ -22,10 +22,10 @@ export function Faq() {
               className="flex w-full cursor-pointer items-center justify-between gap-4 py-[18px] text-left text-lg font-semibold tracking-[-0.01em]"
             >
               {f.q}
-              <Plus aria-hidden className={`size-5 shrink-0 text-lp-text-3 transition-transform ${open === i ? "rotate-45" : ""}`} />
+              <Plus aria-hidden className={`size-5 shrink-0 text-fg-3 transition-transform ${open === i ? "rotate-45" : ""}`} />
             </button>
           </h3>
-          <div id={`${base}-a${i}`} role="region" aria-labelledby={`${base}-q${i}`} hidden={open !== i} className="max-w-[62ch] pb-5 text-lp-text-2">
+          <div id={`${base}-a${i}`} role="region" aria-labelledby={`${base}-q${i}`} hidden={open !== i} className="max-w-[62ch] pb-5 text-fg-2">
             {f.a}
           </div>
         </div>

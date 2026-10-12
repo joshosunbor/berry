@@ -6,7 +6,21 @@ import { expect, test } from "@playwright/test"
  * mode. Fails on serious or critical violations (WCAG 2.x A and AA rules).
  */
 
-const PAGES = ["/", "/workbench", "/apply", "/ops", "/ops/dashboard", "/methodology"]
+const PAGES = [
+  "/",
+  "/workbench",
+  "/workbench/hollis-family-farm",
+  "/compare/hollis-family-farm",
+  "/apply",
+  "/consents",
+  "/ops",
+  "/ops/dashboard",
+  "/ops/loans",
+  "/ops/loans/loan_hollis-family-farm-cu",
+  "/methodology",
+  "/accuracy",
+  "/workbench/nobody",
+]
 
 for (const scheme of ["light", "dark"] as const) {
   test.describe(`${scheme} mode`, () => {

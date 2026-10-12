@@ -1,81 +1,84 @@
 "use client"
 
-import { Tabs as TabsPrimitive } from "@base-ui/react/tabs"
-import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "cn"
+import { useId, useRef } from "react"
+import { cn } from "@/lib/utils"
 
-function Tabs({
-  className,
-  orientation = "horizontal",
-  ...props
-}: TabsPrimitive.Root.Props) {
-  return (
-    <TabsPrimitive.Root
-      data-slot="tabs"
-      data-orientation={orientation}
-      className={cn(
-        "group/tabs flex gap-2 data-horizontal:flex-col",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-const tabsListVariants = cva(
-  "group/tabs-list inline-flex w-fit items-center justify-center rounded-lg p-[3px] text-muted-foreground group-data-horizontal/tabs:h-8 group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col data-[variant=line]:rounded-none",
-  {
-    variants: {
-      variant: {
-        default: "bg-muted",
-        line: "gap-1 bg-transparent",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
+/*
+ * Tabs: the ARIA tabs pattern without a library. Roving tabindex;
+ * Left/Right and Home/End move between tabs; selection follows focus; each
+ * tab controls its panel. Two looks: "underline" (a rule with a green bar on
+ * the active tab) and "segmented" (a pill strip with a navy active tab).
+ */
+export function useTabs(count: number, value: number, onChange: (i: number) => void) {
+  const base = useId()
+  const refs = useRef<(HTMLButtonElement | null)[]>([])
+  const tabId = (i: number) => `${base}-tab-${i}`
+  const panelId = (i: number) => `${base}-panel-${i}`
+  const move = (i: number) => {
+    const next = (i + count) % count
+    onChange(next)
+    refs.current[next]?.focus()
   }
-)
+  return {
+    list: { role: "tablist" as const },
+    tab: (i: number) => ({
+      ref: (el: HTMLButtonElement | null) => {
+        refs.current[i] = el
+      },
+      id: tabId(i),
+      role: "tab" as const,
+      type: "button" as const,
+      "aria-selected": value === i,
+      "aria-controls": panelId(i),
+      tabIndex: value === i ? 0 : -1,
+      onClick: () => onChange(i),
+      onKeyDown: (e: React.KeyboardEvent) => {
+        const k = { ArrowRight: value + 1, ArrowLeft: value - 1, Home: 0, End: count - 1 }[e.key]
+        if (k === undefined) return
+        e.preventDefault()
+        move(k)
+      },
+    }),
+    panel: (i: number) => ({ id: panelId(i), role: "tabpanel" as const, "aria-labelledby": tabId(i), tabIndex: 0, hidden: value !== i }),
+  }
+}
 
-function TabsList({
+export type TabsVariant = "underline" | "segmented"
+
+export function tabListClass(variant: TabsVariant) {
+  return variant === "segmented" ? "inline-flex flex-wrap rounded-[10px] bg-panel p-1 shadow-inset-line" : "border-t-2 border-fg"
+}
+
+export function tabClass(variant: TabsVariant, selected: boolean) {
+  return variant === "segmented"
+    ? cn("min-h-10 cursor-pointer rounded-[7px] px-4 text-[15px] font-semibold", selected ? "bg-navy text-white" : "bg-transparent text-fg-2 hover:text-fg")
+    : cn("-mt-0.5 flex cursor-pointer flex-col justify-start border-t-[3px] bg-transparent pb-4 pl-0 pr-3.5 pt-3.5 text-left", selected ? "border-green text-fg" : "border-transparent text-fg-2")
+}
+
+/** A simple tab strip with text labels; render panels with `tabs.panel(i)`. */
+export function TabStrip({
+  label,
+  items,
+  value,
+  onChange,
+  variant = "segmented",
   className,
-  variant = "default",
-  ...props
-}: TabsPrimitive.List.Props & VariantProps<typeof tabsListVariants>) {
+}: {
+  label: string
+  items: React.ReactNode[]
+  value: number
+  onChange: (i: number) => void
+  variant?: TabsVariant
+  className?: string
+}) {
+  const t = useTabs(items.length, value, onChange)
   return (
-    <TabsPrimitive.List
-      data-slot="tabs-list"
-      data-variant={variant}
-      className={cn(tabsListVariants({ variant }), className)}
-      {...props}
-    />
+    <div {...t.list} aria-label={label} className={cn(tabListClass(variant), className)}>
+      {items.map((it, i) => (
+        <button key={i} {...t.tab(i)} className={tabClass(variant, value === i)}>
+          {it}
+        </button>
+      ))}
+    </div>
   )
 }
-
-function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
-  return (
-    <TabsPrimitive.Tab
-      data-slot="tabs-trigger"
-      className={cn(
-        "relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-muted-foreground transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 has-data-[icon=inline-end]:pr-1 has-data-[icon=inline-start]:pl-1 aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-muted-foreground dark:hover:text-foreground group-data-[variant=default]/tabs-list:data-active:shadow-sm group-data-[variant=line]/tabs-list:data-active:shadow-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-        "group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:data-active:bg-transparent dark:group-data-[variant=line]/tabs-list:data-active:border-transparent dark:group-data-[variant=line]/tabs-list:data-active:bg-transparent",
-        "data-active:bg-background data-active:text-foreground dark:data-active:border-input dark:data-active:bg-input/30 dark:data-active:text-foreground",
-        "after:absolute after:bg-foreground after:opacity-0 after:transition-opacity group-data-horizontal/tabs:after:inset-x-0 group-data-horizontal/tabs:after:bottom-[-5px] group-data-horizontal/tabs:after:h-0.5 group-data-vertical/tabs:after:inset-y-0 group-data-vertical/tabs:after:-right-1 group-data-vertical/tabs:after:w-0.5 group-data-[variant=line]/tabs-list:data-active:after:opacity-100",
-        className
-      )}
-      {...props}
-    />
-  )
-}
-
-function TabsContent({ className, ...props }: TabsPrimitive.Panel.Props) {
-  return (
-    <TabsPrimitive.Panel
-      data-slot="tabs-content"
-      className={cn("flex-1 rounded-sm text-sm outline-none focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-offset-4 focus-visible:outline-ring", className)}
-      {...props}
-    />
-  )
-}
-
-export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants }

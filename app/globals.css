@@ -79,49 +79,62 @@
   --color-decline-soft: var(--decline-soft);
 
   /*
-   * Landing page tokens (design/design_handoff_berry_landing/README.md).
-   * The landing page has one fixed scheme: navy sections on a light page.
-   * Scoped by name (lp-*) so the app's own tokens are untouched.
+   * Berry design tokens (from the landing page handoff,
+   * design/design_handoff_berry_landing). Themed tokens switch with light
+   * and dark mode; the navy brand colours are the same in both. Every text
+   * pair meets WCAG AA (4.5:1) and every chart colour 3:1 in both themes.
    */
-  --color-lp-navy: #011b33;
-  --color-lp-navy-raised: #0b2a47;
-  --color-lp-navy-line: #1c3a5a;
-  --color-lp-navy-line-strong: #3d5a78;
-  --color-lp-on-navy: #c7d3e0;
-  --color-lp-muted-on-navy: #8fa3b8;
-  --color-lp-page: #f6f9fc;
-  --color-lp-surface: #ffffff;
-  --color-lp-surface-alt: #fbfcfd;
-  --color-lp-field: #f0f3f7;
-  --color-lp-line: #e3e8ee;
-  --color-lp-line-soft: #eef1f5;
-  --color-lp-line-strong: #d5dce4;
-  --color-lp-text-2: #425466;
-  --color-lp-text-3: #5b6b7f;
-  /* Three colours are a shade darker than the handoff (#1F9D55, #1A8848, #17803D) so text on them meets WCAG AA (4.5:1). */
-  --color-lp-green: #178444;
-  --color-lp-green-hover: #157a3f;
-  --color-lp-green-ink: #15773a;
-  --color-lp-green-bright: #3bb75e;
-  --color-lp-green-tint: #e6f6ea;
-  --color-lp-green-tint-2: #f3fbf5;
-  --color-lp-cyan: #09a5db;
-  /* Handoff #0A7FAD is 4.27:1 on the page background; this is 5.03:1. */
-  --color-lp-cyan-ink: #08739d;
-  --color-lp-cyan-ink-hover: #086a90;
-  --color-lp-cyan-on-navy: #3bc4f0;
-  --color-lp-cyan-tint: #e3f5fc;
-  --color-lp-cyan-tint-2: #eef8fc;
-  --color-lp-slate: #3a5a80;
-  --color-lp-chart-out: #9aaabb;
-  --color-lp-spark: #c9d3de;
-  --color-lp-sla-red: #ff7a7a;
-  --color-lp-sla-amber: #f5b942;
-  --color-lp-selection: #d8f1e1;
-  --shadow-lp-card: 0 0 0 1px #e3e8ee;
-  --shadow-lp-hero: 0 0 0 1px #e3e8ee, 0 40px 80px -30px rgba(0, 0, 0, 0.45);
-  --shadow-lp-tour: 0 0 0 1px #e3e8ee, 0 32px 64px -32px rgba(1, 27, 51, 0.28);
-  --shadow-lp-lift: 0 0 0 1px #d5dce4, 0 18px 36px -18px rgba(1, 27, 51, 0.25);
+  --color-page: var(--ds-page);
+  --color-panel: var(--ds-panel);
+  --color-panel-alt: var(--ds-panel-alt);
+  --color-field: var(--ds-field);
+  --color-line: var(--ds-line);
+  --color-line-soft: var(--ds-line-soft);
+  --color-line-strong: var(--ds-line-strong);
+  --color-fg: var(--ds-fg);
+  --color-fg-2: var(--ds-fg-2);
+  --color-fg-3: var(--ds-fg-3);
+  --color-green: var(--ds-green);
+  --color-green-hover: var(--ds-green-hover);
+  --color-green-ink: var(--ds-green-ink);
+  --color-green-tint: var(--ds-green-tint);
+  --color-green-tint-2: var(--ds-green-tint-2);
+  --color-cyan-ink: var(--ds-cyan-ink);
+  --color-cyan-ink-hover: var(--ds-cyan-ink-hover);
+  --color-cyan-tint: var(--ds-cyan-tint);
+  --color-cyan-tint-2: var(--ds-cyan-tint-2);
+  --color-warn: var(--ds-warn);
+  --color-warn-tint: var(--ds-warn-tint);
+  --color-bad: var(--ds-bad);
+  --color-bad-tint: var(--ds-bad-tint);
+  --color-northgate: var(--ds-northgate);
+  --color-kite: var(--ds-kite);
+  --color-aspen: var(--ds-aspen);
+  --color-chart-in: var(--ds-chart-in);
+  --color-chart-out: var(--ds-chart-out);
+  --color-selection: var(--ds-selection);
+  --color-focus: var(--ds-focus);
+  /* Brand navy: the same in both themes (header, navy sections, contact panel). */
+  --color-navy: #011b33;
+  --color-navy-raised: #0b2a47;
+  --color-navy-line: #1c3a5a;
+  --color-navy-line-strong: #3d5a78;
+  --color-on-navy: #c7d3e0;
+  --color-muted-on-navy: #8fa3b8;
+  --color-green-bright: #3bb75e;
+  --color-cyan: #09a5db;
+  --color-cyan-on-navy: #3bc4f0;
+  --color-sla-red: #ff7a7a;
+  --color-sla-amber: #f5b942;
+  --shadow-card: 0 0 0 1px var(--ds-line);
+  --shadow-inset-line: inset 0 0 0 1px var(--ds-line);
+  --shadow-inset-line-strong: inset 0 0 0 1px var(--ds-line-strong);
+  --shadow-inset-navy: inset 0 0 0 1px #3d5a78;
+  --shadow-navy-card: 0 0 0 1px #1c3a5a;
+  --shadow-segment-on: 0 1px 2px rgba(1, 27, 51, 0.12), 0 0 0 1px var(--ds-line);
+  --shadow-hero: 0 0 0 1px var(--ds-line), 0 40px 80px -30px rgba(0, 0, 0, 0.45);
+  --shadow-tour: 0 0 0 1px var(--ds-line), 0 32px 64px -32px rgba(1, 27, 51, 0.28);
+  --shadow-lift: 0 0 0 1px var(--ds-line-strong), 0 18px 36px -18px rgba(1, 27, 51, 0.25);
   --breakpoint-tablet: 520px;
   --breakpoint-wide: 860px;
 
@@ -291,6 +304,111 @@
   --ring: #8fa8d6;
 }
 
+/* Berry tokens, light (the landing palette). */
+:root,
+.landing {
+  --ds-page: #f6f9fc;
+  --ds-panel: #ffffff;
+  --ds-panel-alt: #fbfcfd;
+  --ds-field: #f0f3f7;
+  --ds-line: #e3e8ee;
+  --ds-line-soft: #eef1f5;
+  --ds-line-strong: #d5dce4;
+  --ds-fg: #011b33;
+  --ds-fg-2: #425466;
+  --ds-fg-3: #5b6b7f;
+  /* Handoff green/cyan/ink a shade darker for AA (see the landing redesign commit). */
+  --ds-green: #178444;
+  --ds-green-hover: #157a3f;
+  --ds-green-ink: #15773a;
+  --ds-green-tint: #e6f6ea;
+  --ds-green-tint-2: #f3fbf5;
+  --ds-cyan-ink: #08739d;
+  --ds-cyan-ink-hover: #086a90;
+  --ds-cyan-tint: #e3f5fc;
+  --ds-cyan-tint-2: #eef8fc;
+  --ds-warn: #8a5a00;
+  --ds-warn-tint: #fdf3dc;
+  --ds-bad: #b42318;
+  --ds-bad-tint: #fdecec;
+  --ds-northgate: #2e9e50;
+  --ds-kite: #0891c2;
+  --ds-aspen: #3a5a80;
+  /* Chart colours meet 3:1 against white and the page. */
+  --ds-chart-in: #2e9e50;
+  --ds-chart-out: #728599;
+  --ds-selection: #d8f1e1;
+  --ds-focus: #178444;
+}
+
+/* Berry tokens, dark (navy). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ds-page: #011b33;
+    --ds-panel: #0b2a47;
+    --ds-panel-alt: #0e3150;
+    --ds-field: #011b33;
+    --ds-line: #1c3a5a;
+    --ds-line-soft: #16324f;
+    --ds-line-strong: #2a4a6b;
+    --ds-fg: #ffffff;
+    --ds-fg-2: #c7d3e0;
+    --ds-fg-3: #8fa3b8;
+    --ds-green: #178444;
+    --ds-green-hover: #1a8f4a;
+    --ds-green-ink: #3bb75e;
+    --ds-green-tint: #0f3324;
+    --ds-green-tint-2: #0e2f22;
+    --ds-cyan-ink: #3bc4f0;
+    --ds-cyan-ink-hover: #6dd3f4;
+    --ds-cyan-tint: #0c3348;
+    --ds-cyan-tint-2: #0d2e45;
+    --ds-warn: #f5b942;
+    --ds-warn-tint: #33290f;
+    --ds-bad: #ff7a7a;
+    --ds-bad-tint: #381b22;
+    --ds-northgate: #3bb75e;
+    --ds-kite: #3bc4f0;
+    --ds-aspen: #9db4de;
+    --ds-chart-in: #3bb75e;
+    --ds-chart-out: #8fa3b8;
+    --ds-selection: #1c3a5a;
+    --ds-focus: #3bb75e;
+  }
+}
+:root[data-theme="dark"] {
+  --ds-page: #011b33;
+  --ds-panel: #0b2a47;
+  --ds-panel-alt: #0e3150;
+  --ds-field: #011b33;
+  --ds-line: #1c3a5a;
+  --ds-line-soft: #16324f;
+  --ds-line-strong: #2a4a6b;
+  --ds-fg: #ffffff;
+  --ds-fg-2: #c7d3e0;
+  --ds-fg-3: #8fa3b8;
+  --ds-green: #178444;
+  --ds-green-hover: #1a8f4a;
+  --ds-green-ink: #3bb75e;
+  --ds-green-tint: #0f3324;
+  --ds-green-tint-2: #0e2f22;
+  --ds-cyan-ink: #3bc4f0;
+  --ds-cyan-ink-hover: #6dd3f4;
+  --ds-cyan-tint: #0c3348;
+  --ds-cyan-tint-2: #0d2e45;
+  --ds-warn: #f5b942;
+  --ds-warn-tint: #33290f;
+  --ds-bad: #ff7a7a;
+  --ds-bad-tint: #381b22;
+  --ds-northgate: #3bb75e;
+  --ds-kite: #3bc4f0;
+  --ds-aspen: #9db4de;
+  --ds-chart-in: #3bb75e;
+  --ds-chart-out: #8fa3b8;
+  --ds-selection: #1c3a5a;
+  --ds-focus: #3bb75e;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -338,8 +456,10 @@
     scroll-behavior: smooth;
   }
   .landing {
-    background: var(--color-lp-page);
-    color: var(--color-lp-navy);
+    /* The landing page keeps its light design in both themes. */
+    color-scheme: light;
+    background: var(--ds-page);
+    color: var(--ds-fg);
     font-size: 17px;
     line-height: 1.6;
     font-variant-numeric: tabular-nums;
@@ -348,19 +468,19 @@
     -webkit-font-smoothing: antialiased;
   }
   :where(.landing) a {
-    color: var(--color-lp-cyan-ink);
+    color: var(--ds-cyan-ink);
     text-decoration: none;
   }
   :where(.landing) a:hover {
-    color: var(--color-lp-cyan-ink-hover);
+    color: var(--ds-cyan-ink-hover);
   }
   :where(.landing) :is(a, button, summary, [role="tab"]):focus-visible {
-    outline: 2px solid var(--color-lp-green);
+    outline: 2px solid var(--ds-focus);
     outline-offset: 3px;
     border-radius: 6px;
   }
   :where(.landing) ::selection {
-    background: var(--color-lp-selection);
+    background: var(--ds-selection);
   }
 }
 
