@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { getBooks } from "@/lib/data"
+import { getBooks, getOpsItems } from "@/lib/data"
 import { MODES } from "@/lib/modes"
 import { businessDaysBetween, earliestSafeRetry } from "@/lib/rules/nsf"
 import { Rng } from "@/lib/rng"
@@ -93,6 +93,33 @@ describe("servicing simulator: the three loan books", () => {
     expect(p.statusTimeline.map((t) => t.status)).toContain("hardship")
     expect(p.borrowerFees.every((f) => f.fee.label === "provincially regulated — fee illustrative")).toBe(true)
     expectBalanced(books.credit_union.ledger)
+  })
+
+  it("Petalwick: nothing on the loan changes until a second person approves the deferral", () => {
+    const p = loan("loan_petalwick-florals-cu")
+    const rerun = (decision: LoanSetup["hardshipDecision"]) =>
+      simulateBook("northgate", "credit_union", [{ ...p.setup, hardshipDecision: decision }], books.credit_union.horizon).loans[0]
+    // No decision yet: the request is logged, but no payment moves and the loan isn't in hardship.
+    const pending = rerun(undefined)
+    expect(pending.events.map((e) => e.type)).toContain("hardship_offered")
+    expect(pending.events.map((e) => e.type)).not.toContain("payments_deferred")
+    expect(pending.statusTimeline.map((t) => t.status)).not.toContain("hardship")
+    // Rejected: same as pending, plus the decision on record.
+    const offeredOn = pending.events.find((e) => e.type === "hardship_offered")!.date
+    const rejected = rerun({ on: offeredOn, approved: false, by: "usr_lead" })
+    expect(rejected.events.map((e) => e.type)).toContain("hardship_declined")
+    expect(rejected.events.map((e) => e.type)).not.toContain("payments_deferred")
+    expect(rejected.attempts).toEqual(pending.attempts)
+  })
+
+  it("Petalwick: the deferral starts when the maker-checker approval completes, for the amount approved", () => {
+    const p = loan("loan_petalwick-florals-cu")
+    const item = getOpsItems().find((i) => i.id === "q_hardship-petalwick-florals-cu")!
+    const approved = p.events.find((e) => e.type === "hardship_approved")!
+    expect(approved.date).toBe(item.completedAt!.slice(0, 10))
+    expect(p.events.find((e) => e.type === "payments_deferred")!.date).toBe(approved.date)
+    expect(p.statusTimeline.find((t) => t.status === "hardship")!.date).toBe(approved.date)
+    expect(approved.amountCents).toBe(item.approval!.amountCents)
   })
 
   it("Hollis at Kite: NSF on a credit union account uses the illustrative provincial fee", () => {

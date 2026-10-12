@@ -5,7 +5,7 @@ import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import type { Account, Decision } from "@/lib/schemas"
 import { SERVICING, type ServicingConfig } from "./config"
 import { fund, type AccountVerificationOutcome } from "./funding"
-import { simulateBook, type BookResult, type LoanSetup, type Script } from "./simulate"
+import { simulateBook, type BookResult, type HardshipDecision, type LoanSetup, type Script } from "./simulate"
 
 /*
  * The three lenders' loan books: every approved applicant-lender pair is a
@@ -51,6 +51,13 @@ export const SCRIPTS: Record<string, Script> = {
   "loan_quillfeather-plumbing-kite": { returns: [{ n: 4, attempt: 1, code: "903" }], resumeAfterDays: 10 },
 }
 
+/** Decisions the operations team made, fed back into servicing (see lib/data.ts). */
+export interface OpsDecisions {
+  hardship: Record<string, HardshipDecision>
+}
+
+export const NO_OPS_DECISIONS: OpsDecisions = { hardship: {} }
+
 export interface BookInput {
   slug: string
   name: string
@@ -72,7 +79,7 @@ function railFor(mode: Mode, amountCents: number, config: ServicingConfig) {
   return amountCents <= config.rails.etransfer.limitCents ? ("etransfer" as const) : ("rtr_simulated" as const)
 }
 
-export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingConfig = SERVICING): LoanSetup[] {
+export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingConfig = SERVICING, ops: OpsDecisions = NO_OPS_DECISIONS): LoanSetup[] {
   const setups: LoanSetup[] = []
   for (const a of inputs) {
     const d = a.decisions[mode]
@@ -110,11 +117,12 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
       recovery: CONFIGS[mode].recovery,
       baseReturnRate: baseReturnRate(a.features),
       script: SCRIPTS[id],
+      hardshipDecision: ops.hardship[id],
     })
   }
   return setups
 }
 
-export function buildBooks(inputs: BookInput[], horizon = HORIZON, config: ServicingConfig = SERVICING): Record<Mode, BookResult> {
-  return Object.fromEntries(MODES.map((m) => [m, simulateBook(MODE_META[m].institutionId, m, loanSetups(inputs, m, config), horizon, config)])) as Record<Mode, BookResult>
+export function buildBooks(inputs: BookInput[], horizon = HORIZON, config: ServicingConfig = SERVICING, ops: OpsDecisions = NO_OPS_DECISIONS): Record<Mode, BookResult> {
+  return Object.fromEntries(MODES.map((m) => [m, simulateBook(MODE_META[m].institutionId, m, loanSetups(inputs, m, config, ops), horizon, config)])) as Record<Mode, BookResult>
 }

@@ -42,6 +42,8 @@ const EVENT_ICON: Partial<Record<LoanEventType, typeof Send>> = {
   borrower_contacted: PhoneCall,
   debits_resumed: RotateCcw,
   hardship_offered: HeartHandshake,
+  hardship_approved: HeartHandshake,
+  hardship_declined: HeartHandshake,
   payments_deferred: HeartHandshake,
   cured: CheckCircle2,
   charged_off: Ban,

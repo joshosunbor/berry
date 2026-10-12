@@ -58,6 +58,15 @@ export interface LoanSetup {
   baseReturnRate: number
   /** Planted returns, keyed by scheduled debit number and attempt. */
   script?: Script
+  /** The lender's maker-checker decision on a hardship request, from the Hardship queue. Absent: still pending. */
+  hardshipDecision?: HardshipDecision
+}
+
+export interface HardshipDecision {
+  /** The day the second person's approval (or rejection) completed. */
+  on: string
+  approved: boolean
+  by: string
 }
 
 export interface Script {
@@ -82,6 +91,8 @@ export type LoanEventType =
   | "borrower_contacted"
   | "debits_resumed"
   | "hardship_offered"
+  | "hardship_approved"
+  | "hardship_declined"
   | "payments_deferred"
   | "cured"
   | "status_changed"
@@ -211,6 +222,8 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
   let blocked = null as { until: string | null; code: ReturnCode } | null
   let hardshipUntil = null as string | null
   let hardshipOffered = false
+  let hardshipRequestedOn = null as string | null
+  let hardshipDecided = false
   let failures = 0
   let chargedOffOn: string | null = null
   type InFlight = { attempt: Attempt; split: CollectionPosting; items: Item[]; settleOn: string | null; returnOn: string | null; code: ReturnCode | null; stage: "clearing" | "settled" | null }
@@ -286,20 +299,44 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       )
     }
 
-    // Hardship signal: repeated NSF returns in 90 days.
+    // Hardship signal: repeated NSF returns in 90 days. The deferral is only
+    // offered here; nothing on the loan changes until a second person approves it.
     const recentNsf = attempts.filter((a) => a.outcome === "returned" && (a.code === "901" || a.code === "908") && daysBetween(a.returnedOn!, day) < 90).length
     if (!hardshipOffered && recentNsf >= s.recovery.hardshipSignalThreshold) {
       hardshipOffered = true
-      hardshipUntil = addDays(day, 90)
-      events.push({ date: day, type: "hardship_offered", text: `${recentNsf} returned payments in 90 days: offered a 3-month payment deferral (pending lender approval; illustrative). Debits pause.` })
-      for (const it of items.filter((x) => x.state === "open" || x.state === "held")) {
-        it.state = "open"
-        it.deferred = true
-        if (it.dueOn < hardshipUntil) it.dueOn = hardshipUntil
-      }
-      events.push({ date: day, type: "payments_deferred", text: `Payments due before ${hardshipUntil} move to ${hardshipUntil}.` })
-      setStatus(day, "hardship", "Hardship deferral offered.")
+      hardshipRequestedOn = day
+      const amount = deferrable(day).reduce((t, it) => t + it.amountCents, 0)
+      events.push({
+        date: day,
+        type: "hardship_offered",
+        amountCents: amount,
+        text: `${recentNsf} returned payments in 90 days: offered a 3-month payment deferral (illustrative). It needs a lender's approval and a second person's sign-off; until then nothing on the loan changes.`,
+      })
     }
+  }
+
+  /** The payments a deferral requested on `from` would move: anything unpaid falling due in the next 90 days, and any missed. */
+  const deferrable = (from: string) => items.filter((x) => (x.state === "open" || x.state === "held") && x.dueOn < addDays(from, 90))
+
+  /** Applies the lender's decision on the hardship request, on the day it was made. */
+  const decideHardship = (day: string) => {
+    const d = s.hardshipDecision
+    if (!d || hardshipDecided || !hardshipRequestedOn || day < d.on || day < hardshipRequestedOn) return
+    hardshipDecided = true
+    if (!d.approved) {
+      events.push({ date: day, type: "hardship_declined", text: `Deferral declined at the second-person check (${d.by}). Normal recovery continues.` })
+      return
+    }
+    const moved = deferrable(hardshipRequestedOn)
+    hardshipUntil = addDays(day, 90)
+    events.push({ date: day, type: "hardship_approved", amountCents: moved.reduce((t, it) => t + it.amountCents, 0), text: `Deferral signed off by a second person (${d.by}, maker-checker). Debits pause for 3 months.` })
+    for (const it of items.filter((x) => x.state === "open" || x.state === "held")) {
+      it.state = "open"
+      it.deferred = true
+      if (it.dueOn < hardshipUntil) it.dueOn = hardshipUntil
+    }
+    events.push({ date: day, type: "payments_deferred", text: `Payments due before ${hardshipUntil} move to ${hardshipUntil}.` })
+    setStatus(day, "hardship", "Hardship deferral approved.")
   }
 
   for (let day = fundedOn; day <= horizon; day = addDays(day, 1)) {
@@ -407,6 +444,9 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       principal += dr.amountCents
       events.push({ date: day, type: "drawn", amountCents: dr.amountCents, text: `Draw ${k} on the line, by AFT.` })
     }
+
+    // The lender's decision on a hardship request takes effect the day the approval completes.
+    decideHardship(day)
 
     // 5. Delinquency, charge-off and payoff.
     // A payment is past due from its scheduled date once it has failed, or once that date has passed unpaid.

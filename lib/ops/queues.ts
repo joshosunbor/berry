@@ -169,7 +169,8 @@ export function buildItems(src: Sources): OpsItem[] {
         })
       }
       if (e.type === "hardship_offered") {
-        const deferred = loan.schedule.filter((d) => d.date >= e.date && d.date < addDaysIso(e.date, 90)).reduce((t, d) => t + d.amountCents, 0)
+        // The simulator sizes the request the same way it applies the deferral.
+        const deferred = e.amountCents ?? 0
         add({
           id: `q_hardship-${loan.id.replace(/^loan_/, "")}`,
           queue: "hardship",

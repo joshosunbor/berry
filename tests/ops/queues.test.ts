@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { getCast, getLoanViews, getOpsItems } from "@/lib/data"
+import { getCast, getLoanViews, getOpsDecisions, getOpsItems } from "@/lib/data"
 import { OPS } from "@/lib/ops/config"
 import { buildItems, isOpen, nextCommitteeMeeting, runTeam, slaState } from "@/lib/ops/queues"
 import { PLAYBOOKS } from "@/lib/ops/playbooks"
@@ -38,6 +38,12 @@ describe("queues are fed only by real open items", () => {
     ])
     expect(byQueue("credit_referral").map((i) => i.subject.id).sort()).toEqual(expected.sort())
     for (const i of byQueue("credit_referral")) expect(i.approval).toBeDefined()
+  })
+
+  it("servicing and operations agree: re-simulating with the team's decisions doesn't move them", () => {
+    const { firstPass, final } = getOpsDecisions()
+    expect(Object.keys(final.hardship).length).toBeGreaterThan(0)
+    expect(final).toEqual(firstPass)
   })
 
   it("collections, hardship and reconciliation items come from the simulator's events and breaks", () => {

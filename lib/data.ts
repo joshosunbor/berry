@@ -14,7 +14,7 @@ import type { PolicyCase } from "@/lib/ops/policy"
 import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
 import type { AuditEvent } from "@/lib/schemas"
 import { SERVICING } from "@/lib/servicing/config"
-import { FUNDING_INITIATED_AT, buildBooks, loanIdFor } from "@/lib/servicing/portfolio"
+import { FUNDING_INITIATED_AT, buildBooks, loanIdFor, type OpsDecisions } from "@/lib/servicing/portfolio"
 import { stressSeason, type StressResult } from "@/lib/servicing/stress"
 import type { BookResult } from "@/lib/servicing/simulate"
 import { breaksByLoan, summarize as summarizeLoan, toLoanView, type LoanSummary, type LoanView } from "@/lib/servicing/views"
@@ -170,22 +170,64 @@ export function getApplyPayload(slug: string): ApplyPayload | undefined {
   return { input: toEngineInput(a), verification: view.verification }
 }
 
-/** The three lenders' loan books, simulated to the servicing horizon at build time. */
-const books: Record<Mode, BookResult> = buildBooks(
-  cast.map((c) => {
-    const a = raw.find((x) => x.slug === c.applicant.slug)!
-    return { slug: a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification }
-  }),
-)
+/**
+ * The three lenders' loan books, simulated to the servicing horizon at build
+ * time. Servicing and operations feed each other: a hardship deferral only
+ * takes effect once the team's maker-checker approval completes. So the books
+ * are simulated once to find the requests, the team works them, and the books
+ * are simulated again with the team's decisions. Items are worked in time
+ * order, so the second pass can't move an earlier decision (tested).
+ */
+const bookInputs = cast.map((c) => {
+  const a = raw.find((x) => x.slug === c.applicant.slug)!
+  return { slug: a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification }
+})
+
+const viewsOf = (bs: Record<Mode, BookResult>): LoanView[] =>
+  (Object.values(bs) as BookResult[]).flatMap((book) => {
+    const breaks = breaksByLoan(book)
+    return book.loans.map((l) => toLoanView(book, l, breaks.get(l.setup.id) ?? []))
+  })
+
+/** Queue items built only from open items: onboarding, decisions and servicing. */
+const opsItemsFor = (views: LoanView[]) =>
+  buildItems({
+    verification: cast.map((c) => ({ slug: c.applicant.slug, name: c.applicant.displayName, checks: c.verification.checks })),
+    largeCash: cast.flatMap((c) => c.largeCash.map((review) => ({ slug: c.applicant.slug, name: c.applicant.displayName, review }))),
+    decisions: cast.flatMap((c) => MODES.map((mode) => ({ slug: c.applicant.slug, name: c.applicant.displayName, mode, decision: c.decisions[mode], features: c.features }))),
+    loans: views,
+    payee: cast.flatMap((c) =>
+      MODES.flatMap((mode) => {
+        const loan = views.find((l) => l.id === loanIdFor(c.applicant.slug, mode))
+        if (!loan || c.accountVerification.result !== "close_match" || loan.funding.rail === "aft") return []
+        return [{ slug: c.applicant.slug, name: c.applicant.displayName, mode, loanId: loan.id, amountCents: loan.principalCents, verification: c.accountVerification, at: FUNDING_INITIATED_AT }]
+      }),
+    ),
+  })
+
+/** What the team decided, keyed by loan: the day each hardship approval completed and who gave it. */
+export function opsDecisionsFrom(items: OpsItem[]): OpsDecisions {
+  const hardship: OpsDecisions["hardship"] = {}
+  for (const it of items) {
+    if (it.queue === "hardship" && it.completedAt && it.approverId) hardship[it.subject.id] = { on: it.completedAt.slice(0, 10), approved: true, by: it.approverId }
+  }
+  return { hardship }
+}
+
+const firstPass = runTeam(opsItemsFor(viewsOf(buildBooks(bookInputs))))
+const opsDecisions = opsDecisionsFrom(firstPass.items)
+const books: Record<Mode, BookResult> = buildBooks(bookInputs, undefined, undefined, opsDecisions)
+
+/** The team's decisions after the first pass; the second pass must reproduce them. */
+export function getOpsDecisions(): { firstPass: OpsDecisions; final: OpsDecisions } {
+  return { firstPass: opsDecisions, final: opsDecisionsFrom(opsRun.items) }
+}
 
 export function getBooks(): Record<Mode, BookResult> {
   return books
 }
 
-const loanViews: LoanView[] = (Object.values(books) as BookResult[]).flatMap((book) => {
-  const breaks = breaksByLoan(book)
-  return book.loans.map((l) => toLoanView(book, l, breaks.get(l.setup.id) ?? []))
-})
+const loanViews: LoanView[] = viewsOf(books)
 
 export function getLoanViews(): LoanView[] {
   return loanViews
@@ -228,21 +270,7 @@ export function getForeignReportDemo() {
  * the simulated team in business hours. The audit trail is the hash-chained
  * log of every step.
  */
-const opsRun = runTeam(
-  buildItems({
-    verification: cast.map((c) => ({ slug: c.applicant.slug, name: c.applicant.displayName, checks: c.verification.checks })),
-    largeCash: cast.flatMap((c) => c.largeCash.map((review) => ({ slug: c.applicant.slug, name: c.applicant.displayName, review }))),
-    decisions: cast.flatMap((c) => MODES.map((mode) => ({ slug: c.applicant.slug, name: c.applicant.displayName, mode, decision: c.decisions[mode], features: c.features }))),
-    loans: loanViews,
-    payee: cast.flatMap((c) =>
-      MODES.flatMap((mode) => {
-        const loan = loanViews.find((l) => l.id === loanIdFor(c.applicant.slug, mode))
-        if (!loan || c.accountVerification.result !== "close_match" || loan.funding.rail === "aft") return []
-        return [{ slug: c.applicant.slug, name: c.applicant.displayName, mode, loanId: loan.id, amountCents: loan.principalCents, verification: c.accountVerification, at: FUNDING_INITIATED_AT }]
-      }),
-    ),
-  }),
-)
+const opsRun = runTeam(opsItemsFor(loanViews))
 
 export function getOpsItems(): OpsItem[] {
   return opsRun.items
