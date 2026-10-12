@@ -96,6 +96,26 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
           </dd>
         </div>
       </dl>
+      <section aria-labelledby="gate" className={card}>
+        <h2 id="gate" className="font-semibold">Before funding</h2>
+        {loan.gate.length ? (
+          <ul className="mt-3 space-y-2 text-sm">
+            {loan.gate.map((c) => (
+              <li key={c.kind + c.label} className="flex gap-2">
+                <CheckCircle2 aria-hidden className="mt-0.5 size-4 shrink-0 text-green" />
+                <span>
+                  {c.label}
+                  {c.simulated && <Illustrative className="ml-1.5" label="simulated" why="Documents arriving is simulated a set number of business days after the decision." />}
+                  <span className="num block text-xs text-fg-3">Cleared {c.clearedAt!.replace("T", ", ")}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-2 text-sm text-fg-3">No pre-funding checks apply to this automated approval.</p>
+        )}
+        <p className="mt-3 text-xs text-fg-3">Funds are sent only after every check clears. This loan was ready at {loan.gateReadyAt.replace("T", ", ")}.</p>
+      </section>
       {line && (
         <section aria-labelledby="line" className={card}>
           <h2 id="line" className="font-semibold">Operating line</h2>

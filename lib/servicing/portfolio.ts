@@ -1,10 +1,11 @@
 import type { Features } from "@/lib/engine/features"
-import type { PadPlan } from "@/lib/engine/repayment"
+import { buildPadPlan, type PadPlan } from "@/lib/engine/repayment"
 import { CONFIGS } from "@/lib/engine/config"
 import { MODES, MODE_META, type Mode } from "@/lib/modes"
 import type { Account, Decision } from "@/lib/schemas"
 import { SERVICING, type ServicingConfig } from "./config"
 import { fund, type AccountVerificationOutcome } from "./funding"
+import { fundingGate } from "./gate"
 import { simulateBook, type BookResult, type HardshipDecision, type LoanSetup, type Script } from "./simulate"
 
 /*
@@ -19,6 +20,11 @@ export const FUNDING_INITIATED_AT = "2026-10-06T10:00"
 export const FUNDING_AFTER_PAYEE_CONFIRMATION = "2026-10-06T11:30"
 /** Servicing runs from funding through the end of December 2027, so every seasonal line completes its first season. */
 export const HORIZON = "2027-12-31"
+
+/** Confirming the payee by phone takes about 90 minutes after the loan is ready (illustrative). */
+function afterPayeeConfirmation(readyAt: string): string {
+  return new Date(Date.parse(`${readyAt}:00Z`) + 90 * 60_000).toISOString().slice(0, 16)
+}
 
 const SHORT: Record<Mode, string> = { credit_union: "cu", fintech: "kite", bank: "aspen" }
 export const loanIdFor = (slug: string, mode: Mode) => `loan_${slug}-${SHORT[mode]}`
@@ -54,9 +60,13 @@ export const SCRIPTS: Record<string, Script> = {
 /** Decisions the operations team made, fed back into servicing (see lib/data.ts). */
 export interface OpsDecisions {
   hardship: Record<string, HardshipDecision>
+  /** Sign-off completion, keyed by decision id. */
+  signOff: Record<string, string>
+  /** When an applicant's identity checks that needed a person were all cleared, keyed by slug. */
+  verification: Record<string, string>
 }
 
-export const NO_OPS_DECISIONS: OpsDecisions = { hardship: {} }
+export const NO_OPS_DECISIONS: OpsDecisions = { hardship: {}, signOff: {}, verification: {} }
 
 export interface BookInput {
   slug: string
@@ -67,6 +77,8 @@ export interface BookInput {
   decisions: Record<Mode, Decision>
   pad: Record<Mode, PadPlan | null>
   accountVerification: AccountVerificationOutcome
+  /** Identity checks: all passed, some needed a person, or one failed. */
+  identity: "passed" | "needs_review" | "failed"
 }
 
 /** Base chance a regular debit is returned NSF, from the applicant's history (illustrative). */
@@ -83,16 +95,27 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
   const setups: LoanSetup[] = []
   for (const a of inputs) {
     const d = a.decisions[mode]
-    const plan = a.pad[mode]
-    if (!plan || (d.outcome !== "approve" && d.outcome !== "approve_with_conditions")) continue
+    if (!a.pad[mode] || (d.outcome !== "approve" && d.outcome !== "approve_with_conditions")) continue
     const id = loanIdFor(a.slug, mode)
+    // Nothing is sent until every pre-funding check has cleared; a pending or failed check means no loan.
+    const gate = fundingGate({
+      decision: d,
+      lastNsfDate: a.features.lastNsfDate,
+      signOffAt: ops.signOff[d.id] ?? null,
+      verification: a.identity === "passed" ? undefined : a.identity === "failed" ? "failed" : (ops.verification[a.slug] ?? null),
+      earliest: FUNDING_INITIATED_AT,
+      documentsBusinessDays: config.documentsReceivedBusinessDays,
+    })
+    if (!gate.readyAt) continue
+    // A loan held past the usual funding day signs its PAD agreement when it clears, so no debit falls before funding.
+    const plan = gate.readyAt.slice(0, 10) > FUNDING_INITIATED_AT.slice(0, 10) ? buildPadPlan({ decision: d, features: a.features, kind: a.kind, agreementSignedOn: gate.readyAt.slice(0, 10) }) : a.pad[mode]!
     const rail = railFor(mode, d.limitCents, config)
     const funding = fund(
       {
         loanId: id,
         amountCents: d.limitCents,
         rail,
-        initiatedAt: rail !== "aft" && a.accountVerification.canFund === "after_confirming" ? FUNDING_AFTER_PAYEE_CONFIRMATION : FUNDING_INITIATED_AT,
+        initiatedAt: rail !== "aft" && a.accountVerification.canFund === "after_confirming" ? afterPayeeConfirmation(gate.readyAt) : gate.readyAt,
         verification: a.accountVerification,
         confirmedWithBorrower: true,
       },
@@ -118,6 +141,8 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
       baseReturnRate: baseReturnRate(a.features),
       script: SCRIPTS[id],
       hardshipDecision: ops.hardship[id],
+      gate: gate.checks,
+      gateReadyAt: gate.readyAt,
     })
   }
   return setups

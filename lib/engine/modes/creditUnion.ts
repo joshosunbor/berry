@@ -163,6 +163,7 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
   let cap = Math.min(requested, terms.maxCents)
 
   const conditions: string[] = []
+  const fundingConditions: ModeResult["fundingConditions"] = []
   if (!f.relationship.member && input.kind === "personal" && REVOLVING.has(product) && t.nonMemberRevolvingMaxCents < cap) {
     cap = t.nonMemberRevolvingMaxCents
     reasons.push({ code: "NON_MEMBER_CAP", weight: 0.85, evidence: { capCents: t.nonMemberRevolvingMaxCents } })
@@ -172,6 +173,7 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
     if (nsfCap < cap) cap = nsfCap
     reasons.push({ code: "RECENT_NSF_CAUTION", weight: 0.9, evidence: { count: f.nsf90, monthsOfNet: t.recentNsfLimitMonthsOfNet } })
     conditions.push("No returned payments in the 90 days before the first draw", "Monthly account statements for the first six months")
+    fundingConditions.push({ kind: "no_recent_returns", days: 90 })
   }
 
   // Coverage: standard minimum, or the lower relationship minimum for strong members.
@@ -217,6 +219,7 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
     paymentCents: payment,
     reasons,
     conditions: conditions.length ? conditions : undefined,
+    fundingConditions,
     relationshipException,
     inputsUsed: CREDIT_UNION_INPUTS,
   }

@@ -4,6 +4,7 @@ import type { Mode } from "@/lib/modes"
 import { MODE_META } from "@/lib/modes"
 import type { Decision, QueueName, SubjectRef, VerificationCheck } from "@/lib/schemas"
 import type { AccountVerificationOutcome } from "@/lib/servicing/funding"
+import { DECIDED_AT } from "@/lib/servicing/gate"
 import type { LoanView } from "@/lib/servicing/views"
 import { formatCents } from "@/lib/money"
 import { approve, prepare, requiredRoleFor, type ApprovalKind, type ApprovalRequest } from "./approvals"
@@ -66,8 +67,7 @@ export function buildItems(src: Sources): OpsItem[] {
   const add = (it: Omit<OpsItem, "slaDueAt" | "steps" | "ownerId" | "approverId" | "completedAt">) =>
     items.push({ ...it, slaDueAt: addBusinessHours(nextBusinessMoment(it.createdAt), OPS.queues[it.queue].slaBusinessHours), steps: [], ownerId: null, approverId: null, completedAt: null })
 
-  // Decisions are made at the end of September; applications reach operations on October 1.
-  const decided = "2026-10-01T09:00"
+  const decided = DECIDED_AT
 
   for (const v of src.verification) {
     for (const c of v.checks.filter((x) => x.result === "needs_review")) {

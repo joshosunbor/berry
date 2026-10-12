@@ -94,6 +94,7 @@ export function features(over: Omit<Partial<Features>, "income"> & { income?: Pa
     daysCashOnHand: 30,
     nsf90: 0,
     nsf12m: 0,
+    lastNsfDate: null,
     returns12m: 0,
     recurringDebts: [],
     existingDebtMonthlyCents: 0,

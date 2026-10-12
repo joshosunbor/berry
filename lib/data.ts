@@ -12,10 +12,11 @@ import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/
 import type { MetricSources } from "@/lib/ops/metrics"
 import type { PolicyCase } from "@/lib/ops/policy"
 import { member } from "@/lib/ops/config"
+import type { AuditLog } from "@/lib/ops/audit"
 import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
 import type { AuditEvent } from "@/lib/schemas"
 import { SERVICING } from "@/lib/servicing/config"
-import { FUNDING_INITIATED_AT, buildBooks, loanIdFor, type OpsDecisions } from "@/lib/servicing/portfolio"
+import { NO_OPS_DECISIONS, buildBooks, loanIdFor, type OpsDecisions } from "@/lib/servicing/portfolio"
 import { stressSeason, type StressResult } from "@/lib/servicing/stress"
 import type { BookResult } from "@/lib/servicing/simulate"
 import { breaksByLoan, summarize as summarizeLoan, toLoanView, type LoanSummary, type LoanView } from "@/lib/servicing/views"
@@ -181,7 +182,9 @@ export function getApplyPayload(slug: string): ApplyPayload | undefined {
  */
 const bookInputs = cast.map((c) => {
   const a = raw.find((x) => x.slug === c.applicant.slug)!
-  return { slug: a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification }
+  const results = c.verification.checks.map((x) => x.result)
+  const identity = results.includes("fail") ? ("failed" as const) : results.includes("needs_review") ? ("needs_review" as const) : ("passed" as const)
+  return { slug: a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification, identity }
 })
 
 const viewsOf = (bs: Record<Mode, BookResult>): LoanView[] =>
@@ -201,30 +204,49 @@ const opsItemsFor = (views: LoanView[]) =>
       MODES.flatMap((mode) => {
         const loan = views.find((l) => l.id === loanIdFor(c.applicant.slug, mode))
         if (!loan || c.accountVerification.result !== "close_match" || loan.funding.rail === "aft") return []
-        return [{ slug: c.applicant.slug, name: c.applicant.displayName, mode, loanId: loan.id, amountCents: loan.principalCents, verification: c.accountVerification, at: FUNDING_INITIATED_AT }]
+        return [{ slug: c.applicant.slug, name: c.applicant.displayName, mode, loanId: loan.id, amountCents: loan.principalCents, verification: c.accountVerification, at: loan.gateReadyAt }]
       }),
     ),
   })
 
-/** What the team decided, keyed by loan: the day each hardship approval completed and who gave it. */
+/** What the team decided: hardship approvals by loan, sign-offs by decision, identity reviews by applicant. */
 export function opsDecisionsFrom(items: OpsItem[]): OpsDecisions {
   const hardship: OpsDecisions["hardship"] = {}
+  const signOff: OpsDecisions["signOff"] = {}
+  const verification: OpsDecisions["verification"] = {}
+  for (const c of cast) {
+    const ids = new Set(c.verification.checks.filter((x) => x.result === "needs_review").map((x) => x.id))
+    const done = items.filter((it) => it.queue === "verification" && ids.has(it.subject.id))
+    if (ids.size && done.length === ids.size && done.every((it) => it.completedAt)) verification[c.applicant.slug] = done.map((it) => it.completedAt!).sort().at(-1)!
+  }
   for (const it of items) {
+    if (it.queue === "credit_referral" && it.id.startsWith("q_signoff-") && it.completedAt) signOff[it.subject.id] = it.completedAt
     if (it.queue === "hardship" && it.completedAt && it.approverId) {
       const m = member(it.approverId)!
       hardship[it.subject.id] = { on: it.completedAt.slice(0, 10), approved: true, by: `${m.name}, ${m.role.replace("_", " ")}` }
     }
   }
-  return { hardship }
+  return { hardship, signOff, verification }
 }
 
-const firstPass = runTeam(opsItemsFor(viewsOf(buildBooks(bookInputs))))
-const opsDecisions = opsDecisionsFrom(firstPass.items)
-const books: Record<Mode, BookResult> = buildBooks(bookInputs, undefined, undefined, opsDecisions)
+/** Simulate, let the team work the queues, feed its decisions back; repeat until nothing moves. */
+function settle(): { books: Record<Mode, BookResult>; decisions: OpsDecisions; rounds: number } {
+  let decisions = NO_OPS_DECISIONS
+  for (let rounds = 1; rounds <= 6; rounds++) {
+    const books = buildBooks(bookInputs, undefined, undefined, decisions)
+    const next = opsDecisionsFrom(runTeam(opsItemsFor(viewsOf(books))).items)
+    if (JSON.stringify(next) === JSON.stringify(decisions)) return { books, decisions, rounds }
+    decisions = next
+  }
+  throw new Error("servicing and operations did not settle")
+}
 
-/** The team's decisions after the first pass; the second pass must reproduce them. */
-export function getOpsDecisions(): { firstPass: OpsDecisions; final: OpsDecisions } {
-  return { firstPass: opsDecisions, final: opsDecisionsFrom(opsRun.items) }
+const settled = settle()
+const books: Record<Mode, BookResult> = settled.books
+
+/** The team's decisions servicing was simulated with, and those the final queues produce: they must match. */
+export function getOpsDecisions(): { used: OpsDecisions; final: OpsDecisions; rounds: number } {
+  return { used: settled.decisions, final: opsDecisionsFrom(opsRun.items), rounds: settled.rounds }
 }
 
 export function getBooks(): Record<Mode, BookResult> {
@@ -274,7 +296,21 @@ export function getForeignReportDemo() {
  * the simulated team in business hours. The audit trail is the hash-chained
  * log of every step.
  */
-const opsRun = runTeam(opsItemsFor(loanViews))
+/** Each loan's pre-funding gate clearing is on the audit trail, before the funding it allows. */
+const gateEvents = loanViews.map((l) => ({
+  at: l.gateReadyAt,
+  run: (log: AuditLog) =>
+    log.append({
+      at: l.gateReadyAt,
+      actor: { kind: "system", id: "funding-gate" },
+      action: "loan.funding_gate_cleared",
+      subject: { kind: "loan", id: l.id },
+      after: { checks: l.gate.map((c) => ({ check: c.label, clearedAt: c.clearedAt })) },
+      reason: l.gate.length ? "Every pre-funding check cleared." : "No pre-funding checks apply.",
+    }),
+}))
+
+const opsRun = runTeam(opsItemsFor(loanViews), gateEvents)
 
 export function getOpsItems(): OpsItem[] {
   return opsRun.items

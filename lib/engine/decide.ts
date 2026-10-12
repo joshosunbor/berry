@@ -48,6 +48,7 @@ export function decide(input: EngineInput, mode: Mode, config: InstitutionConfig
     counterfactuals: counterfactuals(result.reasons),
     approver: result.approver,
     conditions: result.conditions,
+    fundingConditions: result.fundingConditions?.length ? result.fundingConditions : undefined,
     documents: result.documents,
     recommendations: recommend(features, input.kind, result, config),
     flags,

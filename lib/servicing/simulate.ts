@@ -6,6 +6,7 @@ import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
 import { borrowerNsfFee, type BorrowerAccount, type BorrowerFee } from "./borrower-bank"
 import { SERVICING, type ServicingConfig } from "./config"
 import type { FundingResult } from "./funding"
+import type { GateCheck } from "./gate"
 import {
   applyPayment,
   Ledger,
@@ -60,6 +61,10 @@ export interface LoanSetup {
   script?: Script
   /** The lender's maker-checker decision on a hardship request, from the Hardship queue. Absent: still pending. */
   hardshipDecision?: HardshipDecision
+  /** Pre-funding checks, each cleared before funding started. */
+  gate: GateCheck[]
+  /** When the last pre-funding check cleared. */
+  gateReadyAt: string
 }
 
 export interface HardshipDecision {

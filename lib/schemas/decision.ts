@@ -19,6 +19,10 @@ import {
 export const Outcome = z.enum(["approve", "approve_with_conditions", "refer", "decline"])
 
 /** A ranked reason, with plain-language text in two registers (§4.4). */
+/** A condition checked before any money is sent. */
+export const FundingCondition = z.object({ kind: z.literal("no_recent_returns"), days: z.number().int().positive() })
+export type FundingCondition = z.infer<typeof FundingCondition>
+
 export const ReasonCode = z.object({
   code: z.string().regex(/^[A-Z][A-Z0-9_]+$/),
   direction: z.enum(["positive", "negative", "neutral"]),
@@ -96,6 +100,8 @@ export const Decision = z
     counterfactuals: z.array(z.string()),
     approver: AuthorityTier.optional(),
     conditions: z.array(z.string()).optional(),
+    /** Conditions that must hold before funding, for the pre-funding gate. */
+    fundingConditions: z.array(FundingCondition).optional(),
     /** Documents required (bank mode checklist). */
     documents: z.array(z.object({ name: z.string(), received: z.boolean() })).optional(),
     recommendations: z.array(Recommendation).optional(),

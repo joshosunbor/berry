@@ -1,4 +1,4 @@
-import type { AuthorityTier, EngineInput, InstitutionConfig, Outcome, ProductTerms, ProductType, Structure } from "@/lib/schemas"
+import type { AuthorityTier, EngineInput, InstitutionConfig, Outcome, ProductTerms, ProductType, Structure, FundingCondition } from "@/lib/schemas"
 import type { Features } from "./features"
 import type { ReasonHit } from "./reasons"
 
@@ -19,6 +19,8 @@ export interface ModeResult {
   paymentCents: number | null
   reasons: ReasonHit[]
   conditions?: string[]
+  /** Conditions that must hold before funding, machine-readable for the pre-funding gate. */
+  fundingConditions?: FundingCondition[]
   documents?: { name: string; received: boolean }[]
   /** Approval relied on relationship strength to pass a standard rule (credit union). */
   relationshipException?: boolean
@@ -28,3 +30,4 @@ export interface ModeResult {
 }
 
 export type { ProductTerms }
+export type { FundingCondition } from "@/lib/schemas"

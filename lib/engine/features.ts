@@ -34,6 +34,8 @@ export interface Features {
   daysCashOnHand: number
   nsf90: number
   nsf12m: number
+  /** Date of the most recent NSF return, if any (used by servicing's pre-funding gate, not by any lender's rules). */
+  lastNsfDate: string | null
   returns12m: number
   recurringDebts: RecurringDebt[]
   existingDebtMonthlyCents: number
@@ -53,7 +55,7 @@ export interface Features {
   monthly: MonthTotals[]
 }
 
-export const FEATURE_LABELS: Record<Exclude<keyof Features, "asOf" | "monthly" | "recurringDebts" | "income" | "relationship">, string> = {
+export const FEATURE_LABELS: Record<Exclude<keyof Features, "asOf" | "monthly" | "recurringDebts" | "income" | "relationship" | "lastNsfDate">, string> = {
   windowMonths: "Months of account history",
   avgMonthlyIncomeCents: "Average monthly income",
   avgMonthlyInflowCents: "Average money in per month",
@@ -114,6 +116,7 @@ export function computeFeatures(input: EngineInput, view: LedgerView = buildLedg
     daysCashOnHand: dailyOutflow > 0 ? Math.round(avgBalance / dailyOutflow) : 0,
     nsf90: nsf.filter((t) => daysAgo(t.postedDate) < 90).length,
     nsf12m: nsf.filter((t) => daysAgo(t.postedDate) < 365).length,
+    lastNsfDate: nsf.length ? nsf.map((t) => t.postedDate).sort().at(-1)! : null,
     returns12m: view.returns.filter((t) => daysAgo(t.postedDate) < 365).length,
     recurringDebts,
     existingDebtMonthlyCents: sum(recurringDebts.map((d) => d.monthlyCents)),

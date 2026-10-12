@@ -1,6 +1,7 @@
 import type { Mode } from "@/lib/modes"
 import type { JournalEntry } from "@/lib/schemas"
 import type { FundingResult } from "./funding"
+import type { GateCheck } from "./gate"
 import { monthEnds, reconcile, type BreakKind } from "./reconcile"
 import type { Attempt, BookResult, LoanEvent, LoanResult, LoanStatus } from "./simulate"
 import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
@@ -36,6 +37,9 @@ export interface LoanView {
   product: ProductType
   principalCents: number
   funding: FundingResult
+  /** Pre-funding checks and when the last cleared. */
+  gate: GateCheck[]
+  gateReadyAt: string
   borrowerBank: "bank" | "credit_union"
   schedule: ScheduledDebit[]
   /** Present for lines drawn over time: the limit is principalCents. */
@@ -85,6 +89,8 @@ export function toLoanView(book: BookResult, loan: LoanResult, breaks: LoanBreak
     product: s.product,
     principalCents: s.principalCents,
     funding: s.funding,
+    gate: s.gate,
+    gateReadyAt: s.gateReadyAt,
     borrowerBank: s.borrowerAccount.institutionType,
     schedule: s.schedule,
     draws: s.draws ?? null,

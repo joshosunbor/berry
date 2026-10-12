@@ -41,9 +41,11 @@ describe("queues are fed only by real open items", () => {
   })
 
   it("servicing and operations agree: re-simulating with the team's decisions doesn't move them", () => {
-    const { firstPass, final } = getOpsDecisions()
+    const { used, final, rounds } = getOpsDecisions()
     expect(Object.keys(final.hardship).length).toBeGreaterThan(0)
-    expect(final).toEqual(firstPass)
+    expect(Object.keys(final.signOff).length).toBeGreaterThan(0)
+    expect(final).toEqual(used)
+    expect(rounds).toBeLessThanOrEqual(4)
   })
 
   it("collections, hardship and reconciliation items come from the simulator's events and breaks", () => {

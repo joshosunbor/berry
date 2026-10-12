@@ -23,6 +23,7 @@
     "cureWindowDays": 30
   },
   "chargeOffDaysPastDue": 120,
+  "documentsReceivedBusinessDays": 3,
   "operatingReserveMonthsOfSpending": 1,
   "_operatingReserveNote": "Illustrative. A seasonal operating line is drawn only to keep this many months of the borrower's average spending in its account; the borrower's own cash is used first.",
   "borrowerBank": {
