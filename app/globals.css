@@ -111,6 +111,8 @@
   --color-kite: var(--ds-kite);
   --color-aspen: var(--ds-aspen);
   --color-aspen-tint: var(--ds-aspen-tint);
+  --color-tab-on: var(--ds-tab-on);
+  --color-tab-on-fg: var(--ds-tab-on-fg);
   --color-chart-in: var(--ds-chart-in);
   --color-chart-out: var(--ds-chart-out);
   --color-selection: var(--ds-selection);
@@ -336,6 +338,8 @@
   --ds-kite: #0891c2;
   --ds-aspen: #3a5a80;
   --ds-aspen-tint: #e9eef6;
+  --ds-tab-on: #011b33;
+  --ds-tab-on-fg: #ffffff;
   /* Chart colours meet 3:1 against white and the page. */
   --ds-chart-in: #2e9e50;
   --ds-chart-out: #728599;
@@ -373,6 +377,8 @@
     --ds-kite: #3bc4f0;
     --ds-aspen: #9db4de;
     --ds-aspen-tint: #1a3352;
+    --ds-tab-on: #ffffff;
+    --ds-tab-on-fg: #011b33;
     --ds-chart-in: #3bb75e;
     --ds-chart-out: #8fa3b8;
     --ds-selection: #1c3a5a;
@@ -407,6 +413,8 @@
   --ds-kite: #3bc4f0;
   --ds-aspen: #9db4de;
   --ds-aspen-tint: #1a3352;
+  --ds-tab-on: #ffffff;
+  --ds-tab-on-fg: #011b33;
   --ds-chart-in: #3bb75e;
   --ds-chart-out: #8fa3b8;
   --ds-selection: #1c3a5a;

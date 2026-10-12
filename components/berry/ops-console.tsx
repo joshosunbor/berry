@@ -9,7 +9,7 @@ import { InlineError } from "@/components/berry/inline-error"
 import { LazyPolicyPanel } from "@/components/berry/policy-panel-lazy"
 import { ModeChip } from "@/components/berry/mode-chip"
 import { addOpsAction, resetOpsActions, setActor, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/legacy-tabs"
+import { tabClass, tabListClass, useTabs } from "@/components/ui/tabs"
 import { formatCents } from "@/lib/money"
 import { messageFor } from "@/lib/ops/communications"
 import { requiredRoleFor } from "@/lib/ops/approvals"
@@ -20,6 +20,10 @@ import type { OpsItem, SlaState } from "@/lib/ops/queues"
 import { assign, auditAt, browserItems, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState } from "@/lib/ops/view"
 import type { AuditEvent, QueueName } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
+import { Card } from "@/components/ui/card"
+import { Table, Td, Th, THead } from "@/components/ui/table"
+import { fieldClass } from "@/components/ui/field"
+import { buttonVariants } from "@/components/ui/button"
 
 /*
  * The operations console (CLAUDE.md §5C). Queue items come from real open
@@ -35,11 +39,11 @@ const TEAM_IDS = OPS.team.map((m) => m.id)
 export const ROLE_LABEL: Record<Role, string> = { analyst: "Analyst", lead: "Lead", branch_manager: "Branch manager", credit_committee: "Credit Committee" }
 
 const SLA_META: Record<SlaState, { label: string; className: string; Icon: typeof Clock }> = {
-  on_time: { label: "On time", className: "bg-approve-soft text-approve", Icon: Clock },
-  at_risk: { label: "At risk", className: "bg-conditions-soft text-conditions", Icon: AlertTriangle },
-  breached: { label: "Breached", className: "bg-decline-soft text-decline", Icon: XCircle },
-  met: { label: "Met", className: "bg-approve-soft text-approve", Icon: CheckCircle2 },
-  missed: { label: "Missed", className: "bg-decline-soft text-decline", Icon: XCircle },
+  on_time: { label: "On time", className: "bg-green-tint text-green-ink", Icon: Clock },
+  at_risk: { label: "At risk", className: "bg-warn-tint text-warn", Icon: AlertTriangle },
+  breached: { label: "Breached", className: "bg-bad-tint text-bad", Icon: XCircle },
+  met: { label: "Met", className: "bg-green-tint text-green-ink", Icon: CheckCircle2 },
+  missed: { label: "Missed", className: "bg-bad-tint text-bad", Icon: XCircle },
 }
 
 const SLA_ORDER: SlaState[] = ["breached", "at_risk", "on_time", "missed", "met"]
@@ -64,7 +68,6 @@ const limitLabel = (r: Role) => {
   return l === null ? "no limit" : `up to ${formatCents(l, { whole: true })}`
 }
 
-const button = "inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
 
 export interface OpsConsoleProps {
   items: OpsItem[]
@@ -109,18 +112,28 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
     }
   }
 
+  const TAB_IDS = [...QUEUES, "team", "policy", "audit"]
+  const tabIndex = Math.max(0, TAB_IDS.indexOf(tab))
+  const t = useTabs(TAB_IDS.length, tabIndex, (n) => (setTab(TAB_IDS[n]), setSelected(null), setError(null)))
+  // Only the active panel's content is mounted (the Policy tab loads its data when it opens).
+  const panel = (id: string, className: string, content: () => React.ReactNode) => (
+    <div {...t.panel(TAB_IDS.indexOf(id))} className={className}>
+      {tab === id && content()}
+    </div>
+  )
+
   const unassigned = items.filter((i) => states.get(i.id)!.status === "open" && !states.get(i.id)!.ownerId).length
 
   return (
     <div>
-      <div className="flex flex-col gap-4 rounded-lg border border-rule bg-surface p-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="flex flex-col gap-4 rounded-[14px] bg-panel shadow-card p-4 lg:flex-row lg:items-end lg:justify-between">
         <MomentPicker />
-        <div className="flex flex-wrap items-end gap-3">
-          <div>
-            <label htmlFor="ops-actor" className="text-xs font-medium text-muted-ink">
+        <div className="flex min-w-0 flex-wrap items-end gap-3">
+          <div className="min-w-0 max-w-full">
+            <label htmlFor="ops-actor" className="text-xs font-medium text-fg-3">
               Acting as
             </label>
-            <select id="ops-actor" value={actor} onChange={(e) => setActor(e.target.value)} className="mt-1 block rounded-md border border-rule bg-surface px-2 py-1.5 text-sm">
+            <select id="ops-actor" value={actor} onChange={(e) => setActor(e.target.value)} className={cn(fieldClass, "mt-1 block w-full max-w-full")}>
               {OPS.team.map((m) => (
                 <option key={m.id} value={m.id}>
                   {m.name} · {ROLE_LABEL[m.role]} ({limitLabel(m.role)})
@@ -129,37 +142,39 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
             </select>
           </div>
           {actions.length > 0 && (
-            <button type="button" onClick={() => (resetOpsActions(), setError(null))} className={cn(button, "border border-rule")}>
+            <button type="button" onClick={() => (resetOpsActions(), setError(null))} className={buttonVariants({ variant: "secondary", size: "sm" })}>
               <RotateCcw aria-hidden className="size-4" />
               Reset my {actions.length} action{actions.length === 1 ? "" : "s"}
             </button>
           )}
         </div>
       </div>
-      <p className="mt-2 text-xs text-muted-ink">
+      <p className="mt-2 text-xs text-fg-3">
         {moment?.note}. Fictional team, simulated work; your actions are saved in this browser only.
       </p>
 
-      <Tabs value={tab} onValueChange={(v) => (setTab(String(v)), setSelected(null), setError(null))} className="mt-6">
-        <div className="-mx-4 overflow-x-auto px-4">
-          <TabsList className="w-max">
+      <div className="mt-6">
+        <div className="-mx-4 overflow-x-auto px-4 pb-1">
+          <div {...t.list} aria-label="Operations queues" className={cn(tabListClass("segmented"), "w-max flex-nowrap")}>
             {QUEUES.map((q) => {
               const open = openIn(q).length
               const breached = breachedIn(q)
               return (
-                <TabsTrigger key={q} value={q}>
+                <button key={q} {...t.tab(TAB_IDS.indexOf(q))} className={cn(tabClass("segmented", tab === q), "whitespace-nowrap px-3.5 text-sm")}>
                   {OPS.queues[q].label}
-                  <span className={cn("num ml-1.5 rounded-full px-1.5 text-xs", breached ? "bg-decline-soft text-decline" : "bg-muted text-muted-ink")}>
+                  <span className={cn("num ml-1.5 rounded-full px-1.5 text-xs", tab === q ? "bg-tab-on-fg/15 text-tab-on-fg" : breached ? "bg-bad-tint text-bad" : "bg-field text-fg-3")}>
                     {open}
                     <span className="sr-only"> open{breached ? `, ${breached} breached` : ""}</span>
                   </span>
-                </TabsTrigger>
+                </button>
               )
             })}
-            <TabsTrigger value="team">Team</TabsTrigger>
-            <TabsTrigger value="policy">Policy</TabsTrigger>
-            <TabsTrigger value="audit">Audit trail</TabsTrigger>
-          </TabsList>
+            {(["team", "policy", "audit"] as const).map((id) => (
+              <button key={id} {...t.tab(TAB_IDS.indexOf(id))} className={cn(tabClass("segmented", tab === id), "whitespace-nowrap px-3.5 text-sm")}>
+                {id === "team" ? "Team" : id === "policy" ? "Policy" : "Audit trail"}
+              </button>
+            ))}
+          </div>
         </div>
 
         {QUEUES.map((q) => {
@@ -172,10 +187,12 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
           const pick = items.find((i) => i.queue === q && i.id === selected)
           const current = pick && states.get(pick.id)!.status !== "not_yet" ? { i: pick, s: states.get(pick.id)! } : null
           return (
-            <TabsContent key={q} value={q} className="mt-4 min-w-0">
+            <div key={q} {...t.panel(TAB_IDS.indexOf(q))} className="mt-4 min-w-0">
+              {tab === q && (
+              <>
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <p className="text-sm text-muted-ink">
-                  Service level: <span className="num font-medium text-ink">{OPS.queues[q].slaBusinessHours} business hours</span> · about {OPS.queues[q].minutesPerItem} minutes per item
+                <p className="text-sm text-fg-3">
+                  Service level: <span className="num font-medium text-fg">{OPS.queues[q].slaBusinessHours} business hours</span> · about {OPS.queues[q].minutesPerItem} minutes per item
                 </p>
                 <label className="flex items-center gap-2 text-sm">
                   <input type="checkbox" checked={showDone} onChange={(e) => setShowDone(e.target.checked)} className="size-4 accent-current" />
@@ -184,21 +201,21 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
               </div>
               <div className="mt-3 grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
                 <ul className="min-w-0 space-y-2" aria-label={`${OPS.queues[q].label} items`}>
-                  {list.length === 0 && <li className="rounded-lg border border-dashed border-rule p-6 text-center text-sm text-muted-ink">Nothing open in this queue right now.</li>}
+                  {list.length === 0 && <li className="rounded-[14px] border border-dashed border-line-strong p-6 text-center text-sm text-fg-3">Nothing open in this queue right now.</li>}
                   {list.map(({ i, s }) => (
                     <li key={i.id}>
                       <button
                         type="button"
                         onClick={() => (setSelected(i.id), setError(null))}
                         aria-pressed={selected === i.id}
-                        className={cn("w-full rounded-lg border bg-surface p-3 text-left transition-colors hover:border-ink/40", selected === i.id ? "border-ink" : "border-rule")}
+                        className={cn("w-full rounded-[14px] bg-panel p-4 text-left shadow-card transition-[box-shadow]", selected === i.id ? "shadow-[0_0_0_2px_var(--ds-fg)]" : "hover:shadow-lift")}
                       >
                         <span className="flex items-start justify-between gap-2">
                           <span className="min-w-0 font-medium">{i.title}</span>
                           <SlaChip state={s.sla} />
                         </span>
-                        <span className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-ink">
-                          <span className={cn(i.priority !== "normal" && "font-medium text-ink")}>{i.priority === "urgent" ? "Urgent" : i.priority === "high" ? "High priority" : "Normal"}</span>
+                        <span className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-fg-3">
+                          <span className={cn(i.priority !== "normal" && "font-medium text-fg")}>{i.priority === "urgent" ? "Urgent" : i.priority === "high" ? "High priority" : "Normal"}</span>
                           <span className="num">Due {when(i.slaDueAt)}</span>
                           <span>{personName(s.ownerId)}</span>
                         </span>
@@ -210,18 +227,21 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
                   {current ? (
                     <ItemPanel item={current.i} state={current.s} actor={actor} now={now} run={run} error={error} />
                   ) : (
-                    <p className="rounded-lg border border-dashed border-rule p-6 text-sm text-muted-ink">Choose an item to see its playbook, history and actions.</p>
+                    <p className="rounded-[14px] border border-dashed border-line-strong p-6 text-sm text-fg-3">Choose an item to see its playbook, history and actions.</p>
                   )}
                 </div>
               </div>
-            </TabsContent>
+              </>
+              )}
+            </div>
           )
         })}
 
-        <TabsContent value="team" className="mt-4 min-w-0">
+        {panel("team", "mt-4 min-w-0", () => (
+          <>
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p className="text-sm text-muted-ink">Open work owned by each person, against a day&apos;s capacity.</p>
-            <button type="button" onClick={autoAssign} disabled={unassigned === 0} className={cn(button, "bg-ink text-background")}>
+            <p className="text-sm text-fg-3">Open work owned by each person, against a day&apos;s capacity.</p>
+            <button type="button" onClick={autoAssign} disabled={unassigned === 0} className={buttonVariants({ size: "sm" })}>
               Auto-assign {unassigned} unassigned by skill
             </button>
           </div>
@@ -230,32 +250,33 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
               const l = load.find((x) => x.id === m.id)!
               const pct = Math.min(100, Math.round((l.minutes / l.capacity) * 100))
               return (
-                <li key={m.id} className="rounded-lg border border-rule bg-surface p-4">
+                <li key={m.id} className="rounded-[14px] bg-panel shadow-card p-4">
                   <p className="font-medium">{m.name}</p>
-                  <p className="text-xs text-muted-ink">
+                  <p className="text-xs text-fg-3">
                     {ROLE_LABEL[m.role]} · {OPS.authority[m.role].limitCents === null ? "no approval limit" : `approves ${limitLabel(m.role)}`}
                   </p>
-                  <div className="mt-3 h-2 rounded-full bg-muted" role="meter" aria-valuemin={0} aria-valuemax={l.capacity} aria-valuenow={l.minutes} aria-label={`${m.name}: ${l.minutes} of ${l.capacity} minutes`}>
-                    <div className={cn("h-2 rounded-full", pct >= 100 ? "bg-decline" : pct >= 75 ? "bg-conditions" : "bg-approve")} style={{ width: `${pct}%` }} />
+                  <div className="mt-3 h-2 rounded-full bg-field" role="meter" aria-valuemin={0} aria-valuemax={l.capacity} aria-valuenow={l.minutes} aria-label={`${m.name}: ${l.minutes} of ${l.capacity} minutes`}>
+                    <div className={cn("h-2 rounded-full", pct >= 100 ? "bg-bad" : pct >= 75 ? "bg-warn" : "bg-green-ink")} style={{ width: `${pct}%` }} />
                   </div>
-                  <p className="num mt-1 text-xs text-muted-ink">
+                  <p className="num mt-1 text-xs text-fg-3">
                     {l.open} open · {l.minutes} of {l.capacity} min
                   </p>
-                  <p className="mt-2 text-xs text-muted-ink">Skills: {m.skills.map((s) => OPS.queues[s].label).join(", ")}</p>
+                  <p className="mt-2 text-xs text-fg-3">Skills: {m.skills.map((s) => OPS.queues[s].label).join(", ")}</p>
                 </li>
               )
             })}
           </ul>
-        </TabsContent>
+          </>
+        ))}
 
-        <TabsContent value="policy" className="mt-4 min-w-0">
+        {panel("policy", "mt-4 min-w-0", () => (
           <LazyPolicyPanel actions={actions} actor={actor} now={now} record={(r) => addOpsAction(r.action)} />
-        </TabsContent>
+        ))}
 
-        <TabsContent value="audit" className="mt-4 min-w-0">
+        {panel("audit", "mt-4 min-w-0", () => (
           <AuditView log={log.all} verified={log.verify() === null} csv={() => log.toCSV()} json={() => log.toJSON()} now={now} />
-        </TabsContent>
-      </Tabs>
+        ))}
+      </div>
     </div>
   )
 }
@@ -273,7 +294,7 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
   const skilled = OPS.team.filter((m) => m.skills.includes(OPS.queues[item.queue].skill))
 
   return (
-    <article className="rounded-lg border border-rule bg-surface p-5" aria-label={item.title}>
+    <article className="rounded-[14px] bg-panel shadow-card p-5" aria-label={item.title}>
       <div className="flex flex-wrap items-start justify-between gap-2">
         <h3 className="font-semibold">{item.title}</h3>
         <SlaChip state={state.sla} />
@@ -286,34 +307,34 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
       </div>
       <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm sm:grid-cols-4">
         <div>
-          <dt className="text-xs text-muted-ink">Opened</dt>
+          <dt className="text-xs text-fg-3">Opened</dt>
           <dd className="num">{when(item.createdAt)}</dd>
         </div>
         <div>
-          <dt className="text-xs text-muted-ink">Due</dt>
+          <dt className="text-xs text-fg-3">Due</dt>
           <dd className="num">{when(item.slaDueAt)}</dd>
         </div>
         <div>
-          <dt className="text-xs text-muted-ink">Owner</dt>
+          <dt className="text-xs text-fg-3">Owner</dt>
           <dd>{personName(state.ownerId)}</dd>
         </div>
         <div>
-          <dt className="text-xs text-muted-ink">Status</dt>
+          <dt className="text-xs text-fg-3">Status</dt>
           <dd>{state.status === "done" ? `Done ${when(state.completedAt!)}` : "Open"}</dd>
         </div>
       </dl>
       <p className="mt-4 text-sm">{item.detail}</p>
-      {item.blockedReason && open && <p className="mt-3 rounded-md bg-conditions-soft px-3 py-2 text-sm text-conditions">{item.blockedReason}</p>}
+      {item.blockedReason && open && <p className="mt-3 rounded-[10px] bg-warn-tint px-3 py-2 text-sm text-warn">{item.blockedReason}</p>}
       <p className="mt-3 text-sm">
-        <span className="text-muted-ink">Next action: </span>
+        <span className="text-fg-3">Next action: </span>
         {item.nextAction}
       </p>
 
       {open && (
         <div className="mt-4 flex flex-wrap items-end gap-2">
           <label className="text-sm">
-            <span className="block text-xs text-muted-ink">Assign to</span>
-            <select value={assignee} onChange={(e) => setAssignee(e.target.value)} className="mt-1 rounded-md border border-rule bg-surface px-2 py-1.5">
+            <span className="block text-xs text-fg-3">Assign to</span>
+            <select value={assignee} onChange={(e) => setAssignee(e.target.value)} className={cn(fieldClass, "mt-1")}>
               <option value="">Choose…</option>
               {skilled.map((m) => (
                 <option key={m.id} value={m.id}>
@@ -322,11 +343,11 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
               ))}
             </select>
           </label>
-          <button type="button" disabled={!assignee || assignee === state.ownerId} onClick={() => run(assign(item, state, assignee, actor, now))} className={cn(button, "border border-rule")}>
+          <button type="button" disabled={!assignee || assignee === state.ownerId} onClick={() => run(assign(item, state, assignee, actor, now))} className={buttonVariants({ variant: "secondary", size: "sm" })}>
             Assign
           </button>
           {!item.approval && (
-            <button type="button" onClick={() => run(complete(item, actor, now))} className={cn(button, "bg-ink text-background")}>
+            <button type="button" onClick={() => run(complete(item, actor, now))} className={buttonVariants({ size: "sm" })}>
               Mark done as {me.name}
             </button>
           )}
@@ -334,31 +355,31 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
       )}
 
       {item.approval && (
-        <section className="mt-5 rounded-md border border-rule p-4" aria-label="Approval">
+        <section className="mt-5 rounded-[10px] border border-line p-4" aria-label="Approval">
           <h4 className="flex items-center gap-2 text-sm font-semibold">
             <ShieldCheck aria-hidden className="size-4" />
             Maker-checker
           </h4>
           <dl className="mt-2 grid gap-1 text-sm sm:grid-cols-2">
             <div>
-              <dt className="inline text-muted-ink">Amount: </dt>
+              <dt className="inline text-fg-3">Amount: </dt>
               <dd className="num inline">{formatCents(item.approval.amountCents, { whole: item.approval.amountCents % 100 === 0 })}</dd>
             </div>
             <div>
-              <dt className="inline text-muted-ink">Needs: </dt>
+              <dt className="inline text-fg-3">Needs: </dt>
               <dd className="inline">{ROLE_LABEL[req?.requiredRole ?? requiredRoleFor(item.approval.amountCents, item.approval.minimumRole)]} or above</dd>
             </div>
             <div>
-              <dt className="inline text-muted-ink">Prepared by: </dt>
+              <dt className="inline text-fg-3">Prepared by: </dt>
               <dd className="inline">{req ? personName(req.preparedBy) : "Not yet prepared"}</dd>
             </div>
             <div>
-              <dt className="inline text-muted-ink">Status: </dt>
+              <dt className="inline text-fg-3">Status: </dt>
               <dd className="inline">{req ? (req.status === "pending" ? "Waiting for approval" : `${req.status === "approved" ? "Approved" : "Rejected"} · checker: ${personName(req.decidedBy)}`) : "—"}</dd>
             </div>
           </dl>
           {req && req.escalations.length > 0 && (
-            <ul className="mt-2 space-y-0.5 text-xs text-muted-ink">
+            <ul className="mt-2 space-y-0.5 text-xs text-fg-3">
               {req.escalations.map((e, i) => (
                 <li key={i}>
                   Escalated by {personName(e.by)} ({ROLE_LABEL[e.from]}) to {ROLE_LABEL[e.to]}, {when(e.at)}
@@ -370,16 +391,16 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
           {open && (
             <div className="mt-3 flex flex-wrap items-center gap-2">
               {!req && (
-                <button type="button" onClick={() => run(prepareItem(item, actor, now))} className={cn(button, "bg-ink text-background")}>
+                <button type="button" onClick={() => run(prepareItem(item, actor, now))} className={buttonVariants({ size: "sm" })}>
                   Prepare as {me.name}
                 </button>
               )}
               {req?.status === "pending" && !rejecting && (
                 <>
-                  <button type="button" onClick={() => run(decide(item, req, actor, now, "approve"))} className={cn(button, "bg-ink text-background")}>
+                  <button type="button" onClick={() => run(decide(item, req, actor, now, "approve"))} className={buttonVariants({ size: "sm" })}>
                     Approve as {me.name}
                   </button>
-                  <button type="button" onClick={() => setRejecting(true)} className={cn(button, "border border-rule")}>
+                  <button type="button" onClick={() => setRejecting(true)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
                     Reject…
                   </button>
                 </>
@@ -395,20 +416,20 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
                   }}
                 >
                   <label className="min-w-0 flex-1 text-sm">
-                    <span className="block text-xs text-muted-ink">Why are you rejecting it?</span>
-                    <input required value={reason} onChange={(e) => setReason(e.target.value)} className="mt-1 w-full rounded-md border border-rule bg-surface px-2 py-1.5" />
+                    <span className="block text-xs text-fg-3">Why are you rejecting it?</span>
+                    <input required value={reason} onChange={(e) => setReason(e.target.value)} className={cn(fieldClass, "mt-1 w-full")} />
                   </label>
-                  <button type="submit" className={cn(button, "bg-decline text-background")}>
+                  <button type="submit" className={buttonVariants({ variant: "danger", size: "sm" })}>
                     Reject as {me.name}
                   </button>
-                  <button type="button" onClick={() => setRejecting(false)} className={cn(button, "border border-rule")}>
+                  <button type="button" onClick={() => setRejecting(false)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
                     Cancel
                   </button>
                 </form>
               )}
             </div>
           )}
-          <p className="mt-3 text-xs text-muted-ink">
+          <p className="mt-3 text-xs text-fg-3">
             The person who prepares an action can&apos;t approve it. Above the approver&apos;s delegated authority, it escalates. <Illustrative why="Roles, limits and the fictional team are illustrative; real authority tiers vary by lender." />
           </p>
         </section>
@@ -421,7 +442,7 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
             <li key={i}>
               <label className="flex items-start gap-2">
                 <input type="checkbox" checked={checked[i] ?? false} onChange={(e) => setChecked((c) => ({ ...c, [i]: e.target.checked }))} className="mt-1 size-4 shrink-0" />
-                <span className={cn(checked[i] && "text-muted-ink line-through")}>{s}</span>
+                <span className={cn(checked[i] && "text-fg-3 line-through")}>{s}</span>
               </label>
             </li>
           ))}
@@ -431,12 +452,12 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
       <section className="mt-5" aria-label="Customer message">
         <h4 className="text-sm font-semibold">Customer message</h4>
         {"none" in msg ? (
-          <p className="mt-1 text-sm text-muted-ink">{msg.none}</p>
+          <p className="mt-1 text-sm text-fg-3">{msg.none}</p>
         ) : (
-          <div className="mt-2 rounded-md border border-dashed border-rule p-3 text-sm">
+          <div className="mt-2 rounded-[10px] border border-dashed border-line p-3 text-sm">
             <p className="font-medium">{msg.message.subject}</p>
-            <p className="mt-1 text-muted-ink">{msg.message.body}</p>
-            <button type="button" onClick={() => run(messageSent(item, msg.message.subject, actor, now))} className={cn(button, "mt-3 border border-rule")}>
+            <p className="mt-1 text-fg-3">{msg.message.body}</p>
+            <button type="button" onClick={() => run(messageSent(item, msg.message.subject, actor, now))} className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "mt-3")}>
               Send (simulated)
             </button>
           </div>
@@ -448,10 +469,10 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
         <ol className="mt-2 space-y-1 text-sm">
           {state.history.map((h, i) => (
             <li key={i} className="flex gap-3">
-              <span className="num w-28 shrink-0 text-xs text-muted-ink">{when(h.at)}</span>
+              <span className="num w-28 shrink-0 text-xs text-fg-3">{when(h.at)}</span>
               <span className="min-w-0">
                 <span className="font-medium">{h.who}</span> {h.text}
-                {h.mine && <span className="ml-1 text-xs text-muted-ink">(you, this browser)</span>}
+                {h.mine && <span className="ml-1 text-xs text-fg-3">(you, this browser)</span>}
               </span>
             </li>
           ))}
@@ -489,23 +510,23 @@ function AuditView({ log, verified, csv, json, now }: { log: readonly AuditEvent
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className={cn("flex items-center gap-2 text-sm", verified ? "text-approve" : "text-decline")}>
+        <p className={cn("flex items-center gap-2 text-sm", verified ? "text-green-ink" : "text-bad")}>
           {verified ? <ShieldCheck aria-hidden className="size-4" /> : <ShieldAlert aria-hidden className="size-4" />}
           {verified ? `Hash chain verified: ${log.length} events, none edited, removed or reordered.` : "Hash chain broken: an event was changed."}
         </p>
         <div className="flex gap-2">
-          <button type="button" onClick={() => download(`berry-audit-${stamp}.csv`, "text/csv", csv())} className={cn(button, "border border-rule")}>
+          <button type="button" onClick={() => download(`berry-audit-${stamp}.csv`, "text/csv", csv())} className={buttonVariants({ variant: "secondary", size: "sm" })}>
             <Download aria-hidden className="size-4" /> CSV
           </button>
-          <button type="button" onClick={() => download(`berry-audit-${stamp}.json`, "application/json", json())} className={cn(button, "border border-rule")}>
+          <button type="button" onClick={() => download(`berry-audit-${stamp}.json`, "application/json", json())} className={buttonVariants({ variant: "secondary", size: "sm" })}>
             <Download aria-hidden className="size-4" /> JSON
           </button>
         </div>
       </div>
       <div className="mt-3 flex flex-wrap gap-3 text-sm">
         <label>
-          <span className="block text-xs text-muted-ink">Action</span>
-          <select value={action} onChange={(e) => setAction(e.target.value)} className="mt-1 rounded-md border border-rule bg-surface px-2 py-1.5">
+          <span className="block text-xs text-fg-3">Action</span>
+          <select value={action} onChange={(e) => setAction(e.target.value)} className={cn(fieldClass, "mt-1")}>
             <option value="">All</option>
             {actionsList.map((a) => (
               <option key={a}>{a}</option>
@@ -513,8 +534,8 @@ function AuditView({ log, verified, csv, json, now }: { log: readonly AuditEvent
           </select>
         </label>
         <label>
-          <span className="block text-xs text-muted-ink">Who</span>
-          <select value={who} onChange={(e) => setWho(e.target.value)} className="mt-1 rounded-md border border-rule bg-surface px-2 py-1.5">
+          <span className="block text-xs text-fg-3">Who</span>
+          <select value={who} onChange={(e) => setWho(e.target.value)} className={cn(fieldClass, "mt-1")}>
             <option value="">Everyone</option>
             {people.map((p) => (
               <option key={p}>{p}</option>
@@ -522,47 +543,47 @@ function AuditView({ log, verified, csv, json, now }: { log: readonly AuditEvent
           </select>
         </label>
         <label className="min-w-0 flex-1">
-          <span className="block text-xs text-muted-ink">Search</span>
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Subject, reason…" className="mt-1 w-full rounded-md border border-rule bg-surface px-2 py-1.5" />
+          <span className="block text-xs text-fg-3">Search</span>
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Subject, reason…" className={cn(fieldClass, "mt-1 w-full")} />
         </label>
       </div>
-      <p className="mt-3 text-xs text-muted-ink">
+      <p className="mt-3 text-xs text-fg-3">
         Showing {rows.length} of {log.length}. Append-only: each event carries the previous event&apos;s hash. Times are the lender&apos;s local time.
       </p>
-      <div className="mt-2 overflow-x-auto rounded-lg border border-rule">
-        <table className="w-full min-w-[720px] text-left text-sm">
-          <thead className="bg-muted text-xs text-muted-ink">
+      <Card pad="none" className="mt-2 overflow-hidden">
+        <Table minWidth={720} caption="Audit trail">
+          <THead>
             <tr>
-              <th className="px-3 py-2 font-medium">#</th>
-              <th className="px-3 py-2 font-medium">When</th>
-              <th className="px-3 py-2 font-medium">Who</th>
-              <th className="px-3 py-2 font-medium">What</th>
-              <th className="px-3 py-2 font-medium">Subject</th>
-              <th className="px-3 py-2 font-medium">Before → after</th>
+              <Th className="px-4 py-2.5">#</Th>
+              <Th className="px-4 py-2.5">When</Th>
+              <Th className="px-4 py-2.5">Who</Th>
+              <Th className="px-4 py-2.5">What</Th>
+              <Th className="px-4 py-2.5">Subject</Th>
+              <Th className="px-4 py-2.5">Before → after</Th>
             </tr>
-          </thead>
+          </THead>
           <tbody>
             {rows
               .slice()
               .reverse()
               .map((e) => (
-                <tr key={e.id} className="border-t border-rule align-top">
-                  <td className="num px-3 py-2 text-muted-ink">{e.seq + 1}</td>
-                  <td className="num whitespace-nowrap px-3 py-2">{when(e.at)}</td>
-                  <td className="whitespace-nowrap px-3 py-2">{actorLabel(e)}</td>
-                  <td className="px-3 py-2">
-                    <code className="text-xs">{e.action}</code>
-                    {e.reason && <p className="mt-0.5 text-xs text-muted-ink">{e.reason}</p>}
-                  </td>
-                  <td className="px-3 py-2 text-xs">{e.subject.id}</td>
-                  <td className="px-3 py-2 text-xs text-muted-ink">
+                <tr key={e.id}>
+                  <Td className="num px-4 text-fg-3">{e.seq + 1}</Td>
+                  <Td className="num whitespace-nowrap px-4">{when(e.at)}</Td>
+                  <Td className="whitespace-nowrap px-4">{actorLabel(e)}</Td>
+                  <Td className="px-4">
+                    <code className="font-mono text-xs">{e.action}</code>
+                    {e.reason && <p className="mt-0.5 text-xs text-fg-3">{e.reason}</p>}
+                  </Td>
+                  <Td className="px-4 text-xs">{e.subject.id}</Td>
+                  <Td className="px-4 text-xs text-fg-3">
                     <Change before={e.before} after={e.after} />
-                  </td>
+                  </Td>
                 </tr>
               ))}
           </tbody>
-        </table>
-      </div>
+        </Table>
+      </Card>
     </div>
   )
 }
@@ -581,7 +602,7 @@ function Change({ before, after }: { before: unknown; after: unknown }) {
     <span>
       {before !== undefined && <span>{show(before)}</span>}
       {before !== undefined && after !== undefined && <span aria-hidden> → </span>}
-      {after !== undefined && <span className="text-ink">{show(after)}</span>}
+      {after !== undefined && <span className="text-fg">{show(after)}</span>}
     </span>
   )
 }

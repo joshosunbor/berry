@@ -12,7 +12,7 @@ export function SubNav({ label, items, current, className }: { label: string; it
             <Link
               href={it.href}
               aria-current={it.href === current ? "page" : undefined}
-              className={cn(tabClass("segmented", it.href === current), "inline-flex items-center hover:text-fg", it.href === current && "hover:text-white")}
+              className={cn(tabClass("segmented", it.href === current), "inline-flex items-center hover:text-fg", it.href === current && "hover:text-tab-on-fg")}
             >
               {it.label}
             </Link>

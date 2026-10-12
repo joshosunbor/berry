@@ -8,7 +8,8 @@ import { useOpsMoment } from "@/components/berry/ops-store"
 import { MODE_META, MODES } from "@/lib/modes"
 import type { Kpi, LenderFilter } from "@/lib/ops/metrics"
 import { OPS_MOMENTS } from "@/lib/ops/moments"
-import { cn } from "@/lib/utils"
+import { LenderDot } from "@/components/ui/pill"
+import { SegmentedControl } from "@/components/ui/segmented-control"
 
 /*
  * The operations dashboard (CLAUDE.md §5D). Every KPI is computed on the
@@ -38,31 +39,32 @@ export function OpsDashboard({ data }: { data: DashboardData }) {
 
   return (
     <div>
-      <div className="flex flex-col gap-4 rounded-lg border border-rule bg-surface p-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="flex flex-col gap-4 rounded-[14px] bg-panel shadow-card p-4 lg:flex-row lg:items-end lg:justify-between">
         <MomentPicker className="lg:w-[28rem]" />
-        <div role="radiogroup" aria-label="Lender" className="flex flex-wrap gap-1 rounded-lg border border-rule p-1">
-          {FILTERS.map((f) => (
-            <button
-              key={f.id}
-              type="button"
-              role="radio"
-              aria-checked={filter === f.id}
-              onClick={() => setFilter(f.id)}
-              className={cn("rounded-md px-3 py-1 text-sm", filter === f.id ? "bg-ink text-background" : "text-muted-ink hover:text-ink")}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
+        <SegmentedControl
+          kind="radio"
+          label="Lender"
+          value={filter}
+          onChange={setFilter}
+          options={FILTERS.map((f) => ({
+            value: f.id,
+            label: f.id === "all" ? f.label : (
+              <span className="inline-flex items-center gap-2">
+                <LenderDot mode={f.id} />
+                {f.label}
+              </span>
+            ),
+          }))}
+        />
       </div>
-      <p className="mt-2 text-xs text-muted-ink">
-        As of <span className="num font-medium text-ink">{asOfText(at)}</span> (simulated). Computed from the simulated history; actions you take in the console are kept in your
+      <p className="mt-2 text-xs text-fg-3">
+        As of <span className="num font-medium text-fg">{asOfText(at)}</span> (simulated). Computed from the simulated history; actions you take in the console are kept in your
         browser and aren&apos;t included.
       </p>
 
       {snap.bottleneck && (
-        <section aria-label="What I'd improve next" className="mt-6 flex gap-3 rounded-lg border border-rule bg-surface p-4">
-          <Lightbulb aria-hidden className="mt-0.5 size-5 shrink-0 text-conditions" />
+        <section aria-label="What I'd improve next" className="mt-6 flex gap-3 rounded-[14px] bg-panel shadow-card p-4">
+          <Lightbulb aria-hidden className="mt-0.5 size-5 shrink-0 text-warn" />
           <div>
             <h2 className="font-semibold">What I&apos;d improve next</h2>
             <p className="mt-1 text-sm">{snap.bottleneck}</p>
@@ -92,24 +94,24 @@ export function OpsDashboard({ data }: { data: DashboardData }) {
 
 function Tile({ kpi, at, series }: { kpi: Kpi; at: string; series: (number | null)[] }) {
   return (
-    <article aria-label={kpi.label} className="flex h-full flex-col rounded-lg border border-rule bg-surface p-4">
+    <article aria-label={kpi.label} className="flex h-full flex-col rounded-[14px] bg-panel shadow-card p-4">
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-sm font-medium text-muted-ink">{kpi.label}</h3>
+        <h3 className="text-sm font-medium text-fg-3">{kpi.label}</h3>
         {kpi.illustrative && <Illustrative why={kpi.illustrative} />}
       </div>
       <p className="num mt-1 text-2xl font-semibold tracking-tight">{kpi.value}</p>
-      <p className="mt-1 text-sm text-muted-ink">{kpi.definition}</p>
+      <p className="mt-1 text-sm text-fg-3">{kpi.definition}</p>
       <Sparkline values={series} current={OPS_MOMENTS.findIndex((m) => m.at === at)} label={kpi.label} />
-      <p className="num mt-1 text-xs text-muted-ink">As of {asOfText(at)} (simulated)</p>
+      <p className="num mt-1 text-xs text-fg-3">As of {asOfText(at)} (simulated)</p>
       <details className="mt-3 text-sm">
-        <summary className="cursor-pointer text-muted-ink hover:text-ink">How it&apos;s computed</summary>
+        <summary className="cursor-pointer text-fg-3 hover:text-fg">How it&apos;s computed</summary>
         <p className="mt-2">{kpi.how}</p>
-        {kpi.illustrative && <p className="mt-2 text-xs text-muted-ink">Illustrative: {kpi.illustrative}</p>}
+        {kpi.illustrative && <p className="mt-2 text-xs text-fg-3">Illustrative: {kpi.illustrative}</p>}
         {kpi.breakdown && kpi.breakdown.length > 0 && (
           <dl className="mt-2 space-y-1">
             {kpi.breakdown.map((b) => (
               <div key={b.label} className="flex justify-between gap-3 text-xs">
-                <dt className="min-w-0 text-muted-ink">{b.label}</dt>
+                <dt className="min-w-0 text-fg-3">{b.label}</dt>
                 <dd className="num shrink-0 text-right">{b.value}</dd>
               </div>
             ))}
@@ -133,9 +135,9 @@ function Sparkline({ values, current, label }: { values: (number | null)[]; curr
   const pts = values.flatMap((v, i) => (v === null ? [] : [`${x(i)},${y(v)}`]))
   const cur = values[current]
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="mt-3 h-8 w-full text-muted-ink" role="img" aria-label={`${label} across the ${values.length} moments in the simulation; the marked point is the selected moment.`}>
+    <svg viewBox={`0 0 ${W} ${H}`} className="mt-3 h-8 w-full text-fg-3" role="img" aria-label={`${label} across the ${values.length} moments in the simulation; the marked point is the selected moment.`}>
       <polyline points={pts.join(" ")} fill="none" stroke="currentColor" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
-      {cur !== null && cur !== undefined && <circle cx={x(current)} cy={y(cur)} r="3" className="fill-ink" />}
+      {cur !== null && cur !== undefined && <circle cx={x(current)} cy={y(cur)} r="3" className="fill-fg" />}
     </svg>
   )
 }

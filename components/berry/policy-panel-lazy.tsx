@@ -12,7 +12,7 @@ import type { ActionResult, UserAction } from "@/lib/ops/view"
  */
 
 const PolicyPanel = dynamic(() => import("@/components/berry/policy-panel").then((m) => m.PolicyPanel), {
-  loading: () => <p className="text-sm text-muted-ink">Loading the policy tools…</p>,
+  loading: () => <p className="text-sm text-fg-3">Loading the policy tools…</p>,
 })
 
 let cache: Promise<PolicyCase[]> | null = null
@@ -34,7 +34,7 @@ export function LazyPolicyPanel(props: { actions: UserAction[]; actor: string; n
       live = false
     }
   }, [])
-  if (error) return <p role="alert" className="text-sm text-decline">{error}</p>
-  if (!cases) return <p className="text-sm text-muted-ink">Loading the policy cases…</p>
+  if (error) return <p role="alert" className="text-sm text-bad">{error}</p>
+  if (!cases) return <p className="text-sm text-fg-3">Loading the policy cases…</p>
   return <PolicyPanel cases={cases} {...props} />
 }

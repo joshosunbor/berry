@@ -27,6 +27,10 @@ import {
 import { policyAction, proposalsFrom, type ActionResult, type UserAction } from "@/lib/ops/view"
 import { InstitutionConfig } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
+import { LenderDot } from "@/components/ui/pill"
+import { SegmentedControl } from "@/components/ui/segmented-control"
+import { fieldClass } from "@/components/ui/field"
+import { buttonVariants } from "@/components/ui/button"
 
 /*
  * Policy changes in the operations console: edit a lender's thresholds,
@@ -36,7 +40,6 @@ import { cn } from "@/lib/utils"
  */
 
 const ROLE_LABEL: Record<Role, string> = { analyst: "Analyst", lead: "Lead", branch_manager: "Branch manager", credit_committee: "Credit Committee" }
-const button = "inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
 const personName = (id?: string) => (id ? (member(id)?.name ?? id) : "—")
 const when = (t?: string) => (t ? `${new Date(`${t}:00Z`).toLocaleDateString("en-CA", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })}, ${t.slice(11, 16)}` : "")
 const fieldFor = (mode: Mode, key: string) => POLICY_FIELDS[mode].find((f) => f.key === key)
@@ -62,25 +65,26 @@ export function PolicyPanel({ cases, actions, actor, now, record }: { cases: Pol
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div role="radiogroup" aria-label="Lender" className="inline-flex rounded-lg border border-rule bg-surface p-1">
-          {MODES.map((m) => (
-            <button
-              key={m}
-              type="button"
-              role="radio"
-              aria-checked={mode === m}
-              onClick={() => (setMode(m), setError(null))}
-              className={cn("rounded-md px-3 py-1 text-sm", mode === m ? "bg-ink text-background" : "text-muted-ink hover:text-ink")}
-            >
-              {MODE_META[m].institution}
-            </button>
-          ))}
-        </div>
-        <p className="text-sm text-muted-ink">
-          Current: <span className="font-medium text-ink">v{current.version}</span> · effective {current.effectiveFrom}
+        <SegmentedControl
+          kind="radio"
+          label="Lender"
+          value={mode}
+          onChange={(m) => (setMode(m), setError(null))}
+          options={MODES.map((m) => ({
+            value: m,
+            label: (
+              <span className="inline-flex items-center gap-2">
+                <LenderDot mode={m} />
+                {MODE_META[m].institution}
+              </span>
+            ),
+          }))}
+        />
+        <p className="text-sm text-fg-3">
+          Current: <span className="font-medium text-fg">v{current.version}</span> · effective {current.effectiveFrom}
         </p>
       </div>
-      <p className="mt-2 text-xs text-muted-ink">
+      <p className="mt-2 text-xs text-fg-3">
         Simulation only: an approved version applies inside this preview. Decisions elsewhere on the site use the published policy (v{CONFIGS[mode].version}). Changes need a{" "}
         {ROLE_LABEL[POLICY_APPROVER].toLowerCase()} or above, and the person who prepares a change can&apos;t approve it.{" "}
         <Illustrative why="Thresholds, roles and the team are illustrative; real policy governance varies by lender." />
@@ -90,7 +94,7 @@ export function PolicyPanel({ cases, actions, actor, now, record }: { cases: Pol
 
       <section className="mt-8" aria-label="Waiting for approval">
         <h3 className="font-semibold">Waiting for approval</h3>
-        {pending.length === 0 && <p className="mt-2 text-sm text-muted-ink">No changes waiting for {MODE_META[mode].institution}.</p>}
+        {pending.length === 0 && <p className="mt-2 text-sm text-fg-3">No changes waiting for {MODE_META[mode].institution}.</p>}
         <div className="mt-3 space-y-4">
           {pending.map((p) => (
             <ProposalCard key={p.id} p={p} currentVersion={current.version} actor={actor} now={now} run={run} error={error?.scope === p.id ? error.text : null} />
@@ -104,22 +108,22 @@ export function PolicyPanel({ cases, actions, actor, now, record }: { cases: Pol
         </h3>
         <ol className="mt-3 space-y-3">
           {[...history].reverse().map((v) => (
-            <li key={v.version} className="rounded-lg border border-rule bg-surface p-4">
+            <li key={v.version} className="rounded-[14px] bg-panel shadow-card p-4">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <p className="font-medium">
                   v{v.version}
-                  {v.version === current.version && <span className="ml-2 rounded-full bg-approve-soft px-2 py-0.5 text-xs text-approve">Current</span>}
-                  <span className="ml-2 text-sm font-normal text-muted-ink">
+                  {v.version === current.version && <span className="ml-2 rounded-full bg-green-tint px-2 py-0.5 text-xs text-green-ink">Current</span>}
+                  <span className="ml-2 text-sm font-normal text-fg-3">
                     {v.kind === "initial" ? "Published policy" : v.kind === "rollback" ? `Rollback to v${v.rollbackTo}` : "Change"}
                   </span>
                 </p>
                 {v.kind !== "initial" && (
-                  <p className="text-xs text-muted-ink">
+                  <p className="text-xs text-fg-3">
                     Prepared by {personName(v.preparedBy)} · checker: {personName(v.checker)} · {when(v.activatedAt)}
                   </p>
                 )}
               </div>
-              <p className="mt-1 text-sm text-muted-ink">{v.why}</p>
+              <p className="mt-1 text-sm text-fg-3">{v.why}</p>
               {v.diff.length > 0 && <DiffList mode={mode} diff={v.diff} />}
               {v.version < current.version && (
                 <RollbackForm
@@ -183,12 +187,12 @@ function ChangeForm({
   }, [mode, current, cases, valid, changedKey])
 
   return (
-    <section className="mt-6 rounded-lg border border-rule bg-surface p-5" aria-label="Propose a change">
+    <section className="mt-6 rounded-[14px] bg-panel shadow-card p-5" aria-label="Propose a change">
       <h3 className="font-semibold">Propose a change to {MODE_META[mode].institution}&apos;s thresholds</h3>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {fields.map((f) => (
           <label key={f.key} className="text-sm">
-            <span className="block text-muted-ink">{f.label}</span>
+            <span className="block text-fg-3">{f.label}</span>
             <span className="mt-1 flex items-center gap-2">
               <input
                 type="number"
@@ -198,9 +202,9 @@ function ChangeForm({
                 max={f.unit === "cents" ? f.max / 100 : f.max}
                 value={f.unit === "cents" ? String(Number(values[f.key]) / 100) : values[f.key]}
                 onChange={(e) => setValues((v) => ({ ...v, [f.key]: f.unit === "cents" ? String(Math.round(Number(e.target.value) * 100)) : e.target.value }))}
-                className={cn("num w-28 rounded-md border bg-surface px-2 py-1.5", changed[f.key] !== undefined ? "border-ink" : "border-rule")}
+                className={cn("num w-28 rounded-[10px] border bg-panel px-2 py-1.5", changed[f.key] !== undefined ? "border-fg" : "border-line")}
               />
-              <span className="text-xs text-muted-ink">
+              <span className="text-xs text-fg-3">
                 {f.unit === "cents" ? "dollars" : f.unit === "x" ? "times" : f.unit}
                 {changed[f.key] !== undefined && <> · now {formatThreshold(f, current.thresholds[f.key])}</>}
               </span>
@@ -209,13 +213,13 @@ function ChangeForm({
         ))}
       </div>
       <label className="mt-4 block text-sm">
-        <span className="block text-muted-ink">Why (shown to the checker and kept in the audit trail)</span>
-        <textarea value={why} onChange={(e) => setWhy(e.target.value)} rows={2} className="mt-1 w-full rounded-md border border-rule bg-surface px-2 py-1.5" />
+        <span className="block text-fg-3">Why (shown to the checker and kept in the audit trail)</span>
+        <textarea value={why} onChange={(e) => setWhy(e.target.value)} rows={2} className={cn(fieldClass, "mt-1 w-full")} />
       </label>
 
       <div className="mt-4">
         <h4 className="text-sm font-semibold">Impact preview</h4>
-        {preview ? <ImpactView impact={preview} mode={mode} /> : <p className="mt-1 text-sm text-muted-ink">Change a threshold to see which decisions would change.</p>}
+        {preview ? <ImpactView impact={preview} mode={mode} /> : <p className="mt-1 text-sm text-fg-3">Change a threshold to see which decisions would change.</p>}
       </div>
 
       {error && <InlineError text={error} />}
@@ -223,7 +227,7 @@ function ChangeForm({
         type="button"
         disabled={!preview}
         onClick={() => run("new", policyAction(actor, now, "policy_proposed", (log) => proposeChange(log, { mode, current, values: changed, why, by: actor, at: now, cases, seq })))}
-        className={cn(button, "mt-4 bg-ink text-background")}
+        className={cn(buttonVariants({ size: "sm" }), "mt-4")}
       >
         Prepare v{current.version + 1} as {personName(actor)}
       </button>
@@ -255,12 +259,12 @@ function ProposalCard({
     run(p.id, policyAction(actor, now, "policy_decided", (log) => decideProposal(log, p, { checker: actor, at: now, verdict, currentVersion, impactReviewed: reviewed, reason }).proposal))
 
   return (
-    <article className="rounded-lg border border-rule bg-surface p-5" aria-label={`${MODE_META[p.mode].institution} policy v${p.proposed.version}`}>
+    <article className="rounded-[14px] bg-panel shadow-card p-5" aria-label={`${MODE_META[p.mode].institution} policy v${p.proposed.version}`}>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h4 className="font-semibold">
           {MODE_META[p.mode].institution} v{p.proposed.version} · {p.kind === "rollback" ? `rollback to v${p.rollbackTo}` : "change"}
         </h4>
-        <p className="text-xs text-muted-ink">
+        <p className="text-xs text-fg-3">
           Prepared by {personName(p.request.preparedBy)}, {when(p.request.preparedAt)}
         </p>
       </div>
@@ -273,13 +277,13 @@ function ProposalCard({
       <p className="mt-3 text-sm">
         Needs: {ROLE_LABEL[p.request.requiredRole]} or above
         {p.request.escalations.map((e, i) => (
-          <span key={i} className="block text-xs text-muted-ink">
+          <span key={i} className="block text-xs text-fg-3">
             Escalated by {personName(e.by)} ({ROLE_LABEL[e.from]}) to {ROLE_LABEL[e.to]}, {when(e.at)}
           </span>
         ))}
       </p>
       {stale && (
-        <p className="mt-3 rounded-md bg-conditions-soft px-3 py-2 text-sm text-conditions">
+        <p className="mt-3 rounded-[10px] bg-warn-tint px-3 py-2 text-sm text-warn">
           Prepared against v{p.baseVersion}; the policy is now v{currentVersion}. It can&apos;t be approved; prepare it again so the impact is current.
         </p>
       )}
@@ -290,10 +294,10 @@ function ProposalCard({
       {error && <InlineError text={error} />}
       {!rejecting ? (
         <div className="mt-3 flex flex-wrap gap-2">
-          <button type="button" disabled={!reviewed || stale} onClick={() => act("approve")} className={cn(button, "bg-ink text-background")}>
+          <button type="button" disabled={!reviewed || stale} onClick={() => act("approve")} className={buttonVariants({ size: "sm" })}>
             Approve as {personName(actor)}
           </button>
-          <button type="button" onClick={() => setRejecting(true)} className={cn(button, "border border-rule")}>
+          <button type="button" onClick={() => setRejecting(true)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
             Reject…
           </button>
         </div>
@@ -306,13 +310,13 @@ function ProposalCard({
           }}
         >
           <label className="min-w-0 flex-1 text-sm">
-            <span className="block text-xs text-muted-ink">Why are you rejecting it?</span>
-            <input required value={reason} onChange={(e) => setReason(e.target.value)} className="mt-1 w-full rounded-md border border-rule bg-surface px-2 py-1.5" />
+            <span className="block text-xs text-fg-3">Why are you rejecting it?</span>
+            <input required value={reason} onChange={(e) => setReason(e.target.value)} className={cn(fieldClass, "mt-1 w-full")} />
           </label>
-          <button type="submit" className={cn(button, "bg-decline text-background")}>
+          <button type="submit" className={buttonVariants({ variant: "danger", size: "sm" })}>
             Reject as {personName(actor)}
           </button>
-          <button type="button" onClick={() => setRejecting(false)} className={cn(button, "border border-rule")}>
+          <button type="button" onClick={() => setRejecting(false)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
             Cancel
           </button>
         </form>
@@ -328,7 +332,7 @@ function RollbackForm({ label, onSubmit, error }: { label: string; onSubmit: (wh
     return (
       <>
         {error && <InlineError text={error} />}
-        <button type="button" onClick={() => setOpen(true)} className={cn(button, "mt-3 border border-rule")}>
+        <button type="button" onClick={() => setOpen(true)} className={cn(buttonVariants({ variant: "secondary", size: "sm" }), "mt-3")}>
           {label}…
         </button>
       </>
@@ -342,13 +346,13 @@ function RollbackForm({ label, onSubmit, error }: { label: string; onSubmit: (wh
       }}
     >
       <label className="min-w-0 flex-1 text-sm">
-        <span className="block text-xs text-muted-ink">Why roll back?</span>
-        <input required value={why} onChange={(e) => setWhy(e.target.value)} className="mt-1 w-full rounded-md border border-rule bg-surface px-2 py-1.5" />
+        <span className="block text-xs text-fg-3">Why roll back?</span>
+        <input required value={why} onChange={(e) => setWhy(e.target.value)} className={cn(fieldClass, "mt-1 w-full")} />
       </label>
-      <button type="submit" className={cn(button, "bg-ink text-background")}>
+      <button type="submit" className={buttonVariants({ size: "sm" })}>
         Prepare rollback
       </button>
-      <button type="button" onClick={() => setOpen(false)} className={cn(button, "border border-rule")}>
+      <button type="button" onClick={() => setOpen(false)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
         Cancel
       </button>
       {error && <InlineError text={error} />}
@@ -361,7 +365,7 @@ function DiffList({ mode, diff }: { mode: Mode; diff: PolicyProposal["diff"] }) 
     <ul className="mt-2 space-y-0.5 text-sm">
       {diff.map((d) => (
         <li key={d.key}>
-          <span className="text-muted-ink">{labelFor(mode, d.key)}: </span>
+          <span className="text-fg-3">{labelFor(mode, d.key)}: </span>
           <span className="num">
             {formatThreshold(fieldFor(mode, d.key), d.from)} → <span className="font-medium">{formatThreshold(fieldFor(mode, d.key), d.to)}</span>
           </span>
@@ -379,7 +383,7 @@ function ImpactView({ impact, mode }: { impact: Impact; mode: Mode }) {
     <div>
       <div className="mt-2 overflow-x-auto">
         <table className="w-full min-w-[420px] text-left text-sm">
-          <thead className="text-xs text-muted-ink">
+          <thead className="text-xs text-fg-3">
             <tr>
               <th className="py-1 pr-3 font-medium">Lender</th>
               <th className="py-1 pr-3 font-medium">Cast decisions changing</th>
@@ -390,14 +394,14 @@ function ImpactView({ impact, mode }: { impact: Impact; mode: Mode }) {
             {MODES.map((m) => {
               const l = impact.byLender[m]
               return (
-                <tr key={m} className="border-t border-rule">
+                <tr key={m} className="border-t border-line">
                   <td className="py-1.5 pr-3">{MODE_META[m].institution}</td>
                   <td className="num py-1.5 pr-3">
                     {l.cast.length} of {l.casesChecked.cast}
                   </td>
                   <td className="num py-1.5">
                     {l.planted.length} of {l.casesChecked.planted}
-                    {m !== mode && <span className="ml-2 text-xs text-muted-ink">(not affected)</span>}
+                    {m !== mode && <span className="ml-2 text-xs text-fg-3">(not affected)</span>}
                   </td>
                 </tr>
               )
@@ -406,7 +410,7 @@ function ImpactView({ impact, mode }: { impact: Impact; mode: Mode }) {
         </table>
       </div>
       {changes.length === 0 ? (
-        <p className="mt-2 flex items-center gap-2 text-sm text-muted-ink">
+        <p className="mt-2 flex items-center gap-2 text-sm text-fg-3">
           <ShieldCheck aria-hidden className="size-4" /> No decisions would change.
         </p>
       ) : (
@@ -414,14 +418,14 @@ function ImpactView({ impact, mode }: { impact: Impact; mode: Mode }) {
           {changes.map((c) => (
             <li key={c.slug} className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="font-medium">{c.name}</span>
-              <span className="text-xs text-muted-ink">{c.group === "cast" ? "cast" : "planted case"}</span>
+              <span className="text-xs text-fg-3">{c.group === "cast" ? "cast" : "planted case"}</span>
               <span className="flex flex-wrap items-center gap-1.5">
                 <OutcomeChip outcome={c.from.outcome} short />
-                <span className="text-xs text-muted-ink">{snapText(c.from)}</span>
+                <span className="text-xs text-fg-3">{snapText(c.from)}</span>
                 <span aria-hidden>→</span>
                 <span className="sr-only">would become</span>
                 <OutcomeChip outcome={c.to.outcome} short />
-                <span className="text-xs text-muted-ink">{snapText(c.to)}</span>
+                <span className="text-xs text-fg-3">{snapText(c.to)}</span>
               </span>
             </li>
           ))}
