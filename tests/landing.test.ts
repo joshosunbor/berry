@@ -167,6 +167,13 @@ describe("landing copy follows the hybrid-concept brief", () => {
     }
   })
 
+  it("doesn't call the enacted Consumer-Driven Banking Act a draft", () => {
+    const tile = CONTENT.CANADA.tiles.find((t) => t.t.startsWith("Consent"))!.d
+    expect(tile).not.toMatch(/draft consumer-driven banking framework/i)
+    expect(tile).toMatch(/not (yet )?in force/i)
+    expect(tile).toMatch(/regulations (are )?in draft/i)
+  })
+
   it("speaks in product voice: no implied customers", () => {
     for (const phrase of [/\byour (team|lenders|policy|account|compliance)\b/i, /\bwe['’]re onboarding\b/i, /\blenders ask us\b/i]) expect(text).not.toMatch(phrase)
   })

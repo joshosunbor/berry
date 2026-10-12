@@ -110,7 +110,7 @@
     {
       "id": "cdb-act",
       "name": "Consumer-Driven Banking Act",
-      "status": "In draft",
+      "status": "Enacted, not in force",
       "summary": "The legal framework for consumer-driven (open) banking. Most provisions, including consent, are not yet in force; regulations are required to bring the Act into force.",
       "effective": "Royal assent March 26, 2026 (S.C. 2026, c. 3, s. 224); most provisions not yet in force",
       "source": {
@@ -118,14 +118,14 @@
         "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-1.html",
         "kind": "official"
       },
-      "asOf": "2026-10-11",
+      "asOf": "2026-10-12",
       "berryUse": "Simulated",
       "inBerry": "Berry's consent screen and dashboard are built around the framework's consent principles. Berry is not accredited and connects to no real institution."
     },
     {
       "id": "cdb-consent-duration",
       "name": "Consent duration: at most 12 months",
-      "status": "In draft",
+      "status": "Enacted, not in force",
       "summary": "Express consent may be valid for no more than 12 months after it is obtained (Act s. 86), with renewal within seven days (s. 87); draft regulations add triggers for earlier renewal (s. 44).",
       "effective": "Act s. 86, not yet in force",
       "source": {
@@ -133,7 +133,7 @@
         "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-5.html",
         "kind": "official"
       },
-      "asOf": "2026-10-11",
+      "asOf": "2026-10-12",
       "berryUse": "Applied",
       "inBerry": "Berry's simulated consents expire within 12 months and the consent screen says so."
     },

@@ -129,7 +129,7 @@ export const CANADA = {
   /** "{asOf}" is the regulatory status file's month and year. */
   statusLink: "Regulatory status, as of {asOf} →",
   tiles: [
-    { t: "Consent-first data sharing", d: "Built around the draft consumer-driven banking framework’s consent principles.", href: "/methodology#status-cdb-act" },
+    { t: "Consent-first data sharing", d: "Built around the consumer-driven banking framework’s consent principles. The Act is passed but not yet in force; its regulations are in draft.", href: "/methodology#status-cdb-act" },
     { t: "PAD repayment", d: "Debit schedules and agreements modelled on Payments Canada Rule H1.", href: "/methodology#status-rule-h1" },
     { t: "AFT and instant funding", d: "Sample CPA 005 batch files, with simulated Interac e-Transfer and Real-Time Rail payouts.", href: "/methodology#money" },
     { t: "FINTRAC checks", d: "Cash of $10,000 or more within 24 hours goes to review. It never touches the credit decision.", href: "/methodology#status-fintrac-lctr" },

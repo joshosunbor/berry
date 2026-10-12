@@ -22,10 +22,10 @@ describe("regulatory status panel", () => {
     expect(new Set(rows.map((r) => r.id)).size).toBe(rows.length)
   })
 
-  it("marks consumer-driven banking as In draft, never Live", () => {
-    for (const id of ["cdb-act", "cdb-regulations", "cdb-consent-duration", "cdb-technical-standard"]) {
-      expect(byId(id).status, id).toBe("In draft")
-    }
+  it("marks the passed Act as enacted but not in force, the regulations as In draft, never Live", () => {
+    // Royal assent March 26, 2026, but most provisions aren't in force; only the regulations are draft.
+    for (const id of ["cdb-act", "cdb-consent-duration"]) expect(byId(id).status, id).toBe("Enacted, not in force")
+    for (const id of ["cdb-regulations", "cdb-technical-standard"]) expect(byId(id).status, id).toBe("In draft")
     expect(rows.filter((r) => /consumer-driven|open banking/i.test(r.name + r.summary)).every((r) => r.status !== "Live")).toBe(true)
   })
 

@@ -128,7 +128,7 @@ test("methodology: regulatory status panel shows sources, dates and the right st
   await page.getByRole("banner").getByRole("link", { name: "Methodology" }).filter({ visible: true }).click()
   await expect(page).toHaveURL(/\/methodology$/)
   const panel = page.locator("#regulatory-status")
-  await expect(panel).toContainText("Status as of October 11, 2026")
+  await expect(panel).toContainText("Status as of October 12, 2026")
   const rows = panel.getByRole("listitem")
   const count = await rows.count()
   expect(count).toBeGreaterThanOrEqual(15)
@@ -136,11 +136,10 @@ test("methodology: regulatory status panel shows sources, dates and the right st
     await expect(rows.nth(i).getByRole("link", { name: /^Source:/ })).toHaveAttribute("href", /^https:\/\//)
     await expect(rows.nth(i)).toContainText("Checked")
   }
-  for (const name of ["Consumer-Driven Banking Act", "Consumer-Driven Banking Regulations"]) {
-    await expect(rows.filter({ hasText: name }).first()).toContainText("In draft")
-  }
+  await expect(rows.filter({ hasText: "Consumer-Driven Banking Act" }).first()).toContainText("Enacted, not in force")
+  await expect(rows.filter({ hasText: "Consumer-Driven Banking Regulations" }).first()).toContainText("In draft")
   await expect(rows.filter({ hasText: "Real-Time Rail" }).first()).toContainText("Launching")
-  await expect(rows.filter({ hasText: "2027 milestones" })).toContainText("Illustrative")
+  await expect(rows.filter({ hasText: "after the launch" })).toContainText("Illustrative")
   expect(errors).toEqual([])
 })
 
@@ -338,7 +337,7 @@ test("landing: comparison toggle, lifecycle and tour tabs, ops snapshot, concept
   await page.goto("/")
   const main = page.getByRole("main")
   // No status badges on the landing page: caveats live on /methodology.
-  for (const badge of ["Illustrative", "Simulated", "In draft", "Launching", "Live"]) await expect(main.getByText(badge, { exact: true })).toHaveCount(0)
+  for (const badge of ["Illustrative", "Simulated", "Enacted, not in force", "In draft", "Launching", "Live"]) await expect(main.getByText(badge, { exact: true })).toHaveCount(0)
 
   // Borrower / lender wording comes from the engine.
   const aspen = page.getByRole("article", { name: /Aspen Bank/ })

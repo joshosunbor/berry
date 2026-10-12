@@ -7,7 +7,7 @@ import statusJson from "@/data/regulatory-status.json"
  * Anything not confirmed from an official source is marked Illustrative.
  */
 
-export const RegulatoryStatus = z.enum(["Live", "In draft", "Launching", "Illustrative"])
+export const RegulatoryStatus = z.enum(["Live", "Enacted, not in force", "In draft", "Launching", "Illustrative"])
 export const BerryUse = z.enum(["Applied", "Simulated", "Context only"])
 /** Official: a regulator, government body or Payments Canada. Otherwise a company's own page, a press report, or a third party's copy. */
 export const SourceKind = z.enum(["official", "company", "press", "third-party copy"])

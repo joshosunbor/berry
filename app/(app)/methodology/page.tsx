@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 const STATUS_STYLE: Record<RegulatoryRow["status"], { icon: typeof CircleCheck; tone: "ok" | "warn" | "info" | "neutral" }> = {
   Live: { icon: CircleCheck, tone: "ok" },
+  "Enacted, not in force": { icon: FileClock, tone: "warn" },
   "In draft": { icon: FileClock, tone: "warn" },
   Launching: { icon: Rocket, tone: "info" },
   Illustrative: { icon: CircleDashed, tone: "neutral" },
@@ -238,8 +239,8 @@ export default function MethodologyPage() {
         <Section id="regulatory-status" title="Regulatory status">
           <p>
             Status as of <span className="font-semibold text-fg">{longDate(status.asOf)}</span>. Each row links to its source and shows when it was last checked. Sources that aren&apos;t a regulator, government body or Payments
-            Canada are marked as such. <span className="font-semibold text-fg">Live</span> means in force; <span className="font-semibold text-fg">In draft</span> means proposed or passed but
-            not in force; <span className="font-semibold text-fg">Launching</span> means announced and rolling out; <span className="font-semibold text-fg">Illustrative</span>{" "}
+            Canada are marked as such. <span className="font-semibold text-fg">Live</span> means in force; <span className="font-semibold text-fg">Enacted, not in force</span> means passed into law
+            but not yet in effect; <span className="font-semibold text-fg">In draft</span> means proposed; <span className="font-semibold text-fg">Launching</span> means announced and rolling out; <span className="font-semibold text-fg">Illustrative</span>{" "}
             means Berry could not confirm it from an official source.
           </p>
           <ul className="space-y-3">
