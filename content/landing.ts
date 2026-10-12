@@ -26,7 +26,7 @@ export const HERO = {
   title: "Approve the borrowers ",
   titleAccent: "a credit score misses.",
   lead: "Farmers, gig workers, newcomers and seasonal businesses look risky on a credit score. Berry reads their cash flow, explains every decision in plain language, and runs the loan through funding, collections and reconciliation.",
-  note: "The live demo needs no sign-up and runs on sample data.",
+  note: "A portfolio project with fictional lenders. The live demo needs no sign-up and runs on synthetic data.",
 } as const
 
 export const COMPARISON = {
@@ -112,7 +112,7 @@ export const OPS = {
 
 export const PLUG_IN = {
   title: "How it would plug in",
-  label: "Designed for",
+  label: "Concept",
   lead: "Berry would sit between a lender's core banking system and its payments provider. It wouldn't replace either one, and the lender's team would keep the final say on every decision.",
   rows: [
     { t: "Core banking", d: "Would take member and account data in and send booked loans out, by API or nightly file." },
@@ -155,7 +155,7 @@ export const BUILT = {
     "Synthetic data only",
     "No personal data sent to AI",
     "Append-only, hash-chained audit trail",
-    "Maker-checker on every approval",
+    "Maker-checker on overrides and sign-offs",
     "Deterministic, tested decisions",
     "Rate-limited AI route",
   ],
@@ -180,7 +180,7 @@ export const FAQ = {
   title: "Common questions",
   items: [
     { q: "Who makes the final decision?", a: "The lender's team. Berry recommends a decision with its reasons, and the lender's approval authority decides who signs off. Overrides are allowed, logged and checked by a second person." },
-    { q: "Can a lender use its own lending policy?", a: "Yes. Limits, thresholds, rates and approval tiers are settings, not code. Every change is versioned, and its effect on past applications can be previewed before it goes live." },
+    { q: "Can a lender use its own lending policy?", a: "In Berry, limits, thresholds, rates and approval tiers are settings, not code. Every change is versioned, and its effect on past applications can be previewed before it goes live." },
     { q: "How long does setup take?", a: "A pilot on one product would take about eight weeks, from loading the policy to reviewing results. A wider rollout would depend on the lender’s core banking system." },
     { q: "What does a declined borrower see?", a: "A plain-language reason, what would change the answer, and a way to ask for a review. The lender's team sees the same decision in lender terms." },
     { q: "Is Berry a real product?", a: "Berry is a working portfolio project by Joshua Osunbor. The rules, ledger and operations console are real and tested; the lenders and borrowers are fictional, and all data is synthetic." },

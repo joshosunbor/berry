@@ -165,7 +165,7 @@ describe("servicing simulator: the three loan books", () => {
     for (const l of books.fintech.loans) expect(l.setup.funding.rail).toBe(l.setup.principalCents <= SERVICING.rails.etransfer.limitCents ? "etransfer" : "rtr_simulated")
     for (const l of [...books.credit_union.loans, ...books.bank.loans]) expect(l.setup.funding.rail).toBe("aft")
     const rtr = books.fintech.loans.find((l) => l.setup.funding.rail === "rtr_simulated")!
-    expect(rtr.setup.funding.label).toBe("simulated — RTR launching")
+    expect(rtr.setup.funding.label).toBe("simulated")
   })
 })
 

@@ -161,7 +161,7 @@ export function ServicingPanel({ d }: { d: LandingData }) {
           <p className="text-sm text-fg-3">{d.applicant.name} · operating line</p>
           <p className="mt-1 text-[32px] font-semibold leading-[1.1] tracking-[-0.025em]">{formatCents(s.finalBalanceCents)}</p>
           <p className="mt-0.5 text-sm font-semibold text-green-ink">
-            {repaid ? `Repaid in full · final payment ${dateText(s.finalPaymentOn!)}` : `Final payment scheduled ${dateText(s.finalPaymentOn!)}`}
+            {repaid ? `Repaid in full · final payment ${dateText(s.finalPaymentOn!)} (simulated)` : `Final payment scheduled ${dateText(s.finalPaymentOn!)} (simulated)`}
           </p>
         </div>
         <Facts

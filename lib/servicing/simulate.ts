@@ -5,7 +5,7 @@ import type { ProductType, ReturnCode, RecoveryRules } from "@/lib/schemas"
 import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
 import { borrowerNsfFee, type BorrowerAccount, type BorrowerFee } from "./borrower-bank"
 import { SERVICING, type ServicingConfig } from "./config"
-import type { FundingResult } from "./funding"
+import { RTR_FULL_NAME, type FundingResult } from "./funding"
 import type { GateCheck } from "./gate"
 import {
   applyPayment,
@@ -204,13 +204,13 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
 
   // Funding: a lump sum, or for a drawn line, the limit is opened and money moves only on each draw.
   const fundedOn = s.funding.fundedOn
-  const railName = s.funding.rail === "rtr_simulated" ? "Real-Time Rail (simulated)" : s.funding.rail === "aft" ? "AFT" : "Interac e-Transfer"
+  const railName = s.funding.rail === "rtr_simulated" ? RTR_FULL_NAME : s.funding.rail === "aft" ? "AFT" : "Interac e-Transfer"
   if (s.draws) {
     events.push({ date: fundedOn, type: "line_opened", amountCents: s.principalCents, text: "Operating line opened. Nothing is drawn yet; draws go by AFT." })
   } else {
     post(fundedOn, (l) => postDisbursement(l, s.id, s.principalCents, fundedOn, railName))
     principal += s.principalCents
-    events.push({ date: fundedOn, type: "funded", amountCents: s.principalCents, text: `Funded ${s.funding.rail === "rtr_simulated" ? "by Real-Time Rail (simulated — RTR launching)" : s.funding.rail === "aft" ? "by AFT" : "by Interac e-Transfer"}.` })
+    events.push({ date: fundedOn, type: "funded", amountCents: s.principalCents, text: `Funded ${s.funding.rail === "rtr_simulated" ? `by ${RTR_FULL_NAME}` : s.funding.rail === "aft" ? "by AFT" : "by Interac e-Transfer"}.` })
   }
   setStatus(fundedOn, "active", s.draws ? "Line opened." : "Loan funded.")
   const pendingDraws = [...(s.draws ?? [])]

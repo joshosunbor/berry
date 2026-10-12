@@ -194,7 +194,7 @@ export default function MethodologyPage() {
           <p>
             Every approved loan is serviced in a simulation that runs from funding to the end of December 2027. Money is kept in a double-entry ledger in whole cents: every
             entry&apos;s debits equal its credits, entries are never edited, and corrections are reversing entries. Funding goes by AFT (next business
-            day), Interac e-Transfer, or the Real-Time Rail, which is <span className="font-medium text-fg">simulated — RTR launching</span>; instant rails need a
+            day), Interac e-Transfer, or the Real-Time Rail, which is <span className="font-medium text-fg">simulated in Berry (it launches in phases from Q4 2026)</span>; instant rails need a
             simulated account check first.
           </p>
           <p>

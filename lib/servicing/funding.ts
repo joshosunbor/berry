@@ -13,7 +13,10 @@ import { SERVICING, type ServicingConfig } from "./config"
  * Costs and timings are illustrative.
  */
 
-export const RTR_LABEL = "simulated — RTR launching"
+/** The badge next to the rail's name; the same wording is used everywhere the rail appears. */
+export const RTR_LABEL = "simulated"
+/** "Real-Time Rail (simulated)", for running text. */
+export const RTR_FULL_NAME = "Real-Time Rail (simulated)"
 
 export interface RailInfo {
   rail: FundingRail

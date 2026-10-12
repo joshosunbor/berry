@@ -12,7 +12,7 @@ import { slaState, type SlaState } from "@/lib/ops/queues"
 import { businessMinutesBetween } from "@/lib/ops/time"
 import type { Decision, InstitutionConfig } from "@/lib/schemas"
 import { SERVICING } from "@/lib/servicing/config"
-import { RAILS } from "@/lib/servicing/funding"
+import { RAILS, RTR_FULL_NAME } from "@/lib/servicing/funding"
 import { CLOCK_START } from "@/lib/servicing/views"
 
 /*
@@ -228,7 +228,7 @@ export function landingData() {
     const min = median(ms)
     const value =
       r === "rtr_simulated" ? `${SERVICING.rails.rtr_simulated.secondsToComplete} seconds` : min >= 60 ? `${Math.round((min / 60) * 10) / 10} hours` : `${min} minutes`
-    return { rail: r, label: r === "aft" ? "AFT batch" : r === "etransfer" ? "e-Transfer" : `${RAILS.rtr_simulated.name} (simulated)`, minutes: min, value, loans: ms.length }
+    return { rail: r, label: r === "aft" ? "AFT batch" : r === "etransfer" ? "e-Transfer" : RTR_FULL_NAME, minutes: min, value, loans: ms.length }
   })
 
   // A real policy-preview run, as the console shows it.
@@ -263,7 +263,7 @@ export function landingData() {
     compare,
     ledger,
     servicing,
-    queue: { at, atText: `${dateText(at.slice(0, 10))}, ${at.slice(11)}`, openCount: open.length, rows: queue },
+    queue: { at, atText: `${dateText(at.slice(0, 10))}, ${at.slice(11)} (simulated)`, openCount: open.length, rows: queue },
     railTimes,
     policyQuote,
     statusAsOf: monthYear(statusFile.asOf),

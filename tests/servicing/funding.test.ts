@@ -22,8 +22,8 @@ describe("account verification (simulated)", () => {
 })
 
 describe("funding rails", () => {
-  it("labels the Real-Time Rail exactly 'simulated — RTR launching'", () => {
-    expect(RTR_LABEL).toBe("simulated — RTR launching")
+  it("labels the Real-Time Rail exactly 'simulated'", () => {
+    expect(RTR_LABEL).toBe("simulated")
     expect(RAILS.rtr_simulated.badge).toBe(RTR_LABEL)
     expect(fund({ ...base, rail: "rtr_simulated", verification: match }).label).toBe(RTR_LABEL)
   })

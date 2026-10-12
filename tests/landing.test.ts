@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs"
+import path from "node:path"
 import { describe, expect, it } from "vitest"
 import * as CONTENT from "@/content/landing"
 import statusFile from "@/data/regulatory-status.json"
@@ -151,7 +153,7 @@ describe("landing copy follows the hybrid-concept brief", () => {
       "Synthetic data only",
       "No personal data sent to AI",
       "Append-only, hash-chained audit trail",
-      "Maker-checker on every approval",
+      "Maker-checker on overrides and sign-offs",
       "Deterministic, tested decisions",
       "Rate-limited AI route",
     ])
@@ -172,6 +174,22 @@ describe("landing copy follows the hybrid-concept brief", () => {
     expect(tile).not.toMatch(/draft consumer-driven banking framework/i)
     expect(tile).toMatch(/not (yet )?in force/i)
     expect(tile).toMatch(/regulations (are )?in draft/i)
+  })
+
+  it("reads as a concept where it is one, and claims only what Berry does", () => {
+    const src = (f: string) => readFileSync(path.resolve(import.meta.dirname, "..", f), "utf8")
+    expect(CONTENT.PLUG_IN.label).toBe("Concept")
+    expect(CONTENT.HERO.note).toMatch(/portfolio project/i)
+    // Kite's automated approvals have no second person; maker-checker covers overrides and sign-offs.
+    expect(text).not.toMatch(/maker-checker on every approval/i)
+    // A lender can't use Berry today; say what Berry does instead.
+    expect(CONTENT.FAQ.items.find((f) => f.q.startsWith("Can a lender"))!.a).not.toMatch(/^Yes\b/)
+    // Future dates on the landing page are simulated, and say so.
+    expect(data.queue.atText).toMatch(/\(simulated\)$/)
+    expect(src("components/landing/tour-panels.tsx")).toMatch(/final payment \$\{dateText\(s\.finalPaymentOn!\)\} \(simulated\)/)
+    // One Real-Time Rail label everywhere, and no "real" items in a synthetic demo.
+    for (const f of ["lib/servicing/funding.ts", "lib/servicing/simulate.ts", "app/(app)/methodology/page.tsx"]) expect(src(f), f).not.toContain("RTR launching")
+    expect(src("app/(app)/ops/page.tsx")).not.toMatch(/real open items/)
   })
 
   it("speaks in product voice: no implied customers", () => {

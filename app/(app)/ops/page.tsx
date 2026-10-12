@@ -6,7 +6,7 @@ import { getAuditEvents, getOpsEventItems, getOpsItems } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Operations console · Berry",
-  description: "Work queues with service levels, maker-checker approvals, delegated authority and an append-only audit trail, fed by real open items.",
+  description: "Work queues with service levels, maker-checker approvals, delegated authority and an append-only audit trail, fed by the simulation\u2019s open items.",
 }
 
 export default function OpsPage() {
