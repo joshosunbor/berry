@@ -75,9 +75,11 @@ export async function draftMemo(input: MemoInput, opts: DraftOptions = {}): Prom
     reply = await client.messages.create(
       {
         model: MEMO_MODEL,
-        max_tokens: 16000,
-        // Thinking is adaptive by default on this model; effort set explicitly.
-        output_config: { effort: "medium" },
+        // A ~450-word memo is ~700 tokens. Thinking can't be turned off on this
+        // model and counts toward max_tokens, so the cap leaves room for it; low
+        // effort keeps thinking short. A cut-off draft falls back to the template.
+        max_tokens: 4000,
+        output_config: { effort: "low" },
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: `Facts (JSON):\n${JSON.stringify(facts, null, 2)}` }],
       },

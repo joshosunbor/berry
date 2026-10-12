@@ -165,6 +165,16 @@ describe("draftMemo", () => {
     expect(body).not.toHaveProperty("fallbacks")
   })
 
+  it("caps each call's output: a short memo at low effort, with room for thinking", async () => {
+    const client = fakeClient(polished)
+    await draftMemo(hollisCu, { apiKey: "test", client })
+    const body = client.calls[0] as { max_tokens: number; output_config: { effort: string } }
+    // Thinking counts toward max_tokens on this model; a ~450-word memo is ~700 tokens.
+    expect(body.max_tokens).toBeLessThanOrEqual(4000)
+    expect(body.max_tokens).toBeGreaterThanOrEqual(3000)
+    expect(body.output_config.effort).toBe("low")
+  })
+
   it("falls back to the template and lists the problem when a number changed", async () => {
     const r = await draftMemo(hollisCu, { apiKey: "test", client: fakeClient(polished.replace("7.95%", "5.95%")) })
     expect(r.source).toBe("template")
