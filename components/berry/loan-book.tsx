@@ -5,6 +5,10 @@ import { useClock } from "@/components/berry/clock"
 import { Illustrative } from "@/components/berry/illustrative"
 import { useMode } from "@/components/berry/mode-context"
 import { LoanStatusChip } from "@/components/berry/loan-status"
+import { Card } from "@/components/ui/card"
+import { EmptyState } from "@/components/ui/empty-state"
+import { StatTile } from "@/components/ui/stat-tile"
+import { Table, Td, Th, THead } from "@/components/ui/table"
 import { PRODUCT_LABELS } from "@/lib/labels"
 import { formatCents } from "@/lib/money"
 import { MODE_META } from "@/lib/modes"
@@ -28,12 +32,12 @@ export function LoanBook({ loans }: { loans: LoanSummary[] }) {
   return (
     <div>
       <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <Tile label="Loans">{book.length}</Tile>
-        <Tile label="Outstanding">{formatCents(outstanding, { whole: true })}</Tile>
-        <Tile label="Returned debits to date">{returns}</Tile>
-        <Tile label="Cure rate to date">{cures.length ? `${Math.round((cured / cures.length) * 100)}% (${cured} of ${cures.length})` : "No missed payments"}</Tile>
+        <StatTile term size="md" label="Loans" value={book.length} />
+        <StatTile term size="md" label="Outstanding" value={formatCents(outstanding, { whole: true })} />
+        <StatTile term size="md" label="Returned debits to date" value={returns} />
+        <StatTile term size="md" label="Cure rate to date" value={cures.length ? `${Math.round((cured / cures.length) * 100)}% (${cured} of ${cures.length})` : "No missed payments"} />
       </dl>
-      <p className="mt-3 flex flex-wrap gap-2 text-xs text-muted-ink">
+      <p className="mt-3 flex flex-wrap gap-2 text-xs text-fg-3">
         {ORDER.filter((st) => counts[st]).map((st) => (
           <span key={st} className="flex items-center gap-1.5">
             <LoanStatusChip status={st} /> {counts[st]}
@@ -41,54 +45,44 @@ export function LoanBook({ loans }: { loans: LoanSummary[] }) {
         ))}
       </p>
 
-      <div className="mt-6 overflow-x-auto rounded-lg border border-rule bg-surface">
-        <table className="w-full min-w-[760px] text-left text-sm">
-          <caption className="sr-only">{MODE_META[mode].institution} loan book as of {date}</caption>
-          <thead className="border-b border-rule text-xs text-muted-ink">
+      <Card pad="none" className="mt-6 overflow-hidden">
+        <Table minWidth={760} caption={`${MODE_META[mode].institution} loan book as of ${date}`}>
+          <THead>
             <tr>
-              <th scope="col" className="px-4 py-2.5 font-medium">Borrower</th>
-              <th scope="col" className="px-4 py-2.5 font-medium">Funded by</th>
-              <th scope="col" className="px-4 py-2.5 text-right font-medium">Amount</th>
-              <th scope="col" className="px-4 py-2.5 text-right font-medium">Outstanding</th>
-              <th scope="col" className="px-4 py-2.5 font-medium">Status</th>
-              <th scope="col" className="px-4 py-2.5 text-right font-medium">Days past due</th>
+              <Th scope="col">Borrower</Th>
+              <Th scope="col">Funded by</Th>
+              <Th scope="col" className="text-right">Amount</Th>
+              <Th scope="col" className="text-right">Outstanding</Th>
+              <Th scope="col">Status</Th>
+              <Th scope="col" className="text-right">Days past due</Th>
             </tr>
-          </thead>
-          <tbody className="divide-y divide-rule">
+          </THead>
+          <tbody>
             {snaps.map(({ loan, s }) => (
               <tr key={loan.id}>
-                <th scope="row" className="px-4 py-2.5 font-normal">
-                  <Link href={`/ops/loans/${loan.id}`} className="font-medium underline-offset-2 hover:underline">
+                <Th scope="row" className="border-line-soft bg-panel font-normal">
+                  <Link href={`/ops/loans/${loan.id}`} className="font-semibold text-fg underline-offset-2 hover:underline">
                     {loan.applicantName}
                   </Link>
-                  <span className="block text-xs text-muted-ink">{PRODUCT_LABELS[loan.product]}</span>
-                </th>
-                <td className="px-4 py-2.5">
+                  <span className="block text-xs text-fg-3">{PRODUCT_LABELS[loan.product]}</span>
+                </Th>
+                <Td>
                   {RAILS[loan.rail].name}
                   {loan.railLabel && <Illustrative className="ml-1.5" label={loan.railLabel} />}
-                  <span className="num block text-xs text-muted-ink">in {formatTimeToFund(loan.timeToFundMinutes).toLowerCase()}</span>
-                </td>
-                <td className="num px-4 py-2.5 text-right">{formatCents(loan.principalCents, { whole: true })}</td>
-                <td className="num px-4 py-2.5 text-right">{formatCents(s.outstandingCents)}</td>
-                <td className="px-4 py-2.5">
+                  <span className="num block text-xs text-fg-3">in {formatTimeToFund(loan.timeToFundMinutes).toLowerCase()}</span>
+                </Td>
+                <Td numeric>{formatCents(loan.principalCents, { whole: true })}</Td>
+                <Td numeric>{formatCents(s.outstandingCents)}</Td>
+                <Td>
                   <LoanStatusChip status={s.status} />
-                </td>
-                <td className="num px-4 py-2.5 text-right">{s.daysPastDue || "—"}</td>
+                </Td>
+                <Td numeric>{s.daysPastDue || "—"}</Td>
               </tr>
             ))}
           </tbody>
-        </table>
-      </div>
-      {book.length === 0 && <p className="mt-4 text-sm text-muted-ink">No loans in this book.</p>}
-    </div>
-  )
-}
-
-function Tile({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-lg border border-rule bg-surface p-4">
-      <dt className="text-xs text-muted-ink">{label}</dt>
-      <dd className="num mt-1 text-lg font-semibold">{children}</dd>
+        </Table>
+      </Card>
+      {book.length === 0 && <EmptyState title="No loans in this book." className="mt-4" />}
     </div>
   )
 }

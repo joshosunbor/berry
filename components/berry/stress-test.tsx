@@ -12,6 +12,9 @@ import { OPS, member } from "@/lib/ops/config"
 import { overLimitRequest } from "@/lib/ops/view"
 import type { SeasonResult, StressResult } from "@/lib/servicing/stress"
 import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Select } from "@/components/ui/field"
 
 /*
  * Poor-harvest stress test on a seasonal operating line (illustrative):
@@ -62,7 +65,7 @@ export function StressTest({
       value: (s) => (
         <>
           {formatCents(s.seasonInterestCents)}
-          {s.carriedInterestCents > 0 && <span className="block text-xs text-muted-ink">incl. {formatCents(s.carriedInterestCents)} for a year on the carried balance</span>}
+          {s.carriedInterestCents > 0 && <span className="block text-xs text-fg-3">incl. {formatCents(s.carriedInterestCents)} for a year on the carried balance</span>}
         </>
       ),
     },
@@ -70,11 +73,11 @@ export function StressTest({
       label: "Post-harvest sweep",
       value: (s) =>
         s.sweepFullyRepays ? (
-          <span className="inline-flex items-center gap-1 text-approve">
+          <span className="inline-flex items-center gap-1 text-green-ink">
             <CheckCircle2 aria-hidden className="size-4" /> Repays in full
           </span>
         ) : (
-          <span className="inline-flex items-center gap-1 text-decline">
+          <span className="inline-flex items-center gap-1 text-bad">
             <AlertTriangle aria-hidden className="size-4" /> Repays {money(s.sweepRepaidCents)} of {money(s.peakDrawnCents)}
           </span>
         ),
@@ -84,21 +87,21 @@ export function StressTest({
       label: "Next season's peak need",
       value: (s) => (
         <>
-          {money(s.nextSeasonNeedCents)} <span className="block text-xs text-muted-ink">{pct(s.nextSeasonNeedCents / r.limitCents)} of the limit</span>
-          {s.overLimitCents > 0 && <span className="block text-xs font-medium text-decline">{money(s.overLimitCents)} over the limit</span>}
+          {money(s.nextSeasonNeedCents)} <span className="block text-xs text-fg-3">{pct(s.nextSeasonNeedCents / r.limitCents)} of the limit</span>
+          {s.overLimitCents > 0 && <span className="block text-xs font-medium text-bad">{money(s.overLimitCents)} over the limit</span>}
         </>
       ),
     },
   ]
 
   return (
-    <section aria-labelledby="stress" className="rounded-lg border border-rule bg-surface p-5">
+    <Card as="section" aria-labelledby="stress" pad="lg">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 id="stress" className="flex items-center gap-2 font-semibold">
             Poor-harvest stress test <Illustrative why="Assumes the coming year looks like the past one by calendar month, with peak-season revenue lower and costs unchanged. The percentage is configurable." />
           </h2>
-          <p className="mt-1 max-w-2xl text-sm text-muted-ink">
+          <p className="mt-1 max-w-2xl text-sm text-fg-3">
             What if the peak season brings in less? This season&apos;s draws happen before the harvest, so they don&apos;t change. The question is what the
             harvest can repay, and what next season then needs.
           </p>
@@ -109,9 +112,9 @@ export function StressTest({
             role="switch"
             aria-checked={on}
             onClick={() => (setOn(!on), setError(null))}
-            className={cn("relative h-6 w-11 shrink-0 rounded-full transition-colors", on ? "bg-ink" : "bg-muted")}
+            className={cn("relative h-6 w-11 shrink-0 rounded-full shadow-inset-line-strong transition-colors", on ? "bg-green" : "bg-field")}
           >
-            <span className={cn("absolute left-0 top-0.5 size-5 rounded-full bg-surface shadow transition-transform", on ? "translate-x-[1.375rem]" : "translate-x-0.5")} />
+            <span className={cn("absolute left-0 top-0.5 size-5 rounded-full bg-white shadow transition-transform", on ? "translate-x-[1.375rem]" : "translate-x-0.5")} />
           </button>
           Stress test
         </label>
@@ -119,15 +122,15 @@ export function StressTest({
 
       {on && (
         <label className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-          <span className="text-muted-ink">Peak-season revenue lower by</span>
-          <select value={dropPct} onChange={(e) => (setDropPct(Number(e.target.value)), setError(null))} className="rounded-md border border-rule bg-surface px-2 py-1">
+          <span className="text-fg-3">Peak-season revenue lower by</span>
+          <Select value={dropPct} onChange={(e) => (setDropPct(Number(e.target.value)), setError(null))} className="min-h-8">
             {Object.keys(results).map((p) => (
               <option key={p} value={p}>
                 {p}%
               </option>
             ))}
-          </select>
-          <span className="text-xs text-muted-ink">
+          </Select>
+          <span className="text-xs text-fg-3">
             ({money(r.lostRevenueCents)} less; costs unchanged; reserve {money(r.reserveCents)})
           </span>
         </label>
@@ -141,13 +144,13 @@ export function StressTest({
               <col key={c.label} />
             ))}
           </colgroup>
-          <thead className="text-xs text-muted-ink">
+          <thead className="text-xs text-fg-3">
             <tr>
               <th scope="col" className="py-2 pr-3 font-medium">
                 <span className="sr-only">Measure</span>
               </th>
               {cols.map((c) => (
-                <th key={c.label} scope="col" className={cn("py-2 pr-3 font-medium", c.stressed && "text-ink")}>
+                <th key={c.label} scope="col" className={cn("py-2 pr-3 font-medium", c.stressed && "text-fg")}>
                   {c.label}
                 </th>
               ))}
@@ -155,8 +158,8 @@ export function StressTest({
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.label} className="border-t border-rule align-top">
-                <th scope="row" className="py-2 pr-3 font-normal text-muted-ink">
+              <tr key={row.label} className="border-t border-line align-top">
+                <th scope="row" className="py-2 pr-3 font-normal text-fg-3">
                   {row.label}
                 </th>
                 {cols.map((c) => (
@@ -171,17 +174,17 @@ export function StressTest({
       </div>
 
       {on && r.stressed.overLimitCents > 0 && (
-        <div className="mt-4 rounded-md border border-decline/40 bg-decline-soft p-4 text-sm" role="status">
-          <p className="font-medium text-decline">
+        <div className="mt-4 rounded-[10px] border border-bad/40 bg-bad-tint p-4 text-sm" role="status">
+          <p className="font-medium text-bad">
             Next season would need {money(r.stressed.nextSeasonNeedCents)}: {money(r.stressed.overLimitCents)} over the {money(r.limitCents)} limit.
           </p>
-          <p className="mt-1 text-ink">
+          <p className="mt-1 text-fg">
             The line isn&apos;t capped quietly: a limit of {money(r.requestedLimitCents)} would cover it, and that needs {ROLE_LABEL[requiredRoleFor(r.requestedLimitCents, "lead")]} or
             above to approve. The person who raises the request can&apos;t approve it.
           </p>
           {requested ? (
-            <p className="mt-3 inline-flex items-center gap-1.5 text-ink">
-              <CheckCircle2 aria-hidden className="size-4 text-approve" /> Over-limit request is in Credit referrals and sign-offs.
+            <p className="mt-3 inline-flex items-center gap-1.5 text-fg">
+              <CheckCircle2 aria-hidden className="size-4 text-green-ink" /> Over-limit request is in Credit referrals and sign-offs.
               <Link href="/ops" className="inline-flex items-center gap-1 font-medium underline underline-offset-4">
                 Open the console <ArrowRight aria-hidden className="size-4" />
               </Link>
@@ -204,13 +207,13 @@ export function StressTest({
                 if (res.action.events.length) addOpsAction(res.action)
                 setError(res.error)
               }}
-              className="mt-3 rounded-md bg-ink px-3 py-1.5 text-sm font-medium text-background"
+              className={cn(buttonVariants({ size: "sm" }), "mt-3")}
             >
               Prepare an over-limit request as {member(actor)?.name ?? member(DEFAULT_ACTOR)!.name}
             </button>
           )}
           {error && (
-            <p role="alert" className="mt-2 text-decline">
+            <p role="alert" className="mt-2 text-bad">
               {error}
             </p>
           )}
@@ -218,7 +221,7 @@ export function StressTest({
       )}
 
       {on && r.options && (
-        <div className="mt-4 rounded-md border border-rule p-4 text-sm">
+        <div className="mt-4 rounded-[10px] border border-line p-4 text-sm">
           <p className="font-medium">The sweep leaves {money(r.stressed.carriedCents)} unpaid. Options a lender would weigh with the borrower:</p>
           <ul className="mt-2 space-y-2">
             <li>
@@ -234,9 +237,9 @@ export function StressTest({
               the business&apos;s plans.
             </li>
           </ul>
-          <p className="mt-2 text-xs text-muted-ink">Berry doesn&apos;t pick one. A lender decides with the borrower.</p>
+          <p className="mt-2 text-xs text-fg-3">Berry doesn&apos;t pick one. A lender decides with the borrower.</p>
         </div>
       )}
-    </section>
+    </Card>
   )
 }
