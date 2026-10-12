@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { ConsentDashboard } from "@/components/berry/consent-dashboard"
+import { PageContainer, PageHeader } from "@/components/ui/page-header"
 
 export const metadata: Metadata = {
   title: "Your consents · Berry",
@@ -8,15 +9,13 @@ export const metadata: Metadata = {
 
 export default function ConsentsPage() {
   return (
-    <main className="mx-auto max-w-[960px] px-4 py-12 sm:px-8">
-      <h1 className="text-3xl font-semibold tracking-tight">Your consents</h1>
-      <p className="mt-2 max-w-2xl text-muted-ink">
-        Who can read your banking data, what they can read, and until when. Built around the draft framework&apos;s consent principles. Stored in this
-        browser only.
-      </p>
-      <div className="mt-8">
-        <ConsentDashboard />
-      </div>
-    </main>
+    <PageContainer className="max-w-[960px]">
+      <PageHeader
+        breadcrumb={[{ label: "Apply", href: "/apply" }, { label: "Your consents" }]}
+        title="Your consents"
+        lead="Who can read your banking data, what they can read, and until when. Built around the draft framework's consent principles. Stored in this browser only."
+      />
+      <ConsentDashboard />
+    </PageContainer>
   )
 }

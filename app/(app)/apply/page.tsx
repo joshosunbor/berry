@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { ApplyFlow, type ProfileOption } from "@/components/berry/apply-flow"
+import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { getCast } from "@/lib/data"
 
 export const metadata: Metadata = {
@@ -18,16 +19,13 @@ export default function ApplyPage() {
     request: a.request,
   }))
   return (
-    <main className="mx-auto max-w-[960px] px-4 py-12 sm:px-8">
-      <p className="text-sm font-medium text-muted-ink">Apply</p>
-      <h1 className="mt-1 text-3xl font-semibold tracking-tight">Apply in a few minutes</h1>
-      <p className="mt-2 max-w-2xl text-muted-ink">
-        Walk through a full application as a synthetic applicant: consent to share data, identity checks, your request, and an answer from three fictional
-        lenders. Your progress is saved in this browser so you can come back to it.
-      </p>
-      <div className="mt-10">
-        <ApplyFlow profiles={profiles} />
-      </div>
-    </main>
+    <PageContainer className="max-w-[960px]">
+      <PageHeader
+        breadcrumb={[{ label: "Home", href: "/" }, { label: "Apply" }]}
+        title="Apply in a few minutes"
+        lead="Walk through a full application as a synthetic applicant: consent to share data, identity checks, your request, and an answer from three fictional lenders. Your progress is saved in this browser so you can come back to it."
+      />
+      <ApplyFlow profiles={profiles} />
+    </PageContainer>
   )
 }

@@ -15,6 +15,8 @@ import { buildConsent, CONSENT_RULES, DATA_CATEGORY_LABELS, whyNeeded } from "@/
 import { clearApplication, recordConsents, saveApplication, useSavedApplication, type ApplyStep, type SavedApplication } from "@/lib/onboarding/store"
 import { BUSINESS_PRODUCTS, PERSONAL_PRODUCTS, type Consent, type CreditRequest, type Decision, type ProductType } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
+import { fieldClass } from "@/components/ui/field"
+import { buttonVariants } from "@/components/ui/button"
 
 export interface ProfileOption {
   slug: string
@@ -90,17 +92,17 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
   if (resumable) {
     const p = profiles.find((x) => x.slug === resumable.slug)
     return (
-      <div className="rounded-lg border border-rule bg-surface p-6">
+      <div className="rounded-[14px] bg-panel shadow-card p-6">
         <h2 className="text-lg font-semibold">Pick up where you left off?</h2>
-        <p className="mt-2 text-muted-ink">
+        <p className="mt-2 text-fg-3">
           You have a saved application{p ? ` as ${p.name}` : ""}, at the {STEPS.find((s) => s.id === resumable.step)?.label.toLowerCase()} step. It&apos;s saved in this browser only.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <button type="button" onClick={() => (setApp(resumable), setStarted(true))} className="inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-background">
+          <button type="button" onClick={() => (setApp(resumable), setStarted(true))} className={buttonVariants({ size: "sm" })}>
             Resume
             <ArrowRight aria-hidden className="size-4" />
           </button>
-          <button type="button" onClick={() => (clearApplication(), setStarted(true))} className="inline-flex items-center gap-2 rounded-md border border-rule px-4 py-2 text-sm">
+          <button type="button" onClick={() => (clearApplication(), setStarted(true))} className={buttonVariants({ variant: "secondary", size: "sm" })}>
             <RotateCcw aria-hidden className="size-4" />
             Start over
           </button>
@@ -113,12 +115,12 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
     <div>
       {app.step !== "submitted" && (
         <nav aria-label="Application progress" className="mb-8">
-          <p className="text-sm text-muted-ink">
-            Step {stepIndex + 1} of {STEPS.length}: <span className="font-medium text-ink">{STEPS[stepIndex].label}</span>
+          <p className="text-sm text-fg-3">
+            Step {stepIndex + 1} of {STEPS.length}: <span className="font-medium text-fg">{STEPS[stepIndex].label}</span>
           </p>
           <ol className="mt-2 grid grid-cols-6 gap-1.5" aria-hidden>
             {STEPS.map((s, i) => (
-              <li key={s.id} className={cn("h-1.5 rounded-full", i <= stepIndex ? "bg-ink" : "bg-muted")} />
+              <li key={s.id} className={cn("h-1.5 rounded-full", i <= stepIndex ? "bg-green" : "bg-field")} />
             ))}
           </ol>
         </nav>
@@ -136,13 +138,13 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
                     setLoadError(null)
                     update({ slug: p.slug, request: p.request, step: "about" })
                   }}
-                  className="flex h-full w-full flex-col rounded-lg border border-rule bg-surface p-4 text-left hover:border-ink/30"
+                  className="flex h-full w-full flex-col rounded-[14px] bg-panel p-5 text-left shadow-card transition-[box-shadow] hover:shadow-lift"
                 >
                   <span className="flex items-center gap-2 font-medium">
-                    {p.kind === "business" ? <Briefcase aria-hidden className="size-4 text-muted-ink" /> : <User aria-hidden className="size-4 text-muted-ink" />}
+                    {p.kind === "business" ? <Briefcase aria-hidden className="size-4 text-fg-3" /> : <User aria-hidden className="size-4 text-fg-3" />}
                     {p.name}
                   </span>
-                  <span className="mt-1 text-sm text-muted-ink">{p.story}</span>
+                  <span className="mt-1 text-sm text-fg-3">{p.story}</span>
                 </button>
               </li>
             ))}
@@ -152,7 +154,7 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
 
       {app.step === "about" && profile && (
         <Step title="About you" help="These details are synthetic and already filled in. In a real application you'd type them; the identity details behind them are only used to verify who you are, never to decide credit.">
-          <dl className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+          <dl className="divide-y divide-line rounded-[14px] bg-panel shadow-card text-sm">
             <Row label="Applying as">{profile.name}</Row>
             <Row label="Type">{profile.kind === "business" ? "Business" : "Personal"}</Row>
             <Row label="Province">{profile.province}</Row>
@@ -193,7 +195,7 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
 
       {app.step === "review" && profile && app.request && data && (
         <Step title="Review and submit" help="Submitting runs Berry's decision engine in your browser on this profile's banking history and your request. Only the lenders you shared your data with will decide.">
-          <dl className="divide-y divide-rule rounded-lg border border-rule bg-surface text-sm">
+          <dl className="divide-y divide-line rounded-[14px] bg-panel shadow-card text-sm">
             <Row label="Applying as">{profile.name}</Row>
             <Row label="Product">{PRODUCT_LABELS[app.request.product]}</Row>
             <Row label="Amount">{formatCents(app.request.amountCents, { whole: true })}</Row>
@@ -218,32 +220,32 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
           <h2 id="results" className="text-2xl font-semibold tracking-tight">
             Your decisions
           </h2>
-          <p className="mt-2 text-muted-ink">Decided just now in your browser by deterministic rules. Rates and limits are illustrative.</p>
+          <p className="mt-2 text-fg-3">Decided just now in your browser by deterministic rules. Rates and limits are illustrative.</p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {MODES.filter((m) => decisions[m]).map((m) => {
               const d = decisions[m]!
               const ok = d.outcome === "approve" || d.outcome === "approve_with_conditions"
               return (
-                <article key={m} className={cn("rounded-lg border-t-4 bg-surface p-5 shadow-soft", MODE_META[m].classes.border)}>
+                <article key={m} className={cn("rounded-[14px] border-t-4 bg-panel p-6 shadow-card", MODE_META[m].classes.border)}>
                   <ModeChip mode={m} />
                   <div className="mt-3">
                     <OutcomeChip outcome={d.outcome} />
                   </div>
                   <p className="num mt-2 text-2xl font-semibold">{ok ? formatCents(d.limitCents, { whole: true }) : "No offer"}</p>
-                  <p className="mt-3 text-sm leading-6 text-muted-ink">{d.reasons[0]?.customerText}</p>
+                  <p className="mt-3 text-sm leading-6 text-fg-3">{d.reasons[0]?.customerText}</p>
                   {d.counterfactuals[0] && <p className="mt-2 text-sm leading-6">{d.counterfactuals[0]}</p>}
                 </article>
               )
             })}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/consents" className="inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-background">
+            <Link href="/consents" className={buttonVariants({ size: "sm" })}>
               Manage your consents
             </Link>
-            <Link href={`/workbench/${profile.slug}`} className="inline-flex items-center gap-2 rounded-md border border-rule px-4 py-2 text-sm">
+            <Link href={`/workbench/${profile.slug}`} className={buttonVariants({ variant: "secondary", size: "sm" })}>
               Open {profile.name}&apos;s file
             </Link>
-            <button type="button" onClick={() => (clearApplication(), setApp(fresh()), setDecisions(null))} className="inline-flex items-center gap-2 rounded-md border border-rule px-4 py-2 text-sm">
+            <button type="button" onClick={() => (clearApplication(), setApp(fresh()), setDecisions(null))} className={buttonVariants({ variant: "secondary", size: "sm" })}>
               <RotateCcw aria-hidden className="size-4" />
               Start another application
             </button>
@@ -252,7 +254,7 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
       )}
 
       {app.slug && !data && app.step !== "profile" && app.step !== "about" && (
-        <p className="flex items-center gap-2 text-sm text-muted-ink" role="status">
+        <p className="flex items-center gap-2 text-sm text-fg-3" role="status">
           {loadError === app.slug ? (
             "Couldn't load this profile. Refresh the page to try again."
           ) : (
@@ -275,7 +277,7 @@ function Step({ title, help, children }: { title: string; help: string; children
       <h2 id="step-title" className="text-2xl font-semibold tracking-tight">
         {title}
       </h2>
-      <p className="mt-2 max-w-2xl text-muted-ink">{help}</p>
+      <p className="mt-2 max-w-2xl text-fg-3">{help}</p>
       <div className="mt-6">{children}</div>
     </section>
   )
@@ -284,7 +286,7 @@ function Step({ title, help, children }: { title: string; help: string; children
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex justify-between gap-4 px-4 py-2.5">
-      <dt className="text-muted-ink">{label}</dt>
+      <dt className="text-fg-3">{label}</dt>
       <dd className="text-right font-medium">{children}</dd>
     </div>
   )
@@ -293,11 +295,11 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 function Nav({ back, next, nextLabel = "Continue", disabled = false }: { back: () => void; next: () => void; nextLabel?: string; disabled?: boolean }) {
   return (
     <div className="mt-6 flex justify-between gap-3">
-      <button type="button" onClick={back} className="inline-flex items-center gap-2 rounded-md border border-rule px-4 py-2 text-sm">
+      <button type="button" onClick={back} className={buttonVariants({ variant: "secondary", size: "sm" })}>
         <ArrowLeft aria-hidden className="size-4" />
         Back
       </button>
-      <button type="button" onClick={next} disabled={disabled} className="inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-background disabled:opacity-40">
+      <button type="button" onClick={next} disabled={disabled} className={buttonVariants({ size: "sm" })}>
         {nextLabel}
         <ArrowRight aria-hidden className="size-4" />
       </button>
@@ -333,20 +335,20 @@ function ConsentStep({
       help="Before any data is read, here's exactly what each lender would see, why, for how long, and what they won't get. You can revoke this at any time, for free, from your consent dashboard."
     >
       <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-lg border border-rule bg-surface p-5">
+        <div className="rounded-[14px] bg-panel shadow-card p-5">
           <h3 className="font-semibold">What we&apos;ll read</h3>
           <ul className="mt-3 space-y-2.5 text-sm">
             {preview.dataCategories.map((c) => (
               <li key={c} className="flex gap-2">
-                <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-approve" />
+                <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-green-ink" />
                 <span>
-                  <span className="font-medium">{DATA_CATEGORY_LABELS[c]}.</span> <span className="text-muted-ink">{whyNeeded(c)}</span>
+                  <span className="font-medium">{DATA_CATEGORY_LABELS[c]}.</span> <span className="text-fg-3">{whyNeeded(c)}</span>
                 </span>
               </li>
             ))}
           </ul>
           <h3 className="mt-5 font-semibold">What we won&apos;t ask for</h3>
-          <ul className="mt-2 space-y-1.5 text-sm text-muted-ink">
+          <ul className="mt-2 space-y-1.5 text-sm text-fg-3">
             {preview.notRequested.map((c) => (
               <li key={c} className="flex gap-2">
                 <XCircle aria-hidden className="mt-0.5 size-4 shrink-0" />
@@ -356,15 +358,15 @@ function ConsentStep({
           </ul>
         </div>
 
-        <div className="rounded-lg border border-rule bg-surface p-5">
+        <div className="rounded-[14px] bg-panel shadow-card p-5">
           <h3 className="font-semibold">Why, for how long, and who</h3>
           <dl className="mt-3 space-y-3 text-sm">
             <div>
-              <dt className="text-xs text-muted-ink">Purpose</dt>
+              <dt className="text-xs text-fg-3">Purpose</dt>
               <dd>{preview.purpose}</dd>
             </div>
             <div>
-              <dt className="text-xs text-muted-ink">How long</dt>
+              <dt className="text-xs text-fg-3">How long</dt>
               <dd>
                 Until {expires}, then it ends unless you renew it. Consent can last at most {CONSENT_RULES.maxMonths} months under the{" "}
                 <Source href={CONSENT_RULES.source}>Consumer-Driven Banking Act, s. 86</Source>, which is not yet in force.
@@ -372,17 +374,17 @@ function ConsentStep({
             </div>
           </dl>
           <fieldset className="mt-4">
-            <legend className="text-xs text-muted-ink">Who receives it (choose at least one)</legend>
+            <legend className="text-xs text-fg-3">Who receives it (choose at least one)</legend>
             <div className="mt-2 space-y-2">
               {MODES.map((m) => (
                 <label key={m} className="flex items-center gap-2.5 text-sm">
                   <input type="checkbox" checked={lenders[m]} onChange={(e) => onChange({ ...lenders, [m]: e.target.checked })} className="size-4 accent-current" />
-                  {MODE_META[m].institution} <span className="text-muted-ink">(fictional)</span>
+                  {MODE_META[m].institution} <span className="text-fg-3">(fictional)</span>
                 </label>
               ))}
             </div>
           </fieldset>
-          <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-ink">
+          <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-fg-3">
             <Illustrative label="Simulated" why="Built around the draft framework's consent principles. No real bank connection is made and Berry is not accredited." />
             Built around the draft framework&apos;s consent principles.
           </p>
@@ -411,7 +413,7 @@ function VerificationStep({ payload, back, next }: { payload: ApplyPayload; back
 
   return (
     <Step title="Verifying your identity" help="These checks run automatically. Most clear in seconds; anything unusual goes to a person to review, which takes longer but doesn't stop your application here.">
-      <ul className="divide-y divide-rule rounded-lg border border-rule bg-surface" aria-live="polite">
+      <ul className="divide-y divide-line rounded-[14px] bg-panel shadow-card" aria-live="polite">
         {checks.map((c, i) => {
           const visible = i < shown
           const Icon = !visible ? Loader2 : c.result === "pass" ? CheckCircle2 : c.result === "needs_review" ? AlertTriangle : XCircle
@@ -419,11 +421,11 @@ function VerificationStep({ payload, back, next }: { payload: ApplyPayload; back
             <li key={c.id} className="flex gap-3 px-4 py-3 text-sm">
               <Icon
                 aria-hidden
-                className={cn("mt-0.5 size-4 shrink-0", !visible ? "animate-spin text-muted-ink" : c.result === "pass" ? "text-approve" : c.result === "needs_review" ? "text-conditions" : "text-decline")}
+                className={cn("mt-0.5 size-4 shrink-0", !visible ? "animate-spin text-fg-3" : c.result === "pass" ? "text-green-ink" : c.result === "needs_review" ? "text-warn" : "text-bad")}
               />
               <div>
                 <p className="font-medium">{CHECK_LABELS[c.kind]}</p>
-                <p className="text-muted-ink">{visible ? (c.result === "pass" ? "Cleared automatically." : c.reasons.join(" ")) : "Checking…"}</p>
+                <p className="text-fg-3">{visible ? (c.result === "pass" ? "Cleared automatically." : c.reasons.join(" ")) : "Checking…"}</p>
               </div>
             </li>
           )
@@ -436,7 +438,7 @@ function VerificationStep({ payload, back, next }: { payload: ApplyPayload; back
             : "All checks cleared automatically."}
         </p>
       )}
-      <p className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-ink">
+      <p className="mt-3 flex flex-wrap items-center gap-2 text-xs text-fg-3">
         <Illustrative label="Simulated checks" why="Simulated on synthetic data against a fictional watch list and registry. No real identity service is used." />
       </p>
       <Nav back={back} next={next} disabled={!done} />
@@ -474,7 +476,7 @@ function RequestStep({
               const product = e.target.value as ProductType
               onChange({ ...request, product, termMonths: TERM_PRODUCTS.has(product) ? (request.termMonths ?? 36) : undefined })
             }}
-            className="rounded-md border border-rule bg-surface px-3 py-2"
+            className={fieldClass}
           >
             {products.map((p) => (
               <option key={p} value={p}>
@@ -496,16 +498,16 @@ function RequestStep({
             }}
             aria-invalid={!valid}
             aria-describedby="amount-help"
-            className="num rounded-md border border-rule bg-surface px-3 py-2"
+            className={cn(fieldClass, "num")}
           />
-          <span id="amount-help" className={cn("text-xs", valid ? "text-muted-ink" : "text-decline")}>
+          <span id="amount-help" className={cn("text-xs", valid ? "text-fg-3" : "text-bad")}>
             {valid ? formatCents(amount, { whole: true }) : "Enter an amount from $500 to $1,000,000."}
           </span>
         </label>
         {needsTerm && (
           <label className="grid gap-1.5 text-sm">
             <span className="font-medium">Term</span>
-            <select value={request.termMonths ?? 36} onChange={(e) => onChange({ ...request, termMonths: Number(e.target.value) })} className="rounded-md border border-rule bg-surface px-3 py-2">
+            <select value={request.termMonths ?? 36} onChange={(e) => onChange({ ...request, termMonths: Number(e.target.value) })} className={fieldClass}>
               {TERMS.map((t) => (
                 <option key={t} value={t}>
                   {t} months
