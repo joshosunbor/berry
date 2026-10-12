@@ -1,0 +1,6100 @@
+{
+ "expected": {
+  "_about": "Expected outcomes for planted cases, written from each case's design and each lender's stated policy BEFORE running the engine on them. The engine never reads this file. Outcome 'approve' includes reduced (counter-offer) amounts.",
+  "_writtenOn": "2026-10-11",
+  "cases": {
+   "p01": {
+    "credit_union": {
+     "outcome": "approve",
+     "approver": "msr"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p02": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p03": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p04": {
+    "credit_union": {
+     "outcome": "approve_with_conditions"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p05": {
+    "credit_union": {
+     "outcome": "approve_with_conditions"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p06": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p07": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p08": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p09": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p10": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p11": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "refer"
+    }
+   },
+   "p12": {
+    "credit_union": {
+     "outcome": "approve_with_conditions"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p13": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p14": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p15": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p16": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p17": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p18": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "p19": {
+    "credit_union": {
+     "outcome": "approve",
+     "approver": "lender"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p20": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "b01": {
+    "credit_union": {
+     "outcome": "approve",
+     "approver": "lender"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "b02": {
+    "credit_union": {
+     "outcome": "approve",
+     "approver": "branch_manager"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "b03": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b04": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b05": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b06": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b07": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "refer"
+    }
+   },
+   "b08": {
+    "credit_union": {
+     "outcome": "approve_with_conditions"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b09": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b10": {
+    "credit_union": {
+     "outcome": "decline"
+    },
+    "fintech": {
+     "outcome": "decline"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b11": {
+    "credit_union": {
+     "outcome": "approve",
+     "approver": "credit_committee"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "b12": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    },
+    "flags": 1
+   },
+   "b13": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    },
+    "flags": 1
+   },
+   "b14": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    },
+    "flags": 0
+   },
+   "b15": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "decline"
+    }
+   },
+   "b16": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   },
+   "p21": {
+    "credit_union": {
+     "outcome": "approve"
+    },
+    "fintech": {
+     "outcome": "approve"
+    },
+    "bank": {
+     "outcome": "approve"
+    }
+   }
+  }
+ },
+ "decisions": {
+  "apl_planted-b01": {
+   "applicant": "9834c4f9f5890bc9fe96d96959514b9cb9fcf01fb0e9853afb435175130c49fa",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 5000000,
+     "aprBps": 825,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 10 years and hold 2 products with us.",
+       "lenderText": "Member 10.75 yrs, 2 products; relationship score 0.9.",
+       "evidence": {
+        "tenureYears": 10.75,
+        "products": 2,
+        "score": 0.9
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 8.94x what the new payment needs.",
+       "lenderText": "DSCR 8.94x at proposed payment $1,020 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 8.94,
+        "minDscr": 1.2,
+        "paymentCents": 101982
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $60,563.",
+       "lenderText": "Steady business revenue $60,563/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 6056308,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 5000000,
+     "aprBps": 1299,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 5.61x what the new payment needs.",
+       "lenderText": "DSCR 5.61x at proposed payment $1,684 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 5.61,
+        "minDscr": 1.3,
+        "paymentCents": 168446
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $60,563.",
+       "lenderText": "Steady business revenue $60,563/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 6056308,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 5000000,
+     "aprBps": 895,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 8.79x what the new payment needs.",
+       "lenderText": "DSCR 8.79x at proposed payment $1,037 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 8.79,
+        "minDscr": 1.25,
+        "paymentCents": 103671
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $60,563.",
+       "lenderText": "Steady business revenue $60,563/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 6056308,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b02": {
+   "applicant": "7847be96c666cc7a58101bb201b9943d2376372ed0fe08f124358a5f13140256",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 5500000,
+     "aprBps": 825,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 10 years and hold 2 products with us.",
+       "lenderText": "Member 10.75 yrs, 2 products; relationship score 0.9.",
+       "evidence": {
+        "tenureYears": 10.75,
+        "products": 2,
+        "score": 0.9
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 7.75x what the new payment needs.",
+       "lenderText": "DSCR 7.75x at proposed payment $1,122 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 7.75,
+        "minDscr": 1.2,
+        "paymentCents": 112180
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $60,156.",
+       "lenderText": "Steady business revenue $60,156/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 6015580,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "branch_manager",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 5500000,
+     "aprBps": 1299,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 4.74x what the new payment needs.",
+       "lenderText": "DSCR 4.74x at proposed payment $1,853 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 4.74,
+        "minDscr": 1.3,
+        "paymentCents": 185291
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $60,156.",
+       "lenderText": "Steady business revenue $60,156/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 6015580,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 5500000,
+     "aprBps": 895,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 7.62x what the new payment needs.",
+       "lenderText": "DSCR 7.62x at proposed payment $1,140 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 7.62,
+        "minDscr": 1.25,
+        "paymentCents": 114038
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $60,156.",
+       "lenderText": "Steady business revenue $60,156/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 6015580,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b03": {
+   "applicant": "5242a0678b56e48d85814deec901571a9dcbbd8bd03ebdbdd9d0ef784c24197e",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "seasonal_operating_line",
+     "limitCents": 4000000,
+     "aprBps": 795,
+     "termMonths": 12,
+     "structure": "seasonal_operating",
+     "reasons": [
+      {
+       "code": "SEASONAL_REPAYMENT_FITS",
+       "direction": "positive",
+       "weight": 0.95,
+       "customerText": "Most of your income arrives June to August. We've set the line up so you draw on it in quieter months and repay it from those sales.",
+       "lenderText": "Seasonal: 55% of income in June to August. Peak-season surplus $121,200 covers the line 3.03x (minimum 1.15x). Assessed on annual cash flow.",
+       "evidence": {
+        "peakMonths": "6,7,8",
+        "peakShare": 0.55,
+        "peakSurplusCents": 12120000,
+        "coverage": 3.03,
+        "minCoverage": 1.15
+       }
+      },
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 14 years and hold 3 products with us.",
+       "lenderText": "Member 14.75 yrs, 3 products; relationship score 1.",
+       "evidence": {
+        "tenureYears": 14.75,
+        "products": 3,
+        "score": 1
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 70 days of your usual spending.",
+       "lenderText": "70 days cash on hand; average balance $59,560.",
+       "evidence": {
+        "days": 70,
+        "avgBalanceCents": 5956000
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "conditions": [
+      "Interest-only monthly payments; line repaid to zero by the end of August each year from peak-season sales",
+      "Annual review of the line"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 1000000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $10,000 rather than the $40,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $10,000 from $40,000: 2x median monthly net cash flow.",
+       "evidence": {
+        "limitCents": 1000000,
+        "requestedCents": 4000000,
+        "basis": "2x median monthly net cash flow"
+       }
+      },
+      {
+       "code": "NO_SEASONAL_STRUCTURE",
+       "direction": "neutral",
+       "weight": 0.75,
+       "customerText": "We don't offer a line repaid around your busy season, so we've sized a standard line on a typical month instead.",
+       "lenderText": "Seasonal product not offered; standard revolving line sized on median month $5,200.",
+       "evidence": {
+        "medianNetCents": 520000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 17.33x what the new payment needs.",
+       "lenderText": "DSCR 17.33x at proposed payment $300 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 17.33,
+        "minDscr": 1.3,
+        "paymentCents": 30000
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 70 days of your usual spending.",
+       "lenderText": "70 days cash on hand; average balance $59,560.",
+       "evidence": {
+        "days": 70,
+        "avgBalanceCents": 5956000
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "seasonal_operating_line",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "INCOME_TOO_VARIABLE",
+       "direction": "negative",
+       "weight": 0.92,
+       "customerText": "Your income changes a lot from month to month, so a fixed monthly payment would be hard to keep up in quiet months.",
+       "lenderText": "Income CV 0.69 exceeds policy maximum 0.35.",
+       "evidence": {
+        "incomeCv": 0.69,
+        "max": 0.35
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A lender that can match repayment to your busy season may be able to help; a fixed monthly payment doesn't fit this income pattern."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b04": {
+   "applicant": "00dd7fac1c30b40270b4a1f9d6748650a018d5ca8d0e7f85beae1c29fb30f853",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "seasonal_operating_line",
+     "limitCents": 4000000,
+     "aprBps": 795,
+     "termMonths": 12,
+     "structure": "seasonal_operating",
+     "reasons": [
+      {
+       "code": "SEASONAL_REPAYMENT_FITS",
+       "direction": "positive",
+       "weight": 0.95,
+       "customerText": "Most of your income arrives September to November. We've set the line up so you draw on it in quieter months and repay it from those sales.",
+       "lenderText": "Seasonal: 75% of income in September to November. Peak-season surplus $138,000 covers the line 3.45x (minimum 1.15x). Assessed on annual cash flow.",
+       "evidence": {
+        "peakMonths": "9,10,11",
+        "peakShare": 0.75,
+        "peakSurplusCents": 13800000,
+        "coverage": 3.45,
+        "minCoverage": 1.15
+       }
+      },
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 18 years and hold 3 products with us.",
+       "lenderText": "Member 18.75 yrs, 3 products; relationship score 1.",
+       "evidence": {
+        "tenureYears": 18.75,
+        "products": 3,
+        "score": 1
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "conditions": [
+      "Interest-only monthly payments; line repaid to zero by the end of November each year from peak-season sales",
+      "Annual review of the line"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "seasonal_operating_line",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NEGATIVE_TYPICAL_MONTH",
+       "direction": "negative",
+       "weight": 0.94,
+       "customerText": "In a typical month, more money goes out of your account than comes in.",
+       "lenderText": "Median monthly net cash flow -$7,333.",
+       "evidence": {
+        "medianNetCents": -733335
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once most months end with more coming in than going out."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "seasonal_operating_line",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "INCOME_TOO_VARIABLE",
+       "direction": "negative",
+       "weight": 0.92,
+       "customerText": "Your income changes a lot from month to month, so a fixed monthly payment would be hard to keep up in quiet months.",
+       "lenderText": "Income CV 1.15 exceeds policy maximum 0.35.",
+       "evidence": {
+        "incomeCv": 1.15,
+        "max": 0.35
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A lender that can match repayment to your busy season may be able to help; a fixed monthly payment doesn't fit this income pattern."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b05": {
+   "applicant": "ef27cd8dae69c16344647b03f6fdc48319ee8e9a74ed978d448353820154ebb5",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "seasonal_operating_line",
+     "limitCents": 6500000,
+     "aprBps": 795,
+     "termMonths": 12,
+     "structure": "seasonal_operating",
+     "reasons": [
+      {
+       "code": "SEASONAL_REPAYMENT_FITS",
+       "direction": "positive",
+       "weight": 0.95,
+       "customerText": "Most of your income arrives June to August. We've set the line up so you draw on it in quieter months and repay it from those sales.",
+       "lenderText": "Seasonal: 55% of income in June to August. Peak-season surplus $75,750 covers the line 1.17x (minimum 1.15x). Assessed on annual cash flow.",
+       "evidence": {
+        "peakMonths": "6,7,8",
+        "peakShare": 0.55,
+        "peakSurplusCents": 7575000,
+        "coverage": 1.17,
+        "minCoverage": 1.15
+       }
+      },
+      {
+       "code": "PEAK_SURPLUS_LIMITS_LINE",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "Your busy-season sales can comfortably repay $65,000, so that's the size of the line.",
+       "lenderText": "Line sized to peak surplus $75,750 / 1.15x coverage.",
+       "evidence": {
+        "limitCents": 6500000,
+        "peakSurplusCents": 7575000,
+        "minCoverage": 1.15
+       }
+      },
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 12 years and hold 1 product with us.",
+       "lenderText": "Member 12.74 yrs, 1 products; relationship score 0.8.",
+       "evidence": {
+        "tenureYears": 12.74,
+        "products": 1,
+        "score": 0.8
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 70 days of your usual spending.",
+       "lenderText": "70 days cash on hand; average balance $37,600.",
+       "evidence": {
+        "days": 70,
+        "avgBalanceCents": 3760000
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "branch_manager",
+     "conditions": [
+      "Interest-only monthly payments; line repaid to zero by the end of August each year from peak-season sales",
+      "Annual review of the line"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 650000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $6,500 rather than the $150,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $6,500 from $150,000: 2x median monthly net cash flow.",
+       "evidence": {
+        "limitCents": 650000,
+        "requestedCents": 15000000,
+        "basis": "2x median monthly net cash flow"
+       }
+      },
+      {
+       "code": "NO_SEASONAL_STRUCTURE",
+       "direction": "neutral",
+       "weight": 0.75,
+       "customerText": "We don't offer a line repaid around your busy season, so we've sized a standard line on a typical month instead.",
+       "lenderText": "Seasonal product not offered; standard revolving line sized on median month $3,250.",
+       "evidence": {
+        "medianNetCents": 325000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 16.67x what the new payment needs.",
+       "lenderText": "DSCR 16.67x at proposed payment $195 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 16.67,
+        "minDscr": 1.3,
+        "paymentCents": 19500
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 70 days of your usual spending.",
+       "lenderText": "70 days cash on hand; average balance $37,600.",
+       "evidence": {
+        "days": 70,
+        "avgBalanceCents": 3760000
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "seasonal_operating_line",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "INCOME_TOO_VARIABLE",
+       "direction": "negative",
+       "weight": 0.92,
+       "customerText": "Your income changes a lot from month to month, so a fixed monthly payment would be hard to keep up in quiet months.",
+       "lenderText": "Income CV 0.69 exceeds policy maximum 0.35.",
+       "evidence": {
+        "incomeCv": 0.69,
+        "max": 0.35
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A lender that can match repayment to your busy season may be able to help; a fixed monthly payment doesn't fit this income pattern."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b06": {
+   "applicant": "d3f7a91ecd080e8859485b0c1a882c109f64f18402c71e561df8eef100f392c9",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 1500000,
+     "aprBps": 875,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 7 years and hold 1 product with us.",
+       "lenderText": "Member 7.75 yrs, 1 products; relationship score 0.8.",
+       "evidence": {
+        "tenureYears": 7.75,
+        "products": 1,
+        "score": 0.8
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 20.09x what the new payment needs.",
+       "lenderText": "DSCR 20.09x at proposed payment $450 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 20.09,
+        "minDscr": 1.2,
+        "paymentCents": 45000
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 153 days of your usual spending.",
+       "lenderText": "153 days cash on hand; average balance $76,167.",
+       "evidence": {
+        "days": 153,
+        "avgBalanceCents": 7616685
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 1200000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $12,000 rather than the $15,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $12,000 from $15,000: 2x median monthly net cash flow.",
+       "evidence": {
+        "limitCents": 1200000,
+        "requestedCents": 1500000,
+        "basis": "2x median monthly net cash flow"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 17.53x what the new payment needs.",
+       "lenderText": "DSCR 17.53x at proposed payment $360 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 17.53,
+        "minDscr": 1.3,
+        "paymentCents": 36000
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 153 days of your usual spending.",
+       "lenderText": "153 days cash on hand; average balance $76,167.",
+       "evidence": {
+        "days": 153,
+        "avgBalanceCents": 7616685
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "INCOME_TOO_VARIABLE",
+       "direction": "negative",
+       "weight": 0.92,
+       "customerText": "Your income changes a lot from month to month, so a fixed monthly payment would be hard to keep up in quiet months.",
+       "lenderText": "Income CV 0.39 exceeds policy maximum 0.35.",
+       "evidence": {
+        "incomeCv": 0.39,
+        "max": 0.35
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A lender that can match repayment to your busy season may be able to help; a fixed monthly payment doesn't fit this income pattern."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b07": {
+   "applicant": "a88d7e29be96ba5124137ac258852026edc4aad5209b50f29c2b0f1d3e67dac2",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 1500000,
+     "aprBps": 875,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 7 years and hold 1 product with us.",
+       "lenderText": "Member 7.75 yrs, 1 products; relationship score 0.8.",
+       "evidence": {
+        "tenureYears": 7.75,
+        "products": 1,
+        "score": 0.8
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 10.45x what the new payment needs.",
+       "lenderText": "DSCR 10.45x at proposed payment $450 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 10.45,
+        "minDscr": 1.2,
+        "paymentCents": 45000
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 70 days of your usual spending.",
+       "lenderText": "70 days cash on hand; average balance $35,177.",
+       "evidence": {
+        "days": 70,
+        "avgBalanceCents": 3517677
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 1000000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $10,000 rather than the $15,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $10,000 from $15,000: 2x median monthly net cash flow.",
+       "evidence": {
+        "limitCents": 1000000,
+        "requestedCents": 1500000,
+        "basis": "2x median monthly net cash flow"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 17.11x what the new payment needs.",
+       "lenderText": "DSCR 17.11x at proposed payment $300 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 17.11,
+        "minDscr": 1.3,
+        "paymentCents": 30000
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 70 days of your usual spending.",
+       "lenderText": "70 days cash on hand; average balance $35,177.",
+       "evidence": {
+        "days": 70,
+        "avgBalanceCents": 3517677
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "refer",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "INCOME_NEEDS_DOCUMENTS",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We need to confirm your self-employed income with your tax returns before we can decide.",
+       "lenderText": "Income type invoice: policy requires two years of Notices of Assessment.",
+       "evidence": {
+        "incomeType": "invoice"
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A decision can be made once two years of tax returns (Notices of Assessment) are provided."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b08": {
+   "applicant": "02ded7b06b013b2e00ace2e7d4a49e1366488a855fff9ac27559173d8bb2a144",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve_with_conditions",
+     "product": "business_line_of_credit",
+     "limitCents": 1700000,
+     "aprBps": 875,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "RECENT_NSF_CAUTION",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "2 payments bounced recently, so we're starting with a smaller limit and a few conditions.",
+       "lenderText": "2 NSF in 90 days (within maximum): limit capped at 4 months of average net cash flow.",
+       "evidence": {
+        "count": 2,
+        "monthsOfNet": 4
+       }
+      },
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "We can offer $17,000 rather than the $20,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $17,000 from $20,000: recent returned payments.",
+       "evidence": {
+        "limitCents": 1700000,
+        "requestedCents": 2000000,
+        "basis": "recent returned payments"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 2.92x what the new payment needs.",
+       "lenderText": "DSCR 2.92x at proposed payment $510 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 2.92,
+        "minDscr": 1.2,
+        "paymentCents": 51000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $40,213.",
+       "lenderText": "Steady business revenue $40,213/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 4021274,
+        "incomeCv": 0.04
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A limit review is likely after 90 days with no bounced payments.",
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "approver": "lender",
+     "conditions": [
+      "No returned payments in the 90 days before the first draw",
+      "Monthly account statements for the first six months"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "2 payments from your account bounced in the last 90 days.",
+       "lenderText": "2 NSF returns in 90 days (maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NSF_HISTORY",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "2 payments from your account bounced in the last 12 months.",
+       "lenderText": "2 NSF returns in 12 months (policy maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once a full 12 months pass with at most 1 bounced payment."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b09": {
+   "applicant": "9d9f4710d973550b63c902bfc3178dba71988c26ed3ace61ef7b27c45f019608",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "3 payments from your account bounced in the last 90 days.",
+       "lenderText": "3 NSF returns in 90 days (maximum 2).",
+       "evidence": {
+        "count": 3,
+        "max": 2
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "3 payments from your account bounced in the last 90 days.",
+       "lenderText": "3 NSF returns in 90 days (maximum 1).",
+       "evidence": {
+        "count": 3,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "business_line_of_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NSF_HISTORY",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "3 payments from your account bounced in the last 12 months.",
+       "lenderText": "3 NSF returns in 12 months (policy maximum 1).",
+       "evidence": {
+        "count": 3,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once a full 12 months pass with at most 1 bounced payment."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b10": {
+   "applicant": "0b65af21547af93efb4be28b1acf400776d52e54ef7149b7fd8e2b82a3b6bb69",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "business_term_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "LOW_COVERAGE",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "After your current bills, there isn't quite enough left each month for a $944 payment.",
+       "lenderText": "DSCR -2.76x at $944/month, below minimum 1.20x.",
+       "evidence": {
+        "dscr": -2.76,
+        "minDscr": 1.2,
+        "paymentCents": 94356,
+        "maxAffordableCents": 0
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely if your monthly cash left over rises or your existing payments go down."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "business_term_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NEGATIVE_TYPICAL_MONTH",
+       "direction": "negative",
+       "weight": 0.94,
+       "customerText": "In a typical month, more money goes out of your account than comes in.",
+       "lenderText": "Median monthly net cash flow -$1,730.",
+       "evidence": {
+        "medianNetCents": -173011
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once most months end with more coming in than going out."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "business_term_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "LOW_COVERAGE",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "After your current bills, there isn't quite enough left each month for a $953 payment.",
+       "lenderText": "DSCR -2.73x at $953/month, below minimum 1.25x.",
+       "evidence": {
+        "dscr": -2.73,
+        "minDscr": 1.25,
+        "paymentCents": 95330,
+        "maxAffordableCents": 0
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely if your monthly cash left over rises or your existing payments go down."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b11": {
+   "applicant": "81f266d23cb3b0065299ab2c94a1b6c45dc09cbf98e4a68a293f874ebf22ca41",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "equipment_financing",
+     "limitCents": 40000000,
+     "aprBps": 775,
+     "termMonths": 84,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 15 years and hold 3 products with us.",
+       "lenderText": "Member 15.75 yrs, 3 products; relationship score 1.",
+       "evidence": {
+        "tenureYears": 15.75,
+        "products": 3,
+        "score": 1
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 5.03x what the new payment needs.",
+       "lenderText": "DSCR 5.03x at proposed payment $6,185 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 5.03,
+        "minDscr": 1.2,
+        "paymentCents": 618479
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $180,012.",
+       "lenderText": "Steady business revenue $180,012/month; income CV 0.03.",
+       "evidence": {
+        "avgIncomeCents": 18001158,
+        "incomeCv": 0.03
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "credit_committee",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "equipment_financing",
+     "limitCents": 15000000,
+     "aprBps": 1199,
+     "termMonths": 48,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "PRODUCT_MAX",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "$150,000 is the most we lend for this product.",
+       "lenderText": "Request $400,000 exceeds product maximum $150,000.",
+       "evidence": {
+        "requestedCents": 40000000,
+        "maxCents": 15000000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 8.85x what the new payment needs.",
+       "lenderText": "DSCR 8.85x at proposed payment $3,949 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 8.85,
+        "minDscr": 1.3,
+        "paymentCents": 394934
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $180,012.",
+       "lenderText": "Steady business revenue $180,012/month; income CV 0.03.",
+       "evidence": {
+        "avgIncomeCents": 18001158,
+        "incomeCv": 0.03
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "equipment_financing",
+     "limitCents": 40000000,
+     "aprBps": 845,
+     "termMonths": 84,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 4.92x what the new payment needs.",
+       "lenderText": "DSCR 4.92x at proposed payment $6,325 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 4.92,
+        "minDscr": 1.25,
+        "paymentCents": 632455
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $180,012.",
+       "lenderText": "Steady business revenue $180,012/month; income CV 0.03.",
+       "evidence": {
+        "avgIncomeCents": 18001158,
+        "incomeCv": 0.03
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b12": {
+   "applicant": "81fe71307b01611c582a34e194b38dca0b7744805b973762619386a600112af0",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 875,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 11 years and hold 1 product with us.",
+       "lenderText": "Member 11.75 yrs, 1 products; relationship score 0.8.",
+       "evidence": {
+        "tenureYears": 11.75,
+        "products": 1,
+        "score": 0.8
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.82x what the new payment needs.",
+       "lenderText": "DSCR 37.82x at proposed payment $600 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 37.82,
+        "minDscr": 1.2,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,909.",
+       "lenderText": "Steady business revenue $46,909/month; income CV 0.08.",
+       "evidence": {
+        "avgIncomeCents": 4690891,
+        "incomeCv": 0.08
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 176 days of your usual spending.",
+       "lenderText": "176 days cash on hand; average balance $139,925.",
+       "evidence": {
+        "days": 176,
+        "avgBalanceCents": 13992540
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": [
+      {
+       "type": "FINTRAC_LCTR_CANDIDATE",
+       "summary": "2 cash deposits totalling $12,616.25 within 24 hours on 2026-05-07. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+       "transactionIds": [
+        "txn_planted-b12-00432",
+        "txn_planted-b12-00434"
+       ],
+       "totalCents": 1261625,
+       "windowStart": "2026-05-07T14:03:00-04:00",
+       "windowEnd": "2026-05-08T11:20:00-04:00",
+       "rule": "24_hour",
+       "creditFactor": false,
+       "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      }
+     ]
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 37.71x what the new payment needs.",
+       "lenderText": "DSCR 37.71x at proposed payment $600 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 37.71,
+        "minDscr": 1.3,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,909.",
+       "lenderText": "Steady business revenue $46,909/month; income CV 0.08.",
+       "evidence": {
+        "avgIncomeCents": 4690891,
+        "incomeCv": 0.08
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": [
+      {
+       "type": "FINTRAC_LCTR_CANDIDATE",
+       "summary": "2 cash deposits totalling $12,616.25 within 24 hours on 2026-05-07. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+       "transactionIds": [
+        "txn_planted-b12-00432",
+        "txn_planted-b12-00434"
+       ],
+       "totalCents": 1261625,
+       "windowStart": "2026-05-07T14:03:00-04:00",
+       "windowEnd": "2026-05-08T11:20:00-04:00",
+       "rule": "24_hour",
+       "creditFactor": false,
+       "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      }
+     ]
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 945,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.82x what the new payment needs.",
+       "lenderText": "DSCR 37.82x at proposed payment $600 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 37.82,
+        "minDscr": 1.25,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,909.",
+       "lenderText": "Steady business revenue $46,909/month; income CV 0.08.",
+       "evidence": {
+        "avgIncomeCents": 4690891,
+        "incomeCv": 0.08
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 176 days of your usual spending.",
+       "lenderText": "176 days cash on hand; average balance $139,925.",
+       "evidence": {
+        "days": 176,
+        "avgBalanceCents": 13992540
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": [
+      {
+       "type": "FINTRAC_LCTR_CANDIDATE",
+       "summary": "2 cash deposits totalling $12,616.25 within 24 hours on 2026-05-07. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+       "transactionIds": [
+        "txn_planted-b12-00432",
+        "txn_planted-b12-00434"
+       ],
+       "totalCents": 1261625,
+       "windowStart": "2026-05-07T14:03:00-04:00",
+       "windowEnd": "2026-05-08T11:20:00-04:00",
+       "rule": "24_hour",
+       "creditFactor": false,
+       "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      }
+     ]
+    }
+   }
+  },
+  "apl_planted-b13": {
+   "applicant": "3d23a1ee9300221283b1a5135d4de2d37d6ee38763a93cafb4ef4e106d2cbad4",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 875,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 11 years and hold 1 product with us.",
+       "lenderText": "Member 11.75 yrs, 1 products; relationship score 0.8.",
+       "evidence": {
+        "tenureYears": 11.75,
+        "products": 1,
+        "score": 0.8
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.32x what the new payment needs.",
+       "lenderText": "DSCR 37.32x at proposed payment $600 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 37.32,
+        "minDscr": 1.2,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,570.",
+       "lenderText": "Steady business revenue $46,570/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 4657004,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 175 days of your usual spending.",
+       "lenderText": "175 days cash on hand; average balance $138,922.",
+       "evidence": {
+        "days": 175,
+        "avgBalanceCents": 13892154
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": [
+      {
+       "type": "FINTRAC_LCTR_CANDIDATE",
+       "summary": "2 cash deposits totalling $10,500.00 within 24 hours on 2026-04-16. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+       "transactionIds": [
+        "txn_planted-b13-00390",
+        "txn_planted-b13-00393"
+       ],
+       "totalCents": 1050000,
+       "windowStart": "2026-04-16T16:30:00-04:00",
+       "windowEnd": "2026-04-17T10:15:00-04:00",
+       "rule": "24_hour",
+       "creditFactor": false,
+       "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      }
+     ]
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 37.10x what the new payment needs.",
+       "lenderText": "DSCR 37.10x at proposed payment $600 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 37.1,
+        "minDscr": 1.3,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,570.",
+       "lenderText": "Steady business revenue $46,570/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 4657004,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": [
+      {
+       "type": "FINTRAC_LCTR_CANDIDATE",
+       "summary": "2 cash deposits totalling $10,500.00 within 24 hours on 2026-04-16. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+       "transactionIds": [
+        "txn_planted-b13-00390",
+        "txn_planted-b13-00393"
+       ],
+       "totalCents": 1050000,
+       "windowStart": "2026-04-16T16:30:00-04:00",
+       "windowEnd": "2026-04-17T10:15:00-04:00",
+       "rule": "24_hour",
+       "creditFactor": false,
+       "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      }
+     ]
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 945,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.32x what the new payment needs.",
+       "lenderText": "DSCR 37.32x at proposed payment $600 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 37.32,
+        "minDscr": 1.25,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,570.",
+       "lenderText": "Steady business revenue $46,570/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 4657004,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 175 days of your usual spending.",
+       "lenderText": "175 days cash on hand; average balance $138,922.",
+       "evidence": {
+        "days": 175,
+        "avgBalanceCents": 13892154
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": [
+      {
+       "type": "FINTRAC_LCTR_CANDIDATE",
+       "summary": "2 cash deposits totalling $10,500.00 within 24 hours on 2026-04-16. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+       "transactionIds": [
+        "txn_planted-b13-00390",
+        "txn_planted-b13-00393"
+       ],
+       "totalCents": 1050000,
+       "windowStart": "2026-04-16T16:30:00-04:00",
+       "windowEnd": "2026-04-17T10:15:00-04:00",
+       "rule": "24_hour",
+       "creditFactor": false,
+       "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+      }
+     ]
+    }
+   }
+  },
+  "apl_planted-b14": {
+   "applicant": "ef9fad4ec38c8c598e4968a3bf77e11af0023322fadbec3812b3bf655b37903c",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 875,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 11 years and hold 1 product with us.",
+       "lenderText": "Member 11.75 yrs, 1 products; relationship score 0.8.",
+       "evidence": {
+        "tenureYears": 11.75,
+        "products": 1,
+        "score": 0.8
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.42x what the new payment needs.",
+       "lenderText": "DSCR 37.42x at proposed payment $600 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 37.42,
+        "minDscr": 1.2,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,605.",
+       "lenderText": "Steady business revenue $46,605/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 4660454,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 175 days of your usual spending.",
+       "lenderText": "175 days cash on hand; average balance $138,903.",
+       "evidence": {
+        "days": 175,
+        "avgBalanceCents": 13890313
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 1399,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 36.93x what the new payment needs.",
+       "lenderText": "DSCR 36.93x at proposed payment $600 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 36.93,
+        "minDscr": 1.3,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,605.",
+       "lenderText": "Steady business revenue $46,605/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 4660454,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "business_line_of_credit",
+     "limitCents": 2000000,
+     "aprBps": 945,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.42x what the new payment needs.",
+       "lenderText": "DSCR 37.42x at proposed payment $600 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 37.42,
+        "minDscr": 1.25,
+        "paymentCents": 60000
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $46,605.",
+       "lenderText": "Steady business revenue $46,605/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 4660454,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 175 days of your usual spending.",
+       "lenderText": "175 days cash on hand; average balance $138,903.",
+       "evidence": {
+        "days": 175,
+        "avgBalanceCents": 13890313
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b15": {
+   "applicant": "c96057247c3e6e7d0274c9dbd6739be4a857e6423550153069bc43de287cb9f0",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 2500000,
+     "aprBps": 825,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 9.28x what the new payment needs.",
+       "lenderText": "DSCR 9.28x at proposed payment $786 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 9.28,
+        "minDscr": 1.2,
+        "paymentCents": 78630
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $35,118.",
+       "lenderText": "Steady business revenue $35,118/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 3511804,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 2500000,
+     "aprBps": 1299,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 8.93x what the new payment needs.",
+       "lenderText": "DSCR 8.93x at proposed payment $842 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 8.93,
+        "minDscr": 1.3,
+        "paymentCents": 84223
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $35,118.",
+       "lenderText": "Steady business revenue $35,118/month; income CV 0.04.",
+       "evidence": {
+        "avgIncomeCents": 3511804,
+        "incomeCv": 0.04
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "business_term_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "SHORT_ACCOUNT_HISTORY",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "We can see 10 months of your banking, and we need at least 12.",
+       "lenderText": "10 months of transactions (minimum 12).",
+       "evidence": {
+        "months": 10,
+        "min": 12
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once there are 12 months of account history."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-b16": {
+   "applicant": "0d876c2d8a76964d92271518bdefde3a9f85b6b340b93d21c89b4d9d36cf7e91",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 8500000,
+     "aprBps": 825,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "We can offer $85,000 rather than the $100,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $85,000 from $100,000: debt service coverage.",
+       "evidence": {
+        "limitCents": 8500000,
+        "requestedCents": 10000000,
+        "basis": "debt service coverage"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 1.21x what the new payment needs.",
+       "lenderText": "DSCR 1.21x at proposed payment $1,734 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 1.21,
+        "minDscr": 1.2,
+        "paymentCents": 173369
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $53,287.",
+       "lenderText": "Steady business revenue $53,287/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 5328703,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "approver": "branch_manager",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 4600000,
+     "aprBps": 1299,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $46,000 rather than the $100,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $46,000 from $100,000: minimum coverage 1.3x on the median month.",
+       "evidence": {
+        "limitCents": 4600000,
+        "requestedCents": 10000000,
+        "basis": "minimum coverage 1.3x on the median month"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 1.30x what the new payment needs.",
+       "lenderText": "DSCR 1.30x at proposed payment $1,550 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 1.3,
+        "minDscr": 1.3,
+        "paymentCents": 154971
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $53,287.",
+       "lenderText": "Steady business revenue $53,287/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 5328703,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "business_term_loan",
+     "limitCents": 6500000,
+     "aprBps": 895,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "We can offer $65,000 rather than the $100,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $65,000 from $100,000: minimum coverage 1.25x.",
+       "evidence": {
+        "limitCents": 6500000,
+        "requestedCents": 10000000,
+        "basis": "minimum coverage 1.25x"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 1.26x what the new payment needs.",
+       "lenderText": "DSCR 1.26x at proposed payment $1,348 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 1.26,
+        "minDscr": 1.25,
+        "paymentCents": 134772
+       }
+      },
+      {
+       "code": "STEADY_REVENUE",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your business brings in a steady amount each month, about $53,287.",
+       "lenderText": "Steady business revenue $53,287/month; income CV 0.06.",
+       "evidence": {
+        "avgIncomeCents": 5328703,
+        "incomeCv": 0.06
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Annual financial statements within 120 days of year end",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p01": {
+   "applicant": "96aa6d6eb470d5e33b623b27fa134dca5c296898542fbb6e868791e21bc08dbf",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 1000000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 9 years and hold 3 products with us.",
+       "lenderText": "Member 9.58 yrs, 3 products; relationship score 1.",
+       "evidence": {
+        "tenureYears": 9.58,
+        "products": 3,
+        "score": 1
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 6.92x what the new payment needs.",
+       "lenderText": "DSCR 6.92x at proposed payment $318 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 6.92,
+        "minDscr": 1.2,
+        "paymentCents": 31796
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,543 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,543; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 254270,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 140 days of your usual spending.",
+       "lenderText": "140 days cash on hand; average balance $15,189.",
+       "evidence": {
+        "days": 140,
+        "avgBalanceCents": 1518889
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 1000000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 5.65x what the new payment needs.",
+       "lenderText": "DSCR 5.65x at proposed payment $342 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 5.65,
+        "minDscr": 1.3,
+        "paymentCents": 34173
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,543 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,543; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 254270,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 1000000,
+     "aprBps": 999,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 6.82x what the new payment needs.",
+       "lenderText": "DSCR 6.82x at proposed payment $323 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 6.82,
+        "minDscr": 1.25,
+        "paymentCents": 32263
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,543 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,543; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 254270,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 140 days of your usual spending.",
+       "lenderText": "140 days cash on hand; average balance $15,189.",
+       "evidence": {
+        "days": 140,
+        "avgBalanceCents": 1518889
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 10 years of Canadian credit history.",
+       "lenderText": "Bureau history 120 months.",
+       "evidence": {
+        "months": 120
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p02": {
+   "applicant": "47fd9138a8b540f40cd60feaa7e2097eead630f6038cebf16f1e8a2c1974d4fb",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 10.10x what the new payment needs.",
+       "lenderText": "DSCR 10.10x at proposed payment $159 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 10.1,
+        "minDscr": 1.2,
+        "paymentCents": 15898
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,208 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,208; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 220835,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 108 days of your usual spending.",
+       "lenderText": "108 days cash on hand; average balance $11,407.",
+       "evidence": {
+        "days": 108,
+        "avgBalanceCents": 1140664
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 7.93x what the new payment needs.",
+       "lenderText": "DSCR 7.93x at proposed payment $171 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 7.93,
+        "minDscr": 1.3,
+        "paymentCents": 17087
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,208 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,208; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 220835,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 999,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 9.95x what the new payment needs.",
+       "lenderText": "DSCR 9.95x at proposed payment $161 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 9.95,
+        "minDscr": 1.25,
+        "paymentCents": 16132
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,208 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,208; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 220835,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 108 days of your usual spending.",
+       "lenderText": "108 days cash on hand; average balance $11,407.",
+       "evidence": {
+        "days": 108,
+        "avgBalanceCents": 1140664
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 7 years of Canadian credit history.",
+       "lenderText": "Bureau history 90 months.",
+       "evidence": {
+        "months": 90
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p03": {
+   "applicant": "4f1047d03034d8e841beaea346b674d8bc74b1c1b4b421bc0096658bdbc818a4",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "3 payments from your account bounced in the last 90 days.",
+       "lenderText": "3 NSF returns in 90 days (maximum 2).",
+       "evidence": {
+        "count": 3,
+        "max": 2
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "3 payments from your account bounced in the last 90 days.",
+       "lenderText": "3 NSF returns in 90 days (maximum 1).",
+       "evidence": {
+        "count": 3,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NSF_HISTORY",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "3 payments from your account bounced in the last 12 months.",
+       "lenderText": "3 NSF returns in 12 months (policy maximum 1).",
+       "evidence": {
+        "count": 3,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once a full 12 months pass with at most 1 bounced payment."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p04": {
+   "applicant": "cc7b94d77721282b4390741d9b965cc9c8daa1516487acadefc91ecbc4fbb4fa",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve_with_conditions",
+     "product": "personal_loan",
+     "limitCents": 550000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "RECENT_NSF_CAUTION",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "1 payment bounced recently, so we're starting with a smaller limit and a few conditions.",
+       "lenderText": "1 NSF in 90 days (within maximum): limit capped at 4 months of average net cash flow.",
+       "evidence": {
+        "count": 1,
+        "monthsOfNet": 4
+       }
+      },
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "We can offer $5,500 rather than the $6,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $5,500 from $6,000: recent returned payments.",
+       "evidence": {
+        "limitCents": 550000,
+        "requestedCents": 600000,
+        "basis": "recent returned payments"
+       }
+      },
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 7 years and hold 2 products with us.",
+       "lenderText": "Member 7.33 yrs, 2 products; relationship score 0.9.",
+       "evidence": {
+        "tenureYears": 7.33,
+        "products": 2,
+        "score": 0.9
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 3.76x what the new payment needs.",
+       "lenderText": "DSCR 3.76x at proposed payment $175 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 3.76,
+        "minDscr": 1.2,
+        "paymentCents": 17488
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,306 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,306; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 230610,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 89 days of your usual spending.",
+       "lenderText": "89 days cash on hand; average balance $10,226.",
+       "evidence": {
+        "days": 89,
+        "avgBalanceCents": 1022591
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A limit review is likely after 90 days with no bounced payments.",
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "approver": "msr",
+     "conditions": [
+      "No returned payments in the 90 days before the first draw",
+      "Monthly account statements for the first six months"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 600000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 3.01x what the new payment needs.",
+       "lenderText": "DSCR 3.01x at proposed payment $205 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 3.01,
+        "minDscr": 1.3,
+        "paymentCents": 20504
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,306 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,306; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 230610,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 89 days of your usual spending.",
+       "lenderText": "89 days cash on hand; average balance $10,226.",
+       "evidence": {
+        "days": 89,
+        "avgBalanceCents": 1022591
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 600000,
+     "aprBps": 999,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 3.62x what the new payment needs.",
+       "lenderText": "DSCR 3.62x at proposed payment $194 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 3.62,
+        "minDscr": 1.25,
+        "paymentCents": 19358
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,306 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,306; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 230610,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 89 days of your usual spending.",
+       "lenderText": "89 days cash on hand; average balance $10,226.",
+       "evidence": {
+        "days": 89,
+        "avgBalanceCents": 1022591
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 6 years of Canadian credit history.",
+       "lenderText": "Bureau history 80 months.",
+       "evidence": {
+        "months": 80
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p05": {
+   "applicant": "1e079dae45e22a0c176f0bdab058b178b201dbe9d7814e22504239c7f07d3cbe",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve_with_conditions",
+     "product": "personal_loan",
+     "limitCents": 550000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "RECENT_NSF_CAUTION",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "2 payments bounced recently, so we're starting with a smaller limit and a few conditions.",
+       "lenderText": "2 NSF in 90 days (within maximum): limit capped at 4 months of average net cash flow.",
+       "evidence": {
+        "count": 2,
+        "monthsOfNet": 4
+       }
+      },
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "We can offer $5,500 rather than the $6,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $5,500 from $6,000: recent returned payments.",
+       "evidence": {
+        "limitCents": 550000,
+        "requestedCents": 600000,
+        "basis": "recent returned payments"
+       }
+      },
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 7 years and hold 2 products with us.",
+       "lenderText": "Member 7.33 yrs, 2 products; relationship score 0.9.",
+       "evidence": {
+        "tenureYears": 7.33,
+        "products": 2,
+        "score": 0.9
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 3.77x what the new payment needs.",
+       "lenderText": "DSCR 3.77x at proposed payment $175 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 3.77,
+        "minDscr": 1.2,
+        "paymentCents": 17488
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,307 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,307; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 230748,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 89 days of your usual spending.",
+       "lenderText": "89 days cash on hand; average balance $10,224.",
+       "evidence": {
+        "days": 89,
+        "avgBalanceCents": 1022439
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A limit review is likely after 90 days with no bounced payments.",
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "approver": "msr",
+     "conditions": [
+      "No returned payments in the 90 days before the first draw",
+      "Monthly account statements for the first six months"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "2 payments from your account bounced in the last 90 days.",
+       "lenderText": "2 NSF returns in 90 days (maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NSF_HISTORY",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "2 payments from your account bounced in the last 12 months.",
+       "lenderText": "2 NSF returns in 12 months (policy maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once a full 12 months pass with at most 1 bounced payment."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p06": {
+   "applicant": "f05937c8fdbfdb0e823193e0a5e3796a86506840bce917ef81e920acc80cbfd1",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 600000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 3.66x what the new payment needs.",
+       "lenderText": "DSCR 3.66x at proposed payment $191 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 3.66,
+        "minDscr": 1.2,
+        "paymentCents": 19078
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,310 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,310; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 231021,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 89 days of your usual spending.",
+       "lenderText": "89 days cash on hand; average balance $10,269.",
+       "evidence": {
+        "days": 89,
+        "avgBalanceCents": 1026894
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 600000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 3.08x what the new payment needs.",
+       "lenderText": "DSCR 3.08x at proposed payment $205 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 3.08,
+        "minDscr": 1.3,
+        "paymentCents": 20504
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,310 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,310; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 231021,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 89 days of your usual spending.",
+       "lenderText": "89 days cash on hand; average balance $10,269.",
+       "evidence": {
+        "days": 89,
+        "avgBalanceCents": 1026894
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NSF_HISTORY",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "2 payments from your account bounced in the last 12 months.",
+       "lenderText": "2 NSF returns in 12 months (policy maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once a full 12 months pass with at most 1 bounced payment."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p07": {
+   "applicant": "84c80e9a4b3ae4368bb50c58421ff7764f68790b1495d82c9bd506b0fee59266",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "starter_credit",
+     "limitCents": 200000,
+     "aprBps": 1199,
+     "termMonths": null,
+     "structure": "secured_starter",
+     "reasons": [
+      {
+       "code": "STARTER_PATH",
+       "direction": "positive",
+       "weight": 0.95,
+       "customerText": "Your steady pay and the way you manage your accounts let us offer starter credit of $2,000, even with a short credit history.",
+       "lenderText": "Thin-file path: 5 months bureau history; payroll regular; 132 days cash on hand.",
+       "evidence": {
+        "limitCents": 200000,
+        "historyMonths": 5,
+        "days": 132
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $1,936 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $1,936; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 193591,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "SAVINGS_HABIT",
+       "direction": "positive",
+       "weight": 0.5,
+       "customerText": "You've kept $11,230 on average in your accounts with us.",
+       "lenderText": "Average Northgate deposit balance $11,230.",
+       "evidence": {
+        "avgBalanceCents": 1122958
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 132 days of your usual spending.",
+       "lenderText": "132 days cash on hand; average balance $11,230.",
+       "evidence": {
+        "days": 132,
+        "avgBalanceCents": 1122958
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "starter_credit",
+     "limitCents": 100000,
+     "aprBps": 1799,
+     "termMonths": null,
+     "structure": "secured_starter",
+     "reasons": [
+      {
+       "code": "THIN_FILE_LIMIT",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "With 5 months of credit history, we start you at $1,000.",
+       "lenderText": "Thin file (5 months bureau, no foreign report): cap $1,000.",
+       "evidence": {
+        "months": 5,
+        "capCents": 100000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 45.93x what the new payment needs.",
+       "lenderText": "DSCR 45.93x at proposed payment $30 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 45.93,
+        "minDscr": 1.3,
+        "paymentCents": 3000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $1,936 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $1,936; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 193591,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "Six on-time payments, or an imported foreign credit report, could support a higher limit."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "starter_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "SHORT_CREDIT_HISTORY",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "You have 5 months of Canadian credit history, and this product needs 24.",
+       "lenderText": "Bureau history 5 months (minimum 24); no foreign report.",
+       "evidence": {
+        "months": 5,
+        "min": 24
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once you have 24 months of Canadian credit history, or with an imported foreign credit report if one is available for your country."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p08": {
+   "applicant": "6466bda5f3dcbf6affeaa19f77ae3f19334241d25b94f317ab911a60cc00d436",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "starter_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "SHORT_CREDIT_HISTORY",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "You have 5 months of Canadian credit history, and this product needs 12.",
+       "lenderText": "Bureau history 5 months (minimum 12); no foreign report.",
+       "evidence": {
+        "months": 5,
+        "min": 12
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once you have 12 months of Canadian credit history, or with an imported foreign credit report if one is available for your country."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "starter_credit",
+     "limitCents": 100000,
+     "aprBps": 1799,
+     "termMonths": null,
+     "structure": "secured_starter",
+     "reasons": [
+      {
+       "code": "THIN_FILE_LIMIT",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "With 5 months of credit history, we start you at $1,000.",
+       "lenderText": "Thin file (5 months bureau, no foreign report): cap $1,000.",
+       "evidence": {
+        "months": 5,
+        "capCents": 100000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 46.30x what the new payment needs.",
+       "lenderText": "DSCR 46.30x at proposed payment $30 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 46.3,
+        "minDscr": 1.3,
+        "paymentCents": 3000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $1,938 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $1,938; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 193841,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "Six on-time payments, or an imported foreign credit report, could support a higher limit."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "starter_credit",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "SHORT_CREDIT_HISTORY",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "You have 5 months of Canadian credit history, and this product needs 24.",
+       "lenderText": "Bureau history 5 months (minimum 24); no foreign report.",
+       "evidence": {
+        "months": 5,
+        "min": 24
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once you have 24 months of Canadian credit history, or with an imported foreign credit report if one is available for your country."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p09": {
+   "applicant": "78926facc488aae9817173da89522b6b7c3c376dceb6d1c36d4e7794c2dbb8aa",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 200000,
+     "aprBps": 1299,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "NON_MEMBER_CAP",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "For new customers we start unsecured credit at up to $2,000.",
+       "lenderText": "Non-member revolving cap $2,000.",
+       "evidence": {
+        "capCents": 200000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 37.97x what the new payment needs.",
+       "lenderText": "DSCR 37.97x at proposed payment $60 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 37.97,
+        "minDscr": 1.2,
+        "paymentCents": 6000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,393 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,393; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 239305,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "GROWING_REVENUE",
+       "direction": "positive",
+       "weight": 0.45,
+       "customerText": "Your income has grown recently, up 16% on the three months before.",
+       "lenderText": "Income trend +16% (last 3 vs prior 3 months).",
+       "evidence": {
+        "trend": 0.16
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 186 days of your usual spending.",
+       "lenderText": "186 days cash on hand; average balance $18,332.",
+       "evidence": {
+        "days": 186,
+        "avgBalanceCents": 1833232
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Banking with us for a while (deposits and everyday spending) could support a higher limit at review."
+     ],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 300000,
+     "aprBps": 1999,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 21.54x what the new payment needs.",
+       "lenderText": "DSCR 21.54x at proposed payment $90 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 21.54,
+        "minDscr": 1.3,
+        "paymentCents": 9000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,393 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,393; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 239305,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "GROWING_REVENUE",
+       "direction": "positive",
+       "weight": 0.45,
+       "customerText": "Your income has grown recently, up 16% on the three months before.",
+       "lenderText": "Income trend +16% (last 3 vs prior 3 months).",
+       "evidence": {
+        "trend": 0.16
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 300000,
+     "aprBps": 2099,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 25.31x what the new payment needs.",
+       "lenderText": "DSCR 25.31x at proposed payment $90 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 25.31,
+        "minDscr": 1.25,
+        "paymentCents": 9000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,393 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,393; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 239305,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "GROWING_REVENUE",
+       "direction": "positive",
+       "weight": 0.45,
+       "customerText": "Your income has grown recently, up 16% on the three months before.",
+       "lenderText": "Income trend +16% (last 3 vs prior 3 months).",
+       "evidence": {
+        "trend": 0.16
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 186 days of your usual spending.",
+       "lenderText": "186 days cash on hand; average balance $18,332.",
+       "evidence": {
+        "days": 186,
+        "avgBalanceCents": 1833232
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p10": {
+   "applicant": "5ab3ce8290eb29184c1b5ac69cf281b530ccb05d09e5c697b20ef9bde6288f7c",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 12.37x what the new payment needs.",
+       "lenderText": "DSCR 12.37x at proposed payment $159 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 12.37,
+        "minDscr": 1.2,
+        "paymentCents": 15898
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,312 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,312; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 231192,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 87 days of your usual spending.",
+       "lenderText": "87 days cash on hand; average balance $8,546.",
+       "evidence": {
+        "days": 87,
+        "avgBalanceCents": 854593
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 10.02x what the new payment needs.",
+       "lenderText": "DSCR 10.02x at proposed payment $171 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 10.02,
+        "minDscr": 1.3,
+        "paymentCents": 17087
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,312 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,312; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 231192,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "SHORT_ACCOUNT_HISTORY",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "We can see 7 months of your banking, and we need at least 12.",
+       "lenderText": "7 months of transactions (minimum 12).",
+       "evidence": {
+        "months": 7,
+        "min": 12
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once there are 12 months of account history."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p11": {
+   "applicant": "5ad80d254d4879f93b0685d1397214f6b59c5a1f1e0d053ff8319e0993802a8c",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 200000,
+     "aprBps": 1299,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "NON_MEMBER_CAP",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "For new customers we start unsecured credit at up to $2,000.",
+       "lenderText": "Non-member revolving cap $2,000.",
+       "evidence": {
+        "capCents": 200000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 17.03x what the new payment needs.",
+       "lenderText": "DSCR 17.03x at proposed payment $60 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 17.03,
+        "minDscr": 1.2,
+        "paymentCents": 6000
+       }
+      },
+      {
+       "code": "CONSISTENT_GIG_INCOME",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "You earn on most days, and it adds up to a steady $3,924 a month.",
+       "lenderText": "Gig income $3,924/month from 23.42 deposits/month; monthly CV 0.16.",
+       "evidence": {
+        "avgIncomeCents": 392376,
+        "depositsPerMonth": 23.42,
+        "incomeCv": 0.16
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 81 days of your usual spending.",
+       "lenderText": "81 days cash on hand; average balance $7,766.",
+       "evidence": {
+        "days": 81,
+        "avgBalanceCents": 776596
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Banking with us for a while (deposits and everyday spending) could support a higher limit at review."
+     ],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 300000,
+     "aprBps": 1999,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 10.69x what the new payment needs.",
+       "lenderText": "DSCR 10.69x at proposed payment $90 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 10.69,
+        "minDscr": 1.3,
+        "paymentCents": 9000
+       }
+      },
+      {
+       "code": "CONSISTENT_GIG_INCOME",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "You earn on most days, and it adds up to a steady $3,924 a month.",
+       "lenderText": "Gig income $3,924/month from 23.42 deposits/month; monthly CV 0.16.",
+       "evidence": {
+        "avgIncomeCents": 392376,
+        "depositsPerMonth": 23.42,
+        "incomeCv": 0.16
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "refer",
+     "product": "credit_card",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "INCOME_NEEDS_DOCUMENTS",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We need to confirm your self-employed income with your tax returns before we can decide.",
+       "lenderText": "Income type gig: policy requires two years of Notices of Assessment.",
+       "evidence": {
+        "incomeType": "gig"
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A decision can be made once two years of tax returns (Notices of Assessment) are provided."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p12": {
+   "applicant": "66fe0040dd8de7d46c51060cb670f0c961bac0c155e6c00e3017a6aa8d57aacc",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve_with_conditions",
+     "product": "credit_card",
+     "limitCents": 300000,
+     "aprBps": 1299,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 5 years and hold 2 products with us.",
+       "lenderText": "Member 5.66 yrs, 2 products; relationship score 0.9.",
+       "evidence": {
+        "tenureYears": 5.66,
+        "products": 2,
+        "score": 0.9
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 3.55x what the new payment needs.",
+       "lenderText": "DSCR 3.55x at proposed payment $90 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 3.55,
+        "minDscr": 1.2,
+        "paymentCents": 9000
+       }
+      },
+      {
+       "code": "CONSISTENT_GIG_INCOME",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "You earn on most days, and it adds up to a steady $4,017 a month.",
+       "lenderText": "Gig income $4,017/month from 23.83 deposits/month; monthly CV 0.11.",
+       "evidence": {
+        "avgIncomeCents": 401656,
+        "depositsPerMonth": 23.83,
+        "incomeCv": 0.11
+       }
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 69 days of your usual spending.",
+       "lenderText": "69 days cash on hand; average balance $6,915.",
+       "evidence": {
+        "days": 69,
+        "avgBalanceCents": 691520
+       }
+      },
+      {
+       "code": "RECENT_NSF_CAUTION",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "2 payments bounced recently, so we're starting with a smaller limit and a few conditions.",
+       "lenderText": "2 NSF in 90 days (within maximum): limit capped at 4 months of average net cash flow.",
+       "evidence": {
+        "count": 2,
+        "monthsOfNet": 4
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A limit review is likely after 90 days with no bounced payments."
+     ],
+     "approver": "msr",
+     "conditions": [
+      "No returned payments in the 90 days before the first draw",
+      "Monthly account statements for the first six months"
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "credit_card",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "RECENT_NSF",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "2 payments from your account bounced in the last 90 days.",
+       "lenderText": "2 NSF returns in 90 days (maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once 90 days pass with no bounced payments."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "credit_card",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NSF_HISTORY",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "2 payments from your account bounced in the last 12 months.",
+       "lenderText": "2 NSF returns in 12 months (policy maximum 1).",
+       "evidence": {
+        "count": 2,
+        "max": 1
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once a full 12 months pass with at most 1 bounced payment."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p13": {
+   "applicant": "83a62ed28197b14ead9a9812cec26a2a77499e7effa151073cddf02a01b5f6a9",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "line_of_credit",
+     "limitCents": 1000000,
+     "aprBps": 949,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 25 years and hold 3 products with us.",
+       "lenderText": "Member 25.42 yrs, 3 products; relationship score 1.",
+       "evidence": {
+        "tenureYears": 25.42,
+        "products": 3,
+        "score": 1
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 5.00x what the new payment needs.",
+       "lenderText": "DSCR 5.00x at proposed payment $300 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 5,
+        "minDscr": 1.2,
+        "paymentCents": 30000
+       }
+      },
+      {
+       "code": "STABLE_PENSION",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pension and benefits arrive every month, about $3,800 in total.",
+       "lenderText": "Pension and government benefit income $3,800/month; income CV 0.",
+       "evidence": {
+        "avgIncomeCents": 380000,
+        "incomeCv": 0
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 130 days of your usual spending.",
+       "lenderText": "130 days cash on hand; average balance $9,801.",
+       "evidence": {
+        "days": 130,
+        "avgBalanceCents": 980090
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "line_of_credit",
+     "limitCents": 700000,
+     "aprBps": 1499,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $7,000 rather than the $10,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $7,000 from $10,000: 4.5x median monthly net cash flow.",
+       "evidence": {
+        "limitCents": 700000,
+        "requestedCents": 1000000,
+        "basis": "4.5x median monthly net cash flow"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 7.57x what the new payment needs.",
+       "lenderText": "DSCR 7.57x at proposed payment $210 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 7.57,
+        "minDscr": 1.3,
+        "paymentCents": 21000
+       }
+      },
+      {
+       "code": "STABLE_PENSION",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pension and benefits arrive every month, about $3,800 in total.",
+       "lenderText": "Pension and government benefit income $3,800/month; income CV 0.",
+       "evidence": {
+        "avgIncomeCents": 380000,
+        "incomeCv": 0
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "line_of_credit",
+     "limitCents": 1000000,
+     "aprBps": 1049,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 5.00x what the new payment needs.",
+       "lenderText": "DSCR 5.00x at proposed payment $300 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 5,
+        "minDscr": 1.25,
+        "paymentCents": 30000
+       }
+      },
+      {
+       "code": "STABLE_PENSION",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pension and benefits arrive every month, about $3,800 in total.",
+       "lenderText": "Pension and government benefit income $3,800/month; income CV 0.",
+       "evidence": {
+        "avgIncomeCents": 380000,
+        "incomeCv": 0
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 130 days of your usual spending.",
+       "lenderText": "130 days cash on hand; average balance $9,801.",
+       "evidence": {
+        "days": 130,
+        "avgBalanceCents": 980090
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 33 years of Canadian credit history.",
+       "lenderText": "Bureau history 400 months.",
+       "evidence": {
+        "months": 400
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p14": {
+   "applicant": "c8a3592ec68cfb20c9e10aea821353ebc8e32e30d94cca474c9c9419e087b311",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "HIGH_CARD_UTILIZATION",
+       "direction": "negative",
+       "weight": 0.98,
+       "customerText": "Your credit cards are at 95% of their limits.",
+       "lenderText": "Revolving utilization 95% (maximum 90%).",
+       "evidence": {
+        "utilization": 0.95,
+        "max": 0.9
+       }
+      },
+      {
+       "code": "RISING_CARD_BALANCES",
+       "direction": "negative",
+       "weight": 0.6,
+       "customerText": "Your card balances went up by $1,200 over the year.",
+       "lenderText": "Revolving balances +$1,200 over the window; utilization 95%.",
+       "evidence": {
+        "changeCents": 120000,
+        "utilization": 0.95
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely with card balances below 90% of their limits.",
+      "Paying your card balances down below half of their limits would also help."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "HIGH_CARD_UTILIZATION",
+       "direction": "negative",
+       "weight": 0.96,
+       "customerText": "Your credit cards are at 95% of their limits.",
+       "lenderText": "Revolving utilization 95% (maximum 90%).",
+       "evidence": {
+        "utilization": 0.95,
+        "max": 0.9
+       }
+      },
+      {
+       "code": "RISING_CARD_BALANCES",
+       "direction": "negative",
+       "weight": 0.6,
+       "customerText": "Your card balances went up by $1,200 over the year.",
+       "lenderText": "Revolving balances +$1,200 over the window; utilization 95%.",
+       "evidence": {
+        "changeCents": 120000,
+        "utilization": 0.95
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely with card balances below 90% of their limits.",
+      "Paying your card balances down below half of their limits would also help."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "HIGH_CARD_UTILIZATION",
+       "direction": "negative",
+       "weight": 0.94,
+       "customerText": "Your credit cards are at 95% of their limits.",
+       "lenderText": "Revolving utilization 95% (maximum 90%).",
+       "evidence": {
+        "utilization": 0.95,
+        "max": 0.9
+       }
+      },
+      {
+       "code": "RISING_CARD_BALANCES",
+       "direction": "negative",
+       "weight": 0.6,
+       "customerText": "Your card balances went up by $1,200 over the year.",
+       "lenderText": "Revolving balances +$1,200 over the window; utilization 95%.",
+       "evidence": {
+        "changeCents": 120000,
+        "utilization": 0.95
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely with card balances below 90% of their limits.",
+      "Paying your card balances down below half of their limits would also help."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p15": {
+   "applicant": "ac058ae8d82458f16adac6fe2b9911b49900277b7923684e91456b106efea0b2",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 11.94x what the new payment needs.",
+       "lenderText": "DSCR 11.94x at proposed payment $159 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 11.94,
+        "minDscr": 1.2,
+        "paymentCents": 15898
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,403 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,403; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 240256,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 123 days of your usual spending.",
+       "lenderText": "123 days cash on hand; average balance $13,340.",
+       "evidence": {
+        "days": 123,
+        "avgBalanceCents": 1334012
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 9.58x what the new payment needs.",
+       "lenderText": "DSCR 9.58x at proposed payment $171 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 9.58,
+        "minDscr": 1.3,
+        "paymentCents": 17087
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,403 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,403; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 240256,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 500000,
+     "aprBps": 999,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 11.76x what the new payment needs.",
+       "lenderText": "DSCR 11.76x at proposed payment $161 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 11.76,
+        "minDscr": 1.25,
+        "paymentCents": 16132
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,403 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,403; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 240256,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 123 days of your usual spending.",
+       "lenderText": "123 days cash on hand; average balance $13,340.",
+       "evidence": {
+        "days": 123,
+        "avgBalanceCents": 1334012
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 7 years of Canadian credit history.",
+       "lenderText": "Bureau history 90 months.",
+       "evidence": {
+        "months": 90
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p16": {
+   "applicant": "febb5a0432c447afaf73f1ec376bd15049802066803a7d2e82ca66c3ff044f13",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 700000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "We can offer $7,000 rather than the $15,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $7,000 from $15,000: debt service coverage.",
+       "evidence": {
+        "limitCents": 700000,
+        "requestedCents": 1500000,
+        "basis": "debt service coverage"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 1.22x what the new payment needs.",
+       "lenderText": "DSCR 1.22x at proposed payment $223 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 1.22,
+        "minDscr": 1.2,
+        "paymentCents": 22257
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $1,939 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $1,939; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 193855,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 200000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $2,000 rather than the $15,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $2,000 from $15,000: minimum coverage 1.3x on the median month.",
+       "evidence": {
+        "limitCents": 200000,
+        "requestedCents": 1500000,
+        "basis": "minimum coverage 1.3x on the median month"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 1.53x what the new payment needs.",
+       "lenderText": "DSCR 1.53x at proposed payment $68 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 1.53,
+        "minDscr": 1.3,
+        "paymentCents": 6835
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $1,939 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $1,939; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 193855,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 650000,
+     "aprBps": 999,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "We can offer $6,500 rather than the $15,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $6,500 from $15,000: minimum coverage 1.25x.",
+       "evidence": {
+        "limitCents": 650000,
+        "requestedCents": 1500000,
+        "basis": "minimum coverage 1.25x"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 1.30x what the new payment needs.",
+       "lenderText": "DSCR 1.30x at proposed payment $210 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 1.3,
+        "minDscr": 1.25,
+        "paymentCents": 20971
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $1,939 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $1,939; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 193855,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 7 years of Canadian credit history.",
+       "lenderText": "Bureau history 90 months.",
+       "evidence": {
+        "months": 90
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p17": {
+   "applicant": "6d7b8608780fd3aee1a8d1ca1e97b0e8ca36f58c7ef90e4044e9c2f3b56b4c8d",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "LOW_COVERAGE",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "After your current bills, there isn't quite enough left each month for a $318 payment.",
+       "lenderText": "DSCR -1.17x at $318/month, below minimum 1.20x.",
+       "evidence": {
+        "dscr": -1.17,
+        "minDscr": 1.2,
+        "paymentCents": 31796,
+        "maxAffordableCents": 0
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely if your monthly cash left over rises or your existing payments go down."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NEGATIVE_TYPICAL_MONTH",
+       "direction": "negative",
+       "weight": 0.94,
+       "customerText": "In a typical month, more money goes out of your account than comes in.",
+       "lenderText": "Median monthly net cash flow -$501.",
+       "evidence": {
+        "medianNetCents": -50123
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once most months end with more coming in than going out."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "LOW_COVERAGE",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "After your current bills, there isn't quite enough left each month for a $323 payment.",
+       "lenderText": "DSCR -1.16x at $323/month, below minimum 1.25x.",
+       "evidence": {
+        "dscr": -1.16,
+        "minDscr": 1.25,
+        "paymentCents": 32263,
+        "maxAffordableCents": 0
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely if your monthly cash left over rises or your existing payments go down."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p18": {
+   "applicant": "c78e1f798824c9b07a42a12e3538d69081a553929e51f17b01130610ccb9d09a",
+   "decisions": {
+    "credit_union": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "LOW_COVERAGE",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "After your current bills, there isn't quite enough left each month for a $318 payment.",
+       "lenderText": "DSCR 0.85x at $318/month, below minimum 1.20x.",
+       "evidence": {
+        "dscr": 0.85,
+        "minDscr": 1.2,
+        "paymentCents": 31796,
+        "maxAffordableCents": 0
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely if your monthly cash left over rises or your existing payments go down."
+     ],
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "NEGATIVE_TYPICAL_MONTH",
+       "direction": "negative",
+       "weight": 0.94,
+       "customerText": "In a typical month, more money goes out of your account than comes in.",
+       "lenderText": "Median monthly net cash flow -$149.",
+       "evidence": {
+        "medianNetCents": -14922
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely once most months end with more coming in than going out."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "decline",
+     "product": "personal_loan",
+     "limitCents": 0,
+     "aprBps": null,
+     "termMonths": null,
+     "structure": null,
+     "reasons": [
+      {
+       "code": "LOW_COVERAGE",
+       "direction": "negative",
+       "weight": 1,
+       "customerText": "After your current bills, there isn't quite enough left each month for a $323 payment.",
+       "lenderText": "DSCR 0.85x at $323/month, below minimum 1.25x.",
+       "evidence": {
+        "dscr": 0.85,
+        "minDscr": 1.25,
+        "paymentCents": 32263,
+        "maxAffordableCents": 0
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Approval is more likely if your monthly cash left over rises or your existing payments go down."
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p19": {
+   "applicant": "25d0748ef4b13f542b71fa0bc41a6e37a03fa867d313175d50a8039394a023d9",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 1000000,
+     "aprBps": 899,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "RELATIONSHIP_SUPPORTS_APPROVAL",
+       "direction": "positive",
+       "weight": 0.8,
+       "customerText": "Your history with us helped: we can accept a slightly smaller cushion than usual.",
+       "lenderText": "Relationship exception: DSCR 1.18x accepted against relationship minimum 1.10x (standard 1.20x). Approval moves up one authority tier.",
+       "evidence": {
+        "dscr": 1.18,
+        "minDscr": 1.1,
+        "standardMinDscr": 1.2
+       }
+      },
+      {
+       "code": "LONG_MEMBERSHIP",
+       "direction": "positive",
+       "weight": 0.75,
+       "customerText": "You've been a member for 16 years and hold 4 products with us.",
+       "lenderText": "Member 16.74 yrs, 4 products; relationship score 1.",
+       "evidence": {
+        "tenureYears": 16.74,
+        "products": 4,
+        "score": 1
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,086 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,086; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 208555,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 350000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.9,
+       "customerText": "We can offer $3,500 rather than the $10,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $3,500 from $10,000: minimum coverage 1.3x on the median month.",
+       "evidence": {
+        "limitCents": 350000,
+        "requestedCents": 1000000,
+        "basis": "minimum coverage 1.3x on the median month"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 1.46x what the new payment needs.",
+       "lenderText": "DSCR 1.46x at proposed payment $120 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 1.46,
+        "minDscr": 1.3,
+        "paymentCents": 11961
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,086 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,086; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 208555,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 900000,
+     "aprBps": 999,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "LIMIT_REDUCED",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "We can offer $9,000 rather than the $10,000 you asked for, so the payments stay comfortable.",
+       "lenderText": "Limit reduced to $9,000 from $10,000: minimum coverage 1.25x.",
+       "evidence": {
+        "limitCents": 900000,
+        "requestedCents": 1000000,
+        "basis": "minimum coverage 1.25x"
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 1.29x what the new payment needs.",
+       "lenderText": "DSCR 1.29x at proposed payment $290 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 1.29,
+        "minDscr": 1.25,
+        "paymentCents": 29037
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,086 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,086; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 208555,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 12 years of Canadian credit history.",
+       "lenderText": "Bureau history 150 months.",
+       "evidence": {
+        "months": 150
+       }
+      }
+     ],
+     "counterfactuals": [
+      "A higher amount is likely after another few months of cash flow at or above today's level."
+     ],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p20": {
+   "applicant": "ccb3150353f605886c5c1a8b8e93c9af5fc286dd36d758a4660b6a7cfa8db27e",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 5000000,
+     "aprBps": 899,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "PRODUCT_MAX",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "$50,000 is the most we lend for this product.",
+       "lenderText": "Request $60,000 exceeds product maximum $50,000.",
+       "evidence": {
+        "requestedCents": 6000000,
+        "maxCents": 5000000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 7.72x what the new payment needs.",
+       "lenderText": "DSCR 7.72x at proposed payment $1,038 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 7.72,
+        "minDscr": 1.2,
+        "paymentCents": 103768
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $6,468 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $6,468; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 646782,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 264 days of your usual spending.",
+       "lenderText": "264 days cash on hand; average balance $52,155.",
+       "evidence": {
+        "days": 264,
+        "avgBalanceCents": 5215469
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "approver": "lender",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 2000000,
+     "aprBps": 1399,
+     "termMonths": 36,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "PRODUCT_MAX",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "$20,000 is the most we lend for this product.",
+       "lenderText": "Request $60,000 exceeds product maximum $20,000.",
+       "evidence": {
+        "requestedCents": 6000000,
+        "maxCents": 2000000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 10.47x what the new payment needs.",
+       "lenderText": "DSCR 10.47x at proposed payment $683 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 10.47,
+        "minDscr": 1.3,
+        "paymentCents": 68346
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $6,468 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $6,468; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 646782,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "personal_loan",
+     "limitCents": 5000000,
+     "aprBps": 999,
+     "termMonths": 60,
+     "structure": "term",
+     "reasons": [
+      {
+       "code": "PRODUCT_MAX",
+       "direction": "negative",
+       "weight": 0.8,
+       "customerText": "$50,000 is the most we lend for this product.",
+       "lenderText": "Request $60,000 exceeds product maximum $50,000.",
+       "evidence": {
+        "requestedCents": 6000000,
+        "maxCents": 5000000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 7.54x what the new payment needs.",
+       "lenderText": "DSCR 7.54x at proposed payment $1,062 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 7.54,
+        "minDscr": 1.25,
+        "paymentCents": 106211
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $6,468 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $6,468; income CV 0.17.",
+       "evidence": {
+        "typicalPayCents": 646782,
+        "cadenceDays": 14,
+        "incomeCv": 0.17
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 264 days of your usual spending.",
+       "lenderText": "264 days cash on hand; average balance $52,155.",
+       "evidence": {
+        "days": 264,
+        "avgBalanceCents": 5215469
+       }
+      },
+      {
+       "code": "ESTABLISHED_CREDIT_HISTORY",
+       "direction": "positive",
+       "weight": 0.3,
+       "customerText": "You have 16 years of Canadian credit history.",
+       "lenderText": "Bureau history 200 months.",
+       "evidence": {
+        "months": 200
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  },
+  "apl_planted-p21": {
+   "applicant": "c1bdd2dea02ff2b0fc0fe1f2a7c22f514044f79410cce3db33dd3afa685ed545",
+   "decisions": {
+    "credit_union": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 200000,
+     "aprBps": 1299,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "NON_MEMBER_CAP",
+       "direction": "negative",
+       "weight": 0.85,
+       "customerText": "For new customers we start unsecured credit at up to $2,000.",
+       "lenderText": "Non-member revolving cap $2,000.",
+       "evidence": {
+        "capCents": 200000
+       }
+      },
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 31.24x what the new payment needs.",
+       "lenderText": "DSCR 31.24x at proposed payment $60 (minimum 1.20x).",
+       "evidence": {
+        "dscr": 31.24,
+        "minDscr": 1.2,
+        "paymentCents": 6000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,217 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,217; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 221709,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "GROWING_REVENUE",
+       "direction": "positive",
+       "weight": 0.45,
+       "customerText": "Your income has grown recently, up 16% on the three months before.",
+       "lenderText": "Income trend +16% (last 3 vs prior 3 months).",
+       "evidence": {
+        "trend": 0.16
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 155 days of your usual spending.",
+       "lenderText": "155 days cash on hand; average balance $15,255.",
+       "evidence": {
+        "days": 155,
+        "avgBalanceCents": 1525459
+       }
+      }
+     ],
+     "counterfactuals": [
+      "Banking with us for a while (deposits and everyday spending) could support a higher limit at review."
+     ],
+     "approver": "msr",
+     "flags": []
+    },
+    "fintech": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 300000,
+     "aprBps": 1999,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.65,
+       "customerText": "After your current bills, you'd have about 17.32x what the new payment needs.",
+       "lenderText": "DSCR 17.32x at proposed payment $90 (minimum 1.30x).",
+       "evidence": {
+        "dscr": 17.32,
+        "minDscr": 1.3,
+        "paymentCents": 9000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,217 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,217; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 221709,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "GROWING_REVENUE",
+       "direction": "positive",
+       "weight": 0.45,
+       "customerText": "Your income has grown recently, up 16% on the three months before.",
+       "lenderText": "Income trend +16% (last 3 vs prior 3 months).",
+       "evidence": {
+        "trend": 0.16
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "flags": []
+    },
+    "bank": {
+     "outcome": "approve",
+     "product": "credit_card",
+     "limitCents": 300000,
+     "aprBps": 2099,
+     "termMonths": null,
+     "structure": "revolving",
+     "reasons": [
+      {
+       "code": "STRONG_COVERAGE",
+       "direction": "positive",
+       "weight": 0.7,
+       "customerText": "After your current bills, you'd have about 20.82x what the new payment needs.",
+       "lenderText": "DSCR 20.82x at proposed payment $90 (minimum 1.25x).",
+       "evidence": {
+        "dscr": 20.82,
+        "minDscr": 1.25,
+        "paymentCents": 9000
+       }
+      },
+      {
+       "code": "STABLE_PAYROLL",
+       "direction": "positive",
+       "weight": 0.6,
+       "customerText": "Your pay arrives regularly, about $2,217 every 14 days.",
+       "lenderText": "Salaried; payroll every 14 days, typical $2,217; income CV 0.18.",
+       "evidence": {
+        "typicalPayCents": 221709,
+        "cadenceDays": 14,
+        "incomeCv": 0.18
+       }
+      },
+      {
+       "code": "GROWING_REVENUE",
+       "direction": "positive",
+       "weight": 0.45,
+       "customerText": "Your income has grown recently, up 16% on the three months before.",
+       "lenderText": "Income trend +16% (last 3 vs prior 3 months).",
+       "evidence": {
+        "trend": 0.16
+       }
+      },
+      {
+       "code": "NO_RETURNED_PAYMENTS",
+       "direction": "positive",
+       "weight": 0.4,
+       "customerText": "None of your payments bounced in the last year.",
+       "lenderText": "No NSF returns in 12 months.",
+       "evidence": {}
+      },
+      {
+       "code": "HEALTHY_CASH_BUFFER",
+       "direction": "positive",
+       "weight": 0.35,
+       "customerText": "Your balance would cover about 155 days of your usual spending.",
+       "lenderText": "155 days cash on hand; average balance $15,255.",
+       "evidence": {
+        "days": 155,
+        "avgBalanceCents": 1525459
+       }
+      }
+     ],
+     "counterfactuals": [],
+     "conditions": [
+      "Satisfactory receipt of all listed documents",
+      "Pre-authorized debit agreement signed before funding"
+     ],
+     "flags": []
+    }
+   }
+  }
+ }
+}

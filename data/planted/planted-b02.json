@@ -3,7 +3,7 @@
   "slug": "planted-b02",
   "kind": "business",
   "displayName": "Planted case B02",
-  "story": "Steady business, clean, just above the Lender tier limit.",
+  "story": "Steady business, clean, just above the Lending officer tier limit.",
   "province": "MB",
   "request": {
     "product": "business_term_loan",

@@ -37,8 +37,8 @@
     {
       "id": "b01",
       "kind": "business",
-      "story": "Steady business, clean, asking for exactly the Lender tier limit.",
-      "why": "Clean steady business; $50,000 is exactly the Lender tier ceiling.",
+      "story": "Steady business, clean, asking for exactly the Lending officer tier limit.",
+      "why": "Clean steady business; $50,000 is exactly the Lending officer tier ceiling.",
       "modes": {
         "credit_union": {
           "expected": {
@@ -92,7 +92,7 @@
     {
       "id": "b02",
       "kind": "business",
-      "story": "Steady business, clean, just above the Lender tier limit.",
+      "story": "Steady business, clean, just above the Lending officer tier limit.",
       "why": "Clean steady business; $55,000 needs the Branch Manager.",
       "modes": {
         "credit_union": {

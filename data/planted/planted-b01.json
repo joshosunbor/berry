@@ -3,7 +3,7 @@
   "slug": "planted-b01",
   "kind": "business",
   "displayName": "Planted case B01",
-  "story": "Steady business, clean, asking for exactly the Lender tier limit.",
+  "story": "Steady business, clean, asking for exactly the Lending officer tier limit.",
   "province": "QC",
   "request": {
     "product": "business_term_loan",
