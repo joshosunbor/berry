@@ -257,13 +257,13 @@ export default function MethodologyPage() {
                   <span className="font-semibold text-fg">In Berry ({r.berryUse.toLowerCase()}):</span> <span className="text-fg-2">{r.inBerry}</span>
                 </p>
                 {r.note && <p className="mt-1 text-sm text-fg-3">Note: {r.note}</p>}
-                <p className="mt-2 flex flex-wrap gap-x-3 text-xs text-fg-3">
-                  <a href={r.source.url} target="_blank" rel="noreferrer" className="text-fg-2 underline underline-offset-2 hover:text-fg">
+                <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-fg-3">
+                  <a href={r.source.url} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center text-fg-2 underline underline-offset-2 hover:text-fg">
                     Source: {r.source.name}
                   </a>
                   {r.source.kind !== "official" && <span>Not an official source ({r.source.kind})</span>}
                   {r.moreSources?.map((m) => (
-                    <a key={m.url} href={m.url} target="_blank" rel="noreferrer" className="text-fg-2 underline underline-offset-2 hover:text-fg">
+                    <a key={m.url} href={m.url} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center text-fg-2 underline underline-offset-2 hover:text-fg">
                       Also: {m.name}
                     </a>
                   ))}
