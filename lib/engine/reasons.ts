@@ -122,6 +122,12 @@ export const REASONS = {
         ? `Approval is likely for ${money(n(e, "maxAffordableCents"))} or less, or if your monthly cash left over rises.`
         : "Approval is more likely if your monthly cash left over rises or your existing payments go down.",
   },
+  BELOW_PRODUCT_MINIMUM: {
+    direction: "negative",
+    customer: (e) => `Right now we could lend less than this product's minimum of ${money(n(e, "minCents"))}.`,
+    lender: (e) => `Sized limit ${money(n(e, "limitCents"))} (${s(e, "basis")}) below product minimum ${money(n(e, "minCents"))}.`,
+    counterfactual: (e) => `Approval is more likely once your cash left over each month supports at least ${money(n(e, "minCents"))}, or for a smaller product.`,
+  },
   INCOME_TOO_VARIABLE: {
     direction: "negative",
     customer: () => "Your income changes a lot from month to month, so a fixed monthly payment would be hard to keep up in quiet months.",

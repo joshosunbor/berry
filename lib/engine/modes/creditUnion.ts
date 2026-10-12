@@ -194,6 +194,11 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
       dscr = coverageAt(f.avgMonthlyNetCents, f, payment)
     }
   }
+  // A cap (returned payments, non-member) can push the limit under what the product allows.
+  if (limit < terms.minCents || payment <= 0) {
+    const basis = f.nsf90 > 0 ? "recent returned payments" : "non-member cap"
+    return decline(product, [{ code: "BELOW_PRODUCT_MINIMUM", weight: 1, evidence: { limitCents: limit, minCents: terms.minCents, basis } }], CREDIT_UNION_INPUTS)
+  }
   if (limit < Math.min(requested, terms.maxCents) && !reasons.some((r) => r.code === "NON_MEMBER_CAP")) {
     reasons.push({ code: "LIMIT_REDUCED", weight: 0.85, evidence: { limitCents: limit, requestedCents: requested, basis: f.nsf90 > 0 ? "recent returned payments" : "debt service coverage" } })
   }

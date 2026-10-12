@@ -113,6 +113,18 @@ describe("Northgate (credit union): relationship, structure and authority", () =
     expect(r.limitCents).toBe(600_000) // 4 x $1,500 average net
     expect(r.conditions?.length).toBe(2)
   })
+  it("declines rather than approve below the product minimum after a returned-payment cap", () => {
+    // 4 x $1,500 net = $6,000 cap, under the $10,000 business term loan minimum
+    const r = cu({ nsf90: 1 }, { product: "business_term_loan", amountCents: 2_500_000, termMonths: 36 }, "business")
+    expect(r.outcome).toBe("decline")
+    expect(r.limitCents).toBe(0)
+    expect(codes(r)).toEqual(["BELOW_PRODUCT_MINIMUM"])
+  })
+  it("declines, without throwing, when the returned-payment cap rounds to $0", () => {
+    const r = cu({ nsf90: 1, avgMonthlyNetCents: 10_000 }, { product: "line_of_credit", amountCents: 500_000 })
+    expect(r.outcome).toBe("decline")
+    expect(r.paymentCents).toBeNull()
+  })
   it("names an approver for every approval", () => {
     expect(cu().approver?.id).toBe("msr")
     expect(cu({}, { amountCents: 1_500_000 }).approver?.id).toBe("lender")
