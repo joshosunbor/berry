@@ -50,6 +50,9 @@ test("accuracy page publishes results", async ({ page }) => {
 test("unknown applicant is a 404", async ({ page }) => {
   const res = await page.goto("/workbench/nobody")
   expect(res?.status()).toBe(404)
+  await expect(page.getByRole("heading", { level: 1, name: "This page could not be found." })).toBeVisible()
+  await expect(page.getByRole("navigation", { name: "Main" })).toBeVisible()
+  await expect(page.getByRole("link", { name: "Go to the workbench" })).toHaveAttribute("href", "/workbench")
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
