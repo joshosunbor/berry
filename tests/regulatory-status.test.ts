@@ -29,8 +29,11 @@ describe("regulatory status panel", () => {
     expect(rows.filter((r) => /consumer-driven|open banking/i.test(r.name + r.summary)).every((r) => r.status !== "Live")).toBe(true)
   })
 
-  it("marks the Real-Time Rail as Launching", () => {
-    expect(byId("rtr").status).toBe("Launching")
+  it("marks the Real-Time Rail as Launching, initial launch Q4 2026, sourced to Payments Canada", () => {
+    const r = byId("rtr")
+    expect(r.status).toBe("Launching")
+    expect(r.effective).toBe("Initial launch Q4 2026")
+    expect(r.source).toMatchObject({ url: "https://www.payments.ca/real-time-rail-payment-system", kind: "official" })
   })
 
   it("marks everything not confirmed from an official source as Illustrative", () => {
