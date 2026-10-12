@@ -59,6 +59,12 @@ describe("regulatory status panel", () => {
     expect(page).not.toMatch(/links to its official source/)
   })
 
+  it("the methodology page reads the planted-case count from the accuracy report", () => {
+    const page = readFileSync(path.resolve(import.meta.dirname, "../app/(app)/methodology/page.tsx"), "utf8")
+    expect(page).not.toMatch(/\b\d+ planted test cases/)
+    expect(page).toMatch(/totals\.cases/)
+  })
+
   it("cites the confirmed Consumer-Driven Banking Act facts", () => {
     expect(byId("cdb-act").effective).toMatch(/March 26, 2026/)
     expect(byId("cdb-consent-duration").summary).toMatch(/12 months/)

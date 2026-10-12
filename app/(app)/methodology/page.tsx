@@ -14,6 +14,7 @@ import { REGULATORY_STATUS, type RegulatoryRow } from "@/lib/regulatory/status"
 import { thresholdLabel } from "@/lib/threshold-labels"
 import { RETURN_CODES_SOURCE } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
+import accuracy from "@/public/accuracy.json"
 import { Card } from "@/components/ui/card"
 import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { LenderDot, Pill } from "@/components/ui/pill"
@@ -163,7 +164,7 @@ export default function MethodologyPage() {
             })}
           </div>
           <p>
-            Results on 36 planted test cases are published on the <Link href="/accuracy" className="underline underline-offset-2">accuracy page</Link>.
+            Results on {accuracy.totals.cases} planted test cases are published on the <Link href="/accuracy" className="underline underline-offset-2">accuracy page</Link>.
           </p>
         </Section>
 
