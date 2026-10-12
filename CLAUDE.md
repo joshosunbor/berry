@@ -1,8 +1,8 @@
 # Berry — Build Brief
 
-> **Product name: Berry.** Use it on its own; never "Berry Finance" or "Berry Bank", because Berry is the decision and operations platform, not a lender. Before going public, check the name against the CIPO trademark database, the .ca/.com domains and LinkedIn, and pick a repo/domain such as `berry-lending` if plain "berry" is taken.
+> **Product name: Berry.** Use it on its own; never "Berry Finance" or "Berry Bank", because Berry is the decision and operations platform, not a lender.
 
-Drop this file into the root of a new repo as `CLAUDE.md`. It is written for Claude Code to build from.
+The project brief. It is written for Claude Code to build from.
 
 ---
 
@@ -37,7 +37,7 @@ It demonstrates, to Canadian credit unions, banks and fintechs, that the author 
 
 ### Non-negotiables
 1. **All data is synthetic.** No real people, no real bank connections.
-2. **No real institution names, logos or branding** anywhere — product, screenshots, README, LinkedIn post. Only Northgate, Kite and Aspen (fictional), with a visible "fictional institutions, synthetic data" note in the footer and README.
+2. **No real institution names, logos or branding** anywhere — product, screenshots, README and anything published about it. Only Northgate, Kite and Aspen (fictional), with a visible "fictional institutions, synthetic data" note in the footer and README.
 3. **No real towns, addresses or personal details of the author.** Applicants use fictional names and, at most, a province. The author's location appears nowhere.
 4. **Money decisions are deterministic code with unit tests.** AI never sets a limit, price or approval.
 5. **Every decision is explainable** in plain language a member or business owner would understand.
@@ -54,7 +54,7 @@ Apply → Verify (KYC/KYB) → Decide → Approve (authority) → Fund (AFT)
 
 ## 2. Stack
 
-- **Next.js (App Router) + TypeScript**, deployed on **Vercel**
+- **Next.js (App Router) + TypeScript**, deployed on **Fly.io** (standalone Docker image) at https://berry-lending.fly.dev
 - **Tailwind CSS** + **shadcn/ui**, **lucide-react** icons
 - **Framer Motion** for restrained motion on the landing page only
 - **Recharts** for cash-flow charts
@@ -314,7 +314,7 @@ Left: story and key features. Centre: 12-month cash-flow chart (inflow/outflow, 
 Tabs: **Verification · Decision · Recommendations · Repayment (PAD) · Disbursement (AFT) · Servicing · Credit memo · Inputs used**. Button: **Compare all three lenders** → `/compare/[id]`.
 
 ### 7.5 Compare (`/compare/[id]`)
-Three columns, mode colours, differences highlighted. The screenshot for LinkedIn.
+Three columns, mode colours, differences highlighted. The headline screenshot.
 
 ### 7.6 Methodology and Accuracy
 - `/methodology`: features, each mode's rules, sources cited, known limitations, what would change in production.
@@ -351,46 +351,8 @@ If a source can't be reached or confirmed, implement the feature as **illustrati
 
 ---
 
-## 10. Build phases (7-day plan)
+## 10. Working rules
 
-Work one phase at a time: plan → approve → build → run tests → click through in the browser → commit. Where marked **parallel**, run a second Claude Code session in its own git worktree.
-
-- **Day 0 (evening):** create the repo, add this file as `CLAUDE.md`, run the §12 prompt, approve the source check, design tokens and folder structure.
-- **Day 1: Foundations + Engine.** Scaffold, schemas, seeded generator, the 10 applicants; features, income patterns, three modes, authority routing, explanations, recommendations, unit tests. **Parallel:** landing page hero and three-lender comparison, using mock data.
-- **Day 2: Evaluation + Workbench, ship v1.** Planted cases, accuracy runner, fairness test, CI; applicant list, applicant file, charts, decision panel, compare view. Deploy to Vercel with the hero on the front. **First LinkedIn post tonight.**
-- **Day 3: Onboarding + Canadian modules.** Application flow, consent screen and dashboard, synthetic KYC/KYB; PAD schedule, AFT export, FINTRAC flag, NSF rules, deposit protection, methodology page, Regulatory status panel.
-- **Day 4: Money movement.** Ledger, rail-aware funding (AFT / e-Transfer / RTR simulated) with account verification, collections, returns, recovery playbook, reconciliation, time simulator, credit-building path.
-- **Day 5: Operations.** Ops Console queues, SLAs, assignment and capacity, playbooks, maker-checker, audit trail, policy versioning, communications, ops dashboard. **Parallel:** AI memo (template, optional Claude route with validation, draft/review UX).
-- **Day 6: Landing page complete + polish.** Lifecycle strip, ops glimpse, six Built for Canada tiles, responsible-by-design and accuracy, motion. No status badges on the landing page. Lighthouse and accessibility pass.
-- **Day 7: Verify and ship.** Fresh Claude Code session (no build history) reviews the engine, money logic and Regulatory status panel against §9 sources and the tests; fix findings; README, screenshots, demo GIF, custom domain (optional). **Second LinkedIn post (the operations story).**
-
-**Speed rules:** never skip the accuracy runner or the money-movement tests to save time; cut scope (fairness test, communications, time simulator) before cutting verification.
-
----
-
-## 11. LinkedIn launch (after shipping)
-
-**Assets:** the compare screenshot (Hollis Family Farm, three answers), an Ops Console screenshot, a 30-second screen recording (decision → funding → a failed payment recovered → dashboard), live link.
-
-**Post draft:**
-> One applicant. Three lenders. Three different answers.
->
-> A grain farmer earns most of the year's income in a few months after harvest. A bank's policy reads that as irregular income and declines. A fintech approves a small, safe line. A credit union that knows farming offers a seasonal operating line, repaid after harvest.
->
-> None of them is wrong. They just read the same cash flow differently. I built Berry to make those differences visible and to explain every decision in plain language, for farmers, salaried workers, gig workers, newcomers and small businesses.
->
-> And it doesn't stop at "approved". It follows the whole loan: verification, funding by AFT file, pre-authorized debit collections, failed-payment recovery and reconciliation, all run from an operations console with work queues, service levels and a live dashboard for time-to-funding, cure rates and cost per loan.
->
-> It's built for where Canadian banking is going: consent-first open banking (the framework is in draft), funding rails including a simulation of the Real-Time Rail now launching, and a credit-building path for newcomers with thin files.
->
-> Under the hood: cash-flow underwriting, delegated lending authority and FINTRAC flags. Decisions are deterministic and tested against planted cases, with results published. AI drafts the credit memo; the engine and a human make the decision.
->
-> Fictional institutions, synthetic data. Built with Claude Code.
->
-> [link]
-
----
-
-## 12. Opening prompt for Claude Code
-
-> Read `CLAUDE.md` in full. Before writing any code, fetch and summarize the sources in §9 and tell me which Canadian rules you could confirm and which must be labelled illustrative. Then propose the design tokens (mode colours, type scale, spacing) and folder structure, and wait for my approval. After approval, start Phase 1: scaffold the Next.js app, set up Tailwind and shadcn/ui, write the Zod schemas, and build the seeded synthetic data generator with the 10 required applicants. Keep the lifecycle in §1 in mind when designing schemas so onboarding, servicing and operations data fit later without rework. Commit after each phase and show me what changed.
+- Work one change at a time: plan → approve → build → run tests → click through in the browser → commit.
+- Never skip the accuracy runner or the money-movement tests to save time; cut scope before cutting verification.
+- Re-check every §9 source before a release; update `/data/regulatory-status.json` and its "as of" date.
