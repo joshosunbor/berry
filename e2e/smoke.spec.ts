@@ -8,6 +8,18 @@ function watchConsole(page: Page): string[] {
   return errors
 }
 
+test("every page is served with security headers and without x-powered-by", async ({ request }) => {
+  for (const path of ["/", "/workbench", "/methodology"]) {
+    const res = await request.get(path)
+    const h = res.headers()
+    expect(h["x-powered-by"], path).toBeUndefined()
+    expect(h["strict-transport-security"], path).toContain("max-age=")
+    expect(h["x-content-type-options"], path).toBe("nosniff")
+    expect(h["content-security-policy"], path).toContain("frame-ancestors 'none'")
+    expect(h["content-security-policy"], path).not.toContain("unsafe-eval")
+  }
+})
+
 test("landing → workbench → applicant → compare", async ({ page }) => {
   const errors = watchConsole(page)
 
