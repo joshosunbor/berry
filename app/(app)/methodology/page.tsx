@@ -262,6 +262,11 @@ export default function MethodologyPage() {
                     Source: {r.source.name}
                   </a>
                   {r.source.kind !== "official" && <span>Not an official source ({r.source.kind})</span>}
+                  {r.moreSources?.map((m) => (
+                    <a key={m.url} href={m.url} target="_blank" rel="noreferrer" className="text-fg-2 underline underline-offset-2 hover:text-fg">
+                      Also: {m.name}
+                    </a>
+                  ))}
                   <span>Checked {longDate(r.asOf)}</span>
                 </p>
               </Card>

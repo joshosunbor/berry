@@ -65,6 +65,22 @@ describe("regulatory status panel", () => {
     expect(page).toMatch(/totals\.cases/)
   })
 
+  it("every claim in a row is backed by one of its sources", () => {
+    const urls = (id: string) => [byId(id).source.url, ...(byId(id).moreSources ?? []).map((s) => s.url)]
+    // Standard 005 defines more record types than the four Berry uses.
+    expect(byId("standard-005").summary).toMatch(/including/)
+    // CDIC membership is on the members list, not "What's covered".
+    expect(urls("cdic")).toContain("https://www.cdic.ca/depositors/list-of-members/")
+    // Provincial limits come from each insurer, and PEI's is per member, not per category.
+    const cu = byId("cu-deposit-insurance")
+    expect(urls("cu-deposit-insurance")).toEqual(expect.arrayContaining(["https://cudgc.ab.ca/faq/", "https://www.peicudic.com/coverage.php"]))
+    expect(cu.summary).toMatch(/per member in Prince Edward Island/)
+    // RTR phases and participants are in the quarterly update, not on the RTR page.
+    expect(urls("rtr")).toContain("https://www.payments.ca/canadas-real-time-rail-quarterly-update-jude-pinto-2026-q3")
+    // A 2024 launch release doesn't show the program still runs today.
+    expect(byId("equifax-gccf").note).toMatch(/not re-confirmed/i)
+  })
+
   it("cites the confirmed Consumer-Driven Banking Act facts", () => {
     expect(byId("cdb-act").effective).toMatch(/March 26, 2026/)
     expect(byId("cdb-consent-duration").summary).toMatch(/12 months/)

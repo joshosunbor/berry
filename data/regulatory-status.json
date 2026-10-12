@@ -36,14 +36,14 @@
       "id": "standard-005",
       "name": "Payments Canada Standard 005: AFT file format",
       "status": "Live",
-      "summary": "Fixed-width file format for automated funds transfer: header (A), credit (C), debit (D) and trailer (Z) records of 1,464 characters, encoded in EBCDIC.",
+      "summary": "Fixed-width file format for automated funds transfer, encoded in EBCDIC, with record types including header (A), credit (C), debit (D) and trailer (Z) records of 1,464 characters. The standard defines others that Berry doesn’t use.",
       "effective": "Amendment 23 effective July 22, 2024",
       "source": {
         "name": "Payments Canada, Standard 005 (PDF)",
         "url": "https://www.payments.ca/sites/default/files/standard005eng.pdf",
         "kind": "official"
       },
-      "asOf": "2026-10-11",
+      "asOf": "2026-10-12",
       "berryUse": "Simulated",
       "inBerry": "Berry generates a sample disbursement file in the A, C and Z layouts from the standard, in ASCII rather than EBCDIC. Illustrative: not for submission.",
       "note": "Amounts in cents and the mandatory flag on some credit-record fields are inferred from the standard's sample and tables, not stated outright."
@@ -88,24 +88,68 @@
         "url": "https://www.cdic.ca/your-coverage/whats-covered/",
         "kind": "official"
       },
-      "asOf": "2026-10-11",
+      "asOf": "2026-10-12",
       "berryUse": "Context only",
-      "inBerry": "Shown as context for deposit protection at Aspen Bank."
+      "inBerry": "Shown as context for deposit protection at Aspen Bank.",
+      "moreSources": [
+        {
+          "name": "CDIC, list of member institutions",
+          "url": "https://www.cdic.ca/depositors/list-of-members/",
+          "kind": "official"
+        }
+      ]
     },
     {
       "id": "cu-deposit-insurance",
       "name": "Provincial credit union deposit insurance",
       "status": "Live",
-      "summary": "Deposits at provincially regulated credit unions are protected by the deposit insurer of the credit union's province; coverage differs by province (confirmed limits range from $250,000 per category to unlimited).",
+      "summary": "Deposits at provincially regulated credit unions are protected by the deposit insurer of the credit union’s province, not CDIC. Coverage differs by province: confirmed limits range from $250,000 (per category, or per member in Prince Edward Island) to unlimited.",
       "source": {
         "name": "CDIC, glossary: credit unions",
         "url": "https://www.cdic.ca/glossary/",
         "kind": "official"
       },
-      "asOf": "2026-10-11",
+      "asOf": "2026-10-12",
       "berryUse": "Context only",
       "inBerry": "Northgate is described as a provincially regulated credit union whose coverage depends on its province; a per-province table shows only confirmed limits, with the rest marked Illustrative.",
-      "note": "BC, Ontario and Quebec limits could not be read from the official sites (access blocked) and are marked Illustrative in the table."
+      "note": "BC, Ontario and Quebec limits could not be read from the official sites (access blocked) and are marked Illustrative in the table.",
+      "moreSources": [
+        {
+          "name": "Alberta: Credit Union Deposit Guarantee Corporation",
+          "url": "https://cudgc.ab.ca/faq/",
+          "kind": "official"
+        },
+        {
+          "name": "Manitoba: Deposit Guarantee Corporation of Manitoba",
+          "url": "https://dgcm.ca/",
+          "kind": "official"
+        },
+        {
+          "name": "New Brunswick: Credit Union Deposit Insurance Corporation",
+          "url": "https://nbcudic.ca/deposit-protection",
+          "kind": "official"
+        },
+        {
+          "name": "Newfoundland and Labrador: Credit Union Deposit Guarantee Corporation",
+          "url": "https://www.cudgcnl.com/?p=57",
+          "kind": "official"
+        },
+        {
+          "name": "Nova Scotia: Credit Union Deposit Insurance Corporation",
+          "url": "https://www.nscudic.org/coverage/faq/",
+          "kind": "official"
+        },
+        {
+          "name": "Prince Edward Island: Credit Union Deposit Insurance Corporation",
+          "url": "https://www.peicudic.com/coverage.php",
+          "kind": "official"
+        },
+        {
+          "name": "Saskatchewan: Credit Union Deposit Guarantee Corporation",
+          "url": "https://cudgc.sk.ca/the-guarantee/",
+          "kind": "official"
+        }
+      ]
     },
     {
       "id": "cdb-act",
@@ -177,9 +221,16 @@
         "url": "https://www.payments.ca/real-time-rail-payment-system",
         "kind": "official"
       },
-      "asOf": "2026-10-10",
+      "asOf": "2026-10-12",
       "berryUse": "Simulated",
-      "inBerry": "Funding by Real-Time Rail is simulated. Lenders cannot fund on it today."
+      "inBerry": "Funding by Real-Time Rail is simulated. Lenders cannot fund on it today.",
+      "moreSources": [
+        {
+          "name": "Payments Canada, Q3 2026 quarterly update (participants and phases)",
+          "url": "https://www.payments.ca/canadas-real-time-rail-quarterly-update-jude-pinto-2026-q3",
+          "kind": "official"
+        }
+      ]
     },
     {
       "id": "rtr-milestones",
@@ -207,9 +258,10 @@
         "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/",
         "kind": "company"
       },
-      "asOf": "2026-10-10",
+      "asOf": "2026-10-12",
       "berryUse": "Simulated",
-      "inBerry": "The 'foreign credit report available' toggle shows how an imported report changes each decision."
+      "inBerry": "The 'foreign credit report available' toggle shows how an imported report changes each decision.",
+      "note": "The launch is confirmed from Equifax Canada’s October 2024 release; that the program still runs today is not re-confirmed."
     },
     {
       "id": "equifax-coverage",

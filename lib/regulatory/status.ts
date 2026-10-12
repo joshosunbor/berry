@@ -12,6 +12,8 @@ export const BerryUse = z.enum(["Applied", "Simulated", "Context only"])
 /** Official: a regulator, government body or Payments Canada. Otherwise a company's own page, a press report, or a third party's copy. */
 export const SourceKind = z.enum(["official", "company", "press", "third-party copy"])
 
+const Source = z.object({ name: z.string().min(1), url: z.url().startsWith("https://"), kind: SourceKind })
+
 export const RegulatoryRow = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   name: z.string().min(1),
@@ -20,7 +22,9 @@ export const RegulatoryRow = z.object({
   summary: z.string().min(1),
   /** Effective date or stage, as the source states it. Omitted if not confirmed. */
   effective: z.string().optional(),
-  source: z.object({ name: z.string().min(1), url: z.url().startsWith("https://"), kind: SourceKind }),
+  source: Source,
+  /** Further sources for claims the main one doesn't cover. */
+  moreSources: z.array(Source).optional(),
   /** Date this row was last checked against its source. */
   asOf: z.iso.date(),
   berryUse: BerryUse,
