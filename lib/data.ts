@@ -11,6 +11,7 @@ import { Rng, hashSeed } from "@/lib/rng"
 import { verifyAccount, type AccountVerificationOutcome } from "@/lib/servicing/funding"
 import type { MetricSources } from "@/lib/ops/metrics"
 import type { PolicyCase } from "@/lib/ops/policy"
+import { member } from "@/lib/ops/config"
 import { buildItems, runTeam, type OpsItem } from "@/lib/ops/queues"
 import type { AuditEvent } from "@/lib/schemas"
 import { SERVICING } from "@/lib/servicing/config"
@@ -209,7 +210,10 @@ const opsItemsFor = (views: LoanView[]) =>
 export function opsDecisionsFrom(items: OpsItem[]): OpsDecisions {
   const hardship: OpsDecisions["hardship"] = {}
   for (const it of items) {
-    if (it.queue === "hardship" && it.completedAt && it.approverId) hardship[it.subject.id] = { on: it.completedAt.slice(0, 10), approved: true, by: it.approverId }
+    if (it.queue === "hardship" && it.completedAt && it.approverId) {
+      const m = member(it.approverId)!
+      hardship[it.subject.id] = { on: it.completedAt.slice(0, 10), approved: true, by: `${m.name}, ${m.role.replace("_", " ")}` }
+    }
   }
   return { hardship }
 }

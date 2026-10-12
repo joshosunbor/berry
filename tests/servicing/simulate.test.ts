@@ -7,7 +7,7 @@ import { RETURN_CODES, type ReturnCode } from "@/lib/schemas"
 import { SERVICING } from "@/lib/servicing/config"
 import { account } from "@/lib/servicing/ledger"
 import { planRetry, RECOVERY_PATH, RETURNED_BEFORE_SETTLEMENT } from "@/lib/servicing/recovery"
-import { simulateBook, type BookResult, type LoanResult, type LoanSetup } from "@/lib/servicing/simulate"
+import { daysBetween, simulateBook, type BookResult, type LoanResult, type LoanSetup } from "@/lib/servicing/simulate"
 import { CONFIGS } from "@/lib/engine/config"
 import { expectBalanced } from "./helpers"
 
@@ -120,6 +120,28 @@ describe("servicing simulator: the three loan books", () => {
     expect(p.events.find((e) => e.type === "payments_deferred")!.date).toBe(approved.date)
     expect(p.statusTimeline.find((t) => t.status === "hardship")!.date).toBe(approved.date)
     expect(approved.amountCents).toBe(item.approval!.amountCents)
+  })
+
+  it("Petalwick: a deferral moves the schedule back, with no lump catch-up debit afterwards", () => {
+    const p = loan("loan_petalwick-florals-cu")
+    const approvedOn = p.events.find((e) => e.type === "hardship_approved")!.date
+    const largest = Math.max(...p.setup.schedule.map((d) => d.amountCents))
+    const after = p.attempts.filter((a) => a.sentOn > approvedOn)
+    expect(after.length).toBeGreaterThan(0)
+    for (const a of after) expect(a.amountCents, a.id).toBeLessThanOrEqual(largest)
+    // Nothing is collected during the three months.
+    const resumed = p.events.find((e) => e.type === "debits_resumed" && e.date > approvedOn)!.date
+    expect(after.every((a) => a.sentOn >= resumed)).toBe(true)
+    expect(daysBetween(approvedOn, resumed)).toBeGreaterThanOrEqual(89)
+  })
+
+  it("Petalwick: a payment missed after the deferral ages again", () => {
+    const p = loan("loan_petalwick-florals-cu")
+    const lastN = Math.max(...p.setup.schedule.map((d) => d.n))
+    const script = { returns: [...p.setup.script!.returns, { n: lastN - 1, attempt: 1, code: "901" as const }, { n: lastN - 1, attempt: 2, code: "901" as const }] }
+    const r = simulateBook("northgate", "credit_union", [{ ...p.setup, script }], "2029-12-31").loans[0]
+    const end = r.events.find((e) => e.type === "debits_resumed" && e.text.startsWith("Deferral ended"))!.date
+    expect(r.statusTimeline.some((t) => t.date > end && t.status === "delinquent")).toBe(true)
   })
 
   it("Hollis at Kite: NSF on a credit union account uses the illustrative provincial fee", () => {

@@ -156,7 +156,8 @@ interface Item {
   attempts: number
   state: "open" | "in_flight" | "paid" | "held"
   firstFailedOn?: string
-  deferred?: boolean
+  /** Moved to the end of the loan by a hardship deferral: collected as a regular payment, not a retry. */
+  rescheduled?: boolean
 }
 
 interface Posting {
@@ -168,6 +169,12 @@ interface Posting {
 
 const addDays = (d: string, n: number) => new Date(Date.parse(`${d}T00:00:00Z`) + n * 86_400_000).toISOString().slice(0, 10)
 const daysBetween = (a: string, b: string) => Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86_400_000)
+/** Same day `n` months later, or the month's last day when it's shorter. */
+const addMonths = (d: string, n: number) => {
+  const [y, m, day] = d.split("-").map(Number)
+  const lastDay = new Date(Date.UTC(y, m - 1 + n + 1, 0)).getUTCDate()
+  return new Date(Date.UTC(y, m - 1 + n, Math.min(day, lastDay))).toISOString().slice(0, 10)
+}
 
 function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, postings: Posting[]): LoanResult {
   const events: LoanEvent[] = []
@@ -265,6 +272,7 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
     }
     for (const it of f.items) {
       it.attempts++
+      it.rescheduled = false
       it.firstFailedOn ??= day
       openCure(it)
     }
@@ -328,14 +336,33 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       return
     }
     const moved = deferrable(hardshipRequestedOn)
-    hardshipUntil = addDays(day, 90)
+    hardshipUntil = addMonths(day, 3)
     events.push({ date: day, type: "hardship_approved", amountCents: moved.reduce((t, it) => t + it.amountCents, 0), text: `Deferral signed off by a second person (${d.by}, maker-checker). Debits pause for 3 months.` })
-    for (const it of items.filter((x) => x.state === "open" || x.state === "held")) {
-      it.state = "open"
-      it.deferred = true
-      if (it.dueOn < hardshipUntil) it.dueOn = hardshipUntil
+    // Every payment still to come moves back three months, keeping its amount.
+    // Missed payments move to the end of the loan, one per period, so nothing
+    // is collected as a lump when the deferral ends.
+    const unpaid = items.filter((x) => x.state === "open" || x.state === "held").sort((a, b) => a.n - b.n)
+    const missed = unpaid.filter((x) => x.scheduledOn < day)
+    const upcoming = unpaid.filter((x) => x.scheduledOn >= day)
+    for (const it of upcoming) {
+      it.scheduledOn = addMonths(it.scheduledOn, 3)
+      it.dueOn = it.scheduledOn
     }
-    events.push({ date: day, type: "payments_deferred", text: `Payments due before ${hardshipUntil} move to ${hardshipUntil}.` })
+    const dates = items.map((x) => x.scheduledOn).sort()
+    const gapDays = dates.length > 1 ? daysBetween(dates[dates.length - 2], dates[dates.length - 1]) : 30
+    let last = dates[dates.length - 1] < hardshipUntil ? hardshipUntil : dates[dates.length - 1]
+    for (const it of missed) {
+      last = gapDays >= 28 && gapDays <= 31 ? addMonths(last, 1) : addDays(last, gapDays)
+      it.scheduledOn = last
+      it.dueOn = last
+      it.state = "open"
+      it.rescheduled = true
+    }
+    events.push({
+      date: day,
+      type: "payments_deferred",
+      text: `Payments from ${day} move back three months; ${missed.length ? `${missed.length} missed payment(s) move to the end of the loan` : "no missed payments to move"}. Nothing is collected until ${hardshipUntil}.`,
+    })
     setStatus(day, "hardship", "Hardship deferral approved.")
   }
 
@@ -397,7 +424,7 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
         sentOn: day,
         amountCents: amount,
         items: due.map((it) => it.id),
-        isRetry: due.some((it) => it.attempts > 0),
+        isRetry: due.some((it) => it.attempts > 0 && !it.rescheduled),
         outcome: "settled",
       }
       attempts.push(attempt)
@@ -452,7 +479,10 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
     // A payment is past due from its scheduled date once it has failed, or once that date has passed unpaid.
     // A retry in flight is still past due until it settles.
     const overdue = items.filter(
-      (it) => !it.deferred && it.scheduledOn < day && (((it.state === "open" || it.state === "held") && (it.attempts > 0 || it.dueOn < day)) || (it.state === "in_flight" && it.attempts > 0)),
+      (it) => {
+        const failed = it.attempts > 0 && !it.rescheduled
+        return it.scheduledOn < day && (((it.state === "open" || it.state === "held") && (failed || it.dueOn < day)) || (it.state === "in_flight" && failed))
+      },
     )
     const oldest = overdue.length ? overdue.reduce((a, b) => (a.scheduledOn < b.scheduledOn ? a : b)) : null
     const dpd = oldest ? daysBetween(oldest.scheduledOn, day) : 0
