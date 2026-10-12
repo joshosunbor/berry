@@ -283,7 +283,7 @@ export default function MethodologyPage() {
             <li>Business days are weekdays; statutory holidays are not modelled.</li>
             <li>Servicing is simulated: settlement and return timing, retry policy by return reason, interest accrual and the credit union NSF fee are illustrative.</li>
             <li>Three provinces&apos; credit union deposit insurance limits could not be read from the official sites and are shown as Illustrative.</li>
-            <li>In production: real consented data under an accredited framework, bureau data alongside cash flow, model monitoring, adverse-action notices reviewed by compliance, and human review of referrals and exceptions.</li>
+            <li>In production: real consented data, after accreditation under the consumer-driven banking framework, bureau data alongside cash flow, model monitoring, adverse-action notices reviewed by compliance, and human review of referrals and exceptions.</li>
           </ul>
         </Section>
       </div>

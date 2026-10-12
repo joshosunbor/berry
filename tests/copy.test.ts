@@ -11,7 +11,7 @@ import { describe, expect, it } from "vitest"
  * fine. e2e/smoke.spec.ts checks the rendered pages too.
  */
 
-const BANNED = /\b(compliant|compliance-certified|certified|approved by)\b/i
+const BANNED = /\b(compliant|compliance-certified|certified|approved by|trusted by|our partners?)\b|(?<!\bnot )\baccredited\b/i
 const root = path.resolve(__dirname, "..")
 
 const USER_FACING = [
@@ -19,6 +19,9 @@ const USER_FACING = [
   "content",
   "lib/landing",
   "components/berry",
+  "components/landing",
+  "components/site",
+  "lib/ops",
   "lib/engine/reasons.ts",
   "lib/engine/products.ts",
   "lib/engine/fintrac.ts",
@@ -62,6 +65,15 @@ describe("user-facing copy makes no regulatory claims", () => {
     expect(BANNED.test("Sign-off: Branch Manager")).toBe(false)
     expect(BANNED.test(stripComments("// never say compliant\nconst x = 1"))).toBe(false)
     expect(BANNED.test(stripComments('const s = "compliant"'))).toBe(true)
+    // Implied standing or customers.
+    expect(BANNED.test("Trusted by 40 credit unions")).toBe(true)
+    expect(BANNED.test("Berry is accredited under the framework")).toBe(true)
+    expect(BANNED.test("Berry is not accredited")).toBe(false)
+    expect(BANNED.test("Built with our partners")).toBe(true)
+  })
+
+  it("covers the landing page and site chrome", () => {
+    for (const dir of ["components/landing", "components/site", "lib/ops"]) expect(USER_FACING, dir).toContain(dir)
   })
 
   const all = USER_FACING.flatMap(files)
