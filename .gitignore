@@ -51,3 +51,6 @@ next-env.d.ts
 
 # Claude Code agent worktrees
 .claude/worktrees/
+
+# Design handoffs (reference only; not part of the app)
+/design/

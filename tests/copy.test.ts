@@ -16,6 +16,8 @@ const root = path.resolve(__dirname, "..")
 
 const USER_FACING = [
   "app",
+  "content",
+  "lib/landing",
   "components/berry",
   "lib/engine/reasons.ts",
   "lib/engine/products.ts",

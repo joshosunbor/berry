@@ -17,8 +17,8 @@ import { simulateBook, type BookResult, type LoanSetup, type Script } from "./si
 export const FUNDING_INITIATED_AT = "2026-10-06T10:00"
 /** A close match on an instant rail waits for a person to confirm the payee (see the Payee confirmation queue). */
 export const FUNDING_AFTER_PAYEE_CONFIRMATION = "2026-10-06T11:30"
-/** Twelve months of servicing after funding. */
-export const HORIZON = "2027-10-06"
+/** Servicing runs from funding through the end of December 2027, so every seasonal line completes its first season. */
+export const HORIZON = "2027-12-31"
 
 const SHORT: Record<Mode, string> = { credit_union: "cu", fintech: "kite", bank: "aspen" }
 export const loanIdFor = (slug: string, mode: Mode) => `loan_${slug}-${SHORT[mode]}`

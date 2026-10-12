@@ -473,7 +473,7 @@ export function ServicingTab({ loans }: { loans: LoanSummary[] }) {
     <div className={card}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h3 className="font-semibold">Servicing at {MODE_META[mode].institution}</h3>
-        <Illustrative label="Simulated" why="Collections, returns and recovery are simulated twelve months forward on synthetic data." />
+        <Illustrative label="Simulated" why="Collections, returns and recovery are simulated from funding to the end of December 2027 on synthetic data." />
       </div>
       <ClockControl className="mt-3" />
       <dl className="num mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4">

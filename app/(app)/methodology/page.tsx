@@ -182,7 +182,7 @@ export default function MethodologyPage() {
 
         <Section id="money" title="Money movement">
           <p>
-            Every approved loan is serviced in a simulation that runs twelve months forward. Money is kept in a double-entry ledger in whole cents: every
+            Every approved loan is serviced in a simulation that runs from funding to the end of December 2027. Money is kept in a double-entry ledger in whole cents: every
             entry&apos;s debits equal its credits, entries are never edited, and corrections are reversing entries. Funding goes by AFT (next business
             day), Interac e-Transfer, or the Real-Time Rail, which is <span className="font-medium">simulated — RTR launching</span>; instant rails need a
             simulated account check first.
