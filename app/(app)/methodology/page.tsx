@@ -237,8 +237,8 @@ export default function MethodologyPage() {
 
         <Section id="regulatory-status" title="Regulatory status">
           <p>
-            Status as of <span className="font-semibold text-fg">{longDate(status.asOf)}</span>. Each row links to its official source and shows when it was last
-            checked. <span className="font-semibold text-fg">Live</span> means in force; <span className="font-semibold text-fg">In draft</span> means proposed or passed but
+            Status as of <span className="font-semibold text-fg">{longDate(status.asOf)}</span>. Each row links to its source and shows when it was last checked. Sources that aren&apos;t a regulator, government body or Payments
+            Canada are marked as such. <span className="font-semibold text-fg">Live</span> means in force; <span className="font-semibold text-fg">In draft</span> means proposed or passed but
             not in force; <span className="font-semibold text-fg">Launching</span> means announced and rolling out; <span className="font-semibold text-fg">Illustrative</span>{" "}
             means Berry could not confirm it from an official source.
           </p>
@@ -259,6 +259,7 @@ export default function MethodologyPage() {
                   <a href={r.source.url} target="_blank" rel="noreferrer" className="text-fg-2 underline underline-offset-2 hover:text-fg">
                     Source: {r.source.name}
                   </a>
+                  {r.source.kind !== "official" && <span>Not an official source ({r.source.kind})</span>}
                   <span>Checked {longDate(r.asOf)}</span>
                 </p>
               </Card>

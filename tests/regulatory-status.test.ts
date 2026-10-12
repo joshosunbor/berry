@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs"
+import path from "node:path"
 import { describe, expect, it } from "vitest"
 import { REGULATORY_STATUS } from "@/lib/regulatory/status"
 
@@ -9,7 +11,7 @@ const byId = (id: string) => {
 }
 
 describe("regulatory status panel", () => {
-  it("every row has an official https source and an as-of date no later than the panel's", () => {
+  it("every row has an https source and an as-of date no later than the panel's", () => {
     for (const r of rows) {
       expect(r.source.url, r.id).toMatch(/^https:\/\//)
       expect(r.asOf <= REGULATORY_STATUS.asOf, r.id).toBe(true)
@@ -48,6 +50,13 @@ describe("regulatory status panel", () => {
   it("makes no ISO 20022 claim that Standard 007 doesn't make", () => {
     const r = byId("return-codes")
     expect(`${r.summary} ${r.inBerry} ${r.note ?? ""}`).not.toMatch(/ISO 20022 returns carry|no separate ISO reason-code mapping/i)
+  })
+
+  it("marks every source that isn't a regulator, government body or Payments Canada", () => {
+    const official = /^https:\/\/(www\.)?(canada\.ca|payments\.ca|fintrac-canafe\.canada\.ca|cdic\.ca|laws-lois\.justice\.gc\.ca|gazette\.gc\.ca)\//
+    for (const r of rows) expect(r.source.kind === "official", `${r.id}: ${r.source.url}`).toBe(official.test(r.source.url))
+    const page = readFileSync(path.resolve(import.meta.dirname, "../app/(app)/methodology/page.tsx"), "utf8")
+    expect(page).not.toMatch(/links to its official source/)
   })
 
   it("cites the confirmed Consumer-Driven Banking Act facts", () => {

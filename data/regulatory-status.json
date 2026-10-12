@@ -9,7 +9,8 @@
       "effective": "In force March 12, 2026",
       "source": {
         "name": "Financial Consumer Agency of Canada, news release",
-        "url": "https://www.canada.ca/en/financial-consumer-agency/news/2026/03/new-nsf-fee-regulations-bring-down-cost-of-banking-for-canadians.html"
+        "url": "https://www.canada.ca/en/financial-consumer-agency/news/2026/03/new-nsf-fee-regulations-bring-down-cost-of-banking-for-canadians.html",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Applied",
@@ -23,7 +24,8 @@
       "effective": "Amendment 13 effective July 27, 2026",
       "source": {
         "name": "Payments Canada, Rule H1 (PDF)",
-        "url": "https://www.payments.ca/sites/default/files/h1eng.pdf"
+        "url": "https://www.payments.ca/sites/default/files/h1eng.pdf",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Applied",
@@ -38,7 +40,8 @@
       "effective": "Amendment 23 effective July 22, 2024",
       "source": {
         "name": "Payments Canada, Standard 005 (PDF)",
-        "url": "https://www.payments.ca/sites/default/files/standard005eng.pdf"
+        "url": "https://www.payments.ca/sites/default/files/standard005eng.pdf",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Simulated",
@@ -52,7 +55,8 @@
       "summary": "Three-digit codes on returned AFT and PAD items, e.g. 901 NSF (Debit Only), 903 Payment Stopped/Recalled, 905 Account Closed, 907 No Debit Allowed, 914 Incorrect Payor/Payee Name. The standard applies to both AFT and ISO AFT transactions.",
       "source": {
         "name": "Payments Canada, Standard 007 (PDF)",
-        "url": "https://www.payments.ca/sites/default/files/standard007eng.pdf"
+        "url": "https://www.payments.ca/sites/default/files/standard007eng.pdf",
+        "kind": "official"
       },
       "asOf": "2026-10-12",
       "berryUse": "Simulated",
@@ -67,7 +71,8 @@
       "summary": "Reporting entities report receiving $10,000 or more in cash in one transaction, or in two or more amounts within a consecutive 24-hour window by or for the same person or entity; reports are due within 15 calendar days.",
       "source": {
         "name": "FINTRAC, Large cash transaction reporting guidance",
-        "url": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
+        "url": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng",
+        "kind": "official"
       },
       "asOf": "2026-10-10",
       "berryUse": "Simulated",
@@ -80,7 +85,8 @@
       "summary": "Eligible deposits at CDIC members are insured up to $100,000 per eligible category, per member institution. Members include banks and federally regulated credit unions; provincially regulated credit unions are not members.",
       "source": {
         "name": "CDIC, What's covered",
-        "url": "https://www.cdic.ca/your-coverage/whats-covered/"
+        "url": "https://www.cdic.ca/your-coverage/whats-covered/",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Context only",
@@ -93,7 +99,8 @@
       "summary": "Deposits at provincially regulated credit unions are protected by the deposit insurer of the credit union's province; coverage differs by province (confirmed limits range from $250,000 per category to unlimited).",
       "source": {
         "name": "CDIC, glossary: credit unions",
-        "url": "https://www.cdic.ca/glossary/"
+        "url": "https://www.cdic.ca/glossary/",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Context only",
@@ -108,7 +115,8 @@
       "effective": "Royal assent March 26, 2026 (S.C. 2026, c. 3, s. 224); most provisions not yet in force",
       "source": {
         "name": "Justice Laws Website, Consumer-Driven Banking Act",
-        "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-1.html"
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-1.html",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Simulated",
@@ -122,7 +130,8 @@
       "effective": "Act s. 86, not yet in force",
       "source": {
         "name": "Justice Laws Website, Consumer-Driven Banking Act s. 86",
-        "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-5.html"
+        "url": "https://laws-lois.justice.gc.ca/eng/acts/C-36.78/page-5.html",
+        "kind": "official"
       },
       "asOf": "2026-10-11",
       "berryUse": "Applied",
@@ -136,7 +145,8 @@
       "effective": "Published for comment June 27, 2026 (Canada Gazette, Part I); comments closed after 60 days",
       "source": {
         "name": "Canada Gazette, Part I, Vol. 160, No. 26",
-        "url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-06-27/html/reg3-eng.html"
+        "url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-06-27/html/reg3-eng.html",
+        "kind": "official"
       },
       "asOf": "2026-10-10",
       "berryUse": "Simulated",
@@ -149,7 +159,8 @@
       "summary": "The Minister of Finance will designate a technical standards body by order; the draft regulations do not name one.",
       "source": {
         "name": "Canada Gazette, Part I, Vol. 160, No. 26",
-        "url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-06-27/html/reg3-eng.html"
+        "url": "https://gazette.gc.ca/rp-pr/p1/2026/2026-06-27/html/reg3-eng.html",
+        "kind": "official"
       },
       "asOf": "2026-10-10",
       "berryUse": "Context only",
@@ -163,7 +174,8 @@
       "effective": "Launching Q4 2026",
       "source": {
         "name": "Payments Canada, Real-Time Rail",
-        "url": "https://www.payments.ca/real-time-rail-payment-system"
+        "url": "https://www.payments.ca/real-time-rail-payment-system",
+        "kind": "official"
       },
       "asOf": "2026-10-10",
       "berryUse": "Simulated",
@@ -176,7 +188,8 @@
       "summary": "Press reports expect every participant to have access to the Real-Time Rail some time in 2027. Payments Canada has not published dates for the phases after the Q4 2026 launch.",
       "source": {
         "name": "Finder Canada (press report), updated August 10, 2026",
-        "url": "https://www.finder.com/ca/banking/real-time-rail-payments"
+        "url": "https://www.finder.com/ca/banking/real-time-rail-payments",
+        "kind": "press"
       },
       "asOf": "2026-10-12",
       "berryUse": "Context only",
@@ -191,7 +204,8 @@
       "effective": "Launched October 2024",
       "source": {
         "name": "Equifax Canada, news release",
-        "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/"
+        "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/",
+        "kind": "company"
       },
       "asOf": "2026-10-10",
       "berryUse": "Simulated",
@@ -204,7 +218,8 @@
       "summary": "Additional countries were announced as planned.",
       "source": {
         "name": "Equifax Canada, news release",
-        "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/"
+        "url": "https://www.equifax.ca/about-equifax/newsroom/-/intlpress/equifax-canada-champions-financial-inclusion-for-newcomers-to-canada-with-the-launch-of-global-consumer-credit-file/",
+        "kind": "company"
       },
       "asOf": "2026-10-10",
       "berryUse": "Context only",
@@ -218,7 +233,8 @@
       "summary": "Scotiabank's newcomer program can use credit history from a listed set of countries, subject to change.",
       "source": {
         "name": "Scotiabank, StartRight",
-        "url": "https://startright.scotiabank.com/ca/en/higher-credit-limit-for-newcomers-to-canada.html"
+        "url": "https://startright.scotiabank.com/ca/en/higher-credit-limit-for-newcomers-to-canada.html",
+        "kind": "company"
       },
       "asOf": "2026-10-10",
       "berryUse": "Context only",
@@ -231,7 +247,8 @@
       "summary": "A 2018 partnership to bring foreign credit history to Canadian lenders.",
       "source": {
         "name": "BIIA, copy of the 2018 announcement",
-        "url": "https://www.biia.com/transunion-partners-with-nova-credit-to-improve-financial-access-for-new-canadians"
+        "url": "https://www.biia.com/transunion-partners-with-nova-credit-to-improve-financial-access-for-new-canadians",
+        "kind": "third-party copy"
       },
       "asOf": "2026-10-10",
       "berryUse": "Context only",

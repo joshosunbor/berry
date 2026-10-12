@@ -2,13 +2,15 @@ import { z } from "zod"
 import statusJson from "@/data/regulatory-status.json"
 
 /*
- * Regulatory status panel data (/methodology). Every row cites its official
- * source and the date it was last checked. Anything not confirmed from an
- * official source is marked Illustrative.
+ * Regulatory status panel data (/methodology). Every row cites its source
+ * and the date it was last checked, and says what kind of source it is.
+ * Anything not confirmed from an official source is marked Illustrative.
  */
 
 export const RegulatoryStatus = z.enum(["Live", "In draft", "Launching", "Illustrative"])
 export const BerryUse = z.enum(["Applied", "Simulated", "Context only"])
+/** Official: a regulator, government body or Payments Canada. Otherwise a company's own page, a press report, or a third party's copy. */
+export const SourceKind = z.enum(["official", "company", "press", "third-party copy"])
 
 export const RegulatoryRow = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
@@ -18,7 +20,7 @@ export const RegulatoryRow = z.object({
   summary: z.string().min(1),
   /** Effective date or stage, as the source states it. Omitted if not confirmed. */
   effective: z.string().optional(),
-  source: z.object({ name: z.string().min(1), url: z.url().startsWith("https://") }),
+  source: z.object({ name: z.string().min(1), url: z.url().startsWith("https://"), kind: SourceKind }),
   /** Date this row was last checked against its source. */
   asOf: z.iso.date(),
   berryUse: BerryUse,
