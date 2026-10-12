@@ -49,12 +49,12 @@
       "id": "return-codes",
       "name": "AFT and PAD return reason codes (Standard 007)",
       "status": "Live",
-      "summary": "Three-digit codes on returned AFT and PAD items, e.g. 901 NSF (Debit Only), 903 Payment Stopped/Recalled, 905 Account Closed, 907 No Debit Allowed, 914 Incorrect Payor/Payee Name. ISO 20022 returns carry the same CPA code; there is no separate ISO reason-code mapping.",
+      "summary": "Three-digit codes on returned AFT and PAD items, e.g. 901 NSF (Debit Only), 903 Payment Stopped/Recalled, 905 Account Closed, 907 No Debit Allowed, 914 Incorrect Payor/Payee Name. The standard applies to both AFT and ISO AFT transactions.",
       "source": {
         "name": "Payments Canada, Standard 007 (PDF)",
         "url": "https://www.payments.ca/sites/default/files/standard007eng.pdf"
       },
-      "asOf": "2026-10-11",
+      "asOf": "2026-10-12",
       "berryUse": "Simulated",
       "inBerry": "Simulated returned debits use these codes with their official labels. Which returns Berry retries (only 901 and 908) and which come back before settlement is Berry's own illustrative policy.",
       "effective": "Standard 007, amendment effective July 3, 2026",

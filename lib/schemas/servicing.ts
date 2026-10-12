@@ -171,7 +171,8 @@ export const Collection = z.object({
  * Standard 007 is the source; other payment standards defer to it. Every
  * code listed was confirmed in Standard 007.
  * https://www.payments.ca/sites/default/files/standard007eng.pdf
- * There is no ISO 20022 reason-code mapping: returns carry the CPA code.
+ * Standard 007 says it applies to AFT and ISO AFT transactions; Berry
+ * makes no claim about how ISO 20022 messages carry these codes.
  */
 export const RETURN_CODES = {
   "900": { label: "Edit Reject", applies: "debits and credits" },

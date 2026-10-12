@@ -45,6 +45,11 @@ describe("regulatory status panel", () => {
     expect(r.source.name).toMatch(/press/i)
   })
 
+  it("makes no ISO 20022 claim that Standard 007 doesn't make", () => {
+    const r = byId("return-codes")
+    expect(`${r.summary} ${r.inBerry} ${r.note ?? ""}`).not.toMatch(/ISO 20022 returns carry|no separate ISO reason-code mapping/i)
+  })
+
   it("cites the confirmed Consumer-Driven Banking Act facts", () => {
     expect(byId("cdb-act").effective).toMatch(/March 26, 2026/)
     expect(byId("cdb-consent-duration").summary).toMatch(/12 months/)
