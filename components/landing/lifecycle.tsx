@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Tabs } from "@base-ui/react/tabs"
 import { LIFECYCLE } from "@/content/landing"
 import { cn } from "@/lib/utils"
+import { useTabs } from "./tabs"
 
 const pad = (i: number) => String(i + 1).padStart(2, "0")
 
@@ -13,13 +13,14 @@ export function Lifecycle() {
   const [step, setStep] = useState<number>(LIFECYCLE.defaultStep)
   const steps = LIFECYCLE.steps
   const last = step === steps.length - 1
+  const t = useTabs(steps.length, step, setStep)
   return (
-    <Tabs.Root value={step} onValueChange={(v) => setStep(Number(v))}>
-      <Tabs.List activateOnFocus aria-label="Loan lifecycle" className="mt-11 grid grid-cols-2 gap-x-4 border-t-2 border-lp-navy tablet:grid-cols-4 wide:grid-cols-7">
+    <div>
+      <div {...t.list} aria-label="Loan lifecycle" className="mt-11 grid grid-cols-2 gap-x-4 border-t-2 border-lp-navy tablet:grid-cols-4 wide:grid-cols-7">
         {steps.map((s, i) => (
-          <Tabs.Tab
+          <button
             key={s.name}
-            value={i}
+            {...t.tab(i)}
             className={cn(
               "-mt-0.5 flex cursor-pointer flex-col justify-start border-t-[3px] bg-transparent pb-4 pl-0 pr-3.5 pt-3.5 text-left",
               step === i ? "border-lp-green text-lp-navy" : "border-transparent text-lp-text-2",
@@ -28,14 +29,14 @@ export function Lifecycle() {
             <span className="block font-mono text-xs text-lp-text-3">{pad(i)}</span>
             <span className="mt-1 block text-[17px] font-semibold tracking-[-0.01em]">{s.name}</span>
             <span className="block text-[13px] text-lp-text-3">{s.rail}</span>
-          </Tabs.Tab>
+          </button>
         ))}
-      </Tabs.List>
+      </div>
       {steps.map((s, i) => (
-        <Tabs.Panel
+        <div
           key={s.name}
-          value={i}
-          className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-start gap-x-12 gap-y-6 rounded-[14px] bg-lp-surface p-[clamp(24px,4vw,40px)] shadow-lp-card"
+          {...t.panel(i)}
+          className="mt-5 grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] [&[hidden]]:hidden items-start gap-x-12 gap-y-6 rounded-[14px] bg-lp-surface p-[clamp(24px,4vw,40px)] shadow-lp-card"
         >
           <div>
             <p className="font-mono text-[13px] text-lp-text-3">{LIFECYCLE.stepOf.replace("{n}", pad(i))}</p>
@@ -50,8 +51,8 @@ export function Lifecycle() {
               </button>
             </div>
           </div>
-        </Tabs.Panel>
+        </div>
       ))}
-    </Tabs.Root>
+    </div>
   )
 }

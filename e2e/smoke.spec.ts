@@ -408,3 +408,42 @@ test("poor-harvest stress: shortfall shown, over-limit request goes through make
   await expect(lake).toContainText("Berry doesn't pick one")
   expect(errors).toEqual([])
 })
+
+test("landing: keyboard tabs (Home/End), one-open accordion, sign-off wording, simulated funding medians, mobile menu", async ({ page, isMobile }) => {
+  const errors = watchConsole(page)
+  await page.goto("/")
+
+  const life = page.getByRole("tablist", { name: "Loan lifecycle" })
+  await life.getByRole("tab", { selected: true }).focus()
+  await page.keyboard.press("End")
+  await expect(life.getByRole("tab", { name: /Reconcile/ })).toHaveAttribute("aria-selected", "true")
+  await expect(life.getByRole("tab", { name: /Reconcile/ })).toBeFocused()
+  await page.keyboard.press("ArrowRight")
+  await expect(life.getByRole("tab", { name: /Consent/ })).toHaveAttribute("aria-selected", "true")
+  await page.getByRole("button", { name: "Next: Verify" }).click()
+  await expect(life.getByRole("tab", { name: /Verify/ })).toHaveAttribute("aria-selected", "true")
+
+  await expect(page.getByText("Needs branch manager sign-off.")).toBeVisible()
+  await expect(page.getByText(/Above the lender's \$50,000 authority\./)).toBeVisible()
+  await expect(page.getByText(/Simulated medians across \d+ funded loans/)).toBeVisible()
+
+  const q1 = page.getByRole("button", { name: "Is Berry a real product?" })
+  const q2 = page.getByRole("button", { name: "Does AI make credit decisions?" })
+  await q1.click()
+  await expect(q1).toHaveAttribute("aria-expanded", "true")
+  await expect(page.getByRole("region", { name: "Is Berry a real product?" })).toContainText("working portfolio project by Joshua Osunbor")
+  await q2.click()
+  await expect(q2).toHaveAttribute("aria-expanded", "true")
+  await expect(q1).toHaveAttribute("aria-expanded", "false")
+
+  if (isMobile) {
+    const menu = page.getByRole("button", { name: "Menu" })
+    await expect(menu).toHaveAttribute("aria-expanded", "false")
+    await menu.click()
+    await expect(page.getByRole("button", { name: "Close" })).toHaveAttribute("aria-expanded", "true")
+    await page.locator("#mobile-menu").getByRole("link", { name: "How a pilot works" }).click()
+    await expect(page.locator("#mobile-menu")).toHaveCount(0)
+    await expect(page.getByRole("region", { name: "How a pilot would work" })).toBeInViewport()
+  }
+  expect(errors).toEqual([])
+})

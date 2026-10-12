@@ -1,15 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { Tabs } from "@base-ui/react/tabs"
 import { TOUR } from "@/content/landing"
 import { cn } from "@/lib/utils"
+import { useTabs } from "./tabs"
 
 /** The product tour: a tab strip over a window frame; the panels are rendered on the server and passed in. */
 export function Tour({ panels }: { panels: React.ReactNode[] }) {
   const [tab, setTab] = useState(0)
+  const t = useTabs(TOUR.tabs.length, tab, setTab)
   return (
-    <Tabs.Root value={tab} onValueChange={(v) => setTab(Number(v))}>
+    <div>
       <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-5">
         <div>
           <h2 id="tour-h" className="max-w-[16ch] text-[clamp(32px,4vw,48px)] font-bold leading-[1.05] tracking-[-0.03em]">
@@ -19,17 +20,17 @@ export function Tour({ panels }: { panels: React.ReactNode[] }) {
             {TOUR.tabs[tab].cap}
           </p>
         </div>
-        <Tabs.List activateOnFocus aria-label="Product tour" className="inline-flex flex-wrap rounded-[10px] bg-lp-surface p-1 shadow-[inset_0_0_0_1px_var(--color-lp-line)]">
-          {TOUR.tabs.map((t, i) => (
-            <Tabs.Tab
-              key={t.label}
-              value={i}
+        <div {...t.list} aria-label="Product tour" className="inline-flex flex-wrap rounded-[10px] bg-lp-surface p-1 shadow-[inset_0_0_0_1px_var(--color-lp-line)]">
+          {TOUR.tabs.map((x, i) => (
+            <button
+              key={x.label}
+              {...t.tab(i)}
               className={cn("min-h-10 cursor-pointer rounded-[7px] px-4 text-[15px] font-semibold", tab === i ? "bg-lp-navy text-white" : "bg-transparent text-lp-text-2")}
             >
-              {t.label}
-            </Tabs.Tab>
+              {x.label}
+            </button>
           ))}
-        </Tabs.List>
+        </div>
       </div>
       <div className="mt-7 overflow-hidden rounded-[14px] bg-lp-surface shadow-lp-tour">
         <div className="flex items-center gap-3.5 border-b border-lp-line bg-lp-page px-[18px] py-3 text-[13px] text-lp-text-3">
@@ -41,11 +42,11 @@ export function Tour({ panels }: { panels: React.ReactNode[] }) {
           <span className="font-mono">{TOUR.tabs[tab].path}</span>
         </div>
         {panels.map((p, i) => (
-          <Tabs.Panel key={TOUR.tabs[i].label} value={i}>
+          <div key={TOUR.tabs[i].label} {...t.panel(i)}>
             {p}
-          </Tabs.Panel>
+          </div>
         ))}
       </div>
-    </Tabs.Root>
+    </div>
   )
 }
