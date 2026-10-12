@@ -13,7 +13,7 @@ const pad = (i: number) => String(i + 1).padStart(2, "0")
 export function Lifecycle() {
   const [step, setStep] = useState<number>(LIFECYCLE.defaultStep)
   const steps = LIFECYCLE.steps
-  const last = step === steps.length - 1
+  const last = steps.length - 1
   const t = useTabs(steps.length, step, setStep)
   return (
     <div>
@@ -45,8 +45,8 @@ export function Lifecycle() {
             <p className="text-lg leading-[1.55] text-fg-2">{s.body}</p>
             <div className="mt-[18px] flex flex-wrap gap-x-5 gap-y-2 text-[15px] font-semibold">
               <Link href={s.href}>{LIFECYCLE.seeIt}</Link>
-              <button type="button" onClick={() => setStep(last ? 0 : step + 1)} className="cursor-pointer bg-transparent p-0 font-semibold text-fg-2">
-                {last ? LIFECYCLE.restart : LIFECYCLE.next.replace("{name}", steps[step + 1].name)}
+              <button type="button" onClick={() => setStep(i === last ? 0 : i + 1)} className="cursor-pointer bg-transparent p-0 font-semibold text-fg-2">
+                {i === last ? LIFECYCLE.restart : LIFECYCLE.next.replace("{name}", steps[i + 1].name)}
               </button>
             </div>
           </div>
