@@ -7,7 +7,7 @@ import { asOfText, MomentPicker } from "@/components/berry/ops-moment"
 import { useOpsMoment } from "@/components/berry/ops-store"
 import { MODE_META, MODES } from "@/lib/modes"
 import type { Kpi, LenderFilter } from "@/lib/ops/metrics"
-import { OPS_MOMENTS } from "@/lib/ops/moments"
+import { DASHBOARD_START, OPS_MOMENTS } from "@/lib/ops/moments"
 import { LenderDot } from "@/components/ui/pill"
 import { SegmentedControl } from "@/components/ui/segmented-control"
 
@@ -32,7 +32,7 @@ const GROUPS: { id: Kpi["group"]; label: string }[] = [
 ]
 
 export function OpsDashboard({ data }: { data: DashboardData }) {
-  const at = useOpsMoment()
+  const at = useOpsMoment(DASHBOARD_START)
   const [filter, setFilter] = useState<LenderFilter>("all")
   const snap = data.snapshots[filter][at]
   const series = (id: string) => OPS_MOMENTS.map((m) => data.snapshots[filter][m.at].kpis.find((k) => k.id === id)?.raw ?? null)
@@ -40,7 +40,7 @@ export function OpsDashboard({ data }: { data: DashboardData }) {
   return (
     <div>
       <div className="flex flex-col gap-4 rounded-[14px] bg-panel shadow-card p-4 lg:flex-row lg:items-end lg:justify-between">
-        <MomentPicker className="lg:w-[28rem]" />
+        <MomentPicker className="lg:w-[28rem]" fallback={DASHBOARD_START} />
         <SegmentedControl
           kind="radio"
           label="Lender"

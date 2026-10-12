@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest"
-import { getAuditEvents, getOpsEventItems, getOpsItems } from "@/lib/data"
+import { getAuditEvents, getLoanViews, getOpsEventItems, getOpsItems } from "@/lib/data"
 import { verifyChain } from "@/lib/ops/audit"
 import { messageFor } from "@/lib/ops/communications"
-import { OPS_MOMENTS } from "@/lib/ops/moments"
+import { DASHBOARD_START, OPS_MOMENTS } from "@/lib/ops/moments"
 import { assign, auditAt, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type UserAction } from "@/lib/ops/view"
 
 const items = getOpsItems()
@@ -10,6 +10,14 @@ const events = getAuditEvents()
 const eventItems = getOpsEventItems()
 const find = (id: string) => items.find((i) => i.id === id)!
 const states = (now: string, actions: UserAction[] = []) => new Map(items.map((i) => [i.id, itemAt(i, now, actions)]))
+
+describe("the dashboard's first view", () => {
+  it("opens twelve months on, with a funded book, not on day one when nothing has happened", () => {
+    expect(DASHBOARD_START).toBe(OPS_MOMENTS.at(-1)!.at)
+    const funded = getLoanViews().filter((l) => l.funding.fundedOn <= DASHBOARD_START.slice(0, 10))
+    expect(funded.length).toBeGreaterThan(20)
+  })
+})
 
 describe("the console at a point in time", () => {
   it("every moment has something open", () => {

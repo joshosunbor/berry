@@ -12,3 +12,5 @@ export const OPS_MOMENTS = [
 
 export type OpsMoment = (typeof OPS_MOMENTS)[number]["at"]
 export const OPS_START: OpsMoment = OPS_MOMENTS[0].at
+/** The dashboard opens on a book with a year of history; on day one every figure would be zero. */
+export const DASHBOARD_START: OpsMoment = OPS_MOMENTS[OPS_MOMENTS.length - 1].at

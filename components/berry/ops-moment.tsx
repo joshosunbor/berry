@@ -8,8 +8,8 @@ import { buttonVariants } from "@/components/ui/button"
 import { fieldClass } from "@/components/ui/field"
 
 /** The simulated moment the operations pages show; shared by the console and the dashboard. */
-export function MomentPicker({ className }: { className?: string }) {
-  const now = useOpsMoment()
+export function MomentPicker({ className, fallback }: { className?: string; fallback?: string }) {
+  const now = useOpsMoment(fallback)
   const i = OPS_MOMENTS.findIndex((m) => m.at === now)
   const step = cn(buttonVariants({ variant: "secondary", size: "sm" }), "px-2.5")
   return (

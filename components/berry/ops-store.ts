@@ -98,14 +98,15 @@ export function resetOpsActions() {
 
 const VALID_MOMENTS = new Set<string>(OPS_MOMENTS.map((m) => m.at))
 
-export function useOpsMoment(): string {
+/** The moment the visitor picked, shared across operations pages; until they pick one, the page's own default. */
+export function useOpsMoment(fallback: string = OPS_START): string {
   return useSyncExternalStore(
     subscribe,
     () => {
       const v = get(MOMENT_KEY)
-      return v && VALID_MOMENTS.has(v) ? v : OPS_START
+      return v && VALID_MOMENTS.has(v) ? v : fallback
     },
-    () => OPS_START,
+    () => fallback,
   )
 }
 
