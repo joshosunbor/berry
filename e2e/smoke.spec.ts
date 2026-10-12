@@ -12,12 +12,12 @@ test("landing → workbench → applicant → compare", async ({ page }) => {
   const errors = watchConsole(page)
 
   await page.goto("/")
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("One applicant. Three lenders. Three different answers.")
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Approve the borrowers a credit score misses.")
   await expect(page.getByRole("article", { name: /Northgate Credit Union/ })).toContainText("$60,000")
   await expect(page.getByRole("article", { name: /Kite/ })).toContainText("$8,000")
   await expect(page.getByRole("article", { name: /Aspen Bank/ })).toContainText("Declined")
 
-  await page.getByRole("link", { name: "Try the workbench" }).click()
+  await page.getByRole("main").getByRole("link", { name: "Try the live demo" }).click()
   await expect(page).toHaveURL(/\/workbench$/)
   await expect(page.getByRole("list").getByRole("link")).toHaveCount(14)
 
@@ -120,7 +120,9 @@ test("apply: consent, verification, request and three decisions; consents can be
 test("methodology: regulatory status panel shows sources, dates and the right statuses", async ({ page }) => {
   const errors = watchConsole(page)
   await page.goto("/")
-  await page.getByRole("link", { name: "See how it decides" }).click()
+  const menu = page.getByRole("button", { name: "Menu" })
+  if (await menu.isVisible()) await menu.click()
+  await page.getByRole("banner").getByRole("link", { name: "Methodology" }).filter({ visible: true }).click()
   await expect(page).toHaveURL(/\/methodology$/)
   const panel = page.locator("#regulatory-status")
   await expect(panel).toContainText("Status as of October 11, 2026")
@@ -328,36 +330,47 @@ test("accuracy: what the score means, and two debatable cases described in plain
   await expect(debatable).toContainText("Planted case P19")
 })
 
-test("landing: lifecycle strip, operations glimpse, Built for Canada, responsible by design; no status badges", async ({ page }) => {
+test("landing: comparison toggle, lifecycle and tour tabs, ops snapshot, concept pilot; no status badges", async ({ page }) => {
   const errors = watchConsole(page)
   await page.goto("/")
   const main = page.getByRole("main")
   // No status badges on the landing page: caveats live on /methodology.
   for (const badge of ["Illustrative", "Simulated", "In draft", "Launching", "Live"]) await expect(main.getByText(badge, { exact: true })).toHaveCount(0)
 
-  const strip = page.getByRole("region", { name: "The whole loan, end to end" })
-  const steps = strip.getByRole("button")
-  await expect(steps).toHaveText(["1Consent", "2Verify", "3Decide", "4Fund (AFT or instant)", "5Collect (PAD)", "6Recover", "7Reconcile"])
-  await steps.nth(5).click()
-  await expect(steps.nth(5)).toHaveAttribute("aria-expanded", "true")
-  await expect(strip).toContainText("outside the borrower's NSF fee window")
+  // Borrower / lender wording comes from the engine.
+  const aspen = page.getByRole("article", { name: /Aspen Bank/ })
+  await expect(aspen).toContainText("Income CV 0.96 exceeds policy maximum 0.35.")
+  await page.getByRole("button", { name: "Borrower view" }).click()
+  await expect(page.getByRole("button", { name: "Borrower view" })).toHaveAttribute("aria-pressed", "true")
+  await expect(aspen).toContainText("Your income changes a lot from month to month")
 
-  const ops = page.getByRole("region", { name: "Run it like an operation" })
-  await expect(ops.getByText("Breached").first()).toBeVisible()
-  await expect(ops.getByText("Cost per loan")).toBeVisible()
+  // Lifecycle: tabs, arrow keys, Next loops.
+  const life = page.getByRole("tablist", { name: "Loan lifecycle" })
+  await expect(life.getByRole("tab", { name: /Decide/ })).toHaveAttribute("aria-selected", "true")
+  await life.getByRole("tab", { name: /Decide/ }).focus()
+  await page.keyboard.press("ArrowRight")
+  await expect(life.getByRole("tab", { name: /Fund/ })).toHaveAttribute("aria-selected", "true")
+  await expect(page.getByRole("tabpanel").filter({ hasText: "Step 04 of 07" })).toBeVisible()
 
-  const canada = page.getByRole("region", { name: "Built for Canada" })
-  await expect(canada.getByRole("listitem")).toHaveCount(6)
-  await expect(canada.getByRole("link", { name: /Regulatory status, as of October 2026/ })).toBeVisible()
-  await expect(page.getByRole("region", { name: "Responsible by design" })).toContainText("111 of 111")
+  // Tour: the servicing ledger ends repaid in full.
+  const tour = page.getByRole("tablist", { name: "Product tour" })
+  await tour.getByRole("tab", { name: "Servicing" }).click()
+  await expect(page.getByText(/Repaid in full · final payment Nov 1, 2027/)).toBeVisible()
+  await tour.getByRole("tab", { name: "Compare" }).click()
+  await expect(page.getByRole("row", { name: /Signed off by/ })).toContainText("Branch Manager")
 
-  await expect(page.getByRole("link", { name: /LinkedIn/ })).toHaveAttribute("href", "https://www.linkedin.com/in/joshuaosunbor")
-  await expect(page.getByRole("link", { name: /GitHub/ })).toHaveAttribute("href", "https://github.com/joshosunbor/berry")
+  // Ops snapshot: a real moment, with a breached item.
+  const ops = page.getByRole("region", { name: "Nothing waits in an inbox." })
+  await expect(ops).toContainText("Feb 4, 2027, 09:05")
+  await expect(ops.getByText("Breached")).toBeVisible()
+  await expect(ops).toContainText("Real-Time Rail (simulated)")
 
-  // Every Built for Canada tile lands on a real section of /methodology.
-  const hrefs = await canada.getByRole("listitem").getByRole("link").evaluateAll((as) => as.map((a) => a.getAttribute("href")!))
-  await page.goto("/methodology")
-  for (const h of hrefs) await expect(page.locator(`#${h.split("#")[1]}`)).toHaveCount(1)
+  // Concept pilot, no commercial copy, and every in-page link has a target.
+  await expect(page.getByRole("region", { name: "How a pilot would work" })).toContainText("Berry is a portfolio project.")
+  for (const t of ["Book a demo", "Pricing", "SOC 2"]) await expect(main.getByText(t)).toHaveCount(0)
+  for (const href of await page.locator('a[href^="#"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")!))) await expect(page.locator(href)).toHaveCount(1)
+  await expect(page.getByRole("link", { name: /LinkedIn/ }).first()).toHaveAttribute("href", "https://www.linkedin.com/in/joshuaosunbor")
+  await expect(page.getByRole("link", { name: /GitHub/ }).first()).toHaveAttribute("href", "https://github.com/joshosunbor/berry")
   expect(errors).toEqual([])
 })
 

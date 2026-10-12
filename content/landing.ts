@@ -98,6 +98,8 @@ export const OPS = {
   queueTitle: "Work queues",
   makerChecker: { strong: "You prepared this override, so you can't approve it.", rest: " A second person has to sign off. Your attempt is in the audit trail." },
   fundingTitle: "Time to funding, by rail",
+  /** "{n}" is the number of funded loans the medians cover. */
+  fundingCaption: "Simulated medians across {n} funded loans",
   fundingNote: "The dashboard also tracks cure rate, delinquency, SLA attainment and cost per loan.",
   rules: [
     { strong: "Maker-checker.", rest: " Overrides and hardship approvals always need a second person." },

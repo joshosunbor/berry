@@ -126,6 +126,16 @@ export function landingData() {
     peak: f.income.peakMonths.includes(Number(m.month.slice(5, 7))),
   }))
 
+  const long = (ym: string) => new Date(`${ym}-15T12:00:00Z`).toLocaleDateString("en-CA", { month: "long", year: "numeric", timeZone: "UTC" })
+  const peakNames = months.filter((m) => m.peak).map((m) => new Date(`${m.month}-15T12:00:00Z`).toLocaleDateString("en-CA", { month: "long", timeZone: "UTC" }))
+  const topIn = months.reduce((x, y) => (y.inCents > x.inCents ? y : x))
+  const topOut = months.reduce((x, y) => (y.outCents > x.outCents ? y : x))
+  const list = (xs: string[]) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}` : xs[0])
+  const chartSummary = {
+    spark: `Deposits over 12 months, ${long(months[0].month)} to ${long(months.at(-1)!.month)}: highest in ${list(peakNames)}, the harvest months.`,
+    chart: `Money in and out each month, ${long(months[0].month)} to ${long(months.at(-1)!.month)}. Money in is highest in ${list(peakNames)}, peaking at ${money(topIn.inCents)} in ${long(topIn.month)}. Money out is highest in ${long(topOut.month)}, at ${money(topOut.outCents)}.`,
+  }
+
   // --- Applicant file (tour) ----------------------------------------------
   const cu = d.credit_union
   const tiers = CONFIGS.credit_union.authorityTiers!
@@ -203,8 +213,9 @@ export function landingData() {
     .map((i) => {
       const started = i.steps[0] && i.steps[0].start <= at
       const mins = businessMinutesBetween(at, i.slaDueAt)
-      const left = mins < 60 ? `${mins}m left` : mins < 480 ? `${Math.floor(mins / 60)}h ${mins % 60}m left` : `${Math.round((mins / 480) * 10) / 10} business days left`
-      return { title: i.title, queue: OPS_CONFIG.queues[i.queue].label, owner: started && i.ownerId ? member(i.ownerId)!.name : "Unassigned", sla: slaState(i, at), left }
+      const state = slaState(i, at)
+      const left = state === "breached" ? "Breached" : mins < 60 ? `${mins}m left` : mins < 480 ? `${Math.floor(mins / 60)}h ${mins % 60}m left` : `${Math.round((mins / 480) * 10) / 10} business days left`
+      return { title: i.title, queue: OPS_CONFIG.queues[i.queue].label, owner: started && i.ownerId ? member(i.ownerId)!.name : "Unassigned", sla: state, left }
     })
 
   const funded = getCast().length && MODES.flatMap((m) => getBooks()[m].loans.map((l) => l.setup.funding))
@@ -239,6 +250,7 @@ export function landingData() {
     },
     lenders,
     months,
+    chartSummary,
     otherApplicants: getCast().length - 1,
     decisionPanel: {
       outcomeLabel: outcomeLabel(cu.outcome),

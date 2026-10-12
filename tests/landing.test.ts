@@ -34,6 +34,13 @@ describe("landing figures are bound to their sources", () => {
     expect(data.lenders.credit_union.outcomeLabel).toBe("Approved")
   })
 
+  it("the borrower view is plain language; the technical wording is only in the lender view", () => {
+    const jargon = /\b(CV|DSCR|NSF|median|coverage|policy maximum)\b|\d\.\d+x/i
+    for (const m of MODES) expect(data.lenders[m].borrowerReason, m).not.toMatch(jargon)
+    for (const r of data.decisionPanel.reasons) expect(r).not.toMatch(jargon)
+    expect(data.lenders.bank.lenderReason).toMatch(jargon)
+  })
+
   it("applicant details come from the seed data", () => {
     const a = view.applicant
     expect(data.applicant.name).toBe(a.displayName)

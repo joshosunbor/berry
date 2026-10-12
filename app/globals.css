@@ -98,14 +98,16 @@
   --color-lp-line-strong: #d5dce4;
   --color-lp-text-2: #425466;
   --color-lp-text-3: #5b6b7f;
-  --color-lp-green: #1f9d55;
-  --color-lp-green-hover: #1a8848;
-  --color-lp-green-ink: #17803d;
+  /* Three colours are a shade darker than the handoff (#1F9D55, #1A8848, #17803D) so text on them meets WCAG AA (4.5:1). */
+  --color-lp-green: #178444;
+  --color-lp-green-hover: #157a3f;
+  --color-lp-green-ink: #15773a;
   --color-lp-green-bright: #3bb75e;
   --color-lp-green-tint: #e6f6ea;
   --color-lp-green-tint-2: #f3fbf5;
   --color-lp-cyan: #09a5db;
-  --color-lp-cyan-ink: #0a7fad;
+  /* Handoff #0A7FAD is 4.27:1 on the page background; this is 5.03:1. */
+  --color-lp-cyan-ink: #08739d;
   --color-lp-cyan-ink-hover: #086a90;
   --color-lp-cyan-on-navy: #3bc4f0;
   --color-lp-cyan-tint: #e3f5fc;
@@ -325,4 +327,50 @@
 @utility bg-ledger {
   background-image: linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
   background-size: 100% 2rem;
+}
+
+/*
+ * Landing page base styles (design handoff README, "Global"). Selectors use
+ * :where() so they carry no specificity and every utility still wins.
+ */
+@layer base {
+  html:has(.landing) {
+    scroll-behavior: smooth;
+  }
+  .landing {
+    background: var(--color-lp-page);
+    color: var(--color-lp-navy);
+    font-size: 17px;
+    line-height: 1.6;
+    font-variant-numeric: tabular-nums;
+    overflow-x: clip;
+    text-wrap: pretty;
+    -webkit-font-smoothing: antialiased;
+  }
+  :where(.landing) a {
+    color: var(--color-lp-cyan-ink);
+    text-decoration: none;
+  }
+  :where(.landing) a:hover {
+    color: var(--color-lp-cyan-ink-hover);
+  }
+  :where(.landing) :is(a, button, summary, [role="tab"]):focus-visible {
+    outline: 2px solid var(--color-lp-green);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  :where(.landing) ::selection {
+    background: var(--color-lp-selection);
+  }
+}
+
+@keyframes lp-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
