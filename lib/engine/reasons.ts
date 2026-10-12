@@ -128,6 +128,12 @@ export const REASONS = {
     lender: (e) => `Sized limit ${money(n(e, "limitCents"))} (${s(e, "basis")}) below product minimum ${money(n(e, "minCents"))}.`,
     counterfactual: (e) => `Approval is more likely once your cash left over each month supports at least ${money(n(e, "minCents"))}, or for a smaller product.`,
   },
+  SEASONAL_SURPLUS_TOO_LOW: {
+    direction: "negative",
+    customer: (e) => `What your busy months (${monthRange(months(e, "peakMonths"))}) leave over isn't yet enough to repay a seasonal line of at least ${money(n(e, "minCents"))} each year.`,
+    lender: (e) => `Peak-season surplus ${money(n(e, "peakSurplusCents"))} covers the request ${times(n(e, "coverage"))}, below ${times(n(e, "minCoverage"))}; sized line under product minimum ${money(n(e, "minCents"))}.`,
+    counterfactual: () => "Approval is more likely if your busy-season sales leave more over after costs, or for a smaller line.",
+  },
   INCOME_TOO_VARIABLE: {
     direction: "negative",
     customer: () => "Your income changes a lot from month to month, so a fixed monthly payment would be hard to keep up in quiet months.",

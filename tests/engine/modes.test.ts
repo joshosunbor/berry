@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 import { decideBank } from "@/lib/engine/modes/bank"
 import { decideCreditUnion, relationshipScore } from "@/lib/engine/modes/creditUnion"
 import { decideFintech } from "@/lib/engine/modes/fintech"
+import { explain } from "@/lib/engine/explain"
 import { ctx, features } from "./fixtures"
 
 const codes = (r: { reasons: { code: string }[] }) => r.reasons.map((x) => x.code)
@@ -155,6 +156,16 @@ describe("Northgate (credit union): relationship, structure and authority", () =
     expect(r.conditions?.[0]).toMatch(/end of November/)
     // Strong members need 1.15x: $90,000 / 1.15 = $78,260 → $75,000
     expect(cu({ ...over, relationship: member(10, 4) }, { product: "seasonal_operating_line", amountCents: 10_000_000 }, "business").limitCents).toBe(7_500_000)
+  })
+  it("explains a seasonal decline by peak-season surplus, never as a $0 payment", () => {
+    const over = { income: { type: "seasonal" as const, peakMonths: [9, 10, 11], peakShare: 0.65 }, annualNetCents: 100_000, monthly: seasonalMonths([9, 10, 11], 200_000, -40_000) }
+    const r = cu(over, { product: "seasonal_operating_line", amountCents: 6_000_000 }, "business")
+    expect(r.outcome).toBe("decline")
+    expect(codes(r)).toContain("SEASONAL_SURPLUS_TOO_LOW")
+    for (const x of explain(r.outcome, r.reasons)) {
+      expect(x.customerText).not.toMatch(/\$0\b/)
+      expect(x.lenderText).not.toMatch(/\$0\b/)
+    }
   })
   it("offers thin-file members with steady pay a starter limit, and declines non-members", () => {
     const req = { product: "starter_credit" as const, amountCents: 300_000 }

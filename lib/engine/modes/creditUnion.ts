@@ -101,7 +101,7 @@ function seasonal({ input, features: f, config }: ModeContext, t: Thresholds, st
   const sized = roundLimit(Math.min(requested, Math.floor(peakSurplus / minCoverage)))
 
   if (sized < terms.minCents || f.annualNetCents <= 0) {
-    return decline(product, [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr: round2(peakSurplus / requested), minDscr: minCoverage, paymentCents: 0, maxAffordableCents: Math.max(0, sized) } }], CREDIT_UNION_INPUTS)
+    return decline(product, [{ code: "SEASONAL_SURPLUS_TOO_LOW", weight: 1, evidence: { peakMonths: peak.join(","), peakSurplusCents: Math.max(0, peakSurplus), coverage: round2(peakSurplus / requested), minCoverage, minCents: terms.minCents } }], CREDIT_UNION_INPUTS)
   }
   if (sized < requested) {
     reasons.push({ code: "PEAK_SURPLUS_LIMITS_LINE", weight: 0.85, evidence: { limitCents: sized, peakSurplusCents: peakSurplus, minCoverage } })
