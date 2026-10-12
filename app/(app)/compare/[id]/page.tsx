@@ -44,7 +44,8 @@ export default async function ComparePage({ params }: PageProps<"/compare/[id]">
     { label: "Structure", values: ds.map(structure) },
   ]
   const differing = rows.filter((r) => new Set(r.values).size > 1)
-  const sameFlags = ds[0].flags
+  const reporting = MODES.find((m, i) => ds[i].flags.length > 0)
+  const flags = reporting ? ds[MODES.indexOf(reporting)].flags : []
 
   return (
     <PageContainer>
@@ -194,11 +195,11 @@ export default async function ComparePage({ params }: PageProps<"/compare/[id]">
         })}
       </div>
 
-      {sameFlags.map((f) => (
+      {flags.map((f) => (
         <p key={f.transactionIds.join()} className="mt-6 flex gap-2 rounded-[10px] bg-warn-tint p-3 text-sm">
           <ShieldAlert aria-hidden className="mt-0.5 size-4 shrink-0 text-warn" />
           <span>
-            <span className="font-medium">Same for every lender: FINTRAC review. </span>
+            <span className="font-medium">FINTRAC review at {MODE_META[reporting!].institution}, which received the cash. It plays no part in any lender’s credit decision. </span>
             {f.summary}
           </span>
         </p>

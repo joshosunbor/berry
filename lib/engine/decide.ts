@@ -28,8 +28,10 @@ export function decide(input: EngineInput, mode: Mode, config: InstitutionConfig
   if (config.mode !== mode) throw new Error(`config ${config.id} is for ${config.mode}, not ${mode}`)
   const result = MODE_FNS[mode]({ input, features, config })
 
-  // Compliance flags are found from all transactions and never passed to a mode.
-  const flags = findLargeCashEvents(input.transactions).map(toComplianceFlag)
+  // Compliance flags are never passed to a mode. Only the institution that
+  // received the cash is the reporting entity, so only its accounts count.
+  const ownAccounts = new Set(input.accounts.filter((a) => a.provider === config.id).map((a) => a.accountId))
+  const flags = findLargeCashEvents(input.transactions.filter((t) => ownAccounts.has(t.accountId))).map(toComplianceFlag)
 
   return Decision.parse({
     id: `dec_${input.slug}-${mode.replace("_", "-")}`,

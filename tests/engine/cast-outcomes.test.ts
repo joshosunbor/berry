@@ -112,7 +112,8 @@ describe("cast outcomes", () => {
 
   it("flags only Main Street Hardware for FINTRAC review", () => {
     for (const slug of Object.keys(TABLE)) {
-      expect(decisions(slug).bank.flags.length, slug).toBe(slug === "main-street-hardware" ? 1 : 0)
+      expect(decisions(slug).credit_union.flags.length, slug).toBe(slug === "main-street-hardware" ? 1 : 0)
+      expect(decisions(slug).bank.flags.length + decisions(slug).fintech.flags.length, slug).toBe(0)
     }
   })
 })

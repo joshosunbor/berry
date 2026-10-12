@@ -102,7 +102,8 @@ export function evaluate(planted: Applicant[], expectedJson: unknown, notesJson:
 
     let flags: CaseResult["flags"]
     if (exp.flags !== undefined) {
-      const actual = decisions.bank.flags.length
+      // Counted at whichever lender received the cash (the reporting entity).
+      const actual = Math.max(...MODES.map((m) => decisions[m].flags.length))
       flags = { expected: exp.flags, actual, match: actual === exp.flags }
       if (!flags.match) misses.push({ id, mode: "flags", expected: `${exp.flags} flag(s)`, actual: `${actual} flag(s)`, topReasons: [], note: notes.open[`${id}/flags`] ?? null })
     }

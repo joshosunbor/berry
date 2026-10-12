@@ -25,17 +25,18 @@ describe("decide", () => {
     expect(() => decide(load("priya"), "bank", CONFIGS.fintech)).toThrow(/not bank/)
   })
 
-  it("flags large cash the same way in every mode", () => {
+  it("flags large cash only at the institution that received it", () => {
+    // Main Street banks only with Northgate, so only Northgate is the reporting entity.
     const all = decideAll(load("main-street-hardware"))
-    for (const m of MODES) {
-      expect(all[m].flags).toHaveLength(1)
-      expect(all[m].flags[0].creditFactor).toBe(false)
-    }
+    expect(all.credit_union.flags).toHaveLength(1)
+    expect(all.credit_union.flags[0].creditFactor).toBe(false)
+    expect(all.fintech.flags).toHaveLength(0)
+    expect(all.bank.flags).toHaveLength(0)
   })
 
   it("never lets a FINTRAC flag change the credit decision", () => {
     const input = load("main-street-hardware")
-    const flagged = new Set(decide(input, "bank").flags[0].transactionIds)
+    const flagged = new Set(decide(input, "credit_union").flags[0].transactionIds)
     // Same amounts, deposited by EFT instead of cash: no flag, identical cash flow.
     const notCash = { ...input, transactions: input.transactions.map((t) => (flagged.has(t.transactionId) ? { ...t, channel: "EFT" as const } : t)) }
     for (const m of MODES) {
