@@ -45,16 +45,9 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
         actions={<ModeSwitcher />}
       />
 
-      {/* Desktop: chart and tabs in a wide main column, decision and key facts beside it. Phones: decision first. */}
+      {/* Decision first in reading order (phones show it first); on desktop it sits beside the chart and tabs. */}
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <div className="order-2 min-w-0 space-y-6 lg:order-1">
-          <Card pad="lg">
-            <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
-          </Card>
-          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans, slug: a.slug }} />
-        </div>
-
-        <div className="order-1 min-w-0 space-y-6 lg:order-2">
+        <div className="min-w-0 space-y-6 lg:order-2">
           <DecisionPanel decisions={decisions} slug={a.slug} requestedCents={a.request.amountCents} />
           {f.creditHistoryMonths < 12 && !f.foreignReportAvailable && <CreditBuildingCard loans={loans} />}
           <aside aria-label="Applicant summary" className="space-y-4">
@@ -75,6 +68,12 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
               </dl>
             </Card>
           </aside>
+        </div>
+        <div className="min-w-0 space-y-6 lg:order-1">
+          <Card pad="lg">
+            <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
+          </Card>
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans, slug: a.slug }} />
         </div>
       </div>
     </PageContainer>
