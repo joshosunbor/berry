@@ -310,6 +310,11 @@ test("policy change: impact preview, maker-checker, escalation, versions and rol
   expect(errors).toEqual([])
 })
 
+test("ops console says decisions made in the browser don't change the simulation", async ({ page }) => {
+  await page.goto("/ops")
+  await expect(page.getByRole("note")).toContainText("They don't change the simulation")
+})
+
 test("ops dashboard: a first visit opens twelve months on, with a funded book", async ({ page }) => {
   await page.goto("/ops/dashboard")
   await expect(page.getByLabel("Simulated time")).toHaveValue("2027-10-06T17:00")

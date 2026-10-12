@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 import Link from "next/link"
-import { AlertTriangle, CheckCircle2, CircleDashed, Clock, Download, RotateCcw, ShieldCheck, ShieldAlert, XCircle } from "lucide-react"
+import { AlertTriangle, CheckCircle2, CircleDashed, Clock, Download, Info, RotateCcw, ShieldCheck, ShieldAlert, XCircle } from "lucide-react"
 import { Illustrative } from "@/components/berry/illustrative"
 import { MomentPicker } from "@/components/berry/ops-moment"
 import { InlineError } from "@/components/berry/inline-error"
@@ -11,6 +11,7 @@ import { ModeChip } from "@/components/berry/mode-chip"
 import { addOpsAction, resetOpsActions, setActor, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
 import { tabClass, tabListClass, useTabs } from "@/components/ui/tabs"
 import { formatCents } from "@/lib/money"
+import { BROWSER_ONLY_NOTICE, BROWSER_ONLY_SHORT } from "@/lib/ops/copy"
 import { messageFor } from "@/lib/ops/communications"
 import { requiredRoleFor } from "@/lib/ops/approvals"
 import { OPS, member, type Role } from "@/lib/ops/config"
@@ -149,8 +150,10 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
           )}
         </div>
       </div>
-      <p className="mt-2 text-xs text-fg-3">
-        {moment?.note}. Fictional team, simulated work; your actions are saved in this browser only.
+      <p className="mt-2 text-xs text-fg-3">{moment?.note}. Fictional team, simulated work.</p>
+      <p role="note" className="mt-2 flex gap-2 rounded-[10px] bg-field p-3 text-sm text-fg-2">
+        <Info aria-hidden className="mt-0.5 size-4 shrink-0 text-fg-3" />
+        <span>{BROWSER_ONLY_NOTICE}</span>
       </p>
 
       <div className="mt-6">
@@ -403,6 +406,7 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
                   <button type="button" onClick={() => setRejecting(true)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
                     Reject…
                   </button>
+                  <span className="text-xs text-fg-3">{BROWSER_ONLY_SHORT}</span>
                 </>
               )}
               {req?.status === "pending" && rejecting && (
