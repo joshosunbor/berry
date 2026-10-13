@@ -7,7 +7,7 @@ import { Illustrative, Source } from "@/components/berry/illustrative"
 import { LoanStatusChip } from "@/components/berry/loan-status"
 import type { LoanSummary } from "@/lib/servicing/views"
 import { useMode } from "@/components/berry/mode-context"
-import type { AftView } from "@/lib/data"
+import type { AftView, AftNone } from "@/lib/data"
 import type { LctrReview } from "@/lib/engine/fintrac"
 import type { PadPlan } from "@/lib/engine/repayment"
 import { formatCents } from "@/lib/money"
@@ -170,7 +170,7 @@ export function RepaymentTab({ plans }: { plans: Record<Mode, PadPlan | null> })
 
 // ---------------------------------------------------------------------------
 
-export function DisbursementTab({ files, verification }: { files: Record<Mode, AftView | null>; verification: AccountVerificationOutcome }) {
+export function DisbursementTab({ files, verification }: { files: Record<Mode, AftView | AftNone | null>; verification: AccountVerificationOutcome }) {
   const { mode } = useMode()
   const file = files[mode]
   const [raw, setRaw] = useState(false)
@@ -178,6 +178,7 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
   const [rail, setRail] = useState<FundingRail>("aft")
   const [confirmed, setConfirmed] = useState(false)
   if (!file) return <div className={card}><p className="text-sm text-fg-3">{MODE_META[mode].institution} made no offer, so there is nothing to fund.</p></div>
+  if ("none" in file) return <div className={card}><p className="text-sm text-fg-3">{file.reason}</p></div>
   let outcome: FundingResult | null = null
   let blocked: string | null = null
   try {
@@ -263,8 +264,10 @@ export function DisbursementTab({ files, verification }: { files: Record<Mode, A
         <div>
           <h3 className="font-semibold">AFT disbursement file</h3>
           <p className="mt-1 text-sm text-fg-3">
-            Funds <span className="num font-medium text-fg">{formatCents(file.totalCents)}</span> to the borrower&apos;s account in a Payments Canada Standard 005 layout: a header, one credit record and a trailer, each 1,464 characters.
+            Funds <span className="num font-medium text-fg">{formatCents(file.totalCents)}</span> to the borrower&apos;s account in a Payments Canada Standard 005 layout: a header,{" "}
+            {file.records.length - 2 === 1 ? "one credit record" : `${file.records.length - 2} credit records`} and a trailer, each 1,464 characters.
           </p>
+          {file.note && <p className="mt-1 text-sm text-fg-3">{file.note}</p>}
         </div>
         <Illustrative label="Illustrative — not for submission" why="ASCII rather than the EBCDIC real files use; fictional institutions and accounts; amounts in cents and the transaction code are not confirmed from the standard." />
       </div>

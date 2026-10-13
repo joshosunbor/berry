@@ -37,6 +37,14 @@ export interface AftView {
   text: string
   totalCents: number
   fileName: string
+  /** Shown above the file, e.g. that a line's draws each go in that day's file. */
+  note?: string
+}
+
+/** No AFT payout for this approval, and why (e.g. a card limit isn't paid out). */
+export interface AftNone {
+  none: true
+  reason: string
 }
 
 export interface ApplicantView {
@@ -45,7 +53,7 @@ export interface ApplicantView {
   decisions: Record<Mode, Decision>
   verification: { checks: VerificationCheck[]; summary: VerificationSummary }
   pad: Record<Mode, PadPlan | null>
-  aft: Record<Mode, AftView | null>
+  aft: Record<Mode, AftView | AftNone | null>
   largeCash: LctrReview[]
   /** Simulated name-and-account check for the borrower's account (no names leave the server). */
   accountVerification: AccountVerificationOutcome
@@ -74,9 +82,25 @@ const LENDER_AFT: Record<Mode, { originatorId: string; shortName: string; dataCe
 
 const approved = (d: Decision) => d.outcome === "approve" || d.outcome === "approve_with_conditions"
 
-function aftFor(a: Applicant, d: Decision, mode: Mode): AftView {
+const CARD_PRODUCTS = new Set(["credit_card", "starter_credit"])
+
+/**
+ * The sample AFT disbursement file for an approval: what the loan actually
+ * pays out. A term loan is one credit; a line drawn over time is one credit
+ * per planned draw, on its date; a card limit isn't paid out by AFT at all.
+ */
+function aftFor(a: Applicant, d: Decision, mode: Mode, plan: PadPlan | null): AftView | AftNone {
+  if (CARD_PRODUCTS.has(d.product)) return { none: true, reason: "A card limit is made available on the card, not paid into the borrower's account, so there is no AFT payout." }
+  const draws = plan?.draws
+  if (draws && !draws.length) return { none: true, reason: "Nothing is drawn under the plan: the borrower's own cash covers the season, so nothing is paid out by AFT." }
   const lender = LENDER_AFT[mode]
   const rng = new Rng(hashSeed(`acct:${a.slug}`))
+  const institutionId = `0999${String(rng.int(1, 99_999)).padStart(5, "0")}`
+  const account = String(rng.int(1_000_000, 9_999_999_999))
+  // Business legal name, or a generic label: personal names stay off the page.
+  const payeeName = a.business?.legalName ?? `Applicant ${a.slug.toUpperCase()}`
+  const crossReference = `loan_${a.slug}`.slice(0, 19)
+  const payouts = draws ? draws.map((x) => ({ amountCents: x.amountCents, on: x.date })) : [{ amountCents: d.limitCents, on: "2026-10-06" }]
   const file = buildAftFile({
     originatorId: lender.originatorId,
     fileCreationNumber: rng.int(1, 9999),
@@ -87,19 +111,13 @@ function aftFor(a: Applicant, d: Decision, mode: Mode): AftView {
     longName: MODE_META[mode].institution,
     returnsInstitutionId: lender.returnsInstitutionId,
     returnsAccount: lender.returnsAccount,
-    credits: [
-      {
-        amountCents: d.limitCents,
-        fundsAvailableOn: "2026-10-06",
-        institutionId: `0999${String(rng.int(1, 99_999)).padStart(5, "0")}`,
-        account: String(rng.int(1_000_000, 9_999_999_999)),
-        // Business legal name, or a generic label: personal names stay off the page.
-        payeeName: a.business?.legalName ?? `Applicant ${a.slug.toUpperCase()}`,
-        crossReference: `loan_${a.slug}`.slice(0, 19),
-      },
-    ],
+    credits: payouts.map((p) => ({ amountCents: p.amountCents, fundsAvailableOn: p.on, institutionId, account, payeeName, crossReference })),
   })
-  return { ...file, fileName: `berry-aft-${a.slug}-${mode.replace("_", "-")}.txt` }
+  return {
+    ...file,
+    fileName: `berry-aft-${a.slug}-${mode.replace("_", "-")}.txt`,
+    note: draws ? `A line is paid out as it's drawn: each draw would go in that day's AFT file. The ${draws.length} planned draw${draws.length === 1 ? "" : "s"} are shown together here, each with its own date.` : undefined,
+  }
 }
 
 const raw = loadApplicants(path.join(process.cwd(), "data/applicants"))
@@ -110,6 +128,9 @@ const cast: ApplicantView[] = raw.map((a) => {
   const decisions = decideAll(input)
   const checks = verifyApplicant(a)
   const reportingEntity = a.accounts.some((x) => x.provider === "northgate") ? "Northgate Credit Union (fictional)" : "The applicant's own bank (fictional)"
+  const pad = Object.fromEntries(
+    MODES.map((m) => [m, approved(decisions[m]) ? buildPadPlan({ decision: decisions[m], features, kind: a.kind, agreementSignedOn: AGREEMENT_SIGNED_ON }) : null]),
+  ) as Record<Mode, PadPlan | null>
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { protected: _p, transactions: _t, ...applicant } = a
   return {
@@ -117,10 +138,8 @@ const cast: ApplicantView[] = raw.map((a) => {
     features,
     decisions,
     verification: { checks, summary: summarize(checks) },
-    pad: Object.fromEntries(
-      MODES.map((m) => [m, approved(decisions[m]) ? buildPadPlan({ decision: decisions[m], features, kind: a.kind, agreementSignedOn: AGREEMENT_SIGNED_ON }) : null]),
-    ) as Record<Mode, PadPlan | null>,
-    aft: Object.fromEntries(MODES.map((m) => [m, approved(decisions[m]) ? aftFor(a, decisions[m], m) : null])) as Record<Mode, AftView | null>,
+    pad,
+    aft: Object.fromEntries(MODES.map((m) => [m, approved(decisions[m]) ? aftFor(a, decisions[m], m, pad[m]) : null])) as Record<Mode, AftView | AftNone | null>,
     largeCash: findLargeCashEvents(a.transactions).map((e) =>
       reviewLargeCash(e, { reportingEntity, customerName: a.business?.legalName ?? "The applicant" }),
     ),

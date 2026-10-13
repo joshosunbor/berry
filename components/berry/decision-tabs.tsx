@@ -6,7 +6,7 @@ import { ReasonList, RegisterToggle, type Register } from "@/components/berry/de
 import { MemoTab } from "@/components/berry/memo-tab"
 import { DisbursementTab, LargeCashTab, ProtectionTab, RepaymentTab, ServicingTab, VerificationTab } from "@/components/berry/file-tabs"
 import type { LoanSummary } from "@/lib/servicing/views"
-import type { AftView } from "@/lib/data"
+import type { AftNone, AftView } from "@/lib/data"
 import type { LctrReview } from "@/lib/engine/fintrac"
 import type { PadPlan } from "@/lib/engine/repayment"
 import type { VerificationSummary } from "@/lib/onboarding/kyc"
@@ -26,7 +26,7 @@ import { useUrlTab } from "@/components/berry/url-state"
 export interface FileTabsData {
   verification: { checks: VerificationCheck[]; summary: VerificationSummary }
   pad: Record<Mode, PadPlan | null>
-  aft: Record<Mode, AftView | null>
+  aft: Record<Mode, AftView | AftNone | null>
   largeCash: LctrReview[]
   accountVerification: AccountVerificationOutcome
   loans: LoanSummary[]
