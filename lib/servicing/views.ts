@@ -3,7 +3,7 @@ import type { JournalEntry } from "@/lib/schemas"
 import type { FundingResult } from "./funding"
 import type { GateCheck } from "./gate"
 import { monthEnds, reconcile, type BreakKind } from "./reconcile"
-import type { Attempt, BookResult, LoanEvent, LoanResult, LoanStatus } from "./simulate"
+import { type Attempt, type BookResult, type LoanEvent, type LoanResult, type LoanStatus, dpdOn, type DpdSegment } from "./simulate"
 import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
 import type { BorrowerFee } from "./borrower-bank"
 import type { ProductType } from "@/lib/schemas"
@@ -48,6 +48,7 @@ export interface LoanView {
   events: LoanEvent[]
   attempts: Attempt[]
   statusTimeline: { date: string; status: LoanStatus }[]
+  dpdTimeline: DpdSegment[]
   borrowerFees: { date: string; fee: BorrowerFee }[]
   entries: JournalEntry[]
   breaks: LoanBreak[]
@@ -98,6 +99,7 @@ export function toLoanView(book: BookResult, loan: LoanResult, breaks: LoanBreak
     events: loan.events,
     attempts: loan.attempts,
     statusTimeline: loan.statusTimeline,
+    dpdTimeline: loan.dpdTimeline,
     borrowerFees: loan.borrowerFees,
     entries: book.ledger.forLoan(s.id),
     breaks,
@@ -135,13 +137,9 @@ export function lineAsOf(v: Pick<LoanView, "entries" | "id" | "principalCents" |
   return { limitCents: v.principalCents, drawnCents: drawn, availableCents: v.principalCents - drawn, drawnToDateCents }
 }
 
-export function daysPastDueAsOf(v: Pick<LoanView, "statusTimeline">, date: string): number {
-  let since: string | null = null
-  for (const t of v.statusTimeline) {
-    if (t.date > date) break
-    since = t.status === "delinquent" ? (since ?? t.date) : null
-  }
-  return since ? Math.round((Date.parse(`${date}T00:00:00Z`) - Date.parse(`${since}T00:00:00Z`)) / 86_400_000) + 1 : 0
+/** Days past due on `date`: the simulator's own count (from the oldest payment still owed), whatever the status label. */
+export function daysPastDueAsOf(v: Pick<LoanView, "dpdTimeline">, date: string): number {
+  return dpdOn(v.dpdTimeline, date)
 }
 
 /** The simulator's time control: funding day, then fast-forward 1, 3 or 12 months. */

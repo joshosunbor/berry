@@ -9,6 +9,7 @@ import { account } from "@/lib/servicing/ledger"
 import { planRetry, RECOVERY_PATH, RETURNED_BEFORE_SETTLEMENT } from "@/lib/servicing/recovery"
 import { daysBetween, simulateBook, type BookResult, type LoanResult, type LoanSetup } from "@/lib/servicing/simulate"
 import { CONFIGS } from "@/lib/engine/config"
+import { daysPastDueAsOf, toLoanView } from "@/lib/servicing/views"
 import { expectBalanced } from "./helpers"
 
 const books = getBooks()
@@ -176,6 +177,20 @@ describe("servicing simulator: the three loan books", () => {
     expect(r.statusTimeline.map((t) => t.status)).not.toContain("charged_off")
     // Still one payment behind (delinquent), not current.
     expect(r.statusTimeline.at(-1)!.status).toBe("delinquent")
+  })
+
+  it("days past due on the loan file and dashboard are the simulator's own figure", () => {
+    const g = loan("loan_grace-cu")
+    const script = { returns: [{ n: 2, attempt: 1, code: "901" as const }, { n: 2, attempt: 2, code: "901" as const }] }
+    const book = simulateBook("northgate", "credit_union", [{ ...g.setup, script }], "2027-12-31")
+    const view = toLoanView(book, book.loans[0])
+    // One payment behind all year: never more than about a month and a half past due.
+    for (const d of ["2027-01-15", "2027-04-15", "2027-10-01"]) {
+      const dpd = daysPastDueAsOf(view, d)
+      expect(dpd, d).toBeGreaterThan(0)
+      expect(dpd, d).toBeLessThan(45)
+    }
+    expect(daysPastDueAsOf(view, "2026-10-20")).toBe(0)
   })
 
   it("Hollis at Kite: NSF on a credit union account uses the illustrative provincial fee", () => {

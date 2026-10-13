@@ -135,11 +135,25 @@ export interface LoanResult {
   events: LoanEvent[]
   attempts: Attempt[]
   statusTimeline: { date: string; status: LoanStatus }[]
+  /** Days past due as the simulator counts it, as segments: from `from`, `dpd` rising a day a day (or 0). */
+  dpdTimeline: DpdSegment[]
   borrowerFees: { date: string; fee: BorrowerFee }[]
   /** Balances tracked by the simulator; must equal the ledger's. */
   balances: { principalCents: number; interestCents: number }
   cures: { failedOn: string; curedOn: string | null }[]
   chargedOffOn: string | null
+}
+
+export interface DpdSegment {
+  from: string
+  dpd: number
+}
+
+/** Days past due on `date`, from the simulator's own record. */
+export function dpdOn(timeline: DpdSegment[], date: string): number {
+  let seg: DpdSegment | null = null
+  for (const s of timeline) if (s.from <= date) seg = s
+  return !seg || seg.dpd === 0 ? 0 : seg.dpd + daysBetween(seg.from, date)
 }
 
 export interface BookResult {
@@ -186,6 +200,7 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
   const events: LoanEvent[] = []
   const attempts: Attempt[] = []
   const statusTimeline: { date: string; status: LoanStatus }[] = []
+  const dpdTimeline: DpdSegment[] = []
   const borrowerFees: { date: string; fee: BorrowerFee }[] = []
   const cures: { failedOn: string; curedOn: string | null }[] = []
   const rng = new Rng(hashSeed(`servicing:${s.id}`))
@@ -523,6 +538,8 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
     )
     const oldest = overdue.length ? overdue.reduce((a, b) => (a.scheduledOn < b.scheduledOn ? a : b)) : null
     const dpd = oldest ? daysBetween(oldest.scheduledOn, day) : 0
+    // Record a new segment only when the count doesn't simply carry on from the last one.
+    if (dpdOn(dpdTimeline, day) !== dpd || !dpdTimeline.length) dpdTimeline.push({ from: day, dpd })
     if (!hardshipUntil) {
       if (dpd >= config.chargeOffDaysPastDue && principal + interest > 0 && !inFlight.length) {
         post(day, (l) => postChargeOff(l, s.id, day, dpd))
@@ -545,7 +562,9 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
     }
   }
 
-  return { setup: s, events, attempts, statusTimeline, borrowerFees, balances: { principalCents: principal, interestCents: interest }, cures, chargedOffOn }
+  // After charge-off or payoff nothing is past due any more.
+  if (chargedOffOn || status === "paid_off") dpdTimeline.push({ from: addDays(statusTimeline.at(-1)!.date, 1), dpd: 0 })
+  return { setup: s, events, attempts, statusTimeline, dpdTimeline, borrowerFees, balances: { principalCents: principal, interestCents: interest }, cures, chargedOffOn }
 }
 
 /** Simulates a lender's whole book to `horizon` and posts every entry to one balanced ledger, in date order. */
