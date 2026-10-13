@@ -3,7 +3,7 @@ import { getAuditEvents, getLoanViews, getOpsEventItems, getOpsItems } from "@/l
 import { verifyChain } from "@/lib/ops/audit"
 import { messageFor } from "@/lib/ops/communications"
 import { DASHBOARD_START, OPS_MOMENTS } from "@/lib/ops/moments"
-import { assign, auditAt, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type UserAction } from "@/lib/ops/view"
+import { assign, auditAt, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, trailFor, workload, type UserAction } from "@/lib/ops/view"
 
 const items = getOpsItems()
 const events = getAuditEvents()
@@ -62,7 +62,7 @@ describe("acting in the console", () => {
     const at = "2026-10-06T10:05"
     const p = prepareItem(fresh, "usr_okafor", at)
     expect(p.error).toBeNull()
-    const d = decide(fresh, p.action.request!, "usr_okafor", at, "approve")
+    const d = decide(fresh, p.action.request!, "usr_okafor", at, "approve", "", p.action.events)
     expect(d.error).toMatch(/can't approve/)
     expect(d.action.kind).toBe("blocked")
     expect(d.action.events.map((e) => e.action)).toEqual(["approval.blocked"])
@@ -73,11 +73,11 @@ describe("acting in the console", () => {
 
   it("a different person approves; above their authority it escalates", () => {
     const p = prepareItem(item, "usr_bisset", T)
-    const lead = decide(item, p.action.request!, "usr_moreau", T, "approve")
+    const lead = decide(item, p.action.request!, "usr_moreau", T, "approve", "", p.action.events)
     expect(lead.action.kind).toBe("escalated")
-    const bm = decide(item, lead.action.request!, "usr_lindqvist", T, "approve")
+    const bm = decide(item, lead.action.request!, "usr_lindqvist", T, "approve", "", [...p.action.events, ...lead.action.events])
     expect(bm.action.kind).toBe("escalated")
-    const cc = decide(item, bm.action.request!, "usr_committee", T, "approve")
+    const cc = decide(item, bm.action.request!, "usr_committee", T, "approve", "", [...p.action.events, ...lead.action.events, ...bm.action.events])
     expect(cc.action.kind).toBe("approved")
     const s = itemAt(item, T, [p.action, lead.action, bm.action, cc.action])
     expect(s.status).toBe("done")
@@ -94,6 +94,19 @@ describe("acting in the console", () => {
     expect(forItem.some((e) => e.action === "approval.prepared" && e.at === T)).toBe(true)
   })
 
+  it("a request the simulated team prepared can be decided in the browser, checked against the server's trail", () => {
+    // Bright Smile's sign-off: prepared by an analyst on Oct 1, waiting for the committee.
+    const prep = item.steps.find((s) => s.action === "prepared")!
+    const at = prep.end
+    const req = itemAt(item, at, []).request!
+    expect(req.status).toBe("pending")
+    const trail = trailFor(item, events, eventItems, [], at)
+    // The analyst who prepared it still can't approve it; someone else can act on it.
+    expect(decide(item, req, req.preparedBy, at, "approve", "", trail).error).toMatch(/can't approve/)
+    const other = decide(item, req, "usr_moreau", at, "approve", "", trail)
+    expect(other.error).toBeNull()
+  })
+
   it("approval items can't just be marked done", () => {
     expect(complete(item, "usr_moreau", T).error).toMatch(/needs an approval/)
   })
@@ -103,7 +116,7 @@ describe("acting in the console", () => {
     const at = "2027-02-01T09:05"
     expect(brk.approval?.kind).toBe("ledger_correction")
     const p = prepareItem(brk, "usr_tran", at)
-    const a = decide(brk, p.action.request!, "usr_moreau", at, "approve")
+    const a = decide(brk, p.action.request!, "usr_moreau", at, "approve", "", p.action.events)
     expect(a.action.kind).toBe("approved")
     expect(itemAt(brk, "2027-10-06T17:00", [p.action, a.action]).sla).toBe("met")
   })

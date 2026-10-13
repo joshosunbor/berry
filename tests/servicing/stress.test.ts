@@ -106,11 +106,11 @@ describe("over-limit request", () => {
   it("maker-checker applies: the requester can't approve it; a lead escalates; the branch manager approves", () => {
     const created = make("usr_bisset").action
     const item = created.item!
-    const self = decide(item, created.request!, "usr_bisset", at, "approve")
+    const self = decide(item, created.request!, "usr_bisset", at, "approve", "", created.events)
     expect(self.error).toMatch(/can't approve/)
-    const lead = decide(item, created.request!, "usr_moreau", at, "approve")
+    const lead = decide(item, created.request!, "usr_moreau", at, "approve", "", created.events)
     expect(lead.action.kind).toBe("escalated")
-    const bm = decide(item, lead.action.request!, "usr_lindqvist", at, "approve")
+    const bm = decide(item, lead.action.request!, "usr_lindqvist", at, "approve", "", [...created.events, ...lead.action.events])
     expect(bm.action.kind).toBe("approved")
     expect(itemAt(item, at, [created, self.action, lead.action, bm.action]).status).toBe("done")
   })

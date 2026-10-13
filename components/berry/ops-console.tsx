@@ -10,6 +10,7 @@ import { LazyPolicyPanel } from "@/components/berry/policy-panel-lazy"
 import { ModeChip } from "@/components/berry/mode-chip"
 import { addOpsAction, resetOpsActions, setActor, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
 import { useUrlTab } from "@/components/berry/url-state"
+import type { AuditInput } from "@/lib/ops/audit"
 import { tabClass, tabListClass, useTabs } from "@/components/ui/tabs"
 import { formatCents } from "@/lib/money"
 import { BROWSER_ONLY_NOTICE, BROWSER_ONLY_SHORT } from "@/lib/ops/copy"
@@ -19,7 +20,7 @@ import { OPS, member, type Role } from "@/lib/ops/config"
 import { OPS_MOMENTS } from "@/lib/ops/moments"
 import { PLAYBOOKS } from "@/lib/ops/playbooks"
 import type { OpsItem, SlaState } from "@/lib/ops/queues"
-import { assign, auditAt, browserItems, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState } from "@/lib/ops/view"
+import { assign, auditAt, browserItems, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, workload, type ActionResult, type ItemState, trailFor } from "@/lib/ops/view"
 import type { AuditEvent, QueueName } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
 import { Card } from "@/components/ui/card"
@@ -229,7 +230,7 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
                 </ul>
                 <div className="min-w-0">
                   {current ? (
-                    <ItemPanel item={current.i} state={current.s} actor={actor} now={now} run={run} error={error} />
+                    <ItemPanel item={current.i} state={current.s} actor={actor} now={now} run={run} error={error} trail={trailFor(current.i, events, eventItems, actions, now)} />
                   ) : (
                     <p className="rounded-[14px] border border-dashed border-line-strong p-6 text-sm text-fg-3">Choose an item to see its playbook, history and actions.</p>
                   )}
@@ -288,7 +289,7 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
   )
 }
 
-function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; state: ItemState; actor: string; now: string; run: (r: ActionResult) => void; error: string | null }) {
+function ItemPanel({ item, state, actor, now, run, error, trail }: { item: OpsItem; state: ItemState; actor: string; now: string; run: (r: ActionResult) => void; error: string | null; trail: AuditInput[] }) {
   const [assignee, setAssignee] = useState<string>("")
   const [rejecting, setRejecting] = useState(false)
   const [reason, setReason] = useState("")
@@ -404,7 +405,7 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
               )}
               {req?.status === "pending" && !rejecting && (
                 <>
-                  <button type="button" onClick={() => run(decide(item, req, actor, now, "approve"))} className={buttonVariants({ size: "sm" })}>
+                  <button type="button" onClick={() => run(decide(item, req, actor, now, "approve", "", trail))} className={buttonVariants({ size: "sm" })}>
                     Approve as {me.name}
                   </button>
                   <button type="button" onClick={() => setRejecting(true)} className={buttonVariants({ variant: "secondary", size: "sm" })}>
@@ -418,7 +419,7 @@ function ItemPanel({ item, state, actor, now, run, error }: { item: OpsItem; sta
                   className="flex w-full flex-wrap items-end gap-2"
                   onSubmit={(e) => {
                     e.preventDefault()
-                    run(decide(item, req, actor, now, "reject", reason.trim()))
+                    run(decide(item, req, actor, now, "reject", reason.trim(), trail))
                     setRejecting(false)
                     setReason("")
                   }}

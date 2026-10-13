@@ -27,6 +27,18 @@ describe("maker-checker", () => {
     expect(() => approve(log, r, "usr_moreau", AT)).toThrow(MakerCheckerViolation)
   })
 
+  it("can't be bypassed with a forged request: who prepared it and the role it needs come from the audit trail", () => {
+    const log = new AuditLog()
+    const real = req(log, 60_000_00, "usr_bisset") // $60,000: needs the Branch Manager
+    // A copy that claims someone else prepared it and that an analyst may approve.
+    const forged = { ...real, preparedBy: "usr_rivera", requiredRole: "analyst" as const }
+    expect(() => approve(log, forged, "usr_bisset", AT)).toThrow(MakerCheckerViolation)
+    // An analyst checking it escalates instead of approving.
+    expect(approve(log, forged, "usr_rivera", AT).status).toBe("pending")
+    // A request that was never prepared on this trail can't be approved at all.
+    expect(() => approve(log, { ...real, id: "apv_never" }, "usr_moreau", AT)).toThrow(NotAuthorized)
+  })
+
   it("a blocked attempt is itself audited and leaves the request unchanged", () => {
     const log = new AuditLog()
     const r = req(log, 100_00)

@@ -140,13 +140,15 @@ export function auditAt(serverEvents: readonly AuditEvent[], eventItems: readonl
  * functions against a scratch log and returns the events to record.
  */
 
-const capture = (fn: (log: AuditLog) => ApprovalRequest | void) => {
+const capture = (fn: (log: AuditLog) => ApprovalRequest | void, seed: AuditInput[] = []) => {
   const log = new AuditLog()
+  for (const e of seed) log.append(e)
+  const fresh = () => log.all.slice(seed.length).map(toInput)
   try {
     const request = fn(log) ?? undefined
-    return { request, events: log.all.map(toInput), error: null as string | null }
+    return { request, events: fresh(), error: null as string | null }
   } catch (e) {
-    return { request: undefined, events: log.all.map(toInput), error: e instanceof Error ? e.message : "Not allowed." }
+    return { request: undefined, events: fresh(), error: e instanceof Error ? e.message : "Not allowed." }
   }
 }
 
@@ -185,8 +187,23 @@ export function prepareItem(item: OpsItem, by: string, at: string): ActionResult
   return { action: { itemId: item.id, at, kind: "prepared", by, ownerId: by, request: r.request, events: r.events }, error: r.error }
 }
 
-export function decide(item: OpsItem, req: ApprovalRequest, by: string, at: string, verdict: "approve" | "reject", reason = ""): ActionResult {
-  const r = capture((log) => (verdict === "approve" ? approve(log, req, by, at) : reject(log, req, by, at, reason || "Rejected.")))
+/**
+ * An item's audit trail up to `now`: the simulated team's recorded events
+ * for it, then this browser's actions on it, in time order.
+ */
+export function trailFor(item: OpsItem, serverEvents: readonly AuditEvent[], eventItems: readonly (string | null)[], actions: UserAction[], now: string): AuditInput[] {
+  const server = serverEvents.filter((e, i) => eventItems[i] === item.id && e.at <= now).map(toInput)
+  const mine = actions.filter((a) => a.itemId === item.id && a.at <= now).flatMap((a) => a.events)
+  return [...server, ...mine].sort((a, b) => a.at.localeCompare(b.at))
+}
+
+/**
+ * Approve or reject. The item's trail is replayed into the scratch log
+ * first, so maker-checker reads who prepared it, and the role it needs, from
+ * the trail rather than from the request passed in.
+ */
+export function decide(item: OpsItem, req: ApprovalRequest, by: string, at: string, verdict: "approve" | "reject", reason = "", trail: AuditInput[] = []): ActionResult {
+  const r = capture((log) => (verdict === "approve" ? approve(log, req, by, at) : reject(log, req, by, at, reason || "Rejected.")), trail)
   const kind: UserActionKind = r.error ? "blocked" : verdict === "reject" ? "rejected" : r.request!.status === "approved" ? "approved" : "escalated"
   return { action: { itemId: item.id, at, kind, by, request: r.request, events: r.events }, error: r.error }
 }

@@ -72,12 +72,26 @@ export function prepare(
 }
 
 /**
+ * Who prepared a request and the role it needs, as the audit trail recorded
+ * them when it was prepared. The request object a caller passes in is never
+ * trusted for these, so a copy with a different maker or a lower role
+ * changes nothing.
+ */
+function preparedRecord(log: AuditLog, id: string): { preparedBy: string; requiredRole: Role } {
+  const e = [...log.all].reverse().find((x) => x.action === "approval.prepared" && (x.after as { id?: string } | undefined)?.id === id)
+  if (!e) throw new NotAuthorized(`request ${id} was never prepared on this audit trail`)
+  const after = e.after as { requiredRole: Role }
+  return { preparedBy: e.actor.id, requiredRole: after.requiredRole }
+}
+
+/**
  * Approve as `checkerId`. Throws if the checker prepared the request. If the
  * amount is above the checker's delegated authority, the request escalates
  * to the next role instead of being approved.
  */
-export function approve(log: AuditLog, req: ApprovalRequest, checkerId: string, at: string): ApprovalRequest {
-  if (req.status !== "pending") throw new Error(`request ${req.id} is already ${req.status}`)
+export function approve(log: AuditLog, given: ApprovalRequest, checkerId: string, at: string): ApprovalRequest {
+  if (given.status !== "pending") throw new Error(`request ${given.id} is already ${given.status}`)
+  const req: ApprovalRequest = { ...given, ...preparedRecord(log, given.id) }
   if (checkerId === req.preparedBy) {
     log.append({ at, actor: { kind: "user", id: checkerId }, action: "approval.blocked", subject: req.subject, before: snapshot(req), after: snapshot(req), reason: "Maker-checker: the person who prepared this can't approve it." })
     throw new MakerCheckerViolation("The person who prepared this can't approve it.")
@@ -103,8 +117,9 @@ export function approve(log: AuditLog, req: ApprovalRequest, checkerId: string, 
   return next
 }
 
-export function reject(log: AuditLog, req: ApprovalRequest, checkerId: string, at: string, reason: string): ApprovalRequest {
-  if (req.status !== "pending") throw new Error(`request ${req.id} is already ${req.status}`)
+export function reject(log: AuditLog, given: ApprovalRequest, checkerId: string, at: string, reason: string): ApprovalRequest {
+  if (given.status !== "pending") throw new Error(`request ${given.id} is already ${given.status}`)
+  const req: ApprovalRequest = { ...given, ...preparedRecord(log, given.id) }
   if (checkerId === req.preparedBy) throw new MakerCheckerViolation("The person who prepared this can't decide on it.")
   person(checkerId)
   const next = freeze({ ...req, status: "rejected", decidedBy: checkerId, decidedAt: at })
@@ -113,5 +128,5 @@ export function reject(log: AuditLog, req: ApprovalRequest, checkerId: string, a
 }
 
 function snapshot(r: ApprovalRequest) {
-  return { status: r.status, requiredRole: r.requiredRole, decidedBy: r.decidedBy ?? null, escalations: r.escalations.length }
+  return { id: r.id, amountCents: r.amountCents, status: r.status, requiredRole: r.requiredRole, decidedBy: r.decidedBy ?? null, escalations: r.escalations.length }
 }
