@@ -92,7 +92,8 @@ export const Applicant = z
     accounts: z.array(Account).min(1),
     transactions: z.array(Transaction),
     /** Generator provenance, for reproducibility. */
-    generated: z.object({ seed: z.number().int(), windowStart: IsoDate, windowEnd: IsoDate, generatorVersion: z.string() }),
+    /** seedKey: the key random data was generated from (an applicant's original slug); kept when a name changes so the data doesn't. */
+    generated: z.object({ seed: z.number().int(), seedKey: z.string().optional(), windowStart: IsoDate, windowEnd: IsoDate, generatorVersion: z.string() }),
   })
   .superRefine((a, ctx) => {
     if (a.kind === "business" && !a.business) {

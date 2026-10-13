@@ -1,0 +1,4005 @@
+{
+  "priya": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "personal_loan",
+        "limitCents": 1500000,
+        "aprBps": 899,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": "lender",
+        "reasons": [
+          "LONG_MEMBERSHIP",
+          "STRONG_COVERAGE",
+          "STABLE_PAYROLL",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "personal_loan",
+        "limitCents": 1500000,
+        "aprBps": 1399,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STABLE_PAYROLL",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "approve",
+        "product": "personal_loan",
+        "limitCents": 1500000,
+        "aprBps": 999,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STABLE_PAYROLL",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER",
+          "ESTABLISHED_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-10-16",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2026-10-30",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-13",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-27",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-11",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-29",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-08",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-22",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-05",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-19",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-05",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-19",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-02",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-16",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-30",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-14",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-28",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-11",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-25",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-09",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-23",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-06",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-20",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-03",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-17",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-15",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-29",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-12",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-26",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-10",
+            21974,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-24",
+            21974,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-10-16",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2026-10-30",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-13",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-27",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-11",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-29",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-08",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-22",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-05",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-19",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-05",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-19",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-02",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-16",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-30",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-14",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-28",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-11",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-25",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-09",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-23",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-06",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-20",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-03",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-17",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-15",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-29",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-12",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-26",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-10",
+            23599,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-24",
+            23599,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "bank": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-10-16",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2026-10-30",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-13",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-27",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-11",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-29",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-08",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-22",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-05",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-19",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-05",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-19",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-02",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-16",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-30",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-14",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-28",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-11",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-25",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-09",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-23",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-06",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-20",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-03",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-17",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-15",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-29",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-12",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-26",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-10",
+            22293,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-24",
+            22293,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "hollis-family-farm": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "seasonal_operating_line",
+        "limitCents": 6000000,
+        "aprBps": 795,
+        "termMonths": 12,
+        "structure": "seasonal_operating",
+        "approver": "branch_manager",
+        "reasons": [
+          "SEASONAL_REPAYMENT_FITS",
+          "LONG_MEMBERSHIP",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "business_line_of_credit",
+        "limitCents": 800000,
+        "aprBps": 1399,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "LIMIT_REDUCED",
+          "NO_SEASONAL_STRUCTURE",
+          "STRONG_COVERAGE",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "seasonal_operating_line",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "INCOME_TOO_VARIABLE"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "paid_off",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2027-06-01",
+            7587,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            16359,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            19220,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            986288,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            979882,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            973474,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            25327,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            24820,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            24324,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            23838,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            23361,
+            "returned",
+            "901"
+          ],
+          [
+            "2027-03-08",
+            23361,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            22894,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            22436,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            21987,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            21548,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            21116,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            20695,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            20280,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "amara": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "credit_card",
+        "limitCents": 200000,
+        "aprBps": 1299,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": "msr",
+        "reasons": [
+          "NON_MEMBER_CAP",
+          "STRONG_COVERAGE",
+          "CONSISTENT_GIG_INCOME",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "credit_card",
+        "limitCents": 300000,
+        "aprBps": 1999,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "CONSISTENT_GIG_INCOME",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "refer",
+        "product": "credit_card",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "INCOME_NEEDS_DOCUMENTS"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            6165,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            6042,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            5921,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            5803,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            5687,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            5573,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            5462,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            5352,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            5245,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            5140,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            5038,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            4937,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            10998,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            10778,
+            "returned",
+            "907"
+          ],
+          [
+            "2026-12-29",
+            10778,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            10563,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            10352,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            10145,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            9941,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            9742,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            9547,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            9357,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            9170,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            8986,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            8807,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "daniel": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "starter_credit",
+        "limitCents": 200000,
+        "aprBps": 1199,
+        "termMonths": null,
+        "structure": "secured_starter",
+        "approver": "msr",
+        "reasons": [
+          "STARTER_PATH",
+          "STABLE_PAYROLL",
+          "SAVINGS_HABIT",
+          "GROWING_REVENUE",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "starter_credit",
+        "limitCents": 100000,
+        "aprBps": 1799,
+        "termMonths": null,
+        "structure": "secured_starter",
+        "approver": null,
+        "reasons": [
+          "THIN_FILE_LIMIT",
+          "STRONG_COVERAGE",
+          "STABLE_PAYROLL",
+          "GROWING_REVENUE"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "starter_credit",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "SHORT_ACCOUNT_HISTORY",
+          "SHORT_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            5998,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            5878,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            5761,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            5646,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            5533,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            5422,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            5314,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            5208,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            5103,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            5001,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            4902,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            4803,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            3499,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            3429,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            3361,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            3294,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            3228,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            3163,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            3100,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            3038,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            2977,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            2918,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            2860,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            2802,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "sofia": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "decline",
+        "product": "personal_loan",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "RECENT_NSF",
+          "RISING_CARD_BALANCES"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "decline",
+        "product": "personal_loan",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "RECENT_NSF",
+          "RISING_CARD_BALANCES"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "personal_loan",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "NSF_HISTORY",
+          "RISING_CARD_BALANCES"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ]
+    ],
+    "loans": {}
+  },
+  "northline-auto-repair": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "business_term_loan",
+        "limitCents": 8000000,
+        "aprBps": 825,
+        "termMonths": 60,
+        "structure": "term",
+        "approver": "branch_manager",
+        "reasons": [
+          "LONG_MEMBERSHIP",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "GROWING_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "business_term_loan",
+        "limitCents": 8000000,
+        "aprBps": 1299,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "GROWING_REVENUE"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "approve",
+        "product": "business_term_loan",
+        "limitCents": 8000000,
+        "aprBps": 895,
+        "termMonths": 60,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "GROWING_REVENUE",
+          "NO_RETURNED_PAYMENTS",
+          "ESTABLISHED_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            163171,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            163171,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            269514,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            269514,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "bank": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            165873,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            165873,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "bright-smile-dental": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "equipment_financing",
+        "limitCents": 35000000,
+        "aprBps": 775,
+        "termMonths": 84,
+        "structure": "term",
+        "approver": "credit_committee",
+        "reasons": [
+          "LONG_MEMBERSHIP",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "equipment_financing",
+        "limitCents": 15000000,
+        "aprBps": 1199,
+        "termMonths": 48,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "PRODUCT_MAX",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "approve",
+        "product": "equipment_financing",
+        "limitCents": 35000000,
+        "aprBps": 845,
+        "termMonths": 84,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS",
+          "ESTABLISHED_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            541169,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            541169,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            394934,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            394934,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "bank": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            553398,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            553398,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "corner-grind-cafe": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve_with_conditions",
+        "product": "business_line_of_credit",
+        "limitCents": 750000,
+        "aprBps": 875,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": "msr",
+        "reasons": [
+          "RECENT_NSF_CAUTION",
+          "LIMIT_REDUCED",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "GROWING_REVENUE"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "decline",
+        "product": "business_line_of_credit",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "RECENT_NSF"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "business_line_of_credit",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "NSF_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "needs_review"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-12-15",
+        "status": "charged_off",
+        "chargedOffOn": "2027-05-04",
+        "attempts": [
+          [
+            "2027-01-04",
+            20469,
+            "returned",
+            "901"
+          ],
+          [
+            "2027-01-11",
+            20469,
+            "returned",
+            "901"
+          ],
+          [
+            "2027-02-01",
+            20059,
+            "returned",
+            "905"
+          ]
+        ]
+      }
+    }
+  },
+  "lakeside-lodge": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "seasonal_operating_line",
+        "limitCents": 8000000,
+        "aprBps": 795,
+        "termMonths": 12,
+        "structure": "seasonal_operating",
+        "approver": "branch_manager",
+        "reasons": [
+          "SEASONAL_REPAYMENT_FITS",
+          "PEAK_SURPLUS_LIMITS_LINE",
+          "LONG_MEMBERSHIP",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "decline",
+        "product": "seasonal_operating_line",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "NEGATIVE_TYPICAL_MONTH"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "seasonal_operating_line",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "INCOME_TOO_VARIABLE"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "needs_review"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "paid_off",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2027-05-03",
+            11624,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            1259524,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            1251342,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            1243160,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "main-street-hardware": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "business_line_of_credit",
+        "limitCents": 4000000,
+        "aprBps": 875,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": "lender",
+        "reasons": [
+          "LONG_MEMBERSHIP",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 1
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "business_line_of_credit",
+        "limitCents": 750000,
+        "aprBps": 1399,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "LIMIT_REDUCED",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "approve",
+        "product": "business_line_of_credit",
+        "limitCents": 4000000,
+        "aprBps": 945,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS",
+          "ESTABLISHED_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            109167,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            106983,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            104844,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            102747,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            100692,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            98678,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            96705,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            94770,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            92875,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            91018,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            89197,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            87414,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            23744,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            23269,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            22803,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            22348,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            21901,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            21463,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            21034,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            20613,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            20201,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            19797,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            19401,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            19012,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "bank": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            111500,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            109270,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            107085,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            104944,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            102845,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            100787,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            98772,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            96796,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            94860,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            92963,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            91104,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            89282,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "ellen": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "line_of_credit",
+        "limitCents": 1500000,
+        "aprBps": 949,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": "lender",
+        "reasons": [
+          "LONG_MEMBERSHIP",
+          "STRONG_COVERAGE",
+          "STABLE_PENSION",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "line_of_credit",
+        "limitCents": 950000,
+        "aprBps": 1499,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "LIMIT_REDUCED",
+          "STRONG_COVERAGE",
+          "STABLE_PENSION",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "approve",
+        "product": "line_of_credit",
+        "limitCents": 1500000,
+        "aprBps": 1049,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STABLE_PENSION",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER",
+          "ESTABLISHED_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            41863,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            41025,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            40205,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            39401,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            38614,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            37841,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            37084,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            36342,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            35615,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            34903,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            34206,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            33521,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            30867,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            30250,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            29645,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            29052,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            28471,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            27902,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            27343,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            26797,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            26261,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            25736,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            25221,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            24716,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "bank": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            43113,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            42250,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            41405,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            40577,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            39767,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            38971,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            38192,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            37427,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            36679,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            35945,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            35227,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            34522,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "grace": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "personal_loan",
+        "limitCents": 800000,
+        "aprBps": 899,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": "msr",
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STABLE_PAYROLL",
+          "PAYING_DOWN_CARDS",
+          "GROWING_REVENUE",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "personal_loan",
+        "limitCents": 800000,
+        "aprBps": 1399,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "STRONG_COVERAGE",
+          "STABLE_PAYROLL",
+          "PAYING_DOWN_CARDS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "personal_loan",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "NSF_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-10-22",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-05",
+            11720,
+            "returned",
+            "901"
+          ],
+          [
+            "2026-11-19",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-23",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-03",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-17",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-31",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-14",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-28",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-11",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-25",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-11",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-25",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-08",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-22",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-06",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-20",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-03",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-17",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-15",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-29",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-12",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-26",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-09",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-23",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-07",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-21",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-04",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-18",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-02",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-16",
+            11720,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-30",
+            11720,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-10-22",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-05",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2026-11-19",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-03",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-17",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-31",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-14",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-28",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-11",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-25",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-11",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-25",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-08",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-22",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-06",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-20",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-03",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-17",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-15",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-29",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-12",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-26",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-09",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-23",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-07",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-21",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-04",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-18",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-02",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-16",
+            12587,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-30",
+            12587,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "quillfeather-plumbing": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "business_line_of_credit",
+        "limitCents": 2000000,
+        "aprBps": 875,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": "lender",
+        "reasons": [
+          "LONG_MEMBERSHIP",
+          "STRONG_COVERAGE",
+          "GROWING_REVENUE",
+          "NO_RETURNED_PAYMENTS",
+          "HEALTHY_CASH_BUFFER"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "business_line_of_credit",
+        "limitCents": 550000,
+        "aprBps": 1399,
+        "termMonths": null,
+        "structure": "revolving",
+        "approver": null,
+        "reasons": [
+          "LIMIT_REDUCED",
+          "STRONG_COVERAGE",
+          "GROWING_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "decline",
+        "product": "business_line_of_credit",
+        "limitCents": 0,
+        "aprBps": null,
+        "termMonths": null,
+        "structure": null,
+        "approver": null,
+        "reasons": [
+          "INCOME_TOO_VARIABLE"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            54583,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            53492,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            52422,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            51374,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            50346,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            49339,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            48353,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            47385,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            46438,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            45509,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            44599,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            43707,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            17412,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            17064,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            16723,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            16389,
+            "returned",
+            "903"
+          ],
+          [
+            "2027-02-24",
+            16389,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            16061,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            15740,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            15425,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            15116,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            14814,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            14518,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            14227,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            13942,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  },
+  "petalwick-florals": {
+    "decisions": {
+      "credit_union": {
+        "outcome": "approve",
+        "product": "business_term_loan",
+        "limitCents": 6000000,
+        "aprBps": 825,
+        "termMonths": 48,
+        "structure": "term",
+        "approver": "credit_committee",
+        "reasons": [
+          "RELATIONSHIP_SUPPORTS_APPROVAL",
+          "LONG_MEMBERSHIP",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "fintech": {
+        "outcome": "approve",
+        "product": "business_term_loan",
+        "limitCents": 2300000,
+        "aprBps": 1299,
+        "termMonths": 36,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "LIMIT_REDUCED",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS"
+        ],
+        "flags": 0
+      },
+      "bank": {
+        "outcome": "approve",
+        "product": "business_term_loan",
+        "limitCents": 4200000,
+        "aprBps": 895,
+        "termMonths": 48,
+        "structure": "term",
+        "approver": null,
+        "reasons": [
+          "LIMIT_REDUCED",
+          "STRONG_COVERAGE",
+          "STEADY_REVENUE",
+          "NO_RETURNED_PAYMENTS",
+          "ESTABLISHED_CREDIT_HISTORY"
+        ],
+        "flags": 0
+      }
+    },
+    "verification": [
+      [
+        "id_document",
+        "pass"
+      ],
+      [
+        "name_dob_match",
+        "pass"
+      ],
+      [
+        "sanctions_screening",
+        "pass"
+      ],
+      [
+        "pep_screening",
+        "pass"
+      ],
+      [
+        "business_registration",
+        "pass"
+      ],
+      [
+        "beneficial_ownership",
+        "pass"
+      ]
+    ],
+    "loans": {
+      "credit_union": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            147183,
+            "returned",
+            "901"
+          ],
+          [
+            "2026-12-08",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            147183,
+            "returned",
+            "901"
+          ],
+          [
+            "2027-01-11",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            147183,
+            "returned",
+            "901"
+          ],
+          [
+            "2027-06-01",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-03",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-04",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-02",
+            147183,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            147183,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "fintech": {
+        "fundedOn": "2026-10-06",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            77486,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            77486,
+            "settled",
+            null
+          ]
+        ]
+      },
+      "bank": {
+        "fundedOn": "2026-10-07",
+        "status": "active",
+        "chargedOffOn": null,
+        "attempts": [
+          [
+            "2026-11-02",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2026-12-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-01-04",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-02-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-03-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-04-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-05-03",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-06-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-07-02",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-08-02",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-09-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-10-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-11-01",
+            104418,
+            "settled",
+            null
+          ],
+          [
+            "2027-12-01",
+            104418,
+            "settled",
+            null
+          ]
+        ]
+      }
+    }
+  }
+}
