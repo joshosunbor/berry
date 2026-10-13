@@ -61,10 +61,11 @@ const median = (xs: number[]) => {
   const m = Math.floor(s.length / 2)
   return s.length % 2 ? s[m] : Math.round((s[m - 1] + s[m]) / 2)
 }
-const hoursText = (min: number) => (min < 60 ? `${min} min` : min < 60 * 48 ? `${Math.round((min / 60) * 10) / 10} h` : `${Math.round((min / 1440) * 10) / 10} days`)
+const one = (n: number) => Math.round(n * 10) / 10
+const count = (n: number, unit: string) => `${n} ${unit}${n === 1 ? "" : "s"}`
+export const hoursText = (min: number) => (min < 60 ? `${min} min` : min < 60 * 48 ? `${one(min / 60)} h` : count(one(min / 1440), "day"))
 /** Business time: 8-hour working days. */
-const businessText = (min: number) =>
-  min < 60 ? `${min} min` : min < 480 ? `${Math.round((min / 60) * 10) / 10} business hours` : `${Math.round((min / 480) * 10) / 10} business days`
+export const businessText = (min: number) => (min < 60 ? `${min} min` : min < 480 ? count(one(min / 60), "business hour") : count(one(min / 480), "business day"))
 const inLender = (m: Mode | null, f: LenderFilter) => f === "all" || m === f
 const modesFor = (f: LenderFilter): Mode[] => (f === "all" ? [...MODES] : [f])
 

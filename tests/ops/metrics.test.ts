@@ -1,11 +1,22 @@
 import { describe, expect, it } from "vitest"
 import { getMetricSources } from "@/lib/data"
-import { bottleneck, collectedCents, computeKpis, lossesCents, reconciliations, type LenderFilter } from "@/lib/ops/metrics"
+import { bottleneck, businessText, collectedCents, computeKpis, hoursText, lossesCents, reconciliations, type LenderFilter } from "@/lib/ops/metrics"
 import { OPS_MOMENTS } from "@/lib/ops/moments"
 import { slaState } from "@/lib/ops/queues"
 import { MODES } from "@/lib/modes"
 import { monthEnds, reconcile } from "@/lib/servicing/reconcile"
 import { CLOCK_START } from "@/lib/servicing/views"
+
+describe("durations read as plain English", () => {
+  it("singular for one, plural otherwise", () => {
+    expect(businessText(60)).toBe("1 business hour")
+    expect(businessText(90)).toBe("1.5 business hours")
+    expect(businessText(480)).toBe("1 business day")
+    expect(businessText(960)).toBe("2 business days")
+    expect(hoursText(60 * 24 * 2)).toBe("2 days")
+    expect(hoursText(60)).toBe("1 h")
+  })
+})
 
 const src = getMetricSources()
 const FILTERS: LenderFilter[] = ["all", ...MODES]
