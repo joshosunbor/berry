@@ -158,7 +158,13 @@ export function diffThresholds(a: InstitutionConfig, b: InstitutionConfig): Thre
 
 const policySubject = (mode: Mode) => ({ kind: "policy" as const, id: `pol_${MODE_META[mode].institutionId}` })
 
-function validate(mode: Mode, values: Record<string, number>) {
+/** Pairs where the first is a relaxation of the second, so it may never be stricter. */
+const RELAXATIONS: [string, string][] = [
+  ["relationshipMinDscr", "minDscr"],
+  ["relationshipSeasonalPeakCoverage", "seasonalPeakCoverage"],
+]
+
+function validate(mode: Mode, values: Record<string, number>, current: InstitutionConfig) {
   const fields = POLICY_FIELDS[mode]
   for (const [k, v] of Object.entries(values)) {
     const field = fields.find((x) => x.key === k)
@@ -167,6 +173,13 @@ function validate(mode: Mode, values: Record<string, number>) {
     if (field.unit === "count" || field.unit === "months" || field.unit === "cents") {
       if (!Number.isInteger(v)) throw new PolicyError(`${field.label} must be a whole number.`)
     }
+  }
+  // Checked on the thresholds as they would be after the change, not field by field.
+  const next = { ...current.thresholds, ...values }
+  for (const [relaxed, standard] of RELAXATIONS) {
+    if (next[relaxed] === undefined || next[standard] === undefined || next[relaxed] <= next[standard]) continue
+    const label = (k: string) => fields.find((x) => x.key === k)?.label ?? k
+    throw new PolicyError(`${label(relaxed)} (${next[relaxed]}) can't be above ${label(standard).toLowerCase()} (${next[standard]}): it's meant to relax that rule.`)
   }
 }
 
@@ -203,7 +216,7 @@ export function proposeChange(
   log: AuditLog,
   input: { mode: Mode; current: InstitutionConfig; values: Record<string, number>; why: string; by: string; at: string; cases: PolicyCase[]; seq?: number },
 ): PolicyProposal {
-  validate(input.mode, input.values)
+  validate(input.mode, input.values, input.current)
   const proposed = InstitutionConfig.parse({
     ...input.current,
     version: input.current.version + 1,

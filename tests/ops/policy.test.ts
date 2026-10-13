@@ -88,6 +88,16 @@ describe("maker-checker on policy", () => {
     expect(() => decideProposal(log, p, { checker: "usr_lindqvist", at: AT, verdict: "approve", currentVersion: 2, impactReviewed: true })).toThrow(/prepared against v1/)
   })
 
+  it("rejects a strong-member minimum above the standard one", () => {
+    const cu = CONFIGS.credit_union
+    const proposeCu = (values: Record<string, number>) =>
+      proposeChange(new AuditLog(), { mode: "credit_union", current: cu, values, why: "Tighten coverage for strong members.", by: "usr_moreau", at: AT, cases })
+    // Standard minimum 1.2x: a strong-member minimum of 1.3x would make the exception harder than the rule.
+    expect(() => proposeCu({ relationshipMinDscr: 1.3 })).toThrow(/can't be above/)
+    expect(() => proposeCu({ minDscr: 1.05 })).toThrow(/can't be above/)
+    expect(() => proposeCu({ relationshipMinDscr: 1.15 })).not.toThrow()
+  })
+
   it("rejects bad values and empty changes", () => {
     const log = new AuditLog()
     expect(() => propose(log, { minDscr: 9 })).toThrow(PolicyError)
