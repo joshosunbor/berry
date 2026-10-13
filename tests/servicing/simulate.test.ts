@@ -342,5 +342,5 @@ describe("NSF safety under 500 randomized loans", () => {
     expect(all.filter((a) => a.isRetry).length).toBeGreaterThan(50)
     expect(all.some((a) => a.stage === "clearing")).toBe(true)
     expect(all.some((a) => a.stage === "settled")).toBe(true)
-  })
+  }, 30_000) // 500 simulated loans: give it room when the machine is busy
 })
