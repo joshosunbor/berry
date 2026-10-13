@@ -108,7 +108,8 @@ function seasonal({ input, features: f, config }: ModeContext, t: Thresholds, st
   const product = "seasonal_operating_line"
   const terms = productTerms(config, product)!
   const peak = f.income.peakMonths
-  const peakSurplus = sum(f.monthly.filter((m) => peak.includes(Number(m.month.slice(5, 7)))).map((m) => m.netCents))
+  // This year's peak only: in a window longer than 12 months each peak month counts once.
+  const peakSurplus = sum(f.monthly.slice(-12).filter((m) => peak.includes(Number(m.month.slice(5, 7)))).map((m) => m.netCents))
   const minCoverage = strong ? t.relationshipSeasonalPeakCoverage : t.seasonalPeakCoverage
   const requested = Math.min(input.request.amountCents, terms.maxCents)
   const sized = roundLimit(p, Math.min(requested, Math.floor(peakSurplus / minCoverage)))

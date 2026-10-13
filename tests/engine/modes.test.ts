@@ -193,6 +193,13 @@ describe("Northgate (credit union): relationship, structure and authority", () =
     // Strong members need 1.15x: $90,000 / 1.15 = $78,260 → $75,000
     expect(cu({ ...over, relationship: member(10, 4) }, { product: "seasonal_operating_line", amountCents: 10_000_000 }, "business").limitCents).toBe(7_500_000)
   })
+  it("reads a season from the last 12 months: a longer window doesn't count a peak month twice", () => {
+    // 15 months: last year's Sep-Nov were much stronger; this year's peak surplus is $30,000.
+    const older = [9, 10, 11].map((m) => ({ month: `2025-${String(m).padStart(2, "0")}`, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: 3_000_000, lowBalanceCents: 100_000, closingBalanceCents: 100_000 }))
+    const over = { income: { type: "seasonal" as const, peakMonths: [9, 10, 11], peakShare: 0.65 }, annualNetCents: 2_000_000, monthly: [...older, ...seasonalMonths([9, 10, 11], 1_000_000, -50_000)] }
+    // $30,000 / 1.25 = $24,000, not ($30,000 + $90,000) / 1.25.
+    expect(cu(over, { product: "seasonal_operating_line", amountCents: 10_000_000 }, "business").limitCents).toBe(2_400_000)
+  })
   it("offers a seasonal operating line only to businesses; a personal applicant gets the product asked for", () => {
     const over = { income: { type: "seasonal" as const, peakMonths: [6, 7, 8], peakShare: 0.6 }, annualNetCents: 2_000_000, monthly: seasonalMonths([6, 7, 8], 600_000, 50_000) }
     const personal = cu(over, { product: "personal_loan", amountCents: 800_000, termMonths: 36 }, "personal")

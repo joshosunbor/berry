@@ -62,8 +62,9 @@ export function detectIncomePattern(view: LedgerView, incomeTxns: Transaction[])
   for (const t of incomeTxns) sources[t.category] = (sources[t.category] ?? 0) + t.amountCents
   for (const k of Object.keys(sources)) sources[k] = round2(sources[k] / total)
 
+  // The season is read from the last 12 months, so a longer window never counts a calendar month twice.
   const byCalendarMonth = Array.from({ length: 12 }, () => 0)
-  for (const m of view.months) byCalendarMonth[Number(m.month.slice(5, 7)) - 1] += m.incomeCents
+  for (const m of view.months.slice(-12)) byCalendarMonth[Number(m.month.slice(5, 7)) - 1] += m.incomeCents
   const { months: peakMonths, share: peakShare } = bestConsecutive(byCalendarMonth, 3)
   const monthlyIncome = view.months.map((m) => m.incomeCents)
   const avgIncome = mean(monthlyIncome)
