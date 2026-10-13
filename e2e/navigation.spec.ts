@@ -52,6 +52,19 @@ test("renamed businesses: every old address redirects permanently, in one hop", 
   }
 })
 
+test("link previews: OpenGraph and Twitter tags point at a real 1200x630 image", async ({ page, request }) => {
+  await page.goto("/")
+  const og = await page.locator('meta[property="og:image"]').getAttribute("content")
+  expect(og).toMatch(/^https:\/\/berry-lending\.fly\.dev\/opengraph-image/)
+  await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", "summary_large_image")
+  await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute("content", "1200")
+  for (const path of ["/opengraph-image", "/twitter-image"]) {
+    const res = await request.get(path)
+    expect(res.status(), path).toBe(200)
+    expect(res.headers()["content-type"], path).toBe("image/png")
+  }
+})
+
 test("an old anchor lands on the How it works tab that holds it", async ({ page }) => {
   await page.goto("/methodology#regulatory-status")
   await expect(page).toHaveURL(/\/how-it-works#regulatory-status$/)

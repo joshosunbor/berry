@@ -72,6 +72,11 @@ const nextConfig: NextConfig = {
   // Self-contained server for the Docker image (Fly.io).
   output: "standalone",
   poweredByHeader: false,
+  // The link-preview images read Geist from disk when rendered; ship those files with the standalone server.
+  outputFileTracingIncludes: {
+    "/opengraph-image": ["./node_modules/geist/dist/fonts/geist-sans/Geist-{Regular,SemiBold,Bold}.ttf"],
+    "/twitter-image": ["./node_modules/geist/dist/fonts/geist-sans/Geist-{Regular,SemiBold,Bold}.ttf"],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   async redirects() {
