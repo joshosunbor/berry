@@ -43,7 +43,8 @@ export function findLargeCashEvents(transactions: Transaction[]): LargeCashEvent
     if (total >= LCTR_THRESHOLD_CENTS) {
       const group = cash.slice(i, j)
       events.push({
-        rule: group.length === 1 ? "single" : "24_hour",
+        // A deposit that meets the threshold on its own is a single large deposit, whatever came with it.
+        rule: group.some((t) => t.amountCents >= LCTR_THRESHOLD_CENTS) ? "single" : "24_hour",
         transactions: group,
         totalCents: total,
         windowStart: group[0].transactionTimestamp,
@@ -59,11 +60,17 @@ export function findLargeCashEvents(transactions: Transaction[]): LargeCashEvent
 
 const fmt = (cents: number) => new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD" }).format(cents / 100)
 
+/** "A single cash deposit of $12,000.00", plus any smaller cash deposits in the same 24 hours. */
+function singleText(event: LargeCashEvent): string {
+  const largest = Math.max(...event.transactions.map((t) => t.amountCents))
+  const others = event.transactions.length - 1
+  return others
+    ? `A single cash deposit of ${fmt(largest)}, with ${others} other cash deposit${others === 1 ? "" : "s"} in the same 24 hours (${fmt(event.totalCents)} in all)`
+    : `A single cash deposit of ${fmt(largest)}`
+}
+
 export function toComplianceFlag(event: LargeCashEvent): ComplianceFlag {
-  const what =
-    event.rule === "single"
-      ? `A single cash deposit of ${fmt(event.totalCents)}`
-      : `${event.transactions.length} cash deposits totalling ${fmt(event.totalCents)} within 24 hours`
+  const what = event.rule === "single" ? singleText(event) : `${event.transactions.length} cash deposits totalling ${fmt(event.totalCents)} within 24 hours`
   return {
     type: "FINTRAC_LCTR_CANDIDATE",
     summary: `${what} on ${event.windowStart.slice(0, 10)}. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.`,
@@ -136,7 +143,7 @@ export function reviewLargeCash(event: LargeCashEvent, ctx: { reportingEntity: s
   const money = (c: number) => fmt(c)
   const reason =
     event.rule === "single"
-      ? `A single cash deposit of ${money(event.totalCents)} meets the ${money(LCTR_THRESHOLD_CENTS)} threshold.`
+      ? `${singleText(event)}. The single deposit meets the ${money(LCTR_THRESHOLD_CENTS)} threshold on its own.`
       : `${event.transactions.length} cash deposits within ${deposits[deposits.length - 1].hoursFromFirst} hours total ${money(event.totalCents)}, meeting the ${money(LCTR_THRESHOLD_CENTS)} threshold under the 24-hour rule. Each deposit alone is below the threshold.`
   return {
     rule: event.rule,

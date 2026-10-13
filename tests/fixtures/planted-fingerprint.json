@@ -1993,7 +1993,7 @@
           "flags": [
             {
               "type": "FINTRAC_LCTR_CANDIDATE",
-              "summary": "2 cash deposits totalling $12,616.25 within 24 hours on 2026-05-07. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
+              "summary": "A single cash deposit of $12,000.00, with 1 other cash deposit in the same 24 hours ($12,616.25 in all) on 2026-05-07. Possible Large Cash Transaction Report; route to FINTRAC review. Not a credit factor.",
               "transactionIds": [
                 "txn_planted-b12-00432",
                 "txn_planted-b12-00434"
@@ -2001,7 +2001,7 @@
               "totalCents": 1261625,
               "windowStart": "2026-05-07T14:03:00-04:00",
               "windowEnd": "2026-05-08T11:20:00-04:00",
-              "rule": "24_hour",
+              "rule": "single",
               "creditFactor": false,
               "source": "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/lctr-doie/lctr-doie-eng"
             }

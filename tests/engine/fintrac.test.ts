@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import { describe, expect, it } from "vitest"
-import { findLargeCashEvents, toComplianceFlag } from "@/lib/engine/fintrac"
+import { findLargeCashEvents, reviewLargeCash, toComplianceFlag } from "@/lib/engine/fintrac"
 import { Applicant, ComplianceFlag } from "@/lib/schemas"
 import { txn } from "./fixtures"
 
@@ -12,6 +12,17 @@ describe("FINTRAC large cash (LCTR) candidates", () => {
   it("flags a single cash deposit of $10,000 or more", () => {
     const [e] = findLargeCashEvents([cash("a", "2026-03-02T10:00:00-05:00", 1_000_000)])
     expect(e.rule).toBe("single")
+  })
+
+  it("a $10,000+ deposit with a smaller one in the same 24 hours is a single large deposit, and says so", () => {
+    const [e] = findLargeCashEvents([cash("a", "2026-03-02T10:00:00-05:00", 1_200_000), cash("b", "2026-03-02T15:00:00-05:00", 50_000)])
+    expect(e.rule).toBe("single")
+    const flag = toComplianceFlag(e)
+    expect(flag.summary).toMatch(/A single cash deposit of \$12,000\.00/)
+    expect(flag.summary).toMatch(/1 other cash deposit/)
+    const review = reviewLargeCash(e, { reportingEntity: "Northgate Credit Union (fictional)", customerName: "Test" })
+    expect(review.reason).not.toMatch(/Each deposit alone is below/)
+    expect(review.reason).toMatch(/\$12,000\.00/)
   })
 
   it("does not flag $9,999.99", () => {
