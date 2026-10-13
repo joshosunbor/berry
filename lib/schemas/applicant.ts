@@ -55,6 +55,12 @@ export const Relationship = z.object({
   productsHeld: z.array(
     z.enum(["chequing", "savings", "term_deposit", "mortgage", "credit_card", "line_of_credit", "business_account", "rrsp", "tfsa"]),
   ),
+  /**
+   * What the member already owes Northgate (balances or limits on credit it
+   * holds there), for delegated authority. Its payments must appear in the
+   * transactions so coverage counts them. Omitted: none.
+   */
+  existingCreditCents: z.number().int().nonnegative().optional(),
 })
 
 export const BusinessProfile = z.object({

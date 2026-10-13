@@ -32,6 +32,7 @@ export const CREDIT_UNION_INPUTS = [
   "relationship.tenureYears",
   "relationship.productsHeld",
   "relationship.avgBalanceAtNorthgateCents",
+  "relationship.existingCreditCents",
   "nsf90",
   "creditUtilization",
   "avgMonthlyNetCents",
@@ -85,7 +86,8 @@ export function decideCreditUnion(ctx: ModeContext): ModeResult {
         : standard(ctx, t, strong, reasons)
 
   if (result.outcome !== "decline" && config.authorityTiers?.length) {
-    result.approver = routeApproval(config.authorityTiers, result.limitCents, result.relationshipException)
+    // Delegated authority covers the member's whole exposure to Northgate, not just the new limit.
+    result.approver = routeApproval(config.authorityTiers, result.limitCents + f.relationship.existingCreditCents, result.relationshipException)
   }
   return result
 }

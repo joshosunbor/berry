@@ -102,7 +102,7 @@ export function features(over: Omit<Partial<Features>, "income"> & { income?: Pa
     creditBalanceChangeCents: null,
     creditHistoryMonths: 96,
     foreignReportAvailable: false,
-    relationship: { member: false, tenureYears: 0, productsHeld: 0, avgBalanceAtNorthgateCents: 0 },
+    relationship: { member: false, tenureYears: 0, productsHeld: 0, avgBalanceAtNorthgateCents: 0, existingCreditCents: 0 },
     monthly: [],
     ...rest,
     income: { ...BASE_PATTERN, ...income },

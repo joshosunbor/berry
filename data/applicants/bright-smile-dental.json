@@ -25,7 +25,7 @@
       "business_account",
       "savings",
       "term_deposit",
-      "credit_card"
+      "chequing"
     ]
   },
   "business": {

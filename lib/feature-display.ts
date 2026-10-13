@@ -36,6 +36,7 @@ const DISPLAY: Record<string, { label: string; value: (f: Features) => string }>
   "relationship.tenureYears": { label: "Years as a Northgate member", value: (f) => (f.relationship.member ? `${Math.floor(f.relationship.tenureYears)}` : "Not a member") },
   "relationship.productsHeld": { label: "Northgate products held", value: (f) => `${f.relationship.productsHeld}` },
   "relationship.avgBalanceAtNorthgateCents": { label: "Average balance at Northgate", value: (f) => money(f.relationship.avgBalanceAtNorthgateCents) },
+  "relationship.existingCreditCents": { label: "Already owed to Northgate (for who signs off)", value: (f) => money(f.relationship.existingCreditCents) },
 }
 
 export function displayInput(key: string, f: Features): { label: string; value: string } {

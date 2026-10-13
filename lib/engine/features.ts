@@ -50,6 +50,8 @@ export interface Features {
     tenureYears: number
     productsHeld: number
     avgBalanceAtNorthgateCents: number
+    /** Credit already owed to Northgate; added to a new limit for delegated authority. */
+    existingCreditCents: number
   }
   income: IncomePattern
   monthly: MonthTotals[]
@@ -128,6 +130,7 @@ export function computeFeatures(input: EngineInput, view: LedgerView = buildLedg
       member: rel !== null,
       tenureYears: rel ? round2((Date.parse(`${asOf}T00:00:00Z`) - Date.parse(`${rel.memberSince}T00:00:00Z`)) / (365.25 * 86_400_000)) : 0,
       productsHeld: rel?.productsHeld.length ?? 0,
+      existingCreditCents: rel?.existingCreditCents ?? 0,
       avgBalanceAtNorthgateCents: northgate.length
         ? Math.round(mean(dailyBalances(northgate, input.transactions, view.windowStart, view.windowEnd).map((d) => d.balanceCents)))
         : 0,

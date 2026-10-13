@@ -314,7 +314,7 @@ const hollis: ApplicantSpec = {
   province: "SK",
   request: { product: "seasonal_operating_line", amountCents: dollars(60_000), purpose: "Spring seed, fertilizer and fuel, repaid after harvest" },
   creditFile: { historyMonths: 286, bureauBand: "good", foreignReport: { available: false } },
-  relationship: { institutionId: "northgate", memberSince: "2004-03-01", productsHeld: ["business_account", "savings", "mortgage", "term_deposit"] },
+  relationship: { institutionId: "northgate", memberSince: "2004-03-01", productsHeld: ["business_account", "savings", "chequing", "term_deposit"] },
   business: { legalName: "Hollis Family Farm", registrationNo: "SK-PTN-104882", structure: "partnership", industry: "Grain and oilseed farming", yearsOperating: 31, employees: 2 },
   protected: {
     fullName: "Margaret Hollis",
@@ -401,7 +401,7 @@ const brightSmile: ApplicantSpec = {
   province: "AB",
   request: { product: "equipment_financing", amountCents: dollars(350_000), termMonths: 84, purpose: "3D imaging system and four operatory chairs" },
   creditFile: { historyMonths: 230, bureauBand: "excellent", foreignReport: { available: false } },
-  relationship: { institutionId: "northgate", memberSince: "2014-09-02", productsHeld: ["business_account", "savings", "term_deposit", "credit_card"] },
+  relationship: { institutionId: "northgate", memberSince: "2014-09-02", productsHeld: ["business_account", "savings", "term_deposit", "chequing"] },
   business: { legalName: "Bright Smile Dental Professional Corporation", registrationNo: "AB-PC-5530718", structure: "corporation", industry: "Dental practice", yearsOperating: 12, employees: 9 },
   protected: {
     fullName: "Dr. Helena Achterberg",
@@ -486,7 +486,7 @@ const lakeside: ApplicantSpec = {
   province: "BC",
   request: { product: "seasonal_operating_line", amountCents: dollars(90_000), purpose: "Pre-season staffing, repairs and inventory" },
   creditFile: { historyMonths: 198, bureauBand: "good", foreignReport: { available: false } },
-  relationship: { institutionId: "northgate", memberSince: "2011-05-01", productsHeld: ["business_account", "mortgage", "savings"] },
+  relationship: { institutionId: "northgate", memberSince: "2011-05-01", productsHeld: ["business_account", "term_deposit", "savings"] },
   business: { legalName: "Lakeside Lodge Ltd.", registrationNo: "BC-BC-0937215", structure: "corporation", industry: "Seasonal accommodation", yearsOperating: 15, employees: 5 },
   protected: {
     fullName: "Owen Ferreira",
