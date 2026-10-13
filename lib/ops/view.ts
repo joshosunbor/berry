@@ -235,14 +235,25 @@ export function proposalsFrom(actions: UserAction[], now: string): PolicyProposa
   return [...byId.values()]
 }
 
-/** Runs a policy step against a scratch log and returns the action to record (with any error). */
-export function policyAction(by: string, at: string, kind: "policy_proposed" | "policy_decided", fn: (log: AuditLog) => PolicyProposal): ActionResult {
+/** A policy proposal's recorded trail in this browser, up to `now`: its proposal and every decision on it. */
+export function policyTrail(actions: UserAction[], proposalId: string, now: string): AuditInput[] {
+  return actions.filter((a) => a.policy?.id === proposalId && a.at <= now).flatMap((a) => a.events)
+}
+
+/**
+ * Runs a policy step against a scratch log and returns the action to record
+ * (with any error). `trail` is replayed first, so maker-checker reads who
+ * prepared the proposal from the trail.
+ */
+export function policyAction(by: string, at: string, kind: "policy_proposed" | "policy_decided", fn: (log: AuditLog) => PolicyProposal, trail: AuditInput[] = []): ActionResult {
   const log = new AuditLog()
+  for (const e of trail) log.append(e)
+  const fresh = () => log.all.slice(trail.length).map(toInput)
   try {
     const policy = fn(log)
-    return { action: { itemId: null, at, kind, by, policy, events: log.all.map(toInput) }, error: null }
+    return { action: { itemId: null, at, kind, by, policy, events: fresh() }, error: null }
   } catch (e) {
-    return { action: { itemId: null, at, kind: "blocked", by, events: log.all.map(toInput) }, error: e instanceof Error ? e.message : "Not allowed." }
+    return { action: { itemId: null, at, kind: "blocked", by, events: fresh() }, error: e instanceof Error ? e.message : "Not allowed." }
   }
 }
 

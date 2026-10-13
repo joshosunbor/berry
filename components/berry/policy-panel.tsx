@@ -1,5 +1,6 @@
 "use client"
 
+import type { AuditInput } from "@/lib/ops/audit"
 import { useMemo, useState } from "react"
 import { History, ShieldCheck } from "lucide-react"
 import { InlineError } from "@/components/berry/inline-error"
@@ -24,7 +25,7 @@ import {
   type PolicyCase,
   type PolicyProposal,
 } from "@/lib/ops/policy"
-import { policyAction, proposalsFrom, type ActionResult, type UserAction } from "@/lib/ops/view"
+import { policyAction, proposalsFrom, type ActionResult, type UserAction, policyTrail } from "@/lib/ops/view"
 import { InstitutionConfig } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
 import { LenderDot } from "@/components/ui/pill"
@@ -97,7 +98,7 @@ export function PolicyPanel({ cases, actions, actor, now, record }: { cases: Pol
         {pending.length === 0 && <p className="mt-2 text-sm text-fg-3">No changes waiting for {MODE_META[mode].institution}.</p>}
         <div className="mt-3 space-y-4">
           {pending.map((p) => (
-            <ProposalCard key={p.id} p={p} currentVersion={current.version} actor={actor} now={now} run={run} error={error?.scope === p.id ? error.text : null} />
+            <ProposalCard key={p.id} p={p} currentVersion={current.version} actor={actor} now={now} run={run} error={error?.scope === p.id ? error.text : null} trail={policyTrail(actions, p.id, now)} />
           ))}
         </div>
       </section>
@@ -242,7 +243,9 @@ function ProposalCard({
   now,
   run,
   error,
+  trail,
 }: {
+  trail: AuditInput[]
   p: PolicyProposal
   currentVersion: number
   actor: string
@@ -256,7 +259,7 @@ function ProposalCard({
   const total = p.impact.byLender[p.mode].cast.length + p.impact.byLender[p.mode].planted.length
   const stale = p.baseVersion !== currentVersion
   const act = (verdict: "approve" | "reject") =>
-    run(p.id, policyAction(actor, now, "policy_decided", (log) => decideProposal(log, p, { checker: actor, at: now, verdict, currentVersion, impactReviewed: reviewed, reason }).proposal))
+    run(p.id, policyAction(actor, now, "policy_decided", (log) => decideProposal(log, p, { checker: actor, at: now, verdict, currentVersion, impactReviewed: reviewed, reason }).proposal, trail))
 
   return (
     <article className="rounded-[14px] bg-panel shadow-card p-5" aria-label={`${MODE_META[p.mode].institution} policy v${p.proposed.version}`}>

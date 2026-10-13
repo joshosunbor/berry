@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest"
-import { getAuditEvents, getLoanViews, getOpsEventItems, getOpsItems } from "@/lib/data"
+import { getAuditEvents, getLoanViews, getOpsEventItems, getOpsItems, getPolicyCases } from "@/lib/data"
 import { verifyChain } from "@/lib/ops/audit"
 import { messageFor } from "@/lib/ops/communications"
 import { DASHBOARD_START, OPS_MOMENTS } from "@/lib/ops/moments"
-import { assign, auditAt, complete, decide, itemAt, messageSent, prepareItem, suggestOwner, trailFor, workload, type UserAction } from "@/lib/ops/view"
+import { assign, auditAt, complete, decide, itemAt, messageSent, policyAction, policyTrail, prepareItem, suggestOwner, trailFor, workload, type UserAction } from "@/lib/ops/view"
+import { decideProposal, proposeChange } from "@/lib/ops/policy"
+import { CONFIGS } from "@/lib/engine/config"
 
 const items = getOpsItems()
 const events = getAuditEvents()
@@ -104,6 +106,21 @@ describe("acting in the console", () => {
     // The analyst who prepared it still can't approve it; someone else can act on it.
     expect(decide(item, req, req.preparedBy, at, "approve", "", trail).error).toMatch(/can't approve/)
     const other = decide(item, req, "usr_moreau", at, "approve", "", trail)
+    expect(other.error).toBeNull()
+  })
+
+  it("a policy change decided in the browser is checked against its own recorded trail", () => {
+    const cases = getPolicyCases()
+    const bank = CONFIGS.bank
+    const proposed = policyAction("usr_rivera", T, "policy_proposed", (log) =>
+      proposeChange(log, { mode: "bank", current: bank, values: { maxIncomeCv: 1.5 }, why: "Accept steadier seasonal income at Aspen.", by: "usr_rivera", at: T, cases, seq: 0 }),
+    )
+    const p = proposed.action.policy!
+    const trail = policyTrail([proposed.action], p.id, T)
+    // The maker is still blocked; a different person's decision runs (escalating above their authority).
+    const self = policyAction("usr_rivera", T, "policy_decided", (log) => decideProposal(log, p, { checker: "usr_rivera", at: T, verdict: "approve", currentVersion: bank.version, impactReviewed: true }).proposal, trail)
+    expect(self.error).toMatch(/can't approve/)
+    const other = policyAction("usr_moreau", T, "policy_decided", (log) => decideProposal(log, p, { checker: "usr_moreau", at: T, verdict: "approve", currentVersion: bank.version, impactReviewed: true }).proposal, trail)
     expect(other.error).toBeNull()
   })
 
