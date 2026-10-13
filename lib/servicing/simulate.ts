@@ -99,6 +99,7 @@ export type LoanEventType =
   | "hardship_approved"
   | "hardship_declined"
   | "payments_deferred"
+  | "applied_to_arrears"
   | "cured"
   | "status_changed"
   | "charged_off"
@@ -400,6 +401,18 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
         inFlight.splice(inFlight.indexOf(f), 1)
         f.attempt.outcome = "settled"
         for (const it of f.items) {
+          // Money received pays the oldest amount still owed first. If an older payment
+          // ran out of retries, this collection settles it, and this payment becomes the
+          // one outstanding: the borrower is one payment behind, not ageing to charge-off.
+          const oldest = items.filter((x) => x.state === "held" && x.n < it.n).sort((a, b) => a.n - b.n)[0]
+          if (oldest) {
+            oldest.state = "paid"
+            it.state = "held"
+            it.attempts = oldest.attempts
+            it.firstFailedOn = oldest.firstFailedOn
+            events.push({ date: day, type: "applied_to_arrears", text: `Payment applied to the oldest amount owed (payment ${oldest.n}); payment ${it.n} is now the one outstanding.` })
+            continue
+          }
           it.state = "paid"
           const cure = cures.find((c) => c.failedOn === it.firstFailedOn && c.curedOn === null)
           if (cure && daysBetween(cure.failedOn, day) <= config.collections.cureWindowDays) {

@@ -167,6 +167,17 @@ describe("servicing simulator: the three loan books", () => {
     }
   })
 
+  it("one missed payment doesn't age to charge-off while the borrower keeps paying: payments apply to the oldest owed", () => {
+    const g = loan("loan_grace-cu")
+    // Payment 2 fails twice (no more retries); every later payment goes through.
+    const script = { returns: [{ n: 2, attempt: 1, code: "901" as const }, { n: 2, attempt: 2, code: "901" as const }] }
+    const r = simulateBook("northgate", "credit_union", [{ ...g.setup, script }], "2027-12-31").loans[0]
+    expect(r.chargedOffOn).toBeNull()
+    expect(r.statusTimeline.map((t) => t.status)).not.toContain("charged_off")
+    // Still one payment behind (delinquent), not current.
+    expect(r.statusTimeline.at(-1)!.status).toBe("delinquent")
+  })
+
   it("Hollis at Kite: NSF on a credit union account uses the illustrative provincial fee", () => {
     const h = loan("loan_hollis-family-farm-kite")
     expect(h.borrowerFees[0].fee.rule).toBe("provincially_regulated")
