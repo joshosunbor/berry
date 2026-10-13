@@ -14,7 +14,7 @@
       },
       "asOf": "2026-10-11",
       "berryUse": "Applied",
-      "inBerry": "When a simulated debit is returned NSF, Berry shows the borrower's own bank fee: these rules for personal accounts at banks; for credit union accounts an illustrative fee, labelled 'provincially regulated — fee illustrative'. Retries are never scheduled inside the 2-business-day window. Business days are weekdays only (holidays not modelled)."
+      "inBerry": "When a simulated debit is returned NSF, Berry shows the borrower's own bank fee: these rules for personal accounts at banks; for credit union accounts an illustrative fee, labelled 'provincially regulated — fee illustrative'. Retries are never scheduled inside the 2-business-day window. Business days skip weekends and federal holidays (an illustrative calendar)."
     },
     {
       "id": "rule-h1",

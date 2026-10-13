@@ -9,9 +9,11 @@
  * https://www.canada.ca/en/financial-consumer-agency/news/2026/03/new-nsf-fee-regulations-bring-down-cost-of-banking-for-canadians.html
  *
  * Berry applies these to the borrower's own bank account in its simulator.
- * Business days here are weekdays; statutory holidays are not modelled
- * (illustrative simplification).
+ * Business days are weekdays that aren't clearing-system non-processing
+ * days (see ./holidays.ts, an illustrative calendar).
  */
+
+import { isNonProcessingDay } from "./holidays"
 
 export const NSF_RULES = {
   inForce: "2026-03-12",
@@ -24,9 +26,10 @@ export const NSF_RULES = {
 const day = (d: string) => new Date(`${d}T00:00:00Z`)
 const iso = (d: Date) => d.toISOString().slice(0, 10)
 const isWeekday = (d: Date) => d.getUTCDay() !== 0 && d.getUTCDay() !== 6
+const isOpen = (d: Date) => isWeekday(d) && !isNonProcessingDay(iso(d))
 
 export function isBusinessDay(date: string): boolean {
-  return isWeekday(day(date))
+  return isOpen(day(date))
 }
 
 /** The date `n` business days after `date`. */
@@ -35,7 +38,7 @@ export function addBusinessDays(date: string, n: number): string {
   let added = 0
   while (added < n) {
     d.setUTCDate(d.getUTCDate() + 1)
-    if (isWeekday(d)) added++
+    if (isOpen(d)) added++
   }
   return iso(d)
 }
@@ -45,7 +48,7 @@ export function businessDaysBetween(from: string, to: string): number {
   let n = 0
   for (let d = day(from); iso(d) < to; ) {
     d.setUTCDate(d.getUTCDate() + 1)
-    if (isWeekday(d) && iso(d) <= to) n++
+    if (isOpen(d) && iso(d) <= to) n++
   }
   return n
 }

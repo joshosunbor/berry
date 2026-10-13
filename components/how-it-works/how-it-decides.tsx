@@ -199,7 +199,7 @@ export function HowItDecides() {
             <li>Rates, limits, thresholds and authority tiers are illustrative. A real lender would calibrate them on its own loss history and risk appetite.</li>
             <li>The accuracy score shows the engine applies its stated policies; expectations and engine share an author, so it says nothing about real credit performance.</li>
             <li>The AFT file is ASCII, not EBCDIC, and isn&apos;t for submission; payment type codes from Standard 007 were not checked.</li>
-            <li>Business days are weekdays; statutory holidays are not modelled.</li>
+            <li>Business days skip weekends and nine federal holidays the clearing systems are commonly published as closing on; Payments Canada&apos;s own calendar for 2026–2027 could not be read, so the holiday calendar is illustrative.</li>
             <li>Servicing is simulated: settlement and return timing, retry policy by return reason, interest accrual and the credit union NSF fee are illustrative.</li>
             <li>Three provinces&apos; credit union deposit insurance limits could not be read from the official sites and are shown as Illustrative.</li>
             <li>In production: real consented data, after accreditation under the consumer-driven banking framework, bureau data alongside cash flow, model monitoring, adverse-action notices reviewed by compliance, and human review of referrals and exceptions.</li>

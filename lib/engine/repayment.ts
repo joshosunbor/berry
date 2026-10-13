@@ -1,4 +1,5 @@
 import type { Features } from "@/lib/engine/features"
+import { isBusinessDay } from "@/lib/rules/nsf"
 import { SERVICING } from "@/lib/servicing/config"
 import type { Decision } from "@/lib/schemas"
 
@@ -82,10 +83,10 @@ export const addDays = (s: string, n: number) => {
   x.setUTCDate(x.getUTCDate() + n)
   return iso(x)
 }
-/** A debit due on a weekend is presented on the next business day (illustrative: holidays not modelled). */
+/** A debit due on a weekend or a non-processing day is presented on the next business day (holiday calendar illustrative). */
 const onBusinessDay = (s: string) => {
   let x = s
-  while ([0, 6].includes(d(x).getUTCDay())) x = addDays(x, 1)
+  while (!isBusinessDay(x)) x = addDays(x, 1)
   return x
 }
 const addMonths = (s: string, n: number, day: number) => {

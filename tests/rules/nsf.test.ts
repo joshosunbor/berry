@@ -1,7 +1,33 @@
 import { describe, expect, it } from "vitest"
-import { addBusinessDays, businessDaysBetween, earliestSafeRetry, nsfFee, NSF_RULES } from "@/lib/rules/nsf"
+import { addBusinessDays, businessDaysBetween, earliestSafeRetry, isBusinessDay, nsfFee, NSF_RULES } from "@/lib/rules/nsf"
 
 const base = { accountKind: "personal" as const, date: "2026-07-15", shortfallCents: 25_000, bankFeeCents: 4_800, priorFeeDates: [] as string[] }
+
+describe("non-processing days (illustrative calendar)", () => {
+  it.each([
+    ["2027-01-01", "New Year's Day"],
+    ["2027-03-26", "Good Friday"],
+    ["2027-05-24", "Victoria Day"],
+    ["2027-07-01", "Canada Day"],
+    ["2027-09-06", "Labour Day"],
+    ["2026-10-12", "Thanksgiving"],
+    ["2026-11-11", "Remembrance Day"],
+    ["2026-12-25", "Christmas"],
+    ["2026-12-28", "Boxing Day, observed Monday (Dec 26 is a Saturday)"],
+  ])("%s (%s) is not a business day", (d) => {
+    expect(isBusinessDay(d)).toBe(false)
+  })
+  it("treats the Civic Holiday and Family Day as processing days", () => {
+    expect(isBusinessDay("2027-08-02")).toBe(true)
+    expect(isBusinessDay("2027-02-15")).toBe(true)
+  })
+  it("never lets a retry land inside the real two-business-day NSF window over Christmas", () => {
+    // Returned Thu Dec 24, 2026: Fri 25 and Mon 28 are holidays, so the window ends Wed Dec 30.
+    expect(earliestSafeRetry("2026-12-24")).toBe("2026-12-30")
+    expect(addBusinessDays("2026-12-24", 1)).toBe("2026-12-29")
+    expect(businessDaysBetween("2026-12-24", "2026-12-29")).toBe(1)
+  })
+})
 
 describe("business days", () => {
   it("skips weekends", () => {

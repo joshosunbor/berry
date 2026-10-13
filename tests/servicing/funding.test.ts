@@ -32,7 +32,8 @@ describe("funding rails", () => {
     const r = fund({ ...base, rail: "aft" })
     expect(r.completedAt).toBe("2026-10-07T09:00")
     expect(r.timeToFundMinutes).toBe(23 * 60)
-    expect(fund({ ...base, rail: "aft", initiatedAt: "2026-10-09T17:00" }).completedAt).toBe("2026-10-13T09:00") // Fri after cut-off → Tue
+    // Fri after cut-off: sent Tue (Mon Oct 12 is Thanksgiving, a non-processing day), available Wed.
+    expect(fund({ ...base, rail: "aft", initiatedAt: "2026-10-09T17:00" }).completedAt).toBe("2026-10-14T09:00")
   })
 
   it("e-Transfer takes minutes and RTR seconds", () => {
