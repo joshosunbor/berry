@@ -102,6 +102,18 @@ describe("Kite (fintech): cash flow only, sized on the median month", () => {
   })
 })
 
+describe("a decline's reason matches what declined it", () => {
+  it("Kite: a card sized under the minimum says so, rather than 'coverage 6.7x, below 1.3x'", () => {
+    // $60 median month x 4.5 = $270, under the $300 card minimum; coverage at $300 would be fine.
+    const r = decideFintech(ctx("fintech", features({ medianMonthlyNetCents: 6_000 }), { product: "credit_card", amountCents: 30_000 }))
+    expect(r.outcome).toBe("decline")
+    for (const reason of r.reasons.filter((x) => x.code === "LOW_COVERAGE")) {
+      expect(Number(reason.evidence.dscr)).toBeLessThan(Number(reason.evidence.minDscr))
+    }
+    expect(r.reasons.map((x) => x.code)).toContain("BELOW_PRODUCT_MINIMUM")
+  })
+})
+
 describe("rounding a request isn't a policy reduction", () => {
   it("Northgate: $15,250 offered as $15,000 says nothing about coverage", () => {
     const r = decideCreditUnion(ctx("credit_union", features({ relationship: { member: true, tenureYears: 3, productsHeld: 3, avgBalanceAtNorthgateCents: 300_000, existingCreditCents: 0 } }), { amountCents: 1_525_000 }))

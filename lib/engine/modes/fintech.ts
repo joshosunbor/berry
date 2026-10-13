@@ -95,12 +95,17 @@ export function decideFintech({ input, features: f, config }: ModeContext): Mode
 
   const limit = roundLimit(p, cap)
   if (limit < terms.minCents) {
-    const payment = assessedPayment(p, structure, Math.min(requested, terms.maxCents), terms.aprBps, termMonths)
-    return decline(
-      requestedProduct,
-      [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr: coverageAt(median, f, payment), minDscr: t.minDscrOnMedian, paymentCents: payment, maxAffordableCents: 0 } }],
-      FINTECH_INPUTS,
-    )
+    // Say what actually declined it: a term loan that fails coverage even at the product
+    // minimum, or a line whose sizing rule comes out under the minimum.
+    if (structure === "term") {
+      const payment = assessedPayment(p, structure, terms.minCents, terms.aprBps, termMonths)
+      return decline(
+        requestedProduct,
+        [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr: coverageAt(median, f, payment), minDscr: t.minDscrOnMedian, paymentCents: payment, maxAffordableCents: 0 } }],
+        FINTECH_INPUTS,
+      )
+    }
+    return decline(requestedProduct, [{ code: "BELOW_PRODUCT_MINIMUM", weight: 1, evidence: { limitCents: limit, minCents: terms.minCents, basis } }], FINTECH_INPUTS)
   }
   // Below the request only because limits come in round amounts isn't a reduction.
   if (limit < roundLimit(p, Math.min(requested, terms.maxCents)) && basis !== "thin-file starter cap") {
