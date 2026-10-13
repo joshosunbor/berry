@@ -38,10 +38,11 @@ describe("tie-outs: every KPI equals its source", () => {
   for (const { at, label } of OPS_MOMENTS) {
     const date = at.slice(0, 10)
     for (const f of FILTERS) {
-      it(`${label}, ${f}: losses = sum of charge-off ledger entries`, () => {
+      it(`${label}, ${f}: losses = the credit-loss lines of the charge-off entries`, () => {
+        // Unpaid interest is reversed against interest income at charge-off, so only the credit-loss line counts.
         const fromEntries = books(f)
-          .flatMap((b) => b.ledger.all.filter((e) => e.type === "charge_off" && e.date <= date))
-          .reduce((t, e) => t + e.lines.reduce((x, l) => x + l.debitCents, 0), 0)
+          .flatMap((b) => b.ledger.all.filter((e) => e.type === "charge_off" && e.date <= date).map((e) => ({ e, acct: `credit_loss:${b.institutionId}` })))
+          .reduce((t, { e, acct }) => t + e.lines.filter((l) => l.account === acct).reduce((x, l) => x + l.debitCents, 0), 0)
         const fromBalance = books(f).reduce((t, b) => t + b.ledger.balance(`credit_loss:${b.institutionId}`, date), 0)
         expect(kpi(f, at, "losses").raw).toBe(fromEntries)
         expect(fromBalance).toBe(fromEntries)

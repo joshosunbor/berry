@@ -231,12 +231,18 @@ export function postReturn(l: Ledger, loanId: string, c: CollectionPosting, date
   })
 }
 
-/** Charge-off: what's still owed is recognized as a credit loss. */
+/**
+ * Charge-off: the unpaid principal is recognized as a credit loss, and
+ * interest accrued but never collected is reversed against interest income
+ * (it was never earned), rather than counted as a loss.
+ */
 export function postChargeOff(l: Ledger, loanId: string, date: string, daysPastDue: number) {
   const principal = l.balance(account.principal(loanId))
   const interest = l.balance(account.interest(loanId))
   if (principal + interest <= 0) throw new Error(`nothing to charge off on ${loanId}`)
-  const lines: PostInput["lines"] = [{ account: account.creditLoss(l.institutionId), debitCents: principal + interest }]
+  const lines: PostInput["lines"] = []
+  if (principal) lines.push({ account: account.creditLoss(l.institutionId), debitCents: principal })
+  if (interest) lines.push({ account: account.interestIncome(l.institutionId), debitCents: interest })
   if (principal) lines.push({ account: account.principal(loanId), creditCents: principal })
   if (interest) lines.push({ account: account.interest(loanId), creditCents: interest })
   return l.post({ type: "charge_off", date, loanId, memo: `Charged off at ${daysPastDue} days past due`, ref: ref("loan", loanId), lines })

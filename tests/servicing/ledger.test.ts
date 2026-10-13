@@ -20,6 +20,18 @@ function funded(amount = 1_000_000) {
   return l
 }
 
+describe("charge-off", () => {
+  it("writes the principal off as a credit loss and reverses unpaid interest against interest income", () => {
+    const l = funded()
+    postInterestAccrual(l, LOAN, 7_500, "2026-11-01")
+    const e = postChargeOff(l, LOAN, "2027-03-01", 120)
+    const line = (acct: string) => e.lines.find((x) => x.account === acct)
+    expect(line(account.creditLoss("northgate"))!.debitCents).toBe(1_000_000)
+    expect(line(account.interestIncome("northgate"))!.debitCents).toBe(7_500)
+    expectBalanced(l)
+  })
+})
+
 describe("double-entry ledger", () => {
   it("funding: loan receivable up, settlement account down, in balance", () => {
     const l = funded()
@@ -118,12 +130,14 @@ describe("double-entry ledger", () => {
     expectBalanced(l)
   })
 
-  it("charge-off moves what's owed to credit loss and leaves nothing receivable", () => {
+  it("charge-off writes off the principal as a loss, reverses the unpaid interest, and leaves nothing receivable", () => {
     const l = funded()
     postInterestAccrual(l, LOAN, 7_500, "2026-11-01")
     postChargeOff(l, LOAN, "2027-03-01", 120)
     expect(l.outstanding(LOAN)).toBe(0)
-    expect(l.balance(account.creditLoss("northgate"))).toBe(1_007_500)
+    expect(l.balance(account.creditLoss("northgate"))).toBe(1_000_000)
+    // The $75 accrued was never earned: interest income nets to zero.
+    expect(l.balance(account.interestIncome("northgate"))).toBe(0)
     expect(l.all.at(-1)!.memo).toMatch(/120 days past due/)
     expect(() => postChargeOff(l, LOAN, "2027-03-02", 121)).toThrow()
     expectBalanced(l)
