@@ -2,7 +2,7 @@ import { addBusinessDays, businessDaysBetween, earliestSafeRetry, isBusinessDay 
 import { Rng, hashSeed } from "@/lib/rng"
 import type { InstitutionId, Mode } from "@/lib/modes"
 import type { ProductType, ReturnCode, RecoveryRules } from "@/lib/schemas"
-import type { Draw, ScheduledDebit } from "@/lib/engine/repayment"
+import { PAD_RULES, type Draw, type ScheduledDebit } from "@/lib/engine/repayment"
 import { borrowerNsfFee, type BorrowerAccount, type BorrowerFee } from "./borrower-bank"
 import { SERVICING, type ServicingConfig } from "./config"
 import { RTR_FULL_NAME, type FundingResult } from "./funding"
@@ -290,7 +290,15 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       const retryable = f.items.filter((it) => it.attempts <= s.recovery.maxRetries)
       const exhausted = f.items.filter((it) => it.attempts > s.recovery.maxRetries)
       if (retryable.length) {
-        const plan = planRetry(day, s.recovery, s.payroll)
+        let plan = planRetry(day, s.recovery, s.payroll)
+        // A retry is never combined with a scheduled payment (Rule H1): if one falls
+        // within 2 business days of the planned date, the retry follows it instead.
+        const near = (a: string, b: string) => (a <= b ? businessDaysBetween(a, b) : businessDaysBetween(b, a)) < 2
+        const clash = items.filter((it) => it.state === "open" && it.attempts === 0 && !retryable.includes(it) && near(it.dueOn, plan.date)).sort((a, b) => a.dueOn.localeCompare(b.dueOn))[0]
+        if (clash) {
+          const date = addBusinessDays(clash.dueOn, 2)
+          plan = { date, reason: `Retry on ${date}: planned for ${plan.date}, but a scheduled payment goes out on ${clash.dueOn}, so the retry follows it rather than being combined with it.` }
+        }
         for (const it of retryable) {
           it.dueOn = plan.date
           it.state = "open"
@@ -406,10 +414,17 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
 
     // 3. Resume after a contact, or after a hardship deferral.
     if (blocked?.until === day) {
-      events.push({ date: day, type: "debits_resumed", text: "Borrower confirmed: debits resume, including the missed amount." })
-      for (const it of items.filter((x) => x.state === "held")) {
+      // The missed payment is a debit on a new date, so the borrower gets Rule H1's notice first.
+      const on = addDays(day, PAD_RULES.preNotificationDays)
+      const held = items.filter((x) => x.state === "held")
+      events.push({
+        date: day,
+        type: "debits_resumed",
+        text: `Borrower confirmed: debits resume. ${held.length ? `The missed payment is collected on ${on}, after ${PAD_RULES.preNotificationDays} days' notice of its date and amount.` : "Nothing was missed."}`,
+      })
+      for (const it of held) {
         it.state = "open"
-        it.dueOn = day
+        it.dueOn = on
       }
       blocked = null
     }
@@ -420,7 +435,11 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
 
     // 4. Send today's debit: one debit for everything due, never too close to the last.
     const canSend = isBusinessDay(day) && !blocked && !hardshipUntil && day >= nextAllowed && (!lastSent || businessDaysBetween(lastSent, day) >= 2)
-    const due = canSend ? items.filter((it) => it.state === "open" && it.dueOn <= day) : []
+    // Rule H1: one payment per debit, at its own amount; never a combined or catch-up debit.
+    // A payment that has never been tried goes before a retry; otherwise the oldest first.
+    const ready = canSend ? items.filter((it) => it.state === "open" && it.dueOn <= day) : []
+    const pick = ready.sort((a, b) => Number(b.attempts === 0) - Number(a.attempts === 0) || a.n - b.n)[0]
+    const due = pick ? [pick] : []
     if (due.length) {
       const amount = due.reduce((t, it) => t + it.amountCents, 0)
       const split = applyPayment(amount, interest)
@@ -439,7 +458,7 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
       interest -= split.interestCents
       for (const it of due) it.state = "in_flight"
       lastSent = day
-      events.push({ date: day, type: "debit_sent", amountCents: amount, attemptId: attempt.id, text: attempt.isRetry ? "Retry debit sent (pre-notified)." : "Scheduled debit sent." })
+      events.push({ date: day, type: "debit_sent", amountCents: amount, attemptId: attempt.id, text: attempt.isRetry ? "Retry debit sent: the same payment and amount, under the existing agreement." : "Scheduled debit sent." })
 
       // Will it come back? Planted returns first, then a seeded chance.
       const attemptNo = Math.max(...due.map((it) => it.attempts)) + 1

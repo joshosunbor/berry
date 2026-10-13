@@ -70,7 +70,7 @@ export interface PlantedBreaks {
 export const PLANTED_BREAKS: Record<string, PlantedBreaks> = {
   northgate: {
     returnNotApplied: { reference: "col_main-street-hardware-cu-a3", code: "901" },
-    timingDifference: { reference: "col_grace-cu-a8" },
+    timingDifference: { reference: "col_grace-cu-a9" },
   },
 }
 

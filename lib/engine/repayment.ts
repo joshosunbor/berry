@@ -290,6 +290,11 @@ function checklist(kind: "personal" | "business", frequency: Frequency, amountTy
           : `Fixed amount: notice at least ${PAD_RULES.preNotificationDays} calendar days before any change to the amount or dates. Not waived.`,
       reference: "H1 s.17",
     },
+    {
+      element: "Returned payments",
+      detail: `A returned payment is presented once more, for the same amount, under this agreement, and never combined with another payment; the borrower is told the retry date when told about the return. A missed payment collected later is pre-notified ${PAD_RULES.preNotificationDays} days ahead. How much notice a retry needs isn't settled by the rule's text, so this policy is illustrative.`,
+      reference: "H1 s.17 (illustrative policy)",
+    },
     { element: "Recourse period", detail: `The borrower can claim reimbursement for a debit that does not follow the agreement within ${PAD_RULES.recourse[kind]}.`, reference: "H1 s.24" },
   ]
 }

@@ -57,7 +57,7 @@ describe("servicing simulator: the three loan books", () => {
     expectBalanced(again.ledger)
   })
 
-  it("Grace: NSF, one retry on payday after the safe date, cured", () => {
+  it("Grace: NSF, one retry after the safe date (not combined with her next payment), cured", () => {
     const g = loan("loan_grace-cu")
     const ret = g.attempts.find((a) => a.outcome === "returned")!
     expect(ret.code).toBe("901")
@@ -142,6 +142,29 @@ describe("servicing simulator: the three loan books", () => {
     const r = simulateBook("northgate", "credit_union", [{ ...p.setup, script }], "2029-12-31").loans[0]
     const end = r.events.find((e) => e.type === "debits_resumed" && e.text.startsWith("Deferral ended"))!.date
     expect(r.statusTimeline.some((t) => t.date > end && t.status === "delinquent")).toBe(true)
+  })
+
+  it("Rule H1: every debit is one payment at its own amount, never a combined or catch-up debit", () => {
+    for (const m of MODES) {
+      for (const l of books[m].loans) {
+        const amounts = new Map(l.setup.schedule.map((d) => [`${l.setup.id.replace(/^loan_/, "")}-${d.n}`, d.amountCents]))
+        for (const a of l.attempts) {
+          expect(a.items, `${a.id}`).toHaveLength(1)
+          expect(a.amountCents, `${a.id}`).toBe(amounts.get(a.items[0]))
+        }
+        expect(l.events.some((e) => /pre-notified/i.test(e.text)), l.setup.id).toBe(false)
+      }
+    }
+  })
+
+  it("Rule H1: after a pause, missed payments resume only after 10 days' notice", () => {
+    for (const id of ["loan_amara-kite", "loan_quillfeather-plumbing-kite"]) {
+      const l = loan(id)
+      const resumed = l.events.find((e) => e.type === "debits_resumed")!
+      const next = l.attempts.find((a) => a.sentOn > resumed.date)!
+      expect(daysBetween(resumed.date, next.sentOn), id).toBeGreaterThanOrEqual(10)
+      expect(resumed.text, id).toMatch(/10 days/)
+    }
   })
 
   it("Hollis at Kite: NSF on a credit union account uses the illustrative provincial fee", () => {
