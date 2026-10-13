@@ -19,6 +19,19 @@ const revenue = (txns: Transaction[]) => credits(txns).filter((t) => t.category 
 const returnsSince = (a: Applicant, days: number) =>
   a.transactions.filter((t) => t.returnOf && t.postedDate > addDays(a.generated.windowEnd, -days))
 
+describe("synthetic personal details can't match a real place", () => {
+  it("every postal code starts with a letter Canada Post never uses", () => {
+    const dirs = ["data/applicants", "data/planted"]
+    for (const d of dirs) {
+      for (const f of readdirSync(path.resolve(import.meta.dirname, "..", d)).filter((x) => x.endsWith(".json"))) {
+        const a = JSON.parse(readFileSync(path.resolve(import.meta.dirname, "..", d, f), "utf8"))
+        const code: string | undefined = a.protected?.postalCode
+        if (code) expect(code, f).toMatch(/^[DFIOQUWZ]/)
+      }
+    }
+  })
+})
+
 describe("generator", () => {
   it("is deterministic", () => {
     expect(generateCast()).toEqual(cast)

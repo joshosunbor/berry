@@ -25,7 +25,8 @@ function fictionalPerson(seed: string, province: Province): ProtectedAttributes 
     gender: rng.pick(["female", "male", "non_binary", "undisclosed"] as const),
     nationality: "Canada",
     immigrationStatus: rng.pick(["citizen", "permanent_resident"] as const),
-    postalCode: `${fsa[province]}0X ${rng.int(1, 9)}Z${rng.int(1, 9)}`,
+    // Z is never the first letter of a real Canadian postal code.
+    postalCode: `Z0${fsa[province]} ${rng.int(1, 9)}Z${rng.int(1, 9)}`,
   }
 }
 

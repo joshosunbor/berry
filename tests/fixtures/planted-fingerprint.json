@@ -422,7 +422,7 @@
   },
   "decisions": {
     "apl_planted-b01": {
-      "applicant": "9834c4f9f5890bc9fe96d96959514b9cb9fcf01fb0e9853afb435175130c49fa",
+      "applicant": "5602510c6547c1cccdcf4c8e74add927a132c291928479e72c3c1dce1d442c0b",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -584,7 +584,7 @@
       }
     },
     "apl_planted-b02": {
-      "applicant": "7847be96c666cc7a58101bb201b9943d2376372ed0fe08f124358a5f13140256",
+      "applicant": "a7914cdd188fac86516c2cb54b91dfaec8a21a50e09484bbbcc3ca9f636bece2",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -746,7 +746,7 @@
       }
     },
     "apl_planted-b03": {
-      "applicant": "03e1a424991857321204ba8cf969e60be9eea20a2c17a7a1ab102a656ef0828b",
+      "applicant": "573870bf5750d741026972c998ded7e7d2879fbf40e7e477574e2f79872e38a1",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -905,7 +905,7 @@
       }
     },
     "apl_planted-b04": {
-      "applicant": "3dd50ee621aa66a6c20ef0e1a5ff7712cb8ac9212f3e3b03ab4e0628cb824fac",
+      "applicant": "fe11e361e4b552e2bbf9bdef56eced9b5ca641d5a81599ce873f5f5574821836",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -1010,7 +1010,7 @@
       }
     },
     "apl_planted-b05": {
-      "applicant": "ef27cd8dae69c16344647b03f6fdc48319ee8e9a74ed978d448353820154ebb5",
+      "applicant": "ef936f159d33f4e8a8bd785ed13024e37c5131cc7221d922fd2bc52de9415ce4",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -1181,7 +1181,7 @@
       }
     },
     "apl_planted-b06": {
-      "applicant": "d3f7a91ecd080e8859485b0c1a882c109f64f18402c71e561df8eef100f392c9",
+      "applicant": "f9de09de5eed1086040123e9b84475ed4ef36a859cc2596a602fae077481bc02",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -1324,7 +1324,7 @@
       }
     },
     "apl_planted-b07": {
-      "applicant": "a88d7e29be96ba5124137ac258852026edc4aad5209b50f29c2b0f1d3e67dac2",
+      "applicant": "b3691a3385d0b0875ddcfbc37e158a20164f9b1effd4bd0dbff1004320280b20",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -1466,7 +1466,7 @@
       }
     },
     "apl_planted-b08": {
-      "applicant": "02ded7b06b013b2e00ace2e7d4a49e1366488a855fff9ac27559173d8bb2a144",
+      "applicant": "f4dc8efe120ba0bded2c5c1b79657f511371b0ad64ec729513250be025cd621e",
       "decisions": {
         "credit_union": {
           "outcome": "approve_with_conditions",
@@ -1587,7 +1587,7 @@
       }
     },
     "apl_planted-b09": {
-      "applicant": "9d9f4710d973550b63c902bfc3178dba71988c26ed3ace61ef7b27c45f019608",
+      "applicant": "fc6efb274dc7b2b62e4b3c32c9bf6658a5f717294a56b07d4b40ee554d69f522",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -1667,7 +1667,7 @@
       }
     },
     "apl_planted-b10": {
-      "applicant": "0b65af21547af93efb4be28b1acf400776d52e54ef7149b7fd8e2b82a3b6bb69",
+      "applicant": "3f55481a6279ea5547860659f12cc15956648b259e1bb253c8ed94b7a17ac091",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -1750,7 +1750,7 @@
       }
     },
     "apl_planted-b11": {
-      "applicant": "81f266d23cb3b0065299ab2c94a1b6c45dc09cbf98e4a68a293f874ebf22ca41",
+      "applicant": "ed3f7754eef944f6a54249065453c4baa119cdaae40ee76f119b20b7991b768c",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -1923,7 +1923,7 @@
       }
     },
     "apl_planted-b12": {
-      "applicant": "81fe71307b01611c582a34e194b38dca0b7744805b973762619386a600112af0",
+      "applicant": "17f7bba8b2f06356a6559183e3d66cf9979d74e230bcb773278e2c7b140be31d",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -2122,7 +2122,7 @@
       }
     },
     "apl_planted-b13": {
-      "applicant": "3d23a1ee9300221283b1a5135d4de2d37d6ee38763a93cafb4ef4e106d2cbad4",
+      "applicant": "4c13cebd0b27a249232e43d4e15200992853ec2dca00f05d97b1c759b9f45832",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -2321,7 +2321,7 @@
       }
     },
     "apl_planted-b14": {
-      "applicant": "ef9fad4ec38c8c598e4968a3bf77e11af0023322fadbec3812b3bf655b37903c",
+      "applicant": "d83bf986c6b96b2061f0cd7213b843546f8da7dfa9c458c5644b5e39c6cae13d",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -2505,7 +2505,7 @@
       }
     },
     "apl_planted-b15": {
-      "applicant": "c96057247c3e6e7d0274c9dbd6739be4a857e6423550153069bc43de287cb9f0",
+      "applicant": "c8107f9cb70e99190634e5af1ac2e322b617c9ca0041e651f8ee3f0539385fec",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -2622,7 +2622,7 @@
       }
     },
     "apl_planted-b16": {
-      "applicant": "0d876c2d8a76964d92271518bdefde3a9f85b6b340b93d21c89b4d9d36cf7e91",
+      "applicant": "dc083039e44ae7345091da11ac33501c92418f15c5bbdb988bf8e58613bf32ad",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -2814,7 +2814,7 @@
       }
     },
     "apl_planted-p01": {
-      "applicant": "96aa6d6eb470d5e33b623b27fa134dca5c296898542fbb6e868791e21bc08dbf",
+      "applicant": "93a1dedcddd53c5bf88f04330641584c8190ae870548421c7b6b68d516c50c96",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -3000,7 +3000,7 @@
       }
     },
     "apl_planted-p02": {
-      "applicant": "47fd9138a8b540f40cd60feaa7e2097eead630f6038cebf16f1e8a2c1974d4fb",
+      "applicant": "0cc3d3ad9aa348ae9a34b738ab1e7abfb91302b28277f5ae4c3fba48a80934cc",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -3174,7 +3174,7 @@
       }
     },
     "apl_planted-p03": {
-      "applicant": "4f1047d03034d8e841beaea346b674d8bc74b1c1b4b421bc0096658bdbc818a4",
+      "applicant": "a9117898251eb3a26f3751fea68f4d6c43cd077c76a16d7cecaae6667da2b8b1",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -3254,7 +3254,7 @@
       }
     },
     "apl_planted-p04": {
-      "applicant": "cc7b94d77721282b4390741d9b965cc9c8daa1516487acadefc91ecbc4fbb4fa",
+      "applicant": "807b391bcaeb471606838ce0ab5009cc26db7bdc6783f661af66ebdd5c2b9001",
       "decisions": {
         "credit_union": {
           "outcome": "approve_with_conditions",
@@ -3457,7 +3457,7 @@
       }
     },
     "apl_planted-p05": {
-      "applicant": "1e079dae45e22a0c176f0bdab058b178b201dbe9d7814e22504239c7f07d3cbe",
+      "applicant": "91fab32a401ad6d16af349eee699dd54a67a3bc49aef4c4838f87ec4e001878a",
       "decisions": {
         "credit_union": {
           "outcome": "approve_with_conditions",
@@ -3602,7 +3602,7 @@
       }
     },
     "apl_planted-p06": {
-      "applicant": "f05937c8fdbfdb0e823193e0a5e3796a86506840bce917ef81e920acc80cbfd1",
+      "applicant": "7b5c035116338e85f1b7216321e8b391cfbb89dd73d6a703e811ed1be9471e77",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -3727,7 +3727,7 @@
       }
     },
     "apl_planted-p07": {
-      "applicant": "84c80e9a4b3ae4368bb50c58421ff7764f68790b1495d82c9bd506b0fee59266",
+      "applicant": "7638ecef563a62dbafaba6c38efe6c569b976b887426232ed1e772d5469f4a0d",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -3880,7 +3880,7 @@
       }
     },
     "apl_planted-p08": {
-      "applicant": "6466bda5f3dcbf6affeaa19f77ae3f19334241d25b94f317ab911a60cc00d436",
+      "applicant": "8e1598c1f32d4ec57d08a274283a031ede25ae68f6e0369846cb94490b691a0d",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -3992,7 +3992,7 @@
       }
     },
     "apl_planted-p09": {
-      "applicant": "78926facc488aae9817173da89522b6b7c3c376dceb6d1c36d4e7794c2dbb8aa",
+      "applicant": "85933cb7c86ae08a21782cdef4f3bf1bdb6174e0a7e242d7da766a16c56e080a",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -4190,7 +4190,7 @@
       }
     },
     "apl_planted-p10": {
-      "applicant": "5ab3ce8290eb29184c1b5ac69cf281b530ccb05d09e5c697b20ef9bde6288f7c",
+      "applicant": "24bc3b081bfc04df6111c4ec0b8e3b94e89755b6faa5ef800e5802b7112dc711",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -4320,7 +4320,7 @@
       }
     },
     "apl_planted-p11": {
-      "applicant": "5ad80d254d4879f93b0685d1397214f6b59c5a1f1e0d053ff8319e0993802a8c",
+      "applicant": "3d871ee78361a8130f1d5470931960eeea8d0f2315bfa13083a9a3416dd97730",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -4461,7 +4461,7 @@
       }
     },
     "apl_planted-p12": {
-      "applicant": "66fe0040dd8de7d46c51060cb670f0c961bac0c155e6c00e3017a6aa8d57aacc",
+      "applicant": "e584b011259327ff4e90b9a3c1b316ed4d8d7d22c5f4f116176ecd32ddb5176a",
       "decisions": {
         "credit_union": {
           "outcome": "approve_with_conditions",
@@ -4593,7 +4593,7 @@
       }
     },
     "apl_planted-p13": {
-      "applicant": "83a62ed28197b14ead9a9812cec26a2a77499e7effa151073cddf02a01b5f6a9",
+      "applicant": "695b98d7e1e4d16450f3b1bcecfbb25a6c0822136e3d8c919d49e1cff2bd9ef6",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -4790,7 +4790,7 @@
       }
     },
     "apl_planted-p14": {
-      "applicant": "c8a3592ec68cfb20c9e10aea821353ebc8e32e30d94cca474c9c9419e087b311",
+      "applicant": "cfa359233c00894f1c92faddd1586adc9b4cc31b2651d49846ab2baa1094ce50",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -4906,7 +4906,7 @@
       }
     },
     "apl_planted-p15": {
-      "applicant": "ac058ae8d82458f16adac6fe2b9911b49900277b7923684e91456b106efea0b2",
+      "applicant": "a63351da92a22f612cb3c97e9311e723e9c18dd5f643e6ebcc686c9ee8900e50",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -5080,7 +5080,7 @@
       }
     },
     "apl_planted-p16": {
-      "applicant": "febb5a0432c447afaf73f1ec376bd15049802066803a7d2e82ca66c3ff044f13",
+      "applicant": "f8d01142e78473b18a8f9bca70b9835817a373ccd7e73b0d153f155d1ba693bc",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -5274,7 +5274,7 @@
       }
     },
     "apl_planted-p17": {
-      "applicant": "6d7b8608780fd3aee1a8d1ca1e97b0e8ca36f58c7ef90e4044e9c2f3b56b4c8d",
+      "applicant": "cedd01cc35c481707db630ca0662e9ff99448d6c55a68c6faa7abbedb2189395",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -5357,7 +5357,7 @@
       }
     },
     "apl_planted-p18": {
-      "applicant": "c78e1f798824c9b07a42a12e3538d69081a553929e51f17b01130610ccb9d09a",
+      "applicant": "d35c805a0586177620f3138a8dc0318d64522c3d53f08b3d2894190abe297235",
       "decisions": {
         "credit_union": {
           "outcome": "decline",
@@ -5440,7 +5440,7 @@
       }
     },
     "apl_planted-p19": {
-      "applicant": "25d0748ef4b13f542b71fa0bc41a6e37a03fa867d313175d50a8039394a023d9",
+      "applicant": "bc01590611f50a4c758996eb63bb14bc4b18460ead8e20463bf3101a530d4876",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -5632,7 +5632,7 @@
       }
     },
     "apl_planted-p20": {
-      "applicant": "ccb3150353f605886c5c1a8b8e93c9af5fc286dd36d758a4660b6a7cfa8db27e",
+      "applicant": "f91a6f9d71ace4533b4cab23e96fec31fb02f69c6daef6d08bb7bf0ecb8dd449",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
@@ -5839,7 +5839,7 @@
       }
     },
     "apl_planted-p21": {
-      "applicant": "c1bdd2dea02ff2b0fc0fe1f2a7c22f514044f79410cce3db33dd3afa685ed545",
+      "applicant": "5f8a4af8c4618b90b45973f55bba26347fb19174869d501d48078d8717dcf900",
       "decisions": {
         "credit_union": {
           "outcome": "approve",
