@@ -1,18 +1,40 @@
 import { describe, expect, it } from "vitest"
 import { getBooks } from "@/lib/data"
 import { MODES } from "@/lib/modes"
+import { postCollectionSent, postCollectionSettled } from "@/lib/servicing/ledger"
 import { bankStatement, monthEnds, reconcile } from "@/lib/servicing/reconcile"
+import { simulateBook } from "@/lib/servicing/simulate"
 import { expectBalanced } from "./helpers"
 
 const books = getBooks()
 const cu = books.credit_union
+
+describe("reconciliation is independent of the ledger", () => {
+  it("catches an error in the ledger: the bank statement comes from what the bank saw, not the ledger", () => {
+    const book = simulateBook("northgate", "credit_union", books.credit_union.loans.map((l) => l.setup), books.credit_union.horizon)
+    // A collection posted to the ledger that never happened at the bank.
+    const fake = { collectionId: "col_ghost-a1", principalCents: 10_000, interestCents: 0 }
+    postCollectionSent(book.ledger, "loan_grace-cu", fake, "2028-01-05")
+    postCollectionSettled(book.ledger, "loan_grace-cu", fake, "2028-01-06")
+    const r = reconcile(book, "2028-01-31")
+    expect(r.breaks.map((b) => [b.kind, b.reference])).toContainEqual(["missing_from_bank", "col_ghost-a1"])
+  })
+
+  it("reconciles each month on its own: only that month's lines match, unresolved items carry forward", () => {
+    const feb = reconcile(cu, "2027-02-28")
+    expect(feb.matched.length).toBeGreaterThan(0)
+    for (const m of feb.matched) expect(m.bank.date >= "2027-02-01", m.ledger.reference).toBe(true)
+    // The unapplied return from January is still open at the end of February.
+    expect(feb.breaks.map((b) => b.kind)).toContain("returned_pad_not_applied")
+  })
+})
 
 describe("reconciliation", () => {
   it("surfaces both planted breaks at the January cut-off instead of matching everything", () => {
     const r = reconcile(cu, "2027-01-31")
     expect(r.breaks.map((b) => b.kind).sort()).toEqual(["returned_pad_not_applied", "timing_difference"])
     expect(r.matchRate).toBeLessThan(1)
-    expect(r.matched.length).toBeGreaterThan(50)
+    expect(r.matched.length).toBeGreaterThan(10) // January's own movements only
     expectBalanced(cu.ledger)
   })
 

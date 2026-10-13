@@ -5,11 +5,14 @@ import type { BookResult } from "./simulate"
 
 /*
  * Reconciliation: the lender's settlement account at its bank, matched
- * against the ledger at each month-end cut-off. Lines match on reference,
- * direction and amount, dated on or before the cut-off.
+ * against the ledger month by month. Each month compares that month's
+ * movements, plus anything left unresolved from earlier months; lines match
+ * on reference, direction and amount.
  *
- * The bank statement is simulated from what the bank would see. Two breaks
- * are planted so reconciliation has something real to find:
+ * The bank statement is built from what the bank saw (the simulator's
+ * funding, draws, settlements and returns), never from the ledger, so an
+ * error in the ledger shows up as a break. Two breaks are planted so
+ * reconciliation has something real to find:
  * - a returned PAD the bank processed but whose return file never reached
  *   servicing (the ledger still shows the payment as collected)
  * - a timing difference: a collection the ledger settled on the last
@@ -94,14 +97,24 @@ export function ledgerLines(book: BookResult): LedgerLine[] {
   return out
 }
 
-/** The bank's statement for the settlement account, with the planted breaks. */
+/** The bank's statement for the settlement account, from the money movements themselves, with the planted breaks. */
 export function bankStatement(book: BookResult, planted: PlantedBreaks = PLANTED_BREAKS[book.institutionId] ?? {}): StatementLine[] {
-  const lines: StatementLine[] = ledgerLines(book).map((l) => ({
-    date: l.reference === planted.timingDifference?.reference ? addBusinessDays(l.date, 1) : l.date,
-    amountCents: l.amountCents,
-    reference: l.reference,
-    description: l.amountCents > 0 ? "PAD settlement credit" : l.reference.startsWith("ret_") ? "Returned item" : "Outgoing funds",
-  }))
+  const lines: StatementLine[] = []
+  for (const loan of book.loans) {
+    const short = loan.setup.id.replace(/^loan_/, "")
+    const funded = loan.events.find((e) => e.type === "funded")
+    if (funded) lines.push({ date: funded.date, amountCents: -funded.amountCents!, reference: `dsb_${short}`, description: "Outgoing funds" })
+    loan.events
+      .filter((e) => e.type === "drawn")
+      .forEach((e, i) => lines.push({ date: e.date, amountCents: -e.amountCents!, reference: `draw-${short}-${i + 1}`, description: "Outgoing funds" }))
+    for (const a of loan.attempts) {
+      // Returned before settlement never reached the settlement account.
+      if (!a.settledOn) continue
+      const ref = `col_${a.id}`
+      lines.push({ date: ref === planted.timingDifference?.reference ? addBusinessDays(a.settledOn, 1) : a.settledOn, amountCents: a.amountCents, reference: ref, description: "PAD settlement credit" })
+      if (a.outcome === "returned" && a.stage === "settled") lines.push({ date: a.returnedOn!, amountCents: -a.amountCents, reference: `ret_${a.id}`, description: `Returned item ${a.code}` })
+    }
+  }
   if (planted.returnNotApplied) {
     const settled = lines.find((l) => l.reference === planted.returnNotApplied!.reference && l.amountCents > 0)
     if (settled) {
@@ -116,19 +129,17 @@ export function bankStatement(book: BookResult, planted: PlantedBreaks = PLANTED
   return lines.sort((a, b) => a.date.localeCompare(b.date) || a.reference.localeCompare(b.reference))
 }
 
-/** Reconciles the ledger with the bank statement at a cut-off date. */
-export function reconcile(book: BookResult, cutoff: string, statement: StatementLine[] = bankStatement(book)): ReconciliationReport {
-  const ledger = ledgerLines(book)
-  const inPeriodLedger = ledger.filter((l) => l.date <= cutoff)
-  const inPeriodBank = statement.filter((l) => l.date <= cutoff)
+/** One month's comparison: lines in the period plus those still open, matched on reference and direction. */
+function matchPeriod(ledger: LedgerLine[], bank: StatementLine[], laterBank: StatementLine[]) {
   const key = (r: string, amount: number) => `${r}|${Math.sign(amount)}`
-  const bankByKey = new Map(inPeriodBank.map((b) => [key(b.reference, b.amountCents), b]))
-  const laterBank = new Map(statement.filter((l) => l.date > cutoff).map((b) => [key(b.reference, b.amountCents), b]))
+  const bankByKey = new Map(bank.map((b) => [key(b.reference, b.amountCents), b]))
+  const later = new Map(laterBank.map((b) => [key(b.reference, b.amountCents), b]))
   const usedBank = new Set<StatementLine>()
-
   const matched: ReconciliationReport["matched"] = []
   const breaks: Break[] = []
-  for (const l of inPeriodLedger) {
+  const openLedger: LedgerLine[] = []
+  const openBank: StatementLine[] = []
+  for (const l of ledger) {
     const b = bankByKey.get(key(l.reference, l.amountCents))
     if (b) {
       usedBank.add(b)
@@ -136,15 +147,17 @@ export function reconcile(book: BookResult, cutoff: string, statement: Statement
       else breaks.push({ kind: "amount_mismatch", reference: l.reference, loanId: l.loanId, ledger: l, bank: b, differenceCents: b.amountCents - l.amountCents, action: "Amounts differ: check the collection file and the bank's record, then correct with a reversing entry." })
       continue
     }
-    const later = laterBank.get(key(l.reference, l.amountCents))
+    openLedger.push(l)
+    const lb = later.get(key(l.reference, l.amountCents))
     breaks.push(
-      later
-        ? { kind: "timing_difference", reference: l.reference, loanId: l.loanId, ledger: l, bank: later, differenceCents: -l.amountCents, action: `Timing difference: in the ledger on ${l.date}, at the bank on ${later.date}. No action; it clears next period.` }
+      lb
+        ? { kind: "timing_difference", reference: l.reference, loanId: l.loanId, ledger: l, bank: lb, differenceCents: -l.amountCents, action: `Timing difference: in the ledger on ${l.date}, at the bank on ${lb.date}. No action; it clears next period.` }
         : { kind: "missing_from_bank", reference: l.reference, loanId: l.loanId, ledger: l, differenceCents: -l.amountCents, action: "In the ledger but not at the bank: investigate before month-end close." },
     )
   }
-  for (const b of inPeriodBank) {
+  for (const b of bank) {
     if (usedBank.has(b)) continue
+    openBank.push(b)
     const isReturn = b.reference.startsWith("ret_") && b.amountCents < 0
     breaks.push(
       isReturn
@@ -159,17 +172,40 @@ export function reconcile(book: BookResult, cutoff: string, statement: Statement
         : { kind: "missing_from_ledger", reference: b.reference, bank: b, differenceCents: b.amountCents, action: "At the bank but not in the ledger: find the source and post it." },
     )
   }
+  return { matched, breaks, openLedger, openBank }
+}
 
-  const total = inPeriodLedger.length + inPeriodBank.length
+/**
+ * Reconciles the month ending at `cutoff` (a month-end). Each earlier month
+ * is reconciled in turn so that whatever it left unresolved is carried in.
+ */
+export function reconcile(book: BookResult, cutoff: string, statement: StatementLine[] = bankStatement(book)): ReconciliationReport {
+  const ledger = ledgerLines(book)
+  const first = [...ledger.map((l) => l.date), ...statement.map((l) => l.date)].sort()[0] ?? cutoff
+  const ends = monthEnds(first.slice(0, 8) + "01", cutoff)
+  if (ends.at(-1) !== cutoff) ends.push(cutoff)
+  let openLedger: LedgerLine[] = []
+  let openBank: StatementLine[] = []
+  let start = "0000-01-01"
+  let result: ReturnType<typeof matchPeriod> & { compared: number; ledgerTotal: number; bankTotal: number } = { matched: [], breaks: [], openLedger: [], openBank: [], compared: 0, ledgerTotal: 0, bankTotal: 0 }
+  for (const end of ends) {
+    const L = [...openLedger, ...ledger.filter((l) => l.date >= start && l.date <= end)]
+    const B = [...openBank, ...statement.filter((l) => l.date >= start && l.date <= end)]
+    const r = matchPeriod(L, B, statement.filter((l) => l.date > end))
+    result = { ...r, compared: L.length + B.length, ledgerTotal: L.reduce((t, l) => t + l.amountCents, 0), bankTotal: B.reduce((t, l) => t + l.amountCents, 0) }
+    openLedger = r.openLedger
+    openBank = r.openBank
+    start = new Date(Date.parse(`${end}T00:00:00Z`) + 86_400_000).toISOString().slice(0, 10)
+  }
   return {
     institutionId: book.institutionId,
     cutoff,
-    matched,
-    breaks,
-    matchRate: total ? Math.round(((matched.length * 2) / total) * 1000) / 1000 : 1,
-    linesCompared: total,
-    ledgerTotalCents: inPeriodLedger.reduce((t, l) => t + l.amountCents, 0),
-    bankTotalCents: inPeriodBank.reduce((t, l) => t + l.amountCents, 0),
+    matched: result.matched,
+    breaks: result.breaks,
+    matchRate: result.compared ? Math.round(((result.matched.length * 2) / result.compared) * 1000) / 1000 : 1,
+    linesCompared: result.compared,
+    ledgerTotalCents: result.ledgerTotal,
+    bankTotalCents: result.bankTotal,
   }
 }
 
