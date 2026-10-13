@@ -116,6 +116,17 @@ export function manualMinutes(items: OpsItem[], at: string): Map<QueueName, numb
   return out
 }
 
+/**
+ * Manual minutes for a lender: its own items, plus an equal share of the
+ * shared checks (identity reviews and FINTRAC), which serve every lender.
+ * The three lenders' figures add up to the all-lenders total.
+ */
+export function manualMinutesFor(src: MetricSources, f: LenderFilter, at: string): number {
+  const total = (items: OpsItem[]) => [...manualMinutes(items, at).values()].reduce((a, b) => a + b, 0)
+  if (f === "all") return total(src.items)
+  return total(src.items.filter((i) => i.mode === f)) + total(src.items.filter((i) => i.mode === null)) / MODES.length
+}
+
 // ---------------------------------------------------------------------------
 
 export function computeKpis(src: MetricSources, f: LenderFilter, at: string): Kpi[] {
@@ -496,8 +507,7 @@ export function computeKpis(src: MetricSources, f: LenderFilter, at: string): Kp
     better: "higher",
   })
 
-  const minutes = manualMinutes(items, at)
-  const manual = [...minutes.values()].reduce((a, b) => a + b, 0)
+  const manual = manualMinutesFor(src, f, at)
   const opsCost = Math.round((manual / 60) * OPS.cost.loadedHourlyCostCents)
   const railCost = funded.reduce((t, l) => t + l.funding.costCents, 0)
   kpis.push({
@@ -507,7 +517,7 @@ export function computeKpis(src: MetricSources, f: LenderFilter, at: string): Kp
     value: funded.length ? formatCents(Math.round((opsCost + railCost) / funded.length)) : "Nothing funded yet",
     raw: funded.length ? Math.round((opsCost + railCost) / funded.length) : null,
     definition: "Operating cost of manual work plus funding fees, spread over the loans funded.",
-    how: `Minutes of manual work from the queue engine × an illustrative loaded cost of ${formatCents(OPS.cost.loadedHourlyCostCents)} an hour, plus each loan's funding rail fee, ÷ loans funded.`,
+    how: `Minutes of manual work from the queue engine × an illustrative loaded cost of ${formatCents(OPS.cost.loadedHourlyCostCents)} an hour, plus each loan's funding rail fee, ÷ loans funded.${f === "all" ? "" : " Shared identity and FINTRAC reviews count a one-third share for each lender."}`,
     breakdown: [
       {
         label: "Manual work",

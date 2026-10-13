@@ -1,11 +1,22 @@
 import { describe, expect, it } from "vitest"
 import { getMetricSources } from "@/lib/data"
-import { bottleneck, businessText, collectedCents, computeKpis, hoursText, lossesCents, reconciliations, type LenderFilter } from "@/lib/ops/metrics"
+import { bottleneck, businessText, collectedCents, computeKpis, hoursText, lossesCents, manualMinutesFor, reconciliations, type LenderFilter } from "@/lib/ops/metrics"
 import { OPS_MOMENTS } from "@/lib/ops/moments"
 import { slaState } from "@/lib/ops/queues"
 import { MODES } from "@/lib/modes"
 import { monthEnds, reconcile } from "@/lib/servicing/reconcile"
 import { CLOCK_START } from "@/lib/servicing/views"
+
+describe("cost per loan counts all the manual work", () => {
+  it("each lender carries a share of the shared identity and FINTRAC work, so the three add up to the whole", () => {
+    const s = getMetricSources()
+    const at = "2027-10-06T17:00"
+    const all = manualMinutesFor(s, "all", at)
+    const sum = MODES.reduce((t, m) => t + manualMinutesFor(s, m, at), 0)
+    expect(Math.abs(sum - all)).toBeLessThanOrEqual(1)
+    expect(all).toBeGreaterThan(0)
+  })
+})
 
 describe("durations read as plain English", () => {
   it("singular for one, plural otherwise", () => {
