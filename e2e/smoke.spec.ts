@@ -414,7 +414,9 @@ test("landing: comparison toggle, lifecycle and tour tabs, ops snapshot, concept
   await expect(page.getByRole("region", { name: "How a pilot would work" })).toContainText("Berry is a portfolio project.")
   for (const t of ["Book a demo", "Pricing", "SOC 2"]) await expect(main.getByText(t)).toHaveCount(0)
   for (const href of await page.locator('a[href^="#"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")!))) await expect(page.locator(href)).toHaveCount(1)
-  await expect(page.getByRole("link", { name: /LinkedIn/ }).first()).toHaveAttribute("href", "https://www.linkedin.com/in/joshuaosunbor")
+  for (const area of [page.getByRole("region", { name: "About this project" }), page.getByRole("contentinfo")]) {
+    await expect(area.getByRole("link", { name: /LinkedIn/ })).toHaveAttribute("href", "https://www.linkedin.com/in/joshua-osunbor-06b26bb5/")
+  }
   await expect(page.getByRole("link", { name: /GitHub/ }).first()).toHaveAttribute("href", "https://github.com/joshosunbor/berry")
   expect(errors).toEqual([])
 })

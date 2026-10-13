@@ -6,7 +6,7 @@ Berry is a portfolio project designed and directed by Joshua Osunbor and built w
 
 **Live demo: [berry-lending.fly.dev](https://berry-lending.fly.dev)** — no sign-up. Start at [/demo](https://berry-lending.fly.dev/demo) for a three-minute guided tour.
 
-> **Fictional institutions. Synthetic data.** Northgate Credit Union, Kite and Aspen Bank are invented, every applicant and transaction is generated, and nothing connects to a real bank, bureau or identity service. A portfolio project by Joshua Osunbor.
+> **Fictional institutions. Synthetic data.** Northgate Credit Union, Kite and Aspen Bank are invented, every applicant and transaction is generated, and nothing connects to a real bank, bureau or identity service. A portfolio project by [Joshua Osunbor](https://www.linkedin.com/in/joshua-osunbor-06b26bb5/).
 
 ![Hollis Family Farm, compared across the three lenders](docs/screenshots/compare-hollis.png)
 

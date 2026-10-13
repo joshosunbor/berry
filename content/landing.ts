@@ -191,7 +191,7 @@ export const CONTACT = {
   title: "About this project",
   lead: "Berry is a portfolio project by Joshua Osunbor: fictional lenders and synthetic data, with real, tested rules, ledger and operations console. Questions about how it works, or how it would run with a real lender? I'm happy to talk it through.",
   links: [
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/joshuaosunbor" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/joshua-osunbor-06b26bb5/" },
     { label: "GitHub", href: "https://github.com/joshosunbor/berry" },
   ],
 } as const
@@ -201,7 +201,7 @@ export const FOOTER = {
   links: [
     { label: "How it works", href: "/how-it-works" },
     { label: "Test results", href: "/how-it-works?tab=test-results" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/joshuaosunbor" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/joshua-osunbor-06b26bb5/" },
     { label: "GitHub", href: "https://github.com/joshosunbor/berry" },
   ],
 } as const
