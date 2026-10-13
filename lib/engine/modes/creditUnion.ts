@@ -138,8 +138,16 @@ function thinFile({ input, features: f, config }: ModeContext, t: Thresholds, re
   if (!eligible) {
     return decline(product, [{ code: "SHORT_CREDIT_HISTORY", weight: 1, evidence: { months: f.creditHistoryMonths, min: t.thinFileHistoryMonths } }], CREDIT_UNION_INPUTS)
   }
-  const limit = roundLimit(Math.min(input.request.amountCents, terms.maxCents, t.thinFileMemberMaxCents))
   const structure = structureFor(product)
+  const capped = roundLimit(Math.min(input.request.amountCents, terms.maxCents, t.thinFileMemberMaxCents))
+  // The same coverage test as any other approval: shrink to what the member can afford.
+  const affordable = roundLimit(maxAffordableCents(f.avgMonthlyNetCents, f, t.minDscr, structure, terms.aprBps, null))
+  const limit = Math.min(capped, affordable)
+  if (limit < terms.minCents) {
+    const payment = assessedPayment(structure, terms.minCents, terms.aprBps, null)
+    return decline(product, [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr: coverageAt(f.avgMonthlyNetCents, f, payment), minDscr: t.minDscr, paymentCents: payment, maxAffordableCents: 0 } }], CREDIT_UNION_INPUTS)
+  }
+  if (limit < capped) reasons.push({ code: "LIMIT_REDUCED", weight: 0.85, evidence: { limitCents: limit, requestedCents: input.request.amountCents, basis: "debt service coverage" } })
   reasons.push({ code: "STARTER_PATH", weight: 0.95, evidence: { limitCents: limit, historyMonths: f.creditHistoryMonths, days: f.daysCashOnHand } })
   if (f.relationship.avgBalanceAtNorthgateCents > 0) {
     reasons.push({ code: "SAVINGS_HABIT", weight: 0.5, evidence: { avgBalanceCents: f.relationship.avgBalanceAtNorthgateCents } })

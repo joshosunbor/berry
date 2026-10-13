@@ -184,6 +184,16 @@ describe("Northgate (credit union): relationship, structure and authority", () =
       expect(x.lenderText).not.toMatch(/\$0\b/)
     }
   })
+  it("sizes a thin-file starter limit to what the member can afford, and declines when even the minimum isn't", () => {
+    const req = { product: "starter_credit" as const, amountCents: 300_000 }
+    // $20 a month left over: $2,000 would need a ~$60 payment; about $500 meets coverage.
+    const tight = cu({ creditHistoryMonths: 6, relationship: member(0.5, 2), avgMonthlyNetCents: 2_000 }, req)
+    expect(tight.outcome).toBe("approve")
+    expect(tight.limitCents).toBeLessThan(200_000)
+    expect(codes(tight)).toContain("LIMIT_REDUCED")
+    // $2 a month: not even the $300 minimum is affordable.
+    expect(cu({ creditHistoryMonths: 6, relationship: member(0.5, 2), avgMonthlyNetCents: 200 }, req).outcome).toBe("decline")
+  })
   it("offers thin-file members with steady pay a starter limit, and declines non-members", () => {
     const req = { product: "starter_credit" as const, amountCents: 300_000 }
     const m = cu({ creditHistoryMonths: 6, relationship: member(0.5, 2) }, req)
