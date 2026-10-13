@@ -260,7 +260,7 @@ export function MemoTab({ slug }: { slug: string }) {
           </div>
           <p className="mt-2 text-xs text-fg-3">
             Approving the memo signs off the write-up only. It does not change the decision, limit or rate. The approval is added to the{" "}
-            <Link href="/ops" className="underline underline-offset-4">
+            <Link href="/operations" className="underline underline-offset-4">
               operations audit trail
             </Link>
             .

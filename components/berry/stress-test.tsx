@@ -185,7 +185,7 @@ export function StressTest({
           {requested ? (
             <p className="mt-3 inline-flex items-center gap-1.5 text-fg">
               <CheckCircle2 aria-hidden className="size-4 text-green-ink" /> Over-limit request is in Credit referrals and sign-offs.
-              <Link href="/ops" className="inline-flex items-center gap-1 font-medium underline underline-offset-4">
+              <Link href="/operations" className="inline-flex items-center gap-1 font-medium underline underline-offset-4">
                 Open the console <ArrowRight aria-hidden className="size-4" />
               </Link>
             </p>

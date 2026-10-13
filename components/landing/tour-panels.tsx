@@ -104,7 +104,7 @@ export function ApplicantFilePanel({ d }: { d: LandingData }) {
             {p.signOff.belowTitle && p.signOff.belowLimit && ` Above the ${p.signOff.belowTitle.toLowerCase()}'s ${p.signOff.belowLimit} authority.`}
           </div>
         )}
-        <ButtonLink href="/compare/hollis-family-farm" size="sm" className="mt-auto">
+        <ButtonLink href="/applications/hollis-family-farm?tab=compare" size="sm" className="mt-auto">
           {TOUR.compareButton}
         </ButtonLink>
       </div>

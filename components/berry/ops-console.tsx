@@ -9,6 +9,7 @@ import { InlineError } from "@/components/berry/inline-error"
 import { LazyPolicyPanel } from "@/components/berry/policy-panel-lazy"
 import { ModeChip } from "@/components/berry/mode-chip"
 import { addOpsAction, resetOpsActions, setActor, useActor, useOpsActions, useOpsMoment } from "@/components/berry/ops-store"
+import { useUrlTab } from "@/components/berry/url-state"
 import { tabClass, tabListClass, useTabs } from "@/components/ui/tabs"
 import { formatCents } from "@/lib/money"
 import { BROWSER_ONLY_NOTICE, BROWSER_ONLY_SHORT } from "@/lib/ops/copy"
@@ -35,6 +36,8 @@ import { buttonVariants } from "@/components/ui/button"
  */
 
 const QUEUES = Object.keys(OPS.queues) as QueueName[]
+export const OPS_VIEWS = ["queues", "team", "policy", "audit"] as const
+const OPS_VIEW_LABELS: Record<(typeof OPS_VIEWS)[number], string> = { queues: "Queues", team: "Team", policy: "Policy", audit: "Audit trail" }
 const TEAM_IDS = OPS.team.map((m) => m.id)
 
 export const ROLE_LABEL: Record<Role, string> = { analyst: "Analyst", lead: "Lead", branch_manager: "Branch manager", credit_committee: "Credit Committee" }
@@ -82,7 +85,9 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
   // Items from the simulation plus any created in this browser (e.g. over-limit requests from a stress test).
   const items = useMemo(() => [...simulated, ...browserItems(actions, "9999-12-31T00:00")], [simulated, actions])
   const actor = useActor(TEAM_IDS)
-  const [tab, setTab] = useState<string>("verification")
+  // Queues, Team, Policy and Audit are sections of the Operations page (?tab=); the queue is ?queue=.
+  const [view] = useUrlTab(OPS_VIEWS)
+  const [tab, selectQueue] = useUrlTab(QUEUES, "queue")
   const [selected, setSelected] = useState<string | null>(null)
   const [showDone, setShowDone] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -113,15 +118,14 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
     }
   }
 
-  const TAB_IDS = [...QUEUES, "team", "policy", "audit"]
-  const tabIndex = Math.max(0, TAB_IDS.indexOf(tab))
-  const t = useTabs(TAB_IDS.length, tabIndex, (n) => (setTab(TAB_IDS[n]), setSelected(null), setError(null)))
-  // Only the active panel's content is mounted (the Policy tab loads its data when it opens).
-  const panel = (id: string, className: string, content: () => React.ReactNode) => (
-    <div {...t.panel(TAB_IDS.indexOf(id))} className={className}>
-      {tab === id && content()}
-    </div>
-  )
+  const t = useTabs(QUEUES.length, QUEUES.indexOf(tab), (n) => (selectQueue(QUEUES[n]), setSelected(null), setError(null)))
+  // Only the open section is mounted (the Policy section loads its data when it opens).
+  const panel = (id: (typeof OPS_VIEWS)[number], className: string, content: () => React.ReactNode) =>
+    view === id ? (
+      <section aria-label={OPS_VIEW_LABELS[id]} className={className}>
+        {content()}
+      </section>
+    ) : null
 
   const unassigned = items.filter((i) => states.get(i.id)!.status === "open" && !states.get(i.id)!.ownerId).length
 
@@ -157,13 +161,15 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
       </p>
 
       <div className="mt-6">
+        {view === "queues" && (
+        <div data-tour="queues">
         <div className="-mx-4 overflow-x-auto px-4 pb-1">
           <div {...t.list} aria-label="Operations queues" className={cn(tabListClass("segmented"), "w-max flex-nowrap")}>
             {QUEUES.map((q) => {
               const open = openIn(q).length
               const breached = breachedIn(q)
               return (
-                <button key={q} {...t.tab(TAB_IDS.indexOf(q))} className={cn(tabClass("segmented", tab === q), "whitespace-nowrap px-3.5 text-sm")}>
+                <button key={q} {...t.tab(QUEUES.indexOf(q))} className={cn(tabClass("segmented", tab === q), "whitespace-nowrap px-3.5 text-sm")}>
                   {OPS.queues[q].label}
                   <span className={cn("num ml-1.5 rounded-full px-1.5 text-xs", tab === q ? "bg-tab-on-fg/15 text-tab-on-fg" : breached ? "bg-bad-tint text-bad" : "bg-field text-fg-3")}>
                     {open}
@@ -172,11 +178,6 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
                 </button>
               )
             })}
-            {(["team", "policy", "audit"] as const).map((id) => (
-              <button key={id} {...t.tab(TAB_IDS.indexOf(id))} className={cn(tabClass("segmented", tab === id), "whitespace-nowrap px-3.5 text-sm")}>
-                {id === "team" ? "Team" : id === "policy" ? "Policy" : "Audit trail"}
-              </button>
-            ))}
           </div>
         </div>
 
@@ -190,7 +191,7 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
           const pick = items.find((i) => i.queue === q && i.id === selected)
           const current = pick && states.get(pick.id)!.status !== "not_yet" ? { i: pick, s: states.get(pick.id)! } : null
           return (
-            <div key={q} {...t.panel(TAB_IDS.indexOf(q))} className="mt-4 min-w-0">
+            <div key={q} {...t.panel(QUEUES.indexOf(q))} className="mt-4 min-w-0">
               {tab === q && (
               <>
               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -239,6 +240,9 @@ export function OpsConsole({ items: simulated, events, eventItems }: OpsConsoleP
             </div>
           )
         })}
+
+        </div>
+        )}
 
         {panel("team", "mt-4 min-w-0", () => (
           <>

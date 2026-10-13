@@ -58,12 +58,12 @@ describe("regulatory status panel", () => {
   it("marks every source that isn't a regulator, government body or Payments Canada", () => {
     const official = /^https:\/\/(www\.)?(canada\.ca|payments\.ca|fintrac-canafe\.canada\.ca|cdic\.ca|laws-lois\.justice\.gc\.ca|gazette\.gc\.ca)\//
     for (const r of rows) expect(r.source.kind === "official", `${r.id}: ${r.source.url}`).toBe(official.test(r.source.url))
-    const page = readFileSync(path.resolve(import.meta.dirname, "../app/(app)/methodology/page.tsx"), "utf8")
+    const page = readFileSync(path.resolve(import.meta.dirname, "../components/how-it-works/canadian-rules.tsx"), "utf8")
     expect(page).not.toMatch(/links to its official source/)
   })
 
-  it("the methodology page reads the planted-case count from the accuracy report", () => {
-    const page = readFileSync(path.resolve(import.meta.dirname, "../app/(app)/methodology/page.tsx"), "utf8")
+  it("How it works reads the planted-case count from the accuracy report", () => {
+    const page = readFileSync(path.resolve(import.meta.dirname, "../components/how-it-works/how-it-decides.tsx"), "utf8")
     expect(page).not.toMatch(/\b\d+ planted test cases/)
     expect(page).toMatch(/totals\.cases/)
   })

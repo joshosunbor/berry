@@ -1,4 +1,3 @@
-import type { Metadata } from "next"
 import { Check, X } from "lucide-react"
 import report from "@/public/accuracy.json"
 import { edgeCases } from "@/lib/evaluation/edge-cases"
@@ -6,39 +5,28 @@ import type { AccuracyReport } from "@/lib/evaluation/accuracy"
 import { MODES, MODE_META } from "@/lib/modes"
 import { cn } from "@/lib/utils"
 import { Card } from "@/components/ui/card"
-import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { LenderDot } from "@/components/ui/pill"
 import { Table, Td, Th, THead } from "@/components/ui/table"
 
 const h2 = "text-[clamp(24px,2.6vw,30px)] font-bold leading-[1.15] tracking-[-0.02em]"
 
-export const metadata: Metadata = {
-  title: "Accuracy · Berry",
-  description: "How Berry's decisions compare with expected outcomes on planted test cases.",
-}
 
 const r = report as AccuracyReport
 const pct = (v: number) => `${Math.round(v * 1000) / 10}%`
 const label = (o: string) => o.replaceAll("_", " ")
 
-export default function AccuracyPage() {
+/** How it works, second tab: planted cases, expected vs actual per lender, and every miss explained. */
+export function TestResults() {
   return (
-    <PageContainer>
-      <PageHeader
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Accuracy" }]}
-        eyebrow="Published test results"
-        title="Accuracy"
-        lead={
-          <>
+    <div>
+      <p id="score" className="max-w-3xl text-lg leading-8 text-fg-2">
         <span className="num font-semibold text-fg">
           {r.totals.matched} of {r.totals.decisions}
         </span>{" "}
         planted decisions match the expected outcome ({pct(r.totals.rate)}), across {r.totals.cases} cases and three lenders.
-          </>
-        }
-      />
+      </p>
 
-      <Card as="section" pad="lg" aria-labelledby="what" className="max-w-3xl">
+      <Card as="section" pad="lg" aria-labelledby="what" className="mt-8 max-w-3xl">
         <h2 id="what" className="text-lg font-semibold text-fg">What the score means</h2>
         <p className="mt-2 leading-7 text-fg">
           The engine reproduces the outcomes its rules were designed for. It does not mean the rules are the right ones, or that these loans would be repaid.
@@ -204,6 +192,6 @@ export default function AccuracyPage() {
           data as of {r.dataAsOf}
         </p>
       </section>
-    </PageContainer>
+    </div>
   )
 }

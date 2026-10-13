@@ -9,9 +9,9 @@ import { LogoMark } from "./logo"
 import { ThemeToggle } from "./theme-toggle"
 
 /*
- * The one header for every page: sticky navy bar, the Berry mark, links,
- * an optional call to action, the theme toggle, and below 860px a Menu that
- * folds the links away (tapping a link closes it).
+ * The marketing header (the landing page only; product pages use AppHeader):
+ * sticky navy bar, the Berry mark, links, the call to action, the theme
+ * toggle, and below 860px a Menu that folds the links away.
  */
 
 export interface NavLink {
@@ -19,18 +19,10 @@ export interface NavLink {
   href: string
 }
 
-export const APP_NAV: NavLink[] = [
-  { label: "Workbench", href: "/workbench" },
-  { label: "Compare", href: "/compare/hollis-family-farm" },
-  { label: "Apply", href: "/apply" },
-  { label: "Operations", href: "/ops" },
-  { label: "Methodology", href: "/methodology" },
-  { label: "Accuracy", href: "/accuracy" },
-]
 
 const section = (href: string) => "/" + href.split("/")[1]
 
-export function SiteHeader({ nav = APP_NAV, cta, homeHref = "/" }: { nav?: NavLink[]; cta?: NavLink; homeHref?: string }) {
+export function SiteHeader({ nav, cta, homeHref = "/" }: { nav: NavLink[]; cta?: NavLink; homeHref?: string }) {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
   const current = (href: string) => !href.startsWith("#") && href !== "/" && section(pathname) === section(href)

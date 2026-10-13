@@ -51,7 +51,7 @@ export function ModeProvider({ children }: { children: ReactNode }) {
 export const useMode = () => useContext(ModeContext)
 
 /** Choosing a lender: a radio-style segmented control with each lender's colour dot. Arrow keys move between options. */
-export function ModeSwitcher({ className }: { className?: string }) {
+export function ModeSwitcher({ className, onNavy = false }: { className?: string; onNavy?: boolean }) {
   const { mode, setMode } = useMode()
   return (
     <SegmentedControl
@@ -60,13 +60,21 @@ export function ModeSwitcher({ className }: { className?: string }) {
       value={mode}
       onChange={setMode}
       className={className}
+      tone={onNavy ? "navy" : "default"}
+      size={onNavy ? "sm" : "md"}
       options={MODES.map((m) => ({
         value: m,
         label: (
           <span className="inline-flex items-center gap-2">
             <LenderDot mode={m} />
-            <span className="sm:hidden">{MODE_META[m].institution.split(" ")[0]}</span>
-            <span className="hidden sm:inline">{MODE_META[m].institution}</span>
+            {onNavy ? (
+              <span>{MODE_META[m].institution.split(" ")[0]}</span>
+            ) : (
+              <>
+                <span className="sm:hidden">{MODE_META[m].institution.split(" ")[0]}</span>
+                <span className="hidden sm:inline">{MODE_META[m].institution}</span>
+              </>
+            )}
           </span>
         ),
       }))}

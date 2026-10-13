@@ -12,13 +12,12 @@ import type { Mode } from "@/lib/modes"
  * seed data and the simulator via lib/landing/data.ts, never from here.
  */
 
-export const LIVE_DEMO = { label: "Try the live demo", href: "/workbench" } as const
+export const LIVE_DEMO = { label: "Try the live demo", href: "/demo" } as const
 
 export const NAV = [
   { label: "Product", href: "#product" },
-  { label: "How a pilot works", href: "#pilot" },
-  { label: "Methodology", href: "/methodology" },
-  { label: "Live demo", href: "/workbench" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "About this project", href: "#about" },
 ] as const
 
 export const HERO = {
@@ -63,13 +62,13 @@ export const LIFECYCLE = {
   lead: "Replace the hand-offs between an origination tool, a payments file and a spreadsheet. Berry takes the loan from consent to the last reconciled payment.",
   defaultStep: 2,
   steps: [
-    { name: "Consent", rail: "Open banking", title: "The applicant decides what Berry can see.", body: "Before any data is read, the screen spells out what is shared, why, for how long and who receives it. Consent can be revoked later in one click.", href: "/apply" },
-    { name: "Verify", rail: "KYC / KYB", title: "Identity and business checks, with reasons.", body: "ID, name and date of birth, sanctions screening and business registration. Clear cases pass on their own. The rest go to a reviewer with a note on why.", href: "/workbench/hollis-family-farm" },
-    { name: "Decide", rail: "Three rulebooks", title: "Three lenders read the same cash flow.", body: "Each lender applies its own rules and explains the result in words a borrower can follow, along with what would change the answer.", href: "/compare/hollis-family-farm" },
-    { name: "Fund", rail: "AFT or instant", title: "Money out on the right rail.", body: "Pay out with a sample AFT batch file or simulated Interac e-Transfer, plus a simulation of the Real-Time Rail, which launches in phases from Q4 2026. Instant payouts run a name-and-account check first.", href: "/workbench/hollis-family-farm" },
-    { name: "Collect", rail: "PAD", title: "Payments that land after the money does.", body: "Pre-authorized debits scheduled around payday, or around harvest, with the Rule H1 agreement items checked off.", href: "/ops/loans" },
-    { name: "Recover", rail: "Returns", title: "A missed payment is a conversation.", body: "One retry timed to the next deposit, a plain note to the borrower, then an outreach task. Hardship options go to a lender for approval.", href: "/ops" },
-    { name: "Reconcile", rail: "Ledger", title: "Every cent accounted for.", body: "Each collection and return is matched to a double-entry loan ledger. Anything that doesn’t match lands in the reconciliation queue.", href: "/ops/dashboard" },
+    { name: "Consent", rail: "Open banking", title: "The applicant decides what Berry can see.", body: "Before any data is read, the screen spells out what is shared, why, for how long and who receives it. Consent can be revoked later in one click.", href: "/borrower/apply" },
+    { name: "Verify", rail: "KYC / KYB", title: "Identity and business checks, with reasons.", body: "ID, name and date of birth, sanctions screening and business registration. Clear cases pass on their own. The rest go to a reviewer with a note on why.", href: "/applications/hollis-family-farm?tab=verification" },
+    { name: "Decide", rail: "Three rulebooks", title: "Three lenders read the same cash flow.", body: "Each lender applies its own rules and explains the result in words a borrower can follow, along with what would change the answer.", href: "/applications/hollis-family-farm?tab=compare" },
+    { name: "Fund", rail: "AFT or instant", title: "Money out on the right rail.", body: "Pay out with a sample AFT batch file or simulated Interac e-Transfer, plus a simulation of the Real-Time Rail, which launches in phases from Q4 2026. Instant payouts run a name-and-account check first.", href: "/loans/loan_hollis-family-farm-cu" },
+    { name: "Collect", rail: "PAD", title: "Payments that land after the money does.", body: "Pre-authorized debits scheduled around payday, or around harvest, with the Rule H1 agreement items checked off.", href: "/loans" },
+    { name: "Recover", rail: "Returns", title: "A missed payment is a conversation.", body: "One retry timed to the next deposit, a plain note to the borrower, then an outreach task. Hardship options go to a lender for approval.", href: "/operations?queue=collections" },
+    { name: "Reconcile", rail: "Ledger", title: "Every cent accounted for.", body: "Each collection and return is matched to a double-entry loan ledger. Anything that doesn’t match lands in the reconciliation queue.", href: "/operations/dashboard" },
   ],
   stepOf: "Step {n} of 07",
   seeIt: "See it in Berry →",
@@ -107,7 +106,7 @@ export const OPS = {
     { strong: "Policy changes with a preview.", rest: null },
     { strong: "An audit trail you can't edit.", rest: " Every decision, override and action, logged and exportable." },
   ],
-  button: { label: "See the console in the demo", href: "/ops" },
+  button: { label: "See the console in the demo", href: "/operations" },
 } as const
 
 export const PLUG_IN = {
@@ -129,12 +128,12 @@ export const CANADA = {
   /** "{asOf}" is the regulatory status file's month and year. */
   statusLink: "Regulatory status, as of {asOf} →",
   tiles: [
-    { t: "Consent-first data sharing", d: "Built around the consumer-driven banking framework’s consent principles. The Act is passed but not yet in force; its regulations are in draft.", href: "/methodology#status-cdb-act" },
-    { t: "PAD repayment", d: "Debit schedules and agreements modelled on Payments Canada Rule H1.", href: "/methodology#status-rule-h1" },
-    { t: "AFT and instant funding", d: "Sample CPA 005 batch files, with simulated Interac e-Transfer and Real-Time Rail payouts.", href: "/methodology#money" },
-    { t: "FINTRAC checks", d: "Cash of $10,000 or more within 24 hours goes to review. It never touches the credit decision.", href: "/methodology#status-fintrac-lctr" },
-    { t: "March 2026 NSF rules", d: "Retries are timed so a borrower is never charged a second NSF fee inside two business days.", href: "/methodology#status-nsf-fees" },
-    { t: "Newcomer credit path", d: "A starter limit and clear milestones that fill the gap foreign credit reports don’t cover.", href: "/methodology#foreign-reports" },
+    { t: "Consent-first data sharing", d: "Built around the consumer-driven banking framework’s consent principles. The Act is passed but not yet in force; its regulations are in draft.", href: "/how-it-works#status-cdb-act" },
+    { t: "PAD repayment", d: "Debit schedules and agreements modelled on Payments Canada Rule H1.", href: "/how-it-works#status-rule-h1" },
+    { t: "AFT and instant funding", d: "Sample CPA 005 batch files, with simulated Interac e-Transfer and Real-Time Rail payouts.", href: "/how-it-works#money" },
+    { t: "FINTRAC checks", d: "Cash of $10,000 or more within 24 hours goes to review. It never touches the credit decision.", href: "/how-it-works#status-fintrac-lctr" },
+    { t: "March 2026 NSF rules", d: "Retries are timed so a borrower is never charged a second NSF fee inside two business days.", href: "/how-it-works#status-nsf-fees" },
+    { t: "Newcomer credit path", d: "A starter limit and clear milestones that fill the gap foreign credit reports don’t cover.", href: "/how-it-works#foreign-reports" },
   ],
 } as const
 
@@ -144,7 +143,7 @@ export const CHECKS = {
     { strong: "Rules, not guesses.", rest: " Limits, prices and approvals come from tested code. The same file gets the same answer every time." },
     { strong: "Blind to who you are.", rest: " Name, age, gender, nationality and postal code are never used. A test shuffles them on every build to prove it." },
     { strong: "AI drafts the memo. The engine and a human make the decision.", rest: " Every figure in the draft is checked against the engine before anyone sees it." },
-    { strong: "Tested in public.", rest: " Every release runs against a set of applicants with known right answers. ", link: { label: "See the results, including the misses →", href: "/accuracy" } },
+    { strong: "Tested in public.", rest: " Every release runs against a set of applicants with known right answers. ", link: { label: "See the results, including the misses →", href: "/how-it-works?tab=test-results" } },
   ],
 } as const
 
@@ -160,7 +159,7 @@ export const BUILT = {
     "Rate-limited AI route",
   ],
   yes: "Yes",
-  link: { label: "How decisions are made →", href: "/methodology" },
+  link: { label: "How decisions are made →", href: "/how-it-works" },
 } as const
 
 export const PILOT = {
@@ -189,8 +188,8 @@ export const FAQ = {
 } as const
 
 export const CONTACT = {
-  title: "Talk to me about Berry",
-  lead: "Questions about how it works, or how it would run with a real lender? I'm happy to talk it through.",
+  title: "About this project",
+  lead: "Berry is a portfolio project by Joshua Osunbor: fictional lenders and synthetic data, with real, tested rules, ledger and operations console. Questions about how it works, or how it would run with a real lender? I'm happy to talk it through.",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/joshuaosunbor" },
     { label: "GitHub", href: "https://github.com/joshosunbor/berry" },
@@ -200,8 +199,8 @@ export const CONTACT = {
 export const FOOTER = {
   text: "Fictional institutions. Synthetic data. A portfolio project by Joshua Osunbor.",
   links: [
-    { label: "Methodology", href: "/methodology" },
-    { label: "Accuracy", href: "/accuracy" },
+    { label: "How it works", href: "/how-it-works" },
+    { label: "Test results", href: "/how-it-works?tab=test-results" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/joshuaosunbor" },
     { label: "GitHub", href: "https://github.com/joshosunbor/berry" },
   ],

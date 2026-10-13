@@ -13,13 +13,13 @@ export function generateStaticParams() {
   return getLoanViews().map((l) => ({ id: l.id }))
 }
 
-export async function generateMetadata({ params }: PageProps<"/ops/loans/[id]">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/loans/[id]">): Promise<Metadata> {
   const { id } = await params
   const loan = getLoanView(id)
-  return loan ? { title: `${loan.applicantName}'s loan · Berry`, description: `Servicing view: funding, collections, returns, recovery and the ledger.` } : {}
+  return loan ? { title: `${loan.applicantName}'s loan · Loans`, description: `Servicing view: funding, collections, returns, recovery and the ledger.` } : {}
 }
 
-export default async function LoanPage({ params }: PageProps<"/ops/loans/[id]">) {
+export default async function LoanPage({ params }: PageProps<"/loans/[id]">) {
   const { id } = await params
   const loan = getLoanView(id)
   if (!loan) notFound()
@@ -27,7 +27,7 @@ export default async function LoanPage({ params }: PageProps<"/ops/loans/[id]">)
   return (
     <PageContainer>
       <PageHeader
-        breadcrumb={[{ label: "Operations", href: "/ops" }, { label: "Loan book", href: "/ops/loans" }, { label: loan.applicantName }]}
+        breadcrumb={[{ label: "Demo", href: "/demo" }, { label: "Loans", href: "/loans" }, { label: loan.applicantName }]}
         eyebrow={`${PRODUCT_LABELS[loan.product]} · servicing view (simulated)`}
         title={loan.applicantName}
         actions={<ModeChip mode={loan.mode} />}

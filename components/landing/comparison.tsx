@@ -85,7 +85,7 @@ export function Comparison({ data }: { data: Pick<LandingData, "applicant" | "le
 
       <div className="flex flex-wrap justify-between gap-x-5 gap-y-2 border-t border-line bg-page px-[26px] py-4 text-[15px]">
         <span className="text-fg-2">{COMPARISON.footnote}</span>
-        <Link href="/compare/hollis-family-farm" className="font-semibold">
+        <Link href="/applications/hollis-family-farm?tab=compare" className="font-semibold">
           {COMPARISON.moreLink.replace("{n}", String(data.otherApplicants))}
         </Link>
       </div>

@@ -12,9 +12,8 @@ const KNOWN = new Set<string>(castIndex)
 const LOANS = new Set<string>(loanIndex)
 
 export function proxy(request: NextRequest) {
-  const parts = request.nextUrl.pathname.split("/")
-  const isLoan = parts[1] === "ops"
-  const id = isLoan ? parts[3] : parts[2]
+  const [, section, id] = request.nextUrl.pathname.split("/")
+  const isLoan = section === "loans"
   if (id && !(isLoan ? LOANS : KNOWN).has(id)) {
     return NextResponse.rewrite(new URL("/_unknown-applicant", request.url))
   }
@@ -22,5 +21,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/workbench/:id", "/compare/:id", "/ops/loans/:id"],
+  matcher: ["/applications/:id", "/loans/:id"],
 }

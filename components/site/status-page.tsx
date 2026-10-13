@@ -1,5 +1,6 @@
 import { SiteFooter } from "@/components/site/site-footer"
 import { SiteHeader } from "@/components/site/site-header"
+import { LIVE_DEMO, NAV } from "@/content/landing"
 import { pageContainer } from "@/components/ui/page-header"
 import { cn } from "@/lib/utils"
 
@@ -10,7 +11,7 @@ import { cn } from "@/lib/utils"
 export function StatusPage({ code, title, lead, children }: { code: string; title: string; lead: string; children?: React.ReactNode }) {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader nav={NAV.map((n) => ({ ...n, href: n.href.startsWith("#") ? `/${n.href}` : n.href }))} cta={LIVE_DEMO} />
       <div id="main" className="flex flex-1 bg-page text-fg">
         <main className={cn(pageContainer, "flex flex-col justify-center py-24")}>
           <p className="font-mono text-sm text-green-ink">{code}</p>

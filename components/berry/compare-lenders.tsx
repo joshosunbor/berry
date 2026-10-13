@@ -1,40 +1,28 @@
-import type { Metadata } from "next"
 import Link from "next/link"
-import { notFound } from "next/navigation"
 import { ShieldAlert, UserCheck } from "lucide-react"
 import { ModeChip } from "@/components/berry/mode-chip"
 import { OutcomeChip, outcomeLabel } from "@/components/berry/outcome-chip"
-import { getApplicant, getCast } from "@/lib/data"
+import type { ApplicantView } from "@/lib/data"
 import { PRODUCT_LABELS, STRUCTURE_LABELS, pctFromBps } from "@/lib/labels"
 import { formatCents } from "@/lib/money"
 import { MODES, MODE_META } from "@/lib/modes"
 import type { Decision } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
 import { Card } from "@/components/ui/card"
-import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { LenderDot } from "@/components/ui/pill"
 import { Table, Td, Th, THead } from "@/components/ui/table"
-
-export function generateStaticParams() {
-  return getCast().map((c) => ({ id: c.applicant.slug }))
-}
-
-export async function generateMetadata({ params }: PageProps<"/compare/[id]">): Promise<Metadata> {
-  const { id } = await params
-  const view = getApplicant(id)
-  return view ? { title: `${view.applicant.displayName}: three lenders · Berry`, description: view.applicant.story } : {}
-}
 
 const approved = (d: Decision) => d.outcome === "approve" || d.outcome === "approve_with_conditions"
 const amount = (d: Decision) => (approved(d) ? formatCents(d.limitCents, { whole: true }) : "None")
 const structure = (d: Decision) => (approved(d) && d.structure ? STRUCTURE_LABELS[d.structure].split(":")[0] : "None")
 const product = (d: Decision) => (approved(d) ? PRODUCT_LABELS[d.product] : "None")
 
-export default async function ComparePage({ params }: PageProps<"/compare/[id]">) {
-  const { id } = await params
-  const view = getApplicant(id)
-  if (!view) notFound()
-  const { applicant: a, decisions } = view
+/**
+ * The applicant file's "Compare lenders" tab: the same file under all three
+ * rulebooks side by side, with the differences first.
+ */
+export function CompareLenders({ view }: { view: ApplicantView }) {
+  const { decisions } = view
   const ds = MODES.map((m) => decisions[m])
 
   const rows = [
@@ -48,17 +36,9 @@ export default async function ComparePage({ params }: PageProps<"/compare/[id]">
   const flags = reporting ? ds[MODES.indexOf(reporting)].flags : []
 
   return (
-    <PageContainer>
-      <PageHeader
-        breadcrumb={[{ label: "Workbench", href: "/workbench" }, { label: a.displayName, href: `/workbench/${a.slug}` }, { label: "Compare" }]}
-        title={`${a.displayName}: one applicant, three lenders`}
-        lead={
-          <>
-            {a.story} Asking for a {PRODUCT_LABELS[a.request.product].toLowerCase()} of{" "}
-            <span className="num text-fg">{formatCents(a.request.amountCents, { whole: true })}</span>.
-          </>
-        }
-      />
+    <div data-tour="compare">
+      <h2 className="text-xl font-semibold tracking-[-0.01em]">One applicant, three lenders</h2>
+      <p className="mt-1 mb-5 text-sm text-fg-2">The data going in is identical. Shaded rows are where the lenders disagree.</p>
 
       {differing.length > 0 && (
         <Card as="section" aria-labelledby="differ" pad="none" className="overflow-hidden">
@@ -207,11 +187,11 @@ export default async function ComparePage({ params }: PageProps<"/compare/[id]">
 
       <p className="mt-8 text-xs text-fg-3">
         Fictional institutions, synthetic data. Rates, limits and authority tiers are illustrative. Decisions are made by deterministic rules; see{" "}
-        <Link href="/accuracy" className="underline">
+        <Link href="/how-it-works?tab=test-results" className="underline">
           published test results
         </Link>
         .
       </p>
-    </PageContainer>
+    </div>
   )
 }

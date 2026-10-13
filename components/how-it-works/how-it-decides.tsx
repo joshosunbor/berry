@@ -1,6 +1,4 @@
-import type { Metadata } from "next"
 import Link from "next/link"
-import { CircleCheck, CircleDashed, FileClock, Rocket } from "lucide-react"
 import { Illustrative } from "@/components/berry/illustrative"
 import { CONFIGS } from "@/lib/engine/config"
 import { PATTERN_RULES } from "@/lib/engine/patterns"
@@ -10,51 +8,15 @@ import { getCast, getForeignReportDemo } from "@/lib/data"
 import { IGNORED } from "@/lib/feature-display"
 import { MODES, MODE_META } from "@/lib/modes"
 import { formatCents } from "@/lib/money"
-import { REGULATORY_STATUS, type RegulatoryRow } from "@/lib/regulatory/status"
+import { REGULATORY_STATUS } from "@/lib/regulatory/status"
 import { thresholdLabel } from "@/lib/threshold-labels"
 import { RETURN_CODES_SOURCE } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
 import accuracy from "@/public/accuracy.json"
 import { Card } from "@/components/ui/card"
-import { PageContainer, PageHeader } from "@/components/ui/page-header"
-import { LenderDot, Pill } from "@/components/ui/pill"
-import { h3Class } from "@/components/ui/section-header"
+import { LenderDot } from "@/components/ui/pill"
 
-export const metadata: Metadata = {
-  title: "Methodology · Berry",
-  description: "How Berry reads cash flow, how each lender decides, what it ignores, the Canadian rules it uses and their status, and its limits.",
-}
-
-const STATUS_STYLE: Record<RegulatoryRow["status"], { icon: typeof CircleCheck; tone: "ok" | "warn" | "info" | "neutral" }> = {
-  Live: { icon: CircleCheck, tone: "ok" },
-  "Enacted, not in force": { icon: FileClock, tone: "warn" },
-  "In draft": { icon: FileClock, tone: "warn" },
-  Launching: { icon: Rocket, tone: "info" },
-  Illustrative: { icon: CircleDashed, tone: "neutral" },
-}
-
-const longDate = (iso: string) => new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
-
-function StatusBadge({ status }: { status: RegulatoryRow["status"] }) {
-  const { icon: Icon, tone } = STATUS_STYLE[status]
-  return (
-    <Pill tone={tone} className="gap-1">
-      <Icon aria-hidden className="size-3.5" />
-      {status}
-    </Pill>
-  )
-}
-
-function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
-  return (
-    <section id={id} aria-labelledby={`${id}-h`} className="scroll-mt-20 border-t border-line pt-10">
-      <h2 id={`${id}-h`} className="text-[clamp(26px,3vw,34px)] font-bold leading-[1.1] tracking-[-0.025em]">
-        {title}
-      </h2>
-      <div className="mt-5 space-y-4 leading-7 text-fg-2">{children}</div>
-    </section>
-  )
-}
+import { longDate, Section } from "./section"
 
 const STYLES = {
   credit_union:
@@ -65,7 +27,8 @@ const STYLES = {
     "Fixed thresholds checked in order, and a decline lists every one that failed. Approvals come with a documentation checklist and standard conditions. Gig and invoice-based income is referred for two years of tax returns.",
 } as const
 
-export default function MethodologyPage() {
+/** How it works, first tab: how Berry reads cash flow, how each lender decides, what it ignores, and its limits. */
+export function HowItDecides() {
   const cast = getCast()
   const auto = cast.filter((c) => c.verification.summary.automated).length
   const manual = cast.length - auto
@@ -73,13 +36,7 @@ export default function MethodologyPage() {
   const foreign = getForeignReportDemo()
 
   return (
-    <PageContainer className="max-w-[1000px]">
-      <PageHeader
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Methodology" }]}
-        eyebrow="Methodology"
-        title="How Berry decides"
-        lead="Every decision is made by deterministic rules that are unit tested. The same file always gets the same answer, and every answer is explained in plain language. AI never sets a limit, a price or an approval."
-      >
+    <div>
       <nav aria-label="On this page" className="mt-6 flex flex-wrap gap-x-4 gap-y-1 text-sm">
         {[
           ["reading", "Reading cash flow"],
@@ -96,8 +53,6 @@ export default function MethodologyPage() {
           </a>
         ))}
       </nav>
-      </PageHeader>
-
       <div className="mt-2 space-y-12">
         <Section id="reading" title="Reading cash flow">
           <p>
@@ -164,7 +119,7 @@ export default function MethodologyPage() {
             })}
           </div>
           <p>
-            Results on {accuracy.totals.cases} planted test cases are published on the <Link href="/accuracy" className="underline underline-offset-2">accuracy page</Link>.
+            Results on {accuracy.totals.cases} planted test cases are published under <Link href="/how-it-works?tab=test-results" className="underline underline-offset-2">Test results</Link>.
           </p>
         </Section>
 
@@ -232,47 +187,11 @@ export default function MethodologyPage() {
           <p>
             Many newcomers come from countries no program covers yet. For them, Berry&apos;s credit-building path fills the gap foreign credit reports
             don&apos;t cover: a starter limit sized on steady cash flow, and milestones (six on-time payments for a limit review; twelve months for an
-            unsecured line) shown on the applicant&apos;s file. <Link href="/workbench/daniel" className="underline underline-offset-2">Daniel&apos;s file</Link>{" "}
+            unsecured line) shown on the applicant&apos;s file. <Link href="/applications/daniel" className="underline underline-offset-2">Daniel&apos;s file</Link>{" "}
             shows it.
           </p>
         </Section>
 
-        <Section id="regulatory-status" title="Regulatory status">
-          <p>
-            Status as of <span className="font-semibold text-fg">{longDate(status.asOf)}</span>. Each row links to its source and shows when it was last checked. Sources that aren&apos;t a regulator, government body or Payments
-            Canada are marked as such. <span className="font-semibold text-fg">Live</span> means in force; <span className="font-semibold text-fg">Enacted, not in force</span> means passed into law
-            but not yet in effect; <span className="font-semibold text-fg">In draft</span> means proposed; <span className="font-semibold text-fg">Launching</span> means announced and rolling out; <span className="font-semibold text-fg">Illustrative</span>{" "}
-            means Berry could not confirm it from an official source.
-          </p>
-          <ul className="space-y-3">
-            {status.rows.map((r) => (
-              <Card as="li" key={r.id} id={`status-${r.id}`} className="scroll-mt-20">
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <h3 className={cn(h3Class, "text-lg text-fg")}>{r.name}</h3>
-                  <StatusBadge status={r.status} />
-                </div>
-                <p className="mt-1.5 text-sm leading-6">{r.summary}</p>
-                {r.effective && <p className="mt-1 text-sm text-fg-3">{r.effective}</p>}
-                <p className="mt-2 text-sm leading-6">
-                  <span className="font-semibold text-fg">In Berry ({r.berryUse.toLowerCase()}):</span> <span className="text-fg-2">{r.inBerry}</span>
-                </p>
-                {r.note && <p className="mt-1 text-sm text-fg-3">Note: {r.note}</p>}
-                <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-fg-3">
-                  <a href={r.source.url} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center text-fg-2 underline underline-offset-2 hover:text-fg">
-                    Source: {r.source.name}
-                  </a>
-                  {r.source.kind !== "official" && <span>Not an official source ({r.source.kind})</span>}
-                  {r.moreSources?.map((m) => (
-                    <a key={m.url} href={m.url} target="_blank" rel="noreferrer" className="inline-flex min-h-6 items-center text-fg-2 underline underline-offset-2 hover:text-fg">
-                      Also: {m.name}
-                    </a>
-                  ))}
-                  <span>Checked {longDate(r.asOf)}</span>
-                </p>
-              </Card>
-            ))}
-          </ul>
-        </Section>
 
         <Section id="limits" title="Known limitations, and what would change in production">
           <ul className="list-disc space-y-2 pl-6">
@@ -287,6 +206,6 @@ export default function MethodologyPage() {
           </ul>
         </Section>
       </div>
-    </PageContainer>
+    </div>
   )
 }

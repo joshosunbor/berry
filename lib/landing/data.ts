@@ -12,7 +12,7 @@ import { slaState, type SlaState } from "@/lib/ops/queues"
 import { businessMinutesBetween } from "@/lib/ops/time"
 import type { Decision, InstitutionConfig } from "@/lib/schemas"
 import { SERVICING } from "@/lib/servicing/config"
-import { RAILS, RTR_FULL_NAME } from "@/lib/servicing/funding"
+import { RTR_FULL_NAME } from "@/lib/servicing/funding"
 import { CLOCK_START } from "@/lib/servicing/views"
 
 /*

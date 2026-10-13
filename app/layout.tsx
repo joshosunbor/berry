@@ -4,7 +4,7 @@ import { GeistMono, GeistSans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Berry",
+  title: { default: "Berry", template: "%s · Berry" },
   description:
     "One applicant. Three lenders. Three different answers. Berry shows how credit unions, banks and fintechs read the same cash flow differently, and explains every decision.",
 };

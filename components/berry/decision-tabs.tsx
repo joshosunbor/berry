@@ -21,6 +21,7 @@ import { RECOMMENDATION_LABELS } from "@/lib/labels"
 import { MODE_META, type Mode } from "@/lib/modes"
 import type { Decision } from "@/lib/schemas"
 import { cn } from "@/lib/utils"
+import { useUrlTab } from "@/components/berry/url-state"
 
 export interface FileTabsData {
   verification: { checks: VerificationCheck[]; summary: VerificationSummary }
@@ -32,7 +33,8 @@ export interface FileTabsData {
   slug: string
 }
 
-export function DecisionTabs({ decisions, features, data }: { decisions: Record<Mode, Decision>; features: Features; data: FileTabsData }) {
+/** The applicant file's tabs. `compare` is the server-rendered three-lender view, shown as its own tab. */
+export function DecisionTabs({ decisions, features, data, compare }: { decisions: Record<Mode, Decision>; features: Features; data: FileTabsData; compare: React.ReactNode }) {
   const { mode } = useMode()
   const [register, setRegister] = useState<Register>("customer")
   const d = decisions[mode]
@@ -66,6 +68,11 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
           </p>
         </Card>
       ),
+    },
+    {
+      id: "compare",
+      label: "Compare lenders",
+      content: compare,
     },
     {
       id: "recommendations",
@@ -135,12 +142,14 @@ export function DecisionTabs({ decisions, features, data }: { decisions: Record<
   return <FileTabs label="Applicant file" tabs={tabs} />
 }
 
-/** The file's tab strip (scrolls sideways on phones) and its panels. */
+/** The file's tab strip (scrolls sideways on phones) and its panels. The open tab is in the URL (?tab=), so it can be linked to. */
 function FileTabs({ label, tabs }: { label: string; tabs: { id: string; label: string; content: React.ReactNode }[] }) {
-  const [i, setI] = useState(0)
-  const t = useTabs(tabs.length, i, setI)
+  const ids = tabs.map((x) => x.id)
+  const [tab, select] = useUrlTab(ids)
+  const i = ids.indexOf(tab)
+  const t = useTabs(tabs.length, i, (n) => select(ids[n]))
   return (
-    <div className="min-w-0">
+    <div id="file-tabs" className="min-w-0 scroll-mt-28">
       <div className="-mx-1 overflow-x-auto px-1 pb-1">
         <div {...t.list} aria-label={label} className={cn(tabListClass("segmented"), "w-max flex-nowrap")}>
           {tabs.map((x, n) => (
@@ -151,7 +160,7 @@ function FileTabs({ label, tabs }: { label: string; tabs: { id: string; label: s
         </div>
       </div>
       {tabs.map((x, n) => (
-        <div key={x.id} {...t.panel(n)} className="mt-4 min-w-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus">
+        <div key={x.id} {...t.panel(n)} data-tour={`tab-${x.id}`} className="mt-4 min-w-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus">
           {x.content}
         </div>
       ))}

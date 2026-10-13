@@ -33,7 +33,7 @@ export function ConsentDashboard() {
       <div className="rounded-[14px] bg-panel shadow-card p-6">
         <p className="font-medium">No consents yet.</p>
         <p className="mt-1 text-sm text-fg-3">When you share data during an application, each consent appears here with its expiry date and a revoke button.</p>
-        <Link href="/apply" className={cn(buttonVariants({ size: "sm" }), "mt-4")}>
+        <Link href="/borrower/apply" className={cn(buttonVariants({ size: "sm" }), "mt-4")}>
           Start an application
         </Link>
       </div>

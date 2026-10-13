@@ -8,8 +8,13 @@ function watchConsole(page: Page): string[] {
   return errors
 }
 
+/** Opens one of the Operations sections (Queues, Team, Policy, Audit, Dashboard). */
+async function opsSection(page: Page, name: string) {
+  await page.getByRole("navigation", { name: "Operations sections" }).getByRole("link", { name }).click()
+}
+
 test("every page is served with security headers and without x-powered-by", async ({ request }) => {
-  for (const path of ["/", "/workbench", "/methodology"]) {
+  for (const path of ["/", "/applications", "/how-it-works"]) {
     const res = await request.get(path)
     const h = res.headers()
     expect(h["x-powered-by"], path).toBeUndefined()
@@ -20,7 +25,7 @@ test("every page is served with security headers and without x-powered-by", asyn
   }
 })
 
-test("landing → workbench → applicant → compare", async ({ page }) => {
+test("landing → demo → applications → applicant → compare lenders", async ({ page }) => {
   const errors = watchConsole(page)
 
   await page.goto("/")
@@ -30,45 +35,54 @@ test("landing → workbench → applicant → compare", async ({ page }) => {
   await expect(page.getByRole("article", { name: /Aspen Bank/ })).toContainText("Declined")
 
   await page.getByRole("main").getByRole("link", { name: "Try the live demo" }).click()
-  await expect(page).toHaveURL(/\/workbench$/)
+  await expect(page).toHaveURL(/\/demo$/)
+  await page.getByRole("main").getByRole("link", { name: /^Applications/ }).click()
+  await expect(page).toHaveURL(/\/applications$/)
   await expect(page.getByRole("list", { name: "Applicants" }).getByRole("link")).toHaveCount(14)
 
   await page.getByRole("link", { name: /Hollis Family Farm/ }).click()
-  await expect(page).toHaveURL(/\/workbench\/hollis-family-farm$/)
+  await expect(page).toHaveURL(/\/applications\/hollis-family-farm$/)
+  await expect(page.getByRole("navigation", { name: "Breadcrumb" })).toContainText("Applications")
   const panel = page.getByRole("region", { name: /decision/ })
   await expect(panel).toContainText("Sign-off: Branch Manager")
 
-  // Switching lender updates the decision panel.
-  await page.getByRole("radio", { name: /^Kite$/ }).click()
+  // Switching lender (in the header) updates the decision panel, and is remembered across pages.
+  const lender = page.getByRole("banner").getByRole("radiogroup", { name: "Lender" })
+  await lender.getByRole("radio", { name: /^Kite$/ }).click()
   await expect(panel).toContainText("$8,000")
-  await page.getByRole("radio", { name: /^Aspen/ }).click()
+  await lender.getByRole("radio", { name: /^Aspen/ }).click()
   await expect(panel).toContainText("Declined")
 
   await page.getByRole("link", { name: "Compare all three lenders" }).click()
-  await expect(page).toHaveURL(/\/compare\/hollis-family-farm$/)
-  await expect(page.getByRole("article")).toHaveCount(3)
+  await expect(page).toHaveURL(/\/applications\/hollis-family-farm\?tab=compare/)
+  await expect(page.getByRole("tab", { name: "Compare lenders" })).toHaveAttribute("aria-selected", "true")
+  await expect(page.getByRole("tabpanel", { name: "Compare lenders" }).getByRole("article")).toHaveCount(3)
+
+  await page.goto("/loans")
+  await expect(page.getByRole("banner").getByRole("radio", { name: /^Aspen/ })).toHaveAttribute("aria-checked", "true")
 
   expect(errors).toEqual([])
 })
 
-test("accuracy page publishes results", async ({ page }) => {
+test("test results are a tab of How it works", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/accuracy")
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Accuracy")
+  await page.goto("/how-it-works?tab=test-results")
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("How it works")
+  await expect(page.getByRole("tab", { name: "Test results" })).toHaveAttribute("aria-selected", "true")
   await expect(page.getByText(/planted decisions match/)).toBeVisible()
   expect(errors).toEqual([])
 })
 
 test("unknown applicant is a 404", async ({ page }) => {
-  const res = await page.goto("/workbench/nobody")
+  const res = await page.goto("/applications/nobody")
   expect(res?.status()).toBe(404)
   await expect(page.getByRole("heading", { level: 1, name: "This page could not be found." })).toBeVisible()
   await expect(page.getByRole("navigation", { name: "Main" })).toBeVisible()
-  await expect(page.getByRole("link", { name: "Go to the workbench" })).toHaveAttribute("href", "/workbench")
+  await expect(page.getByRole("link", { name: "Go to the demo" })).toHaveAttribute("href", "/demo")
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/workbench", "/workbench/hollis-family-farm", "/workbench/main-street-hardware", "/compare/hollis-family-farm", "/accuracy", "/apply", "/consents", "/methodology", "/ops", "/ops/dashboard", "/ops/loans", "/ops/loans/loan_corner-grind-cafe-cu"]
+  const pages = ["/", "/demo", "/applications", "/applications/hollis-family-farm", "/applications/main-street-hardware", "/applications/hollis-family-farm?tab=compare", "/how-it-works", "/how-it-works?tab=test-results", "/how-it-works?tab=canadian-rules", "/borrower/apply", "/borrower/consents", "/operations", "/operations/dashboard", "/loans", "/loans/loan_corner-grind-cafe-cu"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -78,7 +92,7 @@ test("no page makes regulatory claims", async ({ page }) => {
 
 test("Main Street Hardware's file shows the FINTRAC review and the AFT file", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/workbench/main-street-hardware")
+  await page.goto("/applications/main-street-hardware")
   await page.getByRole("tab", { name: "FINTRAC review" }).click()
   const panel = page.getByRole("tabpanel", { name: "FINTRAC review" })
   await expect(panel).toContainText("24-hour rule")
@@ -95,7 +109,7 @@ test("Main Street Hardware's file shows the FINTRAC review and the AFT file", as
 
 test("apply: consent, verification, request and three decisions; consents can be revoked", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/apply")
+  await page.goto("/borrower/apply")
   await page.getByRole("button", { name: /Hollis Family Farm/ }).click()
   await expect(page.getByRole("heading", { name: "About you" })).toBeVisible()
   await page.getByRole("button", { name: "Continue" }).click()
@@ -132,13 +146,15 @@ test("apply: consent, verification, request and three decisions; consents can be
   expect(errors).toEqual([])
 })
 
-test("methodology: regulatory status panel shows sources, dates and the right statuses", async ({ page }) => {
+test("Canadian rules: regulatory status panel shows sources, dates and the right statuses", async ({ page }) => {
   const errors = watchConsole(page)
   await page.goto("/")
   const menu = page.getByRole("button", { name: "Menu" })
   if (await menu.isVisible()) await menu.click()
-  await page.getByRole("banner").getByRole("link", { name: "Methodology" }).filter({ visible: true }).click()
-  await expect(page).toHaveURL(/\/methodology$/)
+  await page.getByRole("banner").getByRole("link", { name: "How it works" }).filter({ visible: true }).click()
+  await expect(page).toHaveURL(/\/how-it-works$/)
+  await page.getByRole("tab", { name: "Canadian rules" }).click()
+  await expect(page).toHaveURL(/\?tab=canadian-rules$/)
   const panel = page.locator("#regulatory-status")
   await expect(panel).toContainText("Status as of October 12, 2026")
   const rows = panel.getByRole("listitem")
@@ -157,7 +173,7 @@ test("methodology: regulatory status panel shows sources, dates and the right st
 
 test("funding: RTR is labelled simulated and a close match must be confirmed before sending", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/workbench/grace")
+  await page.goto("/applications/grace")
   await page.getByRole("tab", { name: "Disbursement (AFT)" }).click()
   const panel = page.getByRole("tabpanel", { name: "Disbursement (AFT)" })
   await panel.getByRole("radio", { name: /Real-Time Rail/ }).click()
@@ -172,29 +188,29 @@ test("funding: RTR is labelled simulated and a close match must be confirmed bef
 
 test("loan servicing: fast-forward to a charge-off, ledger in balance, return codes labelled", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/ops/loans")
+  await page.goto("/loans")
   await page.getByRole("radio", { name: /\+12 m/ }).click()
   await page.getByRole("link", { name: "Corner Grind Café" }).click()
-  await expect(page).toHaveURL(/\/ops\/loans\/loan_corner-grind-cafe-cu$/)
+  await expect(page).toHaveURL(/\/loans\/loan_corner-grind-cafe-cu$/)
   await expect(page.getByText("Charged off").first()).toBeVisible()
   await expect(page.getByText(/Charged off at 120 days past due/).first()).toBeVisible()
   await expect(page.getByRole("status").filter({ hasText: "Debits" })).toContainText("✓")
   await expect(page.getByText("905 Account Closed")).toBeVisible()
 
-  await page.goto("/ops/loans/loan_amara-kite")
+  await page.goto("/loans/loan_amara-kite")
   await expect(page.getByText("907 No Debit Allowed")).toBeVisible()
   await expect(page.getByText(/before settlement/).first()).toBeVisible()
   expect(errors).toEqual([])
 })
 
 test("unknown loan is a 404", async ({ page }) => {
-  const res = await page.goto("/ops/loans/loan_nobody-cu")
+  const res = await page.goto("/loans/loan_nobody-cu")
   expect(res?.status()).toBe(404)
 })
 
-test("foreign report toggle on /methodology; credit-building path on Daniel's file, with no toggle", async ({ page }) => {
+test("foreign report toggle on How it works; credit-building path on Daniel's file, with no toggle", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/methodology#foreign-reports")
+  await page.goto("/how-it-works#foreign-reports")
   const section = page.locator("#foreign-reports")
   const toggle = section.getByRole("switch")
   await expect(toggle).toHaveAttribute("aria-checked", "true")
@@ -203,7 +219,7 @@ test("foreign report toggle on /methodology; credit-building path on Daniel's fi
   await expect(toggle).toHaveAttribute("aria-checked", "false")
   await expect(section.getByText("No offer")).toHaveCount(2)
 
-  await page.goto("/workbench/daniel")
+  await page.goto("/applications/daniel")
   await expect(page.getByRole("heading", { name: "Credit-building path" })).toBeVisible()
   await expect(page.getByText("fill the gap foreign credit reports don't cover")).toBeVisible()
   await expect(page.getByRole("switch")).toHaveCount(0)
@@ -212,7 +228,7 @@ test("foreign report toggle on /methodology; credit-building path on Daniel's fi
 
 test("Hollis's operating line shows limit, drawn and available", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/ops/loans/loan_hollis-family-farm-cu")
+  await page.goto("/loans/loan_hollis-family-farm-cu")
   await page.getByRole("radio", { name: /\+12 m/ }).click()
   const line = page.getByRole("region", { name: "Operating line" })
   await expect(line).toContainText("Limit")
@@ -227,7 +243,7 @@ test("Hollis's operating line shows limit, drawn and available", async ({ page }
 
 test("ops console: the maker can't approve, a second person can, and the audit trail records both", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/ops")
+  await page.goto("/operations")
   await page.getByLabel("Simulated time").selectOption("2026-10-06T10:05")
   await page.getByRole("tab", { name: /Payee confirmation/ }).click()
   await page.getByRole("button", { name: /Grace: confirm the payee/ }).click()
@@ -244,7 +260,7 @@ test("ops console: the maker can't approve, a second person can, and the audit t
   await panel.getByRole("button", { name: "Approve as K. Moreau" }).click()
   await expect(panel.getByText(/Approved · checker: K. Moreau/)).toBeVisible()
 
-  await page.getByRole("tab", { name: "Audit trail" }).click()
+  await opsSection(page, "Audit")
   await expect(page.getByText(/Hash chain verified/)).toBeVisible()
   await page.getByLabel("Action").selectOption("approval.blocked")
   await expect(page.getByRole("row")).toHaveCount(2)
@@ -263,8 +279,8 @@ test("ops console: the maker can't approve, a second person can, and the audit t
 
 test("policy change: impact preview, maker-checker, escalation, versions and rollback", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/ops")
-  await page.getByRole("tab", { name: "Policy" }).click()
+  await page.goto("/operations")
+  await opsSection(page, "Policy")
   await page.getByLabel("Acting as").selectOption("usr_rivera")
   const form = page.getByRole("region", { name: "Propose a change" })
   await form.getByLabel("Most income variation allowed (CV)").fill("1.5")
@@ -303,7 +319,7 @@ test("policy change: impact preview, maker-checker, escalation, versions and rol
   await expect(page.getByText(/Current: v3/)).toBeVisible()
   await expect(history).toContainText("Rollback to v1")
 
-  await page.getByRole("tab", { name: "Audit trail" }).click()
+  await opsSection(page, "Audit")
   await page.getByLabel("Action").selectOption("policy.rolled_back")
   await expect(page.getByRole("row")).toHaveCount(2)
   await page.getByRole("button", { name: /Reset my/ }).click()
@@ -311,22 +327,22 @@ test("policy change: impact preview, maker-checker, escalation, versions and rol
 })
 
 test("ops console says decisions made in the browser don't change the simulation", async ({ page }) => {
-  await page.goto("/ops")
+  await page.goto("/operations")
   await expect(page.getByRole("note")).toContainText("They don't change the simulation")
 })
 
 test("ops dashboard: a first visit opens twelve months on, with a funded book", async ({ page }) => {
-  await page.goto("/ops/dashboard")
+  await page.goto("/operations/dashboard")
   await expect(page.getByLabel("Simulated time")).toHaveValue("2027-10-06T17:00")
   await expect(page.getByText("Nothing funded yet")).toHaveCount(0)
 })
 
 test("ops dashboard: KPIs follow the console's moment, filter by lender, explain themselves", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/ops")
+  await page.goto("/operations")
   await page.getByLabel("Simulated time").selectOption("2027-10-06T17:00")
-  await page.getByRole("link", { name: "Dashboard" }).click()
-  await expect(page).toHaveURL(/\/ops\/dashboard$/)
+  await opsSection(page, "Dashboard")
+  await expect(page).toHaveURL(/\/operations\/dashboard$/)
   // The moment chosen in the console carries over.
   await expect(page.getByLabel("Simulated time")).toHaveValue("2027-10-06T17:00")
   const losses = page.getByRole("article", { name: "Credit losses" })
@@ -335,17 +351,20 @@ test("ops dashboard: KPIs follow the console's moment, filter by lender, explain
   await losses.getByText("How it's computed").click()
   await expect(losses).toContainText("charge-off entry")
 
-  await page.getByRole("radio", { name: "Kite" }).click()
+  const filter = page.getByRole("main").getByRole("radiogroup")
+  await filter.getByRole("radio", { name: "Kite" }).click()
   await expect(losses).toContainText("$0")
-  await page.getByRole("radio", { name: "Northgate Credit Union" }).click()
+  await filter.getByRole("radio", { name: "Northgate Credit Union" }).click()
   await expect(losses).toContainText("$7,712")
   await expect(page.getByRole("article", { name: "Cost per loan" }).getByText("Illustrative").first()).toBeVisible()
   await expect(page.getByRole("region", { name: "What I'd improve next" })).toContainText("% of manual work")
   expect(errors).toEqual([])
 })
 
-test("accuracy: what the score means, and two debatable cases described in plain words", async ({ page }) => {
+test("test results: what the score means, and two debatable cases described in plain words", async ({ page }) => {
   await page.goto("/accuracy")
+  // The old address redirects to the tab.
+  await expect(page).toHaveURL(/\/how-it-works\?tab=test-results$/)
   await expect(page.getByText("The engine reproduces the outcomes its rules were designed for.")).toBeVisible()
   const debatable = page.getByRole("region", { name: "Two cases where the answer is debatable" })
   await expect(debatable.getByRole("heading", { level: 3 })).toHaveText([
@@ -402,7 +421,7 @@ test("landing: comparison toggle, lifecycle and tour tabs, ops snapshot, concept
 
 test("poor-harvest stress: shortfall shown, over-limit request goes through maker-checker, carry-over options listed", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/ops/loans/loan_hollis-family-farm-cu")
+  await page.goto("/loans/loan_hollis-family-farm-cu")
   const stress = page.getByRole("region", { name: /Poor-harvest stress test/ })
   await expect(stress.getByText("Illustrative").first()).toBeVisible()
   // Base only until the toggle is on; then side by side.
@@ -414,7 +433,7 @@ test("poor-harvest stress: shortfall shown, over-limit request goes through make
   await stress.getByRole("button", { name: /Prepare an over-limit request as A. Rivera/ }).click()
   await expect(stress).toContainText("Over-limit request is in Credit referrals and sign-offs")
 
-  await page.goto("/ops")
+  await page.goto("/operations")
   await page.getByLabel("Acting as").selectOption("usr_rivera")
   await page.getByRole("tab", { name: /Credit referrals/ }).click()
   await page.getByRole("button", { name: /Hollis Family Farm: over-limit request to \$115,000/ }).click()
@@ -426,7 +445,7 @@ test("poor-harvest stress: shortfall shown, over-limit request goes through make
   await expect(panel).toContainText("Approved · checker: S. Lindqvist")
   await page.getByRole("button", { name: /Reset my/ }).click()
 
-  await page.goto("/ops/loans/loan_lakeside-lodge-cu")
+  await page.goto("/loans/loan_lakeside-lodge-cu")
   const lake = page.getByRole("region", { name: /Poor-harvest stress test/ })
   await lake.getByRole("switch").click()
   await expect(lake).toContainText("The sweep leaves")
@@ -467,20 +486,20 @@ test("landing: keyboard tabs (Home/End), one-open accordion, sign-off wording, s
     await expect(menu).toHaveAttribute("aria-expanded", "false")
     await menu.click()
     await expect(page.getByRole("button", { name: "Close" })).toHaveAttribute("aria-expanded", "true")
-    await page.locator("#mobile-menu").getByRole("link", { name: "How a pilot works" }).click()
+    await page.locator("#mobile-menu").getByRole("link", { name: "About this project" }).click()
     await expect(page.locator("#mobile-menu")).toHaveCount(0)
-    await expect(page.getByRole("region", { name: "How a pilot would work" })).toBeInViewport()
+    await expect(page.getByRole("region", { name: "About this project" })).toBeInViewport()
   }
   expect(errors).toEqual([])
 })
 
 test("Northgate's $50,000 tier reads Lending officer, never Lender", async ({ page }) => {
   const asLender = /\bLender(?:'s)? (?:sign-off|authority|approves|tier)\b|Sign-off: Lender\b|the lender's \$50,000|Lender: up to/i
-  for (const path of ["/", "/workbench/priya", "/compare/priya", "/ops", "/methodology"]) {
+  for (const path of ["/", "/applications/priya", "/applications/priya?tab=compare", "/operations", "/how-it-works"]) {
     await page.goto(path)
     await expect(page.locator("body"), path).not.toContainText(asLender)
   }
-  await expect(page.getByText(/Lending officer: up to \$50,000/)).toBeVisible()
-  await page.goto("/workbench/priya")
+  await expect(page.getByText(/Lending officer: up to \$50,000/).first()).toBeVisible()
+  await page.goto("/applications/priya")
   await expect(page.getByText(/Sign-off: Lending officer/).first()).toBeVisible()
 })

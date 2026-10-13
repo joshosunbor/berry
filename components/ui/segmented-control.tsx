@@ -14,6 +14,7 @@ export function SegmentedControl<T extends string>({
   onChange,
   kind = "pressed",
   size = "md",
+  tone = "default",
   className,
 }: {
   label: string
@@ -22,6 +23,8 @@ export function SegmentedControl<T extends string>({
   onChange: (v: T) => void
   kind?: "pressed" | "radio"
   size?: "md" | "sm"
+  /** "navy": for the app header's navy bar. */
+  tone?: "default" | "navy"
   className?: string
 }) {
   // Radio groups: one tab stop, and the arrow keys move and select (ARIA radio group pattern).
@@ -39,7 +42,7 @@ export function SegmentedControl<T extends string>({
       role={kind === "radio" ? "radiogroup" : "group"}
       aria-label={label}
       onKeyDown={onKey}
-      className={cn("inline-flex flex-wrap rounded-[9px] bg-field p-[3px] shadow-inset-line", className)}
+      className={cn("inline-flex flex-wrap rounded-[9px] p-[3px]", tone === "navy" ? "bg-white/10" : "bg-field shadow-inset-line", className)}
     >
       {options.map((o) => {
         const on = o.value === value
@@ -53,7 +56,13 @@ export function SegmentedControl<T extends string>({
             className={cn(
               "cursor-pointer rounded-[7px] font-medium",
               size === "md" ? "min-h-[34px] px-3 text-sm" : "min-h-8 px-2.5 text-[13px]",
-              on ? "bg-panel text-fg shadow-segment-on" : "text-fg-3 hover:text-fg",
+              tone === "navy"
+                ? on
+                  ? "bg-white text-navy"
+                  : "text-on-navy hover:text-white"
+                : on
+                  ? "bg-panel text-fg shadow-segment-on"
+                  : "text-fg-3 hover:text-fg",
             )}
           >
             {o.label}

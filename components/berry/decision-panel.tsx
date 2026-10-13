@@ -149,7 +149,7 @@ export function DecisionPanel({ decisions, slug, requestedCents }: { decisions: 
         </div>
       ))}
 
-      <ButtonLink href={`/compare/${slug}`} className="mt-6 w-full">
+      <ButtonLink href={`/applications/${slug}?tab=compare#file-tabs`} className="mt-6 w-full">
         Compare all three lenders
         <ArrowRight aria-hidden className="size-4" />
       </ButtonLink>

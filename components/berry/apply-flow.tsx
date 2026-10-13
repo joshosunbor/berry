@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
+import { useLocationSearch } from "@/components/berry/url-state"
 import { AlertTriangle, ArrowLeft, ArrowRight, Briefcase, Check, CheckCircle2, Loader2, RotateCcw, User, XCircle } from "lucide-react"
 import { Illustrative, Source } from "@/components/berry/illustrative"
 import { ModeChip } from "@/components/berry/mode-chip"
@@ -89,7 +90,17 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
   }
   const stepIndex = STEPS.findIndex((s) => s.id === app.step)
 
-  if (resumable) {
+  // ?as=<slug> (the guided tour) opens straight on that profile's consent screen, once per value.
+  const as = new URLSearchParams(useLocationSearch()).get("as")
+  const [handledAs, setHandledAs] = useState<string | null>(null)
+  const asProfile = as ? profiles.find((x) => x.slug === as) : undefined
+  if (asProfile && handledAs !== as) {
+    setHandledAs(as)
+    setStarted(true)
+    setApp({ ...fresh(), slug: asProfile.slug, request: asProfile.request, step: "consent" })
+  }
+
+  if (resumable && !as) {
     const p = profiles.find((x) => x.slug === resumable.slug)
     return (
       <div className="rounded-[14px] bg-panel shadow-card p-6">
@@ -112,7 +123,7 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
   }
 
   return (
-    <div>
+    <div data-tour="apply">
       {app.step !== "submitted" && (
         <nav aria-label="Application progress" className="mb-8">
           <p className="text-sm text-fg-3">
@@ -239,10 +250,10 @@ export function ApplyFlow({ profiles }: { profiles: ProfileOption[] }) {
             })}
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/consents" className={buttonVariants({ size: "sm" })}>
+            <Link href="/borrower/consents" className={buttonVariants({ size: "sm" })}>
               Manage your consents
             </Link>
-            <Link href={`/workbench/${profile.slug}`} className={buttonVariants({ variant: "secondary", size: "sm" })}>
+            <Link href={`/applications/${profile.slug}`} className={buttonVariants({ variant: "secondary", size: "sm" })}>
               Open {profile.name}&apos;s file
             </Link>
             <button type="button" onClick={() => (clearApplication(), setApp(fresh()), setDecisions(null))} className={buttonVariants({ variant: "secondary", size: "sm" })}>

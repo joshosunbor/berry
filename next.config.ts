@@ -30,12 +30,34 @@ const securityHeaders = [
   { key: "Content-Security-Policy", value: contentSecurityPolicy(process.env.NODE_ENV !== "production") },
 ];
 
+/**
+ * Old URLs from before the four-section structure, kept working for links
+ * already shared. Permanent (308). The browser carries any #fragment across,
+ * so /methodology#regulatory-status lands on that tab of How it works.
+ */
+export const LEGACY_REDIRECTS = [
+  { source: "/workbench", destination: "/applications" },
+  { source: "/workbench/:id", destination: "/applications/:id" },
+  { source: "/compare/:id", destination: "/applications/:id?tab=compare" },
+  { source: "/apply", destination: "/borrower/apply" },
+  { source: "/consents", destination: "/borrower/consents" },
+  { source: "/ops", destination: "/operations" },
+  { source: "/ops/dashboard", destination: "/operations/dashboard" },
+  { source: "/ops/loans", destination: "/loans" },
+  { source: "/ops/loans/:id", destination: "/loans/:id" },
+  { source: "/methodology", destination: "/how-it-works" },
+  { source: "/accuracy", destination: "/how-it-works?tab=test-results" },
+] as const
+
 const nextConfig: NextConfig = {
   // Self-contained server for the Docker image (Fly.io).
   output: "standalone",
   poweredByHeader: false,
   cacheComponents: true,
   partialPrefetching: true,
+  async redirects() {
+    return LEGACY_REDIRECTS.map((r) => ({ ...r, permanent: true }));
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

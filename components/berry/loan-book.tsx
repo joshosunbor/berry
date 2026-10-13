@@ -61,7 +61,7 @@ export function LoanBook({ loans }: { loans: LoanSummary[] }) {
             {snaps.map(({ loan, s }) => (
               <tr key={loan.id}>
                 <Th scope="row" className="border-line-soft bg-panel font-normal">
-                  <Link href={`/ops/loans/${loan.id}`} className="font-semibold text-fg underline-offset-2 hover:underline">
+                  <Link href={`/loans/${loan.id}`} className="font-semibold text-fg underline-offset-2 hover:underline">
                     {loan.applicantName}
                   </Link>
                   <span className="block text-xs text-fg-3">{PRODUCT_LABELS[loan.product]}</span>

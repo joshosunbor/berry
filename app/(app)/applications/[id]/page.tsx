@@ -3,8 +3,8 @@ import { notFound } from "next/navigation"
 import { CashFlowChart } from "@/components/berry/cash-flow-chart"
 import { CreditBuildingCard } from "@/components/berry/credit-building"
 import { DecisionPanel } from "@/components/berry/decision-panel"
+import { CompareLenders } from "@/components/berry/compare-lenders"
 import { DecisionTabs } from "@/components/berry/decision-tabs"
-import { ModeSwitcher } from "@/components/berry/mode-context"
 import { Card } from "@/components/ui/card"
 import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { getApplicant, getCast, getLoanSummaries } from "@/lib/data"
@@ -16,13 +16,13 @@ export function generateStaticParams() {
   return getCast().map((c) => ({ id: c.applicant.slug }))
 }
 
-export async function generateMetadata({ params }: PageProps<"/workbench/[id]">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/applications/[id]">): Promise<Metadata> {
   const { id } = await params
   const view = getApplicant(id)
-  return view ? { title: `${view.applicant.displayName} · Berry`, description: view.applicant.story } : {}
+  return view ? { title: `${view.applicant.displayName} · Applications`, description: view.applicant.story } : {}
 }
 
-export default async function ApplicantPage({ params }: PageProps<"/workbench/[id]">) {
+export default async function ApplicantPage({ params }: PageProps<"/applications/[id]">) {
   const { id } = await params
   const view = getApplicant(id)
   if (!view) notFound()
@@ -32,7 +32,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
   return (
     <PageContainer>
       <PageHeader
-        breadcrumb={[{ label: "Workbench", href: "/workbench" }, { label: a.displayName }]}
+        breadcrumb={[{ label: "Demo", href: "/demo" }, { label: "Applications", href: "/applications" }, { label: a.displayName }]}
         eyebrow={`${a.kind === "business" ? "Business" : "Personal"} · ${a.province} · synthetic applicant`}
         title={a.displayName}
         lead={
@@ -42,7 +42,6 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
             {a.request.termMonths ? ` over ${a.request.termMonths} months` : ""}: {a.request.purpose.toLowerCase()}.
           </>
         }
-        actions={<ModeSwitcher />}
       />
 
       {/* Decision first in reading order (phones show it first); on desktop it sits beside the chart and tabs. */}
@@ -73,7 +72,7 @@ export default async function ApplicantPage({ params }: PageProps<"/workbench/[i
           <Card pad="lg">
             <CashFlowChart months={f.monthly} peakMonths={f.income.peakMonths} seasonal={f.income.type === "seasonal"} />
           </Card>
-          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans, slug: a.slug }} />
+          <DecisionTabs decisions={decisions} features={f} data={{ verification, pad, aft, largeCash, accountVerification, loans, slug: a.slug }} compare={<CompareLenders view={view} />} />
         </div>
       </div>
     </PageContainer>

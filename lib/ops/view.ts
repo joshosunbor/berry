@@ -258,7 +258,7 @@ export function overLimitRequest(input: {
     detail: `Stress test (illustrative): with peak-season revenue ${input.dropPct}% lower, next season would need ${formatCents(input.needCents, { whole: true })} against a ${formatCents(input.limitCents, { whole: true })} limit at ${MODE_META[input.mode].institution}.`,
     mode: input.mode,
     subject: { kind: "loan", id: input.loanId },
-    href: `/ops/loans/${input.loanId}`,
+    href: `/loans/${input.loanId}`,
     createdAt: input.at,
     slaDueAt: addBusinessHours(nextBusinessMoment(input.at), OPS.queues.credit_referral.slaBusinessHours),
     priority: "high",

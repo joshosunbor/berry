@@ -136,14 +136,14 @@ describe("landing copy follows the hybrid-concept brief", () => {
   it("links only to routes that exist", () => {
     const hrefs = [...text.matchAll(/"href":"([^"]+)"/g)].map((m) => m[1])
     for (const h of hrefs) {
-      expect(h, h).not.toMatch(/^\/(demo|security|privacy|terms|accessibility)\b/)
-      if (h.startsWith("/")) expect(h).toMatch(/^\/(workbench|compare|apply|ops|methodology|accuracy)(\/|#|$)/)
+      expect(h, h).not.toMatch(/^\/(security|privacy|terms|accessibility)\b/)
+      if (h.startsWith("/")) expect(h).toMatch(/^\/(demo|applications|borrower|loans|operations|how-it-works)(\/|\?|#|$)/)
     }
   })
 
   it("the primary call to action is the live demo", () => {
-    expect(CONTENT.LIVE_DEMO).toEqual({ label: "Try the live demo", href: "/workbench" })
-    expect(CONTENT.NAV.map((n) => n.label)).toEqual(["Product", "How a pilot works", "Methodology", "Live demo"])
+    expect(CONTENT.LIVE_DEMO).toEqual({ label: "Try the live demo", href: "/demo" })
+    expect(CONTENT.NAV.map((n) => n.label)).toEqual(["Product", "How it works", "About this project"])
   })
 
   it("the pilot is a concept, and How it's built lists only what's true today", () => {
@@ -188,8 +188,8 @@ describe("landing copy follows the hybrid-concept brief", () => {
     expect(data.queue.atText).toMatch(/\(simulated\)$/)
     expect(src("components/landing/tour-panels.tsx")).toMatch(/final payment \$\{dateText\(s\.finalPaymentOn!\)\} \(simulated\)/)
     // One Real-Time Rail label everywhere, and no "real" items in a synthetic demo.
-    for (const f of ["lib/servicing/funding.ts", "lib/servicing/simulate.ts", "app/(app)/methodology/page.tsx"]) expect(src(f), f).not.toContain("RTR launching")
-    expect(src("app/(app)/ops/page.tsx")).not.toMatch(/real open items/)
+    for (const f of ["lib/servicing/funding.ts", "lib/servicing/simulate.ts", "components/how-it-works/how-it-decides.tsx"]) expect(src(f), f).not.toContain("RTR launching")
+    expect(src("app/(app)/operations/page.tsx")).not.toMatch(/real open items/)
   })
 
   it("speaks in product voice: no implied customers", () => {

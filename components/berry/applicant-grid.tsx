@@ -66,7 +66,7 @@ export function ApplicantGrid({ cards, incomeTypes }: { cards: ApplicantCard[]; 
       <ul aria-label="Applicants" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {shown.map((c) => (
           <li key={c.slug}>
-            <CardLink href={`/workbench/${c.slug}`} className="group h-full gap-0 p-6">
+            <CardLink href={`/applications/${c.slug}`} className="group h-full gap-0 p-6">
               <div className="flex items-start justify-between gap-3">
                 <h2 className="text-lg font-semibold tracking-[-0.01em] group-hover:underline">{c.name}</h2>
                 <Pill tone="neutral" className="font-medium">

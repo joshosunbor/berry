@@ -21,6 +21,8 @@ const USER_FACING = [
   "components/berry",
   "components/landing",
   "components/site",
+  "components/how-it-works",
+  "components/tour",
   "lib/ops",
   "lib/engine/reasons.ts",
   "lib/engine/products.ts",

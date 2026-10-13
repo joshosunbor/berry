@@ -37,7 +37,7 @@ export function useClock(): string {
   return useSyncExternalStore(subscribe, read, () => CLOCK_START)
 }
 
-function setClock(date: string) {
+export function setClock(date: string) {
   try {
     localStorage.setItem(KEY, date)
   } catch {

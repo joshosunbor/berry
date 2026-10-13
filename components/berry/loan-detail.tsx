@@ -96,7 +96,7 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
           </dd>
         </div>
       </dl>
-      <section aria-labelledby="gate" className={card}>
+      <section aria-labelledby="gate" data-tour="funding" className={card}>
         <h2 id="gate" className="font-semibold">Before funding</h2>
         {loan.gate.length ? (
           <ul className="mt-3 space-y-2 text-sm">
@@ -157,11 +157,11 @@ export function LoanDetail({ loan }: { loan: LoanView }) {
       )}
       <p className="text-sm text-fg-3">
         The borrower&apos;s account is at a {loan.borrowerBank === "bank" ? "bank" : "provincially regulated credit union"}.{" "}
-        <Link href={`/workbench/${loan.applicantSlug}`} className="underline underline-offset-2 hover:text-fg">Open {loan.applicantName}&apos;s application file</Link>
+        <Link href={`/applications/${loan.applicantSlug}`} className="underline underline-offset-2 hover:text-fg">Open {loan.applicantName}&apos;s application file</Link>
       </p>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-        <section aria-labelledby="timeline" className={card}>
+        <section aria-labelledby="timeline" data-tour="timeline" className={card}>
           <div className="flex flex-wrap items-center justify-between gap-2">
             <h2 id="timeline" className="font-semibold">Timeline</h2>
             <label className="flex items-center gap-2 text-xs text-fg-3">

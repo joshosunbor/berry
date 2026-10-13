@@ -347,3 +347,34 @@
     transform: none;
   }
 }
+
+/* Guided tour: the area a step is about. Anchors clear the sticky app header. */
+[data-tour],
+[id] {
+  scroll-margin-top: calc(var(--app-header-h, 64px) + 16px);
+}
+[data-tour-active] {
+  outline: 3px solid var(--color-green-bright);
+  outline-offset: 6px;
+  border-radius: 14px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-tour-active] {
+    animation: tour-pulse 1.4s ease-out 2;
+  }
+}
+@keyframes tour-pulse {
+  0% {
+    outline-color: transparent;
+  }
+  35% {
+    outline-color: var(--color-green-bright);
+  }
+}
+
+/* Phones with the tour running: room for its bar above the tab bar. */
+@media (max-width: 767px) {
+  html[data-tour="on"] #main {
+    padding-bottom: calc(var(--tour-bar-h, 160px) + 57px + env(safe-area-inset-bottom) + 16px);
+  }
+}

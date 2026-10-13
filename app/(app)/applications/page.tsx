@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { ApplicantGrid, type ApplicantCard } from "@/components/berry/applicant-grid"
-import { ModeSwitcher } from "@/components/berry/mode-context"
 import { PageContainer, PageHeader } from "@/components/ui/page-header"
 import { getCast } from "@/lib/data"
 import { INCOME_LABELS, PRODUCT_LABELS } from "@/lib/labels"
@@ -8,11 +7,11 @@ import { formatCents } from "@/lib/money"
 import { MODES } from "@/lib/modes"
 
 export const metadata: Metadata = {
-  title: "Workbench · Berry",
+  title: "Applications",
   description: "Synthetic applicants, each decided by a credit union, a fintech and a bank.",
 }
 
-export default function WorkbenchPage() {
+export default function ApplicationsPage() {
   const cast = getCast()
   const cards: ApplicantCard[] = cast.map(({ applicant: a, features: f, decisions }) => ({
     slug: a.slug,
@@ -32,10 +31,9 @@ export default function WorkbenchPage() {
   return (
     <PageContainer>
       <PageHeader
-        breadcrumb={[{ label: "Home", href: "/" }, { label: "Workbench" }]}
-        title="Workbench"
-        lead={`${cast.length} synthetic applicants, each decided by three fictional lenders. Pick a lender to highlight its answers, or open a file to see why.`}
-        actions={<ModeSwitcher />}
+        breadcrumb={[{ label: "Demo", href: "/demo" }, { label: "Applications" }]}
+        title="Applications"
+        lead={`${cast.length} synthetic applicants, each decided by three fictional lenders. Pick a lender at the top to highlight its answers, or open a file to see why.`}
       />
       <ApplicantGrid cards={cards} incomeTypes={incomeTypes} />
     </PageContainer>

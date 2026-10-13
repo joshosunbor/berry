@@ -478,7 +478,7 @@ export function ServicingTab({ loans }: { loans: LoanSummary[] }) {
         <div><dt className="text-xs text-fg-3">Debits collected</dt><dd className="font-medium">{s.debitsCollected}</dd></div>
         <div><dt className="text-xs text-fg-3">Returned debits</dt><dd className="font-medium">{s.returns}</dd></div>
       </dl>
-      <ButtonLink href={`/ops/loans/${loan.id}`} size="sm" className="mt-5">
+      <ButtonLink href={`/loans/${loan.id}`} size="sm" className="mt-5">
         Open the loan: ledger, timeline and recovery
       </ButtonLink>
     </div>

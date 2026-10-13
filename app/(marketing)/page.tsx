@@ -22,7 +22,7 @@ import { h2Class, h3Class } from "@/components/ui/section-header"
  */
 
 export const metadata: Metadata = {
-  title: "Berry · Approve the borrowers a credit score misses",
+  title: { absolute: "Berry · Approve the borrowers a credit score misses" },
   description:
     "A working portfolio project: cash-flow lending decisions explained in plain language, three fictional lenders side by side, and the loan run through funding, collections and reconciliation. Synthetic data.",
 }
@@ -193,7 +193,7 @@ export default function Home() {
             <h2 className={h2}>{CANADA.title}</h2>
             <p className="mt-3 max-w-[52ch] text-fg-2">{CANADA.lead}</p>
           </div>
-          <Link href="/methodology#regulatory-status" className="text-[15px] font-semibold">
+          <Link href="/how-it-works#regulatory-status" className="text-[15px] font-semibold">
             {CANADA.statusLink.replace("{asOf}", d.statusAsOf)}
           </Link>
         </div>
@@ -275,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Talk to me about Berry */}
-      <section id="contact" aria-labelledby="contact-h" className={cn(section, "scroll-mt-[60px] pb-24 pt-32")}>
+      <section id="about" aria-labelledby="contact-h" className={cn(section, "scroll-mt-[60px] pb-24 pt-32")}>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-center gap-x-16 gap-y-10 rounded-[18px] bg-navy p-[clamp(32px,6vw,64px)] text-on-navy">
           <div>
             <h2 id="contact-h" className="max-w-[14ch] text-[clamp(30px,3.8vw,46px)] font-bold leading-[1.08] tracking-[-0.03em] text-white">
