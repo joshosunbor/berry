@@ -24,6 +24,16 @@ const RECOVERY: RecoveryRules = {
   hardshipSignalThreshold: 3,
 }
 
+
+/** How every lender assesses revolving credit and rounds limits (illustrative). */
+const SIZING = {
+  /** Revolving credit is assessed at this share of the limit per month. */
+  revolvingAssessmentRate: 0.03,
+  /** Limits round down: $500 steps under $10,000, $1,000 under $50,000, $5,000 above. */
+  limitStepUnder10kCents: 50_000,
+  limitStepUnder50kCents: 100_000,
+  limitStepAboveCents: 500_000,
+}
 export const NORTHGATE: InstitutionConfig = {
   id: "northgate",
   mode: "credit_union",
@@ -63,6 +73,15 @@ export const NORTHGATE: InstitutionConfig = {
     /** Starter credit for thin-file members with steady payroll. */
     thinFileMemberMaxCents: 200_000,
     thinFileHistoryMonths: 12,
+    ...SIZING,
+    /** Relationship score weights: tenure, products held, deposits. */
+    relationshipTenureWeight: 0.5,
+    relationshipProductsWeight: 0.3,
+    relationshipDepositsWeight: 0.2,
+    /** Products held for full product credit in the relationship score. */
+    relationshipFullProducts: 3,
+    /** Term of a seasonal operating line, in months. */
+    seasonalTermMonths: 12,
   },
   authorityTiers: [
     { id: "msr", title: "Member Service Representative", order: 0, maxExposureCents: dollars(10_000) },
@@ -107,6 +126,7 @@ export const KITE: InstitutionConfig = {
     /** Starter cap for thin files without a foreign credit report. */
     thinFileMaxCents: 100_000,
     thinFileHistoryMonths: 12,
+    ...SIZING,
   },
   recovery: RECOVERY,
   illustrative: true,
@@ -136,6 +156,7 @@ export const ASPEN: InstitutionConfig = {
     minDscr: 1.25,
     maxNsf12m: 1,
     maxCreditUtilization: 0.9,
+    ...SIZING,
   },
   documentChecklist: [
     "Government-issued photo ID",
@@ -146,6 +167,8 @@ export const ASPEN: InstitutionConfig = {
   ],
   recovery: RECOVERY,
   illustrative: true,
+  /** Income types referred for tax documents instead of decided on cash flow. */
+  referIncomeTypes: ["gig", "invoice", "irregular"],
 }
 
 export const INSTITUTIONS = [NORTHGATE, KITE, ASPEN]

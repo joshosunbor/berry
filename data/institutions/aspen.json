@@ -107,6 +107,11 @@
     "Business: two years of financial statements",
     "Business: articles of incorporation or registration"
   ],
+  "referIncomeTypes": [
+    "gig",
+    "invoice",
+    "irregular"
+  ],
   "recovery": {
     "maxRetries": 1,
     "alignRetryToNextDeposit": true,
@@ -115,10 +120,5 @@
     "outreachAfterFailures": 2,
     "hardshipSignalThreshold": 3
   },
-  "illustrative": true,
-  "referIncomeTypes": [
-    "gig",
-    "invoice",
-    "irregular"
-  ]
+  "illustrative": true
 }
