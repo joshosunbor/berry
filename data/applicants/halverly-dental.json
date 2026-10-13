@@ -1,8 +1,8 @@
 {
-  "id": "apl_bright-smile-dental",
-  "slug": "bright-smile-dental",
+  "id": "apl_halverly-dental",
+  "slug": "halverly-dental",
   "kind": "business",
-  "displayName": "Bright Smile Dental",
+  "displayName": "Halverly Dental",
   "story": "Busy dental practice with high, stable revenue, financing a large equipment upgrade.",
   "province": "AB",
   "request": {
@@ -29,7 +29,7 @@
     ]
   },
   "business": {
-    "legalName": "Bright Smile Dental Professional Corporation",
+    "legalName": "Halverly Dental Professional Corporation",
     "registrationNo": "AB-PC-5530718",
     "structure": "corporation",
     "industry": "Dental practice",
@@ -46,7 +46,7 @@
   },
   "accounts": [
     {
-      "accountId": "acc_bright-smile-dental-op",
+      "accountId": "acc_halverly-dental-op",
       "accountType": "BUSINESS_CHECKING",
       "provider": "northgate",
       "institutionType": "credit_union",
@@ -58,8 +58,8 @@
   ],
   "transactions": [
     {
-      "transactionId": "txn_bright-smile-dental-00001",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00001",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-01",
       "transactionTimestamp": "2025-10-01T03:13:00-07:00",
       "amountCents": 1250000,
@@ -70,8 +70,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00002",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00002",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-01",
       "transactionTimestamp": "2025-10-01T05:38:00-07:00",
       "amountCents": 453854,
@@ -82,8 +82,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00003",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00003",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-01",
       "transactionTimestamp": "2025-10-01T05:52:00-07:00",
       "amountCents": 541789,
@@ -94,8 +94,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00004",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00004",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-02",
       "transactionTimestamp": "2025-10-02T05:56:00-07:00",
       "amountCents": 549039,
@@ -106,8 +106,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00005",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00005",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-02",
       "transactionTimestamp": "2025-10-02T06:08:00-07:00",
       "amountCents": 390619,
@@ -118,8 +118,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00006",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00006",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-03",
       "transactionTimestamp": "2025-10-03T05:15:00-07:00",
       "amountCents": 531173,
@@ -130,8 +130,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00007",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00007",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-03",
       "transactionTimestamp": "2025-10-03T05:46:00-07:00",
       "amountCents": 3790685,
@@ -141,8 +141,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00008",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00008",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-03",
       "transactionTimestamp": "2025-10-03T06:25:00-07:00",
       "amountCents": 453194,
@@ -153,8 +153,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00009",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00009",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-04",
       "transactionTimestamp": "2025-10-04T14:46:00-07:00",
       "amountCents": 92000,
@@ -165,8 +165,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00010",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00010",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-06",
       "transactionTimestamp": "2025-10-06T05:33:00-07:00",
       "amountCents": 420000,
@@ -177,8 +177,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00011",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00011",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-06",
       "transactionTimestamp": "2025-10-06T06:34:00-07:00",
       "amountCents": 669485,
@@ -189,8 +189,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00012",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00012",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-07",
       "transactionTimestamp": "2025-10-07T05:54:00-07:00",
       "amountCents": 583594,
@@ -201,8 +201,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00013",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00013",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-08",
       "transactionTimestamp": "2025-10-08T05:25:00-07:00",
       "amountCents": 342064,
@@ -213,8 +213,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00014",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00014",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-08",
       "transactionTimestamp": "2025-10-08T06:32:00-07:00",
       "amountCents": 653974,
@@ -225,8 +225,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00015",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00015",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-09",
       "transactionTimestamp": "2025-10-09T06:00:00-07:00",
       "amountCents": 512880,
@@ -237,8 +237,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00016",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00016",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-09",
       "transactionTimestamp": "2025-10-09T06:03:00-07:00",
       "amountCents": 315314,
@@ -249,8 +249,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00017",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00017",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-10",
       "transactionTimestamp": "2025-10-10T05:03:00-07:00",
       "amountCents": 487826,
@@ -261,8 +261,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00018",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00018",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-10",
       "transactionTimestamp": "2025-10-10T05:48:00-07:00",
       "amountCents": 389397,
@@ -273,8 +273,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00019",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00019",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-10",
       "transactionTimestamp": "2025-10-10T06:15:00-07:00",
       "amountCents": 1292219,
@@ -285,8 +285,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00020",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00020",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-13",
       "transactionTimestamp": "2025-10-13T05:21:00-07:00",
       "amountCents": 443146,
@@ -297,8 +297,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00021",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00021",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-13",
       "transactionTimestamp": "2025-10-13T06:46:00-07:00",
       "amountCents": 488470,
@@ -309,8 +309,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00022",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00022",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-14",
       "transactionTimestamp": "2025-10-14T05:14:00-07:00",
       "amountCents": 481371,
@@ -321,8 +321,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00023",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00023",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-15",
       "transactionTimestamp": "2025-10-15T05:14:00-07:00",
       "amountCents": 431411,
@@ -333,8 +333,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00024",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00024",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-15",
       "transactionTimestamp": "2025-10-15T05:16:00-07:00",
       "amountCents": 600404,
@@ -345,8 +345,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00025",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00025",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-16",
       "transactionTimestamp": "2025-10-16T06:24:00-07:00",
       "amountCents": 448829,
@@ -357,8 +357,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00026",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00026",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-17",
       "transactionTimestamp": "2025-10-17T05:07:00-07:00",
       "amountCents": 528040,
@@ -369,8 +369,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00027",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00027",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-17",
       "transactionTimestamp": "2025-10-17T05:14:00-07:00",
       "amountCents": 3799955,
@@ -380,8 +380,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00028",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00028",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-17",
       "transactionTimestamp": "2025-10-17T06:53:00-07:00",
       "amountCents": 550291,
@@ -392,8 +392,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00029",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00029",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-20",
       "transactionTimestamp": "2025-10-20T04:18:00-07:00",
       "amountCents": 144914,
@@ -404,8 +404,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00030",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00030",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-20",
       "transactionTimestamp": "2025-10-20T04:38:00-07:00",
       "amountCents": 875300,
@@ -416,8 +416,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00031",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00031",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-20",
       "transactionTimestamp": "2025-10-20T06:27:00-07:00",
       "amountCents": 660275,
@@ -428,8 +428,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00032",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00032",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-21",
       "transactionTimestamp": "2025-10-21T06:03:00-07:00",
       "amountCents": 495548,
@@ -440,8 +440,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00033",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00033",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-22",
       "transactionTimestamp": "2025-10-22T06:00:00-07:00",
       "amountCents": 180000,
@@ -452,8 +452,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00034",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00034",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-22",
       "transactionTimestamp": "2025-10-22T06:33:00-07:00",
       "amountCents": 465497,
@@ -464,8 +464,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00035",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00035",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-23",
       "transactionTimestamp": "2025-10-23T06:50:00-07:00",
       "amountCents": 557754,
@@ -476,8 +476,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00036",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00036",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-24",
       "transactionTimestamp": "2025-10-24T05:25:00-07:00",
       "amountCents": 374937,
@@ -488,8 +488,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00037",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00037",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-24",
       "transactionTimestamp": "2025-10-24T06:17:00-07:00",
       "amountCents": 434564,
@@ -500,8 +500,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00038",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00038",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-27",
       "transactionTimestamp": "2025-10-27T06:41:00-07:00",
       "amountCents": 789020,
@@ -512,8 +512,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00039",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00039",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-27",
       "transactionTimestamp": "2025-10-27T06:57:00-07:00",
       "amountCents": 379017,
@@ -524,8 +524,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00040",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00040",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-28",
       "transactionTimestamp": "2025-10-28T05:10:00-07:00",
       "amountCents": 1200000,
@@ -535,8 +535,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00041",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00041",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-28",
       "transactionTimestamp": "2025-10-28T05:19:00-07:00",
       "amountCents": 441566,
@@ -547,8 +547,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00042",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00042",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-28",
       "transactionTimestamp": "2025-10-28T06:43:00-07:00",
       "amountCents": 395862,
@@ -559,8 +559,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00043",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00043",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-29",
       "transactionTimestamp": "2025-10-29T05:33:00-07:00",
       "amountCents": 352779,
@@ -571,8 +571,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00044",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00044",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-30",
       "transactionTimestamp": "2025-10-30T06:53:00-07:00",
       "amountCents": 570857,
@@ -583,8 +583,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00045",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00045",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-31",
       "transactionTimestamp": "2025-10-31T05:08:00-07:00",
       "amountCents": 580646,
@@ -595,8 +595,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00046",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00046",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-10-31",
       "transactionTimestamp": "2025-10-31T06:37:00-07:00",
       "amountCents": 3721069,
@@ -606,8 +606,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00047",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00047",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-03",
       "transactionTimestamp": "2025-11-03T04:27:00-07:00",
       "amountCents": 1250000,
@@ -618,8 +618,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00048",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00048",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-03",
       "transactionTimestamp": "2025-11-03T05:55:00-07:00",
       "amountCents": 430542,
@@ -630,8 +630,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00049",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00049",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-03",
       "transactionTimestamp": "2025-11-03T06:41:00-07:00",
       "amountCents": 793857,
@@ -642,8 +642,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00050",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00050",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-04",
       "transactionTimestamp": "2025-11-04T05:24:00-07:00",
       "amountCents": 609413,
@@ -654,8 +654,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00051",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00051",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-04",
       "transactionTimestamp": "2025-11-04T06:30:00-07:00",
       "amountCents": 479585,
@@ -666,8 +666,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00052",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00052",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-04",
       "transactionTimestamp": "2025-11-04T16:52:00-07:00",
       "amountCents": 92000,
@@ -678,8 +678,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00053",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00053",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-05",
       "transactionTimestamp": "2025-11-05T05:53:00-07:00",
       "amountCents": 483435,
@@ -690,8 +690,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00054",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00054",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-05",
       "transactionTimestamp": "2025-11-05T06:34:00-07:00",
       "amountCents": 415324,
@@ -702,8 +702,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00055",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00055",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-06",
       "transactionTimestamp": "2025-11-06T04:53:00-07:00",
       "amountCents": 420000,
@@ -714,8 +714,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00056",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00056",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-06",
       "transactionTimestamp": "2025-11-06T05:20:00-07:00",
       "amountCents": 609686,
@@ -726,8 +726,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00057",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00057",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-06",
       "transactionTimestamp": "2025-11-06T05:50:00-07:00",
       "amountCents": 387972,
@@ -738,8 +738,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00058",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00058",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-07",
       "transactionTimestamp": "2025-11-07T06:49:00-07:00",
       "amountCents": 475942,
@@ -750,8 +750,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00059",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00059",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-10",
       "transactionTimestamp": "2025-11-10T05:30:00-07:00",
       "amountCents": 1240028,
@@ -762,8 +762,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00060",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00060",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-10",
       "transactionTimestamp": "2025-11-10T05:59:00-07:00",
       "amountCents": 412656,
@@ -774,8 +774,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00061",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00061",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-11",
       "transactionTimestamp": "2025-11-11T05:14:00-07:00",
       "amountCents": 482249,
@@ -786,8 +786,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00062",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00062",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-12",
       "transactionTimestamp": "2025-11-12T06:00:00-07:00",
       "amountCents": 510446,
@@ -798,8 +798,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00063",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00063",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-12",
       "transactionTimestamp": "2025-11-12T06:55:00-07:00",
       "amountCents": 455688,
@@ -810,8 +810,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00064",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00064",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-13",
       "transactionTimestamp": "2025-11-13T05:30:00-07:00",
       "amountCents": 590904,
@@ -822,8 +822,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00065",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00065",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-13",
       "transactionTimestamp": "2025-11-13T06:59:00-07:00",
       "amountCents": 423848,
@@ -834,8 +834,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00066",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00066",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-14",
       "transactionTimestamp": "2025-11-14T05:26:00-07:00",
       "amountCents": 3782875,
@@ -845,8 +845,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00067",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00067",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-14",
       "transactionTimestamp": "2025-11-14T06:35:00-07:00",
       "amountCents": 634417,
@@ -857,8 +857,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00068",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00068",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-17",
       "transactionTimestamp": "2025-11-17T05:54:00-07:00",
       "amountCents": 411999,
@@ -869,8 +869,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00069",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00069",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-17",
       "transactionTimestamp": "2025-11-17T06:01:00-07:00",
       "amountCents": 363675,
@@ -881,8 +881,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00070",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00070",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-18",
       "transactionTimestamp": "2025-11-18T03:56:00-07:00",
       "amountCents": 926186,
@@ -893,8 +893,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00071",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00071",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-18",
       "transactionTimestamp": "2025-11-18T06:29:00-07:00",
       "amountCents": 495658,
@@ -905,8 +905,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00072",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00072",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-19",
       "transactionTimestamp": "2025-11-19T05:49:00-07:00",
       "amountCents": 567284,
@@ -917,8 +917,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00073",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00073",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-19",
       "transactionTimestamp": "2025-11-19T05:52:00-07:00",
       "amountCents": 530887,
@@ -929,8 +929,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00074",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00074",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-20",
       "transactionTimestamp": "2025-11-20T04:41:00-07:00",
       "amountCents": 164132,
@@ -941,8 +941,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00075",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00075",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-20",
       "transactionTimestamp": "2025-11-20T05:45:00-07:00",
       "amountCents": 414403,
@@ -953,8 +953,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00076",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00076",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-20",
       "transactionTimestamp": "2025-11-20T06:02:00-07:00",
       "amountCents": 562924,
@@ -965,8 +965,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00077",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00077",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-21",
       "transactionTimestamp": "2025-11-21T06:39:00-07:00",
       "amountCents": 478812,
@@ -977,8 +977,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00078",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00078",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-24",
       "transactionTimestamp": "2025-11-24T04:37:00-07:00",
       "amountCents": 180000,
@@ -989,8 +989,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00079",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00079",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-24",
       "transactionTimestamp": "2025-11-24T05:04:00-07:00",
       "amountCents": 395336,
@@ -1001,8 +1001,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00080",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00080",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-25",
       "transactionTimestamp": "2025-11-25T05:53:00-07:00",
       "amountCents": 500944,
@@ -1013,8 +1013,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00081",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00081",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-25",
       "transactionTimestamp": "2025-11-25T06:24:00-07:00",
       "amountCents": 637149,
@@ -1025,8 +1025,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00082",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00082",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-26",
       "transactionTimestamp": "2025-11-26T05:15:00-07:00",
       "amountCents": 418629,
@@ -1037,8 +1037,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00083",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00083",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-27",
       "transactionTimestamp": "2025-11-27T05:41:00-07:00",
       "amountCents": 603493,
@@ -1049,8 +1049,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00084",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00084",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-28",
       "transactionTimestamp": "2025-11-28T05:39:00-07:00",
       "amountCents": 1200000,
@@ -1060,8 +1060,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00085",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00085",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-28",
       "transactionTimestamp": "2025-11-28T06:16:00-07:00",
       "amountCents": 535977,
@@ -1072,8 +1072,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00086",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00086",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-11-28",
       "transactionTimestamp": "2025-11-28T06:34:00-07:00",
       "amountCents": 3772621,
@@ -1083,8 +1083,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00087",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00087",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-01",
       "transactionTimestamp": "2025-12-01T03:03:00-07:00",
       "amountCents": 1250000,
@@ -1095,8 +1095,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00088",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00088",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-01",
       "transactionTimestamp": "2025-12-01T06:21:00-07:00",
       "amountCents": 551688,
@@ -1107,8 +1107,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00089",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00089",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-02",
       "transactionTimestamp": "2025-12-02T06:29:00-07:00",
       "amountCents": 400411,
@@ -1119,8 +1119,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00090",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00090",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-03",
       "transactionTimestamp": "2025-12-03T05:28:00-07:00",
       "amountCents": 547008,
@@ -1131,8 +1131,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00091",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00091",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-04",
       "transactionTimestamp": "2025-12-04T06:03:00-07:00",
       "amountCents": 602810,
@@ -1143,8 +1143,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00092",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00092",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-04",
       "transactionTimestamp": "2025-12-04T11:13:00-07:00",
       "amountCents": 92000,
@@ -1155,8 +1155,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00093",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00093",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-05",
       "transactionTimestamp": "2025-12-05T06:21:00-07:00",
       "amountCents": 472904,
@@ -1167,8 +1167,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00094",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00094",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-08",
       "transactionTimestamp": "2025-12-08T04:22:00-07:00",
       "amountCents": 420000,
@@ -1179,8 +1179,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00095",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00095",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-08",
       "transactionTimestamp": "2025-12-08T06:18:00-07:00",
       "amountCents": 496035,
@@ -1191,8 +1191,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00096",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00096",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-09",
       "transactionTimestamp": "2025-12-09T05:21:00-07:00",
       "amountCents": 341669,
@@ -1203,8 +1203,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00097",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00097",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-10",
       "transactionTimestamp": "2025-12-10T05:41:00-07:00",
       "amountCents": 1434868,
@@ -1215,8 +1215,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00098",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00098",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-10",
       "transactionTimestamp": "2025-12-10T06:11:00-07:00",
       "amountCents": 596391,
@@ -1227,8 +1227,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00099",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00099",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-11",
       "transactionTimestamp": "2025-12-11T05:22:00-07:00",
       "amountCents": 414664,
@@ -1239,8 +1239,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00100",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00100",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-12",
       "transactionTimestamp": "2025-12-12T05:32:00-07:00",
       "amountCents": 512058,
@@ -1251,8 +1251,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00101",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00101",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-12",
       "transactionTimestamp": "2025-12-12T05:58:00-07:00",
       "amountCents": 3746258,
@@ -1262,8 +1262,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00102",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00102",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-12",
       "transactionTimestamp": "2025-12-12T06:04:00-07:00",
       "amountCents": 385005,
@@ -1274,8 +1274,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00103",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00103",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-15",
       "transactionTimestamp": "2025-12-15T06:12:00-07:00",
       "amountCents": 413910,
@@ -1286,8 +1286,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00104",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00104",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-15",
       "transactionTimestamp": "2025-12-15T06:23:00-07:00",
       "amountCents": 366090,
@@ -1298,8 +1298,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00105",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00105",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-16",
       "transactionTimestamp": "2025-12-16T06:31:00-07:00",
       "amountCents": 581998,
@@ -1310,8 +1310,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00106",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00106",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-17",
       "transactionTimestamp": "2025-12-17T06:47:00-07:00",
       "amountCents": 415364,
@@ -1322,8 +1322,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00107",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00107",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-18",
       "transactionTimestamp": "2025-12-18T05:04:00-07:00",
       "amountCents": 856714,
@@ -1334,8 +1334,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00108",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00108",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-18",
       "transactionTimestamp": "2025-12-18T05:48:00-07:00",
       "amountCents": 448580,
@@ -1346,8 +1346,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00109",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00109",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-19",
       "transactionTimestamp": "2025-12-19T05:28:00-07:00",
       "amountCents": 414160,
@@ -1358,8 +1358,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00110",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00110",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-22",
       "transactionTimestamp": "2025-12-22T05:24:00-07:00",
       "amountCents": 205571,
@@ -1370,8 +1370,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00111",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00111",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-22",
       "transactionTimestamp": "2025-12-22T05:36:00-07:00",
       "amountCents": 180000,
@@ -1382,8 +1382,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00112",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00112",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-22",
       "transactionTimestamp": "2025-12-22T06:40:00-07:00",
       "amountCents": 408967,
@@ -1394,8 +1394,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00113",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00113",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-22",
       "transactionTimestamp": "2025-12-22T06:51:00-07:00",
       "amountCents": 395174,
@@ -1406,8 +1406,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00114",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00114",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-23",
       "transactionTimestamp": "2025-12-23T05:26:00-07:00",
       "amountCents": 528191,
@@ -1418,8 +1418,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00115",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00115",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-23",
       "transactionTimestamp": "2025-12-23T06:31:00-07:00",
       "amountCents": 537999,
@@ -1430,8 +1430,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00116",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00116",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-24",
       "transactionTimestamp": "2025-12-24T06:53:00-07:00",
       "amountCents": 406099,
@@ -1442,8 +1442,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00117",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00117",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-25",
       "transactionTimestamp": "2025-12-25T06:39:00-07:00",
       "amountCents": 417357,
@@ -1454,8 +1454,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00118",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00118",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-26",
       "transactionTimestamp": "2025-12-26T06:00:00-07:00",
       "amountCents": 275618,
@@ -1466,8 +1466,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00119",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00119",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-26",
       "transactionTimestamp": "2025-12-26T06:31:00-07:00",
       "amountCents": 497293,
@@ -1478,8 +1478,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00120",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00120",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-26",
       "transactionTimestamp": "2025-12-26T06:33:00-07:00",
       "amountCents": 3823059,
@@ -1489,8 +1489,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00121",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00121",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-29",
       "transactionTimestamp": "2025-12-29T05:21:00-07:00",
       "amountCents": 1200000,
@@ -1500,8 +1500,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00122",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00122",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-29",
       "transactionTimestamp": "2025-12-29T05:55:00-07:00",
       "amountCents": 301099,
@@ -1512,8 +1512,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00123",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00123",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-29",
       "transactionTimestamp": "2025-12-29T06:58:00-07:00",
       "amountCents": 442857,
@@ -1524,8 +1524,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00124",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00124",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-30",
       "transactionTimestamp": "2025-12-30T05:18:00-07:00",
       "amountCents": 389418,
@@ -1536,8 +1536,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00125",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00125",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-30",
       "transactionTimestamp": "2025-12-30T06:24:00-07:00",
       "amountCents": 515208,
@@ -1548,8 +1548,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00126",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00126",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-31",
       "transactionTimestamp": "2025-12-31T05:43:00-07:00",
       "amountCents": 390411,
@@ -1560,8 +1560,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00127",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00127",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2025-12-31",
       "transactionTimestamp": "2025-12-31T06:52:00-07:00",
       "amountCents": 528767,
@@ -1572,8 +1572,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00128",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00128",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-01",
       "transactionTimestamp": "2026-01-01T04:12:00-07:00",
       "amountCents": 1250000,
@@ -1584,8 +1584,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00129",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00129",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-01",
       "transactionTimestamp": "2026-01-01T07:00:00-07:00",
       "amountCents": 590628,
@@ -1596,8 +1596,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00130",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00130",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-02",
       "transactionTimestamp": "2026-01-02T06:41:00-07:00",
       "amountCents": 576180,
@@ -1608,8 +1608,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00131",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00131",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-04",
       "transactionTimestamp": "2026-01-04T11:48:00-07:00",
       "amountCents": 92000,
@@ -1620,8 +1620,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00132",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00132",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-05",
       "transactionTimestamp": "2026-01-05T05:09:00-07:00",
       "amountCents": 474816,
@@ -1632,8 +1632,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00133",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00133",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-05",
       "transactionTimestamp": "2026-01-05T05:57:00-07:00",
       "amountCents": 639662,
@@ -1644,8 +1644,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00134",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00134",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-06",
       "transactionTimestamp": "2026-01-06T04:14:00-07:00",
       "amountCents": 420000,
@@ -1656,8 +1656,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00135",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00135",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-06",
       "transactionTimestamp": "2026-01-06T05:11:00-07:00",
       "amountCents": 566826,
@@ -1668,8 +1668,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00136",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00136",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-07",
       "transactionTimestamp": "2026-01-07T06:19:00-07:00",
       "amountCents": 612142,
@@ -1680,8 +1680,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00137",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00137",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-08",
       "transactionTimestamp": "2026-01-08T05:48:00-07:00",
       "amountCents": 415778,
@@ -1692,8 +1692,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00138",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00138",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-08",
       "transactionTimestamp": "2026-01-08T06:09:00-07:00",
       "amountCents": 405295,
@@ -1704,8 +1704,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00139",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00139",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-09",
       "transactionTimestamp": "2026-01-09T06:14:00-07:00",
       "amountCents": 443785,
@@ -1716,8 +1716,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00140",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00140",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-09",
       "transactionTimestamp": "2026-01-09T06:36:00-07:00",
       "amountCents": 3816267,
@@ -1727,8 +1727,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00141",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00141",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-12",
       "transactionTimestamp": "2026-01-12T05:34:00-07:00",
       "amountCents": 1213635,
@@ -1739,8 +1739,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00142",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00142",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-12",
       "transactionTimestamp": "2026-01-12T06:48:00-07:00",
       "amountCents": 438782,
@@ -1751,8 +1751,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00143",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00143",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-13",
       "transactionTimestamp": "2026-01-13T05:25:00-07:00",
       "amountCents": 555278,
@@ -1763,8 +1763,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00144",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00144",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-14",
       "transactionTimestamp": "2026-01-14T05:11:00-07:00",
       "amountCents": 519283,
@@ -1775,8 +1775,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00145",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00145",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-14",
       "transactionTimestamp": "2026-01-14T06:30:00-07:00",
       "amountCents": 649509,
@@ -1787,8 +1787,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00146",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00146",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-15",
       "transactionTimestamp": "2026-01-15T06:03:00-07:00",
       "amountCents": 500507,
@@ -1799,8 +1799,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00147",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00147",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-15",
       "transactionTimestamp": "2026-01-15T06:13:00-07:00",
       "amountCents": 338010,
@@ -1811,8 +1811,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00148",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00148",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-16",
       "transactionTimestamp": "2026-01-16T06:23:00-07:00",
       "amountCents": 658130,
@@ -1823,8 +1823,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00149",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00149",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-19",
       "transactionTimestamp": "2026-01-19T05:04:00-07:00",
       "amountCents": 815930,
@@ -1835,8 +1835,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00150",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00150",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-19",
       "transactionTimestamp": "2026-01-19T05:13:00-07:00",
       "amountCents": 344637,
@@ -1847,8 +1847,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00151",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00151",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-20",
       "transactionTimestamp": "2026-01-20T05:19:00-07:00",
       "amountCents": 584682,
@@ -1859,8 +1859,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00152",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00152",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-20",
       "transactionTimestamp": "2026-01-20T05:54:00-07:00",
       "amountCents": 166199,
@@ -1871,8 +1871,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00153",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00153",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-20",
       "transactionTimestamp": "2026-01-20T06:39:00-07:00",
       "amountCents": 351830,
@@ -1883,8 +1883,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00154",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00154",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-21",
       "transactionTimestamp": "2026-01-21T06:11:00-07:00",
       "amountCents": 479456,
@@ -1895,8 +1895,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00155",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00155",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-22",
       "transactionTimestamp": "2026-01-22T04:56:00-07:00",
       "amountCents": 180000,
@@ -1907,8 +1907,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00156",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00156",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-22",
       "transactionTimestamp": "2026-01-22T05:11:00-07:00",
       "amountCents": 578323,
@@ -1919,8 +1919,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00157",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00157",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-23",
       "transactionTimestamp": "2026-01-23T05:45:00-07:00",
       "amountCents": 3810318,
@@ -1930,8 +1930,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00158",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00158",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-23",
       "transactionTimestamp": "2026-01-23T06:27:00-07:00",
       "amountCents": 522671,
@@ -1942,8 +1942,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00159",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00159",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-26",
       "transactionTimestamp": "2026-01-26T05:51:00-07:00",
       "amountCents": 437449,
@@ -1954,8 +1954,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00160",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00160",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-27",
       "transactionTimestamp": "2026-01-27T06:33:00-07:00",
       "amountCents": 619201,
@@ -1966,8 +1966,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00161",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00161",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-28",
       "transactionTimestamp": "2026-01-28T05:06:00-07:00",
       "amountCents": 1200000,
@@ -1977,8 +1977,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00162",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00162",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-28",
       "transactionTimestamp": "2026-01-28T06:26:00-07:00",
       "amountCents": 597267,
@@ -1989,8 +1989,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00163",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00163",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-29",
       "transactionTimestamp": "2026-01-29T06:38:00-07:00",
       "amountCents": 707651,
@@ -2001,8 +2001,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00164",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00164",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-30",
       "transactionTimestamp": "2026-01-30T06:23:00-07:00",
       "amountCents": 407647,
@@ -2013,8 +2013,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00165",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00165",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-01-30",
       "transactionTimestamp": "2026-01-30T06:48:00-07:00",
       "amountCents": 492051,
@@ -2025,8 +2025,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00166",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00166",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-02",
       "transactionTimestamp": "2026-02-02T04:19:00-07:00",
       "amountCents": 1250000,
@@ -2037,8 +2037,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00167",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00167",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-02",
       "transactionTimestamp": "2026-02-02T05:07:00-07:00",
       "amountCents": 606698,
@@ -2049,8 +2049,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00168",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00168",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-03",
       "transactionTimestamp": "2026-02-03T05:58:00-07:00",
       "amountCents": 493236,
@@ -2061,8 +2061,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00169",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00169",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-04",
       "transactionTimestamp": "2026-02-04T06:09:00-07:00",
       "amountCents": 427366,
@@ -2073,8 +2073,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00170",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00170",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-04",
       "transactionTimestamp": "2026-02-04T06:48:00-07:00",
       "amountCents": 651504,
@@ -2085,8 +2085,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00171",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00171",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-04",
       "transactionTimestamp": "2026-02-04T19:24:00-07:00",
       "amountCents": 92000,
@@ -2097,8 +2097,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00172",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00172",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-05",
       "transactionTimestamp": "2026-02-05T05:21:00-07:00",
       "amountCents": 475045,
@@ -2109,8 +2109,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00173",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00173",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-06",
       "transactionTimestamp": "2026-02-06T05:26:00-07:00",
       "amountCents": 666129,
@@ -2121,8 +2121,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00174",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00174",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-06",
       "transactionTimestamp": "2026-02-06T05:45:00-07:00",
       "amountCents": 3793627,
@@ -2132,8 +2132,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00175",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00175",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-06",
       "transactionTimestamp": "2026-02-06T05:50:00-07:00",
       "amountCents": 420000,
@@ -2144,8 +2144,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00176",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00176",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-09",
       "transactionTimestamp": "2026-02-09T05:53:00-07:00",
       "amountCents": 483472,
@@ -2156,8 +2156,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00177",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00177",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-09",
       "transactionTimestamp": "2026-02-09T07:00:00-07:00",
       "amountCents": 519551,
@@ -2168,8 +2168,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00178",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00178",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-10",
       "transactionTimestamp": "2026-02-10T05:21:00-07:00",
       "amountCents": 1573720,
@@ -2180,8 +2180,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00179",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00179",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-10",
       "transactionTimestamp": "2026-02-10T05:59:00-07:00",
       "amountCents": 609287,
@@ -2192,8 +2192,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00180",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00180",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-11",
       "transactionTimestamp": "2026-02-11T05:29:00-07:00",
       "amountCents": 467632,
@@ -2204,8 +2204,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00181",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00181",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-12",
       "transactionTimestamp": "2026-02-12T05:17:00-07:00",
       "amountCents": 574634,
@@ -2216,8 +2216,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00182",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00182",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-13",
       "transactionTimestamp": "2026-02-13T05:57:00-07:00",
       "amountCents": 600323,
@@ -2228,8 +2228,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00183",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00183",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-13",
       "transactionTimestamp": "2026-02-13T06:24:00-07:00",
       "amountCents": 413952,
@@ -2240,8 +2240,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00184",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00184",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-16",
       "transactionTimestamp": "2026-02-16T05:31:00-07:00",
       "amountCents": 602009,
@@ -2252,8 +2252,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00185",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00185",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-17",
       "transactionTimestamp": "2026-02-17T05:13:00-07:00",
       "amountCents": 663343,
@@ -2264,8 +2264,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00186",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00186",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-18",
       "transactionTimestamp": "2026-02-18T03:21:00-07:00",
       "amountCents": 1075697,
@@ -2276,8 +2276,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00187",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00187",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-18",
       "transactionTimestamp": "2026-02-18T05:58:00-07:00",
       "amountCents": 366833,
@@ -2288,8 +2288,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00188",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00188",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-18",
       "transactionTimestamp": "2026-02-18T06:15:00-07:00",
       "amountCents": 526308,
@@ -2300,8 +2300,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00189",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00189",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-19",
       "transactionTimestamp": "2026-02-19T05:06:00-07:00",
       "amountCents": 466385,
@@ -2312,8 +2312,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00190",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00190",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-20",
       "transactionTimestamp": "2026-02-20T05:08:00-07:00",
       "amountCents": 489677,
@@ -2324,8 +2324,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00191",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00191",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-20",
       "transactionTimestamp": "2026-02-20T05:41:00-07:00",
       "amountCents": 122106,
@@ -2336,8 +2336,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00192",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00192",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-20",
       "transactionTimestamp": "2026-02-20T06:54:00-07:00",
       "amountCents": 3781051,
@@ -2347,8 +2347,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00193",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00193",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-23",
       "transactionTimestamp": "2026-02-23T04:18:00-07:00",
       "amountCents": 180000,
@@ -2359,8 +2359,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00194",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00194",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-23",
       "transactionTimestamp": "2026-02-23T06:22:00-07:00",
       "amountCents": 503455,
@@ -2371,8 +2371,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00195",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00195",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-24",
       "transactionTimestamp": "2026-02-24T06:10:00-07:00",
       "amountCents": 506540,
@@ -2383,8 +2383,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00196",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00196",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-24",
       "transactionTimestamp": "2026-02-24T06:16:00-07:00",
       "amountCents": 533717,
@@ -2395,8 +2395,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00197",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00197",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-25",
       "transactionTimestamp": "2026-02-25T05:06:00-07:00",
       "amountCents": 586507,
@@ -2407,8 +2407,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00198",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00198",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-26",
       "transactionTimestamp": "2026-02-26T05:33:00-07:00",
       "amountCents": 503131,
@@ -2419,8 +2419,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00199",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00199",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-02-27",
       "transactionTimestamp": "2026-02-27T06:51:00-07:00",
       "amountCents": 813652,
@@ -2431,8 +2431,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00200",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00200",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-02",
       "transactionTimestamp": "2026-03-02T05:48:00-07:00",
       "amountCents": 1250000,
@@ -2443,8 +2443,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00201",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00201",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-02",
       "transactionTimestamp": "2026-03-02T05:50:00-07:00",
       "amountCents": 1200000,
@@ -2454,8 +2454,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00202",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00202",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-02",
       "transactionTimestamp": "2026-03-02T06:13:00-07:00",
       "amountCents": 645379,
@@ -2466,8 +2466,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00203",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00203",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-03",
       "transactionTimestamp": "2026-03-03T05:28:00-07:00",
       "amountCents": 512139,
@@ -2478,8 +2478,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00204",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00204",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-03",
       "transactionTimestamp": "2026-03-03T06:37:00-07:00",
       "amountCents": 652558,
@@ -2490,8 +2490,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00205",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00205",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-04",
       "transactionTimestamp": "2026-03-04T05:11:00-07:00",
       "amountCents": 582190,
@@ -2502,8 +2502,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00206",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00206",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-04",
       "transactionTimestamp": "2026-03-04T16:22:00-07:00",
       "amountCents": 92000,
@@ -2514,8 +2514,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00207",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00207",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-05",
       "transactionTimestamp": "2026-03-05T06:29:00-07:00",
       "amountCents": 570039,
@@ -2526,8 +2526,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00208",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00208",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-06",
       "transactionTimestamp": "2026-03-06T05:00:00-07:00",
       "amountCents": 420000,
@@ -2538,8 +2538,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00209",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00209",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-06",
       "transactionTimestamp": "2026-03-06T05:56:00-07:00",
       "amountCents": 589612,
@@ -2550,8 +2550,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00210",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00210",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-06",
       "transactionTimestamp": "2026-03-06T06:23:00-07:00",
       "amountCents": 3814242,
@@ -2561,8 +2561,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00211",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00211",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-09",
       "transactionTimestamp": "2026-03-09T05:25:00-07:00",
       "amountCents": 503961,
@@ -2573,8 +2573,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00212",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00212",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-10",
       "transactionTimestamp": "2026-03-10T05:04:00-07:00",
       "amountCents": 589816,
@@ -2585,8 +2585,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00213",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00213",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-10",
       "transactionTimestamp": "2026-03-10T05:05:00-07:00",
       "amountCents": 1143884,
@@ -2597,8 +2597,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00214",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00214",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-10",
       "transactionTimestamp": "2026-03-10T07:00:00-07:00",
       "amountCents": 481678,
@@ -2609,8 +2609,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00215",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00215",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-11",
       "transactionTimestamp": "2026-03-11T06:32:00-07:00",
       "amountCents": 452815,
@@ -2621,8 +2621,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00216",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00216",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-12",
       "transactionTimestamp": "2026-03-12T05:46:00-07:00",
       "amountCents": 553347,
@@ -2633,8 +2633,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00217",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00217",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-12",
       "transactionTimestamp": "2026-03-12T06:42:00-07:00",
       "amountCents": 545792,
@@ -2645,8 +2645,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00218",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00218",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-13",
       "transactionTimestamp": "2026-03-13T05:13:00-07:00",
       "amountCents": 616737,
@@ -2657,8 +2657,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00219",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00219",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-13",
       "transactionTimestamp": "2026-03-13T06:09:00-07:00",
       "amountCents": 416044,
@@ -2669,8 +2669,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00220",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00220",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-16",
       "transactionTimestamp": "2026-03-16T05:44:00-07:00",
       "amountCents": 492739,
@@ -2681,8 +2681,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00221",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00221",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-17",
       "transactionTimestamp": "2026-03-17T05:54:00-07:00",
       "amountCents": 735610,
@@ -2693,8 +2693,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00222",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00222",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-18",
       "transactionTimestamp": "2026-03-18T04:28:00-07:00",
       "amountCents": 1000916,
@@ -2705,8 +2705,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00223",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00223",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-18",
       "transactionTimestamp": "2026-03-18T05:51:00-07:00",
       "amountCents": 657193,
@@ -2717,8 +2717,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00224",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00224",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-19",
       "transactionTimestamp": "2026-03-19T06:36:00-07:00",
       "amountCents": 600652,
@@ -2729,8 +2729,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00225",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00225",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-19",
       "transactionTimestamp": "2026-03-19T06:37:00-07:00",
       "amountCents": 631304,
@@ -2741,8 +2741,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00226",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00226",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-20",
       "transactionTimestamp": "2026-03-20T04:31:00-07:00",
       "amountCents": 136945,
@@ -2753,8 +2753,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00227",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00227",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-20",
       "transactionTimestamp": "2026-03-20T05:23:00-07:00",
       "amountCents": 395406,
@@ -2765,8 +2765,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00228",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00228",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-20",
       "transactionTimestamp": "2026-03-20T06:40:00-07:00",
       "amountCents": 3778926,
@@ -2776,8 +2776,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00229",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00229",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-20",
       "transactionTimestamp": "2026-03-20T07:00:00-07:00",
       "amountCents": 380872,
@@ -2788,8 +2788,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00230",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00230",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-23",
       "transactionTimestamp": "2026-03-23T05:48:00-07:00",
       "amountCents": 656572,
@@ -2800,8 +2800,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00231",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00231",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-23",
       "transactionTimestamp": "2026-03-23T05:54:00-07:00",
       "amountCents": 180000,
@@ -2812,8 +2812,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00232",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00232",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-24",
       "transactionTimestamp": "2026-03-24T06:08:00-07:00",
       "amountCents": 633888,
@@ -2824,8 +2824,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00233",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00233",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-25",
       "transactionTimestamp": "2026-03-25T06:26:00-07:00",
       "amountCents": 458009,
@@ -2836,8 +2836,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00234",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00234",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-25",
       "transactionTimestamp": "2026-03-25T06:57:00-07:00",
       "amountCents": 561999,
@@ -2848,8 +2848,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00235",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00235",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-26",
       "transactionTimestamp": "2026-03-26T05:18:00-07:00",
       "amountCents": 427618,
@@ -2860,8 +2860,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00236",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00236",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-26",
       "transactionTimestamp": "2026-03-26T05:50:00-07:00",
       "amountCents": 585775,
@@ -2872,8 +2872,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00237",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00237",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-27",
       "transactionTimestamp": "2026-03-27T05:17:00-07:00",
       "amountCents": 521253,
@@ -2884,8 +2884,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00238",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00238",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-30",
       "transactionTimestamp": "2026-03-30T06:32:00-07:00",
       "amountCents": 681015,
@@ -2896,8 +2896,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00239",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00239",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-30",
       "transactionTimestamp": "2026-03-30T06:33:00-07:00",
       "amountCents": 1200000,
@@ -2907,8 +2907,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00240",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00240",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-30",
       "transactionTimestamp": "2026-03-30T06:35:00-07:00",
       "amountCents": 607626,
@@ -2919,8 +2919,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00241",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00241",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-31",
       "transactionTimestamp": "2026-03-31T05:12:00-07:00",
       "amountCents": 653788,
@@ -2931,8 +2931,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00242",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00242",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-03-31",
       "transactionTimestamp": "2026-03-31T06:41:00-07:00",
       "amountCents": 355795,
@@ -2943,8 +2943,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00243",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00243",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-01",
       "transactionTimestamp": "2026-04-01T05:17:00-07:00",
       "amountCents": 316413,
@@ -2955,8 +2955,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00244",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00244",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-01",
       "transactionTimestamp": "2026-04-01T05:34:00-07:00",
       "amountCents": 1250000,
@@ -2967,8 +2967,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00245",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00245",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-01",
       "transactionTimestamp": "2026-04-01T06:33:00-07:00",
       "amountCents": 562009,
@@ -2979,8 +2979,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00246",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00246",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-02",
       "transactionTimestamp": "2026-04-02T05:50:00-07:00",
       "amountCents": 593623,
@@ -2991,8 +2991,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00247",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00247",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-02",
       "transactionTimestamp": "2026-04-02T06:40:00-07:00",
       "amountCents": 617165,
@@ -3003,8 +3003,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00248",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00248",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-03",
       "transactionTimestamp": "2026-04-03T05:13:00-07:00",
       "amountCents": 3764128,
@@ -3014,8 +3014,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00249",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00249",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-03",
       "transactionTimestamp": "2026-04-03T05:39:00-07:00",
       "amountCents": 662396,
@@ -3026,8 +3026,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00250",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00250",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-03",
       "transactionTimestamp": "2026-04-03T06:25:00-07:00",
       "amountCents": 237060,
@@ -3038,8 +3038,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00251",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00251",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-04",
       "transactionTimestamp": "2026-04-04T19:35:00-07:00",
       "amountCents": 92000,
@@ -3050,8 +3050,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00252",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00252",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-06",
       "transactionTimestamp": "2026-04-06T04:44:00-07:00",
       "amountCents": 420000,
@@ -3062,8 +3062,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00253",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00253",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-06",
       "transactionTimestamp": "2026-04-06T06:52:00-07:00",
       "amountCents": 585825,
@@ -3074,8 +3074,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00254",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00254",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-07",
       "transactionTimestamp": "2026-04-07T06:34:00-07:00",
       "amountCents": 582922,
@@ -3086,8 +3086,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00255",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00255",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-08",
       "transactionTimestamp": "2026-04-08T05:31:00-07:00",
       "amountCents": 588710,
@@ -3098,8 +3098,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00256",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00256",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-09",
       "transactionTimestamp": "2026-04-09T05:11:00-07:00",
       "amountCents": 499284,
@@ -3110,8 +3110,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00257",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00257",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-09",
       "transactionTimestamp": "2026-04-09T06:00:00-07:00",
       "amountCents": 677122,
@@ -3122,8 +3122,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00258",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00258",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-10",
       "transactionTimestamp": "2026-04-10T06:10:00-07:00",
       "amountCents": 1268577,
@@ -3134,8 +3134,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00259",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00259",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-10",
       "transactionTimestamp": "2026-04-10T06:35:00-07:00",
       "amountCents": 664821,
@@ -3146,8 +3146,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00260",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00260",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-13",
       "transactionTimestamp": "2026-04-13T05:08:00-07:00",
       "amountCents": 409995,
@@ -3158,8 +3158,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00261",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00261",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-13",
       "transactionTimestamp": "2026-04-13T06:53:00-07:00",
       "amountCents": 413972,
@@ -3170,8 +3170,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00262",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00262",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-14",
       "transactionTimestamp": "2026-04-14T05:40:00-07:00",
       "amountCents": 588303,
@@ -3182,8 +3182,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00263",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00263",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-14",
       "transactionTimestamp": "2026-04-14T06:44:00-07:00",
       "amountCents": 362790,
@@ -3194,8 +3194,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00264",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00264",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-15",
       "transactionTimestamp": "2026-04-15T05:25:00-07:00",
       "amountCents": 633009,
@@ -3206,8 +3206,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00265",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00265",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-16",
       "transactionTimestamp": "2026-04-16T07:00:00-07:00",
       "amountCents": 660273,
@@ -3218,8 +3218,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00266",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00266",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-17",
       "transactionTimestamp": "2026-04-17T05:36:00-07:00",
       "amountCents": 3797612,
@@ -3229,8 +3229,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00267",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00267",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-17",
       "transactionTimestamp": "2026-04-17T06:51:00-07:00",
       "amountCents": 503704,
@@ -3241,8 +3241,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00268",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00268",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-20",
       "transactionTimestamp": "2026-04-20T04:09:00-07:00",
       "amountCents": 137291,
@@ -3253,8 +3253,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00269",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00269",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-20",
       "transactionTimestamp": "2026-04-20T05:23:00-07:00",
       "amountCents": 997500,
@@ -3265,8 +3265,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00270",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00270",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-20",
       "transactionTimestamp": "2026-04-20T06:43:00-07:00",
       "amountCents": 423513,
@@ -3277,8 +3277,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00271",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00271",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-21",
       "transactionTimestamp": "2026-04-21T06:38:00-07:00",
       "amountCents": 559439,
@@ -3289,8 +3289,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00272",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00272",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-22",
       "transactionTimestamp": "2026-04-22T03:08:00-07:00",
       "amountCents": 180000,
@@ -3301,8 +3301,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00273",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00273",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-22",
       "transactionTimestamp": "2026-04-22T05:55:00-07:00",
       "amountCents": 622579,
@@ -3313,8 +3313,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00274",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00274",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-22",
       "transactionTimestamp": "2026-04-22T06:20:00-07:00",
       "amountCents": 538336,
@@ -3325,8 +3325,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00275",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00275",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-23",
       "transactionTimestamp": "2026-04-23T05:21:00-07:00",
       "amountCents": 513330,
@@ -3337,8 +3337,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00276",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00276",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-23",
       "transactionTimestamp": "2026-04-23T06:53:00-07:00",
       "amountCents": 527111,
@@ -3349,8 +3349,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00277",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00277",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-24",
       "transactionTimestamp": "2026-04-24T05:07:00-07:00",
       "amountCents": 672115,
@@ -3361,8 +3361,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00278",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00278",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-27",
       "transactionTimestamp": "2026-04-27T05:49:00-07:00",
       "amountCents": 543631,
@@ -3373,8 +3373,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00279",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00279",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-27",
       "transactionTimestamp": "2026-04-27T05:58:00-07:00",
       "amountCents": 593132,
@@ -3385,8 +3385,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00280",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00280",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-28",
       "transactionTimestamp": "2026-04-28T05:03:00-07:00",
       "amountCents": 482170,
@@ -3397,8 +3397,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00281",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00281",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-28",
       "transactionTimestamp": "2026-04-28T06:31:00-07:00",
       "amountCents": 1200000,
@@ -3408,8 +3408,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00282",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00282",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-29",
       "transactionTimestamp": "2026-04-29T06:00:00-07:00",
       "amountCents": 415505,
@@ -3420,8 +3420,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00283",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00283",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-30",
       "transactionTimestamp": "2026-04-30T06:10:00-07:00",
       "amountCents": 468441,
@@ -3432,8 +3432,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00284",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00284",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-04-30",
       "transactionTimestamp": "2026-04-30T06:34:00-07:00",
       "amountCents": 584153,
@@ -3444,8 +3444,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00285",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00285",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-01",
       "transactionTimestamp": "2026-05-01T04:50:00-07:00",
       "amountCents": 1250000,
@@ -3456,8 +3456,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00286",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00286",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-01",
       "transactionTimestamp": "2026-05-01T05:11:00-07:00",
       "amountCents": 579350,
@@ -3468,8 +3468,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00287",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00287",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-01",
       "transactionTimestamp": "2026-05-01T05:39:00-07:00",
       "amountCents": 3811070,
@@ -3479,8 +3479,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00288",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00288",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-04",
       "transactionTimestamp": "2026-05-04T05:01:00-07:00",
       "amountCents": 428240,
@@ -3491,8 +3491,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00289",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00289",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-04",
       "transactionTimestamp": "2026-05-04T14:27:00-07:00",
       "amountCents": 92000,
@@ -3503,8 +3503,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00290",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00290",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-05",
       "transactionTimestamp": "2026-05-05T06:41:00-07:00",
       "amountCents": 583980,
@@ -3515,8 +3515,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00291",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00291",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-06",
       "transactionTimestamp": "2026-05-06T04:31:00-07:00",
       "amountCents": 420000,
@@ -3527,8 +3527,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00292",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00292",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-06",
       "transactionTimestamp": "2026-05-06T05:54:00-07:00",
       "amountCents": 361085,
@@ -3539,8 +3539,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00293",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00293",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-07",
       "transactionTimestamp": "2026-05-07T06:46:00-07:00",
       "amountCents": 483551,
@@ -3551,8 +3551,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00294",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00294",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-08",
       "transactionTimestamp": "2026-05-08T05:41:00-07:00",
       "amountCents": 392894,
@@ -3563,8 +3563,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00295",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00295",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-08",
       "transactionTimestamp": "2026-05-08T06:40:00-07:00",
       "amountCents": 470188,
@@ -3575,8 +3575,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00296",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00296",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-11",
       "transactionTimestamp": "2026-05-11T05:30:00-07:00",
       "amountCents": 1271120,
@@ -3587,8 +3587,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00297",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00297",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-11",
       "transactionTimestamp": "2026-05-11T06:43:00-07:00",
       "amountCents": 479445,
@@ -3599,8 +3599,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00298",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00298",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-12",
       "transactionTimestamp": "2026-05-12T06:33:00-07:00",
       "amountCents": 718780,
@@ -3611,8 +3611,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00299",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00299",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-13",
       "transactionTimestamp": "2026-05-13T05:35:00-07:00",
       "amountCents": 574412,
@@ -3623,8 +3623,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00300",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00300",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-14",
       "transactionTimestamp": "2026-05-14T05:52:00-07:00",
       "amountCents": 600960,
@@ -3635,8 +3635,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00301",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00301",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-14",
       "transactionTimestamp": "2026-05-14T06:08:00-07:00",
       "amountCents": 497952,
@@ -3647,8 +3647,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00302",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00302",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-15",
       "transactionTimestamp": "2026-05-15T05:04:00-07:00",
       "amountCents": 3818955,
@@ -3658,8 +3658,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00303",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00303",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-15",
       "transactionTimestamp": "2026-05-15T06:27:00-07:00",
       "amountCents": 466220,
@@ -3670,8 +3670,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00304",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00304",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-15",
       "transactionTimestamp": "2026-05-15T06:28:00-07:00",
       "amountCents": 462999,
@@ -3682,8 +3682,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00305",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00305",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-18",
       "transactionTimestamp": "2026-05-18T04:59:00-07:00",
       "amountCents": 1073841,
@@ -3694,8 +3694,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00306",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00306",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-18",
       "transactionTimestamp": "2026-05-18T06:17:00-07:00",
       "amountCents": 660599,
@@ -3706,8 +3706,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00307",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00307",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-19",
       "transactionTimestamp": "2026-05-19T05:23:00-07:00",
       "amountCents": 478508,
@@ -3718,8 +3718,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00308",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00308",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-19",
       "transactionTimestamp": "2026-05-19T06:19:00-07:00",
       "amountCents": 627716,
@@ -3730,8 +3730,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00309",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00309",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-20",
       "transactionTimestamp": "2026-05-20T04:10:00-07:00",
       "amountCents": 173833,
@@ -3742,8 +3742,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00310",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00310",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-20",
       "transactionTimestamp": "2026-05-20T06:06:00-07:00",
       "amountCents": 395138,
@@ -3754,8 +3754,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00311",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00311",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-20",
       "transactionTimestamp": "2026-05-20T06:25:00-07:00",
       "amountCents": 362803,
@@ -3766,8 +3766,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00312",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00312",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-21",
       "transactionTimestamp": "2026-05-21T06:16:00-07:00",
       "amountCents": 657487,
@@ -3778,8 +3778,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00313",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00313",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-21",
       "transactionTimestamp": "2026-05-21T06:51:00-07:00",
       "amountCents": 325329,
@@ -3790,8 +3790,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00314",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00314",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-22",
       "transactionTimestamp": "2026-05-22T03:30:00-07:00",
       "amountCents": 180000,
@@ -3802,8 +3802,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00315",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00315",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-22",
       "transactionTimestamp": "2026-05-22T05:11:00-07:00",
       "amountCents": 508062,
@@ -3814,8 +3814,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00316",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00316",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-22",
       "transactionTimestamp": "2026-05-22T06:53:00-07:00",
       "amountCents": 539273,
@@ -3826,8 +3826,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00317",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00317",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-25",
       "transactionTimestamp": "2026-05-25T06:01:00-07:00",
       "amountCents": 598702,
@@ -3838,8 +3838,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00318",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00318",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-26",
       "transactionTimestamp": "2026-05-26T06:34:00-07:00",
       "amountCents": 322438,
@@ -3850,8 +3850,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00319",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00319",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-27",
       "transactionTimestamp": "2026-05-27T05:27:00-07:00",
       "amountCents": 493001,
@@ -3862,8 +3862,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00320",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00320",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-27",
       "transactionTimestamp": "2026-05-27T06:32:00-07:00",
       "amountCents": 560274,
@@ -3874,8 +3874,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00321",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00321",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-28",
       "transactionTimestamp": "2026-05-28T05:49:00-07:00",
       "amountCents": 1200000,
@@ -3885,8 +3885,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00322",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00322",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-28",
       "transactionTimestamp": "2026-05-28T06:06:00-07:00",
       "amountCents": 512176,
@@ -3897,8 +3897,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00323",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00323",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-28",
       "transactionTimestamp": "2026-05-28T06:24:00-07:00",
       "amountCents": 550815,
@@ -3909,8 +3909,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00324",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00324",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-29",
       "transactionTimestamp": "2026-05-29T05:37:00-07:00",
       "amountCents": 713236,
@@ -3921,8 +3921,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00325",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00325",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-05-29",
       "transactionTimestamp": "2026-05-29T06:20:00-07:00",
       "amountCents": 3795600,
@@ -3932,8 +3932,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00326",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00326",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-01",
       "transactionTimestamp": "2026-06-01T05:22:00-07:00",
       "amountCents": 1250000,
@@ -3944,8 +3944,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00327",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00327",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-01",
       "transactionTimestamp": "2026-06-01T06:48:00-07:00",
       "amountCents": 538859,
@@ -3956,8 +3956,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00328",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00328",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-02",
       "transactionTimestamp": "2026-06-02T05:00:00-07:00",
       "amountCents": 438350,
@@ -3968,8 +3968,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00329",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00329",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-02",
       "transactionTimestamp": "2026-06-02T05:07:00-07:00",
       "amountCents": 508320,
@@ -3980,8 +3980,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00330",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00330",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-03",
       "transactionTimestamp": "2026-06-03T06:25:00-07:00",
       "amountCents": 492721,
@@ -3992,8 +3992,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00331",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00331",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-04",
       "transactionTimestamp": "2026-06-04T05:13:00-07:00",
       "amountCents": 431902,
@@ -4004,8 +4004,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00332",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00332",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-04",
       "transactionTimestamp": "2026-06-04T05:24:00-07:00",
       "amountCents": 567642,
@@ -4016,8 +4016,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00333",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00333",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-04",
       "transactionTimestamp": "2026-06-04T17:42:00-07:00",
       "amountCents": 92000,
@@ -4028,8 +4028,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00334",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00334",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-05",
       "transactionTimestamp": "2026-06-05T06:29:00-07:00",
       "amountCents": 581159,
@@ -4040,8 +4040,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00335",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00335",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-08",
       "transactionTimestamp": "2026-06-08T03:49:00-07:00",
       "amountCents": 420000,
@@ -4052,8 +4052,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00336",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00336",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-08",
       "transactionTimestamp": "2026-06-08T05:23:00-07:00",
       "amountCents": 364117,
@@ -4064,8 +4064,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00337",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00337",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-08",
       "transactionTimestamp": "2026-06-08T06:42:00-07:00",
       "amountCents": 637463,
@@ -4076,8 +4076,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00338",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00338",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-09",
       "transactionTimestamp": "2026-06-09T05:32:00-07:00",
       "amountCents": 356638,
@@ -4088,8 +4088,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00339",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00339",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-10",
       "transactionTimestamp": "2026-06-10T05:14:00-07:00",
       "amountCents": 702416,
@@ -4100,8 +4100,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00340",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00340",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-10",
       "transactionTimestamp": "2026-06-10T05:51:00-07:00",
       "amountCents": 1220960,
@@ -4112,8 +4112,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00341",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00341",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-11",
       "transactionTimestamp": "2026-06-11T05:02:00-07:00",
       "amountCents": 740646,
@@ -4124,8 +4124,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00342",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00342",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-12",
       "transactionTimestamp": "2026-06-12T05:36:00-07:00",
       "amountCents": 3820437,
@@ -4135,8 +4135,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00343",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00343",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-12",
       "transactionTimestamp": "2026-06-12T05:37:00-07:00",
       "amountCents": 433794,
@@ -4147,8 +4147,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00344",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00344",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-15",
       "transactionTimestamp": "2026-06-15T05:42:00-07:00",
       "amountCents": 574105,
@@ -4159,8 +4159,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00345",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00345",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-16",
       "transactionTimestamp": "2026-06-16T05:53:00-07:00",
       "amountCents": 577676,
@@ -4171,8 +4171,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00346",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00346",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-17",
       "transactionTimestamp": "2026-06-17T06:11:00-07:00",
       "amountCents": 570859,
@@ -4183,8 +4183,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00347",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00347",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-18",
       "transactionTimestamp": "2026-06-18T04:13:00-07:00",
       "amountCents": 922404,
@@ -4195,8 +4195,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00348",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00348",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-18",
       "transactionTimestamp": "2026-06-18T06:25:00-07:00",
       "amountCents": 606136,
@@ -4207,8 +4207,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00349",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00349",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-19",
       "transactionTimestamp": "2026-06-19T05:02:00-07:00",
       "amountCents": 362710,
@@ -4219,8 +4219,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00350",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00350",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-22",
       "transactionTimestamp": "2026-06-22T04:47:00-07:00",
       "amountCents": 129139,
@@ -4231,8 +4231,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00351",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00351",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-22",
       "transactionTimestamp": "2026-06-22T05:12:00-07:00",
       "amountCents": 180000,
@@ -4243,8 +4243,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00352",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00352",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-22",
       "transactionTimestamp": "2026-06-22T05:47:00-07:00",
       "amountCents": 577970,
@@ -4255,8 +4255,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00353",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00353",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-23",
       "transactionTimestamp": "2026-06-23T05:39:00-07:00",
       "amountCents": 414932,
@@ -4267,8 +4267,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00354",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00354",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-23",
       "transactionTimestamp": "2026-06-23T05:49:00-07:00",
       "amountCents": 493950,
@@ -4279,8 +4279,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00355",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00355",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-24",
       "transactionTimestamp": "2026-06-24T05:23:00-07:00",
       "amountCents": 648329,
@@ -4291,8 +4291,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00356",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00356",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-24",
       "transactionTimestamp": "2026-06-24T05:35:00-07:00",
       "amountCents": 526862,
@@ -4303,8 +4303,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00357",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00357",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-25",
       "transactionTimestamp": "2026-06-25T05:35:00-07:00",
       "amountCents": 605474,
@@ -4315,8 +4315,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00358",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00358",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-25",
       "transactionTimestamp": "2026-06-25T06:04:00-07:00",
       "amountCents": 504623,
@@ -4327,8 +4327,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00359",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00359",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-26",
       "transactionTimestamp": "2026-06-26T05:24:00-07:00",
       "amountCents": 576559,
@@ -4339,8 +4339,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00360",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00360",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-26",
       "transactionTimestamp": "2026-06-26T05:33:00-07:00",
       "amountCents": 3789185,
@@ -4350,8 +4350,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00361",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00361",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-29",
       "transactionTimestamp": "2026-06-29T05:34:00-07:00",
       "amountCents": 598702,
@@ -4362,8 +4362,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00362",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00362",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-29",
       "transactionTimestamp": "2026-06-29T05:42:00-07:00",
       "amountCents": 1200000,
@@ -4373,8 +4373,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00363",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00363",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-30",
       "transactionTimestamp": "2026-06-30T05:10:00-07:00",
       "amountCents": 700464,
@@ -4385,8 +4385,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00364",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00364",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-06-30",
       "transactionTimestamp": "2026-06-30T06:13:00-07:00",
       "amountCents": 584754,
@@ -4397,8 +4397,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00365",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00365",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-01",
       "transactionTimestamp": "2026-07-01T05:37:00-07:00",
       "amountCents": 1250000,
@@ -4409,8 +4409,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00366",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00366",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-01",
       "transactionTimestamp": "2026-07-01T06:05:00-07:00",
       "amountCents": 465918,
@@ -4421,8 +4421,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00367",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00367",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-01",
       "transactionTimestamp": "2026-07-01T06:12:00-07:00",
       "amountCents": 564387,
@@ -4433,8 +4433,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00368",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00368",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-02",
       "transactionTimestamp": "2026-07-02T06:52:00-07:00",
       "amountCents": 618897,
@@ -4445,8 +4445,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00369",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00369",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-03",
       "transactionTimestamp": "2026-07-03T05:42:00-07:00",
       "amountCents": 447767,
@@ -4457,8 +4457,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00370",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00370",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-04",
       "transactionTimestamp": "2026-07-04T10:48:00-07:00",
       "amountCents": 92000,
@@ -4469,8 +4469,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00371",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00371",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-06",
       "transactionTimestamp": "2026-07-06T05:18:00-07:00",
       "amountCents": 420000,
@@ -4481,8 +4481,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00372",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00372",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-06",
       "transactionTimestamp": "2026-07-06T06:56:00-07:00",
       "amountCents": 546490,
@@ -4493,8 +4493,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00373",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00373",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-07",
       "transactionTimestamp": "2026-07-07T06:32:00-07:00",
       "amountCents": 420799,
@@ -4505,8 +4505,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00374",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00374",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-07",
       "transactionTimestamp": "2026-07-07T06:58:00-07:00",
       "amountCents": 535064,
@@ -4517,8 +4517,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00375",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00375",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-08",
       "transactionTimestamp": "2026-07-08T05:58:00-07:00",
       "amountCents": 372854,
@@ -4529,8 +4529,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00376",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00376",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-09",
       "transactionTimestamp": "2026-07-09T05:34:00-07:00",
       "amountCents": 463310,
@@ -4541,8 +4541,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00377",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00377",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-09",
       "transactionTimestamp": "2026-07-09T06:07:00-07:00",
       "amountCents": 348255,
@@ -4553,8 +4553,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00378",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00378",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-10",
       "transactionTimestamp": "2026-07-10T05:13:00-07:00",
       "amountCents": 3784435,
@@ -4564,8 +4564,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00379",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00379",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-10",
       "transactionTimestamp": "2026-07-10T05:51:00-07:00",
       "amountCents": 1147394,
@@ -4576,8 +4576,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00380",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00380",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-10",
       "transactionTimestamp": "2026-07-10T06:18:00-07:00",
       "amountCents": 509546,
@@ -4588,8 +4588,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00381",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00381",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-13",
       "transactionTimestamp": "2026-07-13T06:24:00-07:00",
       "amountCents": 447329,
@@ -4600,8 +4600,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00382",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00382",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-13",
       "transactionTimestamp": "2026-07-13T06:53:00-07:00",
       "amountCents": 515762,
@@ -4612,8 +4612,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00383",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00383",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-14",
       "transactionTimestamp": "2026-07-14T05:07:00-07:00",
       "amountCents": 319089,
@@ -4624,8 +4624,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00384",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00384",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-14",
       "transactionTimestamp": "2026-07-14T06:50:00-07:00",
       "amountCents": 494082,
@@ -4636,8 +4636,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00385",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00385",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-15",
       "transactionTimestamp": "2026-07-15T05:07:00-07:00",
       "amountCents": 576176,
@@ -4648,8 +4648,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00386",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00386",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-15",
       "transactionTimestamp": "2026-07-15T06:24:00-07:00",
       "amountCents": 396143,
@@ -4660,8 +4660,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00387",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00387",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-16",
       "transactionTimestamp": "2026-07-16T05:10:00-07:00",
       "amountCents": 377776,
@@ -4672,8 +4672,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00388",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00388",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-16",
       "transactionTimestamp": "2026-07-16T07:00:00-07:00",
       "amountCents": 442790,
@@ -4684,8 +4684,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00389",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00389",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-17",
       "transactionTimestamp": "2026-07-17T05:37:00-07:00",
       "amountCents": 605513,
@@ -4696,8 +4696,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00390",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00390",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-17",
       "transactionTimestamp": "2026-07-17T05:59:00-07:00",
       "amountCents": 506578,
@@ -4708,8 +4708,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00391",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00391",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-20",
       "transactionTimestamp": "2026-07-20T05:06:00-07:00",
       "amountCents": 616785,
@@ -4720,8 +4720,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00392",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00392",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-20",
       "transactionTimestamp": "2026-07-20T05:26:00-07:00",
       "amountCents": 160920,
@@ -4732,8 +4732,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00393",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00393",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-20",
       "transactionTimestamp": "2026-07-20T05:44:00-07:00",
       "amountCents": 954932,
@@ -4744,8 +4744,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00394",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00394",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-21",
       "transactionTimestamp": "2026-07-21T05:39:00-07:00",
       "amountCents": 411192,
@@ -4756,8 +4756,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00395",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00395",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-21",
       "transactionTimestamp": "2026-07-21T06:04:00-07:00",
       "amountCents": 623752,
@@ -4768,8 +4768,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00396",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00396",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-22",
       "transactionTimestamp": "2026-07-22T05:23:00-07:00",
       "amountCents": 180000,
@@ -4780,8 +4780,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00397",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00397",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-22",
       "transactionTimestamp": "2026-07-22T06:00:00-07:00",
       "amountCents": 537611,
@@ -4792,8 +4792,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00398",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00398",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-23",
       "transactionTimestamp": "2026-07-23T05:23:00-07:00",
       "amountCents": 551716,
@@ -4804,8 +4804,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00399",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00399",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-23",
       "transactionTimestamp": "2026-07-23T06:46:00-07:00",
       "amountCents": 582831,
@@ -4816,8 +4816,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00400",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00400",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-24",
       "transactionTimestamp": "2026-07-24T06:07:00-07:00",
       "amountCents": 462841,
@@ -4828,8 +4828,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00401",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00401",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-24",
       "transactionTimestamp": "2026-07-24T06:42:00-07:00",
       "amountCents": 3853213,
@@ -4839,8 +4839,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00402",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00402",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-27",
       "transactionTimestamp": "2026-07-27T05:40:00-07:00",
       "amountCents": 425463,
@@ -4851,8 +4851,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00403",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00403",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-27",
       "transactionTimestamp": "2026-07-27T06:36:00-07:00",
       "amountCents": 517575,
@@ -4863,8 +4863,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00404",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00404",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-28",
       "transactionTimestamp": "2026-07-28T06:16:00-07:00",
       "amountCents": 393317,
@@ -4875,8 +4875,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00405",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00405",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-28",
       "transactionTimestamp": "2026-07-28T06:17:00-07:00",
       "amountCents": 1200000,
@@ -4886,8 +4886,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00406",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00406",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-29",
       "transactionTimestamp": "2026-07-29T06:26:00-07:00",
       "amountCents": 370854,
@@ -4898,8 +4898,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00407",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00407",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-29",
       "transactionTimestamp": "2026-07-29T06:56:00-07:00",
       "amountCents": 602544,
@@ -4910,8 +4910,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00408",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00408",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-30",
       "transactionTimestamp": "2026-07-30T05:20:00-07:00",
       "amountCents": 510711,
@@ -4922,8 +4922,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00409",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00409",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-30",
       "transactionTimestamp": "2026-07-30T05:29:00-07:00",
       "amountCents": 438244,
@@ -4934,8 +4934,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00410",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00410",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-07-31",
       "transactionTimestamp": "2026-07-31T06:52:00-07:00",
       "amountCents": 551457,
@@ -4946,8 +4946,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00411",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00411",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-03",
       "transactionTimestamp": "2026-08-03T03:02:00-07:00",
       "amountCents": 1250000,
@@ -4958,8 +4958,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00412",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00412",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-03",
       "transactionTimestamp": "2026-08-03T05:19:00-07:00",
       "amountCents": 414808,
@@ -4970,8 +4970,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00413",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00413",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-03",
       "transactionTimestamp": "2026-08-03T05:37:00-07:00",
       "amountCents": 425387,
@@ -4982,8 +4982,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00414",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00414",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-04",
       "transactionTimestamp": "2026-08-04T05:05:00-07:00",
       "amountCents": 634870,
@@ -4994,8 +4994,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00415",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00415",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-04",
       "transactionTimestamp": "2026-08-04T17:52:00-07:00",
       "amountCents": 92000,
@@ -5006,8 +5006,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00416",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00416",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-05",
       "transactionTimestamp": "2026-08-05T05:54:00-07:00",
       "amountCents": 508987,
@@ -5018,8 +5018,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00417",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00417",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-05",
       "transactionTimestamp": "2026-08-05T06:41:00-07:00",
       "amountCents": 436102,
@@ -5030,8 +5030,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00418",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00418",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-06",
       "transactionTimestamp": "2026-08-06T05:28:00-07:00",
       "amountCents": 469248,
@@ -5042,8 +5042,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00419",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00419",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-06",
       "transactionTimestamp": "2026-08-06T05:31:00-07:00",
       "amountCents": 500329,
@@ -5054,8 +5054,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00420",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00420",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-06",
       "transactionTimestamp": "2026-08-06T05:38:00-07:00",
       "amountCents": 420000,
@@ -5066,8 +5066,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00421",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00421",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-07",
       "transactionTimestamp": "2026-08-07T05:09:00-07:00",
       "amountCents": 3799433,
@@ -5077,8 +5077,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00422",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00422",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-07",
       "transactionTimestamp": "2026-08-07T05:17:00-07:00",
       "amountCents": 499822,
@@ -5089,8 +5089,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00423",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00423",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-07",
       "transactionTimestamp": "2026-08-07T05:47:00-07:00",
       "amountCents": 463649,
@@ -5101,8 +5101,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00424",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00424",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-10",
       "transactionTimestamp": "2026-08-10T05:25:00-07:00",
       "amountCents": 1493068,
@@ -5113,8 +5113,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00425",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00425",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-10",
       "transactionTimestamp": "2026-08-10T06:22:00-07:00",
       "amountCents": 471514,
@@ -5125,8 +5125,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00426",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00426",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-10",
       "transactionTimestamp": "2026-08-10T06:48:00-07:00",
       "amountCents": 373846,
@@ -5137,8 +5137,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00427",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00427",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-11",
       "transactionTimestamp": "2026-08-11T05:31:00-07:00",
       "amountCents": 623184,
@@ -5149,8 +5149,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00428",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00428",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-12",
       "transactionTimestamp": "2026-08-12T05:59:00-07:00",
       "amountCents": 449736,
@@ -5161,8 +5161,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00429",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00429",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-12",
       "transactionTimestamp": "2026-08-12T06:33:00-07:00",
       "amountCents": 496196,
@@ -5173,8 +5173,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00430",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00430",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-13",
       "transactionTimestamp": "2026-08-13T05:22:00-07:00",
       "amountCents": 390926,
@@ -5185,8 +5185,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00431",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00431",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-13",
       "transactionTimestamp": "2026-08-13T06:53:00-07:00",
       "amountCents": 519125,
@@ -5197,8 +5197,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00432",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00432",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-14",
       "transactionTimestamp": "2026-08-14T06:29:00-07:00",
       "amountCents": 645087,
@@ -5209,8 +5209,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00433",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00433",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-17",
       "transactionTimestamp": "2026-08-17T06:10:00-07:00",
       "amountCents": 571906,
@@ -5221,8 +5221,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00434",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00434",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-18",
       "transactionTimestamp": "2026-08-18T05:13:00-07:00",
       "amountCents": 905628,
@@ -5233,8 +5233,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00435",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00435",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-18",
       "transactionTimestamp": "2026-08-18T06:19:00-07:00",
       "amountCents": 569017,
@@ -5245,8 +5245,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00436",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00436",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-19",
       "transactionTimestamp": "2026-08-19T06:27:00-07:00",
       "amountCents": 446597,
@@ -5257,8 +5257,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00437",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00437",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-20",
       "transactionTimestamp": "2026-08-20T05:30:00-07:00",
       "amountCents": 170936,
@@ -5269,8 +5269,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00438",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00438",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-20",
       "transactionTimestamp": "2026-08-20T05:31:00-07:00",
       "amountCents": 565370,
@@ -5281,8 +5281,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00439",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00439",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-21",
       "transactionTimestamp": "2026-08-21T05:50:00-07:00",
       "amountCents": 427052,
@@ -5293,8 +5293,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00440",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00440",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-21",
       "transactionTimestamp": "2026-08-21T06:14:00-07:00",
       "amountCents": 502847,
@@ -5305,8 +5305,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00441",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00441",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-21",
       "transactionTimestamp": "2026-08-21T06:56:00-07:00",
       "amountCents": 3744691,
@@ -5316,8 +5316,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00442",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00442",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-24",
       "transactionTimestamp": "2026-08-24T04:57:00-07:00",
       "amountCents": 180000,
@@ -5328,8 +5328,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00443",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00443",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-24",
       "transactionTimestamp": "2026-08-24T05:47:00-07:00",
       "amountCents": 568984,
@@ -5340,8 +5340,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00444",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00444",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-24",
       "transactionTimestamp": "2026-08-24T05:50:00-07:00",
       "amountCents": 457831,
@@ -5352,8 +5352,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00445",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00445",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-25",
       "transactionTimestamp": "2026-08-25T05:56:00-07:00",
       "amountCents": 537416,
@@ -5364,8 +5364,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00446",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00446",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-26",
       "transactionTimestamp": "2026-08-26T06:47:00-07:00",
       "amountCents": 505446,
@@ -5376,8 +5376,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00447",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00447",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-27",
       "transactionTimestamp": "2026-08-27T06:58:00-07:00",
       "amountCents": 527552,
@@ -5388,8 +5388,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00448",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00448",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-28",
       "transactionTimestamp": "2026-08-28T05:08:00-07:00",
       "amountCents": 1200000,
@@ -5399,8 +5399,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00449",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00449",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-28",
       "transactionTimestamp": "2026-08-28T06:15:00-07:00",
       "amountCents": 508203,
@@ -5411,8 +5411,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00450",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00450",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-08-31",
       "transactionTimestamp": "2026-08-31T05:58:00-07:00",
       "amountCents": 530836,
@@ -5423,8 +5423,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00451",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00451",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-01",
       "transactionTimestamp": "2026-09-01T05:18:00-07:00",
       "amountCents": 1250000,
@@ -5435,8 +5435,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00452",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00452",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-01",
       "transactionTimestamp": "2026-09-01T05:38:00-07:00",
       "amountCents": 497413,
@@ -5447,8 +5447,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00453",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00453",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-02",
       "transactionTimestamp": "2026-09-02T05:01:00-07:00",
       "amountCents": 558680,
@@ -5459,8 +5459,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00454",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00454",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-02",
       "transactionTimestamp": "2026-09-02T05:03:00-07:00",
       "amountCents": 380371,
@@ -5471,8 +5471,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00455",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00455",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-03",
       "transactionTimestamp": "2026-09-03T05:03:00-07:00",
       "amountCents": 424782,
@@ -5483,8 +5483,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00456",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00456",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-03",
       "transactionTimestamp": "2026-09-03T06:13:00-07:00",
       "amountCents": 377262,
@@ -5495,8 +5495,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00457",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00457",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-04",
       "transactionTimestamp": "2026-09-04T05:23:00-07:00",
       "amountCents": 466077,
@@ -5507,8 +5507,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00458",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00458",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-04",
       "transactionTimestamp": "2026-09-04T06:47:00-07:00",
       "amountCents": 3789987,
@@ -5518,8 +5518,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00459",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00459",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-04",
       "transactionTimestamp": "2026-09-04T20:16:00-07:00",
       "amountCents": 92000,
@@ -5530,8 +5530,8 @@
       "channel": "CARD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00460",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00460",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-07",
       "transactionTimestamp": "2026-09-07T03:25:00-07:00",
       "amountCents": 420000,
@@ -5542,8 +5542,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00461",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00461",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-07",
       "transactionTimestamp": "2026-09-07T06:56:00-07:00",
       "amountCents": 627356,
@@ -5554,8 +5554,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00462",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00462",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-08",
       "transactionTimestamp": "2026-09-08T05:24:00-07:00",
       "amountCents": 574070,
@@ -5566,8 +5566,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00463",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00463",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-09",
       "transactionTimestamp": "2026-09-09T06:54:00-07:00",
       "amountCents": 515906,
@@ -5578,8 +5578,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00464",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00464",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-10",
       "transactionTimestamp": "2026-09-10T05:08:00-07:00",
       "amountCents": 398438,
@@ -5590,8 +5590,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00465",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00465",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-10",
       "transactionTimestamp": "2026-09-10T06:10:00-07:00",
       "amountCents": 1343938,
@@ -5602,8 +5602,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00466",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00466",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-11",
       "transactionTimestamp": "2026-09-11T05:02:00-07:00",
       "amountCents": 500562,
@@ -5614,8 +5614,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00467",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00467",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-11",
       "transactionTimestamp": "2026-09-11T05:48:00-07:00",
       "amountCents": 284136,
@@ -5626,8 +5626,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00468",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00468",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-14",
       "transactionTimestamp": "2026-09-14T05:11:00-07:00",
       "amountCents": 360490,
@@ -5638,8 +5638,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00469",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00469",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-14",
       "transactionTimestamp": "2026-09-14T06:47:00-07:00",
       "amountCents": 553202,
@@ -5650,8 +5650,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00470",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00470",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-15",
       "transactionTimestamp": "2026-09-15T05:42:00-07:00",
       "amountCents": 448358,
@@ -5662,8 +5662,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00471",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00471",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-16",
       "transactionTimestamp": "2026-09-16T05:30:00-07:00",
       "amountCents": 498661,
@@ -5674,8 +5674,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00472",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00472",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-17",
       "transactionTimestamp": "2026-09-17T05:06:00-07:00",
       "amountCents": 509058,
@@ -5686,8 +5686,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00473",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00473",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-18",
       "transactionTimestamp": "2026-09-18T04:21:00-07:00",
       "amountCents": 901615,
@@ -5698,8 +5698,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00474",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00474",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-18",
       "transactionTimestamp": "2026-09-18T05:17:00-07:00",
       "amountCents": 3795087,
@@ -5709,8 +5709,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00475",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00475",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-18",
       "transactionTimestamp": "2026-09-18T06:57:00-07:00",
       "amountCents": 575646,
@@ -5721,8 +5721,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00476",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00476",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-21",
       "transactionTimestamp": "2026-09-21T03:16:00-07:00",
       "amountCents": 178564,
@@ -5733,8 +5733,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00477",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00477",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-21",
       "transactionTimestamp": "2026-09-21T05:45:00-07:00",
       "amountCents": 571724,
@@ -5745,8 +5745,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00478",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00478",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-22",
       "transactionTimestamp": "2026-09-22T05:49:00-07:00",
       "amountCents": 180000,
@@ -5757,8 +5757,8 @@
       "channel": "PAD"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00479",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00479",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-22",
       "transactionTimestamp": "2026-09-22T06:29:00-07:00",
       "amountCents": 544937,
@@ -5769,8 +5769,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00480",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00480",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-23",
       "transactionTimestamp": "2026-09-23T06:22:00-07:00",
       "amountCents": 464967,
@@ -5781,8 +5781,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00481",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00481",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-24",
       "transactionTimestamp": "2026-09-24T05:32:00-07:00",
       "amountCents": 517755,
@@ -5793,8 +5793,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00482",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00482",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-24",
       "transactionTimestamp": "2026-09-24T07:00:00-07:00",
       "amountCents": 436150,
@@ -5805,8 +5805,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00483",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00483",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-25",
       "transactionTimestamp": "2026-09-25T05:39:00-07:00",
       "amountCents": 429498,
@@ -5817,8 +5817,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00484",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00484",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-28",
       "transactionTimestamp": "2026-09-28T06:37:00-07:00",
       "amountCents": 1200000,
@@ -5828,8 +5828,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00485",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00485",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-28",
       "transactionTimestamp": "2026-09-28T06:52:00-07:00",
       "amountCents": 630759,
@@ -5840,8 +5840,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00486",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00486",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-29",
       "transactionTimestamp": "2026-09-29T05:59:00-07:00",
       "amountCents": 509080,
@@ -5852,8 +5852,8 @@
       "channel": "EFT"
     },
     {
-      "transactionId": "txn_bright-smile-dental-00487",
-      "accountId": "acc_bright-smile-dental-op",
+      "transactionId": "txn_halverly-dental-00487",
+      "accountId": "acc_halverly-dental-op",
       "postedDate": "2026-09-30",
       "transactionTimestamp": "2026-09-30T06:12:00-07:00",
       "amountCents": 460877,
@@ -5866,6 +5866,7 @@
   ],
   "generated": {
     "seed": 2855719281,
+    "seedKey": "bright-smile-dental",
     "windowStart": "2025-10-01",
     "windowEnd": "2026-09-30",
     "generatorVersion": "1.0.0"

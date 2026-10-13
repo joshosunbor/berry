@@ -73,7 +73,7 @@ export interface IdentityDocument {
 
 /** A synthetic identity document consistent with the applicant's protected record. */
 export function syntheticDocument(a: Applicant): IdentityDocument {
-  const rng = new Rng(hashSeed(`doc:${a.slug}`))
+  const rng = new Rng(hashSeed(`doc:${a.generated.seedKey ?? a.slug}`))
   const type = a.protected.immigrationStatus === "permanent_resident" ? "pr_card" : rng.pick(["drivers_licence", "passport", "provincial_id"] as const)
   return { type, expiresOn: `${rng.int(2027, 2031)}-${String(rng.int(1, 12)).padStart(2, "0")}-15`, nameOnDocument: a.protected.fullName, dateOfBirthOnDocument: a.protected.dateOfBirth }
 }
@@ -129,7 +129,7 @@ export function verifyApplicant(a: Applicant, asOf = a.generated.windowEnd): Ver
   }
 
   // Simulated timing: automated checks take seconds; a manual review takes hours.
-  const rng = new Rng(hashSeed(`kyc-time:${a.slug}`))
+  const rng = new Rng(hashSeed(`kyc-time:${a.generated.seedKey ?? a.slug}`))
   const start = Date.parse(`${asOf}T14:00:00Z`)
   return drafts.map((d, i) => {
     const automated = d.result === "pass"

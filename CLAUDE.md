@@ -122,11 +122,11 @@ Generate with a **seeded** generator so results are reproducible. Each applicant
 | **Amara**, gig worker (rideshare + delivery) | Credit card limit | Many small daily deposits | Gig income patterns; fintech strongest here |
 | **Daniel**, newcomer, 7 months of history | Starter credit | Steady payroll, thin Canadian credit file, arrived from a country not covered by foreign credit report programs | Thin file; CU relationship path, bank declines on history, fintech small starter limit, plus a credit-building path |
 | **Sofia**, overextended | Personal loan | Three bounced payments, rising card balances | Decline with clear reasons and what would change the answer |
-| **Northline Auto Repair** | Business term loan | Steady weekly card deposits, growing revenue | Clean small-business approval |
-| **Bright Smile Dental** | Equipment financing | High stable revenue, large equipment need | Large limit; CU routes to credit committee as it exceeds branch authority |
-| **Corner Grind Café** | Business line of credit | Thin margins, recent NSFs | Decline or small limit with conditions |
-| **Lakeside Lodge** | Seasonal operating line | Summer-heavy revenue, quiet winters | Seasonality: bank reads "irregular", CU structures repayment around peak months |
-| **Main Street Hardware** | Business line of credit | Cash-heavy, one day of cash deposits over $10,000 | FINTRAC large cash flag (a compliance flag, not a credit penalty) |
+| **Corvane Auto Repair** | Business term loan | Steady weekly card deposits, growing revenue | Clean small-business approval |
+| **Halverly Dental** | Equipment financing | High stable revenue, large equipment need | Large limit; CU routes to credit committee as it exceeds branch authority |
+| **Quillbean Café** | Business line of credit | Thin margins, recent NSFs | Decline or small limit with conditions |
+| **Larchmere Lodge** | Seasonal operating line | Summer-heavy revenue, quiet winters | Seasonality: bank reads "irregular", CU structures repayment around peak months |
+| **Fennick Hardware** | Business line of credit | Cash-heavy, one day of cash deposits over $10,000 | FINTRAC large cash flag (a compliance flag, not a credit penalty) |
 
 **Planted cases:** also generate 30+ applicants with a known "correct" outcome per mode (obvious approves, obvious declines, edge cases). Expected outcomes live in `/tests/expected.json`, never visible to the engine.
 

@@ -60,7 +60,7 @@ describe("generator", () => {
 
   it("produces a cast of 14: the 10 required applicants plus four more", () => {
     expect(cast).toHaveLength(14)
-    const required = ["priya", "hollis-family-farm", "amara", "daniel", "sofia", "northline-auto-repair", "bright-smile-dental", "corner-grind-cafe", "lakeside-lodge", "main-street-hardware"]
+    const required = ["priya", "hollis-family-farm", "amara", "daniel", "sofia", "corvane-auto-repair", "halverly-dental", "quillbean-cafe", "larchmere-lodge", "fennick-hardware"]
     expect(CAST.slice(0, 10).map((s) => s.slug)).toEqual(required)
     expect(cast.filter((a) => a.kind === "personal")).toHaveLength(6)
     expect(cast.filter((a) => a.kind === "business")).toHaveLength(8)
@@ -121,8 +121,8 @@ describe("story targets", () => {
     expect(sum(harvest) / sum(sales)).toBeGreaterThanOrEqual(0.6)
   })
 
-  it("Lakeside Lodge: at least 60% of revenue arrives Jun–Aug", () => {
-    const sales = revenue(bySlug("lakeside-lodge").transactions)
+  it("Larchmere Lodge: at least 60% of revenue arrives Jun–Aug", () => {
+    const sales = revenue(bySlug("larchmere-lodge").transactions)
     const summer = sales.filter((t) => [6, 7, 8].includes(monthOf(t.postedDate)))
     expect(sum(summer) / sum(sales)).toBeGreaterThanOrEqual(0.6)
   })
@@ -159,20 +159,20 @@ describe("story targets", () => {
     expect(owedAtEnd).toBeLessThanOrEqual(card.creditLimitCents!)
   })
 
-  it("Northline Auto Repair: revenue growing, last 3 months above the prior 3", () => {
-    const sales = revenue(bySlug("northline-auto-repair").transactions)
+  it("Corvane Auto Repair: revenue growing, last 3 months above the prior 3", () => {
+    const sales = revenue(bySlug("corvane-auto-repair").transactions)
     const last3 = sum(sales.filter((t) => t.postedDate >= "2026-07-01"))
     const prior3 = sum(sales.filter((t) => t.postedDate >= "2026-04-01" && t.postedDate < "2026-07-01"))
     expect(last3).toBeGreaterThan(prior3)
   })
 
-  it("Bright Smile Dental: request exceeds Branch Manager authority, so it goes to credit committee", () => {
+  it("Halverly Dental: request exceeds Branch Manager authority, so it goes to credit committee", () => {
     const branch = NORTHGATE.authorityTiers!.find((t) => t.id === "branch_manager")!
-    expect(bySlug("bright-smile-dental").request.amountCents).toBeGreaterThan(branch.maxExposureCents!)
+    expect(bySlug("halverly-dental").request.amountCents).toBeGreaterThan(branch.maxExposureCents!)
   })
 
-  it("Corner Grind Café: thin margin and two NSF returns in the last 90 days", () => {
-    const a = bySlug("corner-grind-cafe")
+  it("Quillbean Café: thin margin and two NSF returns in the last 90 days", () => {
+    const a = bySlug("quillbean-cafe")
     expect(returnsSince(a, 90)).toHaveLength(2)
     const inflow = sum(credits(a.transactions))
     const outflow = sum(a.transactions.filter((t) => t.debitCreditMemo === "DEBIT"))
@@ -211,8 +211,8 @@ describe("story targets", () => {
     expect(sum(debt) / 12).toBeGreaterThan(400_000)
   })
 
-  it("Main Street Hardware: exactly one day of cash deposits over $10,000, made of two deposits", () => {
-    const cash = bySlug("main-street-hardware").transactions.filter((t) => t.channel === "CASH" && t.debitCreditMemo === "CREDIT")
+  it("Fennick Hardware: exactly one day of cash deposits over $10,000, made of two deposits", () => {
+    const cash = bySlug("fennick-hardware").transactions.filter((t) => t.channel === "CASH" && t.debitCreditMemo === "CREDIT")
     const byDay = new Map<string, Transaction[]>()
     for (const t of cash) byDay.set(t.postedDate, [...(byDay.get(t.postedDate) ?? []), t])
     const bigDays = [...byDay].filter(([, txns]) => sum(txns) >= 1_000_000)

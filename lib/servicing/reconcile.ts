@@ -72,7 +72,7 @@ export interface PlantedBreaks {
 /** The planted breaks in each lender's statement (only Northgate's, January 2027). */
 export const PLANTED_BREAKS: Record<string, PlantedBreaks> = {
   northgate: {
-    returnNotApplied: { reference: "col_main-street-hardware-cu-a3", code: "901" },
+    returnNotApplied: { reference: "col_fennick-hardware-cu-a3", code: "901" },
     timingDifference: { reference: "col_grace-cu-a9" },
   },
 }

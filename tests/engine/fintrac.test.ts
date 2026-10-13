@@ -51,8 +51,8 @@ describe("FINTRAC large cash (LCTR) candidates", () => {
     expect(ComplianceFlag.parse(flag).creditFactor).toBe(false)
   })
 
-  it("finds exactly Main Street Hardware's cash day in the cast", () => {
-    const a = Applicant.parse(JSON.parse(readFileSync(path.resolve(__dirname, "../../data/applicants/main-street-hardware.json"), "utf8")))
+  it("finds exactly Fennick Hardware's cash day in the cast", () => {
+    const a = Applicant.parse(JSON.parse(readFileSync(path.resolve(__dirname, "../../data/applicants/fennick-hardware.json"), "utf8")))
     const events = findLargeCashEvents(a.transactions)
     expect(events).toHaveLength(1)
     expect(events[0].windowStart.slice(0, 10)).toBe("2026-06-12")

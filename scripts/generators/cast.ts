@@ -50,6 +50,8 @@ export const institutionTypeOf = (provider: Account["provider"]): Account["insti
 
 export interface ApplicantSpec {
   slug: string
+  /** The key random data is generated from: an applicant's original slug, kept when it's renamed so its data doesn't change. */
+  seedKey?: string
   kind: Applicant["kind"]
   displayName: string
   story: string
@@ -68,7 +70,7 @@ export interface ApplicantSpec {
 
 export function buildApplicant(spec: ApplicantSpec): Applicant {
   const w = spec.window ?? WINDOW
-  const seed = hashSeed(`berry:${spec.slug}`)
+  const seed = hashSeed(`berry:${spec.seedKey ?? spec.slug}`)
   const b = new TxnBuilder(spec.slug, new Rng(seed), UTC_OFFSET[spec.province])
   const acc = Object.fromEntries(spec.accounts.map((a) => [a.key, `acc_${spec.slug}-${a.key}`]))
   spec.build(b, acc, w)
@@ -91,7 +93,7 @@ export function buildApplicant(spec: ApplicantSpec): Applicant {
     protected: spec.protected,
     accounts,
     transactions,
-    generated: { seed, windowStart: w.start, windowEnd: w.end, generatorVersion: GENERATOR_VERSION },
+    generated: { seed, ...(spec.seedKey ? { seedKey: spec.seedKey } : {}), windowStart: w.start, windowEnd: w.end, generatorVersion: GENERATOR_VERSION },
   }
 }
 
@@ -360,15 +362,16 @@ const hollis: ApplicantSpec = {
 }
 
 const northline: ApplicantSpec = {
-  slug: "northline-auto-repair",
+  slug: "corvane-auto-repair",
+  seedKey: "northline-auto-repair",
   kind: "business",
-  displayName: "Northline Auto Repair",
+  displayName: "Corvane Auto Repair",
   story: "Independent garage. Steady weekly card deposits and revenue that has grown all year.",
   province: "ON",
   request: { product: "business_term_loan", amountCents: dollars(80_000), termMonths: 60, purpose: "Add a second service bay and hoist" },
   creditFile: { historyMonths: 164, bureauBand: "good", foreignReport: { available: false } },
   relationship: { institutionId: "northgate", memberSince: "2018-01-15", productsHeld: ["business_account", "chequing"] },
-  business: { legalName: "Northline Auto Repair Ltd.", registrationNo: "ON-CORP-2219034", structure: "corporation", industry: "Automotive repair", yearsOperating: 9, employees: 4 },
+  business: { legalName: "Corvane Auto Repair Ltd.", registrationNo: "ON-CORP-2219034", structure: "corporation", industry: "Automotive repair", yearsOperating: 9, employees: 4 },
   protected: {
     fullName: "Tomasz Kowal",
     dateOfBirth: "1979-12-03",
@@ -394,15 +397,16 @@ const northline: ApplicantSpec = {
 }
 
 const brightSmile: ApplicantSpec = {
-  slug: "bright-smile-dental",
+  slug: "halverly-dental",
+  seedKey: "bright-smile-dental",
   kind: "business",
-  displayName: "Bright Smile Dental",
+  displayName: "Halverly Dental",
   story: "Busy dental practice with high, stable revenue, financing a large equipment upgrade.",
   province: "AB",
   request: { product: "equipment_financing", amountCents: dollars(350_000), termMonths: 84, purpose: "3D imaging system and four operatory chairs" },
   creditFile: { historyMonths: 230, bureauBand: "excellent", foreignReport: { available: false } },
   relationship: { institutionId: "northgate", memberSince: "2014-09-02", productsHeld: ["business_account", "savings", "term_deposit", "chequing"] },
-  business: { legalName: "Bright Smile Dental Professional Corporation", registrationNo: "AB-PC-5530718", structure: "corporation", industry: "Dental practice", yearsOperating: 12, employees: 9 },
+  business: { legalName: "Halverly Dental Professional Corporation", registrationNo: "AB-PC-5530718", structure: "corporation", industry: "Dental practice", yearsOperating: 12, employees: 9 },
   protected: {
     fullName: "Dr. Helena Achterberg",
     dateOfBirth: "1977-03-08",
@@ -432,15 +436,16 @@ const brightSmile: ApplicantSpec = {
 }
 
 const cornerGrind: ApplicantSpec = {
-  slug: "corner-grind-cafe",
+  slug: "quillbean-cafe",
+  seedKey: "corner-grind-cafe",
   kind: "business",
-  displayName: "Corner Grind Café",
+  displayName: "Quillbean Café",
   story: "Neighbourhood café with thin margins and two recent bounced supplier payments.",
   province: "NS",
   request: { product: "business_line_of_credit", amountCents: dollars(25_000), purpose: "Cover slow months and espresso machine repairs" },
   creditFile: { historyMonths: 74, bureauBand: "fair", foreignReport: { available: false } },
   relationship: null,
-  business: { legalName: "Corner Grind Café Inc.", registrationNo: "NS-INC-3307741", structure: "corporation", industry: "Café and bakery", yearsOperating: 3, employees: 6 },
+  business: { legalName: "Quillbean Café Inc.", registrationNo: "NS-INC-3307741", structure: "corporation", industry: "Café and bakery", yearsOperating: 3, employees: 6 },
   protected: {
     fullName: "Jules Thibodeau",
     dateOfBirth: "1990-09-14",
@@ -479,15 +484,16 @@ const cornerGrind: ApplicantSpec = {
 }
 
 const lakeside: ApplicantSpec = {
-  slug: "lakeside-lodge",
+  slug: "larchmere-lodge",
+  seedKey: "lakeside-lodge",
   kind: "business",
-  displayName: "Lakeside Lodge",
+  displayName: "Larchmere Lodge",
   story: "Summer lodge. Revenue peaks June to August; winters are quiet.",
   province: "BC",
   request: { product: "seasonal_operating_line", amountCents: dollars(90_000), purpose: "Pre-season staffing, repairs and inventory" },
   creditFile: { historyMonths: 198, bureauBand: "good", foreignReport: { available: false } },
   relationship: { institutionId: "northgate", memberSince: "2011-05-01", productsHeld: ["business_account", "term_deposit", "savings"] },
-  business: { legalName: "Lakeside Lodge Ltd.", registrationNo: "BC-BC-0937215", structure: "corporation", industry: "Seasonal accommodation", yearsOperating: 15, employees: 5 },
+  business: { legalName: "Larchmere Lodge Ltd.", registrationNo: "BC-BC-0937215", structure: "corporation", industry: "Seasonal accommodation", yearsOperating: 15, employees: 5 },
   protected: {
     fullName: "Owen Ferreira",
     dateOfBirth: "1972-01-27",
@@ -528,15 +534,16 @@ const lakeside: ApplicantSpec = {
 export const MAIN_STREET_CASH_DAY = "2026-06-12"
 
 const mainStreet: ApplicantSpec = {
-  slug: "main-street-hardware",
+  slug: "fennick-hardware",
+  seedKey: "main-street-hardware",
   kind: "business",
-  displayName: "Main Street Hardware",
+  displayName: "Fennick Hardware",
   story: "Long-running hardware store that takes a lot of cash. One day's cash deposits topped $10,000.",
   province: "NB",
   request: { product: "business_line_of_credit", amountCents: dollars(40_000), purpose: "Spring inventory build" },
   creditFile: { historyMonths: 310, bureauBand: "good", foreignReport: { available: false } },
   relationship: { institutionId: "northgate", memberSince: "2009-02-10", productsHeld: ["business_account", "savings"] },
-  business: { legalName: "Main Street Hardware Ltd.", registrationNo: "NB-CORP-0612280", structure: "corporation", industry: "Hardware retail", yearsOperating: 22, employees: 7 },
+  business: { legalName: "Fennick Hardware Ltd.", registrationNo: "NB-CORP-0612280", structure: "corporation", industry: "Hardware retail", yearsOperating: 22, employees: 7 },
   protected: {
     fullName: "Gordon MacAulay",
     dateOfBirth: "1961-07-05",

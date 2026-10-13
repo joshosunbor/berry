@@ -41,27 +41,27 @@ const TABLE: Record<string, Record<Mode, Expect>> = {
     fintech: E("decline", 0, { reason: "RECENT_NSF" }),
     bank: E("decline", 0, { reason: "NSF_HISTORY" }),
   },
-  "northline-auto-repair": {
+  "corvane-auto-repair": {
     credit_union: E("approve", 80_000, { approver: "branch_manager" }),
     fintech: E("approve", 80_000),
     bank: E("approve", 80_000),
   },
-  "bright-smile-dental": {
+  "halverly-dental": {
     credit_union: E("approve", 350_000, { approver: "credit_committee" }),
     fintech: E("approve", 150_000, { reason: "PRODUCT_MAX" }),
     bank: E("approve", 350_000),
   },
-  "corner-grind-cafe": {
+  "quillbean-cafe": {
     credit_union: E("approve_with_conditions", 7_500, { reason: "RECENT_NSF_CAUTION" }),
     fintech: E("decline", 0, { reason: "RECENT_NSF" }),
     bank: E("decline", 0, { reason: "NSF_HISTORY" }),
   },
-  "lakeside-lodge": {
+  "larchmere-lodge": {
     credit_union: E("approve", 80_000, { approver: "branch_manager", reason: "PEAK_SURPLUS_LIMITS_LINE" }),
     fintech: E("decline", 0, { reason: "NEGATIVE_TYPICAL_MONTH" }),
     bank: E("decline", 0, { reason: "INCOME_TOO_VARIABLE" }),
   },
-  "main-street-hardware": {
+  "fennick-hardware": {
     credit_union: E("approve", 40_000, { approver: "lender" }),
     fintech: E("approve", 7_500),
     bank: E("approve", 40_000),
@@ -110,9 +110,9 @@ describe("cast outcomes", () => {
     if (mode === "credit_union" && d.outcome !== "decline") expect(d.approver).toBeDefined()
   })
 
-  it("flags only Main Street Hardware for FINTRAC review", () => {
+  it("flags only Fennick Hardware for FINTRAC review", () => {
     for (const slug of Object.keys(TABLE)) {
-      expect(decisions(slug).credit_union.flags.length, slug).toBe(slug === "main-street-hardware" ? 1 : 0)
+      expect(decisions(slug).credit_union.flags.length, slug).toBe(slug === "fennick-hardware" ? 1 : 0)
       expect(decisions(slug).bank.flags.length + decisions(slug).fintech.flags.length, slug).toBe(0)
     }
   })

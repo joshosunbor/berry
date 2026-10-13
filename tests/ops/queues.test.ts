@@ -28,7 +28,7 @@ describe("queues are fed only by real open items", () => {
   it("FINTRAC items are exactly the large cash events", () => {
     const expected = getCast().filter((c) => c.largeCash.length > 0).map((c) => `apl_${c.applicant.slug}`)
     expect(byQueue("fintrac_review").map((i) => i.subject.id)).toEqual(expected)
-    expect(expected).toEqual(["apl_main-street-hardware"])
+    expect(expected).toEqual(["apl_fennick-hardware"])
   })
 
   it("credit items are Northgate's approvals that need sign-off plus every referral", () => {
@@ -54,7 +54,7 @@ describe("queues are fed only by real open items", () => {
     expect(byQueue("collections")).toHaveLength(outreach.length)
     expect(byQueue("hardship")).toHaveLength(loans.flatMap((l) => l.events.filter((e) => e.type === "hardship_offered")).length)
     expect(byQueue("reconciliation")).toHaveLength(loans.flatMap((l) => l.breaks).length)
-    expect(byQueue("reconciliation").map((i) => i.title).sort()).toEqual(["Grace: timing difference", "Main Street Hardware: returned PAD not applied"])
+    expect(byQueue("reconciliation").map((i) => i.title).sort()).toEqual(["Fennick Hardware: returned PAD not applied", "Grace: timing difference"])
   })
 
   it("payee confirmation holds Grace's close match on an instant rail, released before funding", () => {

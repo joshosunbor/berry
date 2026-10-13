@@ -4,11 +4,11 @@ import { describe, expect, it } from "vitest"
 import { findLargeCashEvents, LCTR_THRESHOLD_CENTS, reviewLargeCash } from "@/lib/engine/fintrac"
 import { Applicant } from "@/lib/schemas"
 
-const mainStreet = Applicant.parse(JSON.parse(readFileSync(path.resolve(__dirname, "../../data/applicants/main-street-hardware.json"), "utf8")))
+const mainStreet = Applicant.parse(JSON.parse(readFileSync(path.resolve(__dirname, "../../data/applicants/fennick-hardware.json"), "utf8")))
 
-describe("FINTRAC large cash review (Main Street Hardware)", () => {
+describe("FINTRAC large cash review (Fennick Hardware)", () => {
   const [event] = findLargeCashEvents(mainStreet.transactions)
-  const review = reviewLargeCash(event, { reportingEntity: "Northgate Credit Union (fictional)", customerName: "Main Street Hardware Ltd." })
+  const review = reviewLargeCash(event, { reportingEntity: "Northgate Credit Union (fictional)", customerName: "Fennick Hardware Ltd." })
 
   it("shows both flagged deposits with a running 24-hour total", () => {
     expect(review.rule).toBe("24_hour")

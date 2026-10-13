@@ -28,8 +28,8 @@ describe("pre-funding gate", () => {
     expect(g.readyAt! >= docs.clearedAt!).toBe(true)
   })
 
-  it("holds Corner Grind at Northgate until 90 days after its last returned payment", () => {
-    const c = cast("corner-grind-cafe")
+  it("holds Quillbean at Northgate until 90 days after its last returned payment", () => {
+    const c = cast("quillbean-cafe")
     expect(c.decisions.credit_union.fundingConditions).toEqual([{ kind: "no_recent_returns", days: 90 }])
     const g = fundingGate({ ...base, decision: c.decisions.credit_union, lastNsfDate: c.features.lastNsfDate, signOffAt: "2026-10-01T11:15", verification: "2026-10-01T09:25" })
     const lastNsf = c.features.lastNsfDate!
@@ -53,7 +53,7 @@ describe("every funded loan cleared its gate first", () => {
       }
       expect(cleared.has(l.id), l.id).toBe(true)
     }
-    const cg = getLoanViews().find((l) => l.id === "loan_corner-grind-cafe-cu")!
+    const cg = getLoanViews().find((l) => l.id === "loan_quillbean-cafe-cu")!
     expect(cg.funding.initiatedAt > "2026-12-01").toBe(true)
     // Its schedule starts after funding, not before.
     expect(cg.schedule[0].date > cg.funding.fundedOn).toBe(true)

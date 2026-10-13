@@ -34,7 +34,7 @@ export const SCRIPTS: Record<string, Script> = {
   // One NSF, retried on payday, collected: cured.
   "loan_grace-cu": { returns: [{ n: 2, attempt: 1, code: "901" }] },
   // NSF, retry also NSF (outreach), then the account is closed: no more debits, charge-off at 120 days.
-  "loan_corner-grind-cafe-cu": {
+  "loan_quillbean-cafe-cu": {
     returns: [
       { n: 1, attempt: 1, code: "901" },
       { n: 1, attempt: 2, code: "901" },
@@ -70,6 +70,8 @@ export const NO_OPS_DECISIONS: OpsDecisions = { hardship: {}, signOff: {}, verif
 
 export interface BookInput {
   slug: string
+  /** The key random servicing outcomes come from: the applicant's original slug. */
+  seedKey: string
   name: string
   kind: "personal" | "business"
   accounts: Account[]
@@ -141,6 +143,7 @@ export function loanSetups(inputs: BookInput[], mode: Mode, config: ServicingCon
       baseReturnRate: baseReturnRate(a.features),
       script: SCRIPTS[id],
       hardshipDecision: ops.hardship[id],
+      rngKey: loanIdFor(a.seedKey, mode),
       gate: gate.checks,
       gateReadyAt: gate.readyAt,
     })

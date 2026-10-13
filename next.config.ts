@@ -35,7 +35,26 @@ const securityHeaders = [
  * already shared. Permanent (308). The browser carries any #fragment across,
  * so /methodology#regulatory-status lands on that tab of How it works.
  */
+/** Cast businesses renamed to clearly invented names: old slug → new slug. */
+export const RENAMED_SLUGS: Record<string, string> = {
+  "corner-grind-cafe": "quillbean-cafe",
+  "main-street-hardware": "fennick-hardware",
+  "bright-smile-dental": "halverly-dental",
+  "lakeside-lodge": "larchmere-lodge",
+  "northline-auto-repair": "corvane-auto-repair",
+}
+
+/** Every address an old slug could appear in, straight to its new home in one hop. Listed before the general redirects so they win. */
+const RENAMED_REDIRECTS = Object.entries(RENAMED_SLUGS).flatMap(([from, to]) => [
+  { source: `/applications/${from}`, destination: `/applications/${to}` },
+  { source: `/workbench/${from}`, destination: `/applications/${to}` },
+  { source: `/compare/${from}`, destination: `/applications/${to}?tab=compare` },
+  { source: `/loans/loan_${from}-:lender`, destination: `/loans/loan_${to}-:lender` },
+  { source: `/ops/loans/loan_${from}-:lender`, destination: `/loans/loan_${to}-:lender` },
+])
+
 export const LEGACY_REDIRECTS = [
+  ...RENAMED_REDIRECTS,
   { source: "/workbench", destination: "/applications" },
   { source: "/workbench/:id", destination: "/applications/:id" },
   { source: "/compare/:id", destination: "/applications/:id?tab=compare" },

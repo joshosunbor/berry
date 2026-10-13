@@ -4,7 +4,7 @@ import { decide, itemAt, overLimitRequest } from "@/lib/ops/view"
 import { SERVICING } from "@/lib/servicing/config"
 import { stressSeason } from "@/lib/servicing/stress"
 
-const LINES = { "hollis-family-farm": { peak: 29_012_03, interest: 816_07, util: 0.484, limit: 60_000_00 }, "lakeside-lodge": { peak: 37_049_36, interest: 607_14, util: 0.463, limit: 80_000_00 } }
+const LINES = { "hollis-family-farm": { peak: 29_012_03, interest: 816_07, util: 0.484, limit: 60_000_00 }, "larchmere-lodge": { peak: 37_049_36, interest: 607_14, util: 0.463, limit: 80_000_00 } }
 const run = (slug: string, dropPct: number) => {
   const a = getApplicant(slug)!
   return stressSeason({ decision: a.decisions.credit_union, features: a.features, kind: a.applicant.kind, agreementSignedOn: AGREEMENT_SIGNED_ON, plan: a.pad.credit_union!, dropPct })
@@ -67,8 +67,8 @@ describe("poor-harvest stress test", () => {
     expect(r.requestedLimitCents).toBe(115_000_00)
   })
 
-  it("Lakeside at 30%: the sweep falls short; the remainder is carried and the options are shown, none chosen", () => {
-    const r = run("lakeside-lodge", 30)
+  it("Larchmere at 30%: the sweep falls short; the remainder is carried and the options are shown, none chosen", () => {
+    const r = run("larchmere-lodge", 30)
     expect(r.stressed.sweepFullyRepays).toBe(false)
     expect(r.stressed.carriedCents).toBeGreaterThan(0)
     expect(r.stressed.sweepRepaidCents + r.stressed.carriedCents).toBe(r.stressed.peakDrawnCents)
@@ -82,7 +82,7 @@ describe("poor-harvest stress test", () => {
 
   it("only seasonal lines have a stress test", () => {
     expect(getStress("loan_hollis-family-farm-cu")).not.toBeNull()
-    expect(getStress("loan_lakeside-lodge-cu")).not.toBeNull()
+    expect(getStress("loan_larchmere-lodge-cu")).not.toBeNull()
     expect(getStress("loan_priya-cu")).toBeNull()
     expect(getStress("loan_hollis-family-farm-kite")).toBeNull()
   })

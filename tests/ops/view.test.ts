@@ -39,7 +39,7 @@ describe("the console at a point in time", () => {
   })
 
   it("large sign-offs wait for the committee and are breached on Oct 5", () => {
-    const s = itemAt(find("q_signoff-bright-smile-dental-cu"), "2026-10-05T09:00", [])
+    const s = itemAt(find("q_signoff-halverly-dental-cu"), "2026-10-05T09:00", [])
     expect(s.status).toBe("open")
     expect(s.sla).toBe("breached")
     expect(s.request?.escalations.map((e) => e.to)).toEqual(["branch_manager", "credit_committee"])
@@ -57,7 +57,7 @@ describe("the console at a point in time", () => {
 
 describe("acting in the console", () => {
   const T = "2026-10-01T10:00"
-  const item = find("q_signoff-bright-smile-dental-cu")
+  const item = find("q_signoff-halverly-dental-cu")
 
   it("the maker can't approve their own preparation, and the blocked attempt is recorded", () => {
     const fresh = find("q_payee-grace-kite")
@@ -97,7 +97,7 @@ describe("acting in the console", () => {
   })
 
   it("a request the simulated team prepared can be decided in the browser, checked against the server's trail", () => {
-    // Bright Smile's sign-off: prepared by an analyst on Oct 1, waiting for the committee.
+    // Halverly's sign-off: prepared by an analyst on Oct 1, waiting for the committee.
     const prep = item.steps.find((s) => s.action === "prepared")!
     const at = prep.end
     const req = itemAt(item, at, []).request!
@@ -139,7 +139,7 @@ describe("acting in the console", () => {
   })
 
   it("assignments, messages and auto-assign are audited", () => {
-    const v = find("q_ver-lakeside-lodge-business_registration")
+    const v = find("q_ver-larchmere-lodge-business_registration")
     const s = itemAt(v, "2026-10-01T09:00", [])
     const load = workload(items, states("2026-10-01T09:00"))
     const who = suggestOwner(v, load)!

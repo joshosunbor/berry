@@ -94,7 +94,7 @@ function aftFor(a: Applicant, d: Decision, mode: Mode, plan: PadPlan | null): Af
   const draws = plan?.draws
   if (draws && !draws.length) return { none: true, reason: "Nothing is drawn under the plan: the borrower's own cash covers the season, so nothing is paid out by AFT." }
   const lender = LENDER_AFT[mode]
-  const rng = new Rng(hashSeed(`acct:${a.slug}`))
+  const rng = new Rng(hashSeed(`acct:${a.generated.seedKey ?? a.slug}`))
   const institutionId = `0999${String(rng.int(1, 99_999)).padStart(5, "0")}`
   const account = String(rng.int(1_000_000, 9_999_999_999))
   // Business legal name, or a generic label: personal names stay off the page.
@@ -154,11 +154,11 @@ const ORDER = [
   "amara",
   "daniel",
   "sofia",
-  "northline-auto-repair",
-  "bright-smile-dental",
-  "corner-grind-cafe",
-  "lakeside-lodge",
-  "main-street-hardware",
+  "corvane-auto-repair",
+  "halverly-dental",
+  "quillbean-cafe",
+  "larchmere-lodge",
+  "fennick-hardware",
   "ellen",
   "grace",
   "quillfeather-plumbing",
@@ -203,7 +203,7 @@ const bookInputs = cast.map((c) => {
   const a = raw.find((x) => x.slug === c.applicant.slug)!
   const results = c.verification.checks.map((x) => x.result)
   const identity = results.includes("fail") ? ("failed" as const) : results.includes("needs_review") ? ("needs_review" as const) : ("passed" as const)
-  return { slug: a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification, identity }
+  return { slug: a.slug, seedKey: a.generated.seedKey ?? a.slug, name: a.displayName, kind: a.kind, accounts: a.accounts, features: c.features, decisions: c.decisions, pad: c.pad, accountVerification: c.accountVerification, identity }
 })
 
 const viewsOf = (bs: Record<Mode, BookResult>): LoanView[] =>

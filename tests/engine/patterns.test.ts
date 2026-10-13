@@ -76,11 +76,11 @@ describe("income patterns on the cast", () => {
     ["sofia", "salaried"],
     ["amara", "gig"],
     ["hollis-family-farm", "seasonal"],
-    ["lakeside-lodge", "seasonal"],
-    ["northline-auto-repair", "steady_business"],
-    ["bright-smile-dental", "steady_business"],
-    ["corner-grind-cafe", "steady_business"],
-    ["main-street-hardware", "steady_business"],
+    ["larchmere-lodge", "seasonal"],
+    ["corvane-auto-repair", "steady_business"],
+    ["halverly-dental", "steady_business"],
+    ["quillbean-cafe", "steady_business"],
+    ["fennick-hardware", "steady_business"],
     ["ellen", "pension"],
     ["grace", "salaried"],
     ["quillfeather-plumbing", "invoice"],
@@ -91,6 +91,6 @@ describe("income patterns on the cast", () => {
 
   it("finds harvest and summer peaks", () => {
     expect(castPattern("hollis-family-farm").peakMonths).toEqual([9, 10, 11])
-    expect(castPattern("lakeside-lodge").peakMonths).toEqual([6, 7, 8])
+    expect(castPattern("larchmere-lodge").peakMonths).toEqual([6, 7, 8])
   })
 })

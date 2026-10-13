@@ -82,7 +82,7 @@ test("unknown applicant is a 404", async ({ page }) => {
 })
 
 test("no page makes regulatory claims", async ({ page }) => {
-  const pages = ["/", "/demo", "/applications", "/applications/hollis-family-farm", "/applications/main-street-hardware", "/applications/hollis-family-farm?tab=compare", "/how-it-works", "/how-it-works?tab=test-results", "/how-it-works?tab=canadian-rules", "/borrower/apply", "/borrower/consents", "/operations", "/operations/dashboard", "/loans", "/loans/loan_corner-grind-cafe-cu"]
+  const pages = ["/", "/demo", "/applications", "/applications/hollis-family-farm", "/applications/fennick-hardware", "/applications/hollis-family-farm?tab=compare", "/how-it-works", "/how-it-works?tab=test-results", "/how-it-works?tab=canadian-rules", "/borrower/apply", "/borrower/consents", "/operations", "/operations/dashboard", "/loans", "/loans/loan_quillbean-cafe-cu"]
   for (const p of pages) {
     await page.goto(p)
     const text = await page.locator("body").innerText()
@@ -90,9 +90,9 @@ test("no page makes regulatory claims", async ({ page }) => {
   }
 })
 
-test("Main Street Hardware's file shows the FINTRAC review and the AFT file", async ({ page }) => {
+test("Fennick Hardware's file shows the FINTRAC review and the AFT file", async ({ page }) => {
   const errors = watchConsole(page)
-  await page.goto("/applications/main-street-hardware")
+  await page.goto("/applications/fennick-hardware")
   await page.getByRole("tab", { name: "FINTRAC review" }).click()
   const panel = page.getByRole("tabpanel", { name: "FINTRAC review" })
   await expect(panel).toContainText("24-hour rule")
@@ -190,8 +190,8 @@ test("loan servicing: fast-forward to a charge-off, ledger in balance, return co
   const errors = watchConsole(page)
   await page.goto("/loans")
   await page.getByRole("radio", { name: /\+12 m/ }).click()
-  await page.getByRole("link", { name: "Corner Grind Café" }).click()
-  await expect(page).toHaveURL(/\/loans\/loan_corner-grind-cafe-cu$/)
+  await page.getByRole("link", { name: "Quillbean Café" }).click()
+  await expect(page).toHaveURL(/\/loans\/loan_quillbean-cafe-cu$/)
   await expect(page.getByText("Charged off").first()).toBeVisible()
   await expect(page.getByText(/Charged off at 120 days past due/).first()).toBeVisible()
   await expect(page.getByRole("status").filter({ hasText: "Debits" })).toContainText("✓")
@@ -445,7 +445,7 @@ test("poor-harvest stress: shortfall shown, over-limit request goes through make
   await expect(panel).toContainText("Approved · checker: S. Lindqvist")
   await page.getByRole("button", { name: /Reset my/ }).click()
 
-  await page.goto("/loans/loan_lakeside-lodge-cu")
+  await page.goto("/loans/loan_larchmere-lodge-cu")
   const lake = page.getByRole("region", { name: /Poor-harvest stress test/ })
   await lake.getByRole("switch").click()
   await expect(lake).toContainText("The sweep leaves")

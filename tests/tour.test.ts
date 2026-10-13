@@ -4,7 +4,7 @@ import { APP_SECTIONS } from "@/components/site/app-nav"
 import { TOUR_APPLICANT, TOUR_STEPS } from "@/content/tour"
 import { getApplicant, getLoanView, getOpsItems } from "@/lib/data"
 import { formatCents } from "@/lib/money"
-import { LEGACY_REDIRECTS } from "@/next.config"
+import { LEGACY_REDIRECTS, RENAMED_SLUGS } from "@/next.config"
 
 const step = (title: string) => TOUR_STEPS.find((s) => s.title.startsWith(title))!
 const view = getApplicant(TOUR_APPLICANT)!
@@ -65,6 +65,13 @@ describe("navigation", () => {
     const sources = LEGACY_REDIRECTS.map((r) => r.source)
     for (const old of ["/workbench", "/workbench/:id", "/compare/:id", "/apply", "/consents", "/ops", "/ops/dashboard", "/ops/loans", "/ops/loans/:id", "/methodology", "/accuracy"]) {
       expect(sources, old).toContain(old)
+    }
+  })
+
+  it("every renamed business's old slug redirects to its new one", () => {
+    for (const [from, to] of Object.entries(RENAMED_SLUGS)) {
+      expect(LEGACY_REDIRECTS.find((r) => r.source === `/applications/${from}`)?.destination, from).toBe(`/applications/${to}`)
+      expect(LEGACY_REDIRECTS.find((r) => r.source === `/loans/loan_${from}-:lender`)?.destination, from).toBe(`/loans/loan_${to}-:lender`)
     }
   })
 

@@ -63,6 +63,8 @@ export interface LoanSetup {
   hardshipDecision?: HardshipDecision
   /** Pre-funding checks, each cleared before funding started. */
   gate: GateCheck[]
+  /** Key for the seeded random returns; defaults to the loan id (kept stable when an applicant is renamed). */
+  rngKey?: string
   /** When the last pre-funding check cleared. */
   gateReadyAt: string
 }
@@ -203,7 +205,7 @@ function simulateLoan(s: LoanSetup, horizon: string, config: ServicingConfig, po
   const dpdTimeline: DpdSegment[] = []
   const borrowerFees: { date: string; fee: BorrowerFee }[] = []
   const cures: { failedOn: string; curedOn: string | null }[] = []
-  const rng = new Rng(hashSeed(`servicing:${s.id}`))
+  const rng = new Rng(hashSeed(`servicing:${s.rngKey ?? s.id}`))
   let order = 0
   const post = (date: string, apply: (l: Ledger) => void) => postings.push({ date, order: order++, loanId: s.id, apply })
 

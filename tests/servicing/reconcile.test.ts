@@ -40,13 +40,13 @@ describe("reconciliation", () => {
 
   it("the returned PAD: at the bank, missing from the loan, with an action to apply it", () => {
     const b = reconcile(cu, "2027-01-31").breaks.find((x) => x.kind === "returned_pad_not_applied")!
-    expect(b.loanId).toBe("loan_main-street-hardware-cu")
+    expect(b.loanId).toBe("loan_fennick-hardware-cu")
     expect(b.bank!.amountCents).toBeLessThan(0)
     expect(b.bank!.description).toMatch(/901/)
     expect(b.ledger).toBeUndefined()
     expect(b.action).toMatch(/Apply the return to the loan/)
     // The ledger still shows that debit as collected: no return was ever posted for it.
-    expect(cu.ledger.forLoan("loan_main-street-hardware-cu").some((e) => e.type.startsWith("return"))).toBe(false)
+    expect(cu.ledger.forLoan("loan_fennick-hardware-cu").some((e) => e.type.startsWith("return"))).toBe(false)
     expectBalanced(cu.ledger)
   })
 

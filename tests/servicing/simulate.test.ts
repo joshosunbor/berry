@@ -70,8 +70,8 @@ describe("servicing simulator: the three loan books", () => {
     expectBalanced(books.credit_union.ledger)
   })
 
-  it("Corner Grind: NSF, failed retry (outreach), account closed before settlement, charged off at 120 days", () => {
-    const c = loan("loan_corner-grind-cafe-cu")
+  it("Quillbean: NSF, failed retry (outreach), account closed before settlement, charged off at 120 days", () => {
+    const c = loan("loan_quillbean-cafe-cu")
     const types = c.events.map((e) => e.type)
     expect(types).toContain("outreach_task")
     expect(types).toContain("banking_details_requested")
@@ -219,7 +219,7 @@ describe("servicing simulator: the three loan books", () => {
 })
 
 describe("seasonal operating lines are drawn, not disbursed", () => {
-  it.each(["loan_hollis-family-farm-cu", "loan_lakeside-lodge-cu"])("%s: one draw entry per draw, interest only on what's drawn, never over the limit", (id) => {
+  it.each(["loan_hollis-family-farm-cu", "loan_larchmere-lodge-cu"])("%s: one draw entry per draw, interest only on what's drawn, never over the limit", (id) => {
     const l = loan(id)
     const entries = books.credit_union.ledger.forLoan(id)
     expect(entries.some((e) => e.type === "disbursement")).toBe(false)
@@ -259,9 +259,9 @@ describe("seasonal operating lines are drawn, not disbursed", () => {
     expectBalanced(books.credit_union.ledger)
   })
 
-  it("Lakeside's line is repaid in full after its summer peak", () => {
-    expect(loan("loan_lakeside-lodge-cu").statusTimeline.at(-1)!.status).toBe("paid_off")
-    expect(books.credit_union.ledger.outstanding("loan_lakeside-lodge-cu")).toBe(0)
+  it("Larchmere's line is repaid in full after its summer peak", () => {
+    expect(loan("loan_larchmere-lodge-cu").statusTimeline.at(-1)!.status).toBe("paid_off")
+    expect(books.credit_union.ledger.outstanding("loan_larchmere-lodge-cu")).toBe(0)
     expectBalanced(books.credit_union.ledger)
   })
 
@@ -276,11 +276,11 @@ describe("seasonal operating lines are drawn, not disbursed", () => {
 
 describe("charge-off is configurable", () => {
   it("charges off earlier when the configured days past due is lower", () => {
-    const setup = loan("loan_corner-grind-cafe-cu").setup
+    const setup = loan("loan_quillbean-cafe-cu").setup
     const book = simulateBook("northgate", "credit_union", [setup], "2027-10-06", { ...SERVICING, chargeOffDaysPastDue: 60 })
     const c = book.loans[0]
     expect(c.events.find((e) => e.type === "charged_off")!.text).toMatch(/60 days past due/)
-    expect(c.chargedOffOn! < loan("loan_corner-grind-cafe-cu").chargedOffOn!).toBe(true)
+    expect(c.chargedOffOn! < loan("loan_quillbean-cafe-cu").chargedOffOn!).toBe(true)
     expectBalanced(book.ledger)
   })
 })

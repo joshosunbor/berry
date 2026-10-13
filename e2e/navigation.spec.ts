@@ -36,6 +36,22 @@ test("every old URL redirects permanently to its new home", async ({ request }) 
   expect((await request.get("/workbench/nobody")).status()).toBe(404)
 })
 
+test("renamed businesses: every old address redirects permanently, in one hop", async ({ request }) => {
+  const cases: [string, string][] = [
+    ["/applications/corner-grind-cafe", "/applications/quillbean-cafe"],
+    ["/workbench/main-street-hardware", "/applications/fennick-hardware"],
+    ["/compare/bright-smile-dental", "/applications/halverly-dental?tab=compare"],
+    ["/loans/loan_lakeside-lodge-cu", "/loans/loan_larchmere-lodge-cu"],
+    ["/ops/loans/loan_northline-auto-repair-kite", "/loans/loan_corvane-auto-repair-kite"],
+  ]
+  for (const [from, to] of cases) {
+    const res = await request.get(from, { maxRedirects: 0 })
+    expect(res.status(), from).toBe(308)
+    expect(res.headers().location, from).toBe(to)
+    expect((await request.get(to)).status(), to).toBe(200)
+  }
+})
+
 test("an old anchor lands on the How it works tab that holds it", async ({ page }) => {
   await page.goto("/methodology#regulatory-status")
   await expect(page).toHaveURL(/\/how-it-works#regulatory-status$/)

@@ -36,11 +36,11 @@ describe("simulated identity and business checks", () => {
 
   it("sends exactly the two planted cases to review", () => {
     const review = cast.filter((a) => summarize(verifyApplicant(a)).outcome === "needs_review").map((a) => a.slug).sort()
-    expect(review).toEqual(["corner-grind-cafe", "lakeside-lodge"])
+    expect(review).toEqual(["larchmere-lodge", "quillbean-cafe"])
   })
 
   it("flags a watch-list near-match for a person to clear, not an automatic fail", () => {
-    const sanctions = verifyApplicant(bySlug("corner-grind-cafe")).find((c) => c.kind === "sanctions_screening")!
+    const sanctions = verifyApplicant(bySlug("quillbean-cafe")).find((c) => c.kind === "sanctions_screening")!
     expect(sanctions.result).toBe("needs_review")
     expect(sanctions.reasons.join(" ")).toMatch(/fictional sanctions list/)
     expect(sanctions.automated).toBe(false)
@@ -55,7 +55,7 @@ describe("simulated identity and business checks", () => {
   })
 
   it("flags an overdue annual filing", () => {
-    const reg = verifyApplicant(bySlug("lakeside-lodge")).find((c) => c.kind === "business_registration")!
+    const reg = verifyApplicant(bySlug("larchmere-lodge")).find((c) => c.kind === "business_registration")!
     expect(reg.result).toBe("needs_review")
     expect(reg.reasons[0]).toMatch(/17 months ago/)
   })
@@ -63,14 +63,14 @@ describe("simulated identity and business checks", () => {
   it("runs business checks only for businesses, and ownership checks only for non-sole-proprietors", () => {
     expect(verifyApplicant(bySlug("priya")).some((c) => c.kind === "business_registration")).toBe(false)
     expect(verifyApplicant(bySlug("quillfeather-plumbing")).some((c) => c.kind === "beneficial_ownership")).toBe(false)
-    expect(verifyApplicant(bySlug("northline-auto-repair")).some((c) => c.kind === "beneficial_ownership")).toBe(true)
+    expect(verifyApplicant(bySlug("corvane-auto-repair")).some((c) => c.kind === "beneficial_ownership")).toBe(true)
   })
 
   it("clears automated cases in seconds and manual reviews take hours", () => {
     const auto = summarize(verifyApplicant(bySlug("priya")))
     expect(auto.automated).toBe(true)
     expect(auto.timeToVerifyMs).toBeLessThan(5_000)
-    expect(summarize(verifyApplicant(bySlug("lakeside-lodge"))).timeToVerifyMs).toBeGreaterThan(3_600_000)
+    expect(summarize(verifyApplicant(bySlug("larchmere-lodge"))).timeToVerifyMs).toBeGreaterThan(3_600_000)
   })
 
   it("uses a watch list that is explicitly fictional", () => {
