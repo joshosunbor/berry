@@ -165,6 +165,15 @@ describe("Northgate (credit union): relationship, structure and authority", () =
     // Strong members need 1.15x: $90,000 / 1.15 = $78,260 → $75,000
     expect(cu({ ...over, relationship: member(10, 4) }, { product: "seasonal_operating_line", amountCents: 10_000_000 }, "business").limitCents).toBe(7_500_000)
   })
+  it("offers a seasonal operating line only to businesses; a personal applicant gets the product asked for", () => {
+    const over = { income: { type: "seasonal" as const, peakMonths: [6, 7, 8], peakShare: 0.6 }, annualNetCents: 2_000_000, monthly: seasonalMonths([6, 7, 8], 600_000, 50_000) }
+    const personal = cu(over, { product: "personal_loan", amountCents: 800_000, termMonths: 36 }, "personal")
+    expect(personal.product).toBe("personal_loan")
+    expect(personal.structure === null || personal.structure === "term").toBe(true)
+    const business = cu(over, { product: "business_term_loan", amountCents: 3_000_000, termMonths: 36 }, "business")
+    expect(business.product).toBe("seasonal_operating_line")
+  })
+
   it("explains a seasonal decline by peak-season surplus, never as a $0 payment", () => {
     const over = { income: { type: "seasonal" as const, peakMonths: [9, 10, 11], peakShare: 0.65 }, annualNetCents: 100_000, monthly: seasonalMonths([9, 10, 11], 200_000, -40_000) }
     const r = cu(over, { product: "seasonal_operating_line", amountCents: 6_000_000 }, "business")

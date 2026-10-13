@@ -79,7 +79,8 @@ export function decideCreditUnion(ctx: ModeContext): ModeResult {
   }
 
   const result =
-    product === "seasonal_operating_line" || f.income.type === "seasonal"
+    // A seasonal operating line is a business product: only businesses are moved onto it.
+    product === "seasonal_operating_line" || (f.income.type === "seasonal" && input.kind === "business")
       ? seasonal(ctx, t, strong, reasons)
       : f.creditHistoryMonths < t.thinFileHistoryMonths && !f.foreignReportAvailable
         ? thinFile(ctx, t, reasons)
