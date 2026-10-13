@@ -4,14 +4,15 @@ import { describe, expect, it } from "vitest"
 
 /*
  * Berry must never claim regulatory standing (CLAUDE.md §4A copy rules):
- * no "compliant", "certified" or "approved by" in anything a visitor can
- * read. Scans user-facing source (pages, components, every module that
+ * no "compliant", "certified" or "approved by", no promised outcomes
+ * ("guaranteed", "would have repaid") and no claim of real customers or
+ * pilots in anything a visitor can read. Scans user-facing source (pages, components, every module that
  * produces customer or lender text) and the JSON content pages render.
  * Code comments are stripped first, so a comment explaining this rule is
  * fine. e2e/smoke.spec.ts checks the rendered pages too.
  */
 
-const BANNED = /\b(compliant|compliance-certified|certified|approved by|trusted by|our partners?)\b|(?<!\bnot )\baccredited\b/i
+const BANNED = /\b(compliant|compliance-certified|certified|approved by|guaranteed|would have repaid|trusted by|our partners?|our (customers|clients)|customers include|(live|paid|current) pilots?|pilot (customers|clients)|in production (at|with))\b|(?<!\bnot )\baccredited\b/i
 const root = path.resolve(__dirname, "..")
 
 const USER_FACING = [
@@ -72,6 +73,15 @@ describe("user-facing copy makes no regulatory claims", () => {
     expect(BANNED.test("Berry is accredited under the framework")).toBe(true)
     expect(BANNED.test("Berry is not accredited")).toBe(false)
     expect(BANNED.test("Built with our partners")).toBe(true)
+    // Promised outcomes, and real customers or pilots.
+    expect(BANNED.test("Approval is guaranteed")).toBe(true)
+    expect(BANNED.test("borrowers who would have repaid")).toBe(true)
+    expect(BANNED.test("who could likely have repaid")).toBe(false)
+    expect(BANNED.test("Credit Union Deposit Guarantee Corporation")).toBe(false)
+    expect(BANNED.test("Used by our customers")).toBe(true)
+    expect(BANNED.test("Three live pilots with credit unions")).toBe(true)
+    expect(BANNED.test("In production at a credit union")).toBe(true)
+    expect(BANNED.test("This is how I'd run a pilot with a lender.")).toBe(false)
   })
 
   it("covers the landing page and site chrome", () => {

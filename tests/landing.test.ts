@@ -149,6 +149,26 @@ describe("landing copy follows the hybrid-concept brief", () => {
   it("the pilot is a concept, and How it's built lists only what's true today", () => {
     expect(CONTENT.PILOT.label).toBe("Concept")
     expect(CONTENT.PILOT.disclaimer).toBe("Berry is a portfolio project. This is how I'd run a pilot with a lender.")
+    expect(CONTENT.PILOT.title).toEqual(["Find the good borrowers you're turning away.", "First findings in a week."])
+    expect(CONTENT.PILOT.lead).toBe("A 30-day shadow pilot on one product. No borrower is affected, and you finish with a go or no-go.")
+    expect(CONTENT.PILOT.steps.map((s) => [s.when, s.t])).toEqual([
+      ["Week 1", "Load your rules"],
+      ["Week 2", "Find the missed approvals"],
+      ["Week 3", "Run in the shadow"],
+      ["Week 4", "Decide with evidence"],
+    ])
+    expect(CONTENT.PILOT.steps.map((s) => s.d)).toEqual([
+      "Your limits, thresholds and approval authority, plus last year's declined and referred applications for one product.",
+      "Re-run those files on cash flow. See who your policy declined that could likely have repaid: seasonal businesses, gig workers, newcomers with thin files.",
+      "Berry decides alongside your team on new applications. Your staff still make every decision; nothing reaches the borrower.",
+      "A short readout: approvals you're missing, the risk behind them, time saved per file, and a go or no-go for a live trial.",
+    ])
+    expect(CONTENT.FAQ.items.find((f) => f.q === "How long does setup take?")!.a).toBe(
+      "First findings within a week of receiving past applications; a shadow pilot on one product would take about 30 days.",
+    )
+    // The old nine-week, phased timeline is gone everywhere on the landing page.
+    const all = JSON.stringify(CONTENT)
+    for (const old of [/\b(eight|nine) weeks\b/i, /\b9 weeks\b/i, /\bweeks? [5-9]\b/i, /\bweeks? \d[–-]\d\b/i, /\bphased?\b/i]) expect(all).not.toMatch(old)
     expect(CONTENT.BUILT.items).toEqual([
       "Synthetic data only",
       "No personal data sent to AI",
@@ -193,6 +213,12 @@ describe("landing copy follows the hybrid-concept brief", () => {
   })
 
   it("speaks in product voice: no implied customers", () => {
-    for (const phrase of [/\byour (team|lenders|policy|account|compliance)\b/i, /\bwe['’]re onboarding\b/i, /\blenders ask us\b/i]) expect(text).not.toMatch(phrase)
+    // The pilot speaks to a prospective lender ("your team", "your policy"), so it may do that only
+    // while it's labelled a concept from a portfolio project. Everything else stays in product voice.
+    expect(CONTENT.PILOT.label).toBe("Concept")
+    expect(CONTENT.PILOT.disclaimer).toMatch(/^Berry is a portfolio project\./)
+    const { PILOT, ...rest } = CONTENT
+    for (const phrase of [/\byour (team|lenders|policy|account|compliance)\b/i, /\bwe['’]re onboarding\b/i, /\blenders ask us\b/i]) expect(JSON.stringify(rest)).not.toMatch(phrase)
+    for (const phrase of [/\bwe['’]re onboarding\b/i, /\blenders ask us\b/i]) expect(JSON.stringify(PILOT)).not.toMatch(phrase)
   })
 })

@@ -163,15 +163,16 @@ export const BUILT = {
 } as const
 
 export const PILOT = {
-  title: "How a pilot would work",
+  /** Two sentences; the second starts its own line. */
+  title: ["Find the good borrowers you're turning away.", "First findings in a week."],
   label: "Concept",
   disclaimer: "Berry is a portfolio project. This is how I'd run a pilot with a lender.",
-  lead: "A pilot would start with one product, such as a seasonal line or newcomer credit, before a wider rollout.",
+  lead: "A 30-day shadow pilot on one product. No borrower is affected, and you finish with a go or no-go.",
   steps: [
-    { when: "Week 1", t: "Load the policy", d: "I'd set the lender’s limits, thresholds and approval authority in Berry." },
-    { when: "Weeks 2–3", t: "Back-test", d: "Past applications would run through Berry, and its answers would be compared with what the lender’s team decided." },
-    { when: "Weeks 4–8", t: "Go live on one product", d: "Real applications could follow, with the lender’s staff signing off every decision." },
-    { when: "Week 9", t: "Review the results", d: "Approvals, decision time and early repayment would be measured against the lender’s baseline." },
+    { when: "Week 1", t: "Load your rules", d: "Your limits, thresholds and approval authority, plus last year's declined and referred applications for one product." },
+    { when: "Week 2", t: "Find the missed approvals", d: "Re-run those files on cash flow. See who your policy declined that could likely have repaid: seasonal businesses, gig workers, newcomers with thin files." },
+    { when: "Week 3", t: "Run in the shadow", d: "Berry decides alongside your team on new applications. Your staff still make every decision; nothing reaches the borrower." },
+    { when: "Week 4", t: "Decide with evidence", d: "A short readout: approvals you're missing, the risk behind them, time saved per file, and a go or no-go for a live trial." },
   ],
 } as const
 
@@ -180,7 +181,7 @@ export const FAQ = {
   items: [
     { q: "Who makes the final decision?", a: "The lender's team. Berry recommends a decision with its reasons, and the lender's approval authority decides who signs off. Overrides are allowed, logged and checked by a second person." },
     { q: "Can a lender use its own lending policy?", a: "In Berry, limits, thresholds, rates and approval tiers are settings, not code. Every change is versioned, and its effect on past applications can be previewed before it goes live." },
-    { q: "How long does setup take?", a: "A pilot on one product would take about eight weeks, from loading the policy to reviewing results. A wider rollout would depend on the lender’s core banking system." },
+    { q: "How long does setup take?", a: "First findings within a week of receiving past applications; a shadow pilot on one product would take about 30 days." },
     { q: "What does a declined borrower see?", a: "A plain-language reason, what would change the answer, and a way to ask for a review. The lender's team sees the same decision in lender terms." },
     { q: "Is Berry a real product?", a: "Berry is a working portfolio project by Joshua Osunbor. The rules, ledger and operations console are real and tested; the lenders and borrowers are fictional, and all data is synthetic." },
     { q: "Does AI make credit decisions?", a: "No. Limits, prices and approvals come from tested rules. AI only drafts the credit memo, and every figure in it is checked against the engine." },

@@ -411,11 +411,17 @@ test("landing: comparison toggle, lifecycle and tour tabs, ops snapshot, concept
   await expect(ops).toContainText("Real-Time Rail (simulated)")
 
   // Concept pilot, no commercial copy, and every in-page link has a target.
-  await expect(page.getByRole("region", { name: "How a pilot would work" })).toContainText("Berry is a portfolio project.")
+  const pilot = page.getByRole("region", { name: "Find the good borrowers you're turning away. First findings in a week." })
+  await expect(pilot).toContainText("Berry is a portfolio project.")
+  await expect(pilot).toContainText("A 30-day shadow pilot on one product.")
+  await expect(pilot.getByRole("listitem")).toHaveCount(4)
   for (const t of ["Book a demo", "Pricing", "SOC 2"]) await expect(main.getByText(t)).toHaveCount(0)
   for (const href of await page.locator('a[href^="#"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")!))) await expect(page.locator(href)).toHaveCount(1)
   for (const area of [page.getByRole("region", { name: "About this project" }), page.getByRole("contentinfo")]) {
-    await expect(area.getByRole("link", { name: /LinkedIn/ })).toHaveAttribute("href", "https://www.linkedin.com/in/joshua-osunbor-06b26bb5/")
+    const linkedin = area.getByRole("link", { name: /LinkedIn/ })
+    await expect(linkedin).toHaveAttribute("href", "https://www.linkedin.com/in/joshua-osunbor-06b26bb5/")
+    await expect(linkedin).toHaveAttribute("target", "_blank")
+    await expect(linkedin).toHaveAttribute("rel", "noopener noreferrer")
   }
   await expect(page.getByRole("link", { name: /GitHub/ }).first()).toHaveAttribute("href", "https://github.com/joshosunbor/berry")
   expect(errors).toEqual([])

@@ -245,13 +245,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How a pilot would work */}
+      {/* Shadow pilot (a concept) */}
       <section id="pilot" aria-labelledby="pilot-h" className={cn(section, "scroll-mt-[60px] pt-32")}>
         <Pill tone="info" label className="mb-3">
           {PILOT.label}
         </Pill>
-        <h2 id="pilot-h" className={cn(h2, "max-w-[18ch]")}>
-          {PILOT.title}
+        <h2 id="pilot-h" className={cn(h2, "text-balance")}>
+          <span className="block">{PILOT.title[0]}</span> <span className="block">{PILOT.title[1]}</span>
         </h2>
         <p className="mt-3.5 max-w-[56ch] font-medium text-fg">{PILOT.disclaimer}</p>
         <p className="mt-2 max-w-[56ch] text-fg-2">{PILOT.lead}</p>
