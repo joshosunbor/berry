@@ -84,6 +84,15 @@ describe("regulatory status panel", () => {
     expect(byId("equifax-gccf").note).toMatch(/not re-confirmed/i)
   })
 
+  it("names real banks and bureaus only in source lines, never in a row's title or summary", () => {
+    for (const id of ["nova-scotiabank", "nova-transunion"]) {
+      const r = byId(id)
+      expect(`${r.name} ${r.summary}`, id).not.toMatch(/Scotiabank|TransUnion|Nova Credit/)
+    }
+    expect(byId("nova-scotiabank").source.name).toMatch(/Scotiabank/)
+    expect(byId("nova-transunion").source.name + byId("nova-transunion").source.url).toMatch(/transunion/i)
+  })
+
   it("cites the confirmed Consumer-Driven Banking Act facts", () => {
     expect(byId("cdb-act").effective).toMatch(/March 26, 2026/)
     expect(byId("cdb-consent-duration").summary).toMatch(/12 months/)

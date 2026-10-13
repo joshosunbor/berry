@@ -280,29 +280,29 @@
     },
     {
       "id": "nova-scotiabank",
-      "name": "Foreign credit history at Scotiabank (with Nova Credit)",
+      "name": "Foreign credit history in a bank newcomer program (example)",
       "status": "Live",
-      "summary": "Scotiabank's newcomer program can use credit history from a listed set of countries, subject to change.",
+      "summary": "One large Canadian bank's newcomer program can use credit history from a listed set of countries, through a foreign credit data provider; the list is subject to change.",
       "source": {
         "name": "Scotiabank, StartRight",
         "url": "https://startright.scotiabank.com/ca/en/higher-credit-limit-for-newcomers-to-canada.html",
         "kind": "company"
       },
-      "asOf": "2026-10-10",
+      "asOf": "2026-10-12",
       "berryUse": "Context only",
       "inBerry": "Context for why Berry's credit-building path fills the gap foreign reports don't cover."
     },
     {
       "id": "nova-transunion",
-      "name": "TransUnion and Nova Credit in Canada",
+      "name": "A credit bureau partnership for foreign credit history (2018)",
       "status": "Illustrative",
-      "summary": "A 2018 partnership to bring foreign credit history to Canadian lenders.",
+      "summary": "A 2018 partnership between a Canadian credit bureau and a foreign credit data provider to bring foreign credit history to Canadian lenders.",
       "source": {
-        "name": "BIIA, copy of the 2018 announcement",
+        "name": "BIIA, copy of TransUnion and Nova Credit's 2018 announcement",
         "url": "https://www.biia.com/transunion-partners-with-nova-credit-to-improve-financial-access-for-new-canadians",
         "kind": "third-party copy"
       },
-      "asOf": "2026-10-10",
+      "asOf": "2026-10-12",
       "berryUse": "Context only",
       "inBerry": "Not relied on.",
       "note": "Not reconfirmed as active; source is a third-party copy of the announcement."
