@@ -8,6 +8,27 @@ import { Applicant, Decision, toEngineInput } from "@/lib/schemas"
 
 const load = (slug: string) => toEngineInput(Applicant.parse(JSON.parse(readFileSync(path.resolve(__dirname, `../../data/applicants/${slug}.json`), "utf8"))))
 
+describe("foreign credit reports", () => {
+  const planted = (id: string) => toEngineInput(Applicant.parse(JSON.parse(readFileSync(path.resolve(__dirname, `../../data/planted/planted-${id}.json`), "utf8"))))
+  const withReport = (band: "fair" | "good" | "excellent") => {
+    const p = planted("p21")
+    return { ...p, creditFile: { ...p.creditFile, foreignReport: { available: true, band } } }
+  }
+
+  it("count as credit history only when the report is good or better", () => {
+    expect(decide(withReport("good"), "bank").outcome).not.toBe("decline")
+    const fair = decide(withReport("fair"), "bank")
+    expect(fair.outcome).toBe("decline")
+    expect(fair.reasons.map((r) => r.code)).toContain("SHORT_CREDIT_HISTORY")
+  })
+
+  it("the 'what it ignores' panel says how report availability can track nationality", async () => {
+    const { FOREIGN_REPORT_NOTE } = await import("@/lib/feature-display")
+    expect(FOREIGN_REPORT_NOTE).toMatch(/country/i)
+    expect(FOREIGN_REPORT_NOTE).toMatch(/never the country/i)
+  })
+})
+
 describe("decide", () => {
   it("is deterministic", () => {
     const input = load("hollis-family-farm")

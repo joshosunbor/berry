@@ -53,6 +53,14 @@ export const IGNORED = [
   "Postal code and province",
 ]
 
+/**
+ * Shown with IGNORED: the one input that can track nationality. Foreign
+ * credit report programs cover only some countries, so whether a report
+ * exists depends on where someone has lived.
+ */
+export const FOREIGN_REPORT_NOTE =
+  "One input can track nationality: a foreign credit report. Programs cover only some countries, so whether a report exists depends on where someone has lived. Berry uses only the report's rating (good or better counts as credit history), never the country."
+
 /** Key facts for the applicant file's left column. */
 export function keyFacts(f: Features): { label: string; value: string }[] {
   return [

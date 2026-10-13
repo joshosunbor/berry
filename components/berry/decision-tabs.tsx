@@ -16,7 +16,7 @@ import { useMode } from "@/components/berry/mode-context"
 import { Card } from "@/components/ui/card"
 import { tabClass, tabListClass, useTabs } from "@/components/ui/tabs"
 import type { Features } from "@/lib/engine/features"
-import { displayInput, IGNORED } from "@/lib/feature-display"
+import { displayInput, FOREIGN_REPORT_NOTE, IGNORED } from "@/lib/feature-display"
 import { RECOMMENDATION_LABELS } from "@/lib/labels"
 import { MODE_META, type Mode } from "@/lib/modes"
 import type { Decision } from "@/lib/schemas"
@@ -130,6 +130,7 @@ export function DecisionTabs({ decisions, features, data, compare }: { decisions
                 <li key={i}>{i}</li>
               ))}
             </ul>
+            <p className="mt-3 text-sm text-fg-2">{FOREIGN_REPORT_NOTE}</p>
             <p className="mt-4 text-xs text-fg-3">
               A test shuffles these across every applicant and checks that no decision changes. Large cash deposits are flagged for FINTRAC review but
               are never a credit factor.

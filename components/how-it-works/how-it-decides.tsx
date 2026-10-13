@@ -5,7 +5,7 @@ import { PATTERN_RULES } from "@/lib/engine/patterns"
 import { REVOLVING_ASSESSMENT_RATE } from "@/lib/engine/payment"
 import { ForeignReportToggle } from "@/components/berry/foreign-report-toggle"
 import { getCast, getForeignReportDemo } from "@/lib/data"
-import { IGNORED } from "@/lib/feature-display"
+import { FOREIGN_REPORT_NOTE, IGNORED } from "@/lib/feature-display"
 import { MODES, MODE_META } from "@/lib/modes"
 import { formatCents } from "@/lib/money"
 import { REGULATORY_STATUS } from "@/lib/regulatory/status"
@@ -130,6 +130,7 @@ export function HowItDecides() {
               <li key={i}>{i}</li>
             ))}
           </ul>
+          <p>{FOREIGN_REPORT_NOTE}</p>
           <p>
             A test hands the engine every applicant with these fields shuffled and checks that no decision changes; it was checked by planting a bias and
             watching the test fail. A large cash deposit is flagged for FINTRAC review but is never a credit factor, and a test proves the decision is the

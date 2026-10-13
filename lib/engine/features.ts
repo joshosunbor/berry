@@ -44,6 +44,7 @@ export interface Features {
   /** Change in amount owed on shared cards over the window. */
   creditBalanceChangeCents: number | null
   creditHistoryMonths: number
+  /** An imported foreign credit report rated good or better: it stands in for Canadian credit history (threshold illustrative). */
   foreignReportAvailable: boolean
   relationship: {
     member: boolean
@@ -76,7 +77,7 @@ export const FEATURE_LABELS: Record<Exclude<keyof Features, "asOf" | "monthly" |
   creditUtilization: "Credit card balances vs limits",
   creditBalanceChangeCents: "Change in card balances",
   creditHistoryMonths: "Months of Canadian credit history",
-  foreignReportAvailable: "Foreign credit report available",
+  foreignReportAvailable: "Foreign credit report rated good or better",
 }
 
 const NSF_CODE = "901"
@@ -125,7 +126,8 @@ export function computeFeatures(input: EngineInput, view: LedgerView = buildLedg
     creditUtilization: limits > 0 ? round2(sum(credit.map((c) => c.owedEndCents)) / limits) : null,
     creditBalanceChangeCents: credit.length ? sum(credit.map((c) => c.owedEndCents - c.owedStartCents)) : null,
     creditHistoryMonths: input.creditFile.historyMonths,
-    foreignReportAvailable: input.creditFile.foreignReport.available,
+    // Only the report's rating is used, never which country it came from.
+    foreignReportAvailable: input.creditFile.foreignReport.available && (input.creditFile.foreignReport.band === "good" || input.creditFile.foreignReport.band === "excellent"),
     relationship: {
       member: rel !== null,
       tenureYears: rel ? round2((Date.parse(`${asOf}T00:00:00Z`) - Date.parse(`${rel.memberSince}T00:00:00Z`)) / (365.25 * 86_400_000)) : 0,
