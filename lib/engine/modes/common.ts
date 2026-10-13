@@ -1,10 +1,27 @@
 import type { InstitutionConfig, ProductTerms, ProductType, Structure } from "@/lib/schemas"
 import { debtServiceCoverage, type Features } from "../features"
-import { amortizedPaymentCents, interestOnlyCents, maxPrincipalCents, revolvingAssessedPaymentCents, REVOLVING_ASSESSMENT_RATE, roundDownCents } from "../payment"
+import { amortizedPaymentCents, interestOnlyCents, maxPrincipalCents, revolvingAssessedPaymentCents, roundDownCents } from "../payment"
 import type { ModeResult } from "../types"
 
 export const REVOLVING = new Set<ProductType>(["line_of_credit", "credit_card", "starter_credit", "business_line_of_credit"])
 export const TERM = new Set<ProductType>(["personal_loan", "business_term_loan", "equipment_financing"])
+
+/** The lender's sizing settings, from its config: how revolving credit is assessed and how limits round. */
+export interface LendingPolicy {
+  revolvingRate: number
+  stepUnder10k: number
+  stepUnder50k: number
+  stepAbove: number
+}
+
+export function lendingPolicy(config: InstitutionConfig): LendingPolicy {
+  const t = config.thresholds
+  const need = (k: string) => {
+    if (typeof t[k] !== "number") throw new Error(`${config.id}: missing threshold ${k}`)
+    return t[k]
+  }
+  return { revolvingRate: need("revolvingAssessmentRate"), stepUnder10k: need("limitStepUnder10kCents"), stepUnder50k: need("limitStepUnder50kCents"), stepAbove: need("limitStepAboveCents") }
+}
 
 export function productTerms(config: InstitutionConfig, product: ProductType): ProductTerms | null {
   const t = config.products.find((p) => p.product === product)
@@ -27,29 +44,29 @@ export function structureFor(product: ProductType): Structure {
 }
 
 /** Monthly payment used for coverage, by structure. */
-export function assessedPayment(structure: Structure, limitCents: number, aprBps: number, termMonths: number | null): number {
+export function assessedPayment(p: LendingPolicy, structure: Structure, limitCents: number, aprBps: number, termMonths: number | null): number {
   if (structure === "term") return amortizedPaymentCents(limitCents, aprBps, termMonths ?? 12)
   if (structure === "seasonal_operating") return interestOnlyCents(limitCents, aprBps)
-  return revolvingAssessedPaymentCents(limitCents)
+  return revolvingAssessedPaymentCents(limitCents, p.revolvingRate)
 }
 
 /** Largest amount whose assessed payment still meets `minDscr`, given `netCents` of monthly net cash flow. */
-export function maxAffordableCents(netCents: number, f: Features, minDscr: number, structure: Structure, aprBps: number, termMonths: number | null): number {
+export function maxAffordableCents(p: LendingPolicy, netCents: number, f: Features, minDscr: number, structure: Structure, aprBps: number, termMonths: number | null): number {
   const maxPayment = Math.floor((netCents + f.existingDebtMonthlyCents) / minDscr - f.existingDebtMonthlyCents)
   if (maxPayment <= 0) return 0
   if (structure === "term") return maxPrincipalCents(maxPayment, aprBps, termMonths ?? 12)
-  return Math.floor(maxPayment / REVOLVING_ASSESSMENT_RATE)
+  return Math.floor(maxPayment / p.revolvingRate)
 }
 
 export function coverageAt(netCents: number, f: Features, paymentCents: number): number {
   return debtServiceCoverage({ avgMonthlyNetCents: netCents, existingDebtMonthlyCents: f.existingDebtMonthlyCents }, paymentCents)
 }
 
-/** Limits are offered in round amounts: $500 steps under $10k, $1,000 to $50k, $5,000 above. */
-export function roundLimit(cents: number): number {
-  if (cents < 1_000_000) return roundDownCents(cents, 50_000)
-  if (cents < 5_000_000) return roundDownCents(cents, 100_000)
-  return roundDownCents(cents, 500_000)
+/** Limits are offered in round amounts, in the lender's steps (by default $500 under $10k, $1,000 to $50k, $5,000 above). */
+export function roundLimit(p: LendingPolicy, cents: number): number {
+  if (cents < 1_000_000) return roundDownCents(cents, p.stepUnder10k)
+  if (cents < 5_000_000) return roundDownCents(cents, p.stepUnder50k)
+  return roundDownCents(cents, p.stepAbove)
 }
 
 export function decline(product: ProductType, reasons: ModeResult["reasons"], inputsUsed: string[], extra: Partial<ModeResult> = {}): ModeResult {

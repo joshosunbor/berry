@@ -92,7 +92,11 @@
     "businessRevolvingToMedianNet": 2,
     "maxRevolvingPaymentShareOfMedianNet": 0.5,
     "thinFileMaxCents": 100000,
-    "thinFileHistoryMonths": 12
+    "thinFileHistoryMonths": 12,
+    "revolvingAssessmentRate": 0.03,
+    "limitStepUnder10kCents": 50000,
+    "limitStepUnder50kCents": 100000,
+    "limitStepAboveCents": 500000
   },
   "recovery": {
     "maxRetries": 1,

@@ -94,7 +94,11 @@
     "maxIncomeCv": 0.35,
     "minDscr": 1.25,
     "maxNsf12m": 1,
-    "maxCreditUtilization": 0.9
+    "maxCreditUtilization": 0.9,
+    "revolvingAssessmentRate": 0.03,
+    "limitStepUnder10kCents": 50000,
+    "limitStepUnder50kCents": 100000,
+    "limitStepAboveCents": 500000
   },
   "documentChecklist": [
     "Government-issued photo ID",
@@ -111,5 +115,10 @@
     "outreachAfterFailures": 2,
     "hardshipSignalThreshold": 3
   },
-  "illustrative": true
+  "illustrative": true,
+  "referIncomeTypes": [
+    "gig",
+    "invoice",
+    "irregular"
+  ]
 }

@@ -4,7 +4,7 @@ import type { Features } from "../features"
 import { round2, sum } from "../stats"
 import type { ReasonHit } from "../reasons"
 import type { ModeContext, ModeResult } from "../types"
-import { assessedPayment, chooseTerm, commonStrengths, concerns, coverageAt, decline, maxAffordableCents, productTerms, REVOLVING, roundLimit, structureFor } from "./common"
+import { assessedPayment, chooseTerm, lendingPolicy, commonStrengths, concerns, coverageAt, decline, maxAffordableCents, productTerms, REVOLVING, roundLimit, structureFor } from "./common"
 
 /*
  * Northgate Credit Union: relationship-based. Weighs membership depth,
@@ -25,6 +25,11 @@ const Thresholds = z.object({
   nonMemberRevolvingMaxCents: z.number().int(),
   thinFileMemberMaxCents: z.number().int(),
   thinFileHistoryMonths: z.number(),
+  relationshipTenureWeight: z.number(),
+  relationshipProductsWeight: z.number(),
+  relationshipDepositsWeight: z.number(),
+  relationshipFullProducts: z.number().int().positive(),
+  seasonalTermMonths: z.number().int().positive(),
 })
 type Thresholds = z.infer<typeof Thresholds>
 
@@ -47,16 +52,20 @@ export const CREDIT_UNION_INPUTS = [
 ]
 
 /**
- * Relationship depth, 0–1: tenure (50%), products held (30%) and deposit
- * balance relative to a month of spending (20%). Zero for non-members.
+ * Relationship depth, 0–1: tenure, products held and deposit balance
+ * relative to a month of spending, weighted as the config says (by default
+ * 50%, 30% and 20%). Zero for non-members.
  */
-export function relationshipScore(f: Features, fullTenureYears: number): number {
+export function relationshipScore(
+  f: Features,
+  t: Pick<Thresholds, "fullTenureYears" | "relationshipTenureWeight" | "relationshipProductsWeight" | "relationshipDepositsWeight" | "relationshipFullProducts">,
+): number {
   const r = f.relationship
   if (!r.member) return 0
-  const tenure = Math.min(r.tenureYears / fullTenureYears, 1)
-  const products = Math.min(r.productsHeld / 3, 1)
+  const tenure = Math.min(r.tenureYears / t.fullTenureYears, 1)
+  const products = Math.min(r.productsHeld / t.relationshipFullProducts, 1)
   const deposits = f.avgMonthlyOutflowCents > 0 ? Math.min(r.avgBalanceAtNorthgateCents / f.avgMonthlyOutflowCents, 1) : 0
-  return round2(0.5 * tenure + 0.3 * products + 0.2 * deposits)
+  return round2(t.relationshipTenureWeight * tenure + t.relationshipProductsWeight * products + t.relationshipDepositsWeight * deposits)
 }
 
 export function decideCreditUnion(ctx: ModeContext): ModeResult {
@@ -71,7 +80,7 @@ export function decideCreditUnion(ctx: ModeContext): ModeResult {
   }
   if (failed.length) return decline(product, [...failed, ...concerns(f)], CREDIT_UNION_INPUTS)
 
-  const score = relationshipScore(f, t.fullTenureYears)
+  const score = relationshipScore(f, t)
   const strong = score >= t.strongRelationship
   const reasons: ReasonHit[] = commonStrengths(f)
   if (f.relationship.member && f.relationship.tenureYears >= 1) {
@@ -95,13 +104,14 @@ export function decideCreditUnion(ctx: ModeContext): ModeResult {
 
 /** Seasonal income: assess the year, size the line to what peak season can repay. */
 function seasonal({ input, features: f, config }: ModeContext, t: Thresholds, strong: boolean, reasons: ReasonHit[]): ModeResult {
+  const p = lendingPolicy(config)
   const product = "seasonal_operating_line"
   const terms = productTerms(config, product)!
   const peak = f.income.peakMonths
   const peakSurplus = sum(f.monthly.filter((m) => peak.includes(Number(m.month.slice(5, 7)))).map((m) => m.netCents))
   const minCoverage = strong ? t.relationshipSeasonalPeakCoverage : t.seasonalPeakCoverage
   const requested = Math.min(input.request.amountCents, terms.maxCents)
-  const sized = roundLimit(Math.min(requested, Math.floor(peakSurplus / minCoverage)))
+  const sized = roundLimit(p, Math.min(requested, Math.floor(peakSurplus / minCoverage)))
 
   if (sized < terms.minCents || f.annualNetCents <= 0) {
     return decline(product, [{ code: "SEASONAL_SURPLUS_TOO_LOW", weight: 1, evidence: { peakMonths: peak.join(","), peakSurplusCents: Math.max(0, peakSurplus), coverage: round2(peakSurplus / requested), minCoverage, minCents: terms.minCents } }], CREDIT_UNION_INPUTS)
@@ -122,8 +132,8 @@ function seasonal({ input, features: f, config }: ModeContext, t: Thresholds, st
     structure: "seasonal_operating",
     limitCents: sized,
     aprBps: terms.aprBps,
-    termMonths: 12,
-    paymentCents: assessedPayment("seasonal_operating", sized, terms.aprBps, 12),
+    termMonths: t.seasonalTermMonths,
+    paymentCents: assessedPayment(p, "seasonal_operating", sized, terms.aprBps, t.seasonalTermMonths),
     reasons,
     conditions: [`Interest-only monthly payments; line repaid to zero by the end of ${repayBy} each year from peak-season sales`, "Annual review of the line"],
     inputsUsed: CREDIT_UNION_INPUTS,
@@ -132,6 +142,7 @@ function seasonal({ input, features: f, config }: ModeContext, t: Thresholds, st
 
 /** Thin credit file: members with steady pay can start with a small limit. */
 function thinFile({ input, features: f, config }: ModeContext, t: Thresholds, reasons: ReasonHit[]): ModeResult {
+  const p = lendingPolicy(config)
   const product = input.request.product
   const terms = productTerms(config, product)!
   const eligible = f.relationship.member && f.income.type === "salaried" && f.avgMonthlyNetCents > 0
@@ -139,12 +150,12 @@ function thinFile({ input, features: f, config }: ModeContext, t: Thresholds, re
     return decline(product, [{ code: "SHORT_CREDIT_HISTORY", weight: 1, evidence: { months: f.creditHistoryMonths, min: t.thinFileHistoryMonths } }], CREDIT_UNION_INPUTS)
   }
   const structure = structureFor(product)
-  const capped = roundLimit(Math.min(input.request.amountCents, terms.maxCents, t.thinFileMemberMaxCents))
+  const capped = roundLimit(p, Math.min(input.request.amountCents, terms.maxCents, t.thinFileMemberMaxCents))
   // The same coverage test as any other approval: shrink to what the member can afford.
-  const affordable = roundLimit(maxAffordableCents(f.avgMonthlyNetCents, f, t.minDscr, structure, terms.aprBps, null))
+  const affordable = roundLimit(p, maxAffordableCents(p, f.avgMonthlyNetCents, f, t.minDscr, structure, terms.aprBps, null))
   const limit = Math.min(capped, affordable)
   if (limit < terms.minCents) {
-    const payment = assessedPayment(structure, terms.minCents, terms.aprBps, null)
+    const payment = assessedPayment(p, structure, terms.minCents, terms.aprBps, null)
     return decline(product, [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr: coverageAt(f.avgMonthlyNetCents, f, payment), minDscr: t.minDscr, paymentCents: payment, maxAffordableCents: 0 } }], CREDIT_UNION_INPUTS)
   }
   if (limit < capped) reasons.push({ code: "LIMIT_REDUCED", weight: 0.85, evidence: { limitCents: limit, requestedCents: input.request.amountCents, basis: "debt service coverage" } })
@@ -159,13 +170,14 @@ function thinFile({ input, features: f, config }: ModeContext, t: Thresholds, re
     limitCents: limit,
     aprBps: terms.aprBps,
     termMonths: null,
-    paymentCents: assessedPayment(structure, limit, terms.aprBps, null),
+    paymentCents: assessedPayment(p, structure, limit, terms.aprBps, null),
     reasons,
     inputsUsed: CREDIT_UNION_INPUTS,
   }
 }
 
 function standard({ input, features: f, config }: ModeContext, t: Thresholds, strong: boolean, reasons: ReasonHit[]): ModeResult {
+  const p = lendingPolicy(config)
   const product = input.request.product
   const terms = productTerms(config, product)!
   const structure = structureFor(product)
@@ -188,8 +200,8 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
   }
 
   // Coverage: standard minimum, or the lower relationship minimum for strong members.
-  let limit = roundLimit(cap)
-  let payment = assessedPayment(structure, limit, terms.aprBps, termMonths)
+  let limit = roundLimit(p, cap)
+  let payment = assessedPayment(p, structure, limit, terms.aprBps, termMonths)
   let dscr = coverageAt(f.avgMonthlyNetCents, f, payment)
   let relationshipException = false
   if (dscr < t.minDscr) {
@@ -198,12 +210,12 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
       reasons.push({ code: "RELATIONSHIP_SUPPORTS_APPROVAL", weight: 0.8, evidence: { dscr, minDscr: t.relationshipMinDscr, standardMinDscr: t.minDscr } })
     } else {
       const minDscr = strong ? t.relationshipMinDscr : t.minDscr
-      const affordable = roundLimit(maxAffordableCents(f.avgMonthlyNetCents, f, minDscr, structure, terms.aprBps, termMonths))
+      const affordable = roundLimit(p, maxAffordableCents(p, f.avgMonthlyNetCents, f, minDscr, structure, terms.aprBps, termMonths))
       if (affordable < terms.minCents) {
         return decline(product, [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr, minDscr, paymentCents: payment, maxAffordableCents: 0 } }], CREDIT_UNION_INPUTS)
       }
       limit = Math.min(limit, affordable)
-      payment = assessedPayment(structure, limit, terms.aprBps, termMonths)
+      payment = assessedPayment(p, structure, limit, terms.aprBps, termMonths)
       dscr = coverageAt(f.avgMonthlyNetCents, f, payment)
     }
   }

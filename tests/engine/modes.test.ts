@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest"
+import { CONFIGS } from "@/lib/engine/config"
 import { decideBank } from "@/lib/engine/modes/bank"
 import { decideCreditUnion, relationshipScore } from "@/lib/engine/modes/creditUnion"
 import { decideFintech } from "@/lib/engine/modes/fintech"
@@ -6,6 +7,8 @@ import { explain } from "@/lib/engine/explain"
 import { ctx, features } from "./fixtures"
 
 const codes = (r: { reasons: { code: string }[] }) => r.reasons.map((x) => x.code)
+// Northgate's configured weights, with five years for full tenure credit.
+const T5 = { ...(CONFIGS.credit_union.thresholds as unknown as Parameters<typeof relationshipScore>[1]), fullTenureYears: 5 }
 const member = (tenureYears: number, productsHeld = 3) => ({ member: true, tenureYears, productsHeld, avgBalanceAtNorthgateCents: 300_000, existingCreditCents: 0 })
 const seasonalMonths = (peak: number[], peakNet: number, otherNet: number) =>
   Array.from({ length: 12 }, (_, i) => ({ month: `2026-${String(i + 1).padStart(2, "0")}`, incomeCents: 0, inflowCents: 0, outflowCents: 0, netCents: peak.includes(i + 1) ? peakNet : otherNet, lowBalanceCents: 100_000, closingBalanceCents: 100_000 }))
@@ -103,9 +106,9 @@ describe("Northgate (credit union): relationship, structure and authority", () =
   const cu = (over: Parameters<typeof features>[0] = {}, request = {}, kind: "personal" | "business" = "personal") => decideCreditUnion(ctx("credit_union", features(over), request, kind))
 
   it("scores relationship depth from tenure, products and deposits", () => {
-    expect(relationshipScore(features(), 5)).toBe(0)
-    expect(relationshipScore(features({ relationship: member(10, 4) }), 5)).toBe(1)
-    expect(relationshipScore(features({ relationship: { member: true, tenureYears: 2.5, productsHeld: 0, avgBalanceAtNorthgateCents: 0, existingCreditCents: 0 } }), 5)).toBe(0.25)
+    expect(relationshipScore(features(), T5)).toBe(0)
+    expect(relationshipScore(features({ relationship: member(10, 4) }), T5)).toBe(1)
+    expect(relationshipScore(features({ relationship: { member: true, tenureYears: 2.5, productsHeld: 0, avgBalanceAtNorthgateCents: 0, existingCreditCents: 0 } }), T5)).toBe(0.25)
   })
   it("declines above 2 NSFs in 90 days, allows 2 with conditions and a smaller limit", () => {
     expect(cu({ nsf90: 3 }).outcome).toBe("decline")

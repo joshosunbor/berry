@@ -23,6 +23,15 @@ const LABELS: Record<string, { label: string; format: (v: number) => string }> =
   businessRevolvingToMedianNet: { label: "Business revolving limit, in median months of net cash flow", format: (v) => `${v}x` },
   maxRevolvingPaymentShareOfMedianNet: { label: "Assessed payment may use at most this share of the median month", format: (v) => `${Math.round(v * 100)}%` },
   thinFileMaxCents: { label: "Starter cap for thin files without a foreign report", format: (v) => formatCents(v, { whole: true }) },
+  revolvingAssessmentRate: { label: "Revolving credit assessed at this share of the limit each month", format: (v) => `${Math.round(v * 1000) / 10}%` },
+  limitStepUnder10kCents: { label: "Limits under $10,000 round down to steps of", format: (v) => formatCents(v, { whole: true }) },
+  limitStepUnder50kCents: { label: "Limits under $50,000 round down to steps of", format: (v) => formatCents(v, { whole: true }) },
+  limitStepAboveCents: { label: "Larger limits round down to steps of", format: (v) => formatCents(v, { whole: true }) },
+  relationshipTenureWeight: { label: "Relationship score: weight on years of membership", format: (v) => `${Math.round(v * 100)}%` },
+  relationshipProductsWeight: { label: "Relationship score: weight on products held", format: (v) => `${Math.round(v * 100)}%` },
+  relationshipDepositsWeight: { label: "Relationship score: weight on deposits", format: (v) => `${Math.round(v * 100)}%` },
+  relationshipFullProducts: { label: "Products held for full product credit", format: (v) => `${v}` },
+  seasonalTermMonths: { label: "Seasonal operating line term", format: (v) => `${v} months` },
 }
 
 export function thresholdLabel(key: string, value: number): { label: string; value: string } {

@@ -1,7 +1,7 @@
 import { z } from "zod"
 import type { ReasonHit } from "../reasons"
 import type { ModeContext, ModeResult } from "../types"
-import { assessedPayment, chooseTerm, commonStrengths, concerns, coverageAt, decline, maxAffordableCents, productTerms, roundLimit, structureFor } from "./common"
+import { assessedPayment, chooseTerm, lendingPolicy, commonStrengths, concerns, coverageAt, decline, maxAffordableCents, productTerms, roundLimit, structureFor } from "./common"
 
 /*
  * Aspen Bank: policy-driven. Fixed thresholds checked in order; the first
@@ -40,6 +40,7 @@ const STANDARD_CONDITIONS = {
 }
 
 export function decideBank({ input, features: f, config }: ModeContext): ModeResult {
+  const p = lendingPolicy(config)
   const t = Thresholds.parse(config.thresholds)
   const product = input.request.product
 
@@ -63,7 +64,7 @@ export function decideBank({ input, features: f, config }: ModeContext): ModeRes
   const termMonths = chooseTerm(terms, input.request.termMonths)
   const kind = input.kind
 
-  if (f.income.type === "gig" || f.income.type === "invoice" || f.income.type === "irregular") {
+  if ((config.referIncomeTypes ?? []).includes(f.income.type)) {
     return {
       outcome: "refer",
       product,
@@ -88,16 +89,16 @@ export function decideBank({ input, features: f, config }: ModeContext): ModeRes
   }
 
   let limit = requested
-  let payment = assessedPayment(structure, limit, terms.aprBps, termMonths)
+  let payment = assessedPayment(p, structure, limit, terms.aprBps, termMonths)
   let dscr = coverageAt(f.avgMonthlyNetCents, f, payment)
   if (dscr < t.minDscr) {
-    const affordable = roundLimit(maxAffordableCents(f.avgMonthlyNetCents, f, t.minDscr, structure, terms.aprBps, termMonths))
+    const affordable = roundLimit(p, maxAffordableCents(p, f.avgMonthlyNetCents, f, t.minDscr, structure, terms.aprBps, termMonths))
     if (affordable < terms.minCents) {
       return decline(product, [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr, minDscr: t.minDscr, paymentCents: payment, maxAffordableCents: 0 } }], BANK_INPUTS)
     }
     reasons.push({ code: "LIMIT_REDUCED", weight: 0.8, evidence: { limitCents: affordable, requestedCents: input.request.amountCents, basis: `minimum coverage ${t.minDscr}x` } })
     limit = affordable
-    payment = assessedPayment(structure, limit, terms.aprBps, termMonths)
+    payment = assessedPayment(p, structure, limit, terms.aprBps, termMonths)
     dscr = coverageAt(f.avgMonthlyNetCents, f, payment)
   }
   if (input.request.amountCents > terms.maxCents && limit === terms.maxCents) {

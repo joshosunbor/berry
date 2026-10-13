@@ -17,7 +17,7 @@ describe("payment maths", () => {
     expect(amortizedPaymentCents(p + 100, 999, 36)).toBeGreaterThan(50_000)
   })
   it("assesses revolving credit at 3% of the limit and interest-only lines monthly", () => {
-    expect(revolvingAssessedPaymentCents(300_000)).toBe(9_000)
+    expect(revolvingAssessedPaymentCents(300_000, 0.03)).toBe(9_000)
     expect(interestOnlyCents(6_000_000, 795)).toBe(39_750)
   })
   it("rounds down to whole steps, never below zero", () => {

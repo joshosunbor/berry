@@ -2,7 +2,6 @@ import Link from "next/link"
 import { Illustrative } from "@/components/berry/illustrative"
 import { CONFIGS } from "@/lib/engine/config"
 import { PATTERN_RULES } from "@/lib/engine/patterns"
-import { REVOLVING_ASSESSMENT_RATE } from "@/lib/engine/payment"
 import { ForeignReportToggle } from "@/components/berry/foreign-report-toggle"
 import { getCast, getForeignReportDemo } from "@/lib/data"
 import { FOREIGN_REPORT_NOTE, IGNORED } from "@/lib/feature-display"
@@ -69,7 +68,7 @@ export function HowItDecides() {
           <p>
             Income is classed as salaried, pension, gig, seasonal (the best three consecutive months bring at least {PATTERN_RULES.seasonalPeakShare * 100}%
             of a year&apos;s income), invoice-based (mostly direct client payments, a few a month), steady business, or irregular. Revolving credit is
-            assessed at {REVOLVING_ASSESSMENT_RATE * 100}% of the limit per month <Illustrative />.
+            assessed at {CONFIGS.credit_union.thresholds.revolvingAssessmentRate * 100}% of the limit per month (a setting in each lender&apos;s policy) <Illustrative />.
           </p>
         </Section>
 

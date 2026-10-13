@@ -1,9 +1,8 @@
 import { z } from "zod"
 import type { ProductType } from "@/lib/schemas"
-import { REVOLVING_ASSESSMENT_RATE } from "../payment"
 import type { ReasonHit } from "../reasons"
 import type { ModeContext, ModeResult } from "../types"
-import { assessedPayment, chooseTerm, commonStrengths, concerns, coverageAt, decline, maxAffordableCents, productTerms, roundLimit, structureFor } from "./common"
+import { assessedPayment, chooseTerm, lendingPolicy, commonStrengths, concerns, coverageAt, decline, maxAffordableCents, productTerms, roundLimit, structureFor } from "./common"
 
 /*
  * Kite: instant and automated. Cash flow only, no relationship factors.
@@ -35,6 +34,7 @@ export const FINTECH_INPUTS = [
 ]
 
 export function decideFintech({ input, features: f, config }: ModeContext): ModeResult {
+  const p = lendingPolicy(config)
   const t = Thresholds.parse(config.thresholds)
   const requestedProduct = input.request.product
   const reject = (hit: ReasonHit) => decline(requestedProduct, [hit], FINTECH_INPUTS)
@@ -72,14 +72,14 @@ export function decideFintech({ input, features: f, config }: ModeContext): Mode
   if (structure !== "term") {
     const multiple = input.kind === "business" ? t.businessRevolvingToMedianNet : t.personalRevolvingToMedianNet
     const byMedian = Math.floor(median * multiple)
-    const byPayment = Math.floor((median * t.maxRevolvingPaymentShareOfMedianNet) / REVOLVING_ASSESSMENT_RATE)
+    const byPayment = Math.floor((median * t.maxRevolvingPaymentShareOfMedianNet) / p.revolvingRate)
     const sized = Math.min(byMedian, byPayment)
     if (sized < cap) {
       cap = sized
       basis = `${multiple}x median monthly net cash flow`
     }
   } else {
-    const affordable = maxAffordableCents(median, f, t.minDscrOnMedian, structure, terms.aprBps, termMonths)
+    const affordable = maxAffordableCents(p, median, f, t.minDscrOnMedian, structure, terms.aprBps, termMonths)
     if (affordable < cap) {
       cap = affordable
       basis = `minimum coverage ${t.minDscrOnMedian}x on the median month`
@@ -93,9 +93,9 @@ export function decideFintech({ input, features: f, config }: ModeContext): Mode
     basis = "thin-file starter cap"
   }
 
-  const limit = roundLimit(cap)
+  const limit = roundLimit(p, cap)
   if (limit < terms.minCents) {
-    const payment = assessedPayment(structure, Math.min(requested, terms.maxCents), terms.aprBps, termMonths)
+    const payment = assessedPayment(p, structure, Math.min(requested, terms.maxCents), terms.aprBps, termMonths)
     return decline(
       requestedProduct,
       [{ code: "LOW_COVERAGE", weight: 1, evidence: { dscr: coverageAt(median, f, payment), minDscr: t.minDscrOnMedian, paymentCents: payment, maxAffordableCents: 0 } }],
@@ -110,7 +110,7 @@ export function decideFintech({ input, features: f, config }: ModeContext): Mode
   if (requested > terms.maxCents && limit === terms.maxCents) {
     reasons.push({ code: "PRODUCT_MAX", weight: 0.8, evidence: { requestedCents: requested, maxCents: terms.maxCents } })
   }
-  const payment = assessedPayment(structure, limit, terms.aprBps, termMonths)
+  const payment = assessedPayment(p, structure, limit, terms.aprBps, termMonths)
   reasons.push({ code: "STRONG_COVERAGE", weight: 0.65, evidence: { dscr: coverageAt(median, f, payment), minDscr: t.minDscrOnMedian, paymentCents: payment } })
 
   return {

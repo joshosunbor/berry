@@ -3,9 +3,6 @@
  * points, compounded monthly.
  */
 
-/** Revolving credit is assessed at this share of the limit per month (illustrative stress payment). */
-export const REVOLVING_ASSESSMENT_RATE = 0.03
-
 const monthlyRate = (aprBps: number) => aprBps / 10_000 / 12
 
 /** Level monthly payment that repays `principal` over `termMonths`, rounded up to the cent. */
@@ -24,9 +21,9 @@ export function maxPrincipalCents(paymentCents: number, aprBps: number, termMont
   return Math.floor((paymentCents * (1 - Math.pow(1 + r, -termMonths))) / r)
 }
 
-/** Monthly payment used to assess a revolving limit. */
-export function revolvingAssessedPaymentCents(limitCents: number): number {
-  return Math.ceil(limitCents * REVOLVING_ASSESSMENT_RATE)
+/** Monthly payment used to assess a revolving limit: `rate` (the lender's revolvingAssessmentRate) of the limit. */
+export function revolvingAssessedPaymentCents(limitCents: number, rate: number): number {
+  return Math.ceil(limitCents * rate)
 }
 
 /** Interest-only monthly cost of a fully drawn line. */

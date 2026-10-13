@@ -51,6 +51,8 @@ export const InstitutionConfig = z.object({
   authorityTiers: z.array(AuthorityTier).optional(),
   /** Bank mode documentation checklist. */
   documentChecklist: z.array(z.string()).optional(),
+  /** Bank mode: income types referred for tax documents instead of decided on cash flow. */
+  referIncomeTypes: z.array(z.enum(["salaried", "pension", "gig", "seasonal", "invoice", "steady_business", "irregular"])).optional(),
   recovery: RecoveryRules,
   illustrative: Illustrative,
 })
