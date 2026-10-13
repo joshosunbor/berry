@@ -55,6 +55,8 @@ export function maxAffordableCents(p: LendingPolicy, netCents: number, f: Featur
   const maxPayment = Math.floor((netCents + f.existingDebtMonthlyCents) / minDscr - f.existingDebtMonthlyCents)
   if (maxPayment <= 0) return 0
   if (structure === "term") return maxPrincipalCents(maxPayment, aprBps, termMonths ?? 12)
+  // A seasonal line is assessed on interest only; anything else revolving on the lender's rate.
+  if (structure === "seasonal_operating") return aprBps > 0 ? Math.floor(maxPayment / (aprBps / 10_000 / 12)) : Number.MAX_SAFE_INTEGER
   return Math.floor(maxPayment / p.revolvingRate)
 }
 

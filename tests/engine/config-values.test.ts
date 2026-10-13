@@ -3,6 +3,7 @@ import { CONFIGS } from "@/lib/engine/config"
 import { decideBank } from "@/lib/engine/modes/bank"
 import { decideCreditUnion } from "@/lib/engine/modes/creditUnion"
 import { decideFintech } from "@/lib/engine/modes/fintech"
+import { assessedPayment, coverageAt, lendingPolicy, maxAffordableCents } from "@/lib/engine/modes/common"
 import type { InstitutionConfig } from "@/lib/schemas"
 import type { Mode } from "@/lib/modes"
 import { ctx, features } from "./fixtures"
@@ -19,6 +20,20 @@ const withConfig = (mode: Mode, patch: (c: InstitutionConfig) => InstitutionConf
   return { ...c, config: patch(c.config) }
 }
 const thresholds = (extra: Record<string, number>) => (c: InstitutionConfig) => ({ ...c, thresholds: { ...c.thresholds, ...extra } })
+
+describe("affordability matches each structure's own payment", () => {
+  it("a seasonal line is sized on its interest-only payment, not a revolving 3% of the limit", () => {
+    const p = lendingPolicy(CONFIGS.bank)
+    const f = features({ avgMonthlyNetCents: 120_000 })
+    const apr = 795
+    const max = maxAffordableCents(p, f.avgMonthlyNetCents, f, 1.2, "seasonal_operating", apr, null)
+    // The largest line whose interest-only payment fits the payment 1.2x coverage allows, to within $100.
+    const allowed = Math.floor((f.avgMonthlyNetCents + f.existingDebtMonthlyCents) / 1.2 - f.existingDebtMonthlyCents)
+    expect(assessedPayment(p, "seasonal_operating", max, apr, null)).toBeLessThanOrEqual(allowed)
+    expect(assessedPayment(p, "seasonal_operating", max + 10_000, apr, null)).toBeGreaterThan(allowed)
+    expect(coverageAt(f.avgMonthlyNetCents, f, assessedPayment(p, "seasonal_operating", max, apr, null))).toBeGreaterThanOrEqual(1.2)
+  })
+})
 
 describe("lending settings come from config", () => {
   it("the revolving assessment rate", () => {
