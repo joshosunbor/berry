@@ -1,8 +1,10 @@
+import { Fragment } from "react"
 import { Check, X } from "lucide-react"
 import report from "@/public/accuracy.json"
 import { edgeCases } from "@/lib/evaluation/edge-cases"
 import type { AccuracyReport } from "@/lib/evaluation/accuracy"
 import { MODES, MODE_META } from "@/lib/modes"
+import { formatCents } from "@/lib/money"
 import { cn } from "@/lib/utils"
 import { Card } from "@/components/ui/card"
 import { LenderDot } from "@/components/ui/pill"
@@ -23,7 +25,10 @@ export function TestResults() {
         <span className="num font-semibold text-fg">
           {r.totals.matched} of {r.totals.decisions}
         </span>{" "}
-        planted decisions match the expected outcome ({pct(r.totals.rate)}), across {r.totals.cases} cases and three lenders.
+        planted decisions match the expected outcome ({pct(r.totals.rate)}), across {r.totals.cases} cases and three lenders. The
+        expectations and the engine share the same author, so this shows the rules are applied as written, not that they&apos;re good lending.
+        Outcomes and approvers are scored; limits aren&apos;t scored, because the cases were written to expect an outcome, not an amount. Each
+        actual limit is shown below.
       </p>
 
       <Card as="section" pad="lg" aria-labelledby="what" className="mt-8 max-w-3xl">
@@ -145,17 +150,25 @@ export function TestResults() {
       <section aria-labelledby="cases" className="mt-16">
         <h2 id="cases" className={h2}>Every case</h2>
         <Card pad="none" className="mt-5 overflow-hidden">
-        <Table minWidth={720} label="Every case (scrolls sideways)" caption="Expected and actual outcome for every planted case and lender">
+        <Table minWidth={960} label="Every case (scrolls sideways)" caption="Expected and actual outcome for every planted case and lender, with the actual limit">
             <THead>
               <tr>
-                <Th scope="col" className="px-4">Case</Th>
+                <Th scope="col" rowSpan={2} className="px-4 align-bottom">Case</Th>
                 {MODES.map((m) => (
-                  <Th key={m} scope="col" className="px-4">
+                  <Th key={m} scope="colgroup" colSpan={2} className="border-b-0 px-4">
                     <span className="inline-flex items-center gap-2 font-semibold text-fg">
                       <LenderDot mode={m} />
                       {MODE_META[m].institution}
                     </span>
                   </Th>
+                ))}
+              </tr>
+              <tr>
+                {MODES.map((m) => (
+                  <Fragment key={m}>
+                    <Th scope="col" className="px-4 text-xs font-medium text-fg-3">Expected</Th>
+                    <Th scope="col" className="px-4 text-xs font-medium text-fg-3">Actual</Th>
+                  </Fragment>
                 ))}
               </tr>
             </THead>
@@ -168,18 +181,22 @@ export function TestResults() {
                   </Th>
                   {MODES.map((m) => {
                     const res = c.modes[m]
+                    const approved = res.actual.outcome === "approve" || res.actual.outcome === "approve_with_conditions"
                     return (
-                      <Td key={m} className="px-4 text-fg">
-                        <span className="inline-flex items-center gap-1.5">
-                          {res.match ? (
-                            <Check aria-label="Match" className="size-4 text-green-ink" />
-                          ) : (
-                            <X aria-label="Miss" className="size-4 text-bad" />
-                          )}
-                          <span className="capitalize">{label(res.actual.outcome)}</span>
-                        </span>
-                        {!res.match && <span className="block text-xs text-fg-3">expected {label(res.expected.outcome)}</span>}
-                      </Td>
+                      <Fragment key={m}>
+                        <Td className="px-4 text-fg-2">
+                          <span className="capitalize">{label(res.expected.outcome)}</span>
+                        </Td>
+                        <Td className="px-4 text-fg">
+                          <span className="inline-flex items-center gap-1.5">
+                            {res.match ? <Check aria-label="Match" className="size-4 shrink-0 text-green-ink" /> : <X aria-label="Miss" className="size-4 shrink-0 text-bad" />}
+                            <span className="capitalize">
+                              {label(res.actual.outcome)}
+                              {approved && <span className="num"> {formatCents(res.actual.limitCents, { whole: true })}</span>}
+                            </span>
+                          </span>
+                        </Td>
+                      </Fragment>
                     )
                   })}
                 </tr>
