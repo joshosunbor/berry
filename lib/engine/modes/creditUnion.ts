@@ -224,7 +224,8 @@ function standard({ input, features: f, config }: ModeContext, t: Thresholds, st
     const basis = f.nsf90 > 0 ? "recent returned payments" : "non-member cap"
     return decline(product, [{ code: "BELOW_PRODUCT_MINIMUM", weight: 1, evidence: { limitCents: limit, minCents: terms.minCents, basis } }], CREDIT_UNION_INPUTS)
   }
-  if (limit < Math.min(requested, terms.maxCents) && !reasons.some((r) => r.code === "NON_MEMBER_CAP")) {
+  // Below the request only because limits come in round amounts isn't a reduction.
+  if (limit < roundLimit(p, Math.min(requested, terms.maxCents)) && !reasons.some((r) => r.code === "NON_MEMBER_CAP")) {
     reasons.push({ code: "LIMIT_REDUCED", weight: 0.85, evidence: { limitCents: limit, requestedCents: requested, basis: f.nsf90 > 0 ? "recent returned payments" : "debt service coverage" } })
   }
   if (requested > terms.maxCents && limit === terms.maxCents) {

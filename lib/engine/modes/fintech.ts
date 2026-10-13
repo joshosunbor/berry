@@ -102,7 +102,8 @@ export function decideFintech({ input, features: f, config }: ModeContext): Mode
       FINTECH_INPUTS,
     )
   }
-  if (limit < Math.min(requested, terms.maxCents) && basis !== "thin-file starter cap") {
+  // Below the request only because limits come in round amounts isn't a reduction.
+  if (limit < roundLimit(p, Math.min(requested, terms.maxCents)) && basis !== "thin-file starter cap") {
     reasons.push({ code: "LIMIT_REDUCED", weight: 0.9, evidence: { limitCents: limit, requestedCents: requested, basis } })
   }
 

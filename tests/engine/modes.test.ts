@@ -102,6 +102,19 @@ describe("Kite (fintech): cash flow only, sized on the median month", () => {
   })
 })
 
+describe("rounding a request isn't a policy reduction", () => {
+  it("Northgate: $15,250 offered as $15,000 says nothing about coverage", () => {
+    const r = decideCreditUnion(ctx("credit_union", features({ relationship: { member: true, tenureYears: 3, productsHeld: 3, avgBalanceAtNorthgateCents: 300_000, existingCreditCents: 0 } }), { amountCents: 1_525_000 }))
+    expect(r.limitCents).toBe(1_500_000)
+    expect(r.reasons.map((x) => x.code)).not.toContain("LIMIT_REDUCED")
+  })
+  it("Kite: $2,250 offered as $2,000 isn't blamed on the product maximum", () => {
+    const r = decideFintech(ctx("fintech", features({ medianMonthlyNetCents: 300_000 }), { product: "credit_card", amountCents: 225_000 }))
+    expect(r.limitCents).toBe(200_000)
+    expect(r.reasons.map((x) => x.code)).not.toContain("LIMIT_REDUCED")
+  })
+})
+
 describe("Northgate (credit union): relationship, structure and authority", () => {
   const cu = (over: Parameters<typeof features>[0] = {}, request = {}, kind: "personal" | "business" = "personal") => decideCreditUnion(ctx("credit_union", features(over), request, kind))
 
